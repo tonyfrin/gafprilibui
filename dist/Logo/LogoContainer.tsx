@@ -26,6 +26,15 @@ const containerStyles = () => css`
 const imgStayle = () => css`
   margin-top: 10px;
   max-width: 150px;
+
+  @media (max-width: 600px) {
+    margin-top: 5px;
+    max-width: 130px;
+  }
+
+  @media (max-width: 300px) {
+    max-width: 120px;
+  }
 `;
 
 export const LogoContainer = forwardRef(

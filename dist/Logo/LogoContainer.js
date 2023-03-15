@@ -35,7 +35,7 @@ var react_2 = require("react");
 var css_1 = require("@emotion/css");
 var sectionStyles = function () { return (0, css_1.css)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  margin: 0;\n  padding: 1em;\n"], ["\n  display: flex;\n  margin: 0;\n  padding: 1em;\n"]))); };
 var containerStyles = function () { return (0, css_1.css)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  width: 100%;\n  margin: 0 auto;\n  text-align: center;\n"], ["\n  width: 100%;\n  margin: 0 auto;\n  text-align: center;\n"]))); };
-var imgStayle = function () { return (0, css_1.css)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  margin-top: 10px;\n  max-width: 150px;\n"], ["\n  margin-top: 10px;\n  max-width: 150px;\n"]))); };
+var imgStayle = function () { return (0, css_1.css)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  margin-top: 10px;\n  max-width: 150px;\n\n  @media (max-width: 600px) {\n    margin-top: 5px;\n    max-width: 130px;\n  }\n\n  @media (max-width: 300px) {\n    max-width: 120px;\n  }\n"], ["\n  margin-top: 10px;\n  max-width: 150px;\n\n  @media (max-width: 600px) {\n    margin-top: 5px;\n    max-width: 130px;\n  }\n\n  @media (max-width: 300px) {\n    max-width: 120px;\n  }\n"]))); };
 exports.LogoContainer = (0, react_2.forwardRef)(function (props, ref) {
     var image = props.image, _a = props.sectionClass, sectionClass = _a === void 0 ? '' : _a, _b = props.divClass, divClass = _b === void 0 ? '' : _b, _c = props.imgClass, imgClass = _c === void 0 ? '' : _c, imgProps = __rest(props, ["image", "sectionClass", "divClass", "imgClass"]);
     return (react_1.default.createElement("section", { className: (0, css_1.cx)(sectionStyles(), sectionClass) },

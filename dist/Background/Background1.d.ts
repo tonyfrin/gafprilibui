@@ -1,3 +1,4 @@
+/// <reference types="react" />
 type style = {
     image: string;
     children: JSX.Element;

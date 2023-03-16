@@ -8,7 +8,7 @@ type style = {
 
 const Background1Styles = (image: string) => css`
     background-image: url(${image});
-    background-size: 185vh;
+    background-size: 190vh;
     background-repeat: no-repeat;
     min-height: 100vh;
 `;

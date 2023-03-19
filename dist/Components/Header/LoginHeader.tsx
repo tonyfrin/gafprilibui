@@ -32,5 +32,3 @@ export const LoginHeader = forwardRef(
     );
   }
 );
-
-

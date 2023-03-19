@@ -1,3 +1,3 @@
-export { MainFooter } from "./Footer";
+export { MainFooter } from './Footer';
 export { LoginHeader } from './Header';
-export { Curriencies } from "./Install";
+export { Curriencies } from './Install';

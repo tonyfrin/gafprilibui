@@ -21,9 +21,8 @@
     "rootDir": "src"
   },
   "include": [
-    "src/**/*",
     "src/**/*.tsx",
     "src/**/*.ts"
   ],
-  "exclude": ["node_modules", "dist", "**/*.spec.tsx"]
+  "exclude": ["node_modules", "dist"]
 }

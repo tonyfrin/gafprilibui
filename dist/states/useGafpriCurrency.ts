@@ -3,24 +3,15 @@ import { SingleValue } from 'react-select';
 import { validationSelect, removeClass, addClass } from '../helpers';
 
 type State = {
-  isConfig: boolean;
-  isSites: boolean;
-  isTypeDucument: boolean;
-  isRoles: boolean;
-  isUser: boolean;
-  isCategory: boolean;
-  isProjects: boolean;
   currencyName: string;
   currencySymbol: string;
-  currenciesDefault: CurrencyDefault;
-  currenciesOptions: CurrencyDefault[];
+  currenciesDefault: SelectDefault;
+  currenciesOptions: SelectDefault[];
   validationCurrency: boolean;
   buttonCurrency: boolean;
 };
 
 type Actions = {
-  onConfig: () => void;
-  nextCurrency: () => void;
   currencyChange: (
     newValue: SingleValue<{ value: string; label: string }>
   ) => void;
@@ -28,7 +19,7 @@ type Actions = {
   validationButtonCurrency: (value: boolean) => void;
 };
 
-type CurrencyDefault = {
+type SelectDefault = {
   value: string;
   label: string;
 };
@@ -45,21 +36,15 @@ type ReducerObject = {
   [key in ActionType]: (state: State, payload: Payload) => State;
 };
 
-export interface GafpriConfig {
+export interface UseCurrency {
   states: State;
   actions: Actions;
 }
 
-function useGafpriConfig() {
+export function useGafpriCurrency(): UseCurrency {
   const [state, dispatch] = React.useReducer(reducer, initialState());
   const {
-    isConfig,
-    isSites,
-    isTypeDucument,
-    isRoles,
-    isUser,
-    isCategory,
-    isProjects,
+    //currency
     currencyName,
     currencySymbol,
     currenciesDefault,
@@ -69,21 +54,12 @@ function useGafpriConfig() {
   } = state;
 
   /**
-   * Actions Set
+   * CURRENCY
    *
    *
    */
-  const onConfig = () =>
-    dispatch({
-      type: actionTypes.isConfig,
-    });
 
-  const onSites = () =>
-    dispatch({
-      type: actionTypes.isSites,
-    });
-
-  //setear los valores de la Currency
+  //setear los valores de la Currencies
   const setCurrenciesName = (value: string): void =>
     dispatch({
       type: actionTypes.currencyName,
@@ -96,7 +72,7 @@ function useGafpriConfig() {
       payload: value,
     });
 
-  const setCurrenciesDefault = (value: CurrencyDefault): void =>
+  const setCurrenciesDefault = (value: SelectDefault): void =>
     dispatch({
       type: actionTypes.currenciesDefault,
       payload: value,
@@ -139,7 +115,7 @@ function useGafpriConfig() {
   const currencyChange = (newValue: SingleValue<{ value: string }>): void => {
     let name: string = '';
     let symbol: string = '';
-    let defaultValue: CurrencyDefault = {
+    let defaultValue: SelectDefault = {
       value: '',
       label: 'Seleccione tipo de Moneda',
     };
@@ -173,25 +149,12 @@ function useGafpriConfig() {
     validationCurrencyValue(symbol);
   };
 
-  const nextCurrency = (): void => {
-    if (buttonCurrency) {
-      onSites();
-    }
-  };
-
   /**
    * Export
    *
    *
    */
   const states = {
-    isConfig,
-    isSites,
-    isTypeDucument,
-    isRoles,
-    isUser,
-    isCategory,
-    isProjects,
     currencyName,
     currencySymbol,
     currenciesDefault,
@@ -201,8 +164,6 @@ function useGafpriConfig() {
   };
 
   const actions = {
-    onConfig,
-    nextCurrency,
     currencyChange,
     validationCurrencyValue,
     validationButtonCurrency,
@@ -215,13 +176,6 @@ function useGafpriConfig() {
 }
 
 const initialState = (): State => ({
-  isConfig: true,
-  isSites: false,
-  isTypeDucument: false,
-  isRoles: false,
-  isUser: false,
-  isCategory: false,
-  isProjects: false,
   currencyName: '',
   currencySymbol: '',
   currenciesDefault: {
@@ -238,13 +192,6 @@ const initialState = (): State => ({
 });
 
 const actionTypes = {
-  isConfig: 'CONFIG',
-  isSites: 'SITES',
-  isTypeDucument: 'TYPE_DOCUMENT',
-  isRoles: 'ROLES',
-  isUser: 'USER',
-  isCategory: 'CATEGORY',
-  isProjects: 'PROJECTS',
   currencyName: 'CURRENCY_NAME',
   currencySymbol: 'CURRENCY_SYMBOL',
   currenciesDefault: 'CURRENCY_DEFAULT',
@@ -253,76 +200,6 @@ const actionTypes = {
 };
 
 const reducerObject: ReducerObject = {
-  [actionTypes.isConfig]: (state) => ({
-    ...state,
-    isConfig: true,
-    isSites: false,
-    isTypeDucument: false,
-    isRoles: false,
-    isUser: false,
-    isCategory: false,
-    isProjects: false,
-  }),
-  [actionTypes.isSites]: (state) => ({
-    ...state,
-    isConfig: false,
-    isSites: true,
-    isTypeDucument: false,
-    isRoles: false,
-    isUser: false,
-    isCategory: false,
-    isProjects: false,
-  }),
-  [actionTypes.isTypeDucument]: (state) => ({
-    ...state,
-    isConfig: false,
-    isSites: false,
-    isTypeDucument: true,
-    isRoles: false,
-    isUser: false,
-    isCategory: false,
-    isProjects: false,
-  }),
-  [actionTypes.isRoles]: (state) => ({
-    ...state,
-    isConfig: false,
-    isSites: false,
-    isTypeDucument: false,
-    isRoles: true,
-    isUser: false,
-    isCategory: false,
-    isProjects: false,
-  }),
-  [actionTypes.isUser]: (state) => ({
-    ...state,
-    isConfig: false,
-    isSites: false,
-    isTypeDucument: false,
-    isRoles: false,
-    isUser: true,
-    isCategory: false,
-    isProjects: false,
-  }),
-  [actionTypes.isCategory]: (state) => ({
-    ...state,
-    isConfig: false,
-    isSites: false,
-    isTypeDucument: false,
-    isRoles: false,
-    isUser: false,
-    isCategory: true,
-    isProjects: false,
-  }),
-  [actionTypes.isProjects]: (state) => ({
-    ...state,
-    isConfig: false,
-    isSites: false,
-    isTypeDucument: false,
-    isRoles: false,
-    isUser: false,
-    isCategory: false,
-    isProjects: true,
-  }),
   [actionTypes.currencyName]: (state, payload) => ({
     ...state,
     currencyName: payload,
@@ -348,5 +225,3 @@ const reducerObject: ReducerObject = {
 const reducer = (state: State, action: Action) => {
   return reducerObject[action.type](state, action.payload) || state;
 };
-
-export { useGafpriConfig };

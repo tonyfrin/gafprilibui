@@ -28,5 +28,5 @@ export type {
 } from './Abstract';
 export { Curriencies, MainFooter, LoginHeader } from './Components';
 export { addClass, removeClass, validationSelect } from './helpers';
-export { useGafpriConfig } from './states';
-export type { GafpriConfig } from './states';
+export { useGafpriInstall } from './states';
+export type { UseGafpri } from './states';

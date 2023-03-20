@@ -2,5 +2,5 @@ export { Step, LogoContainer, Background1, Title1, Title2, GloboTitle, Input, Gs
 export type { GloboTitleStyle, InputStyle, SelectStyle, OnChange, GloboStyle, ButtonStyle, ContainerGloboStyle, ContainerButtonStyle, ContainerStyles, } from './Abstract';
 export { Curriencies, MainFooter, LoginHeader } from './Components';
 export { addClass, removeClass, validationSelect } from './helpers';
-export { useGafpriConfig } from './states';
-export type { GafpriConfig } from './states';
+export { useGafpriInstall } from './states';
+export type { UseGafpri } from './states';

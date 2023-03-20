@@ -27,3 +27,31 @@ export const validationSelect = (
     return true;
   }
 };
+
+export function validationHidden(value: string, validate: RegExp): boolean {
+  const valid = validate.test(value) ? true : false;
+  return valid;
+}
+
+export const validationInput = (
+  value: string,
+  match: RegExp,
+  componentId: string,
+  className: string,
+  required: boolean = false
+): boolean => {
+  const valid = validationHidden(value, match);
+
+  if (required && (!valid || !value)) {
+    addClass(componentId, className);
+    return false;
+  }
+
+  if (value && valid) {
+    removeClass(componentId, className);
+    return true;
+  }
+
+  addClass(componentId, className);
+  return false;
+};

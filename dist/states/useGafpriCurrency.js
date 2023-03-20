@@ -15,28 +15,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useGafpriConfig = void 0;
+exports.useGafpriCurrency = void 0;
 var react_1 = __importDefault(require("react"));
 var helpers_1 = require("../helpers");
-function useGafpriConfig() {
+function useGafpriCurrency() {
     var _a = react_1.default.useReducer(reducer, initialState()), state = _a[0], dispatch = _a[1];
-    var isConfig = state.isConfig, isSites = state.isSites, isTypeDucument = state.isTypeDucument, isRoles = state.isRoles, isUser = state.isUser, isCategory = state.isCategory, isProjects = state.isProjects, currencyName = state.currencyName, currencySymbol = state.currencySymbol, currenciesDefault = state.currenciesDefault, currenciesOptions = state.currenciesOptions, validationCurrency = state.validationCurrency, buttonCurrency = state.buttonCurrency;
+    var 
+    //currency
+    currencyName = state.currencyName, currencySymbol = state.currencySymbol, currenciesDefault = state.currenciesDefault, currenciesOptions = state.currenciesOptions, validationCurrency = state.validationCurrency, buttonCurrency = state.buttonCurrency;
     /**
-     * Actions Set
+     * CURRENCY
      *
      *
      */
-    var onConfig = function () {
-        return dispatch({
-            type: actionTypes.isConfig,
-        });
-    };
-    var onSites = function () {
-        return dispatch({
-            type: actionTypes.isSites,
-        });
-    };
-    //setear los valores de la Currency
+    //setear los valores de la Currencies
     var setCurrenciesName = function (value) {
         return dispatch({
             type: actionTypes.currencyName,
@@ -119,24 +111,12 @@ function useGafpriConfig() {
         setCurrenciesDefault(defaultValue);
         validationCurrencyValue(symbol);
     };
-    var nextCurrency = function () {
-        if (buttonCurrency) {
-            onSites();
-        }
-    };
     /**
      * Export
      *
      *
      */
     var states = {
-        isConfig: isConfig,
-        isSites: isSites,
-        isTypeDucument: isTypeDucument,
-        isRoles: isRoles,
-        isUser: isUser,
-        isCategory: isCategory,
-        isProjects: isProjects,
         currencyName: currencyName,
         currencySymbol: currencySymbol,
         currenciesDefault: currenciesDefault,
@@ -145,8 +125,6 @@ function useGafpriConfig() {
         buttonCurrency: buttonCurrency,
     };
     var actions = {
-        onConfig: onConfig,
-        nextCurrency: nextCurrency,
         currencyChange: currencyChange,
         validationCurrencyValue: validationCurrencyValue,
         validationButtonCurrency: validationButtonCurrency,
@@ -156,15 +134,8 @@ function useGafpriConfig() {
         actions: actions,
     };
 }
-exports.useGafpriConfig = useGafpriConfig;
+exports.useGafpriCurrency = useGafpriCurrency;
 var initialState = function () { return ({
-    isConfig: true,
-    isSites: false,
-    isTypeDucument: false,
-    isRoles: false,
-    isUser: false,
-    isCategory: false,
-    isProjects: false,
     currencyName: '',
     currencySymbol: '',
     currenciesDefault: {
@@ -180,13 +151,6 @@ var initialState = function () { return ({
     buttonCurrency: false,
 }); };
 var actionTypes = {
-    isConfig: 'CONFIG',
-    isSites: 'SITES',
-    isTypeDucument: 'TYPE_DOCUMENT',
-    isRoles: 'ROLES',
-    isUser: 'USER',
-    isCategory: 'CATEGORY',
-    isProjects: 'PROJECTS',
     currencyName: 'CURRENCY_NAME',
     currencySymbol: 'CURRENCY_SYMBOL',
     currenciesDefault: 'CURRENCY_DEFAULT',
@@ -194,13 +158,6 @@ var actionTypes = {
     buttonCurrency: 'BUTTON_CURRENCY',
 };
 var reducerObject = (_a = {},
-    _a[actionTypes.isConfig] = function (state) { return (__assign(__assign({}, state), { isConfig: true, isSites: false, isTypeDucument: false, isRoles: false, isUser: false, isCategory: false, isProjects: false })); },
-    _a[actionTypes.isSites] = function (state) { return (__assign(__assign({}, state), { isConfig: false, isSites: true, isTypeDucument: false, isRoles: false, isUser: false, isCategory: false, isProjects: false })); },
-    _a[actionTypes.isTypeDucument] = function (state) { return (__assign(__assign({}, state), { isConfig: false, isSites: false, isTypeDucument: true, isRoles: false, isUser: false, isCategory: false, isProjects: false })); },
-    _a[actionTypes.isRoles] = function (state) { return (__assign(__assign({}, state), { isConfig: false, isSites: false, isTypeDucument: false, isRoles: true, isUser: false, isCategory: false, isProjects: false })); },
-    _a[actionTypes.isUser] = function (state) { return (__assign(__assign({}, state), { isConfig: false, isSites: false, isTypeDucument: false, isRoles: false, isUser: true, isCategory: false, isProjects: false })); },
-    _a[actionTypes.isCategory] = function (state) { return (__assign(__assign({}, state), { isConfig: false, isSites: false, isTypeDucument: false, isRoles: false, isUser: false, isCategory: true, isProjects: false })); },
-    _a[actionTypes.isProjects] = function (state) { return (__assign(__assign({}, state), { isConfig: false, isSites: false, isTypeDucument: false, isRoles: false, isUser: false, isCategory: false, isProjects: true })); },
     _a[actionTypes.currencyName] = function (state, payload) { return (__assign(__assign({}, state), { currencyName: payload })); },
     _a[actionTypes.currencySymbol] = function (state, payload) { return (__assign(__assign({}, state), { currencySymbol: payload })); },
     _a[actionTypes.currenciesDefault] = function (state, payload) { return (__assign(__assign({}, state), { currenciesDefault: payload })); },
@@ -210,4 +167,4 @@ var reducerObject = (_a = {},
 var reducer = function (state, action) {
     return reducerObject[action.type](state, action.payload) || state;
 };
-//# sourceMappingURL=useGafpriConfig.js.map
+//# sourceMappingURL=useGafpriCurrency.js.map

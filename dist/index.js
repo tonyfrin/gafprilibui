@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useGafpriConfig = exports.validationSelect = exports.removeClass = exports.addClass = exports.LoginHeader = exports.MainFooter = exports.Curriencies = exports.ContainerButton = exports.ContainerGlobo = exports.ContainerForm = exports.ContainerInput = exports.Box1 = exports.Button = exports.Globo = exports.GsSelect = exports.Input = exports.GloboTitle = exports.Title2 = exports.Title1 = exports.Background1 = exports.LogoContainer = exports.Step = void 0;
+exports.useGafpriInstall = exports.validationSelect = exports.removeClass = exports.addClass = exports.LoginHeader = exports.MainFooter = exports.Curriencies = exports.ContainerButton = exports.ContainerGlobo = exports.ContainerForm = exports.ContainerInput = exports.Box1 = exports.Button = exports.Globo = exports.GsSelect = exports.Input = exports.GloboTitle = exports.Title2 = exports.Title1 = exports.Background1 = exports.LogoContainer = exports.Step = void 0;
 var Abstract_1 = require("./Abstract");
 Object.defineProperty(exports, "Step", { enumerable: true, get: function () { return Abstract_1.Step; } });
 Object.defineProperty(exports, "LogoContainer", { enumerable: true, get: function () { return Abstract_1.LogoContainer; } });
@@ -26,5 +26,5 @@ Object.defineProperty(exports, "addClass", { enumerable: true, get: function () 
 Object.defineProperty(exports, "removeClass", { enumerable: true, get: function () { return helpers_1.removeClass; } });
 Object.defineProperty(exports, "validationSelect", { enumerable: true, get: function () { return helpers_1.validationSelect; } });
 var states_1 = require("./states");
-Object.defineProperty(exports, "useGafpriConfig", { enumerable: true, get: function () { return states_1.useGafpriConfig; } });
+Object.defineProperty(exports, "useGafpriInstall", { enumerable: true, get: function () { return states_1.useGafpriInstall; } });
 //# sourceMappingURL=index.js.map

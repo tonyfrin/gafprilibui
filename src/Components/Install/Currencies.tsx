@@ -2,12 +2,20 @@ import React from 'react';
 import { ContainerForm } from '../../Abstract';
 import { Step } from '../../Abstract';
 import { GsSelect } from '../../Abstract';
-import type { GafpriConfig } from '../../states';
+import type { UseGafpri } from '../../states';
 
-export const Curriencies = ({ states, actions }: GafpriConfig): JSX.Element => {
+export const Curriencies = ({
+  states,
+  actions,
+  useCurrency,
+}: UseGafpri): JSX.Element => {
   React.useEffect(() => {
-    actions.validationCurrencyValue(states.currenciesDefault.value);
-    actions.validationButtonCurrency(states.validationCurrency);
+    useCurrency.actions.validationCurrencyValue(
+      useCurrency.states.currenciesDefault.value
+    );
+    useCurrency.actions.validationButtonCurrency(
+      useCurrency.states.validationCurrency
+    );
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -25,9 +33,9 @@ export const Curriencies = ({ states, actions }: GafpriConfig): JSX.Element => {
         <>
           <GsSelect
             id="currencyName"
-            onChange={(event) => actions.currencyChange(event)}
-            options={states.currenciesOptions}
-            defaultValue={states.currenciesDefault}
+            onChange={(event) => useCurrency.actions.currencyChange(event)}
+            options={useCurrency.states.currenciesOptions}
+            defaultValue={useCurrency.states.currenciesDefault}
           />
         </>
       </ContainerForm>

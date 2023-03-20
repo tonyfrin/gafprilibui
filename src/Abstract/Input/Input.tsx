@@ -89,6 +89,7 @@ export const Input = ({
 };
 
 const SelectStyles = (styles: SelectStyle) => css`
+  width: ${styles.width || '100%'};
   font-size: ${styles.fontSize || '15px'};
   font-weight: ${styles.fontWeight || '300'};
   color: ${styles.color || '#8D8D8D'};
@@ -116,6 +117,7 @@ type media = {
 };
 
 export type SelectStyle = {
+  width?: string | number;
   fontSize?: string;
   fontWeight?: string;
   color?: string;

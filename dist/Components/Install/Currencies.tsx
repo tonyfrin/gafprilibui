@@ -5,10 +5,10 @@ import { GsSelect } from '../../Abstract';
 import type { UseGafpri } from '../../states';
 
 type Use = {
-  states: UseGafpri['states'],
-  actions: UseGafpri['actions'],
-  useCurrency: UseGafpri['useCurrency']
-}
+  states: UseGafpri['states'];
+  actions: UseGafpri['actions'];
+  useCurrency: UseGafpri['useCurrency'];
+};
 
 export const Curriencies = ({
   states,

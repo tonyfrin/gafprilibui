@@ -17,22 +17,18 @@ export type ContainerStyles = {
 
 type ConainerInput = {
   styles?: ContainerStyles | undefined;
-  rowClass?: string;
   containerClass?: string;
   children: JSX.Element;
 };
 
 export const ContainerInput = ({
   styles = {},
-  rowClass = '',
   containerClass = '',
   children,
 }: ConainerInput) => {
   return (
-    <div className={cx(RowStyles(), rowClass)}>
-      <div className={cx(ContainerInputStyles(styles), containerClass)}>
-        {children}
-      </div>
+    <div className={cx(ContainerInputStyles(styles), containerClass)}>
+      {children}
     </div>
   );
 };

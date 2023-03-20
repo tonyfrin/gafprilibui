@@ -32,10 +32,9 @@ type InputStyles = {
     inputProps?: InputHTMLAttributes<HTMLInputElement>;
     inputClass?: string | undefined;
     containerStyles?: ContainerStyles | undefined;
-    containerRowClass?: string | undefined;
     containerClass?: string | undefined;
 };
-export declare const Input: ({ styles, inputClass, inputProps, containerStyles, containerRowClass, containerClass, }: InputStyles) => JSX.Element;
+export declare const Input: ({ styles, inputClass, inputProps, containerStyles, containerClass, }: InputStyles) => JSX.Element;
 type media = {
     width?: string;
     fontSize?: string;
@@ -60,12 +59,11 @@ type GsSelect = {
     onChange?: OnChange;
     placeholder?: string | undefined;
     containerStyles?: ContainerStyles | undefined;
-    containerRowClass?: string | undefined;
     containerClass?: string | undefined;
     defaultValue?: {
         value: string;
         label: string;
     };
 };
-export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerRowClass, containerClass, defaultValue, }: GsSelect) => JSX.Element;
+export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerClass, defaultValue, }: GsSelect) => JSX.Element;
 export {};

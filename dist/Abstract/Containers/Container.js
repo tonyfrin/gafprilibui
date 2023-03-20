@@ -13,9 +13,8 @@ var css_1 = require("@emotion/css");
 var RowStyles = function () { return (0, css_1.css)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n"], ["\n  display: flex;\n"]))); };
 var ContainerInputStyles = function (styles) { return (0, css_1.css)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  width: ", ";\n  margin: ", ";\n"], ["\n  width: ", ";\n  margin: ", ";\n"])), styles.width || '91.66667%', styles.margin || '10px 0px'); };
 var ContainerInput = function (_a) {
-    var _b = _a.styles, styles = _b === void 0 ? {} : _b, _c = _a.rowClass, rowClass = _c === void 0 ? '' : _c, _d = _a.containerClass, containerClass = _d === void 0 ? '' : _d, children = _a.children;
-    return (react_1.default.createElement("div", { className: (0, css_1.cx)(RowStyles(), rowClass) },
-        react_1.default.createElement("div", { className: (0, css_1.cx)(ContainerInputStyles(styles), containerClass) }, children)));
+    var _b = _a.styles, styles = _b === void 0 ? {} : _b, _c = _a.containerClass, containerClass = _c === void 0 ? '' : _c, children = _a.children;
+    return (react_1.default.createElement("div", { className: (0, css_1.cx)(ContainerInputStyles(styles), containerClass) }, children));
 };
 exports.ContainerInput = ContainerInput;
 var ContainerFormStyles = function (styles) { return (0, css_1.css)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  width: ", ";\n  margin: ", ";\n"], ["\n  width: ", ";\n  margin: ", ";\n"])), styles.width || '90%', styles.margin || 'auto'); };

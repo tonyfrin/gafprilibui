@@ -5,11 +5,10 @@ export type ContainerStyles = {
 };
 type ConainerInput = {
     styles?: ContainerStyles | undefined;
-    rowClass?: string;
     containerClass?: string;
     children: JSX.Element;
 };
-export declare const ContainerInput: ({ styles, rowClass, containerClass, children, }: ConainerInput) => JSX.Element;
+export declare const ContainerInput: ({ styles, containerClass, children, }: ConainerInput) => JSX.Element;
 type ConainerForm = {
     styles?: ContainerStyles | undefined;
     containerClass?: string;

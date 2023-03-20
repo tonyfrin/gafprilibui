@@ -65,7 +65,6 @@ type InputStyles = {
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   inputClass?: string | undefined;
   containerStyles?: ContainerStyles | undefined;
-  containerRowClass?: string | undefined;
   containerClass?: string | undefined;
 };
 
@@ -74,15 +73,10 @@ export const Input = ({
   inputClass = '',
   inputProps = {},
   containerStyles = {},
-  containerRowClass = '',
   containerClass = '',
 }: InputStyles) => {
   return (
-    <ContainerInput
-      styles={containerStyles}
-      rowClass={containerRowClass}
-      containerClass={containerClass}
-    >
+    <ContainerInput styles={containerStyles} containerClass={containerClass}>
       <input className={cx(InputStyles(styles), inputClass)} {...inputProps} />
     </ContainerInput>
   );
@@ -134,7 +128,6 @@ type GsSelect = {
   onChange?: OnChange;
   placeholder?: string | undefined;
   containerStyles?: ContainerStyles | undefined;
-  containerRowClass?: string | undefined;
   containerClass?: string | undefined;
   defaultValue?: { value: string; label: string };
 };
@@ -147,17 +140,12 @@ export const GsSelect = ({
   onChange,
   placeholder,
   containerStyles = {},
-  containerRowClass = '',
   containerClass = '',
   defaultValue,
 }: GsSelect) => {
   return (
     <>
-      <ContainerInput
-        styles={containerStyles}
-        rowClass={containerRowClass}
-        containerClass={containerClass}
-      >
+      <ContainerInput styles={containerStyles} containerClass={containerClass}>
         <Select
           className={cx(SelectStyles(styles), Class)}
           options={options}

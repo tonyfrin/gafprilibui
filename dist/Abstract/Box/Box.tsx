@@ -6,7 +6,7 @@ const Box1Styles = (styles: Box1Style) => css`
   padding: ${styles.padding || '40px'};
   width: ${styles.width || '70%'};
   border-radius: ${styles.borderRadius || '10px'};
-  height: ${styles.height || '60vh'};
+  height: ${styles.height || '63vh'};
 
   margin: 30px auto;
 

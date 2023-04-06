@@ -11,8 +11,9 @@ module.exports = {
         'airbnb/hooks', 
         'prettier', 
         'plugin:@typescript-eslint/recommended',
-        'prettier/@typescript-eslint',
+        'prettier',
     ],
+    ignorePatterns: ['dist/'],
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
@@ -33,6 +34,13 @@ module.exports = {
             'error',
             {
                 namedComponents: 'arrow-function',
+            },
+        ],
+        'import/extensions': [
+            'error',
+            'never',
+            {
+              ignorePackages: true,
             },
         ],
     },

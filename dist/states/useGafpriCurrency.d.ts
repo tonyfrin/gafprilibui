@@ -1,4 +1,8 @@
 import { SingleValue } from 'react-select';
+type SelectDefault = {
+    value: string;
+    label: string;
+};
 type State = {
     currencyName: string;
     currencySymbol: string;
@@ -14,10 +18,6 @@ type Actions = {
     }>) => void;
     validationCurrencyValue: (value: string) => void;
     validationButtonCurrency: (value: boolean) => void;
-};
-type SelectDefault = {
-    value: string;
-    label: string;
 };
 export interface UseCurrency {
     states: State;

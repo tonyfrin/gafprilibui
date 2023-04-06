@@ -9,7 +9,7 @@ var Abstract_1 = require("../../Abstract");
 var Abstract_2 = require("../../Abstract");
 var Abstract_3 = require("../../Abstract");
 var Curriencies = function (_a) {
-    var states = _a.states, actions = _a.actions, useCurrency = _a.useCurrency;
+    var actions = _a.actions, useCurrency = _a.useCurrency;
     react_1.default.useEffect(function () {
         useCurrency.actions.validationCurrencyValue(useCurrency.states.currenciesDefault.value);
         useCurrency.actions.validationButtonCurrency(useCurrency.states.validationCurrency);

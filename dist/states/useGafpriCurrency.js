@@ -18,17 +18,78 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.useGafpriCurrency = void 0;
 var react_1 = __importDefault(require("react"));
 var helpers_1 = require("../helpers");
+var actionTypes = {
+    currencyName: 'CURRENCY_NAME',
+    currencySymbol: 'CURRENCY_SYMBOL',
+    currenciesDefault: 'CURRENCY_DEFAULT',
+    validationCurrency: 'VALIDATION_CURRENCY',
+    buttonCurrency: 'BUTTON_CURRENCY',
+};
+var reducerObject = (_a = {},
+    _a[actionTypes.currencyName] = function (state, payload) {
+        if (typeof payload === 'string') {
+            return __assign(__assign({}, state), { currencyName: payload });
+        }
+        return state;
+    },
+    _a[actionTypes.currencySymbol] = function (state, payload) {
+        if (typeof payload === 'string') {
+            return __assign(__assign({}, state), { currencySymbol: payload });
+        }
+        return state;
+    },
+    _a[actionTypes.currenciesDefault] = function (state, payload) {
+        if (typeof payload === 'object') {
+            return __assign(__assign({}, state), { currenciesDefault: payload });
+        }
+        return state;
+    },
+    _a[actionTypes.validationCurrency] = function (state, payload) {
+        if (typeof payload === 'boolean') {
+            return __assign(__assign({}, state), { validationCurrency: payload });
+        }
+        return state;
+    },
+    _a[actionTypes.buttonCurrency] = function (state, payload) {
+        if (typeof payload === 'boolean') {
+            return __assign(__assign({}, state), { buttonCurrency: payload });
+        }
+        return state;
+    },
+    _a);
+var reducer = function (state, action) {
+    var handler = reducerObject[action.type];
+    if (handler && action.payload !== undefined) {
+        return handler(state, action.payload);
+    }
+    return state;
+};
+var initialState = function () { return ({
+    currencyName: '',
+    currencySymbol: '',
+    currenciesDefault: {
+        value: '',
+        label: 'Seleccione tipo de Moneda',
+    },
+    currenciesOptions: [
+        { label: 'Dólares Americanos', value: 'usd' },
+        { label: 'Bolívares', value: 'bsd' },
+        { label: 'Euros', value: 'eur' },
+    ],
+    validationCurrency: false,
+    buttonCurrency: false,
+}); };
 function useGafpriCurrency() {
     var _a = react_1.default.useReducer(reducer, initialState()), state = _a[0], dispatch = _a[1];
     var 
-    //currency
+    // currency
     currencyName = state.currencyName, currencySymbol = state.currencySymbol, currenciesDefault = state.currenciesDefault, currenciesOptions = state.currenciesOptions, validationCurrency = state.validationCurrency, buttonCurrency = state.buttonCurrency;
     /**
      * CURRENCY
      *
      *
      */
-    //setear los valores de la Currencies
+    // setear los valores de la Currencies
     var setCurrenciesName = function (value) {
         return dispatch({
             type: actionTypes.currencyName,
@@ -59,12 +120,7 @@ function useGafpriCurrency() {
             payload: value,
         });
     };
-    //Funciones de validations
-    var validationCurrencyValue = function (value) {
-        var validation = (0, helpers_1.validationSelect)(value, 'currencyName', 'gs-input-alert');
-        setValidationCurrency(validation);
-        validationButtonCurrency(validation);
-    };
+    // Funciones de validations
     var validationButtonCurrency = function (value) {
         if (value) {
             (0, helpers_1.removeClass)('nextCurrency', 'gs-disabled');
@@ -74,7 +130,12 @@ function useGafpriCurrency() {
         }
         setButtonCurrency(value);
     };
-    //Funciones de cambio
+    var validationCurrencyValue = function (value) {
+        var validation = (0, helpers_1.validationSelect)(value, 'currencyName', 'gs-input-alert');
+        setValidationCurrency(validation);
+        validationButtonCurrency(validation);
+    };
+    // Funciones de cambio
     var currencyChange = function (newValue) {
         var name = '';
         var symbol = '';
@@ -135,36 +196,4 @@ function useGafpriCurrency() {
     };
 }
 exports.useGafpriCurrency = useGafpriCurrency;
-var initialState = function () { return ({
-    currencyName: '',
-    currencySymbol: '',
-    currenciesDefault: {
-        value: '',
-        label: 'Seleccione tipo de Moneda',
-    },
-    currenciesOptions: [
-        { label: 'Dólares Americanos', value: 'usd' },
-        { label: 'Bolívares', value: 'bsd' },
-        { label: 'Euros', value: 'eur' },
-    ],
-    validationCurrency: false,
-    buttonCurrency: false,
-}); };
-var actionTypes = {
-    currencyName: 'CURRENCY_NAME',
-    currencySymbol: 'CURRENCY_SYMBOL',
-    currenciesDefault: 'CURRENCY_DEFAULT',
-    validationCurrency: 'VALIDATION_CURRENCY',
-    buttonCurrency: 'BUTTON_CURRENCY',
-};
-var reducerObject = (_a = {},
-    _a[actionTypes.currencyName] = function (state, payload) { return (__assign(__assign({}, state), { currencyName: payload })); },
-    _a[actionTypes.currencySymbol] = function (state, payload) { return (__assign(__assign({}, state), { currencySymbol: payload })); },
-    _a[actionTypes.currenciesDefault] = function (state, payload) { return (__assign(__assign({}, state), { currenciesDefault: payload })); },
-    _a[actionTypes.validationCurrency] = function (state, payload) { return (__assign(__assign({}, state), { validationCurrency: payload })); },
-    _a[actionTypes.buttonCurrency] = function (state, payload) { return (__assign(__assign({}, state), { buttonCurrency: payload })); },
-    _a);
-var reducer = function (state, action) {
-    return reducerObject[action.type](state, action.payload) || state;
-};
 //# sourceMappingURL=useGafpriCurrency.js.map

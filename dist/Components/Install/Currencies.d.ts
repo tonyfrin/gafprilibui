@@ -1,9 +1,9 @@
 /// <reference types="react" />
-import type { UseGafpri } from '../../states';
+import type { UseInstall } from '../../states';
 type Use = {
-    states: UseGafpri['states'];
-    actions: UseGafpri['actions'];
-    useCurrency: UseGafpri['useCurrency'];
+    states: UseInstall['states'];
+    actions: UseInstall['actions'];
+    useCurrency: UseInstall['useCurrency'];
 };
-export declare const Curriencies: ({ states, actions, useCurrency, }: Use) => JSX.Element;
+export declare const Curriencies: ({ actions, useCurrency }: Use) => JSX.Element;
 export {};

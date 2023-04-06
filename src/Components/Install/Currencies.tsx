@@ -2,19 +2,15 @@ import React from 'react';
 import { ContainerForm } from '../../Abstract';
 import { Step } from '../../Abstract';
 import { GsSelect } from '../../Abstract';
-import type { UseGafpri } from '../../states';
+import type { UseInstall } from '../../states';
 
 type Use = {
-  states: UseGafpri['states'];
-  actions: UseGafpri['actions'];
-  useCurrency: UseGafpri['useCurrency'];
+  states: UseInstall['states'];
+  actions: UseInstall['actions'];
+  useCurrency: UseInstall['useCurrency'];
 };
 
-export const Curriencies = ({
-  states,
-  actions,
-  useCurrency,
-}: Use): JSX.Element => {
+export const Curriencies = ({ actions, useCurrency }: Use): JSX.Element => {
   React.useEffect(() => {
     useCurrency.actions.validationCurrencyValue(
       useCurrency.states.currenciesDefault.value

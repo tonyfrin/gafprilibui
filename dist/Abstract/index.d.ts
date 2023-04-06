@@ -12,3 +12,7 @@ export type { GloboTitleStyle } from './Title';
 export { Background1 } from './Background';
 export { LogoContainer } from './Logo';
 export { Step } from './Step';
+export { AddCategoryProjects } from './CategoryProjects';
+export { SiteInfo, SiteConfig } from './Site';
+export { TypeDocument } from './TypeDocument';
+export { User } from './User';

@@ -20,10 +20,12 @@ type Box1Style = {
     media500Style?: Box1Media500Style | undefined;
     media400Style?: Box1Media400Style | undefined;
     media300Style?: Box1Media300Style | undefined;
+    margin?: string | number;
 };
 type Box1 = {
     styles?: Box1Style | undefined;
     children: JSX.Element;
+    Class?: string;
 };
-export declare const Box1: ({ styles, children }: Box1) => JSX.Element;
+export declare const Box1: ({ styles, children, Class }: Box1) => JSX.Element;
 export {};

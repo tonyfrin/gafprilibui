@@ -69,6 +69,7 @@ export type {
   ValidationInputAdress,
 } from './helpers';
 export {
+  useGafpri,
   useGafpriInstall,
   useGafpriSites,
   useGafpriCurrency,

@@ -3,6 +3,6 @@ export type { GloboTitleStyle, InputStyle, SelectStyle, OnChange, GloboStyle, Bu
 export { MainFooter, LoginHeader, Loading, Category, Curriencies, Instaled, Install, Projects, SitesInfo, SitesConfig, TypesDocument, Users, } from './Components';
 export { addClass, removeClass, validationSelect, validationHidden, validationInput, changeInputText, toTitleCase, changeSelect, validationInputName, validationInputAddress, validationInputPostcode, validationInputEmail, validationInputPhone, validationInputPassword, gafpriFetch, } from './helpers';
 export type { ChangeInputText, ChangeSelect, ValidationInputName, ValidationInputAdress, } from './helpers';
-export { useGafpriInstall, useGafpriSites, useGafpriCurrency, useGafpriSitesConfig, useGafpriTypeDocument, useGafpriUser, useGafpriCategoryProjects, } from './states';
+export { useGafpri, useGafpriInstall, useGafpriSites, useGafpriCurrency, useGafpriSitesConfig, useGafpriTypeDocument, useGafpriUser, useGafpriCategoryProjects, } from './states';
 export type { UseGafpri, UseInstall, UseSites, UseCurrency, UseSitesConfig, SelectDefault, UseTypeDocument, UseUser, UseCategoryProjects, } from './states';
 export { Countries, StatesCountries, Cities, DocumentsIndex } from './Constans';

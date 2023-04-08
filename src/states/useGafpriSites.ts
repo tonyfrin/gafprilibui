@@ -218,7 +218,7 @@ const reducerObject: Record<string, ReducerHandler> = {
     if (typeof payload === 'boolean') {
       return {
         ...state,
-        validSiteDocumentIndex: payload,
+        validDocument: payload,
       };
     }
     return state;

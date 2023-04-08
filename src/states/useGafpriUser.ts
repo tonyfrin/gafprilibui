@@ -277,7 +277,7 @@ const reducerObject: Record<string, ReducerHandler> = {
     if (isSelectDefault(payload)) {
       return {
         ...state,
-        cityDefault: payload,
+        documentIndexDefault: payload,
       };
     }
     return state;

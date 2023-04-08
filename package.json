@@ -1,6 +1,6 @@
 {
   "name": "gafpriuilib",
-  "version": "0.2.4",
+  "version": "0.2.7",
   "description": "Libreria Ui del sistema Gafpri Admin",
   "main": "./dist/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "release:patch": "npm version patch && npm run release",
     "release:minor": "npm version minor && npm run publish",
     "release:major": "npm version major && npm run publish",
-    "build": "NODE_ENV=production && rm -rf ./dist && mkdir dist && npx babel --config-file ./babel.config.js src/ --out-dir dist --copy-files && tsc"
+    "build": "cross-env NODE_ENV=production && rm -rf ./dist && mkdir dist && webpack --mode production"
   },
   "keywords": [
     "libreria-ui",
@@ -44,8 +44,11 @@
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "babel-jest": "^29.5.0",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^8.3.0",
     "babel-preset-minify": "^0.5.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.3",
     "eslint": "^8.36.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -61,7 +64,11 @@
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "style-loader": "^3.3.2",
     "ts-jest": "^29.0.5",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2"
   }
 }

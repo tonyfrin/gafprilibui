@@ -1,1 +1,0 @@
-export { LogoContainer } from './LogoContainer';

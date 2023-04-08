@@ -240,7 +240,7 @@ const reducerObject: Record<string, ReducerHandler> = {
     if (typeof payload === 'boolean') {
       return {
         ...state,
-        decimalNumbersValid: payload,
+        taxesValid: payload,
       };
     }
     return state;
@@ -267,7 +267,7 @@ const reducerObject: Record<string, ReducerHandler> = {
     if (typeof payload === 'boolean') {
       return {
         ...state,
-        decimalNumbersValid: payload,
+        hostValid: payload,
       };
     }
     return state;

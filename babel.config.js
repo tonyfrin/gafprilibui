@@ -18,11 +18,17 @@ module.exports = {
         isTSX: true,
         allExtensions: true,
       },
-    ]
+    ],
   ],
   plugins: [
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-transform-runtime',
+    [
+      '@babel/plugin-transform-typescript',
+      {
+        allowNamespaces: true,
+      },
+    ],
   ],
   env: {
     test: {
@@ -31,5 +37,11 @@ module.exports = {
     },
   },
 };
+
+
+
+  
+
+
 
   

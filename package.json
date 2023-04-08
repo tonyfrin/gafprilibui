@@ -1,6 +1,6 @@
 {
   "name": "gafpriuilib",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Libreria Ui del sistema Gafpri Admin",
   "main": "./dist/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "release:patch": "npm version patch && npm run release",
     "release:minor": "npm version minor && npm run publish",
     "release:major": "npm version major && npm run publish",
-    "build": "cross-env NODE_ENV=production && rm -rf ./dist && mkdir dist && webpack --mode production"
+    "build": "cross-env NODE_ENV=production && rm -rf ./dist && mkdir dist && tsc && npx babel --config-file ./babel.config.js src --out-dir dist --extensions '.ts,.tsx' --copy-files && find dist -type f -name '*.d.ts' -delete"
   },
   "keywords": [
     "libreria-ui",

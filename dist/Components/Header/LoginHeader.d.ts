@@ -7,6 +7,9 @@ type LoginHeaderProps = LogoProps & style;
 type HeaderStyle = {
     background?: string;
     width?: string;
+    position?: string;
+    zIndex?: string;
+    height?: string;
 };
 type HeaderLogin = {
     props: LoginHeaderProps;

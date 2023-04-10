@@ -12,12 +12,18 @@ type LoginHeaderProps = LogoProps & style;
 type HeaderStyle = {
   background?: string;
   width?: string;
+  position?: string;
+  zIndex?: string;
+  height?: string;
 };
 
 const headerStyles = (styles: HeaderStyle): string => css`
   background: ${styles.background ||
   'linear-gradient(to left, #324375, #07b2e7)'};
   width: ${styles.width || '100%'};
+  ${styles.position && `position: ${styles.position};`}
+  ${styles.zIndex && `z-index: ${styles.zIndex};`}
+  ${styles.height && `height: ${styles.height};`}
 `;
 
 type HeaderLogin = {

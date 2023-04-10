@@ -14,7 +14,7 @@ var _Logo = require("../../Abstract/Logo");
 var _excluded = ["image", "headerClass"];
 var _templateObject;
 var headerStyles = function headerStyles(styles) {
-  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  background: ", ";\n  width: ", ";\n"])), styles.background || 'linear-gradient(to left, #324375, #07b2e7)', styles.width || '100%');
+  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  background: ", ";\n  width: ", ";\n  ", "\n  ", "\n  ", "\n"])), styles.background || 'linear-gradient(to left, #324375, #07b2e7)', styles.width || '100%', styles.position && "position: ".concat(styles.position, ";"), styles.zIndex && "z-index: ".concat(styles.zIndex, ";"), styles.height && "height: ".concat(styles.height, ";"));
 };
 var LoginHeader = function LoginHeader(_ref) {
   var props = _ref.props,

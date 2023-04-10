@@ -41,7 +41,7 @@ export type LogoProps = ImgHTMLAttributes<HTMLImageElement> & Style;
 const sectionStyles = (styles: SectionStyle) => css`
   display: ${styles.display || 'flex'};
   margin: ${styles.margin || '0'};
-  padding: ${styles.margin || '1em'};
+  padding: ${styles.padding || '1em'};
 `;
 
 const containerStyles = (styles: ContainerStyle) => css`

@@ -22,7 +22,7 @@ const headerStyles = (styles: HeaderStyle): string => css`
 
 type HeaderLogin = {
   props: LoginHeaderProps;
-  styles: HeaderStyle;
+  styles?: HeaderStyle;
 };
 
 export const LoginHeader = ({

@@ -10,7 +10,7 @@ type HeaderStyle = {
 };
 type HeaderLogin = {
     props: LoginHeaderProps;
-    styles: HeaderStyle;
+    styles?: HeaderStyle;
 };
 export declare const LoginHeader: ({ props, styles, }: HeaderLogin) => JSX.Element;
 export {};

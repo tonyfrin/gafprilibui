@@ -25,9 +25,9 @@ type Style = {
     divClass?: string;
     imgClass?: string;
     image: string;
-    styleSection: SectionStyle;
-    styleContainer: ContainerStyle;
-    styleImage: ImageStyle;
+    styleSection?: SectionStyle;
+    styleContainer?: ContainerStyle;
+    styleImage?: ImageStyle;
 };
 export type LogoProps = ImgHTMLAttributes<HTMLImageElement> & Style;
 export declare const LogoContainer: React.ForwardRefExoticComponent<React.ImgHTMLAttributes<HTMLImageElement> & Style & React.RefAttributes<HTMLImageElement>>;

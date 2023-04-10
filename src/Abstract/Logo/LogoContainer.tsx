@@ -31,9 +31,9 @@ type Style = {
   divClass?: string;
   imgClass?: string;
   image: string;
-  styleSection: SectionStyle;
-  styleContainer: ContainerStyle;
-  styleImage: ImageStyle;
+  styleSection?: SectionStyle;
+  styleContainer?: ContainerStyle;
+  styleImage?: ImageStyle;
 };
 
 export type LogoProps = ImgHTMLAttributes<HTMLImageElement> & Style;

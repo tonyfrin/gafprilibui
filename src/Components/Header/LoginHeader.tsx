@@ -15,6 +15,7 @@ type HeaderStyle = {
   position?: string;
   zIndex?: string;
   height?: string;
+  top?: style;
 };
 
 const headerStyles = (styles: HeaderStyle): string => css`
@@ -24,6 +25,7 @@ const headerStyles = (styles: HeaderStyle): string => css`
   ${styles.position && `position: ${styles.position};`}
   ${styles.zIndex && `z-index: ${styles.zIndex};`}
   ${styles.height && `height: ${styles.height};`}
+  ${styles.top && `top: ${styles.top};`}
 `;
 
 type HeaderLogin = {

@@ -15,7 +15,7 @@ type HeaderStyle = {
   position?: string;
   zIndex?: string;
   height?: string;
-  top?: style;
+  top?: string;
 };
 
 const headerStyles = (styles: HeaderStyle): string => css`

@@ -10,7 +10,7 @@ type HeaderStyle = {
     position?: string;
     zIndex?: string;
     height?: string;
-    top?: style;
+    top?: string;
 };
 type HeaderLogin = {
     props: LoginHeaderProps;

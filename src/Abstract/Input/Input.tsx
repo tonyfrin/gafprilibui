@@ -120,7 +120,7 @@ export type SelectStyle = {
   media400Style?: media | undefined;
 };
 
-type GsSelect = {
+export type GsSelectProps = {
   styles?: SelectStyle;
   Class?: string;
   options: { value: string; label: string }[];
@@ -142,7 +142,7 @@ export const GsSelect = ({
   containerStyles = {},
   containerClass = '',
   defaultValue,
-}: GsSelect) => {
+}: GsSelectProps) => {
   return (
     <>
       <ContainerInput styles={containerStyles} containerClass={containerClass}>

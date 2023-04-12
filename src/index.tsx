@@ -30,6 +30,7 @@ export type {
   ContainerGloboStyle,
   ContainerButtonStyle,
   ContainerStyles,
+  GsSelectProps,
 } from './Abstract';
 export {
   MainFooter,

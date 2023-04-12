@@ -15,7 +15,7 @@ export type {
 export { Globo } from './Icons';
 export type { GloboStyle } from './Icons';
 export { Input, GsSelect } from './Input';
-export type { InputStyle, SelectStyle, OnChange } from './Input';
+export type { InputStyle, SelectStyle, OnChange, GsSelectProps } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle } from './Title';
 export { Background1 } from './Background';

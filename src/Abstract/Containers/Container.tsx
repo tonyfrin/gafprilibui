@@ -83,6 +83,7 @@ export const ContainerGlobo = ({
 };
 
 const ContainerButtonStyles = (styles: ContainerButtonStyle) => css`
+  transition: ${styles.transition || 'all 1s ease 0s'};
   width: ${styles.width || '50%'};
   display: ${styles.display || 'flex'};
   justify-content: ${styles.justifyContent || 'space-around'};
@@ -92,6 +93,7 @@ export type ContainerButtonStyle = {
   width?: string;
   display?: string;
   justifyContent?: string;
+  transition?: string;
 };
 
 type ContainerButton = {

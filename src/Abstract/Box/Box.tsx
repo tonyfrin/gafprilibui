@@ -2,6 +2,7 @@ import React from 'react';
 import { cx, css } from '@emotion/css';
 
 const Box1Styles = (styles: Box1Style) => css`
+  transition: ${styles.transition || 'all 1s ease 0s'};
   background-color: ${styles.backgroundColor || '#fff'};
   padding: ${styles.padding || '40px'};
   width: ${styles.width || '70%'};
@@ -50,6 +51,7 @@ type Box1Style = {
   media400Style?: Box1Media400Style | undefined;
   media300Style?: Box1Media300Style | undefined;
   margin?: string | number;
+  transition?: string;
 };
 
 type Box1 = {

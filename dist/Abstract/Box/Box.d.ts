@@ -21,6 +21,7 @@ type Box1Style = {
     media400Style?: Box1Media400Style | undefined;
     media300Style?: Box1Media300Style | undefined;
     margin?: string | number;
+    transition?: string;
 };
 type Box1 = {
     styles?: Box1Style | undefined;

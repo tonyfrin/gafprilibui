@@ -28,6 +28,7 @@ export type ContainerButtonStyle = {
     width?: string;
     display?: string;
     justifyContent?: string;
+    transition?: string;
 };
 type ContainerButton = {
     styles?: ContainerButtonStyle | undefined;

@@ -48,7 +48,7 @@ export type SelectStyle = {
     media600Style?: media | undefined;
     media400Style?: media | undefined;
 };
-type GsSelect = {
+export type GsSelectProps = {
     styles?: SelectStyle;
     Class?: string;
     options: {
@@ -65,5 +65,5 @@ type GsSelect = {
         label: string;
     };
 };
-export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerClass, defaultValue, }: GsSelect) => JSX.Element;
+export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerClass, defaultValue, }: GsSelectProps) => JSX.Element;
 export {};

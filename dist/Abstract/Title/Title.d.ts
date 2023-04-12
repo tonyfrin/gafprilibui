@@ -4,11 +4,14 @@ type TitleMedia = {
     fontSize?: string | number;
 };
 type Title1Styles = {
+    fontFamily?: string;
     textAlign?: string;
     fontSize?: string | number;
     fontWeight?: string | number;
     marginBottom?: string | number;
     marginTop?: string | number;
+    color?: string;
+    lineHeight?: string;
     media750Style?: TitleMedia | undefined;
     media400Style?: TitleMedia | undefined;
     media300Style?: TitleMedia | undefined;
@@ -20,10 +23,13 @@ type Title1 = {
 export declare const Title1: ({ styles, title }: Title1) => JSX.Element;
 declare const Title2Styles: (styles: Title2Styles) => string;
 type Title2Styles = {
+    fontFamily?: string;
     fontSize?: string | number;
     textTransform?: string;
     fontWeight?: string | number;
     margin?: string | number;
+    color?: string;
+    lineHeight?: string;
     media750Style?: TitleMedia | undefined;
     media400Style?: TitleMedia | undefined;
     media300Style?: TitleMedia | undefined;

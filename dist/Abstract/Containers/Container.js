@@ -55,7 +55,7 @@ var ContainerGlobo = function ContainerGlobo(_ref3) {
 };
 exports.ContainerGlobo = ContainerGlobo;
 var ContainerButtonStyles = function ContainerButtonStyles(styles) {
-  return (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  display: ", ";\n  justify-content: ", ";\n"])), styles.width || '50%', styles.display || 'flex', styles.justifyContent || 'space-around');
+  return (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: ", ";\n  width: ", ";\n  display: ", ";\n  justify-content: ", ";\n"])), styles.transition || 'all 1s ease 0s', styles.width || '50%', styles.display || 'flex', styles.justifyContent || 'space-around');
 };
 var ContainerButton = function ContainerButton(_ref4) {
   var _ref4$styles = _ref4.styles,

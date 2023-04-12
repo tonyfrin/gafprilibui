@@ -55,11 +55,11 @@ export type GsSelectProps = {
         value: string;
         label: string;
     }[];
-    id?: string | undefined;
+    id?: string;
     onChange?: OnChange;
-    placeholder?: string | undefined;
-    containerStyles?: ContainerStyles | undefined;
-    containerClass?: string | undefined;
+    placeholder?: string;
+    containerStyles?: ContainerStyles;
+    containerClass?: string;
     defaultValue?: {
         value: string;
         label: string;

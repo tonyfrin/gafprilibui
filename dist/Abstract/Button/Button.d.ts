@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 type Media = {
     fontSize?: string | number;
 };
@@ -25,7 +25,7 @@ export type ButtonStyle = {
 type Button = {
     styles?: ButtonStyle | undefined;
     Class?: string;
-    title: string;
+    title: React.ReactNode;
     buttonProps?: ButtonHTMLAttributes<HTMLButtonElement> | undefined;
 };
 export declare const Button: ({ styles, buttonProps, Class, title, }: Button) => JSX.Element;

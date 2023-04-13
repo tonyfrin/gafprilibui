@@ -62,7 +62,7 @@ export type ButtonStyle = {
 type Button = {
   styles?: ButtonStyle | undefined;
   Class?: string;
-  title: string;
+  title: React.ReactNode;
   buttonProps?: ButtonHTMLAttributes<HTMLButtonElement> | undefined;
 };
 

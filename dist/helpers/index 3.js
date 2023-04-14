@@ -91,13 +91,7 @@ var changeSelect = function changeSelect(_ref2) {
         value: "".concat(newValue.value)
       };
       setDefault(newDefaulValue);
-      if (typeof newValue.value === 'string' && setValue.length === 1) {
-        setValue(newValue.value);
-      } else if (typeof newValue.value === 'number' && setValue.length === 1) {
-        setValue(newValue.value);
-      } else if (typeof newValue.value === 'boolean' && setValue.length === 1) {
-        setValue(newValue.value);
-      }
+      setValue(newValue.value);
     }
   }
 };

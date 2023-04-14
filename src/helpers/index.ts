@@ -93,10 +93,13 @@ export function toTitleCase(str: string): string {
 }
 
 export type ChangeSelect = {
-  newValue: SingleValue<{ value: string; label: string }>;
+  newValue: SingleValue<{ value: string | number | boolean; label: string }>;
   validation: (value: string) => boolean;
   setDefault: (newValue: SelectDefault) => void;
-  setValue: (value: string) => void;
+  setValue:
+    | ((value: string) => void)
+    | ((value: number) => void)
+    | ((value: boolean) => void);
 };
 
 export const changeSelect = ({
@@ -113,7 +116,14 @@ export const changeSelect = ({
         value: `${newValue.value}`,
       };
       setDefault(newDefaulValue);
-      setValue(newValue.value);
+
+      if (typeof newValue.value === 'string' && setValue.length === 1) {
+        (setValue as (value: string) => void)(newValue.value);
+      } else if (typeof newValue.value === 'number' && setValue.length === 1) {
+        (setValue as (value: number) => void)(newValue.value);
+      } else if (typeof newValue.value === 'boolean' && setValue.length === 1) {
+        (setValue as (value: boolean) => void)(newValue.value);
+      } 
     }
   }
 };

@@ -14,12 +14,12 @@ export declare const changeInputText: ({ value, validation, setValue, }: ChangeI
 export declare function toTitleCase(str: string): string;
 export type ChangeSelect = {
     newValue: SingleValue<{
-        value: string;
+        value: string | number | boolean;
         label: string;
     }>;
     validation: (value: string) => boolean;
     setDefault: (newValue: SelectDefault) => void;
-    setValue: (value: string) => void;
+    setValue: ((value: string) => void) | ((value: number) => void) | ((value: boolean) => void);
 };
 export declare const changeSelect: ({ newValue, validation, setDefault, setValue, }: ChangeSelect) => void;
 export type ValidationInputName = {

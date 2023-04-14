@@ -106,11 +106,11 @@ export const changeSelect = ({
   setValue,
 }: ChangeSelect): void => {
   if (newValue != null) {
-    const valid: boolean = validation(newValue.value);
+    const valid: boolean = validation(`${newValue.value}`);
     if (valid) {
       const newDefaulValue = {
         label: newValue.label,
-        value: newValue.value,
+        value: `${newValue.value}`,
       };
       setDefault(newDefaulValue);
       setValue(newValue.value);

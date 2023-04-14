@@ -84,11 +84,11 @@ var changeSelect = function changeSelect(_ref2) {
     setDefault = _ref2.setDefault,
     setValue = _ref2.setValue;
   if (newValue != null) {
-    var valid = validation(newValue.value);
+    var valid = validation("".concat(newValue.value));
     if (valid) {
       var newDefaulValue = {
         label: newValue.label,
-        value: newValue.value
+        value: "".concat(newValue.value)
       };
       setDefault(newDefaulValue);
       setValue(newValue.value);

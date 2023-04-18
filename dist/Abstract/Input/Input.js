@@ -31,7 +31,8 @@ var Input = function Input(_ref) {
     styles: containerStyles,
     containerClass: containerClass
   }, /*#__PURE__*/_react["default"].createElement("input", (0, _extends2["default"])({
-    className: (0, _css.cx)(InputStyles(styles), inputClass)
+    className: (0, _css.cx)(InputStyles(styles), inputClass),
+    autoComplete: "off"
   }, inputProps)));
 };
 exports.Input = Input;

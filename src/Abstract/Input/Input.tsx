@@ -77,7 +77,11 @@ export const Input = ({
 }: InputStyles) => {
   return (
     <ContainerInput styles={containerStyles} containerClass={containerClass}>
-      <input className={cx(InputStyles(styles), inputClass)} {...inputProps} />
+      <input
+        className={cx(InputStyles(styles), inputClass)}
+        autoComplete="off"
+        {...inputProps}
+      />
     </ContainerInput>
   );
 };

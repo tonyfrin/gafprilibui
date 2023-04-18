@@ -1,1 +1,0 @@
-export { TypeDocument } from './TypeDocument';

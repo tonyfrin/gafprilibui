@@ -123,7 +123,7 @@ export const changeSelect = ({
         (setValue as (value: number) => void)(newValue.value);
       } else if (typeof newValue.value === 'boolean' && setValue.length === 1) {
         (setValue as (value: boolean) => void)(newValue.value);
-      } 
+      }
     }
   }
 };

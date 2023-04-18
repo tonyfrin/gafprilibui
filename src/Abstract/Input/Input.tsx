@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes, useMemo } from 'react';
 import { css, cx } from '@emotion/css';
 import Select, { ActionMeta, SingleValue } from 'react-select';
 import { ContainerInput } from '../Containers';
@@ -75,11 +75,16 @@ export const Input = ({
   containerStyles = {},
   containerClass = '',
 }: InputStyles) => {
+  const randomName = useMemo(
+    () => `input_${Math.random().toString(36).substring(7)}`,
+    []
+  );
   return (
     <ContainerInput styles={containerStyles} containerClass={containerClass}>
       <input
         className={cx(InputStyles(styles), inputClass)}
         autoComplete="off"
+        name={randomName}
         {...inputProps}
       />
     </ContainerInput>

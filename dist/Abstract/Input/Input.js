@@ -1,17 +1,20 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Input = exports.GsSelect = void 0;
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 var _css = require("@emotion/css");
 var _reactSelect = _interopRequireDefault(require("react-select"));
 var _Containers = require("../Containers");
 var _templateObject, _templateObject2;
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var InputStyles = function InputStyles(styles) {
   var _styles$media750Style, _styles$media400Style, _styles$media300Style;
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  border: ", ";\n  padding: ", ";\n  text-align: ", ";\n  outline: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  color: ", ";\n  box-sizing: border-box;\n\n  ::placeholder {\n    font-weight: 300;\n    color: #8d8d8d;\n  }\n\n  @media (max-width: 750px) {\n    font-size: ", ";\n  }\n\n  @media (max-width: 400px) {\n    font-size: ", ";\n  }\n\n  @media (max-width: 300px) {\n    font-size: ", ";\n  }\n"])), styles.width || '100%', styles.border || '2px solid #eaeaea', styles.padding || '8px 19px', styles.textAlign || 'left', styles.outline || 0, styles.borderRadius || '6px', styles.backgroundColor || '#fff', styles.fontSize || '15px', styles.fontWeight || 300, styles.color || '#8D8D8D', ((_styles$media750Style = styles.media750Style) === null || _styles$media750Style === void 0 ? void 0 : _styles$media750Style.fontSize) || '12px', ((_styles$media400Style = styles.media400Style) === null || _styles$media400Style === void 0 ? void 0 : _styles$media400Style.fontSize) || '10px', ((_styles$media300Style = styles.media300Style) === null || _styles$media300Style === void 0 ? void 0 : _styles$media300Style.fontSize) || '8px');
@@ -27,12 +30,16 @@ var Input = function Input(_ref) {
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerClass = _ref.containerClass,
     containerClass = _ref$containerClass === void 0 ? '' : _ref$containerClass;
+  var randomName = (0, _react.useMemo)(function () {
+    return "input_".concat(Math.random().toString(36).substring(7));
+  }, []);
   return /*#__PURE__*/_react["default"].createElement(_Containers.ContainerInput, {
     styles: containerStyles,
     containerClass: containerClass
   }, /*#__PURE__*/_react["default"].createElement("input", (0, _extends2["default"])({
     className: (0, _css.cx)(InputStyles(styles), inputClass),
-    autoComplete: "off"
+    autoComplete: "off",
+    name: randomName
   }, inputProps)));
 };
 exports.Input = Input;

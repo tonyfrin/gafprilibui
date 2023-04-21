@@ -16,6 +16,7 @@ const ButtonStyles = (styles: ButtonStyle) => css`
   color: ${styles.color || '#ffffff'};
   cursor: ${styles.cursor || 'pointer'};
   box-shadow: ${styles.boxShadow || '0 1px 6px 0 #20212447'};
+  ${styles.height ? `height: ${styles.height};` : ''}
 
   @media (max-width: 800px) {
     font-size: ${styles.media800Style?.fontSize || '14px'};
@@ -39,6 +40,7 @@ type Media = {
 };
 
 export type ButtonStyle = {
+  height?: string;
   backgroundColor?: string;
   fontSize?: string;
   borderRadius?: string;

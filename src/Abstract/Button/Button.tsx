@@ -17,6 +17,7 @@ const ButtonStyles = (styles: ButtonStyle) => css`
   cursor: ${styles.cursor || 'pointer'};
   box-shadow: ${styles.boxShadow || '0 1px 6px 0 #20212447'};
   ${styles.height ? `height: ${styles.height};` : ''}
+  ${styles.margin ? `margin: ${styles.margin};` : ''}
 
   @media (max-width: 800px) {
     font-size: ${styles.media800Style?.fontSize || '14px'};
@@ -40,6 +41,7 @@ type Media = {
 };
 
 export type ButtonStyle = {
+  margin?: string;
   height?: string;
   backgroundColor?: string;
   fontSize?: string;

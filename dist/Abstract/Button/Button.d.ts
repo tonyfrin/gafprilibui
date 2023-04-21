@@ -3,6 +3,7 @@ type Media = {
     fontSize?: string | number;
 };
 export type ButtonStyle = {
+    margin?: string;
     height?: string;
     backgroundColor?: string;
     fontSize?: string;

@@ -116,8 +116,10 @@ exports.validationInputName = validationInputName;
 var validationInputAddress = function validationInputAddress(_ref4) {
   var value = _ref4.value,
     inputId = _ref4.inputId,
-    setValid = _ref4.setValid;
-  var valid = validationInput(value, /^[a-zA-Z0-9#]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, inputId, 'gs-input-alert', true);
+    setValid = _ref4.setValid,
+    _ref4$required = _ref4.required,
+    required = _ref4$required === void 0 ? true : _ref4$required;
+  var valid = validationInput(value, /^[a-zA-Z0-9#]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, inputId, 'gs-input-alert', required);
   setValid(valid);
   return valid;
 };

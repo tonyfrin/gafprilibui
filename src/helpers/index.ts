@@ -160,19 +160,21 @@ export type ValidationInputAdress = {
   value: string;
   inputId: string;
   setValid: (value: boolean) => void;
+  required?: boolean;
 };
 
 export const validationInputAddress = ({
   value,
   inputId,
   setValid,
+  required = true,
 }: ValidationInputAdress): boolean => {
   const valid = validationInput(
     value,
     /^[a-zA-Z0-9#]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/,
     inputId,
     'gs-input-alert',
-    true
+    required
   );
   setValid(valid);
   return valid;

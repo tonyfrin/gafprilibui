@@ -107,8 +107,10 @@ exports.changeSelect = changeSelect;
 var validationInputName = function validationInputName(_ref3) {
   var name = _ref3.name,
     inputId = _ref3.inputId,
-    setValid = _ref3.setValid;
-  var valid = validationInput(name, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'\-\s]+$/, inputId, 'gs-input-alert', true);
+    setValid = _ref3.setValid,
+    _ref3$required = _ref3.required,
+    required = _ref3$required === void 0 ? true : _ref3$required;
+  var valid = validationInput(name, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'\-\s]+$/, inputId, 'gs-input-alert', required);
   setValid(valid);
   return valid;
 };

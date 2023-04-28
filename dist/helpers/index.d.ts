@@ -26,8 +26,9 @@ export type ValidationInputName = {
     name: string;
     inputId: string;
     setValid: (value: boolean) => void;
+    required?: boolean;
 };
-export declare const validationInputName: ({ name, inputId, setValid, }: ValidationInputName) => boolean;
+export declare const validationInputName: ({ name, inputId, setValid, required, }: ValidationInputName) => boolean;
 export type ValidationInputAdress = {
     value: string;
     inputId: string;

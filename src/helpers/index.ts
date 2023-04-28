@@ -138,19 +138,21 @@ export type ValidationInputName = {
   name: string;
   inputId: string;
   setValid: (value: boolean) => void;
+  required?: boolean;
 };
 
 export const validationInputName = ({
   name,
   inputId,
   setValid,
+  required = true,
 }: ValidationInputName): boolean => {
   const valid = validationInput(
     name,
     /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'\-\s]+$/,
     inputId,
     'gs-input-alert',
-    true
+    required
   );
   setValid(valid);
   return valid;

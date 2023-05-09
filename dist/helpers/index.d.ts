@@ -36,10 +36,10 @@ export type ValidationInputAdress = {
     required?: boolean;
 };
 export declare const validationInputAddress: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
-export declare const validationInputPostcode: ({ value, inputId, setValid, }: ValidationInputAdress) => boolean;
-export declare const validationInputEmail: ({ value, inputId, setValid, }: ValidationInputAdress) => boolean;
-export declare const validationInputPhone: ({ value, inputId, setValid, }: ValidationInputAdress) => boolean;
-export declare const validationInputPassword: ({ value, inputId, setValid, }: ValidationInputAdress) => boolean;
+export declare const validationInputPostcode: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
+export declare const validationInputEmail: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
+export declare const validationInputPhone: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
+export declare const validationInputPassword: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
 interface InitToken {
     token?: string | undefined;
 }

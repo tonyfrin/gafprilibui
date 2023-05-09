@@ -186,13 +186,14 @@ export const validationInputPostcode = ({
   value,
   inputId,
   setValid,
+  required = true,
 }: ValidationInputAdress): boolean => {
   const valid = validationInput(
     value,
     /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/,
     inputId,
     'gs-input-alert',
-    true
+    required
   );
   setValid(valid);
   return valid;
@@ -202,13 +203,14 @@ export const validationInputEmail = ({
   value,
   inputId,
   setValid,
+  required = true,
 }: ValidationInputAdress): boolean => {
   const valid = validationInput(
     value,
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     inputId,
     'gs-input-alert',
-    true
+    required
   );
   setValid(valid);
   return valid;
@@ -218,13 +220,14 @@ export const validationInputPhone = ({
   value,
   inputId,
   setValid,
+  required = true,
 }: ValidationInputAdress): boolean => {
   const valid = validationInput(
     value,
     /^[0-9]{10,20}/,
     inputId,
     'gs-input-alert',
-    true
+    required
   );
   setValid(valid);
   return valid;
@@ -234,13 +237,14 @@ export const validationInputPassword = ({
   value,
   inputId,
   setValid,
+  required = true,
 }: ValidationInputAdress): boolean => {
   const valid = validationInput(
     value,
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
     inputId,
     'gs-input-alert',
-    true
+    required
   );
   setValid(valid);
   return valid;

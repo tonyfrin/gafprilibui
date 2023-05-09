@@ -129,8 +129,10 @@ exports.validationInputAddress = validationInputAddress;
 var validationInputPostcode = function validationInputPostcode(_ref5) {
   var value = _ref5.value,
     inputId = _ref5.inputId,
-    setValid = _ref5.setValid;
-  var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, 'gs-input-alert', true);
+    setValid = _ref5.setValid,
+    _ref5$required = _ref5.required,
+    required = _ref5$required === void 0 ? true : _ref5$required;
+  var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, 'gs-input-alert', required);
   setValid(valid);
   return valid;
 };
@@ -138,8 +140,10 @@ exports.validationInputPostcode = validationInputPostcode;
 var validationInputEmail = function validationInputEmail(_ref6) {
   var value = _ref6.value,
     inputId = _ref6.inputId,
-    setValid = _ref6.setValid;
-  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, 'gs-input-alert', true);
+    setValid = _ref6.setValid,
+    _ref6$required = _ref6.required,
+    required = _ref6$required === void 0 ? true : _ref6$required;
+  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, 'gs-input-alert', required);
   setValid(valid);
   return valid;
 };
@@ -147,8 +151,10 @@ exports.validationInputEmail = validationInputEmail;
 var validationInputPhone = function validationInputPhone(_ref7) {
   var value = _ref7.value,
     inputId = _ref7.inputId,
-    setValid = _ref7.setValid;
-  var valid = validationInput(value, /^[0-9]{10,20}/, inputId, 'gs-input-alert', true);
+    setValid = _ref7.setValid,
+    _ref7$required = _ref7.required,
+    required = _ref7$required === void 0 ? true : _ref7$required;
+  var valid = validationInput(value, /^[0-9]{10,20}/, inputId, 'gs-input-alert', required);
   setValid(valid);
   return valid;
 };
@@ -156,8 +162,10 @@ exports.validationInputPhone = validationInputPhone;
 var validationInputPassword = function validationInputPassword(_ref8) {
   var value = _ref8.value,
     inputId = _ref8.inputId,
-    setValid = _ref8.setValid;
-  var valid = validationInput(value, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, inputId, 'gs-input-alert', true);
+    setValid = _ref8.setValid,
+    _ref8$required = _ref8.required,
+    required = _ref8$required === void 0 ? true : _ref8$required;
+  var valid = validationInput(value, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, inputId, 'gs-input-alert', required);
   setValid(valid);
   return valid;
 };

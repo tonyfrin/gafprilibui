@@ -139,7 +139,7 @@ var validationInputEmail = function validationInputEmail(_ref6) {
   var value = _ref6.value,
     inputId = _ref6.inputId,
     setValid = _ref6.setValid;
-  var valid = validationInput(value, /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/, inputId, 'gs-input-alert', true);
+  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, 'gs-input-alert', true);
   setValid(valid);
   return valid;
 };

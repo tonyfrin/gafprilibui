@@ -27,6 +27,7 @@ export type {
   OnChange,
   GloboStyle,
   ButtonStyle,
+  ButtonProps,
   ContainerGloboStyle,
   ContainerButtonStyle,
   ContainerStyles,

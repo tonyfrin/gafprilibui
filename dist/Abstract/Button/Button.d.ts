@@ -24,11 +24,11 @@ export type ButtonStyle = {
     media400Style?: Media | undefined;
     media300Style?: Media | undefined;
 };
-type Button = {
+export type ButtonProps = {
     styles?: ButtonStyle | undefined;
     Class?: string;
     title: React.ReactNode;
     buttonProps?: ButtonHTMLAttributes<HTMLButtonElement> | undefined;
 };
-export declare const Button: ({ styles, buttonProps, Class, title, }: Button) => JSX.Element;
+export declare const Button: ({ styles, buttonProps, Class, title, }: ButtonProps) => JSX.Element;
 export {};

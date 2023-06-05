@@ -63,7 +63,7 @@ export type ButtonStyle = {
   media300Style?: Media | undefined;
 };
 
-type Button = {
+export type ButtonProps = {
   styles?: ButtonStyle | undefined;
   Class?: string;
   title: React.ReactNode;
@@ -75,7 +75,7 @@ export const Button = ({
   buttonProps = {},
   Class = '',
   title,
-}: Button) => {
+}: ButtonProps) => {
   return (
     <>
       <button className={cx(ButtonStyles(styles), Class)} {...buttonProps}>

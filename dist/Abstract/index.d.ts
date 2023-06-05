@@ -1,5 +1,5 @@
 export { Button } from './Button';
-export type { ButtonStyle } from './Button';
+export type { ButtonStyle, ButtonProps } from './Button';
 export { Box1 } from './Box';
 export { ContainerInput, ContainerForm, ContainerGlobo, ContainerButton, } from './Containers';
 export type { ContainerGloboStyle, ContainerButtonStyle, ContainerStyles, } from './Containers';

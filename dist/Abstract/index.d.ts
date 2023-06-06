@@ -21,3 +21,5 @@ export { SearchBar } from './Bar';
 export type { SearchBarProps } from './Bar';
 export { ColumnList } from './List';
 export type { ColumnListProps } from './List';
+export { Pagination } from './Pagination';
+export type { PaginationProps } from './Pagination';

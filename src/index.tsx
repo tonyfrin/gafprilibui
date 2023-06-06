@@ -22,6 +22,7 @@ export {
   SearchBar,
   ButtonLarge,
   ColumnList,
+  Pagination,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -39,6 +40,7 @@ export type {
   SearchBarProps,
   ButtonLargeProps,
   ColumnListProps,
+  PaginationProps,
 } from './Abstract';
 export {
   MainFooter,

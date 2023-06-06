@@ -93,6 +93,12 @@ Object.defineProperty(exports, "LogoContainer", {
     return _Logo.LogoContainer;
   }
 });
+Object.defineProperty(exports, "Pagination", {
+  enumerable: true,
+  get: function get() {
+    return _Pagination.Pagination;
+  }
+});
 Object.defineProperty(exports, "SearchBar", {
   enumerable: true,
   get: function get() {
@@ -156,3 +162,4 @@ var _TypeDocument = require("./TypeDocument");
 var _User = require("./User");
 var _Bar = require("./Bar");
 var _List = require("./List");
+var _Pagination = require("./Pagination");

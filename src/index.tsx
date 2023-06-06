@@ -21,6 +21,7 @@ export {
   User,
   SearchBar,
   ButtonLarge,
+  ColumnList,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -37,6 +38,7 @@ export type {
   Box1Style,
   SearchBarProps,
   ButtonLargeProps,
+  ColumnListProps,
 } from './Abstract';
 export {
   MainFooter,

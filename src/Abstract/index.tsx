@@ -28,3 +28,5 @@ export { TypeDocument } from './TypeDocument';
 export { User } from './User';
 export { SearchBar } from './Bar';
 export type { SearchBarProps } from './Bar';
+export { ColumnList } from './List';
+export type { ColumnListProps } from './List';

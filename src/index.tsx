@@ -23,6 +23,7 @@ export {
   ButtonLarge,
   ColumnList,
   Pagination,
+  List,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -41,6 +42,7 @@ export type {
   ButtonLargeProps,
   ColumnListProps,
   PaginationProps,
+  ListProps,
 } from './Abstract';
 export {
   MainFooter,

@@ -20,6 +20,7 @@ export {
   TypeDocument,
   User,
   SearchBar,
+  ButtonLarge,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -35,6 +36,7 @@ export type {
   GsSelectProps,
   Box1Style,
   SearchBarProps,
+  ButtonLargeProps,
 } from './Abstract';
 export {
   MainFooter,

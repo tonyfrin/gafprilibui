@@ -27,6 +27,12 @@ Object.defineProperty(exports, "Button", {
     return _Abstract.Button;
   }
 });
+Object.defineProperty(exports, "ButtonLarge", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ButtonLarge;
+  }
+});
 Object.defineProperty(exports, "Category", {
   enumerable: true,
   get: function get() {

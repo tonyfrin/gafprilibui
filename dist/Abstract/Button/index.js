@@ -9,4 +9,11 @@ Object.defineProperty(exports, "Button", {
     return _Button.Button;
   }
 });
+Object.defineProperty(exports, "ButtonLarge", {
+  enumerable: true,
+  get: function get() {
+    return _ButtonLarge.ButtonLarge;
+  }
+});
 var _Button = require("./Button");
+var _ButtonLarge = require("./ButtonLarge");

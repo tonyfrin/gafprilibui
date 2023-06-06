@@ -27,6 +27,12 @@ Object.defineProperty(exports, "Button", {
     return _Button.Button;
   }
 });
+Object.defineProperty(exports, "ButtonLarge", {
+  enumerable: true,
+  get: function get() {
+    return _Button.ButtonLarge;
+  }
+});
 Object.defineProperty(exports, "ContainerButton", {
   enumerable: true,
   get: function get() {

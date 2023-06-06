@@ -1,5 +1,5 @@
-export { Button } from './Button';
-export type { ButtonStyle, ButtonProps } from './Button';
+export { Button, ButtonLarge } from './Button';
+export type { ButtonStyle, ButtonProps, ButtonLargeProps } from './Button';
 export { Box1 } from './Box';
 export type { Box1Style } from './Box';
 export {

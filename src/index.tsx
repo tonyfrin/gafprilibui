@@ -19,6 +19,7 @@ export {
   SiteConfig,
   TypeDocument,
   User,
+  SearchBar,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -33,6 +34,7 @@ export type {
   ContainerStyles,
   GsSelectProps,
   Box1Style,
+  SearchBarProps,
 } from './Abstract';
 export {
   MainFooter,

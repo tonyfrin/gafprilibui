@@ -26,3 +26,5 @@ export { AddCategoryProjects } from './CategoryProjects';
 export { SiteInfo, SiteConfig } from './Site';
 export { TypeDocument } from './TypeDocument';
 export { User } from './User';
+export { SearchBar } from './Bar';
+export type { SearchBarProps } from './Bar';

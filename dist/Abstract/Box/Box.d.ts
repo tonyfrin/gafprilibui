@@ -11,7 +11,7 @@ type Box1Media300Style = {
     padding: string | number;
     width: string | number;
 };
-type Box1Style = {
+export type Box1Style = {
     backgroundColor?: string;
     padding?: string | number;
     width?: string | number;

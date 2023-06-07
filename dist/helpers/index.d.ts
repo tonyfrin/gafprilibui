@@ -56,4 +56,35 @@ interface FetchOptions<T = unknown> {
 export declare function gafpriFetch<T = unknown>({ initMethod, initApi, initRoute, initToken, initCredentials, functionFetching, functionSuccess, functionError, }: FetchOptions<T>): void;
 export declare const isSelectDefault: (obj: unknown) => obj is SelectDefault;
 export declare const isSelectDefaultArray: (obj: unknown) => obj is SelectDefault[];
+export declare const getLastEntryDateAndCount: (service: string) => Promise<{
+    date: Date | null;
+    count: number;
+} | null>;
+export type ErrorResponseProps = {
+    error: string;
+    message: string;
+    statusCode: number;
+    success: boolean;
+};
+export declare const isErrorResponse: (obj: unknown) => obj is ErrorResponseProps;
+export type ValidationErrorInfo = {
+    instance: Record<string, unknown>;
+    message: string;
+    origin: string;
+    path: string;
+    type: string;
+    validatorArgs: unknown[];
+    validatorKey: string;
+    validatorName: string | null;
+    value: string;
+};
+export type CustomErrorResponseProps = {
+    errors: ValidationErrorInfo[];
+    message: string;
+    statusCode: number;
+    success: boolean;
+};
+export declare function isCustomErrorResponse(obj: unknown): obj is CustomErrorResponseProps;
+export declare function getMimeTypeByExtension(filename: string): string | null;
+export declare function formatPhoneNumber(phoneNumber: string): string;
 export {};

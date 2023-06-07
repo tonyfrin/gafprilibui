@@ -95,12 +95,20 @@ export {
   validationInputPhone,
   validationInputPassword,
   gafpriFetch,
+  getLastEntryDateAndCount,
+  isErrorResponse,
+  isCustomErrorResponse,
+  getMimeTypeByExtension,
+  formatPhoneNumber,
 } from './helpers';
 export type {
   ChangeInputText,
   ChangeSelect,
   ValidationInputName,
   ValidationInputAdress,
+  ErrorResponseProps,
+  ValidationErrorInfo,
+  CustomErrorResponseProps,
 } from './helpers';
 export {
   useGafpri,

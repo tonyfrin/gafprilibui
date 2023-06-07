@@ -334,3 +334,116 @@ export const isSelectDefaultArray = (obj: unknown): obj is SelectDefault[] => {
 
   return obj.every(isSelectDefault);
 };
+
+export const getLastEntryDateAndCount = async (
+  service: string
+): Promise<{ date: Date | null; count: number } | null> => {
+  try {
+    const response = await fetch(
+      `http://localhost:4000/api/v1/${service}/date-and-count`
+    );
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error fetching last entry date:', error);
+  }
+  return null;
+};
+
+export type ErrorResponseProps = {
+  error: string;
+  message: string;
+  statusCode: number;
+  success: boolean;
+};
+
+export const isErrorResponse = (obj: unknown): obj is ErrorResponseProps => {
+  return (
+    typeof obj === 'object' &&
+    obj !== null &&
+    'error' in obj &&
+    'message' in obj &&
+    'statusCode' in obj &&
+    'success' in obj
+  );
+};
+
+export type ValidationErrorInfo = {
+  instance: Record<string, unknown>;
+  message: string;
+  origin: string;
+  path: string;
+  type: string;
+  validatorArgs: unknown[];
+  validatorKey: string;
+  validatorName: string | null;
+  value: string;
+};
+
+export type CustomErrorResponseProps = {
+  errors: ValidationErrorInfo[];
+  message: string;
+  statusCode: number;
+  success: boolean;
+};
+
+export function isCustomErrorResponse(
+  obj: unknown
+): obj is CustomErrorResponseProps {
+  const customErrorObj = obj as CustomErrorResponseProps;
+
+  return (
+    typeof customErrorObj?.statusCode === 'number' &&
+    typeof customErrorObj?.success === 'boolean' &&
+    typeof customErrorObj?.message === 'string' &&
+    Array.isArray(customErrorObj?.errors) &&
+    customErrorObj.errors.every((error) => {
+      return (
+        typeof error.message === 'string' &&
+        typeof error.origin === 'string' &&
+        typeof error.path === 'string' &&
+        typeof error.type === 'string' &&
+        Array.isArray(error.validatorArgs) &&
+        typeof error.validatorKey === 'string' &&
+        (typeof error.validatorName === 'string' ||
+          error.validatorName === null) &&
+        typeof error.value === 'string' &&
+        typeof error.instance === 'object' &&
+        error.instance !== null
+      );
+    })
+  );
+}
+
+export function getMimeTypeByExtension(filename: string): string | null {
+  const extension = filename.split('.').pop()?.toLowerCase();
+
+  switch (extension) {
+    case 'jpg':
+    case 'jpeg':
+      return 'image/jpeg';
+    case 'png':
+      return 'image/png';
+    default:
+      return null;
+  }
+}
+
+export function formatPhoneNumber(phoneNumber: string): string {
+  const countryCode = parseInt(
+    phoneNumber.slice(0, phoneNumber.length - 10), 10
+  ).toString();
+  const areaCode = phoneNumber.slice(
+    phoneNumber.length - 10,
+    phoneNumber.length - 7
+  );
+  const firstPart = phoneNumber.slice(
+    phoneNumber.length - 7,
+    phoneNumber.length - 4
+  );
+  const secondPart = phoneNumber.slice(phoneNumber.length - 4);
+
+  return `+${countryCode} (${areaCode}) ${firstPart}-${secondPart}`;
+}

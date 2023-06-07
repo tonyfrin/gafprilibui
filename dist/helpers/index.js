@@ -5,11 +5,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.changeSelect = exports.changeInputText = exports.addClass = void 0;
+exports.formatPhoneNumber = formatPhoneNumber;
 exports.gafpriFetch = gafpriFetch;
-exports.removeClass = exports.isSelectDefaultArray = exports.isSelectDefault = void 0;
+exports.getLastEntryDateAndCount = void 0;
+exports.getMimeTypeByExtension = getMimeTypeByExtension;
+exports.isCustomErrorResponse = isCustomErrorResponse;
+exports.removeClass = exports.isSelectDefaultArray = exports.isSelectDefault = exports.isErrorResponse = void 0;
 exports.toTitleCase = toTitleCase;
 exports.validationHidden = validationHidden;
 exports.validationSelect = exports.validationInputPostcode = exports.validationInputPhone = exports.validationInputPassword = exports.validationInputName = exports.validationInputEmail = exports.validationInputAddress = exports.validationInput = void 0;
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -226,3 +232,73 @@ var isSelectDefaultArray = function isSelectDefaultArray(obj) {
   return obj.every(isSelectDefault);
 };
 exports.isSelectDefaultArray = isSelectDefaultArray;
+var getLastEntryDateAndCount = /*#__PURE__*/function () {
+  var _ref10 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(service) {
+    var response;
+    return _regenerator["default"].wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return fetch("http://localhost:4000/api/v1/".concat(service, "/date-and-count"));
+        case 3:
+          response = _context.sent;
+          if (!response.ok) {
+            _context.next = 8;
+            break;
+          }
+          _context.next = 7;
+          return response.json();
+        case 7:
+          return _context.abrupt("return", _context.sent);
+        case 8:
+          _context.next = 13;
+          break;
+        case 10:
+          _context.prev = 10;
+          _context.t0 = _context["catch"](0);
+          // eslint-disable-next-line no-console
+          console.error('Error fetching last entry date:', _context.t0);
+        case 13:
+          return _context.abrupt("return", null);
+        case 14:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[0, 10]]);
+  }));
+  return function getLastEntryDateAndCount(_x) {
+    return _ref10.apply(this, arguments);
+  };
+}();
+exports.getLastEntryDateAndCount = getLastEntryDateAndCount;
+var isErrorResponse = function isErrorResponse(obj) {
+  return (0, _typeof2["default"])(obj) === 'object' && obj !== null && 'error' in obj && 'message' in obj && 'statusCode' in obj && 'success' in obj;
+};
+exports.isErrorResponse = isErrorResponse;
+function isCustomErrorResponse(obj) {
+  var customErrorObj = obj;
+  return typeof (customErrorObj === null || customErrorObj === void 0 ? void 0 : customErrorObj.statusCode) === 'number' && typeof (customErrorObj === null || customErrorObj === void 0 ? void 0 : customErrorObj.success) === 'boolean' && typeof (customErrorObj === null || customErrorObj === void 0 ? void 0 : customErrorObj.message) === 'string' && Array.isArray(customErrorObj === null || customErrorObj === void 0 ? void 0 : customErrorObj.errors) && customErrorObj.errors.every(function (error) {
+    return typeof error.message === 'string' && typeof error.origin === 'string' && typeof error.path === 'string' && typeof error.type === 'string' && Array.isArray(error.validatorArgs) && typeof error.validatorKey === 'string' && (typeof error.validatorName === 'string' || error.validatorName === null) && typeof error.value === 'string' && (0, _typeof2["default"])(error.instance) === 'object' && error.instance !== null;
+  });
+}
+function getMimeTypeByExtension(filename) {
+  var _filename$split$pop;
+  var extension = (_filename$split$pop = filename.split('.').pop()) === null || _filename$split$pop === void 0 ? void 0 : _filename$split$pop.toLowerCase();
+  switch (extension) {
+    case 'jpg':
+    case 'jpeg':
+      return 'image/jpeg';
+    case 'png':
+      return 'image/png';
+    default:
+      return null;
+  }
+}
+function formatPhoneNumber(phoneNumber) {
+  var countryCode = parseInt(phoneNumber.slice(0, phoneNumber.length - 10), 10).toString();
+  var areaCode = phoneNumber.slice(phoneNumber.length - 10, phoneNumber.length - 7);
+  var firstPart = phoneNumber.slice(phoneNumber.length - 7, phoneNumber.length - 4);
+  var secondPart = phoneNumber.slice(phoneNumber.length - 4);
+  return "+".concat(countryCode, " (").concat(areaCode, ") ").concat(firstPart, "-").concat(secondPart);
+}

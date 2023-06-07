@@ -4,8 +4,12 @@ import type { Title1Props, Title2Props } from '../Title';
 import type { ButtonProps } from '../Button';
 import type { ErrorProps } from '../Error';
 import type { Box1Props } from '../Box';
+interface BoxProps {
+    styles?: Box1Props['styles'];
+    Class?: Box1Props['Class'];
+}
 export type ModelFormProps = {
-    boxProps?: Box1Props;
+    boxProps?: BoxProps;
     titles: {
         title1: string;
         title2: string;
@@ -29,3 +33,4 @@ export type ModelFormProps = {
     returnButtonConatinerStyle?: string;
 };
 export declare const ModelForm: ({ boxProps, titles, title1Props, title2Props, handleActions, buttonTitles, mainButtonProps, returnButtonStyle, returnButtonProps, children, error, errorProps, childrenContainerProps, titleContainerStyle, actionButtonContainerStyle, returnButtonConatinerStyle, }: ModelFormProps) => JSX.Element;
+export {};

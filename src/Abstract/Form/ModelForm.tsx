@@ -42,8 +42,13 @@ const defaultReturnButtonStyle = {
   backgroundColor: '#c12429',
 };
 
+interface BoxProps {
+  styles?: Box1Props['styles'];
+  Class?: Box1Props['Class'];
+}
+
 export type ModelFormProps = {
-  boxProps?: Box1Props;
+  boxProps?: BoxProps;
   titles: {
     title1: string;
     title2: string;

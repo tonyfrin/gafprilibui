@@ -43,3 +43,5 @@ export { ModelForm } from './Form';
 export type { ModelFormProps } from './Form';
 export { Menu1, Menu2, MenuButton } from './Menu';
 export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem } from './Menu';
+export { Header } from './Header';
+export type { HeaderProps } from './Header';

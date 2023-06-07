@@ -31,6 +31,7 @@ export {
   Menu1,
   Menu2,
   MenuButton,
+  Header,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -62,6 +63,7 @@ export type {
   Menu2Props,
   MenuButtonProps,
   MenuItem,
+  HeaderProps,
 } from './Abstract';
 export {
   MainFooter,

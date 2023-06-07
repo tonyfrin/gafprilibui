@@ -93,6 +93,12 @@ Object.defineProperty(exports, "GsSelect", {
     return _Input.GsSelect;
   }
 });
+Object.defineProperty(exports, "Header", {
+  enumerable: true,
+  get: function get() {
+    return _Header.Header;
+  }
+});
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
@@ -216,3 +222,4 @@ var _Content = require("./Content");
 var _Fade = require("./Fade");
 var _Form = require("./Form");
 var _Menu = require("./Menu");
+var _Header = require("./Header");

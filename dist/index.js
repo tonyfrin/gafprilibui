@@ -159,6 +159,12 @@ Object.defineProperty(exports, "LogoContainer", {
     return _Abstract.LogoContainer;
   }
 });
+Object.defineProperty(exports, "MainContent", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.MainContent;
+  }
+});
 Object.defineProperty(exports, "MainFooter", {
   enumerable: true,
   get: function get() {

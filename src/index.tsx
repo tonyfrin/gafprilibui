@@ -25,6 +25,7 @@ export {
   Pagination,
   List,
   Error,
+  MainContent,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -45,6 +46,7 @@ export type {
   PaginationProps,
   ListProps,
   ErrorProps,
+  MainContentProps,
 } from './Abstract';
 export {
   MainFooter,

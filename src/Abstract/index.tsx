@@ -34,3 +34,5 @@ export { Pagination } from './Pagination';
 export type { PaginationProps } from './Pagination';
 export { Error } from './Error';
 export type { ErrorProps } from './Error';
+export { MainContent } from './Content';
+export type { MainContentProps } from './Content';

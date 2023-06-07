@@ -61,6 +61,7 @@ export type {
   Menu1Props,
   Menu2Props,
   MenuButtonProps,
+  MenuItem,
 } from './Abstract';
 export {
   MainFooter,

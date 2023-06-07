@@ -32,3 +32,5 @@ export { List, ColumnList } from './List';
 export type { ListProps, ColumnListProps } from './List';
 export { Pagination } from './Pagination';
 export type { PaginationProps } from './Pagination';
+export { Error } from './Error';
+export type { ErrorProps } from './Error';

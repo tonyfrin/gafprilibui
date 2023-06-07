@@ -93,6 +93,12 @@ Object.defineProperty(exports, "DocumentsIndex", {
     return _Constans.DocumentsIndex;
   }
 });
+Object.defineProperty(exports, "Error", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.Error;
+  }
+});
 Object.defineProperty(exports, "Globo", {
   enumerable: true,
   get: function get() {

@@ -24,6 +24,7 @@ export {
   ColumnList,
   Pagination,
   List,
+  Error,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -43,6 +44,7 @@ export type {
   ColumnListProps,
   PaginationProps,
   ListProps,
+  ErrorProps,
 } from './Abstract';
 export {
   MainFooter,

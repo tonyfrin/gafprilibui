@@ -63,6 +63,12 @@ Object.defineProperty(exports, "ContainerInput", {
     return _Containers.ContainerInput;
   }
 });
+Object.defineProperty(exports, "Error", {
+  enumerable: true,
+  get: function get() {
+    return _Error.Error;
+  }
+});
 Object.defineProperty(exports, "Globo", {
   enumerable: true,
   get: function get() {
@@ -169,3 +175,4 @@ var _User = require("./User");
 var _Bar = require("./Bar");
 var _List = require("./List");
 var _Pagination = require("./Pagination");
+var _Error = require("./Error");

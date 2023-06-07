@@ -43,12 +43,12 @@ type Title1Styles = {
   media300Style?: TitleMedia | undefined;
 };
 
-type Title1 = {
+export type Title1Props = {
   styles?: Title1Styles | undefined;
   title: string;
 };
 
-export const Title1 = ({ styles = {}, title }: Title1) => {
+export const Title1 = ({ styles = {}, title }: Title1Props) => {
   return <h1 className={Title1Styles(styles)}>{title}</h1>;
 };
 
@@ -88,12 +88,12 @@ type Title2Styles = {
   media300Style?: TitleMedia | undefined;
 };
 
-type Title2 = {
+export type Title2Props = {
   styles?: Title2Styles | undefined;
   title: string;
 };
 
-export const Title2 = ({ styles = {}, title }: Title2) => {
+export const Title2 = ({ styles = {}, title }: Title2Props) => {
   return <h1 className={Title2Styles(styles)}>{title}</h1>;
 };
 

@@ -38,7 +38,7 @@ const ContainerFormStyles = (styles: ContainerStyles) => css`
   margin: ${styles.margin || 'auto'};
 `;
 
-type ConainerForm = {
+export type ContainerFormProps = {
   styles?: ContainerStyles | undefined;
   containerClass?: string;
   children: JSX.Element;
@@ -48,7 +48,7 @@ export const ContainerForm = ({
   styles = {},
   containerClass = '',
   children,
-}: ConainerForm) => {
+}: ContainerFormProps) => {
   return (
     <div className={cx(ContainerFormStyles(styles), containerClass)}>
       {children}

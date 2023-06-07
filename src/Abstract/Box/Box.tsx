@@ -54,12 +54,12 @@ export type Box1Style = {
   transition?: string;
 };
 
-type Box1 = {
+export type Box1Props = {
   styles?: Box1Style | undefined;
   children: JSX.Element;
   Class?: string;
 };
 
-export const Box1 = ({ styles = {}, children, Class = '' }: Box1) => {
+export const Box1 = ({ styles = {}, children, Class = '' }: Box1Props) => {
   return <div className={cx(Box1Styles(styles), Class)}>{children}</div>;
 };

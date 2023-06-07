@@ -8,4 +8,5 @@ export type {
   ContainerGloboStyle,
   ContainerButtonStyle,
   ContainerStyles,
+  ContainerFormProps,
 } from './Container';

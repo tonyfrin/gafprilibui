@@ -1,7 +1,7 @@
 export { Button, ButtonLarge } from './Button';
 export type { ButtonStyle, ButtonProps, ButtonLargeProps } from './Button';
 export { Box1 } from './Box';
-export type { Box1Style } from './Box';
+export type { Box1Style, Box1Props } from './Box';
 export {
   ContainerInput,
   ContainerForm,
@@ -12,13 +12,14 @@ export type {
   ContainerGloboStyle,
   ContainerButtonStyle,
   ContainerStyles,
+  ContainerFormProps,
 } from './Containers';
 export { Globo } from './Icons';
 export type { GloboStyle } from './Icons';
 export { Input, GsSelect } from './Input';
 export type { InputStyle, SelectStyle, OnChange, GsSelectProps } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
-export type { GloboTitleStyle } from './Title';
+export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
 export { Background1 } from './Background';
 export { LogoContainer } from './Logo';
 export { Step } from './Step';
@@ -38,3 +39,5 @@ export { MainContent } from './Content';
 export type { MainContentProps } from './Content';
 export { FadeIn } from './Fade';
 export type { FadeInProps } from './Fade';
+export { ModelForm } from './Form';
+export type { ModelFormProps } from './Form';

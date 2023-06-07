@@ -117,6 +117,12 @@ Object.defineProperty(exports, "MainContent", {
     return _Content.MainContent;
   }
 });
+Object.defineProperty(exports, "ModelForm", {
+  enumerable: true,
+  get: function get() {
+    return _Form.ModelForm;
+  }
+});
 Object.defineProperty(exports, "Pagination", {
   enumerable: true,
   get: function get() {
@@ -190,3 +196,4 @@ var _Pagination = require("./Pagination");
 var _Error = require("./Error");
 var _Content = require("./Content");
 var _Fade = require("./Fade");
+var _Form = require("./Form");

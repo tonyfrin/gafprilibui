@@ -9,12 +9,12 @@ type ConainerInput = {
     children: JSX.Element;
 };
 export declare const ContainerInput: ({ styles, containerClass, children, }: ConainerInput) => JSX.Element;
-type ConainerForm = {
+export type ContainerFormProps = {
     styles?: ContainerStyles | undefined;
     containerClass?: string;
     children: JSX.Element;
 };
-export declare const ContainerForm: ({ styles, containerClass, children, }: ConainerForm) => JSX.Element;
+export declare const ContainerForm: ({ styles, containerClass, children, }: ContainerFormProps) => JSX.Element;
 export type ContainerGloboStyle = {
     width?: string;
 };

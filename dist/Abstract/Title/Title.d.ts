@@ -16,11 +16,11 @@ type Title1Styles = {
     media400Style?: TitleMedia | undefined;
     media300Style?: TitleMedia | undefined;
 };
-type Title1 = {
+export type Title1Props = {
     styles?: Title1Styles | undefined;
     title: string;
 };
-export declare const Title1: ({ styles, title }: Title1) => JSX.Element;
+export declare const Title1: ({ styles, title }: Title1Props) => JSX.Element;
 declare const Title2Styles: (styles: Title2Styles) => string;
 type Title2Styles = {
     fontFamily?: string;
@@ -34,11 +34,11 @@ type Title2Styles = {
     media400Style?: TitleMedia | undefined;
     media300Style?: TitleMedia | undefined;
 };
-type Title2 = {
+export type Title2Props = {
     styles?: Title2Styles | undefined;
     title: string;
 };
-export declare const Title2: ({ styles, title }: Title2) => JSX.Element;
+export declare const Title2: ({ styles, title }: Title2Props) => JSX.Element;
 export type GloboTitleStyle = {
     fontWeight?: string;
     margin?: string;

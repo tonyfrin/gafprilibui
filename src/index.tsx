@@ -27,6 +27,7 @@ export {
   Error,
   MainContent,
   FadeIn,
+  ModelForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -49,6 +50,11 @@ export type {
   ErrorProps,
   MainContentProps,
   FadeInProps,
+  Box1Props,
+  Title1Props,
+  Title2Props,
+  ContainerFormProps,
+  ModelFormProps,
 } from './Abstract';
 export {
   MainFooter,

@@ -23,10 +23,10 @@ export type Box1Style = {
     margin?: string | number;
     transition?: string;
 };
-type Box1 = {
+export type Box1Props = {
     styles?: Box1Style | undefined;
     children: JSX.Element;
     Class?: string;
 };
-export declare const Box1: ({ styles, children, Class }: Box1) => JSX.Element;
+export declare const Box1: ({ styles, children, Class }: Box1Props) => JSX.Element;
 export {};

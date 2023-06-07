@@ -99,6 +99,12 @@ Object.defineProperty(exports, "Error", {
     return _Abstract.Error;
   }
 });
+Object.defineProperty(exports, "FadeIn", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.FadeIn;
+  }
+});
 Object.defineProperty(exports, "Globo", {
   enumerable: true,
   get: function get() {

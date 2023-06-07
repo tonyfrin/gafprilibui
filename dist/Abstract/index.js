@@ -69,6 +69,12 @@ Object.defineProperty(exports, "Error", {
     return _Error.Error;
   }
 });
+Object.defineProperty(exports, "FadeIn", {
+  enumerable: true,
+  get: function get() {
+    return _Fade.FadeIn;
+  }
+});
 Object.defineProperty(exports, "Globo", {
   enumerable: true,
   get: function get() {
@@ -183,3 +189,4 @@ var _List = require("./List");
 var _Pagination = require("./Pagination");
 var _Error = require("./Error");
 var _Content = require("./Content");
+var _Fade = require("./Fade");

@@ -27,3 +27,5 @@ export { Error } from './Error';
 export type { ErrorProps } from './Error';
 export { MainContent } from './Content';
 export type { MainContentProps } from './Content';
+export { FadeIn } from './Fade';
+export type { FadeInProps } from './Fade';

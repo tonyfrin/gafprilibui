@@ -6,3 +6,4 @@ export type { ChangeInputText, ChangeSelect, ValidationInputName, ValidationInpu
 export { useGafpri, useGafpriInstall, useGafpriSites, useGafpriCurrency, useGafpriSitesConfig, useGafpriTypeDocument, useGafpriUser, useGafpriCategoryProjects, } from './states';
 export type { UseGafpri, UseInstall, UseSites, UseCurrency, UseSitesConfig, SelectDefault, UseTypeDocument, UseUser, UseCategoryProjects, } from './states';
 export { Countries, StatesCountries, Cities, DocumentsIndex } from './Constans';
+export { getItem, saveItem } from './Context';

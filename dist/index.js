@@ -321,10 +321,22 @@ Object.defineProperty(exports, "gafpriFetch", {
     return _helpers.gafpriFetch;
   }
 });
+Object.defineProperty(exports, "getItem", {
+  enumerable: true,
+  get: function get() {
+    return _Context.getItem;
+  }
+});
 Object.defineProperty(exports, "removeClass", {
   enumerable: true,
   get: function get() {
     return _helpers.removeClass;
+  }
+});
+Object.defineProperty(exports, "saveItem", {
+  enumerable: true,
+  get: function get() {
+    return _Context.saveItem;
   }
 });
 Object.defineProperty(exports, "toTitleCase", {
@@ -440,3 +452,4 @@ var _Components = require("./Components");
 var _helpers = require("./helpers");
 var _states = require("./states");
 var _Constans = require("./Constans");
+var _Context = require("./Context");

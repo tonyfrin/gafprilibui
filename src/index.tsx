@@ -28,6 +28,9 @@ export {
   MainContent,
   FadeIn,
   ModelForm,
+  Menu1,
+  Menu2,
+  MenuButton,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -55,6 +58,9 @@ export type {
   Title2Props,
   ContainerFormProps,
   ModelFormProps,
+  Menu1Props,
+  Menu2Props,
+  MenuButtonProps,
 } from './Abstract';
 export {
   MainFooter,

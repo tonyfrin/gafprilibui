@@ -447,6 +447,12 @@ Object.defineProperty(exports, "useGafpriTypeDocument", {
     return _states.useGafpriTypeDocument;
   }
 });
+Object.defineProperty(exports, "useGafpriTypeDocumentId", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriTypeDocumentId;
+  }
+});
 Object.defineProperty(exports, "useGafpriUser", {
   enumerable: true,
   get: function get() {

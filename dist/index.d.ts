@@ -4,7 +4,7 @@ export { MainFooter, LoginHeader, Loading, Category, Curriencies, Instaled, Inst
 export type { MainCurrenciesProps, MainCurrenciesPropsExtended, } from './Components';
 export { addClass, removeClass, validationSelect, validationHidden, validationInput, changeInputText, toTitleCase, changeSelect, validationInputName, validationInputAddress, validationInputPostcode, validationInputEmail, validationInputPhone, validationInputPassword, gafpriFetch, getLastEntryDateAndCount, isErrorResponse, isCustomErrorResponse, getMimeTypeByExtension, formatPhoneNumber, } from './helpers';
 export type { ChangeInputText, ChangeSelect, ValidationInputName, ValidationInputAdress, ErrorResponseProps, ValidationErrorInfo, CustomErrorResponseProps, } from './helpers';
-export { useGafpri, useGafpriInstall, useGafpriSites, useGafpriCurrency, useGafpriSitesConfig, useGafpriTypeDocument, useGafpriUser, useGafpriCategoryProjects, useGafpriCurrencies, } from './states';
-export type { UseGafpri, UseInstall, UseSites, UseCurrency, UseSitesConfig, SelectDefault, UseTypeDocument, UseUser, UseCategoryProjects, UseCurrenciesProps, CurrenciesAttributes, } from './states';
+export { useGafpri, useGafpriInstall, useGafpriSites, useGafpriCurrency, useGafpriSitesConfig, useGafpriTypeDocument, useGafpriUser, useGafpriCategoryProjects, useGafpriCurrencies, useGafpriTypeDocumentId, } from './states';
+export type { UseGafpri, UseInstall, UseSites, UseCurrency, UseSitesConfig, SelectDefault, UseTypeDocument, UseUser, UseCategoryProjects, UseCurrenciesProps, CurrenciesAttributes, TypeDocumentIdAttributes, UseTypeDocumentIdProps, } from './states';
 export { Countries, StatesCountries, Cities, DocumentsIndex, AllRoles, } from './Constans';
 export { getItem, saveItem } from './Context';

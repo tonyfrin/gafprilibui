@@ -433,7 +433,8 @@ export function getMimeTypeByExtension(filename: string): string | null {
 
 export function formatPhoneNumber(phoneNumber: string): string {
   const countryCode = parseInt(
-    phoneNumber.slice(0, phoneNumber.length - 10), 10
+    phoneNumber.slice(0, phoneNumber.length - 10),
+    10
   ).toString();
   const areaCode = phoneNumber.slice(
     phoneNumber.length - 10,

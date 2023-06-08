@@ -131,5 +131,11 @@ export type {
   UseUser,
   UseCategoryProjects,
 } from './states';
-export { Countries, StatesCountries, Cities, DocumentsIndex } from './Constans';
+export {
+  Countries,
+  StatesCountries,
+  Cities,
+  DocumentsIndex,
+  AllRoles,
+} from './Constans';
 export { getItem, saveItem } from './Context';

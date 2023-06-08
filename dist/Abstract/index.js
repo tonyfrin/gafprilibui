@@ -63,6 +63,12 @@ Object.defineProperty(exports, "ContainerInput", {
     return _Containers.ContainerInput;
   }
 });
+Object.defineProperty(exports, "CurrencyForm", {
+  enumerable: true,
+  get: function get() {
+    return _Currencies.CurrencyForm;
+  }
+});
 Object.defineProperty(exports, "Error", {
   enumerable: true,
   get: function get() {
@@ -97,6 +103,12 @@ Object.defineProperty(exports, "Header", {
   enumerable: true,
   get: function get() {
     return _Header.Header;
+  }
+});
+Object.defineProperty(exports, "InitCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _Currencies.InitCurrencies;
   }
 });
 Object.defineProperty(exports, "Input", {
@@ -223,3 +235,4 @@ var _Fade = require("./Fade");
 var _Form = require("./Form");
 var _Menu = require("./Menu");
 var _Header = require("./Header");
+var _Currencies = require("./Currencies");

@@ -30,10 +30,14 @@ export type ContainerButtonStyle = {
     justifyContent?: string;
     transition?: string;
 };
-type ContainerButton = {
+export type ContainerButtonProps = {
     styles?: ContainerButtonStyle | undefined;
     Class?: string;
     children: JSX.Element;
 };
-export declare const ContainerButton: ({ styles, Class, children, }: ContainerButton) => JSX.Element;
+export type ContainerButtonPropsExtended = {
+    styles?: ContainerButtonStyle | undefined;
+    Class?: string;
+};
+export declare const ContainerButton: ({ styles, Class, children, }: ContainerButtonProps) => JSX.Element;
 export {};

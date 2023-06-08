@@ -96,17 +96,22 @@ export type ContainerButtonStyle = {
   transition?: string;
 };
 
-type ContainerButton = {
+export type ContainerButtonProps = {
   styles?: ContainerButtonStyle | undefined;
   Class?: string;
   children: JSX.Element;
+};
+
+export type ContainerButtonPropsExtended = {
+  styles?: ContainerButtonStyle | undefined;
+  Class?: string;
 };
 
 export const ContainerButton = ({
   styles = {},
   Class = '',
   children,
-}: ContainerButton) => {
+}: ContainerButtonProps) => {
   return (
     <div className={cx(ContainerButtonStyles(styles), Class)}>{children}</div>
   );

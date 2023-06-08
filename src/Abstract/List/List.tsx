@@ -94,6 +94,23 @@ export interface ListProps {
   propsColumnList?: ColumnListProps;
 }
 
+export interface ListPropsExtended {
+  items?: ReactNodeArray;
+  headers?: string[];
+  columns?: number;
+  selectProps?: GsSelectProps;
+  selectByProps?: GsSelectProps;
+  inputProps?: InputHTMLAttributes<HTMLInputElement>;
+  propsPagination?: PaginationProps;
+  title?: string;
+  actionButton?: ButtonProps;
+  mainContainerStyle?: string;
+  gridContainerStyle?: string;
+  infoContainerStyle?: string;
+  breakContainerStyle?: string;
+  propsColumnList?: ColumnListProps;
+}
+
 export const List: React.FC<ListProps> = ({
   items,
   headers,

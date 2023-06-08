@@ -9,4 +9,6 @@ export type {
   ContainerButtonStyle,
   ContainerStyles,
   ContainerFormProps,
+  ContainerButtonProps,
+  ContainerButtonPropsExtended,
 } from './Container';

@@ -13,11 +13,19 @@ export type {
   ContainerButtonStyle,
   ContainerStyles,
   ContainerFormProps,
+  ContainerButtonProps,
+  ContainerButtonPropsExtended,
 } from './Containers';
 export { Globo } from './Icons';
 export type { GloboStyle } from './Icons';
 export { Input, GsSelect } from './Input';
-export type { InputStyle, SelectStyle, OnChange, GsSelectProps } from './Input';
+export type {
+  InputStyle,
+  SelectStyle,
+  OnChange,
+  GsSelectProps,
+  InputProps,
+} from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
 export { Background1 } from './Background';
@@ -30,7 +38,7 @@ export { User } from './User';
 export { SearchBar } from './Bar';
 export type { SearchBarProps } from './Bar';
 export { List, ColumnList } from './List';
-export type { ListProps, ColumnListProps } from './List';
+export type { ListProps, ListPropsExtended, ColumnListProps } from './List';
 export { Pagination } from './Pagination';
 export type { PaginationProps } from './Pagination';
 export { Error } from './Error';
@@ -40,8 +48,15 @@ export type { MainContentProps } from './Content';
 export { FadeIn } from './Fade';
 export type { FadeInProps } from './Fade';
 export { ModelForm } from './Form';
-export type { ModelFormProps } from './Form';
+export type { ModelFormProps, ModelFormPropsExtended } from './Form';
 export { Menu1, Menu2, MenuButton } from './Menu';
 export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem } from './Menu';
 export { Header } from './Header';
-export type { HeaderProps } from './Header';
+export type { HeaderProps, HeaderPropsExtended } from './Header';
+export { InitCurrencies, CurrencyForm } from './Currencies';
+export type {
+  InitCurrenciesProps,
+  InitCurrenciesPropsExtended,
+  CurrencyFormProps,
+  CurrencyFormPropsExtended,
+} from './Currencies';

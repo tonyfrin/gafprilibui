@@ -8,7 +8,6 @@ export type OnChange = (newValue: SingleValue<{
     value: string;
     label: string;
 }>) => void | undefined;
-declare const InputStyles: (styles: InputStyle) => string;
 type Media = {
     fontSize?: string | number;
 };
@@ -27,14 +26,14 @@ export type InputStyle = {
     media400Style?: Media | undefined;
     media300Style?: Media | undefined;
 };
-type InputStyles = {
+export type InputProps = {
     styles?: InputStyle | undefined;
     inputProps?: InputHTMLAttributes<HTMLInputElement>;
     inputClass?: string | undefined;
     containerStyles?: ContainerStyles | undefined;
     containerClass?: string | undefined;
 };
-export declare const Input: ({ styles, inputClass, inputProps, containerStyles, containerClass, }: InputStyles) => JSX.Element;
+export declare const Input: ({ styles, inputClass, inputProps, containerStyles, containerClass, }: InputProps) => JSX.Element;
 type media = {
     width?: string;
     fontSize?: string;

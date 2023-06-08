@@ -80,6 +80,19 @@ const defaultHiddenContainerStyle = css`
   transition: all 1s ease 0s;
 `;
 
+export interface HeaderPropsExtended {
+  menuTitleProps?: Menu2Props;
+  menuButtonProps?: MenuButtonProps;
+  buttonLargeProps?: ButtonLargeProps;
+
+  mainContainerStyle?: string;
+  gridContainerStyle?: string;
+  headContainerStyle?: string;
+  titleContainerStyle?: string;
+  hiddenContainerStyle?: string;
+  titleStyle?: string;
+}
+
 export interface HeaderProps {
   title: string;
   menuTitleProps?: Menu2Props;

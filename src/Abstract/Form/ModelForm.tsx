@@ -72,6 +72,30 @@ export type ModelFormProps = {
   returnButtonConatinerStyle?: string;
 };
 
+export type ModelFormPropsExtended = {
+  boxProps?: BoxProps;
+  titles?: {
+    title1: string;
+    title2: string;
+  };
+  title1Props?: Title1Props;
+  title2Props?: Title2Props;
+  handleActions?: (action: string, value: any) => void;
+  buttonTitles: {
+    mainButton?: string;
+    returnButton: string;
+  };
+  mainButtonProps?: ButtonProps;
+  returnButtonStyle?: ButtonProps['styles'];
+  returnButtonProps?: ButtonProps;
+  error?: string[] | null;
+  errorProps?: ErrorProps;
+  childrenContainerProps?: ContainerFormProps;
+  titleContainerStyle?: string;
+  actionButtonContainerStyle?: string;
+  returnButtonConatinerStyle?: string;
+};
+
 export const ModelForm = ({
   boxProps,
   titles,

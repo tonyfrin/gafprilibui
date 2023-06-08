@@ -60,7 +60,7 @@ export type InputStyle = {
   media300Style?: Media | undefined;
 };
 
-type InputStyles = {
+export type InputProps = {
   styles?: InputStyle | undefined;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   inputClass?: string | undefined;
@@ -74,7 +74,7 @@ export const Input = ({
   inputProps = {},
   containerStyles = {},
   containerClass = '',
-}: InputStyles) => {
+}: InputProps) => {
   const randomName = useMemo(
     () => `input_${Math.random().toString(36).substring(7)}`,
     []

@@ -32,5 +32,28 @@ export type ModelFormProps = {
     actionButtonContainerStyle?: string;
     returnButtonConatinerStyle?: string;
 };
+export type ModelFormPropsExtended = {
+    boxProps?: BoxProps;
+    titles?: {
+        title1: string;
+        title2: string;
+    };
+    title1Props?: Title1Props;
+    title2Props?: Title2Props;
+    handleActions?: (action: string, value: any) => void;
+    buttonTitles: {
+        mainButton?: string;
+        returnButton: string;
+    };
+    mainButtonProps?: ButtonProps;
+    returnButtonStyle?: ButtonProps['styles'];
+    returnButtonProps?: ButtonProps;
+    error?: string[] | null;
+    errorProps?: ErrorProps;
+    childrenContainerProps?: ContainerFormProps;
+    titleContainerStyle?: string;
+    actionButtonContainerStyle?: string;
+    returnButtonConatinerStyle?: string;
+};
 export declare const ModelForm: ({ boxProps, titles, title1Props, title2Props, handleActions, buttonTitles, mainButtonProps, returnButtonStyle, returnButtonProps, children, error, errorProps, childrenContainerProps, titleContainerStyle, actionButtonContainerStyle, returnButtonConatinerStyle, }: ModelFormProps) => JSX.Element;
 export {};

@@ -87,6 +87,12 @@ Object.defineProperty(exports, "Countries", {
     return _Constans.Countries;
   }
 });
+Object.defineProperty(exports, "CurrencyForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CurrencyForm;
+  }
+});
 Object.defineProperty(exports, "Curriencies", {
   enumerable: true,
   get: function get() {
@@ -133,6 +139,12 @@ Object.defineProperty(exports, "Header", {
   enumerable: true,
   get: function get() {
     return _Abstract.Header;
+  }
+});
+Object.defineProperty(exports, "InitCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitCurrencies;
   }
 });
 Object.defineProperty(exports, "Input", {

@@ -20,5 +20,21 @@ export interface ListProps {
     breakContainerStyle?: string;
     propsColumnList?: ColumnListProps;
 }
+export interface ListPropsExtended {
+    items?: ReactNodeArray;
+    headers?: string[];
+    columns?: number;
+    selectProps?: GsSelectProps;
+    selectByProps?: GsSelectProps;
+    inputProps?: InputHTMLAttributes<HTMLInputElement>;
+    propsPagination?: PaginationProps;
+    title?: string;
+    actionButton?: ButtonProps;
+    mainContainerStyle?: string;
+    gridContainerStyle?: string;
+    infoContainerStyle?: string;
+    breakContainerStyle?: string;
+    propsColumnList?: ColumnListProps;
+}
 export declare const List: React.FC<ListProps>;
 export {};

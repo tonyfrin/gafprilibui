@@ -147,6 +147,12 @@ Object.defineProperty(exports, "InitCurrencies", {
     return _Abstract.InitCurrencies;
   }
 });
+Object.defineProperty(exports, "InitTypeDocumentId", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitTypeDocumentId;
+  }
+});
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
@@ -301,6 +307,12 @@ Object.defineProperty(exports, "TypeDocument", {
   enumerable: true,
   get: function get() {
     return _Abstract.TypeDocument;
+  }
+});
+Object.defineProperty(exports, "TypeDocumentIdForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.TypeDocumentIdForm;
   }
 });
 Object.defineProperty(exports, "TypesDocument", {

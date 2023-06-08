@@ -34,6 +34,8 @@ export {
   Header,
   InitCurrencies,
   CurrencyForm,
+  InitTypeDocumentId,
+  TypeDocumentIdForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -74,6 +76,10 @@ export type {
   InitCurrenciesPropsExtended,
   CurrencyFormProps,
   CurrencyFormPropsExtended,
+  InitTypeDocumentIdProps,
+  InitTypeDocumentIdPropsExtended,
+  TypeDocumentIdFormProps,
+  TypeDocumentIdFormPropsExtended,
 } from './Abstract';
 export {
   MainFooter,

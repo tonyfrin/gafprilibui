@@ -60,3 +60,10 @@ export type {
   CurrencyFormProps,
   CurrencyFormPropsExtended,
 } from './Currencies';
+export { InitTypeDocumentId, TypeDocumentIdForm } from './TypeDocumentId';
+export type {
+  InitTypeDocumentIdProps,
+  InitTypeDocumentIdPropsExtended,
+  TypeDocumentIdFormProps,
+  TypeDocumentIdFormPropsExtended,
+} from './TypeDocumentId';

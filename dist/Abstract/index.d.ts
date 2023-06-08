@@ -37,3 +37,5 @@ export { Header } from './Header';
 export type { HeaderProps, HeaderPropsExtended } from './Header';
 export { InitCurrencies, CurrencyForm } from './Currencies';
 export type { InitCurrenciesProps, InitCurrenciesPropsExtended, CurrencyFormProps, CurrencyFormPropsExtended, } from './Currencies';
+export { InitTypeDocumentId, TypeDocumentIdForm } from './TypeDocumentId';
+export type { InitTypeDocumentIdProps, InitTypeDocumentIdPropsExtended, TypeDocumentIdFormProps, TypeDocumentIdFormPropsExtended, } from './TypeDocumentId';

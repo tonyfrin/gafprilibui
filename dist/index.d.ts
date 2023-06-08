@@ -5,5 +5,5 @@ export { addClass, removeClass, validationSelect, validationHidden, validationIn
 export type { ChangeInputText, ChangeSelect, ValidationInputName, ValidationInputAdress, ErrorResponseProps, ValidationErrorInfo, CustomErrorResponseProps, } from './helpers';
 export { useGafpri, useGafpriInstall, useGafpriSites, useGafpriCurrency, useGafpriSitesConfig, useGafpriTypeDocument, useGafpriUser, useGafpriCategoryProjects, } from './states';
 export type { UseGafpri, UseInstall, UseSites, UseCurrency, UseSitesConfig, SelectDefault, UseTypeDocument, UseUser, UseCategoryProjects, } from './states';
-export { Countries, StatesCountries, Cities, DocumentsIndex } from './Constans';
+export { Countries, StatesCountries, Cities, DocumentsIndex, AllRoles, } from './Constans';
 export { getItem, saveItem } from './Context';

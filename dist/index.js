@@ -393,6 +393,12 @@ Object.defineProperty(exports, "useGafpriCategoryProjects", {
     return _states.useGafpriCategoryProjects;
   }
 });
+Object.defineProperty(exports, "useGafpriCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriCurrencies;
+  }
+});
 Object.defineProperty(exports, "useGafpriCurrency", {
   enumerable: true,
   get: function get() {

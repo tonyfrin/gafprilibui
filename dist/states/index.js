@@ -15,6 +15,12 @@ Object.defineProperty(exports, "useGafpriCategoryProjects", {
     return _useGafpriCategoryProjects.useGafpriCategoryProjects;
   }
 });
+Object.defineProperty(exports, "useGafpriCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriCurrencies.useGafpriCurrencies;
+  }
+});
 Object.defineProperty(exports, "useGafpriCurrency", {
   enumerable: true,
   get: function get() {
@@ -59,3 +65,4 @@ var _useGafpriSitesConfig = require("./useGafpriSitesConfig");
 var _useGafpriTypeDocument = require("./useGafpriTypeDocument");
 var _useGafpriUser = require("./useGafpriUser");
 var _useGafpriCategoryProjects = require("./useGafpriCategoryProjects");
+var _useGafpriCurrencies = require("./useGafpriCurrencies");

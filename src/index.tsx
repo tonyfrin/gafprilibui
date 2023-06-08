@@ -119,6 +119,7 @@ export {
   useGafpriTypeDocument,
   useGafpriUser,
   useGafpriCategoryProjects,
+  useGafpriCurrencies,
 } from './states';
 export type {
   UseGafpri,
@@ -130,6 +131,7 @@ export type {
   UseTypeDocument,
   UseUser,
   UseCategoryProjects,
+  UseCurrenciesProps,
 } from './states';
 export {
   Countries,

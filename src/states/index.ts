@@ -14,3 +14,5 @@ export { useGafpriUser } from './useGafpriUser';
 export type { UseUser } from './useGafpriUser';
 export { useGafpriCategoryProjects } from './useGafpriCategoryProjects';
 export type { UseCategoryProjects } from './useGafpriCategoryProjects';
+export { useGafpriCurrencies } from './useGafpriCurrencies';
+export type { UseCurrenciesProps } from './useGafpriCurrencies';

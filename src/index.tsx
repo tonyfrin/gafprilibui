@@ -132,6 +132,7 @@ export type {
   UseUser,
   UseCategoryProjects,
   UseCurrenciesProps,
+  CurrenciesAttributes,
 } from './states';
 export {
   Countries,

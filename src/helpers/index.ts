@@ -1,6 +1,10 @@
 /* eslint-disable object-shorthand */
 import { SingleValue } from 'react-select';
-import type { SelectDefault } from '../states';
+
+export type SelectDefault = {
+  value: string;
+  label: string;
+};
 
 export const addClass = (element: string, className: string): void => {
   const input = document.getElementById(element);

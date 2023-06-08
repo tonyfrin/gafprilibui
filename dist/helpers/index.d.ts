@@ -1,5 +1,8 @@
 import { SingleValue } from 'react-select';
-import type { SelectDefault } from '../states';
+export type SelectDefault = {
+    value: string;
+    label: string;
+};
 export declare const addClass: (element: string, className: string) => void;
 export declare const removeClass: (element: string, className: string) => void;
 export declare const validationSelect: (value: string, componentId: string, className: string) => boolean;

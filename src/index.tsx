@@ -14,11 +14,6 @@ export {
   ContainerForm,
   ContainerGlobo,
   ContainerButton,
-  AddCategoryProjects,
-  SiteInfo,
-  SiteConfig,
-  TypeDocument,
-  User,
   SearchBar,
   ButtonLarge,
   ColumnList,
@@ -85,20 +80,14 @@ export {
   MainFooter,
   LoginHeader,
   Loading,
-  Category,
-  Curriencies,
-  Instaled,
-  Install,
-  Projects,
-  SitesInfo,
-  SitesConfig,
-  TypesDocument,
-  Users,
   MainCurrencies,
+  MainTypeDocumentId,
 } from './Components';
 export type {
   MainCurrenciesProps,
   MainCurrenciesPropsExtended,
+  MainTypeDocumentIdProps,
+  MainTypeDocumentIdPropsExtend,
 } from './Components';
 export {
   addClass,
@@ -130,29 +119,10 @@ export type {
   ErrorResponseProps,
   ValidationErrorInfo,
   CustomErrorResponseProps,
-} from './helpers';
-export {
-  useGafpri,
-  useGafpriInstall,
-  useGafpriSites,
-  useGafpriCurrency,
-  useGafpriSitesConfig,
-  useGafpriTypeDocument,
-  useGafpriUser,
-  useGafpriCategoryProjects,
-  useGafpriCurrencies,
-  useGafpriTypeDocumentId,
-} from './states';
-export type {
-  UseGafpri,
-  UseInstall,
-  UseSites,
-  UseCurrency,
-  UseSitesConfig,
   SelectDefault,
-  UseTypeDocument,
-  UseUser,
-  UseCategoryProjects,
+} from './helpers';
+export { useGafpriCurrencies, useGafpriTypeDocumentId } from './states';
+export type {
   UseCurrenciesProps,
   CurrenciesAttributes,
   TypeDocumentIdAttributes,

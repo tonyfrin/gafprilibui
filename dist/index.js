@@ -3,12 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "AddCategoryProjects", {
-  enumerable: true,
-  get: function get() {
-    return _Abstract.AddCategoryProjects;
-  }
-});
 Object.defineProperty(exports, "AllRoles", {
   enumerable: true,
   get: function get() {
@@ -37,12 +31,6 @@ Object.defineProperty(exports, "ButtonLarge", {
   enumerable: true,
   get: function get() {
     return _Abstract.ButtonLarge;
-  }
-});
-Object.defineProperty(exports, "Category", {
-  enumerable: true,
-  get: function get() {
-    return _Components.Category;
   }
 });
 Object.defineProperty(exports, "Cities", {
@@ -91,12 +79,6 @@ Object.defineProperty(exports, "CurrencyForm", {
   enumerable: true,
   get: function get() {
     return _Abstract.CurrencyForm;
-  }
-});
-Object.defineProperty(exports, "Curriencies", {
-  enumerable: true,
-  get: function get() {
-    return _Components.Curriencies;
   }
 });
 Object.defineProperty(exports, "DocumentsIndex", {
@@ -159,18 +141,6 @@ Object.defineProperty(exports, "Input", {
     return _Abstract.Input;
   }
 });
-Object.defineProperty(exports, "Instaled", {
-  enumerable: true,
-  get: function get() {
-    return _Components.Instaled;
-  }
-});
-Object.defineProperty(exports, "Install", {
-  enumerable: true,
-  get: function get() {
-    return _Components.Install;
-  }
-});
 Object.defineProperty(exports, "List", {
   enumerable: true,
   get: function get() {
@@ -213,6 +183,12 @@ Object.defineProperty(exports, "MainFooter", {
     return _Components.MainFooter;
   }
 });
+Object.defineProperty(exports, "MainTypeDocumentId", {
+  enumerable: true,
+  get: function get() {
+    return _Components.MainTypeDocumentId;
+  }
+});
 Object.defineProperty(exports, "Menu1", {
   enumerable: true,
   get: function get() {
@@ -243,40 +219,10 @@ Object.defineProperty(exports, "Pagination", {
     return _Abstract.Pagination;
   }
 });
-Object.defineProperty(exports, "Projects", {
-  enumerable: true,
-  get: function get() {
-    return _Components.Projects;
-  }
-});
 Object.defineProperty(exports, "SearchBar", {
   enumerable: true,
   get: function get() {
     return _Abstract.SearchBar;
-  }
-});
-Object.defineProperty(exports, "SiteConfig", {
-  enumerable: true,
-  get: function get() {
-    return _Abstract.SiteConfig;
-  }
-});
-Object.defineProperty(exports, "SiteInfo", {
-  enumerable: true,
-  get: function get() {
-    return _Abstract.SiteInfo;
-  }
-});
-Object.defineProperty(exports, "SitesConfig", {
-  enumerable: true,
-  get: function get() {
-    return _Components.SitesConfig;
-  }
-});
-Object.defineProperty(exports, "SitesInfo", {
-  enumerable: true,
-  get: function get() {
-    return _Components.SitesInfo;
   }
 });
 Object.defineProperty(exports, "StatesCountries", {
@@ -303,34 +249,10 @@ Object.defineProperty(exports, "Title2", {
     return _Abstract.Title2;
   }
 });
-Object.defineProperty(exports, "TypeDocument", {
-  enumerable: true,
-  get: function get() {
-    return _Abstract.TypeDocument;
-  }
-});
 Object.defineProperty(exports, "TypeDocumentIdForm", {
   enumerable: true,
   get: function get() {
     return _Abstract.TypeDocumentIdForm;
-  }
-});
-Object.defineProperty(exports, "TypesDocument", {
-  enumerable: true,
-  get: function get() {
-    return _Components.TypesDocument;
-  }
-});
-Object.defineProperty(exports, "User", {
-  enumerable: true,
-  get: function get() {
-    return _Abstract.User;
-  }
-});
-Object.defineProperty(exports, "Users", {
-  enumerable: true,
-  get: function get() {
-    return _Components.Users;
   }
 });
 Object.defineProperty(exports, "addClass", {
@@ -411,64 +333,16 @@ Object.defineProperty(exports, "toTitleCase", {
     return _helpers.toTitleCase;
   }
 });
-Object.defineProperty(exports, "useGafpri", {
-  enumerable: true,
-  get: function get() {
-    return _states.useGafpri;
-  }
-});
-Object.defineProperty(exports, "useGafpriCategoryProjects", {
-  enumerable: true,
-  get: function get() {
-    return _states.useGafpriCategoryProjects;
-  }
-});
 Object.defineProperty(exports, "useGafpriCurrencies", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriCurrencies;
   }
 });
-Object.defineProperty(exports, "useGafpriCurrency", {
-  enumerable: true,
-  get: function get() {
-    return _states.useGafpriCurrency;
-  }
-});
-Object.defineProperty(exports, "useGafpriInstall", {
-  enumerable: true,
-  get: function get() {
-    return _states.useGafpriInstall;
-  }
-});
-Object.defineProperty(exports, "useGafpriSites", {
-  enumerable: true,
-  get: function get() {
-    return _states.useGafpriSites;
-  }
-});
-Object.defineProperty(exports, "useGafpriSitesConfig", {
-  enumerable: true,
-  get: function get() {
-    return _states.useGafpriSitesConfig;
-  }
-});
-Object.defineProperty(exports, "useGafpriTypeDocument", {
-  enumerable: true,
-  get: function get() {
-    return _states.useGafpriTypeDocument;
-  }
-});
 Object.defineProperty(exports, "useGafpriTypeDocumentId", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriTypeDocumentId;
-  }
-});
-Object.defineProperty(exports, "useGafpriUser", {
-  enumerable: true,
-  get: function get() {
-    return _states.useGafpriUser;
   }
 });
 Object.defineProperty(exports, "validationHidden", {

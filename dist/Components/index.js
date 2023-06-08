@@ -3,30 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "Category", {
-  enumerable: true,
-  get: function get() {
-    return _Install.Category;
-  }
-});
-Object.defineProperty(exports, "Curriencies", {
-  enumerable: true,
-  get: function get() {
-    return _Install.Curriencies;
-  }
-});
-Object.defineProperty(exports, "Instaled", {
-  enumerable: true,
-  get: function get() {
-    return _Install.Instaled;
-  }
-});
-Object.defineProperty(exports, "Install", {
-  enumerable: true,
-  get: function get() {
-    return _Install.Install;
-  }
-});
 Object.defineProperty(exports, "Loading", {
   enumerable: true,
   get: function get() {
@@ -51,38 +27,14 @@ Object.defineProperty(exports, "MainFooter", {
     return _Footer.MainFooter;
   }
 });
-Object.defineProperty(exports, "Projects", {
+Object.defineProperty(exports, "MainTypeDocumentId", {
   enumerable: true,
   get: function get() {
-    return _Install.Projects;
-  }
-});
-Object.defineProperty(exports, "SitesConfig", {
-  enumerable: true,
-  get: function get() {
-    return _Install.SitesConfig;
-  }
-});
-Object.defineProperty(exports, "SitesInfo", {
-  enumerable: true,
-  get: function get() {
-    return _Install.SitesInfo;
-  }
-});
-Object.defineProperty(exports, "TypesDocument", {
-  enumerable: true,
-  get: function get() {
-    return _Install.TypesDocument;
-  }
-});
-Object.defineProperty(exports, "Users", {
-  enumerable: true,
-  get: function get() {
-    return _Install.Users;
+    return _TypeDocumentId.MainTypeDocumentId;
   }
 });
 var _Footer = require("./Footer");
 var _Header = require("./Header");
 var _Loading = require("./Loading");
-var _Install = require("./Install");
 var _Currencies = require("./Currencies");
+var _TypeDocumentId = require("./TypeDocumentId");

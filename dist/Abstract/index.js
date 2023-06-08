@@ -3,12 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "AddCategoryProjects", {
-  enumerable: true,
-  get: function get() {
-    return _CategoryProjects.AddCategoryProjects;
-  }
-});
 Object.defineProperty(exports, "Background1", {
   enumerable: true,
   get: function get() {
@@ -177,18 +171,6 @@ Object.defineProperty(exports, "SearchBar", {
     return _Bar.SearchBar;
   }
 });
-Object.defineProperty(exports, "SiteConfig", {
-  enumerable: true,
-  get: function get() {
-    return _Site.SiteConfig;
-  }
-});
-Object.defineProperty(exports, "SiteInfo", {
-  enumerable: true,
-  get: function get() {
-    return _Site.SiteInfo;
-  }
-});
 Object.defineProperty(exports, "Step", {
   enumerable: true,
   get: function get() {
@@ -207,22 +189,10 @@ Object.defineProperty(exports, "Title2", {
     return _Title.Title2;
   }
 });
-Object.defineProperty(exports, "TypeDocument", {
-  enumerable: true,
-  get: function get() {
-    return _TypeDocument.TypeDocument;
-  }
-});
 Object.defineProperty(exports, "TypeDocumentIdForm", {
   enumerable: true,
   get: function get() {
     return _TypeDocumentId.TypeDocumentIdForm;
-  }
-});
-Object.defineProperty(exports, "User", {
-  enumerable: true,
-  get: function get() {
-    return _User.User;
   }
 });
 var _Button = require("./Button");
@@ -234,10 +204,6 @@ var _Title = require("./Title");
 var _Background = require("./Background");
 var _Logo = require("./Logo");
 var _Step = require("./Step");
-var _CategoryProjects = require("./CategoryProjects");
-var _Site = require("./Site");
-var _TypeDocument = require("./TypeDocument");
-var _User = require("./User");
 var _Bar = require("./Bar");
 var _List = require("./List");
 var _Pagination = require("./Pagination");

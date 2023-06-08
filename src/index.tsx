@@ -88,6 +88,11 @@ export {
   SitesConfig,
   TypesDocument,
   Users,
+  MainCurrencies,
+} from './Components';
+export type {
+  MainCurrenciesProps,
+  MainCurrenciesPropsExtended,
 } from './Components';
 export {
   addClass,

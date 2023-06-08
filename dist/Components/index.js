@@ -39,6 +39,12 @@ Object.defineProperty(exports, "LoginHeader", {
     return _Header.LoginHeader;
   }
 });
+Object.defineProperty(exports, "MainCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _Currencies.MainCurrencies;
+  }
+});
 Object.defineProperty(exports, "MainFooter", {
   enumerable: true,
   get: function get() {
@@ -79,3 +85,4 @@ var _Footer = require("./Footer");
 var _Header = require("./Header");
 var _Loading = require("./Loading");
 var _Install = require("./Install");
+var _Currencies = require("./Currencies");

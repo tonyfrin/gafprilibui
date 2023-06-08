@@ -12,3 +12,8 @@ export {
   TypesDocument,
   Users,
 } from './Install';
+export { MainCurrencies } from './Currencies';
+export type {
+  MainCurrenciesProps,
+  MainCurrenciesPropsExtended,
+} from './Currencies';

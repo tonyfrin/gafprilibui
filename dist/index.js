@@ -195,6 +195,12 @@ Object.defineProperty(exports, "MainContent", {
     return _Abstract.MainContent;
   }
 });
+Object.defineProperty(exports, "MainCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _Components.MainCurrencies;
+  }
+});
 Object.defineProperty(exports, "MainFooter", {
   enumerable: true,
   get: function get() {

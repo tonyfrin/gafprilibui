@@ -4,7 +4,7 @@ export { MainFooter, LoginHeader, Loading, MainCurrencies, MainTypeDocumentId, }
 export type { MainCurrenciesProps, MainCurrenciesPropsExtended, MainTypeDocumentIdProps, MainTypeDocumentIdPropsExtend, } from './Components';
 export { addClass, removeClass, validationSelect, validationHidden, validationInput, changeInputText, toTitleCase, changeSelect, validationInputName, validationInputAddress, validationInputPostcode, validationInputEmail, validationInputPhone, validationInputPassword, gafpriFetch, getLastEntryDateAndCount, isErrorResponse, isCustomErrorResponse, getMimeTypeByExtension, formatPhoneNumber, } from './helpers';
 export type { ChangeInputText, ChangeSelect, ValidationInputName, ValidationInputAdress, ErrorResponseProps, ValidationErrorInfo, CustomErrorResponseProps, SelectDefault, } from './helpers';
-export { useGafpriCurrencies, useGafpriTypeDocumentId } from './states';
-export type { UseCurrenciesProps, CurrenciesAttributes, TypeDocumentIdAttributes, UseTypeDocumentIdProps, } from './states';
+export { useGafpriCurrencies, useGafpriTypeDocumentId, useGafpriCategory, } from './states';
+export type { UseCurrenciesProps, CurrenciesAttributes, TypeDocumentIdAttributes, UseTypeDocumentIdProps, CategoryAttributes, UseCategoryProps, } from './states';
 export { Countries, StatesCountries, Cities, DocumentsIndex, AllRoles, } from './Constans';
 export { getItem, saveItem } from './Context';

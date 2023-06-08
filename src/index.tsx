@@ -121,12 +121,18 @@ export type {
   CustomErrorResponseProps,
   SelectDefault,
 } from './helpers';
-export { useGafpriCurrencies, useGafpriTypeDocumentId } from './states';
+export {
+  useGafpriCurrencies,
+  useGafpriTypeDocumentId,
+  useGafpriCategory,
+} from './states';
 export type {
   UseCurrenciesProps,
   CurrenciesAttributes,
   TypeDocumentIdAttributes,
   UseTypeDocumentIdProps,
+  CategoryAttributes,
+  UseCategoryProps,
 } from './states';
 export {
   Countries,

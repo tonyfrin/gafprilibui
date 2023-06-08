@@ -1,6 +1,6 @@
 {
   "name": "gafpriuilib",
-  "version": "0.2.57",
+  "version": "0.2.58",
   "description": "Libreria Ui del sistema Gafpri Admin",
   "main": "./dist/index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "@emotion/css": "^11.10.6",
+    "axios": "^1.4.0",
     "react-icons": "^4.9.0",
     "react-select": "^5.7.0",
     "ws": "^8.13.0"

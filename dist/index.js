@@ -333,6 +333,12 @@ Object.defineProperty(exports, "toTitleCase", {
     return _helpers.toTitleCase;
   }
 });
+Object.defineProperty(exports, "useGafpriCategory", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriCategory;
+  }
+});
 Object.defineProperty(exports, "useGafpriCurrencies", {
   enumerable: true,
   get: function get() {

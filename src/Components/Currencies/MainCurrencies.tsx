@@ -6,17 +6,17 @@ import type {
   InitCurrenciesPropsExtended,
   CurrencyFormPropsExtended,
 } from '../../Abstract';
-import type { UseCurrenciesProps } from '../../states';
+import type { UseCurrenciesReturn } from '../../states';
 
 export type MainCurrenciesProps = {
-  useCurrencies: UseCurrenciesProps;
+  useCurrencies: UseCurrenciesReturn;
   initCurrenciesProps?: InitCurrenciesPropsExtended;
   addFormProps?: CurrencyFormPropsExtended;
   updateFormProps?: CurrencyFormPropsExtended;
 };
 
 export type MainCurrenciesPropsExtended = {
-  useCurrencies?: UseCurrenciesProps;
+  useCurrencies?: UseCurrenciesReturn;
   initCurrenciesProps?: InitCurrenciesPropsExtended;
   addFormProps?: CurrencyFormPropsExtended;
   updateFormProps?: CurrencyFormPropsExtended;

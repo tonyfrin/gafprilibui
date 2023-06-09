@@ -149,16 +149,22 @@ export {
   useGafpriTypeDocumentId,
   useGafpriCategory,
   useGafpriRoles,
+  useGafpriEntity,
 } from './states';
 export type {
-  UseCurrenciesProps,
+  UseCurrenciesReturn,
   CurrenciesAttributes,
   TypeDocumentIdAttributes,
-  UseTypeDocumentIdProps,
+  UseTypeDocumentIdReturn,
   CategoryAttributes,
-  UseCategoryProps,
-  UseRolesProps,
+  UseCategoryReturn,
+  UseRolesReturn,
   RolesAttributes,
+  UseEntityReturn,
+  DocumentIdAttributes,
+  AddressAttributes,
+  EntityAttributes,
+  UseEntityProps,
 } from './states';
 export {
   Countries,

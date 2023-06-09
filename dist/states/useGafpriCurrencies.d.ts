@@ -59,9 +59,9 @@ type Actions = {
     handleUpdatedCurrency: (updatedCurrency: CurrenciesAttributes) => void;
     handleDeletedCurrency: ({ itemId }: DeletedCurrency) => void;
 };
-export type UseCurrenciesProps = {
+export type UseCurrenciesReturn = {
     states: State;
     actions: Actions;
 };
-export declare function useGafpriCurrencies(): UseCurrenciesProps;
+export declare function useGafpriCurrencies(): UseCurrenciesReturn;
 export {};

@@ -5,17 +5,17 @@ import type {
   InitRolesPropsExtended,
   RolesFormPropsExtended,
 } from '../../Abstract';
-import type { UseRolesProps } from '../../states';
+import type { UseRolesReturn } from '../../states';
 
 export type MainRolesProps = {
-  use: UseRolesProps;
+  use: UseRolesReturn;
   initProps?: InitRolesPropsExtended;
   addFormProps?: RolesFormPropsExtended;
   updateFormProps?: RolesFormPropsExtended;
 };
 
 export type MainRolesPropsExtended = {
-  use?: UseRolesProps;
+  use?: UseRolesReturn;
   initProps?: InitRolesPropsExtended;
   addFormProps?: RolesFormPropsExtended;
   updateFormProps?: RolesFormPropsExtended;

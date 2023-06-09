@@ -9,10 +9,10 @@ import { Error } from '../Error';
 import type { ErrorProps } from '../Error';
 import { Header } from '../Header';
 import type { HeaderProps } from '../Header';
-import { UseRolesProps } from '../../states';
+import { UseRolesReturn } from '../../states';
 
 export type InitRolesProps = {
-  use: UseRolesProps;
+  use: UseRolesReturn;
   optionsButtonMainContainerStyle?: string;
   updateButtonProps?: ButtonProps;
   deleteButtonProps?: ButtonProps;
@@ -22,7 +22,7 @@ export type InitRolesProps = {
 };
 
 export type InitRolesPropsExtended = {
-  use?: UseRolesProps;
+  use?: UseRolesReturn;
   optionsButtonMainContainerStyle?: string;
   updateButtonProps?: ButtonProps;
   deleteButtonProps?: ButtonProps;

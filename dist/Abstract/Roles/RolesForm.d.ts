@@ -2,11 +2,11 @@
 import type { InputProps } from '../Input';
 import { ButtonProps } from '../Button';
 import type { ContainerButtonPropsExtended } from '../Containers';
-import type { UseRolesProps } from 'src/states';
+import type { UseRolesReturn } from 'src/states';
 import type { ModelFormPropsExtended } from '../Form';
 import type { RolePermissionsPropsExtended } from './RolePermissions';
 export type RolesFormProps = {
-    use: UseRolesProps;
+    use: UseRolesReturn;
     formType: 'add' | 'update';
     permissionsContainerStyle?: string;
     optionButtonContainerStyle?: string;
@@ -18,7 +18,7 @@ export type RolesFormProps = {
     permissionsProps?: RolePermissionsPropsExtended;
 };
 export type RolesFormPropsExtended = {
-    use: UseRolesProps;
+    use: UseRolesReturn;
     formType: 'add' | 'update';
     permissionsContainerStyle?: string;
     optionButtonContainerStyle?: string;

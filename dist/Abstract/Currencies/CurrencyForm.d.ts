@@ -2,9 +2,9 @@
 import type { InputProps } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseCurrenciesProps } from '../../states';
+import type { UseCurrenciesReturn } from '../../states';
 export type CurrencyFormProps = {
-    use: UseCurrenciesProps;
+    use: UseCurrenciesReturn;
     formType: 'add' | 'update';
     modelFormProps?: ModelFormPropsExtended;
     infoContainerProps?: ContainerButtonPropsExtended;
@@ -12,7 +12,7 @@ export type CurrencyFormProps = {
     symbolInputProps?: InputProps;
 };
 export type CurrencyFormPropsExtended = {
-    use?: UseCurrenciesProps;
+    use?: UseCurrenciesReturn;
     formType?: 'add' | 'update';
     modelFormProps?: ModelFormPropsExtended;
     infoContainerProps?: ContainerButtonPropsExtended;

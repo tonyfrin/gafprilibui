@@ -7,7 +7,7 @@ import { ButtonProps } from '../Button';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import { AllRoles } from '../../Constans';
-import type { UseRolesProps } from 'src/states';
+import type { UseRolesReturn } from 'src/states';
 import { ModelForm } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';
 import { RolePermissions } from './RolePermissions';
@@ -24,7 +24,7 @@ const defaultOptionButtonContainerStyle = css`
 `;
 
 export type RolesFormProps = {
-  use: UseRolesProps;
+  use: UseRolesReturn;
   formType: 'add' | 'update';
   permissionsContainerStyle?: string;
   optionButtonContainerStyle?: string;
@@ -37,7 +37,7 @@ export type RolesFormProps = {
 };
 
 export type RolesFormPropsExtended = {
-  use: UseRolesProps;
+  use: UseRolesReturn;
   formType: 'add' | 'update';
   permissionsContainerStyle?: string;
   optionButtonContainerStyle?: string;

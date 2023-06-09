@@ -119,12 +119,12 @@ type Actions = {
   handleDeletedRoles: ({ itemId }: DeletedRoles) => void;
 };
 
-export type UseRolesProps = {
+export type UseRolesReturn = {
   states: State;
   actions: Actions;
 };
 
-export function useGafpriRoles(): UseRolesProps {
+export function useGafpriRoles(): UseRolesReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
   const [permissions, setPermissions] = useState<string[]>([]);

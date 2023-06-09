@@ -9,10 +9,10 @@ import { Error } from '../Error';
 import type { ErrorProps } from '../Error';
 import { Header } from '../Header';
 import type { HeaderPropsExtended } from '../Header';
-import type { UseCategoryProps } from 'src/states';
+import type { UseCategoryReturn } from 'src/states';
 
 export type InitCategoryProps = {
-  use: UseCategoryProps;
+  use: UseCategoryReturn;
   optionsButtonMainContainerStyle?: string;
   updateButtonProps?: ButtonProps;
   deleteButtonProps?: ButtonProps;
@@ -22,7 +22,7 @@ export type InitCategoryProps = {
 };
 
 export type InitCategoryPropsExtended = {
-  use: UseCategoryProps;
+  use: UseCategoryReturn;
   optionsButtonMainContainerStyle?: string;
   updateButtonProps?: ButtonProps;
   deleteButtonProps?: ButtonProps;

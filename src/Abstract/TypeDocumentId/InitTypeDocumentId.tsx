@@ -11,10 +11,10 @@ import { Error } from '../Error';
 import type { ErrorProps } from '../Error';
 import { Header } from '../Header';
 import { HeaderPropsExtended } from '../Header';
-import type { UseTypeDocumentIdProps } from 'src/states';
+import type { UseTypeDocumentIdReturn } from 'src/states';
 
 export type InitTypeDocumentIdProps = {
-  use: UseTypeDocumentIdProps;
+  use: UseTypeDocumentIdReturn;
   optionsButtonMainContainerStyle?: string;
   updateButtonProps?: ButtonProps;
   deleteButtonProps?: ButtonProps;
@@ -24,7 +24,7 @@ export type InitTypeDocumentIdProps = {
 };
 
 export type InitTypeDocumentIdPropsExtended = {
-  use?: UseTypeDocumentIdProps;
+  use?: UseTypeDocumentIdReturn;
   optionsButtonMainContainerStyle?: string;
   updateButtonProps?: ButtonProps;
   deleteButtonProps?: ButtonProps;

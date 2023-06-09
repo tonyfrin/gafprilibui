@@ -2,12 +2,12 @@
 import type { InputProps, GsSelectPropsExpanded } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseCategoryProps } from '../../states';
+import type { UseCategoryReturn } from '../../states';
 import { ListPropsExtended } from '../List';
 import type { LoadingProps } from '../../Components';
 import type { ButtonProps } from '../Button';
 export type CategoryFormProps = {
-    use: UseCategoryProps;
+    use: UseCategoryReturn;
     formType: 'add' | 'update';
     optionsButtonMainContainerStyle?: string;
     formContainerStyle?: string;
@@ -31,7 +31,7 @@ export type CategoryFormProps = {
     dependentsListProps?: ListPropsExtended;
 };
 export type CategoryFormPropsExtended = {
-    use?: UseCategoryProps;
+    use?: UseCategoryReturn;
     formType?: 'add' | 'update';
     optionsButtonMainContainerStyle?: string;
     formContainerStyle?: string;

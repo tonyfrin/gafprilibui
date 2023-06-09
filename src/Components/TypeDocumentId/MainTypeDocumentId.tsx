@@ -1,5 +1,5 @@
 import React from 'react';
-import type { UseTypeDocumentIdProps } from '../../states';
+import type { UseTypeDocumentIdReturn } from '../../states';
 import { Loading } from '../Loading';
 import { FadeIn } from '../../Abstract';
 import { InitTypeDocumentId, TypeDocumentIdForm } from '../../Abstract';
@@ -9,14 +9,14 @@ import type {
 } from '../../Abstract';
 
 export type MainTypeDocumentIdProps = {
-  use: UseTypeDocumentIdProps;
+  use: UseTypeDocumentIdReturn;
   initProps?: InitTypeDocumentIdPropsExtended;
   addFormProps?: TypeDocumentIdFormPropsExtended;
   updateFormProps?: TypeDocumentIdFormPropsExtended;
 };
 
 export type MainTypeDocumentIdPropsExtend = {
-  use: UseTypeDocumentIdProps;
+  use: UseTypeDocumentIdReturn;
   initProps?: InitTypeDocumentIdPropsExtended;
   addFormProps?: TypeDocumentIdFormPropsExtended;
   updateFormProps?: TypeDocumentIdFormPropsExtended;

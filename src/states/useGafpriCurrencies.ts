@@ -119,12 +119,12 @@ type Actions = {
   handleDeletedCurrency: ({ itemId }: DeletedCurrency) => void;
 };
 
-export type UseCurrenciesProps = {
+export type UseCurrenciesReturn = {
   states: State;
   actions: Actions;
 };
 
-export function useGafpriCurrencies(): UseCurrenciesProps {
+export function useGafpriCurrencies(): UseCurrenciesReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
   const [symbol, setSymbol] = useState('');

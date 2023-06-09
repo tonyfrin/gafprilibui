@@ -3,9 +3,9 @@ import type { ButtonProps } from '../Button';
 import { ListPropsExtended } from '../List';
 import type { ErrorProps } from '../Error';
 import type { HeaderPropsExtended } from '../Header';
-import type { UseCategoryProps } from 'src/states';
+import type { UseCategoryReturn } from 'src/states';
 export type InitCategoryProps = {
-    use: UseCategoryProps;
+    use: UseCategoryReturn;
     optionsButtonMainContainerStyle?: string;
     updateButtonProps?: ButtonProps;
     deleteButtonProps?: ButtonProps;
@@ -14,7 +14,7 @@ export type InitCategoryProps = {
     listProps?: ListPropsExtended;
 };
 export type InitCategoryPropsExtended = {
-    use: UseCategoryProps;
+    use: UseCategoryReturn;
     optionsButtonMainContainerStyle?: string;
     updateButtonProps?: ButtonProps;
     deleteButtonProps?: ButtonProps;

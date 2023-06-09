@@ -170,12 +170,12 @@ type Actions = {
   changeError: (value: string[]) => void;
 };
 
-export type UseCategoryProps = {
+export type UseCategoryReturn = {
   states: State;
   actions: Actions;
 };
 
-export function useGafpriCategory(): UseCategoryProps {
+export function useGafpriCategory(): UseCategoryReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
 

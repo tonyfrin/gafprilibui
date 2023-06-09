@@ -5,10 +5,10 @@ import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm } from '../Form';
 import { ModelFormPropsExtended } from '../Form';
-import type { UseTypeDocumentIdProps } from 'src/states';
+import type { UseTypeDocumentIdReturn } from 'src/states';
 
 export type TypeDocumentIdFormProps = {
-  use: UseTypeDocumentIdProps;
+  use: UseTypeDocumentIdReturn;
   formType: 'add' | 'update';
   modelFormProps?: ModelFormPropsExtended;
   infoContainerProps?: ContainerButtonPropsExtended;
@@ -16,7 +16,7 @@ export type TypeDocumentIdFormProps = {
 };
 
 export type TypeDocumentIdFormPropsExtended = {
-  use?: UseTypeDocumentIdProps;
+  use?: UseTypeDocumentIdReturn;
   formType?: 'add' | 'update';
   modelFormProps?: ModelFormPropsExtended;
   infoContainerProps?: ContainerButtonPropsExtended;

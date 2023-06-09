@@ -124,12 +124,12 @@ type Actions = {
   handleDeletedTypeDocumentId: ({ itemId }: DeletedTypeDocumentId) => void;
 };
 
-export type UseTypeDocumentIdProps = {
+export type UseTypeDocumentIdReturn = {
   states: State;
   actions: Actions;
 };
 
-export function useGafpriTypeDocumentId(): UseTypeDocumentIdProps {
+export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
   const [country, setCountry] = useState('');

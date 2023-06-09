@@ -61,9 +61,9 @@ type Actions = {
     handleUpdatedTypeDocumentId: (updatedCurrency: TypeDocumentIdAttributes) => void;
     handleDeletedTypeDocumentId: ({ itemId }: DeletedTypeDocumentId) => void;
 };
-export type UseTypeDocumentIdProps = {
+export type UseTypeDocumentIdReturn = {
     states: State;
     actions: Actions;
 };
-export declare function useGafpriTypeDocumentId(): UseTypeDocumentIdProps;
+export declare function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn;
 export {};

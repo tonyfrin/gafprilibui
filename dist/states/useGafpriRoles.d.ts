@@ -60,9 +60,9 @@ type Actions = {
     handleUpdatedRoles: (updatedCurrency: RolesAttributes) => void;
     handleDeletedRoles: ({ itemId }: DeletedRoles) => void;
 };
-export type UseRolesProps = {
+export type UseRolesReturn = {
     states: State;
     actions: Actions;
 };
-export declare function useGafpriRoles(): UseRolesProps;
+export declare function useGafpriRoles(): UseRolesReturn;
 export {};

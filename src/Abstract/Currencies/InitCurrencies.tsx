@@ -9,10 +9,10 @@ import { Error } from '../Error';
 import type { ErrorProps } from '../Error';
 import { Header } from '../Header';
 import type { HeaderProps } from '../Header';
-import type { UseCurrenciesProps } from 'src/states';
+import type { UseCurrenciesReturn } from 'src/states';
 
 export type InitCurrenciesProps = {
-  use: UseCurrenciesProps;
+  use: UseCurrenciesReturn;
   optionsButtonMainContainerStyle?: string;
   updateButtonProps?: ButtonProps;
   deleteButtonProps?: ButtonProps;
@@ -22,7 +22,7 @@ export type InitCurrenciesProps = {
 };
 
 export type InitCurrenciesPropsExtended = {
-  use?: UseCurrenciesProps;
+  use?: UseCurrenciesReturn;
   optionsButtonMainContainerStyle?: string;
   updateButtonProps?: ButtonProps;
   deleteButtonProps?: ButtonProps;

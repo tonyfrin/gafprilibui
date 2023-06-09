@@ -6,7 +6,7 @@ import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseCategoryProps } from '../../states';
+import type { UseCategoryReturn } from '../../states';
 import { List } from '../List';
 import { ListPropsExtended } from '../List';
 import { Loading } from '../../Components';
@@ -15,7 +15,7 @@ import { Button } from '../Button';
 import type { ButtonProps } from '../Button';
 
 export type CategoryFormProps = {
-  use: UseCategoryProps;
+  use: UseCategoryReturn;
   formType: 'add' | 'update';
   optionsButtonMainContainerStyle?: string;
   formContainerStyle?: string;
@@ -40,7 +40,7 @@ export type CategoryFormProps = {
 };
 
 export type CategoryFormPropsExtended = {
-  use?: UseCategoryProps;
+  use?: UseCategoryReturn;
   formType?: 'add' | 'update';
   optionsButtonMainContainerStyle?: string;
   formContainerStyle?: string;

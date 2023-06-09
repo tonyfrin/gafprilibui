@@ -3,9 +3,9 @@ import type { ButtonProps } from '../Button';
 import type { ListPropsExtended } from '../List';
 import type { ErrorProps } from '../Error';
 import type { HeaderProps } from '../Header';
-import { UseRolesProps } from '../../states';
+import { UseRolesReturn } from '../../states';
 export type InitRolesProps = {
-    use: UseRolesProps;
+    use: UseRolesReturn;
     optionsButtonMainContainerStyle?: string;
     updateButtonProps?: ButtonProps;
     deleteButtonProps?: ButtonProps;
@@ -14,7 +14,7 @@ export type InitRolesProps = {
     listProps?: ListPropsExtended;
 };
 export type InitRolesPropsExtended = {
-    use?: UseRolesProps;
+    use?: UseRolesReturn;
     optionsButtonMainContainerStyle?: string;
     updateButtonProps?: ButtonProps;
     deleteButtonProps?: ButtonProps;

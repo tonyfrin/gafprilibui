@@ -95,9 +95,9 @@ type Actions = {
     handleDeletedCategory: ({ itemId }: DeletedCategory) => void;
     changeError: (value: string[]) => void;
 };
-export type UseCategoryProps = {
+export type UseCategoryReturn = {
     states: State;
     actions: Actions;
 };
-export declare function useGafpriCategory(): UseCategoryProps;
+export declare function useGafpriCategory(): UseCategoryReturn;
 export {};

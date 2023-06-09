@@ -1,5 +1,5 @@
 import React from 'react';
-import type { UseCategoryProps } from 'src/states';
+import type { UseCategoryReturn } from 'src/states';
 import { Loading } from '../Loading';
 import { FadeIn, InitCategory, CategoryForm } from '../../Abstract';
 import type {
@@ -8,14 +8,14 @@ import type {
 } from '../../Abstract';
 
 export type MainCategoryProps = {
-  use: UseCategoryProps;
+  use: UseCategoryReturn;
   initProps?: InitCategoryPropsExtended;
   addFormProps?: CategoryFormPropsExtended;
   updateFromProps?: CategoryFormPropsExtended;
 };
 
 export type MainCategoryPropsExtended = {
-  use: UseCategoryProps;
+  use: UseCategoryReturn;
   initProps?: InitCategoryPropsExtended;
   addFormProps?: CategoryFormPropsExtended;
   updateFromProps?: CategoryFormPropsExtended;

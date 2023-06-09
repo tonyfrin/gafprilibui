@@ -89,6 +89,7 @@ export {
   Loading,
   MainCurrencies,
   MainTypeDocumentId,
+  MainCategory,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -96,6 +97,8 @@ export type {
   MainTypeDocumentIdProps,
   MainTypeDocumentIdPropsExtend,
   LoadingProps,
+  MainCategoryProps,
+  MainCategoryPropsExtended,
 } from './Components';
 export {
   addClass,

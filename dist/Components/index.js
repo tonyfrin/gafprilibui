@@ -15,6 +15,12 @@ Object.defineProperty(exports, "LoginHeader", {
     return _Header.LoginHeader;
   }
 });
+Object.defineProperty(exports, "MainCategory", {
+  enumerable: true,
+  get: function get() {
+    return _Products.MainCategory;
+  }
+});
 Object.defineProperty(exports, "MainCurrencies", {
   enumerable: true,
   get: function get() {
@@ -38,3 +44,4 @@ var _Header = require("./Header");
 var _Loading = require("./Loading");
 var _Currencies = require("./Currencies");
 var _TypeDocumentId = require("./TypeDocumentId");
+var _Products = require("./Products");

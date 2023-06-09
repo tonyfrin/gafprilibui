@@ -71,3 +71,12 @@ export type {
   CategoryFormProps,
   CategoryFormPropsExtended,
 } from './Category';
+export { InitRoles, RolePermissions, RolesForm } from './Roles';
+export type {
+  InitRolesProps,
+  InitRolesPropsExtended,
+  RolePermissionsProps,
+  RolePermissionsPropsExtended,
+  RolesFormProps,
+  RolesFormPropsExtended,
+} from './Roles';

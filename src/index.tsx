@@ -33,6 +33,9 @@ export {
   TypeDocumentIdForm,
   InitCategory,
   CategoryForm,
+  InitRoles,
+  RolePermissions,
+  RolesForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -82,6 +85,12 @@ export type {
   GsSelectPropsExpanded,
   CategoryFormProps,
   CategoryFormPropsExtended,
+  InitRolesProps,
+  InitRolesPropsExtended,
+  RolePermissionsProps,
+  RolePermissionsPropsExtended,
+  RolesFormProps,
+  RolesFormPropsExtended,
 } from './Abstract';
 export {
   MainFooter,

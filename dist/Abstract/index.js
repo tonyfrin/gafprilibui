@@ -117,6 +117,12 @@ Object.defineProperty(exports, "InitCurrencies", {
     return _Currencies.InitCurrencies;
   }
 });
+Object.defineProperty(exports, "InitRoles", {
+  enumerable: true,
+  get: function get() {
+    return _Roles.InitRoles;
+  }
+});
 Object.defineProperty(exports, "InitTypeDocumentId", {
   enumerable: true,
   get: function get() {
@@ -177,6 +183,18 @@ Object.defineProperty(exports, "Pagination", {
     return _Pagination.Pagination;
   }
 });
+Object.defineProperty(exports, "RolePermissions", {
+  enumerable: true,
+  get: function get() {
+    return _Roles.RolePermissions;
+  }
+});
+Object.defineProperty(exports, "RolesForm", {
+  enumerable: true,
+  get: function get() {
+    return _Roles.RolesForm;
+  }
+});
 Object.defineProperty(exports, "SearchBar", {
   enumerable: true,
   get: function get() {
@@ -228,3 +246,4 @@ var _Header = require("./Header");
 var _Currencies = require("./Currencies");
 var _TypeDocumentId = require("./TypeDocumentId");
 var _Category = require("./Category");
+var _Roles = require("./Roles");

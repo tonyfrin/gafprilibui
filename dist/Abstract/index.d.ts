@@ -37,3 +37,5 @@ export { InitTypeDocumentId, TypeDocumentIdForm } from './TypeDocumentId';
 export type { InitTypeDocumentIdProps, InitTypeDocumentIdPropsExtended, TypeDocumentIdFormProps, TypeDocumentIdFormPropsExtended, } from './TypeDocumentId';
 export { InitCategory, CategoryForm } from './Category';
 export type { InitCategoryProps, InitCategoryPropsExtended, CategoryFormProps, CategoryFormPropsExtended, } from './Category';
+export { InitRoles, RolePermissions, RolesForm } from './Roles';
+export type { InitRolesProps, InitRolesPropsExtended, RolePermissionsProps, RolePermissionsPropsExtended, RolesFormProps, RolesFormPropsExtended, } from './Roles';

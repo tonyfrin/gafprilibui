@@ -141,6 +141,12 @@ Object.defineProperty(exports, "InitCurrencies", {
     return _Abstract.InitCurrencies;
   }
 });
+Object.defineProperty(exports, "InitRoles", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitRoles;
+  }
+});
 Object.defineProperty(exports, "InitTypeDocumentId", {
   enumerable: true,
   get: function get() {
@@ -235,6 +241,18 @@ Object.defineProperty(exports, "Pagination", {
   enumerable: true,
   get: function get() {
     return _Abstract.Pagination;
+  }
+});
+Object.defineProperty(exports, "RolePermissions", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.RolePermissions;
+  }
+});
+Object.defineProperty(exports, "RolesForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.RolesForm;
   }
 });
 Object.defineProperty(exports, "SearchBar", {

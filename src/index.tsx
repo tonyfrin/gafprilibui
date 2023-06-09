@@ -136,6 +136,7 @@ export {
   useGafpriCurrencies,
   useGafpriTypeDocumentId,
   useGafpriCategory,
+  useGafpriRoles,
 } from './states';
 export type {
   UseCurrenciesProps,
@@ -144,6 +145,8 @@ export type {
   UseTypeDocumentIdProps,
   CategoryAttributes,
   UseCategoryProps,
+  UseRolesProps,
+  RolesAttributes,
 } from './states';
 export {
   Countries,

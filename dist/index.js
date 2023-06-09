@@ -207,6 +207,12 @@ Object.defineProperty(exports, "MainFooter", {
     return _Components.MainFooter;
   }
 });
+Object.defineProperty(exports, "MainRoles", {
+  enumerable: true,
+  get: function get() {
+    return _Components.MainRoles;
+  }
+});
 Object.defineProperty(exports, "MainTypeDocumentId", {
   enumerable: true,
   get: function get() {

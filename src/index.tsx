@@ -99,6 +99,7 @@ export {
   MainCurrencies,
   MainTypeDocumentId,
   MainCategory,
+  MainRoles,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -108,6 +109,8 @@ export type {
   LoadingProps,
   MainCategoryProps,
   MainCategoryPropsExtended,
+  MainRolesProps,
+  MainRolesPropsExtended,
 } from './Components';
 export {
   addClass,

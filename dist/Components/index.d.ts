@@ -8,3 +8,5 @@ export { MainTypeDocumentId } from './TypeDocumentId';
 export type { MainTypeDocumentIdProps, MainTypeDocumentIdPropsExtend, } from './TypeDocumentId';
 export { MainCategory } from './Products';
 export type { MainCategoryProps, MainCategoryPropsExtended } from './Products';
+export { MainRoles } from './Roles';
+export type { MainRolesProps, MainRolesPropsExtended } from './Roles';

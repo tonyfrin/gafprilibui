@@ -150,6 +150,7 @@ export {
   useGafpriCategory,
   useGafpriRoles,
   useGafpriEntity,
+  useGafpriSites,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -165,6 +166,9 @@ export type {
   AddressAttributes,
   EntityAttributes,
   UseEntityProps,
+  UseSitesReturn,
+  SitesAttributes,
+  UseSitesProps,
 } from './states';
 export {
   Countries,

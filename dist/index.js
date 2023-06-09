@@ -399,6 +399,12 @@ Object.defineProperty(exports, "useGafpriRoles", {
     return _states.useGafpriRoles;
   }
 });
+Object.defineProperty(exports, "useGafpriSites", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriSites;
+  }
+});
 Object.defineProperty(exports, "useGafpriTypeDocumentId", {
   enumerable: true,
   get: function get() {

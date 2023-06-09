@@ -23,3 +23,9 @@ export type {
   EntityAttributes,
   UseEntityProps,
 } from './useGafpriEntity';
+export { useGafpriSites } from './useGafpriSites';
+export type {
+  UseSitesReturn,
+  SitesAttributes,
+  UseSitesProps,
+} from './useGafpriSites';

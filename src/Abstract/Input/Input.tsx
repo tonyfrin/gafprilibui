@@ -141,6 +141,18 @@ export type GsSelectProps = {
   defaultValue?: { value: string; label: string };
 };
 
+export type GsSelectPropsExpanded = {
+  styles?: SelectStyle;
+  Class?: string;
+  options?: { value: string; label: string }[];
+  id?: string;
+  onChange?: OnChange;
+  placeholder?: string;
+  containerStyles?: ContainerStyles;
+  containerClass?: string;
+  defaultValue?: { value: string; label: string };
+};
+
 export const GsSelect = ({
   styles = {},
   Class = '',

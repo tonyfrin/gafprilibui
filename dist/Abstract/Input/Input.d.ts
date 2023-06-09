@@ -64,5 +64,22 @@ export type GsSelectProps = {
         label: string;
     };
 };
+export type GsSelectPropsExpanded = {
+    styles?: SelectStyle;
+    Class?: string;
+    options?: {
+        value: string;
+        label: string;
+    }[];
+    id?: string;
+    onChange?: OnChange;
+    placeholder?: string;
+    containerStyles?: ContainerStyles;
+    containerClass?: string;
+    defaultValue?: {
+        value: string;
+        label: string;
+    };
+};
 export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerClass, defaultValue, }: GsSelectProps) => JSX.Element;
 export {};

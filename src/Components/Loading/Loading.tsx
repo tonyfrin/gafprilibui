@@ -50,7 +50,7 @@ const divStyles = (styles: DivStyle) => css`
   height: ${styles.height || '80px'};
 `;
 
-type LoadingStyle = {
+export type LoadingProps = {
   mainStyles?: MainStyle | undefined;
   classMain?: string;
   classDiv?: string;
@@ -62,7 +62,7 @@ export const Loading = ({
   classMain = '',
   classDiv = '',
   divStyle = {},
-}: LoadingStyle) => {
+}: LoadingProps) => {
   return (
     <>
       <main className={cx(mainStyle(mainStyles), classMain)}>

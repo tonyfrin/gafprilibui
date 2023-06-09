@@ -33,6 +33,12 @@ Object.defineProperty(exports, "ButtonLarge", {
     return _Abstract.ButtonLarge;
   }
 });
+Object.defineProperty(exports, "CategoryForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CategoryForm;
+  }
+});
 Object.defineProperty(exports, "Cities", {
   enumerable: true,
   get: function get() {
@@ -121,6 +127,12 @@ Object.defineProperty(exports, "Header", {
   enumerable: true,
   get: function get() {
     return _Abstract.Header;
+  }
+});
+Object.defineProperty(exports, "InitCategory", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitCategory;
   }
 });
 Object.defineProperty(exports, "InitCurrencies", {

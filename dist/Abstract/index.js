@@ -27,6 +27,12 @@ Object.defineProperty(exports, "ButtonLarge", {
     return _Button.ButtonLarge;
   }
 });
+Object.defineProperty(exports, "CategoryForm", {
+  enumerable: true,
+  get: function get() {
+    return _Category.CategoryForm;
+  }
+});
 Object.defineProperty(exports, "ColumnList", {
   enumerable: true,
   get: function get() {
@@ -97,6 +103,12 @@ Object.defineProperty(exports, "Header", {
   enumerable: true,
   get: function get() {
     return _Header.Header;
+  }
+});
+Object.defineProperty(exports, "InitCategory", {
+  enumerable: true,
+  get: function get() {
+    return _Category.InitCategory;
   }
 });
 Object.defineProperty(exports, "InitCurrencies", {
@@ -215,3 +227,4 @@ var _Menu = require("./Menu");
 var _Header = require("./Header");
 var _Currencies = require("./Currencies");
 var _TypeDocumentId = require("./TypeDocumentId");
+var _Category = require("./Category");

@@ -25,6 +25,7 @@ export type {
   OnChange,
   GsSelectProps,
   InputProps,
+  GsSelectPropsExpanded,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -63,5 +64,10 @@ export type {
   TypeDocumentIdFormProps,
   TypeDocumentIdFormPropsExtended,
 } from './TypeDocumentId';
-export { InitCategory } from "./Category";
-export type { InitCategoryProps, InitCategoryPropsExtended } from "./Category";
+export { InitCategory, CategoryForm } from './Category';
+export type {
+  InitCategoryProps,
+  InitCategoryPropsExtended,
+  CategoryFormProps,
+  CategoryFormPropsExtended,
+} from './Category';

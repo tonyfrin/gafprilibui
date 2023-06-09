@@ -17,11 +17,11 @@ type DivStyle = {
     width?: string | undefined;
     height?: string | undefined;
 };
-type LoadingStyle = {
+export type LoadingProps = {
     mainStyles?: MainStyle | undefined;
     classMain?: string;
     classDiv?: string;
     divStyle?: DivStyle;
 };
-export declare const Loading: ({ mainStyles, classMain, classDiv, divStyle, }: LoadingStyle) => JSX.Element;
+export declare const Loading: ({ mainStyles, classMain, classDiv, divStyle, }: LoadingProps) => JSX.Element;
 export {};

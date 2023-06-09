@@ -32,6 +32,7 @@ export {
   InitTypeDocumentId,
   TypeDocumentIdForm,
   InitCategory,
+  CategoryForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -76,8 +77,11 @@ export type {
   InitTypeDocumentIdPropsExtended,
   TypeDocumentIdFormProps,
   TypeDocumentIdFormPropsExtended,
-  InitCategoryProps, 
-  InitCategoryPropsExtended
+  InitCategoryProps,
+  InitCategoryPropsExtended,
+  GsSelectPropsExpanded,
+  CategoryFormProps,
+  CategoryFormPropsExtended,
 } from './Abstract';
 export {
   MainFooter,
@@ -91,6 +95,7 @@ export type {
   MainCurrenciesPropsExtended,
   MainTypeDocumentIdProps,
   MainTypeDocumentIdPropsExtend,
+  LoadingProps,
 } from './Components';
 export {
   addClass,

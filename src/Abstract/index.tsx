@@ -63,3 +63,5 @@ export type {
   TypeDocumentIdFormProps,
   TypeDocumentIdFormPropsExtended,
 } from './TypeDocumentId';
+export { InitCategory } from "./Category";
+export type { InitCategoryProps, InitCategoryPropsExtended } from "./Category";

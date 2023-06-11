@@ -10,3 +10,5 @@ export { useGafpriEntity } from './useGafpriEntity';
 export type { UseEntityReturn, DocumentIdAttributes, AddressAttributes, EntityAttributes, UseEntityProps, } from './useGafpriEntity';
 export { useGafpriSites } from './useGafpriSites';
 export type { UseSitesReturn, SitesAttributes, UseSitesProps, } from './useGafpriSites';
+export { useGafpriUsers } from './useGafpriUser';
+export type { UserAttributes, UseUserReturn, UseUserProps, } from './useGafpriUser';

@@ -29,3 +29,9 @@ export type {
   SitesAttributes,
   UseSitesProps,
 } from './useGafpriSites';
+export { useGafpriUsers } from './useGafpriUser';
+export type {
+  UserAttributes,
+  UseUserReturn,
+  UseUserProps,
+} from './useGafpriUser';

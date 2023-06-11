@@ -429,6 +429,12 @@ Object.defineProperty(exports, "useGafpriTypeDocumentId", {
     return _states.useGafpriTypeDocumentId;
   }
 });
+Object.defineProperty(exports, "useGafpriUsers", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriUsers;
+  }
+});
 Object.defineProperty(exports, "validationHidden", {
   enumerable: true,
   get: function get() {

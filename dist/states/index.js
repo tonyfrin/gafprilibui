@@ -39,9 +39,16 @@ Object.defineProperty(exports, "useGafpriTypeDocumentId", {
     return _useGafpriTypeDocumentId.useGafpriTypeDocumentId;
   }
 });
+Object.defineProperty(exports, "useGafpriUsers", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriUser.useGafpriUsers;
+  }
+});
 var _useGafpriCurrencies = require("./useGafpriCurrencies");
 var _useGafpriTypeDocumentId = require("./useGafpriTypeDocumentId");
 var _useGafpriCategory = require("./useGafpriCategory");
 var _useGafpriRoles = require("./useGafpriRoles");
 var _useGafpriEntity = require("./useGafpriEntity");
 var _useGafpriSites = require("./useGafpriSites");
+var _useGafpriUser = require("./useGafpriUser");

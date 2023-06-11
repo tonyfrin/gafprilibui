@@ -39,6 +39,12 @@ Object.defineProperty(exports, "MainRoles", {
     return _Roles.MainRoles;
   }
 });
+Object.defineProperty(exports, "MainSites", {
+  enumerable: true,
+  get: function get() {
+    return _Sites.MainSites;
+  }
+});
 Object.defineProperty(exports, "MainTypeDocumentId", {
   enumerable: true,
   get: function get() {
@@ -52,3 +58,4 @@ var _Currencies = require("./Currencies");
 var _TypeDocumentId = require("./TypeDocumentId");
 var _Products = require("./Products");
 var _Roles = require("./Roles");
+var _Sites = require("./Sites");

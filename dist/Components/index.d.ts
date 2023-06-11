@@ -10,3 +10,5 @@ export { MainCategory } from './Products';
 export type { MainCategoryProps, MainCategoryPropsExtended } from './Products';
 export { MainRoles } from './Roles';
 export type { MainRolesProps, MainRolesPropsExtended } from './Roles';
+export { MainSites } from './Sites';
+export type { MainSitesProps, MainSitesPropsExtended } from './Sites';

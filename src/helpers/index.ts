@@ -452,3 +452,9 @@ export function formatPhoneNumber(phoneNumber: string): string {
 
   return `+${countryCode} (${areaCode}) ${firstPart}-${secondPart}`;
 }
+
+export interface RoleArray {
+  id: string;
+  name: string;
+  role: string;
+}

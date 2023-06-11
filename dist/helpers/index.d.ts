@@ -90,4 +90,9 @@ export type CustomErrorResponseProps = {
 export declare function isCustomErrorResponse(obj: unknown): obj is CustomErrorResponseProps;
 export declare function getMimeTypeByExtension(filename: string): string | null;
 export declare function formatPhoneNumber(phoneNumber: string): string;
+export interface RoleArray {
+    id: string;
+    name: string;
+    role: string;
+}
 export {};

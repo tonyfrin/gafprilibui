@@ -152,6 +152,7 @@ export type {
   ValidationErrorInfo,
   CustomErrorResponseProps,
   SelectDefault,
+  RoleArray,
 } from './helpers';
 export {
   useGafpriCurrencies,

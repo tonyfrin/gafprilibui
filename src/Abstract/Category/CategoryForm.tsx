@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import { Input, GsSelect } from '../Input';
-import type { InputProps, GsSelectPropsExpanded } from '../Input';
+import type { InputProps, GsSelectPropsExtended } from '../Input';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm } from '../Form';
@@ -33,9 +33,9 @@ export type CategoryFormProps = {
   descriptionContainerProps?: ContainerButtonPropsExtended;
   descriptionInputProps?: InputProps;
   parentIdContainerProps?: ContainerButtonPropsExtended;
-  parentIdInputProps?: GsSelectPropsExpanded;
+  parentIdInputProps?: GsSelectPropsExtended;
   statusContainerProps?: ContainerButtonPropsExtended;
-  statusInputProps?: GsSelectPropsExpanded;
+  statusInputProps?: GsSelectPropsExtended;
   dependentsListProps?: ListPropsExtended;
 };
 
@@ -58,9 +58,9 @@ export type CategoryFormPropsExtended = {
   descriptionContainerProps?: ContainerButtonPropsExtended;
   descriptionInputProps?: InputProps;
   parentIdContainerProps?: ContainerButtonPropsExtended;
-  parentIdInputProps?: GsSelectPropsExpanded;
+  parentIdInputProps?: GsSelectPropsExtended;
   statusContainerProps?: ContainerButtonPropsExtended;
-  statusInputProps?: GsSelectPropsExpanded;
+  statusInputProps?: GsSelectPropsExtended;
   dependentsListProps?: ListPropsExtended;
 };
 

@@ -4,6 +4,6 @@ export type {
   SelectStyle,
   OnChange,
   GsSelectProps,
-  GsSelectPropsExpanded,
+  GsSelectPropsExtended,
   InputProps,
 } from './Input';

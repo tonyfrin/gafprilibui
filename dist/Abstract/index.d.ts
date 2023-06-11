@@ -7,7 +7,7 @@ export type { ContainerGloboStyle, ContainerButtonStyle, ContainerStyles, Contai
 export { Globo } from './Icons';
 export type { GloboStyle } from './Icons';
 export { Input, GsSelect } from './Input';
-export type { InputStyle, SelectStyle, OnChange, GsSelectProps, InputProps, GsSelectPropsExpanded, } from './Input';
+export type { InputStyle, SelectStyle, OnChange, GsSelectProps, InputProps, GsSelectPropsExtended, } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
 export { Background1 } from './Background';
@@ -39,3 +39,5 @@ export { InitCategory, CategoryForm } from './Category';
 export type { InitCategoryProps, InitCategoryPropsExtended, CategoryFormProps, CategoryFormPropsExtended, } from './Category';
 export { InitRoles, RolePermissions, RolesForm } from './Roles';
 export type { InitRolesProps, InitRolesPropsExtended, RolePermissionsProps, RolePermissionsPropsExtended, RolesFormProps, RolesFormPropsExtended, } from './Roles';
+export { InitSites, SitesForm } from './Sites';
+export type { InitSitesProps, InitSitesPropsExtended, SitesFormProps, SitesFormPropsExtended, } from './Sites';

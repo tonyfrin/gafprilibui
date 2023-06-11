@@ -25,7 +25,7 @@ export type {
   OnChange,
   GsSelectProps,
   InputProps,
-  GsSelectPropsExpanded,
+  GsSelectPropsExtended,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -80,3 +80,10 @@ export type {
   RolesFormProps,
   RolesFormPropsExtended,
 } from './Roles';
+export { InitSites, SitesForm } from './Sites';
+export type {
+  InitSitesProps,
+  InitSitesPropsExtended,
+  SitesFormProps,
+  SitesFormPropsExtended,
+} from './Sites';

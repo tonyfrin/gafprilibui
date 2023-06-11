@@ -64,7 +64,7 @@ export type GsSelectProps = {
         label: string;
     };
 };
-export type GsSelectPropsExpanded = {
+export type GsSelectPropsExtended = {
     styles?: SelectStyle;
     Class?: string;
     options?: {

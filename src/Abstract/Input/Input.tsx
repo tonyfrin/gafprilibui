@@ -141,7 +141,7 @@ export type GsSelectProps = {
   defaultValue?: { value: string; label: string };
 };
 
-export type GsSelectPropsExpanded = {
+export type GsSelectPropsExtended = {
   styles?: SelectStyle;
   Class?: string;
   options?: { value: string; label: string }[];

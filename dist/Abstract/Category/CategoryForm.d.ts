@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import type { InputProps, GsSelectPropsExpanded } from '../Input';
+import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import type { ModelFormPropsExtended } from '../Form';
 import type { UseCategoryReturn } from '../../states';
@@ -25,9 +25,9 @@ export type CategoryFormProps = {
     descriptionContainerProps?: ContainerButtonPropsExtended;
     descriptionInputProps?: InputProps;
     parentIdContainerProps?: ContainerButtonPropsExtended;
-    parentIdInputProps?: GsSelectPropsExpanded;
+    parentIdInputProps?: GsSelectPropsExtended;
     statusContainerProps?: ContainerButtonPropsExtended;
-    statusInputProps?: GsSelectPropsExpanded;
+    statusInputProps?: GsSelectPropsExtended;
     dependentsListProps?: ListPropsExtended;
 };
 export type CategoryFormPropsExtended = {
@@ -49,9 +49,9 @@ export type CategoryFormPropsExtended = {
     descriptionContainerProps?: ContainerButtonPropsExtended;
     descriptionInputProps?: InputProps;
     parentIdContainerProps?: ContainerButtonPropsExtended;
-    parentIdInputProps?: GsSelectPropsExpanded;
+    parentIdInputProps?: GsSelectPropsExtended;
     statusContainerProps?: ContainerButtonPropsExtended;
-    statusInputProps?: GsSelectPropsExpanded;
+    statusInputProps?: GsSelectPropsExtended;
     dependentsListProps?: ListPropsExtended;
 };
 export declare const CategoryForm: ({ use, formType, optionsButtonMainContainerStyle, formContainerStyle, imageContainerStyle, imageFormConatinerStyle, loadingContainerStyle, imageStyle, infoContainerStyle, deleteButtonProps, modelFormProps, changePhotoButtonProps, loadingProps, nameContainerProps, nameInputProps, descriptionContainerProps, descriptionInputProps, parentIdContainerProps, parentIdInputProps, statusContainerProps, statusInputProps, dependentsListProps, }: CategoryFormProps) => JSX.Element;

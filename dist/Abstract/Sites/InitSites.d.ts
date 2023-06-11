@@ -3,7 +3,7 @@ import type { ButtonProps } from '../Button';
 import type { ListPropsExtended } from '../List';
 import type { ErrorProps } from '../Error';
 import type { HeaderProps } from '../Header';
-import type { UseSitesReturn } from 'src/states';
+import type { UseSitesReturn } from '../../states';
 export type InitSitesProps = {
     use: UseSitesReturn;
     optionButtonContainerStyle?: string;

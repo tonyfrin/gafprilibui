@@ -3,14 +3,14 @@ import { FaPlus } from 'react-icons/fa';
 import { css } from '@emotion/css';
 import { Button } from '../Button';
 import type { ButtonProps } from '../Button';
-import { StatesCountries, Countries } from 'src/Constans';
+import { StatesCountries, Countries } from '../../Constans';
 import { List } from '../List';
 import type { ListPropsExtended } from '../List';
 import { Error } from '../Error';
 import type { ErrorProps } from '../Error';
 import { Header } from '../Header';
 import type { HeaderProps } from '../Header';
-import type { UseSitesReturn } from 'src/states';
+import type { UseSitesReturn } from '../../states';
 
 export type InitSitesProps = {
   use: UseSitesReturn;

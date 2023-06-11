@@ -2,7 +2,7 @@
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseSitesReturn, UseCurrenciesReturn } from 'src/states';
+import type { UseSitesReturn, UseCurrenciesReturn } from '../../states';
 export type SitesFormProps = {
     use: UseSitesReturn;
     formType: 'add' | 'update';

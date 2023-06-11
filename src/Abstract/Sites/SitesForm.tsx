@@ -5,8 +5,8 @@ import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseSitesReturn, UseCurrenciesReturn } from 'src/states';
-import { StatesCountries, Countries } from 'src/Constans';
+import type { UseSitesReturn, UseCurrenciesReturn } from '../../states';
+import { StatesCountries, Countries } from '../../Constans';
 
 export type SitesFormProps = {
   use: UseSitesReturn;

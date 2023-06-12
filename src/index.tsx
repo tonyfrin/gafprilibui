@@ -120,6 +120,7 @@ export {
   MainCategory,
   MainRoles,
   MainSites,
+  MainUser,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -133,6 +134,8 @@ export type {
   MainRolesPropsExtended,
   MainSitesProps,
   MainSitesPropsExtended,
+  MainUserProps,
+  MainUserPropsExtended,
 } from './Components';
 export {
   addClass,

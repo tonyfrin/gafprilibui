@@ -18,3 +18,5 @@ export { MainRoles } from './Roles';
 export type { MainRolesProps, MainRolesPropsExtended } from './Roles';
 export { MainSites } from './Sites';
 export type { MainSitesProps, MainSitesPropsExtended } from './Sites';
+export { MainUser } from './Users';
+export type { MainUserProps, MainUserPropsExtended } from './Users';

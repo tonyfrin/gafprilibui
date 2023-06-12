@@ -51,6 +51,12 @@ Object.defineProperty(exports, "MainTypeDocumentId", {
     return _TypeDocumentId.MainTypeDocumentId;
   }
 });
+Object.defineProperty(exports, "MainUser", {
+  enumerable: true,
+  get: function get() {
+    return _Users.MainUser;
+  }
+});
 var _Footer = require("./Footer");
 var _Header = require("./Header");
 var _Loading = require("./Loading");
@@ -59,3 +65,4 @@ var _TypeDocumentId = require("./TypeDocumentId");
 var _Products = require("./Products");
 var _Roles = require("./Roles");
 var _Sites = require("./Sites");
+var _Users = require("./Users");

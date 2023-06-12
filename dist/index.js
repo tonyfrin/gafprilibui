@@ -237,6 +237,12 @@ Object.defineProperty(exports, "MainTypeDocumentId", {
     return _Components.MainTypeDocumentId;
   }
 });
+Object.defineProperty(exports, "MainUser", {
+  enumerable: true,
+  get: function get() {
+    return _Components.MainUser;
+  }
+});
 Object.defineProperty(exports, "Menu1", {
   enumerable: true,
   get: function get() {

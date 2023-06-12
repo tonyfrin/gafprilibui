@@ -159,6 +159,12 @@ Object.defineProperty(exports, "InitTypeDocumentId", {
     return _Abstract.InitTypeDocumentId;
   }
 });
+Object.defineProperty(exports, "InitUser", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitUser;
+  }
+});
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
@@ -313,6 +319,24 @@ Object.defineProperty(exports, "TypeDocumentIdForm", {
   enumerable: true,
   get: function get() {
     return _Abstract.TypeDocumentIdForm;
+  }
+});
+Object.defineProperty(exports, "UserForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.UserForm;
+  }
+});
+Object.defineProperty(exports, "UserFormUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.UserFormUpdate;
+  }
+});
+Object.defineProperty(exports, "UserView", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.UserView;
   }
 });
 Object.defineProperty(exports, "addClass", {

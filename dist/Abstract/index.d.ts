@@ -1,5 +1,5 @@
 export { Button, ButtonLarge } from './Button';
-export type { ButtonStyle, ButtonProps, ButtonLargeProps } from './Button';
+export type { ButtonStyle, ButtonProps, ButtonLargeProps, ButtonPropsExtended, } from './Button';
 export { Box1 } from './Box';
 export type { Box1Style, Box1Props } from './Box';
 export { ContainerInput, ContainerForm, ContainerGlobo, ContainerButton, } from './Containers';
@@ -41,3 +41,5 @@ export { InitRoles, RolePermissions, RolesForm } from './Roles';
 export type { InitRolesProps, InitRolesPropsExtended, RolePermissionsProps, RolePermissionsPropsExtended, RolesFormProps, RolesFormPropsExtended, } from './Roles';
 export { InitSites, SitesForm } from './Sites';
 export type { InitSitesProps, InitSitesPropsExtended, SitesFormProps, SitesFormPropsExtended, } from './Sites';
+export { InitUser, UserForm, UserFormUpdate, UserView } from './Users';
+export type { InitUserProps, InitUserPropsExtended, UserFormProps, UserFormPropsExtended, UserFormUpdateProps, UserFormUpdatePropsExtended, UserViewProps, UserViewPropsExtended, } from './Users';

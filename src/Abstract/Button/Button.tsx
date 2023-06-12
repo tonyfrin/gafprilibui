@@ -70,6 +70,12 @@ export type ButtonProps = {
   buttonProps?: ButtonHTMLAttributes<HTMLButtonElement> | undefined;
 };
 
+export type ButtonPropsExtended = {
+  styles?: ButtonStyle;
+  Class?: string;
+  buttonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
+};
+
 export const Button = ({
   styles = {},
   buttonProps = {},

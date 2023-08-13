@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "AddressAddForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.AddressAddForm;
+  }
+});
 Object.defineProperty(exports, "AllRoles", {
   enumerable: true,
   get: function get() {
@@ -87,10 +93,28 @@ Object.defineProperty(exports, "CurrencyForm", {
     return _Abstract.CurrencyForm;
   }
 });
+Object.defineProperty(exports, "DocumentAddForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.DocumentAddForm;
+  }
+});
 Object.defineProperty(exports, "DocumentsIndex", {
   enumerable: true,
   get: function get() {
     return _Constans.DocumentsIndex;
+  }
+});
+Object.defineProperty(exports, "EntityAddForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.EntityAddForm;
+  }
+});
+Object.defineProperty(exports, "EntityUpdateForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.EntityUpdateForm;
   }
 });
 Object.defineProperty(exports, "Error", {
@@ -139,6 +163,12 @@ Object.defineProperty(exports, "InitCurrencies", {
   enumerable: true,
   get: function get() {
     return _Abstract.InitCurrencies;
+  }
+});
+Object.defineProperty(exports, "InitEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitEntity;
   }
 });
 Object.defineProperty(exports, "InitRoles", {

@@ -103,3 +103,22 @@ export type {
   UserViewProps,
   UserViewPropsExtended,
 } from './Users';
+export {
+  InitEntity,
+  EntityAddForm,
+  EntityUpdateForm,
+  AddressAddForm,
+  DocumentAddForm,
+} from './Entity';
+export type {
+  InitEntityProps,
+  InitEntityPropsExtended,
+  EntityAddFormProps,
+  EntityAddFormPropsExtended,
+  EntityUpdateFormProps,
+  EntityUpdateFormPropsExtended,
+  AddressFormProps,
+  AddressFormPropsExtended,
+  DocumentAddFormProps,
+  DocumentAddFormPropsExtended,
+} from './Entity';

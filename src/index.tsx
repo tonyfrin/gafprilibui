@@ -42,6 +42,11 @@ export {
   UserForm,
   UserFormUpdate,
   UserView,
+  InitEntity,
+  EntityAddForm,
+  EntityUpdateForm,
+  AddressAddForm,
+  DocumentAddForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -110,6 +115,16 @@ export type {
   UserFormUpdatePropsExtended,
   UserViewPropsExtended,
   UserViewProps,
+  InitEntityProps,
+  InitEntityPropsExtended,
+  EntityAddFormProps,
+  EntityAddFormPropsExtended,
+  EntityUpdateFormProps,
+  EntityUpdateFormPropsExtended,
+  AddressFormProps,
+  AddressFormPropsExtended,
+  DocumentAddFormProps,
+  DocumentAddFormPropsExtended,
 } from './Abstract';
 export {
   MainFooter,

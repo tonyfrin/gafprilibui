@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "AddressAddForm", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.AddressAddForm;
+  }
+});
 Object.defineProperty(exports, "Background1", {
   enumerable: true,
   get: function get() {
@@ -69,6 +75,24 @@ Object.defineProperty(exports, "CurrencyForm", {
     return _Currencies.CurrencyForm;
   }
 });
+Object.defineProperty(exports, "DocumentAddForm", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.DocumentAddForm;
+  }
+});
+Object.defineProperty(exports, "EntityAddForm", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.EntityAddForm;
+  }
+});
+Object.defineProperty(exports, "EntityUpdateForm", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.EntityUpdateForm;
+  }
+});
 Object.defineProperty(exports, "Error", {
   enumerable: true,
   get: function get() {
@@ -115,6 +139,12 @@ Object.defineProperty(exports, "InitCurrencies", {
   enumerable: true,
   get: function get() {
     return _Currencies.InitCurrencies;
+  }
+});
+Object.defineProperty(exports, "InitEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.InitEntity;
   }
 });
 Object.defineProperty(exports, "InitRoles", {
@@ -285,3 +315,4 @@ var _Category = require("./Category");
 var _Roles = require("./Roles");
 var _Sites = require("./Sites");
 var _Users = require("./Users");
+var _Entity = require("./Entity");

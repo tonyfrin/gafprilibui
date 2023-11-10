@@ -933,6 +933,12 @@ var useGafpriSites = function useGafpriSites(_ref) {
       return "".concat(item.id) === "".concat(id);
     })) || null;
   }
+  function getMainSite() {
+    if (sites.data.items) {
+      return sites.data.items[0];
+    }
+    return null;
+  }
   var update = function update() {
     if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid) {
       var payload = {
@@ -1119,6 +1125,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     add: add,
     update: update,
     getById: getById,
+    getMainSite: getMainSite,
     goUpdate: goUpdate,
     sortByName: sortByName,
     setOrderList: setOrderList,

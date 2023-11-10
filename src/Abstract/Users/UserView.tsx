@@ -133,20 +133,13 @@ export const UserView = ({
     );
   };
 
-  const sites: RoleArray[] = [];
-
-  if (currentUser?.role) {
-    for (const key in currentUser.role) {
-      const currentSite = useSites.actions.getById(parseInt(key, 10));
-      if (currentSite?.name) {
-        sites.push({
-          id: key,
-          name: currentSite?.name,
-          role: currentUser?.role[key],
-        });
-      }
-    }
-  }
+  const sites: RoleArray[] = [
+    {
+      id: `${useSites.actions.getMainSite()?.id}`,
+      name: useSites.actions.getMainSite()?.name || '',
+      role: currentUser?.roles?.name || '',
+    },
+  ];
 
   const filtered = use.actions.filterRoleByName(sites, use.states.searchTerm);
 

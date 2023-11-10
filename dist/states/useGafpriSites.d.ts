@@ -162,6 +162,7 @@ export type UseSitesReturn = {
         update: () => void;
         add: () => void;
         getById: (id: number) => SitesAttributes | null;
+        getMainSite: () => SitesAttributes | null;
         goUpdate: (id: number) => void;
         sortByName: (items: SitesAttributes[] | null, order: 'asc' | 'desc') => SitesAttributes[] | null;
         setOrderList: (order: 'asc' | 'desc') => void;

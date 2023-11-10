@@ -197,6 +197,7 @@ export type UseSitesReturn = {
 
     add: () => void;
     getById: (id: number) => SitesAttributes | null;
+    getMainSite: () => SitesAttributes | null;
     goUpdate: (id: number) => void;
     sortByName: (
       items: SitesAttributes[] | null,
@@ -1157,6 +1158,14 @@ export const useGafpriSites = ({
     return sites.data.items?.find((item) => `${item.id}` === `${id}`) || null;
   }
 
+  function getMainSite(): SitesAttributes | null {
+    if (sites.data.items) {
+      return sites.data.items[0];
+    }
+
+    return null;
+  }
+
   const update = (): void => {
     if (
       nameValid &&
@@ -1395,6 +1404,7 @@ export const useGafpriSites = ({
     add,
     update,
     getById,
+    getMainSite,
     goUpdate,
     sortByName,
     setOrderList,

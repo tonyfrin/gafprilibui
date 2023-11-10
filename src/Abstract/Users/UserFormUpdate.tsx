@@ -143,7 +143,7 @@ export const UserFormUpdate = ({
     use.actions.validationEmail(use.states.email);
     use.actions.validationAreaCode(use.states.areaCode);
     use.actions.validationPhoneNumber(use.states.phoneNumber);
-    use.actions.validationRole(use.states.role);
+    use.actions.validationRole(use.states.rolesId);
     use.actions.validationSite(use.states.site);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationIsActive(`${use.states.isActive}`);
@@ -154,7 +154,7 @@ export const UserFormUpdate = ({
     use.states.email,
     use.states.phoneNumber,
     use.states.areaCode,
-    use.states.role,
+    use.states.rolesId,
     use.states.site,
     use.states.photo,
     use.states.isActive,
@@ -276,20 +276,13 @@ export const UserFormUpdate = ({
     }
   };
 
-  const sites: RoleArray[] = [];
-
-  if (currentUser?.role) {
-    for (const key in currentUser.role) {
-      const currentSite = useSites.actions.getById(parseInt(key, 10));
-      if (currentSite?.name) {
-        sites.push({
-          id: key,
-          name: currentSite?.name,
-          role: currentUser?.role[key],
-        });
-      }
-    }
-  }
+  const sites: RoleArray[] = [
+    {
+      id: `${useSites.actions.getMainSite()?.id}`,
+      name: useSites.actions.getMainSite()?.name || '',
+      role: currentUser?.roles?.name || '',
+    },
+  ];
 
   const filtered = use.actions.filterRoleByName(sites, use.states.searchTerm);
 

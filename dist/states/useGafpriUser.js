@@ -104,7 +104,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
   }];
   var _useState35 = (0, _react.useState)(''),
     _useState36 = (0, _slicedToArray2["default"])(_useState35, 2),
-    role = _useState36[0],
+    rolesId = _useState36[0],
     setRole = _useState36[1];
   var _useState37 = (0, _react.useState)(false),
     _useState38 = (0, _slicedToArray2["default"])(_useState37, 2),
@@ -119,7 +119,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     setRoleDefault = _useState40[1];
   var roleOptions = ((_useRoles$states$role = useRoles.states.roles.data) === null || _useRoles$states$role === void 0 ? void 0 : (_useRoles$states$role2 = _useRoles$states$role.items) === null || _useRoles$states$role2 === void 0 ? void 0 : _useRoles$states$role2.map(function (item) {
     return {
-      value: item.name,
+      value: "".concat(item.id),
       label: item.name
     };
   })) || [];
@@ -661,7 +661,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
         name: name,
         email: email,
         phone: "".concat(areaCode).concat(phoneNumber),
-        role: role,
+        rolesId: rolesId,
         isActive: isActive
       };
       var updatedPayload = _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, payload), lastName ? {
@@ -694,7 +694,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
         name: name,
         email: email,
         phone: "".concat(areaCode).concat(phoneNumber),
-        role: role,
+        rolesId: rolesId,
         isActive: isActive
       };
       var updatedPayload = _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, payload), lastName ? {
@@ -816,7 +816,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     areaCodeValid: areaCodeValid,
     areaCodeDefault: areaCodeDefault,
     areaCodeOptions: areaCodeOptions,
-    role: role,
+    rolesId: rolesId,
     roleValid: roleValid,
     roleDefault: roleDefault,
     roleOptions: roleOptions,

@@ -23,19 +23,15 @@ import type {
   RoleArray,
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
-import type { UseRolesReturn } from './useGafpriRoles';
+import type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
 import type { UseSitesReturn } from './useGafpriSites';
-
-interface Role {
-  [key: number]: string;
-}
 
 export interface UserAttributes {
   id: number;
   login: string;
   email: string;
   phone: string;
-  role: Role;
+  rolesId: string;
   name: string;
   lastName?: string;
   photo?: string;
@@ -44,6 +40,7 @@ export interface UserAttributes {
   phoneConfirmation: boolean;
   createdAt: Date;
   modifiedAt: Date;
+  roles: RolesAttributes;
 }
 
 interface UserData {
@@ -73,7 +70,7 @@ export type UseUserReturn = {
     phoneNumber: string;
     phoneNumberValid: boolean;
 
-    role: string;
+    rolesId: string;
     roleValid: boolean;
     roleDefault: SelectDefault;
     roleOptions: SelectDefault[];
@@ -240,7 +237,7 @@ export const useGafpriUsers = ({
     { value: '001', label: '(+1) Estados Unidos' },
   ];
 
-  const [role, setRole] = useState('');
+  const [rolesId, setRole] = useState('');
   const [roleValid, setRoleValid] = useState(false);
   const [roleDefault, setRoleDefault] = useState<SelectDefault>({
     value: '',
@@ -248,7 +245,7 @@ export const useGafpriUsers = ({
   });
   const roleOptions =
     useRoles.states.roles.data?.items?.map((item) => {
-      return { value: item.name, label: item.name };
+      return { value: `${item.id}`, label: item.name };
     }) || [];
 
   const [site, setSite] = useState('');
@@ -821,7 +818,7 @@ export const useGafpriUsers = ({
         name,
         email,
         phone: `${areaCode}${phoneNumber}`,
-        role,
+        rolesId,
         isActive,
       };
 
@@ -864,7 +861,7 @@ export const useGafpriUsers = ({
         name,
         email,
         phone: `${areaCode}${phoneNumber}`,
-        role,
+        rolesId,
         isActive,
       };
 
@@ -1029,7 +1026,7 @@ export const useGafpriUsers = ({
     areaCodeDefault,
     areaCodeOptions,
 
-    role,
+    rolesId,
     roleValid,
     roleDefault,
     roleOptions,

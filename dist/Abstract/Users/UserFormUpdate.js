@@ -24,7 +24,7 @@ var defaultPhotoStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0
 var defaultPhotoMainContainerStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n"])));
 var defaultNameContainerStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
 var UserFormUpdate = function UserFormUpdate(_ref) {
-  var _paginated$map;
+  var _useSites$actions$get, _useSites$actions$get2, _currentUser$roles, _paginated$map;
   var use = _ref.use,
     useSites = _ref.useSites,
     _ref$photoMainContain = _ref.photoMainContainerStyle,
@@ -72,12 +72,12 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
     use.actions.validationEmail(use.states.email);
     use.actions.validationAreaCode(use.states.areaCode);
     use.actions.validationPhoneNumber(use.states.phoneNumber);
-    use.actions.validationRole(use.states.role);
+    use.actions.validationRole(use.states.rolesId);
     use.actions.validationSite(use.states.site);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationIsActive("".concat(use.states.isActive));
     use.actions.validationButtonNext();
-  }, [use.states.name, use.states.lastName, use.states.email, use.states.phoneNumber, use.states.areaCode, use.states.role, use.states.site, use.states.photo, use.states.isActive, InputRole, InputSite, InputAreaCode]);
+  }, [use.states.name, use.states.lastName, use.states.email, use.states.phoneNumber, use.states.areaCode, use.states.rolesId, use.states.site, use.states.photo, use.states.isActive, InputRole, InputSite, InputAreaCode]);
   _react["default"].useEffect(function () {
     use.actions.validationButtonNext();
   }, [use.states.nameValid, use.states.lastNameValid, use.states.emailValid, use.states.phoneNumberValid, use.states.areaCodeValid, use.states.roleValid, use.states.siteValid, use.states.photoValid, use.states.isActiveValid]);
@@ -164,19 +164,11 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
       fileInputRef.current.click();
     }
   };
-  var sites = [];
-  if (currentUser !== null && currentUser !== void 0 && currentUser.role) {
-    for (var key in currentUser.role) {
-      var currentSite = useSites.actions.getById(parseInt(key, 10));
-      if (currentSite !== null && currentSite !== void 0 && currentSite.name) {
-        sites.push({
-          id: key,
-          name: currentSite === null || currentSite === void 0 ? void 0 : currentSite.name,
-          role: currentUser === null || currentUser === void 0 ? void 0 : currentUser.role[key]
-        });
-      }
-    }
-  }
+  var sites = [{
+    id: "".concat((_useSites$actions$get = useSites.actions.getMainSite()) === null || _useSites$actions$get === void 0 ? void 0 : _useSites$actions$get.id),
+    name: ((_useSites$actions$get2 = useSites.actions.getMainSite()) === null || _useSites$actions$get2 === void 0 ? void 0 : _useSites$actions$get2.name) || '',
+    role: (currentUser === null || currentUser === void 0 ? void 0 : (_currentUser$roles = currentUser.roles) === null || _currentUser$roles === void 0 ? void 0 : _currentUser$roles.name) || ''
+  }];
   var filtered = use.actions.filterRoleByName(sites, use.states.searchTerm);
   var roles = use.actions.sortRoleByName(filtered, use.states.orderList) || [];
   var paginated = use.actions.getRolePaginated(roles, use.states.currentPage, use.states.itemsPerPage);

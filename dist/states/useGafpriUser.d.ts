@@ -1,17 +1,14 @@
 import { ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
 import type { SelectDefault, RoleArray } from '../helpers';
-import type { UseRolesReturn } from './useGafpriRoles';
+import type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
 import type { UseSitesReturn } from './useGafpriSites';
-interface Role {
-    [key: number]: string;
-}
 export interface UserAttributes {
     id: number;
     login: string;
     email: string;
     phone: string;
-    role: Role;
+    rolesId: string;
     name: string;
     lastName?: string;
     photo?: string;
@@ -20,6 +17,7 @@ export interface UserAttributes {
     phoneConfirmation: boolean;
     createdAt: Date;
     modifiedAt: Date;
+    roles: RolesAttributes;
 }
 interface UserData {
     data: {
@@ -42,7 +40,7 @@ export type UseUserReturn = {
         emailValid: boolean;
         phoneNumber: string;
         phoneNumberValid: boolean;
-        role: string;
+        rolesId: string;
         roleValid: boolean;
         roleDefault: SelectDefault;
         roleOptions: SelectDefault[];

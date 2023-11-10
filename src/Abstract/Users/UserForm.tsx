@@ -138,7 +138,7 @@ export const UserForm = ({
     use.actions.validationEmail(use.states.email);
     use.actions.validationAreaCode(use.states.areaCode);
     use.actions.validationPhoneNumber(use.states.phoneNumber);
-    use.actions.validationRole(use.states.role);
+    use.actions.validationRole(use.states.rolesId);
     use.actions.validationSite(use.states.site);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationIsActive(`${use.states.isActive}`);
@@ -149,7 +149,7 @@ export const UserForm = ({
     use.states.email,
     use.states.phoneNumber,
     use.states.areaCode,
-    use.states.role,
+    use.states.rolesId,
     use.states.site,
     use.states.photo,
     use.states.isActive,

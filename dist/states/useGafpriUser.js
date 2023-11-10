@@ -664,12 +664,10 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
         rolesId: rolesId,
         isActive: isActive
       };
-      var updatedPayload = _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, payload), lastName ? {
+      var updatedPayload = _objectSpread(_objectSpread(_objectSpread({}, payload), lastName ? {
         lastName: lastName
       } : {}), photo ? {
         photo: photo
-      } : {}), site ? {
-        site: site
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
@@ -697,12 +695,10 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
         rolesId: rolesId,
         isActive: isActive
       };
-      var updatedPayload = _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, payload), lastName ? {
+      var updatedPayload = _objectSpread(_objectSpread(_objectSpread({}, payload), lastName ? {
         lastName: lastName
       } : {}), photo ? {
         photo: photo
-      } : {}), site ? {
-        site: site
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',

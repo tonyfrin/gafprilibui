@@ -826,7 +826,6 @@ export const useGafpriUsers = ({
         ...payload,
         ...(lastName ? { lastName } : {}),
         ...(photo ? { photo } : {}),
-        ...(site ? { site } : {}),
       };
 
       gafpriFetch({
@@ -869,7 +868,6 @@ export const useGafpriUsers = ({
         ...payload,
         ...(lastName ? { lastName } : {}),
         ...(photo ? { photo } : {}),
-        ...(site ? { site } : {}),
       };
 
       gafpriFetch({

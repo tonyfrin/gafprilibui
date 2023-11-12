@@ -135,16 +135,18 @@ export const ModelForm = ({
             />
           </div>
         )}
-        <div className={css(returnButtonConatinerStyle)}>
-          <Button
-            title={buttonTitles.returnButton}
-            styles={returnButtonStyle}
-            buttonProps={{
-              onClick: () => handleActions('return', {}),
-            }}
-            {...returnButtonProps}
-          />
-        </div>
+        {buttonTitles?.returnButton !== '' && (
+          <div className={css(returnButtonConatinerStyle)}>
+            <Button
+              title={buttonTitles.returnButton}
+              styles={returnButtonStyle}
+              buttonProps={{
+                onClick: () => handleActions('return', {}),
+              }}
+              {...returnButtonProps}
+            />
+          </div>
+        )}
       </>
     </Box1>
   );

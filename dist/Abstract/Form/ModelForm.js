@@ -60,7 +60,7 @@ var ModelForm = function ModelForm(_ref) {
       },
       id: 'buttonNext'
     }
-  }, mainButtonProps))), /*#__PURE__*/_react["default"].createElement("div", {
+  }, mainButtonProps))), (buttonTitles === null || buttonTitles === void 0 ? void 0 : buttonTitles.returnButton) !== '' && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(returnButtonConatinerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, (0, _extends2["default"])({
     title: buttonTitles.returnButton,

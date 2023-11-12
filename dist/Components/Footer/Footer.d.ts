@@ -15,7 +15,8 @@ type Footer = {
     styles?: FooterStyle | undefined;
     isLogin: boolean;
     year?: string | undefined;
+    siteName: string;
     onLogOut?: () => void;
 };
-export declare const MainFooter: ({ footerClass, footerDivClass, footerPClass, styles, isLogin, year, onLogOut, }: Footer) => JSX.Element;
+export declare const MainFooter: ({ footerClass, footerDivClass, footerPClass, styles, isLogin, year, siteName, onLogOut, }: Footer) => JSX.Element;
 export {};

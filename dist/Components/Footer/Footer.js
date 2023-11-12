@@ -36,6 +36,7 @@ var MainFooter = function MainFooter(_ref) {
     isLogin = _ref.isLogin,
     _ref$year = _ref.year,
     year = _ref$year === void 0 ? '2023' : _ref$year,
+    siteName = _ref.siteName,
     onLogOut = _ref.onLogOut;
   return /*#__PURE__*/_react["default"].createElement("footer", {
     className: (0, _css.cx)(footerStyles(styles), footerClass)
@@ -43,7 +44,7 @@ var MainFooter = function MainFooter(_ref) {
     className: (0, _css.cx)(footerDivStyles(), footerDivClass)
   }, /*#__PURE__*/_react["default"].createElement("p", {
     className: (0, _css.cx)(footerPStyles(), footerPClass)
-  }, "\xA9 Copyright ".concat(year, " Gafpri Corp - Todos los derechos reservados")), isLogin ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("span", {
+  }, "\xA9 Copyright ".concat(year, " ").concat(siteName, " - Todos los derechos reservados")), isLogin ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("span", {
     className: footerSeparatorStyles()
   }, " / "), /*#__PURE__*/_react["default"].createElement("span", {
     onClick: onLogOut,

@@ -80,6 +80,7 @@ type Footer = {
   styles?: FooterStyle | undefined;
   isLogin: boolean;
   year?: string | undefined;
+  siteName: string;
   onLogOut?: () => void;
 };
 
@@ -90,13 +91,14 @@ export const MainFooter = ({
   styles = {},
   isLogin,
   year = '2023',
+  siteName,
   onLogOut,
 }: Footer): JSX.Element => {
   return (
     <footer className={cx(footerStyles(styles), footerClass)}>
       <div className={cx(footerDivStyles(), footerDivClass)}>
         <p className={cx(footerPStyles(), footerPClass)}>
-          {`© Copyright ${year} Gafpri Corp - Todos los derechos reservados`}
+          {`© Copyright ${year} ${siteName} - Todos los derechos reservados`}
         </p>
         {isLogin ? (
           <>

@@ -21,6 +21,7 @@ type Media = {
 
 type ImageStyle = {
   marginTop?: string;
+  marginBottom?: string;
   maxWidth?: string;
   media600Style?: Media | undefined;
   media300Style?: Media | undefined;
@@ -52,6 +53,7 @@ const containerStyles = (styles: ContainerStyle) => css`
 
 const imgStayle = (styles: ImageStyle) => css`
   margin-top: ${styles.marginTop || '10px'};
+  margin-bottom: ${styles.marginBottom || '10px'};
   max-width: ${styles.maxWidth || '150px'};
 
   @media (max-width: 600px) {

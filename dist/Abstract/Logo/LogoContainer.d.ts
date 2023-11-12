@@ -16,6 +16,7 @@ type Media = {
 };
 type ImageStyle = {
     marginTop?: string;
+    marginBottom?: string;
     maxWidth?: string;
     media600Style?: Media | undefined;
     media300Style?: Media | undefined;

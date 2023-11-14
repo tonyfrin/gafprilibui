@@ -95,4 +95,5 @@ export interface RoleArray {
     name: string;
     role: string;
 }
+export declare const getBase64: (img: File, callback: (result: string | ArrayBuffer | null) => void) => void;
 export {};

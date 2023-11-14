@@ -173,6 +173,7 @@ export {
   isCustomErrorResponse,
   getMimeTypeByExtension,
   formatPhoneNumber,
+  getBase64,
 } from './helpers';
 export type {
   ChangeInputText,

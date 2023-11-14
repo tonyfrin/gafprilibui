@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.changeSelect = exports.changeInputText = exports.addClass = void 0;
 exports.formatPhoneNumber = formatPhoneNumber;
 exports.gafpriFetch = gafpriFetch;
-exports.getLastEntryDateAndCount = void 0;
+exports.getLastEntryDateAndCount = exports.getBase64 = void 0;
 exports.getMimeTypeByExtension = getMimeTypeByExtension;
 exports.isCustomErrorResponse = isCustomErrorResponse;
 exports.removeClass = exports.isSelectDefaultArray = exports.isSelectDefault = exports.isErrorResponse = void 0;
@@ -302,3 +302,11 @@ function formatPhoneNumber(phoneNumber) {
   var secondPart = phoneNumber.slice(phoneNumber.length - 4);
   return "+".concat(countryCode, " (").concat(areaCode, ") ").concat(firstPart, "-").concat(secondPart);
 }
+var getBase64 = function getBase64(img, callback) {
+  var reader = new FileReader();
+  reader.addEventListener('load', function () {
+    return callback(reader.result);
+  });
+  reader.readAsDataURL(img);
+};
+exports.getBase64 = getBase64;

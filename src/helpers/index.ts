@@ -458,3 +458,12 @@ export interface RoleArray {
   name: string;
   role: string;
 }
+
+export const getBase64 = (
+  img: File,
+  callback: (result: string | ArrayBuffer | null) => void
+): void => {
+  const reader = new FileReader();
+  reader.addEventListener('load', () => callback(reader.result));
+  reader.readAsDataURL(img);
+};

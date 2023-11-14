@@ -405,6 +405,12 @@ Object.defineProperty(exports, "gafpriFetch", {
     return _helpers.gafpriFetch;
   }
 });
+Object.defineProperty(exports, "getBase64", {
+  enumerable: true,
+  get: function get() {
+    return _helpers.getBase64;
+  }
+});
 Object.defineProperty(exports, "getItem", {
   enumerable: true,
   get: function get() {

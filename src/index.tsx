@@ -125,6 +125,7 @@ export type {
   AddressFormPropsExtended,
   DocumentAddFormProps,
   DocumentAddFormPropsExtended,
+  ListPropsExtended,
 } from './Abstract';
 export {
   MainFooter,

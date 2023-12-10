@@ -16,7 +16,7 @@ var Background1 = function Background1(_ref) {
   var children = _ref.children,
     image = _ref.image;
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: Background1Styles(image)
+    className: (0, _css.cx)(Background1Styles(image))
   }, children);
 };
 exports.Background1 = Background1;

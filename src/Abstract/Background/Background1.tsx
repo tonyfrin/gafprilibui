@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@emotion/css';
+import { css, cx } from '@emotion/css';
 
 type style = {
   image: string;
@@ -14,5 +14,5 @@ const Background1Styles = (image: string) => css`
 `;
 
 export const Background1 = ({ children, image }: style) => {
-  return <div className={Background1Styles(image)}>{children}</div>;
+  return <div className={cx(Background1Styles(image))}>{children}</div>;
 };

@@ -13,7 +13,6 @@ import {
   isCustomErrorResponse,
   gafpriFetch,
 } from '../helpers';
-import type { InitToken } from '../helpers';
 import { getItem, saveItem } from '../Context';
 
 export interface CurrenciesAttributes {
@@ -128,7 +127,7 @@ export type UseCurrenciesReturn = {
 };
 
 export type UseCurrenciesProps = {
-  token: InitToken | null;
+  token: string | null;
 };
 
 export function useGafpriCurrencies({
@@ -305,7 +304,7 @@ export function useGafpriCurrencies({
           initMethod: 'GET',
           initApi: 'http://localhost:4000',
           initRoute: 'api/v1/currencies',
-          initToken: token,
+          initToken: { token },
           functionFetching: notReady,
           functionSuccess: onCurrencies,
         });
@@ -424,7 +423,7 @@ export function useGafpriCurrencies({
           name,
           symbol,
         },
-        initToken: token,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -448,7 +447,7 @@ export function useGafpriCurrencies({
           name,
           symbol,
         },
-        initToken: token,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -462,7 +461,7 @@ export function useGafpriCurrencies({
         initMethod: 'DELETE',
         initApi: 'http://localhost:4000',
         initRoute: `api/v1/currencies/${id}`,
-        initToken: token,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newErrorDelete,

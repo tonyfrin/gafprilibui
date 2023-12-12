@@ -212,7 +212,9 @@ function useGafpriCurrencies(_ref) {
                   initMethod: 'GET',
                   initApi: 'http://localhost:4000',
                   initRoute: 'api/v1/currencies',
-                  initToken: token,
+                  initToken: {
+                    token: token
+                  },
                   functionFetching: notReady,
                   functionSuccess: onCurrencies
                 });
@@ -324,7 +326,9 @@ function useGafpriCurrencies(_ref) {
           name: name,
           symbol: symbol
         },
-        initToken: token,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -347,7 +351,9 @@ function useGafpriCurrencies(_ref) {
           name: name,
           symbol: symbol
         },
-        initToken: token,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -360,7 +366,9 @@ function useGafpriCurrencies(_ref) {
         initMethod: 'DELETE',
         initApi: 'http://localhost:4000',
         initRoute: "api/v1/currencies/".concat(id),
-        initToken: token,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newErrorDelete

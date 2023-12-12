@@ -1,4 +1,3 @@
-import type { InitToken } from '../helpers';
 export interface CurrenciesAttributes {
     id: number;
     name: string;
@@ -66,7 +65,7 @@ export type UseCurrenciesReturn = {
     actions: Actions;
 };
 export type UseCurrenciesProps = {
-    token: InitToken | null;
+    token: string | null;
 };
 export declare function useGafpriCurrencies({ token, }: UseCurrenciesProps): UseCurrenciesReturn;
 export {};

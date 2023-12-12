@@ -15,8 +15,9 @@ var _helpers = require("../helpers");
 var _Context = require("../Context");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function useGafpriCurrencies() {
+function useGafpriCurrencies(_ref) {
   var _currencies$data;
+  var token = _ref.token;
   var _useState = (0, _react.useState)(''),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     name = _useState2[0],
@@ -184,8 +185,16 @@ function useGafpriCurrencies() {
     setCurrenciesData(newData);
     onIsReady();
   };
+  var offCurrencies = function offCurrencies() {
+    setCurrenciesData({
+      data: {
+        items: []
+      }
+    });
+    notReady();
+  };
   var getCurrencies = /*#__PURE__*/function () {
-    var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+    var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
       var _currencies$data$item;
       var lastEntryDateAndCount, lastDate, count;
       return _regenerator["default"].wrap(function _callee$(_context) {
@@ -202,6 +211,7 @@ function useGafpriCurrencies() {
                 initMethod: 'GET',
                 initApi: 'http://localhost:4000',
                 initRoute: 'api/v1/currencies',
+                initToken: token,
                 functionFetching: notReady,
                 functionSuccess: onCurrencies
               });
@@ -215,7 +225,7 @@ function useGafpriCurrencies() {
       }, _callee);
     }));
     return function getCurrencies() {
-      return _ref.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
   var handleNewCurrency = function handleNewCurrency(newCurrency) {
@@ -244,8 +254,8 @@ function useGafpriCurrencies() {
       return newData;
     });
   };
-  var handleDeletedCurrency = function handleDeletedCurrency(_ref2) {
-    var itemId = _ref2.itemId;
+  var handleDeletedCurrency = function handleDeletedCurrency(_ref3) {
+    var itemId = _ref3.itemId;
     setCurrencies(function (prevState) {
       var _prevState$data$items2;
       var filteredItems = ((_prevState$data$items2 = prevState.data.items) === null || _prevState$data$items2 === void 0 ? void 0 : _prevState$data$items2.filter(function (currency) {
@@ -310,6 +320,7 @@ function useGafpriCurrencies() {
           name: name,
           symbol: symbol
         },
+        initToken: token,
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -332,6 +343,7 @@ function useGafpriCurrencies() {
           name: name,
           symbol: symbol
         },
+        initToken: token,
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -343,6 +355,7 @@ function useGafpriCurrencies() {
       initMethod: 'DELETE',
       initApi: 'http://localhost:4000',
       initRoute: "api/v1/currencies/".concat(id),
+      initToken: token,
       functionFetching: onFetching,
       functionSuccess: returnInit,
       functionError: newErrorDelete
@@ -430,6 +443,7 @@ function useGafpriCurrencies() {
     updateCurrency: updateCurrency,
     getById: getById,
     goUpdate: goUpdate,
+    offCurrencies: offCurrencies,
     sortCurrenciesByName: sortCurrenciesByName,
     setOrderList: setOrderList,
     setSearchTerm: setSearchTerm,

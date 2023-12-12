@@ -43,7 +43,7 @@ export declare const validationInputPostcode: ({ value, inputId, setValid, requi
 export declare const validationInputEmail: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
 export declare const validationInputPhone: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
 export declare const validationInputPassword: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
-interface InitToken {
+export interface InitToken {
     token?: string | undefined;
 }
 interface FetchOptions<T = unknown> {

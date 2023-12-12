@@ -254,7 +254,7 @@ export const validationInputPassword = ({
   return valid;
 };
 
-interface InitToken {
+export interface InitToken {
   token?: string | undefined;
 }
 

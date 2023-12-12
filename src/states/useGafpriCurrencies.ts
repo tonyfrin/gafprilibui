@@ -13,6 +13,7 @@ import {
   isCustomErrorResponse,
   gafpriFetch,
 } from '../helpers';
+import type { InitToken } from '../helpers';
 import { getItem, saveItem } from '../Context';
 
 export interface CurrenciesAttributes {
@@ -77,6 +78,8 @@ type Actions = {
 
   returnInit: () => void;
 
+  offCurrencies: () => void;
+
   onAdd: () => void;
 
   goAdd: () => void;
@@ -124,7 +127,13 @@ export type UseCurrenciesReturn = {
   actions: Actions;
 };
 
-export function useGafpriCurrencies(): UseCurrenciesReturn {
+export type UseCurrenciesProps = {
+  token: InitToken;
+};
+
+export function useGafpriCurrencies({
+  token,
+}: UseCurrenciesProps): UseCurrenciesReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
   const [symbol, setSymbol] = useState('');
@@ -272,6 +281,15 @@ export function useGafpriCurrencies(): UseCurrenciesReturn {
     onIsReady();
   };
 
+  const offCurrencies = (): void => {
+    setCurrenciesData({
+      data: {
+        items: [],
+      },
+    });
+    notReady();
+  };
+
   const getCurrencies = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount('currencies');
     const lastDate = getLastItem?.modifiedAt || null;
@@ -286,6 +304,7 @@ export function useGafpriCurrencies(): UseCurrenciesReturn {
         initMethod: 'GET',
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/currencies',
+        initToken: token,
         functionFetching: notReady,
         functionSuccess: onCurrencies,
       });
@@ -401,6 +420,7 @@ export function useGafpriCurrencies(): UseCurrenciesReturn {
           name,
           symbol,
         },
+        initToken: token,
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -424,6 +444,7 @@ export function useGafpriCurrencies(): UseCurrenciesReturn {
           name,
           symbol,
         },
+        initToken: token,
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -436,6 +457,7 @@ export function useGafpriCurrencies(): UseCurrenciesReturn {
       initMethod: 'DELETE',
       initApi: 'http://localhost:4000',
       initRoute: `api/v1/currencies/${id}`,
+      initToken: token,
       functionFetching: onFetching,
       functionSuccess: returnInit,
       functionError: newErrorDelete,
@@ -548,6 +570,7 @@ export function useGafpriCurrencies(): UseCurrenciesReturn {
     updateCurrency,
     getById,
     goUpdate,
+    offCurrencies,
     sortCurrenciesByName,
     setOrderList,
     setSearchTerm,

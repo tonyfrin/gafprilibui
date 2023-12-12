@@ -1,3 +1,4 @@
+import type { InitToken } from '../helpers';
 export interface CurrenciesAttributes {
     id: number;
     name: string;
@@ -41,6 +42,7 @@ type Actions = {
     onFetching: () => void;
     onInit: () => void;
     returnInit: () => void;
+    offCurrencies: () => void;
     onAdd: () => void;
     goAdd: () => void;
     updateCurrency: () => void;
@@ -63,5 +65,8 @@ export type UseCurrenciesReturn = {
     states: State;
     actions: Actions;
 };
-export declare function useGafpriCurrencies(): UseCurrenciesReturn;
+export type UseCurrenciesProps = {
+    token: InitToken;
+};
+export declare function useGafpriCurrencies({ token, }: UseCurrenciesProps): UseCurrenciesReturn;
 export {};

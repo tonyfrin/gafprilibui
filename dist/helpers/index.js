@@ -204,6 +204,7 @@ function gafpriFetch(_ref9) {
   fetch("".concat(initApi, "/").concat(initRoute), options).then(function (response) {
     return response.json();
   }).then(function (data) {
+    console.log(data); // eslint-disable-line no-console
     if (data.success) {
       if (functionSuccess !== undefined) {
         functionSuccess(data);

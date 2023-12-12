@@ -303,6 +303,7 @@ export function gafpriFetch<T = unknown>({
   fetch(`${initApi}/${initRoute}`, options)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data); // eslint-disable-line no-console
       if (data.success) {
         if (functionSuccess !== undefined) {
           functionSuccess(data);

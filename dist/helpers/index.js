@@ -116,7 +116,7 @@ var validationInputName = function validationInputName(_ref3) {
     setValid = _ref3.setValid,
     _ref3$required = _ref3.required,
     required = _ref3$required === void 0 ? true : _ref3$required;
-  var valid = validationInput(name, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'\-\s]+$/, inputId, 'gs-input-alert', required);
+  var valid = validationInput(name, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'@-\s]+$/, inputId, 'gs-input-alert', required);
   setValid(valid);
   return valid;
 };

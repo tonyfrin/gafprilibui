@@ -153,7 +153,7 @@ export const validationInputName = ({
 }: ValidationInputName): boolean => {
   const valid = validationInput(
     name,
-    /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'\-\s]+$/,
+    /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'@-\s]+$/,
     inputId,
     'gs-input-alert',
     required

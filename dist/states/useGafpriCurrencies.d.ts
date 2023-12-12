@@ -66,7 +66,7 @@ export type UseCurrenciesReturn = {
     actions: Actions;
 };
 export type UseCurrenciesProps = {
-    token: InitToken;
+    token: InitToken | null;
 };
 export declare function useGafpriCurrencies({ token, }: UseCurrenciesProps): UseCurrenciesReturn;
 export {};

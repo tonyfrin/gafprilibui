@@ -207,14 +207,18 @@ function useGafpriCurrencies(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_currencies$data$item = currencies.data.items) === null || _currencies$data$item === void 0 ? void 0 : _currencies$data$item.length) || 0;
             if (currencies.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              (0, _helpers.gafpriFetch)({
-                initMethod: 'GET',
-                initApi: 'http://localhost:4000',
-                initRoute: 'api/v1/currencies',
-                initToken: token,
-                functionFetching: notReady,
-                functionSuccess: onCurrencies
-              });
+              if (token) {
+                (0, _helpers.gafpriFetch)({
+                  initMethod: 'GET',
+                  initApi: 'http://localhost:4000',
+                  initRoute: 'api/v1/currencies',
+                  initToken: token,
+                  functionFetching: notReady,
+                  functionSuccess: onCurrencies
+                });
+              } else {
+                notReady();
+              }
             } else {
               onIsReady();
             }
@@ -311,7 +315,7 @@ function useGafpriCurrencies(_ref) {
     }, 5000);
   };
   var addCurrencies = function addCurrencies() {
-    if (nameValid && symbolValid) {
+    if (nameValid && symbolValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
         initApi: 'http://localhost:4000',
@@ -334,7 +338,7 @@ function useGafpriCurrencies(_ref) {
     })) || null;
   }
   var updateCurrency = function updateCurrency() {
-    if (nameValid && symbolValid) {
+    if (nameValid && symbolValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
         initApi: 'http://localhost:4000',
@@ -351,15 +355,17 @@ function useGafpriCurrencies(_ref) {
     }
   };
   var deleteCurrency = function deleteCurrency(id) {
-    (0, _helpers.gafpriFetch)({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: "api/v1/currencies/".concat(id),
-      initToken: token,
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete
-    });
+    if (token) {
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: "api/v1/currencies/".concat(id),
+        initToken: token,
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete
+      });
+    }
   };
   function sortCurrenciesByName(itemCurrencies, order) {
     if (itemCurrencies) {

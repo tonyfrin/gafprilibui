@@ -128,7 +128,7 @@ export type UseCurrenciesReturn = {
 };
 
 export type UseCurrenciesProps = {
-  token: InitToken;
+  token: InitToken | null;
 };
 
 export function useGafpriCurrencies({
@@ -300,14 +300,18 @@ export function useGafpriCurrencies({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      gafpriFetch({
-        initMethod: 'GET',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/currencies',
-        initToken: token,
-        functionFetching: notReady,
-        functionSuccess: onCurrencies,
-      });
+      if (token) {
+        gafpriFetch({
+          initMethod: 'GET',
+          initApi: 'http://localhost:4000',
+          initRoute: 'api/v1/currencies',
+          initToken: token,
+          functionFetching: notReady,
+          functionSuccess: onCurrencies,
+        });
+      } else {
+        notReady();
+      }
     } else {
       onIsReady();
     }
@@ -411,7 +415,7 @@ export function useGafpriCurrencies({
   };
 
   const addCurrencies = (): void => {
-    if (nameValid && symbolValid) {
+    if (nameValid && symbolValid && token) {
       gafpriFetch({
         initMethod: 'POST',
         initApi: 'http://localhost:4000',
@@ -435,7 +439,7 @@ export function useGafpriCurrencies({
   }
 
   const updateCurrency = (): void => {
-    if (nameValid && symbolValid) {
+    if (nameValid && symbolValid && token) {
       gafpriFetch({
         initMethod: 'PATCH',
         initApi: 'http://localhost:4000',
@@ -453,15 +457,17 @@ export function useGafpriCurrencies({
   };
 
   const deleteCurrency = (id: number): void => {
-    gafpriFetch({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/currencies/${id}`,
-      initToken: token,
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete,
-    });
+    if (token) {
+      gafpriFetch({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/currencies/${id}`,
+        initToken: token,
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete,
+      });
+    }
   };
 
   function sortCurrenciesByName(

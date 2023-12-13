@@ -517,9 +517,7 @@ export function useGafpriCurrencies({
    */
 
   React.useEffect(() => {
-    if (currencies && !currencies.data.items) {
-      getCurrencies();
-    }
+    getCurrencies();
   }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {

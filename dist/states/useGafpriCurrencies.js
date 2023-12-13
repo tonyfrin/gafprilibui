@@ -410,9 +410,7 @@ function useGafpriCurrencies(_ref) {
    */
 
   _react["default"].useEffect(function () {
-    if (currencies && !currencies.data.items) {
-      getCurrencies();
-    }
+    getCurrencies();
   }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   _react["default"].useEffect(function () {

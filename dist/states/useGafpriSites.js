@@ -21,7 +21,8 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var useGafpriSites = function useGafpriSites(_ref) {
   var _useCurrencies$states, _sites$data;
-  var useCurrencies = _ref.useCurrencies;
+  var useCurrencies = _ref.useCurrencies,
+    token = _ref.token;
   // Define los estados necesarios para los atributos de Site
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -757,6 +758,14 @@ var useGafpriSites = function useGafpriSites(_ref) {
     setData(newData);
     onIsReady();
   };
+  var offSites = function offSites() {
+    setData({
+      data: {
+        items: null
+      }
+    });
+    notReady();
+  };
   var getSites = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
       var _sites$data$items;
@@ -771,13 +780,20 @@ var useGafpriSites = function useGafpriSites(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_sites$data$items = sites.data.items) === null || _sites$data$items === void 0 ? void 0 : _sites$data$items.length) || 0;
             if (sites.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              (0, _helpers.gafpriFetch)({
-                initMethod: 'GET',
-                initApi: 'http://localhost:4000',
-                initRoute: 'api/v1/sites',
-                functionFetching: notReady,
-                functionSuccess: onSites
-              });
+              if (token) {
+                (0, _helpers.gafpriFetch)({
+                  initMethod: 'GET',
+                  initApi: 'http://localhost:4000',
+                  initRoute: 'api/v1/sites',
+                  initToken: {
+                    token: token
+                  },
+                  functionFetching: notReady,
+                  functionSuccess: onSites
+                });
+              } else {
+                notReady();
+              }
             } else {
               onIsReady();
             }
@@ -892,7 +908,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     }, 5000);
   };
   var add = function add() {
-    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid) {
+    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token) {
       var payload = {
         name: name,
         documentIndex: documentIndex,
@@ -921,6 +937,9 @@ var useGafpriSites = function useGafpriSites(_ref) {
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/sites',
         initCredentials: updatedPayload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -940,7 +959,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     return null;
   }
   var update = function update() {
-    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid) {
+    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token) {
       var payload = {
         name: name,
         documentIndex: documentIndex,
@@ -969,6 +988,9 @@ var useGafpriSites = function useGafpriSites(_ref) {
         initApi: 'http://localhost:4000',
         initRoute: "api/v1/sites/".concat(siteId),
         initCredentials: updatedPayload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newErrorUpdate
@@ -976,14 +998,19 @@ var useGafpriSites = function useGafpriSites(_ref) {
     }
   };
   var deleteSites = function deleteSites(id) {
-    (0, _helpers.gafpriFetch)({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: "api/v1/sites/".concat(id),
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete
-    });
+    if (token) {
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: "api/v1/sites/".concat(id),
+        initToken: {
+          token: token
+        },
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete
+      });
+    }
   };
   function sortByName(items, order) {
     if (items) {
@@ -1016,7 +1043,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
   // Efects
   _react["default"].useEffect(function () {
     getSites();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   _react["default"].useEffect(function () {
     setCurrentPage(1);
@@ -1122,6 +1149,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     changeHost: changeHost,
     validationButtonNext: validationButtonNext,
     setIsReady: setIsReady,
+    offSites: offSites,
     add: add,
     update: update,
     getById: getById,

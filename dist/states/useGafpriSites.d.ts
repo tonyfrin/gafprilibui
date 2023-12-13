@@ -160,6 +160,7 @@ export type UseSitesReturn = {
         validationButtonNext: () => void;
         setIsReady: (value: boolean) => void;
         update: () => void;
+        offSites: () => void;
         add: () => void;
         getById: (id: number) => SitesAttributes | null;
         getMainSite: () => SitesAttributes | null;
@@ -195,6 +196,7 @@ export type UseSitesReturn = {
 };
 export type UseSitesProps = {
     useCurrencies: UseCurrenciesReturn;
+    token: string | null;
 };
-export declare const useGafpriSites: ({ useCurrencies, }: UseSitesProps) => UseSitesReturn;
+export declare const useGafpriSites: ({ useCurrencies, token, }: UseSitesProps) => UseSitesReturn;
 export {};

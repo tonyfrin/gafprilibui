@@ -195,6 +195,7 @@ export type UseSitesReturn = {
     setIsReady: (value: boolean) => void;
     update: () => void;
 
+    offSites: () => void;
     add: () => void;
     getById: (id: number) => SitesAttributes | null;
     getMainSite: () => SitesAttributes | null;
@@ -240,10 +241,12 @@ export type UseSitesReturn = {
 
 export type UseSitesProps = {
   useCurrencies: UseCurrenciesReturn;
+  token: string | null;
 };
 
 export const useGafpriSites = ({
   useCurrencies,
+  token,
 }: UseSitesProps): UseSitesReturn => {
   // Define los estados necesarios para los atributos de Site
   const [isReady, setIsReady] = useState(false);
@@ -959,6 +962,15 @@ export const useGafpriSites = ({
     onIsReady();
   };
 
+  const offSites = (): void => {
+    setData({
+      data: {
+        items: null,
+      },
+    });
+    notReady();
+  };
+
   const getSites = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount('sites');
     const lastDate = getLastItem?.modifiedAt || null;
@@ -969,13 +981,18 @@ export const useGafpriSites = ({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      gafpriFetch({
-        initMethod: 'GET',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/sites',
-        functionFetching: notReady,
-        functionSuccess: onSites,
-      });
+      if (token) {
+        gafpriFetch({
+          initMethod: 'GET',
+          initApi: 'http://localhost:4000',
+          initRoute: 'api/v1/sites',
+          initToken: { token },
+          functionFetching: notReady,
+          functionSuccess: onSites,
+        });
+      } else {
+        notReady();
+      }
     } else {
       onIsReady();
     }
@@ -1115,7 +1132,8 @@ export const useGafpriSites = ({
       separatorValid &&
       decimalNumbersValid &&
       taxesValid &&
-      hostValid
+      hostValid &&
+      token
     ) {
       const payload = {
         name,
@@ -1147,6 +1165,7 @@ export const useGafpriSites = ({
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/sites',
         initCredentials: updatedPayload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -1184,7 +1203,8 @@ export const useGafpriSites = ({
       separatorValid &&
       decimalNumbersValid &&
       taxesValid &&
-      hostValid
+      hostValid &&
+      token
     ) {
       const payload = {
         name,
@@ -1216,6 +1236,7 @@ export const useGafpriSites = ({
         initApi: 'http://localhost:4000',
         initRoute: `api/v1/sites/${siteId}`,
         initCredentials: updatedPayload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newErrorUpdate,
@@ -1224,14 +1245,17 @@ export const useGafpriSites = ({
   };
 
   const deleteSites = (id: number): void => {
-    gafpriFetch({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/sites/${id}`,
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete,
-    });
+    if (token) {
+      gafpriFetch({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/sites/${id}`,
+        initToken: { token },
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete,
+      });
+    }
   };
 
   function sortByName(
@@ -1276,7 +1300,7 @@ export const useGafpriSites = ({
   // Efects
   React.useEffect(() => {
     getSites();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
     setCurrentPage(1);
@@ -1401,6 +1425,7 @@ export const useGafpriSites = ({
     changeHost,
     validationButtonNext,
     setIsReady,
+    offSites,
     add,
     update,
     getById,

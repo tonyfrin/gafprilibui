@@ -283,7 +283,7 @@ export function useGafpriCurrencies({
   const offCurrencies = (): void => {
     setCurrenciesData({
       data: {
-        items: [],
+        items: null,
       },
     });
     notReady();
@@ -517,8 +517,10 @@ export function useGafpriCurrencies({
    */
 
   React.useEffect(() => {
-    getCurrencies();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    if (currencies && !currencies.data.items) {
+      getCurrencies();
+    }
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
     setCurrentPage(1);

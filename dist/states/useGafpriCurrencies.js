@@ -188,7 +188,7 @@ function useGafpriCurrencies(_ref) {
   var offCurrencies = function offCurrencies() {
     setCurrenciesData({
       data: {
-        items: []
+        items: null
       }
     });
     notReady();
@@ -410,8 +410,10 @@ function useGafpriCurrencies(_ref) {
    */
 
   _react["default"].useEffect(function () {
-    getCurrencies();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    if (currencies && !currencies.data.items) {
+      getCurrencies();
+    }
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   _react["default"].useEffect(function () {
     setCurrentPage(1);

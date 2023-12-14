@@ -265,8 +265,8 @@ export type UseEntityReturn = {
     changeAddress: (id: number) => void;
     infoReset: () => void;
 
-    onSites: (newData: EntityData) => void;
-    resetData: () => void;
+    onEntity: (newData: EntityData) => void;
+    offEntity: () => void;
     handleNewEntity: (newItem: EntityAttributes) => void;
     handleUpdatedEntity: (itemUpdate: EntityAttributes) => void;
     returnInit: () => void;
@@ -325,10 +325,12 @@ export type UseEntityReturn = {
 
 export type UseEntityProps = {
   useTypeDocumentId: UseTypeDocumentIdReturn;
+  token: string | null;
 };
 
 export const useGafpriEntity = ({
   useTypeDocumentId,
+  token,
 }: UseEntityProps): UseEntityReturn => {
   // Define los estados necesarios para los atributos de Site
   const [isReady, setIsReady] = useState(false);
@@ -1284,12 +1286,12 @@ export const useGafpriEntity = ({
     setDataStorage(newData);
   };
 
-  const onSites = (newData: EntityData): void => {
+  const onEntity = (newData: EntityData): void => {
     setData(newData);
     onIsReady();
   };
 
-  const resetData = (): void => {
+  const offEntity = (): void => {
     const newData = {
       data: {
         items: null,
@@ -1309,13 +1311,18 @@ export const useGafpriEntity = ({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      gafpriFetch({
-        initMethod: 'GET',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/entity',
-        functionFetching: notReady,
-        functionSuccess: onSites,
-      });
+      if (token) {
+        gafpriFetch({
+          initMethod: 'GET',
+          initApi: 'http://localhost:4000',
+          initRoute: 'api/v1/entity',
+          initToken: { token },
+          functionFetching: notReady,
+          functionSuccess: onEntity,
+        });
+      } else {
+        notReady();
+      }
     } else {
       onIsReady();
     }
@@ -1416,7 +1423,8 @@ export const useGafpriEntity = ({
       phoneValid &&
       typeValid &&
       photoValid &&
-      statusValid
+      statusValid &&
+      token
     ) {
       const payload = {
         name,
@@ -1447,6 +1455,7 @@ export const useGafpriEntity = ({
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/entity',
         initCredentials: payload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -1466,7 +1475,8 @@ export const useGafpriEntity = ({
       photoValid &&
       statusValid &&
       phoneValid &&
-      emailValid
+      emailValid &&
+      token
     ) {
       const payload = {
         ...(name ? { name } : {}),
@@ -1483,6 +1493,7 @@ export const useGafpriEntity = ({
         initApi: 'http://localhost:4000',
         initRoute: `api/v1/entity/${entityId}`,
         initCredentials: payload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newErrorUpdate,
@@ -1491,35 +1502,41 @@ export const useGafpriEntity = ({
   };
 
   const updateAddress = (newAddress: AddressAttributes[]): void => {
-    const payload = {
-      address: newAddress,
-    };
+    if (token) {
+      const payload = {
+        address: newAddress,
+      };
 
-    gafpriFetch({
-      initMethod: 'PATCH',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/entity/${entityId}`,
-      initCredentials: payload,
-      functionFetching: onFetching,
-      functionSuccess: () => goUpdate(entityId),
-      functionError: newErrorUpdate,
-    });
+      gafpriFetch({
+        initMethod: 'PATCH',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/entity/${entityId}`,
+        initCredentials: payload,
+        initToken: { token },
+        functionFetching: onFetching,
+        functionSuccess: () => goUpdate(entityId),
+        functionError: newErrorUpdate,
+      });
+    }
   };
 
   const updateDocument = (newDocument: DocumentIdAttributes[]): void => {
-    const payload = {
-      documentId: newDocument,
-    };
+    if (token) {
+      const payload = {
+        documentId: newDocument,
+      };
 
-    gafpriFetch({
-      initMethod: 'PATCH',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/entity/${entityId}`,
-      initCredentials: payload,
-      functionFetching: onFetching,
-      functionSuccess: () => goUpdate(entityId),
-      functionError: newErrorUpdate,
-    });
+      gafpriFetch({
+        initMethod: 'PATCH',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/entity/${entityId}`,
+        initCredentials: payload,
+        initToken: { token },
+        functionFetching: onFetching,
+        functionSuccess: () => goUpdate(entityId),
+        functionError: newErrorUpdate,
+      });
+    }
   };
 
   const addAddress = (): void => {
@@ -1579,27 +1596,30 @@ export const useGafpriEntity = ({
   };
 
   const deleteAddress = (id: number): void => {
-    const payload = {
-      address: [
-        {
-          id,
-        },
-      ],
-    };
+    if (token) {
+      const payload = {
+        address: [
+          {
+            id,
+          },
+        ],
+      };
 
-    gafpriFetch({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/entity/${entityId}`,
-      initCredentials: payload,
-      functionFetching: onFetching,
-      functionSuccess: () => goUpdate(entityId),
-      functionError: newErrorUpdate,
-    });
+      gafpriFetch({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/entity/${entityId}`,
+        initCredentials: payload,
+        initToken: { token },
+        functionFetching: onFetching,
+        functionSuccess: () => goUpdate(entityId),
+        functionError: newErrorUpdate,
+      });
+    }
   };
 
   const deleteDocument = (id: number): void => {
-    if (documentId.length > 1) {
+    if (documentId.length > 1 && token) {
       const payload = {
         documentId: [
           {
@@ -1613,6 +1633,7 @@ export const useGafpriEntity = ({
         initApi: 'http://localhost:4000',
         initRoute: `api/v1/entity/${entityId}`,
         initCredentials: payload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: () => goUpdate(entityId),
         functionError: newErrorUpdate,
@@ -1729,7 +1750,7 @@ export const useGafpriEntity = ({
   // Efects
   React.useEffect(() => {
     getEntities();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
     setCurrentPage(1);
@@ -1908,8 +1929,8 @@ export const useGafpriEntity = ({
     changeAddress,
     infoReset,
 
-    onSites,
-    resetData,
+    onEntity,
+    offEntity,
     handleNewEntity,
     handleUpdatedEntity,
     returnInit,

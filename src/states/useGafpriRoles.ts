@@ -85,6 +85,8 @@ type Actions = {
 
   onUpdate: () => void;
 
+  offRoles: () => void;
+
   add: () => void;
 
   getById: (id: number) => RolesAttributes | null;
@@ -124,7 +126,11 @@ export type UseRolesReturn = {
   actions: Actions;
 };
 
-export function useGafpriRoles(): UseRolesReturn {
+export type UseRolesProps = {
+  token: string | null;
+};
+
+export function useGafpriRoles({ token }: UseRolesProps): UseRolesReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
   const [permissions, setPermissions] = useState<string[]>([]);
@@ -272,6 +278,15 @@ export function useGafpriRoles(): UseRolesReturn {
     onIsReady();
   };
 
+  const offRoles = (): void => {
+    setData({
+      data: {
+        items: null,
+      },
+    });
+    notReady();
+  };
+
   const getRoles = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount('roles');
     const lastDate = getLastItem?.modifiedAt || null;
@@ -282,13 +297,18 @@ export function useGafpriRoles(): UseRolesReturn {
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      gafpriFetch({
-        initMethod: 'GET',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/roles',
-        functionFetching: notReady,
-        functionSuccess: onRoles,
-      });
+      if (token) {
+        gafpriFetch({
+          initMethod: 'GET',
+          initApi: 'http://localhost:4000',
+          initRoute: 'api/v1/roles',
+          initToken: { token },
+          functionFetching: notReady,
+          functionSuccess: onRoles,
+        });
+      } else {
+        notReady();
+      }
     } else {
       onIsReady();
     }
@@ -389,7 +409,7 @@ export function useGafpriRoles(): UseRolesReturn {
   };
 
   const add = (): void => {
-    if (nameValid) {
+    if (nameValid && token) {
       gafpriFetch({
         initMethod: 'POST',
         initApi: 'http://localhost:4000',
@@ -398,6 +418,7 @@ export function useGafpriRoles(): UseRolesReturn {
           name,
           permissions,
         },
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -410,7 +431,7 @@ export function useGafpriRoles(): UseRolesReturn {
   }
 
   const update = (): void => {
-    if (nameValid) {
+    if (nameValid && token) {
       gafpriFetch({
         initMethod: 'PATCH',
         initApi: 'http://localhost:4000',
@@ -419,6 +440,7 @@ export function useGafpriRoles(): UseRolesReturn {
           name,
           permissions,
         },
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -427,14 +449,17 @@ export function useGafpriRoles(): UseRolesReturn {
   };
 
   const deleteRoles = (id: number): void => {
-    gafpriFetch({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/roles/${id}`,
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete,
-    });
+    if (token) {
+      gafpriFetch({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/roles/${id}`,
+        initToken: { token },
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete,
+      });
+    }
   };
 
   function sortByName(
@@ -484,7 +509,7 @@ export function useGafpriRoles(): UseRolesReturn {
 
   React.useEffect(() => {
     getRoles();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
     setCurrentPage(1);
@@ -538,6 +563,7 @@ export function useGafpriRoles(): UseRolesReturn {
     goAdd,
     onUpdate,
 
+    offRoles,
     add,
     update,
     getById,

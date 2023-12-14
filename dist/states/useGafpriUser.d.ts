@@ -80,6 +80,7 @@ export type UseUserReturn = {
         notReady: () => void;
         goUpdate: (id: number) => void;
         goAdd: () => void;
+        offUsers: () => void;
         validationButtonNext: () => void;
         validationName: (value: string) => boolean;
         validationLastName: (value: string) => boolean;
@@ -142,6 +143,7 @@ export type UseUserReturn = {
 export type UseUserProps = {
     useRoles: UseRolesReturn;
     useSites: UseSitesReturn;
+    token: string | null;
 };
-export declare const useGafpriUsers: ({ useRoles, useSites, }: UseUserProps) => UseUserReturn;
+export declare const useGafpriUsers: ({ useRoles, useSites, token, }: UseUserProps) => UseUserReturn;
 export {};

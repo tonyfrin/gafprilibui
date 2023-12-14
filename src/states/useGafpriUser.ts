@@ -116,6 +116,7 @@ export type UseUserReturn = {
     notReady: () => void;
     goUpdate: (id: number) => void;
     goAdd: () => void;
+    offUsers: () => void;
 
     validationButtonNext: () => void;
     validationName: (value: string) => boolean;
@@ -201,11 +202,13 @@ export type UseUserReturn = {
 export type UseUserProps = {
   useRoles: UseRolesReturn;
   useSites: UseSitesReturn;
+  token: string | null;
 };
 
 export const useGafpriUsers = ({
   useRoles,
   useSites,
+  token,
 }: UseUserProps): UseUserReturn => {
   // Define los estados necesarios para los atributos de Site
   const [isReady, setIsReady] = useState(false);
@@ -688,9 +691,18 @@ export const useGafpriUsers = ({
     setDataStorage(newData);
   };
 
-  const onSites = (newData: UserData): void => {
+  const onUsers = (newData: UserData): void => {
     setData(newData);
     onIsReady();
+  };
+
+  const offUsers = (): void => {
+    setData({
+      data: {
+        items: null,
+      },
+    });
+    notReady();
   };
 
   const resetData = (): void => {
@@ -713,13 +725,18 @@ export const useGafpriUsers = ({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      gafpriFetch({
-        initMethod: 'GET',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/users',
-        functionFetching: notReady,
-        functionSuccess: onSites,
-      });
+      if (token) {
+        gafpriFetch({
+          initMethod: 'GET',
+          initApi: 'http://localhost:4000',
+          initRoute: 'api/v1/users',
+          initToken: { token },
+          functionFetching: notReady,
+          functionSuccess: onUsers,
+        });
+      } else {
+        notReady();
+      }
     } else {
       onIsReady();
     }
@@ -812,7 +829,8 @@ export const useGafpriUsers = ({
       roleValid &&
       siteValid &&
       photoValid &&
-      isActiveValid
+      isActiveValid &&
+      token
     ) {
       const payload = {
         name,
@@ -833,6 +851,7 @@ export const useGafpriUsers = ({
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/users',
         initCredentials: updatedPayload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -854,7 +873,8 @@ export const useGafpriUsers = ({
       roleValid &&
       siteValid &&
       photoValid &&
-      isActiveValid
+      isActiveValid &&
+      token
     ) {
       const payload = {
         name,
@@ -875,6 +895,7 @@ export const useGafpriUsers = ({
         initApi: 'http://localhost:4000',
         initRoute: `api/v1/users/${userId}`,
         initCredentials: updatedPayload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newErrorUpdate,
@@ -994,7 +1015,7 @@ export const useGafpriUsers = ({
   // Efects
   React.useEffect(() => {
     getUsers();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
     setCurrentPage(1);
@@ -1067,6 +1088,7 @@ export const useGafpriUsers = ({
     notReady,
     goUpdate,
     goAdd,
+    offUsers,
 
     validationButtonNext,
     validationName,

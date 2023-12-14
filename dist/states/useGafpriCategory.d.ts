@@ -79,6 +79,7 @@ type Actions = {
     goAdd: () => void;
     update: () => void;
     onUpdate: () => void;
+    offCategory: () => void;
     add: () => void;
     getById: (id: number) => CategoryAttributes | null;
     getChildren: (id: number) => CategoryAttributes[];
@@ -99,5 +100,8 @@ export type UseCategoryReturn = {
     states: State;
     actions: Actions;
 };
-export declare function useGafpriCategory(): UseCategoryReturn;
+export type UseCategoryProps = {
+    token: string | null;
+};
+export declare function useGafpriCategory({ token, }: UseCategoryProps): UseCategoryReturn;
 export {};

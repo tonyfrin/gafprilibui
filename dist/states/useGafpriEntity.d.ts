@@ -216,8 +216,8 @@ export type UseEntityReturn = {
         addAddress: () => void;
         changeAddress: (id: number) => void;
         infoReset: () => void;
-        onSites: (newData: EntityData) => void;
-        resetData: () => void;
+        onEntity: (newData: EntityData) => void;
+        offEntity: () => void;
         handleNewEntity: (newItem: EntityAttributes) => void;
         handleUpdatedEntity: (itemUpdate: EntityAttributes) => void;
         returnInit: () => void;
@@ -246,6 +246,7 @@ export type UseEntityReturn = {
 };
 export type UseEntityProps = {
     useTypeDocumentId: UseTypeDocumentIdReturn;
+    token: string | null;
 };
-export declare const useGafpriEntity: ({ useTypeDocumentId, }: UseEntityProps) => UseEntityReturn;
+export declare const useGafpriEntity: ({ useTypeDocumentId, token, }: UseEntityProps) => UseEntityReturn;
 export {};

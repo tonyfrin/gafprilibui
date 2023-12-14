@@ -16,8 +16,9 @@ var _Context = require("../Context");
 var _Constans = require("../Constans");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function useGafpriRoles() {
+function useGafpriRoles(_ref) {
   var _roles$data;
+  var token = _ref.token;
   var _useState = (0, _react.useState)(''),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     name = _useState2[0],
@@ -185,8 +186,16 @@ function useGafpriRoles() {
     setData(newData);
     onIsReady();
   };
+  var offRoles = function offRoles() {
+    setData({
+      data: {
+        items: null
+      }
+    });
+    notReady();
+  };
   var getRoles = /*#__PURE__*/function () {
-    var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+    var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
       var _roles$data$items;
       var lastEntryDateAndCount, lastDate, count;
       return _regenerator["default"].wrap(function _callee$(_context) {
@@ -199,13 +208,20 @@ function useGafpriRoles() {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_roles$data$items = roles.data.items) === null || _roles$data$items === void 0 ? void 0 : _roles$data$items.length) || 0;
             if (roles.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              (0, _helpers.gafpriFetch)({
-                initMethod: 'GET',
-                initApi: 'http://localhost:4000',
-                initRoute: 'api/v1/roles',
-                functionFetching: notReady,
-                functionSuccess: onRoles
-              });
+              if (token) {
+                (0, _helpers.gafpriFetch)({
+                  initMethod: 'GET',
+                  initApi: 'http://localhost:4000',
+                  initRoute: 'api/v1/roles',
+                  initToken: {
+                    token: token
+                  },
+                  functionFetching: notReady,
+                  functionSuccess: onRoles
+                });
+              } else {
+                notReady();
+              }
             } else {
               onIsReady();
             }
@@ -216,7 +232,7 @@ function useGafpriRoles() {
       }, _callee);
     }));
     return function getRoles() {
-      return _ref.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
   var handleNewRoles = function handleNewRoles(newRoles) {
@@ -245,8 +261,8 @@ function useGafpriRoles() {
       return newData;
     });
   };
-  var handleDeletedRoles = function handleDeletedRoles(_ref2) {
-    var itemId = _ref2.itemId;
+  var handleDeletedRoles = function handleDeletedRoles(_ref3) {
+    var itemId = _ref3.itemId;
     setRoles(function (prevState) {
       var _prevState$data$items2;
       var filteredItems = ((_prevState$data$items2 = prevState.data.items) === null || _prevState$data$items2 === void 0 ? void 0 : _prevState$data$items2.filter(function (item) {
@@ -302,7 +318,7 @@ function useGafpriRoles() {
     }, 5000);
   };
   var add = function add() {
-    if (nameValid) {
+    if (nameValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
         initApi: 'http://localhost:4000',
@@ -310,6 +326,9 @@ function useGafpriRoles() {
         initCredentials: {
           name: name,
           permissions: permissions
+        },
+        initToken: {
+          token: token
         },
         functionFetching: onFetching,
         functionSuccess: returnInit,
@@ -324,7 +343,7 @@ function useGafpriRoles() {
     })) || null;
   }
   var update = function update() {
-    if (nameValid) {
+    if (nameValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
         initApi: 'http://localhost:4000',
@@ -333,6 +352,9 @@ function useGafpriRoles() {
           name: name,
           permissions: permissions
         },
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -340,14 +362,19 @@ function useGafpriRoles() {
     }
   };
   var deleteRoles = function deleteRoles(id) {
-    (0, _helpers.gafpriFetch)({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: "api/v1/roles/".concat(id),
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete
-    });
+    if (token) {
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: "api/v1/roles/".concat(id),
+        initToken: {
+          token: token
+        },
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete
+      });
+    }
   };
   function sortByName(items, order) {
     if (items) {
@@ -385,7 +412,7 @@ function useGafpriRoles() {
 
   _react["default"].useEffect(function () {
     getRoles();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   _react["default"].useEffect(function () {
     setCurrentPage(1);
@@ -428,6 +455,7 @@ function useGafpriRoles() {
     onAdd: onAdd,
     goAdd: goAdd,
     onUpdate: onUpdate,
+    offRoles: offRoles,
     add: add,
     update: update,
     getById: getById,

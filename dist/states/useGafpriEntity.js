@@ -22,7 +22,8 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var useGafpriEntity = function useGafpriEntity(_ref) {
   var _useTypeDocumentId$st, _useTypeDocumentId$st2, _entities$data;
-  var useTypeDocumentId = _ref.useTypeDocumentId;
+  var useTypeDocumentId = _ref.useTypeDocumentId,
+    token = _ref.token;
   // Define los estados necesarios para los atributos de Site
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -1033,11 +1034,11 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     setEntities(newData);
     setDataStorage(newData);
   };
-  var onSites = function onSites(newData) {
+  var onEntity = function onEntity(newData) {
     setData(newData);
     onIsReady();
   };
-  var resetData = function resetData() {
+  var offEntity = function offEntity() {
     var newData = {
       data: {
         items: null
@@ -1060,13 +1061,20 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_entities$data$items = entities.data.items) === null || _entities$data$items === void 0 ? void 0 : _entities$data$items.length) || 0;
             if (entities.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              (0, _helpers.gafpriFetch)({
-                initMethod: 'GET',
-                initApi: 'http://localhost:4000',
-                initRoute: 'api/v1/entity',
-                functionFetching: notReady,
-                functionSuccess: onSites
-              });
+              if (token) {
+                (0, _helpers.gafpriFetch)({
+                  initMethod: 'GET',
+                  initApi: 'http://localhost:4000',
+                  initRoute: 'api/v1/entity',
+                  initToken: {
+                    token: token
+                  },
+                  functionFetching: notReady,
+                  functionSuccess: onEntity
+                });
+              } else {
+                notReady();
+              }
             } else {
               onIsReady();
             }
@@ -1147,7 +1155,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     }, 5000);
   };
   var add = function add() {
-    if (nameValid && lastNameValid && typeDocumentIdIdValid && indexValid && digitValid && addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid && emailValid && phoneValid && typeValid && photoValid && statusValid) {
+    if (nameValid && lastNameValid && typeDocumentIdIdValid && indexValid && digitValid && addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid && emailValid && phoneValid && typeValid && photoValid && statusValid && token) {
       var payload = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
         name: name,
         type: type,
@@ -1186,6 +1194,9 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/entity',
         initCredentials: payload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -1199,7 +1210,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     })) || null;
   }
   var update = function update() {
-    if (nameValid && lastNameValid && typeValid && photoValid && statusValid && phoneValid && emailValid) {
+    if (nameValid && lastNameValid && typeValid && photoValid && statusValid && phoneValid && emailValid && token) {
       var payload = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, name ? {
         name: name
       } : {}), type ? {
@@ -1220,6 +1231,9 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
         initApi: 'http://localhost:4000',
         initRoute: "api/v1/entity/".concat(entityId),
         initCredentials: payload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newErrorUpdate
@@ -1227,36 +1241,46 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     }
   };
   var updateAddress = function updateAddress(newAddress) {
-    var payload = {
-      address: newAddress
-    };
-    (0, _helpers.gafpriFetch)({
-      initMethod: 'PATCH',
-      initApi: 'http://localhost:4000',
-      initRoute: "api/v1/entity/".concat(entityId),
-      initCredentials: payload,
-      functionFetching: onFetching,
-      functionSuccess: function functionSuccess() {
-        return goUpdate(entityId);
-      },
-      functionError: newErrorUpdate
-    });
+    if (token) {
+      var payload = {
+        address: newAddress
+      };
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'PATCH',
+        initApi: 'http://localhost:4000',
+        initRoute: "api/v1/entity/".concat(entityId),
+        initCredentials: payload,
+        initToken: {
+          token: token
+        },
+        functionFetching: onFetching,
+        functionSuccess: function functionSuccess() {
+          return goUpdate(entityId);
+        },
+        functionError: newErrorUpdate
+      });
+    }
   };
   var updateDocument = function updateDocument(newDocument) {
-    var payload = {
-      documentId: newDocument
-    };
-    (0, _helpers.gafpriFetch)({
-      initMethod: 'PATCH',
-      initApi: 'http://localhost:4000',
-      initRoute: "api/v1/entity/".concat(entityId),
-      initCredentials: payload,
-      functionFetching: onFetching,
-      functionSuccess: function functionSuccess() {
-        return goUpdate(entityId);
-      },
-      functionError: newErrorUpdate
-    });
+    if (token) {
+      var payload = {
+        documentId: newDocument
+      };
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'PATCH',
+        initApi: 'http://localhost:4000',
+        initRoute: "api/v1/entity/".concat(entityId),
+        initCredentials: payload,
+        initToken: {
+          token: token
+        },
+        functionFetching: onFetching,
+        functionSuccess: function functionSuccess() {
+          return goUpdate(entityId);
+        },
+        functionError: newErrorUpdate
+      });
+    }
   };
   var addAddress = function addAddress() {
     if (addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid) {
@@ -1302,25 +1326,30 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     updateAddress(updateNewAddress);
   };
   var deleteAddress = function deleteAddress(id) {
-    var payload = {
-      address: [{
-        id: id
-      }]
-    };
-    (0, _helpers.gafpriFetch)({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: "api/v1/entity/".concat(entityId),
-      initCredentials: payload,
-      functionFetching: onFetching,
-      functionSuccess: function functionSuccess() {
-        return goUpdate(entityId);
-      },
-      functionError: newErrorUpdate
-    });
+    if (token) {
+      var payload = {
+        address: [{
+          id: id
+        }]
+      };
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: "api/v1/entity/".concat(entityId),
+        initCredentials: payload,
+        initToken: {
+          token: token
+        },
+        functionFetching: onFetching,
+        functionSuccess: function functionSuccess() {
+          return goUpdate(entityId);
+        },
+        functionError: newErrorUpdate
+      });
+    }
   };
   var deleteDocument = function deleteDocument(id) {
-    if (documentId.length > 1) {
+    if (documentId.length > 1 && token) {
       var payload = {
         documentId: [{
           id: id
@@ -1331,6 +1360,9 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
         initApi: 'http://localhost:4000',
         initRoute: "api/v1/entity/".concat(entityId),
         initCredentials: payload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: function functionSuccess() {
           return goUpdate(entityId);
@@ -1423,7 +1455,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
   // Efects
   _react["default"].useEffect(function () {
     getEntities();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   _react["default"].useEffect(function () {
     setCurrentPage(1);
@@ -1575,8 +1607,8 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     addAddress: addAddress,
     changeAddress: changeAddress,
     infoReset: infoReset,
-    onSites: onSites,
-    resetData: resetData,
+    onEntity: onEntity,
+    offEntity: offEntity,
     handleNewEntity: handleNewEntity,
     handleUpdatedEntity: handleUpdatedEntity,
     returnInit: returnInit,

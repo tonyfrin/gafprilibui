@@ -22,7 +22,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var useGafpriUsers = function useGafpriUsers(_ref) {
   var _useRoles$states$role, _useRoles$states$role2, _useSites$states$site, _useSites$states$site2, _users$data;
   var useRoles = _ref.useRoles,
-    useSites = _ref.useSites;
+    useSites = _ref.useSites,
+    token = _ref.token;
   // Define los estados necesarios para los atributos de Site
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -542,9 +543,17 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     setUsers(newData);
     setDataStorage(newData);
   };
-  var onSites = function onSites(newData) {
+  var onUsers = function onUsers(newData) {
     setData(newData);
     onIsReady();
+  };
+  var offUsers = function offUsers() {
+    setData({
+      data: {
+        items: null
+      }
+    });
+    notReady();
   };
   var resetData = function resetData() {
     var newData = {
@@ -569,13 +578,20 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_users$data$items = users.data.items) === null || _users$data$items === void 0 ? void 0 : _users$data$items.length) || 0;
             if (users.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              (0, _helpers.gafpriFetch)({
-                initMethod: 'GET',
-                initApi: 'http://localhost:4000',
-                initRoute: 'api/v1/users',
-                functionFetching: notReady,
-                functionSuccess: onSites
-              });
+              if (token) {
+                (0, _helpers.gafpriFetch)({
+                  initMethod: 'GET',
+                  initApi: 'http://localhost:4000',
+                  initRoute: 'api/v1/users',
+                  initToken: {
+                    token: token
+                  },
+                  functionFetching: notReady,
+                  functionSuccess: onUsers
+                });
+              } else {
+                notReady();
+              }
             } else {
               onIsReady();
             }
@@ -656,7 +672,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     }, 5000);
   };
   var add = function add() {
-    if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && siteValid && photoValid && isActiveValid) {
+    if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && siteValid && photoValid && isActiveValid && token) {
       var payload = {
         name: name,
         email: email,
@@ -674,6 +690,9 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/users',
         initCredentials: updatedPayload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -687,7 +706,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     })) || null;
   }
   var update = function update() {
-    if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && siteValid && photoValid && isActiveValid) {
+    if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && siteValid && photoValid && isActiveValid && token) {
       var payload = {
         name: name,
         email: email,
@@ -705,6 +724,9 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
         initApi: 'http://localhost:4000',
         initRoute: "api/v1/users/".concat(userId),
         initCredentials: updatedPayload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newErrorUpdate
@@ -788,7 +810,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
   // Efects
   _react["default"].useEffect(function () {
     getUsers();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   _react["default"].useEffect(function () {
     setCurrentPage(1);
@@ -850,6 +872,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     notReady: notReady,
     goUpdate: goUpdate,
     goAdd: goAdd,
+    offUsers: offUsers,
     validationButtonNext: validationButtonNext,
     validationName: validationName,
     validationLastName: validationLastName,

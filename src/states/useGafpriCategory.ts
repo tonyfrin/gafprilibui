@@ -129,6 +129,8 @@ type Actions = {
 
   onUpdate: () => void;
 
+  offCategory: () => void;
+
   add: () => void;
 
   getById: (id: number) => CategoryAttributes | null;
@@ -175,7 +177,13 @@ export type UseCategoryReturn = {
   actions: Actions;
 };
 
-export function useGafpriCategory(): UseCategoryReturn {
+export type UseCategoryProps = {
+  token: string | null;
+};
+
+export function useGafpriCategory({
+  token,
+}: UseCategoryProps): UseCategoryReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
 
@@ -476,6 +484,15 @@ export function useGafpriCategory(): UseCategoryReturn {
     onIsReady();
   };
 
+  const offCategory = (): void => {
+    setData({
+      data: {
+        items: null,
+      },
+    });
+    notReady();
+  };
+
   const getCategory = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount('category');
     const lastDate = getLastItem?.modifiedAt || null;
@@ -486,13 +503,18 @@ export function useGafpriCategory(): UseCategoryReturn {
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      gafpriFetch({
-        initMethod: 'GET',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/category',
-        functionFetching: notReady,
-        functionSuccess: onCategory,
-      });
+      if (token) {
+        gafpriFetch({
+          initMethod: 'GET',
+          initApi: 'http://localhost:4000',
+          initRoute: 'api/v1/category',
+          initToken: { token },
+          functionFetching: notReady,
+          functionSuccess: onCategory,
+        });
+      } else {
+        notReady();
+      }
     } else {
       onIsReady();
     }
@@ -590,7 +612,8 @@ export function useGafpriCategory(): UseCategoryReturn {
       parentIdValid &&
       descriptionValid &&
       photoValid &&
-      statusValid
+      statusValid &&
+      token
     ) {
       const payload = {
         name,
@@ -609,6 +632,7 @@ export function useGafpriCategory(): UseCategoryReturn {
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/category',
         initCredentials: updatedPayload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -631,25 +655,28 @@ export function useGafpriCategory(): UseCategoryReturn {
   }
 
   function deleteParentId(id: number): void {
-    const currentCategory = getById(id);
-    const data = {
-      ...(currentCategory?.name ? { name: currentCategory.name } : {}),
-      ...(currentCategory?.status ? { status: currentCategory.status } : {}),
-      ...(currentCategory?.description
-        ? { description: currentCategory.description }
-        : {}),
-      ...(currentCategory?.photo ? { photo: currentCategory.photo } : {}),
-      parentId: null,
-    };
-    gafpriFetch({
-      initMethod: 'PATCH',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/category/${id}`,
-      initCredentials: data,
-      functionFetching: onChildrenFetching,
-      functionSuccess: outChildrenFetching,
-      functionError: outChildrenFetching,
-    });
+    if (token) {
+      const currentCategory = getById(id);
+      const data = {
+        ...(currentCategory?.name ? { name: currentCategory.name } : {}),
+        ...(currentCategory?.status ? { status: currentCategory.status } : {}),
+        ...(currentCategory?.description
+          ? { description: currentCategory.description }
+          : {}),
+        ...(currentCategory?.photo ? { photo: currentCategory.photo } : {}),
+        parentId: null,
+      };
+      gafpriFetch({
+        initMethod: 'PATCH',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/category/${id}`,
+        initCredentials: data,
+        initToken: { token },
+        functionFetching: onChildrenFetching,
+        functionSuccess: outChildrenFetching,
+        functionError: outChildrenFetching,
+      });
+    }
   }
 
   const update = (): void => {
@@ -658,7 +685,8 @@ export function useGafpriCategory(): UseCategoryReturn {
       parentIdValid &&
       descriptionValid &&
       photoValid &&
-      statusValid
+      statusValid &&
+      token
     ) {
       const payload = {
         name,
@@ -677,6 +705,7 @@ export function useGafpriCategory(): UseCategoryReturn {
         initApi: 'http://localhost:4000',
         initRoute: `api/v1/category/${currentId}`,
         initCredentials: updatedPayload,
+        initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError,
@@ -685,14 +714,17 @@ export function useGafpriCategory(): UseCategoryReturn {
   };
 
   const deleteCategory = (id: number): void => {
-    gafpriFetch({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/category/${id}`,
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete,
-    });
+    if (token) {
+      gafpriFetch({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/category/${id}`,
+        initToken: { token },
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete,
+      });
+    }
   };
 
   function sortByName(
@@ -745,7 +777,7 @@ export function useGafpriCategory(): UseCategoryReturn {
 
   React.useEffect(() => {
     getCategory();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
     setCurrentPage(1);
@@ -847,6 +879,7 @@ export function useGafpriCategory(): UseCategoryReturn {
     goAdd,
     onUpdate,
 
+    offCategory,
     add,
     update,
     getById,

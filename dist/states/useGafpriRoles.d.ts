@@ -46,6 +46,7 @@ type Actions = {
     goAdd: () => void;
     update: () => void;
     onUpdate: () => void;
+    offRoles: () => void;
     add: () => void;
     getById: (id: number) => RolesAttributes | null;
     goUpdate: (id: number) => void;
@@ -64,5 +65,8 @@ export type UseRolesReturn = {
     states: State;
     actions: Actions;
 };
-export declare function useGafpriRoles(): UseRolesReturn;
+export type UseRolesProps = {
+    token: string | null;
+};
+export declare function useGafpriRoles({ token }: UseRolesProps): UseRolesReturn;
 export {};

@@ -19,8 +19,9 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function useGafpriCategory() {
+function useGafpriCategory(_ref) {
   var _category$data;
+  var token = _ref.token;
   var _useState = (0, _react.useState)(''),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     name = _useState2[0],
@@ -285,7 +286,7 @@ function useGafpriCategory() {
     }, 5000);
   };
   var changePhoto = /*#__PURE__*/function () {
-    var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
+    var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
       var newFile, mimeType, formData, config, response;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
@@ -340,7 +341,7 @@ function useGafpriCategory() {
       }, _callee, null, [[12, 19]]);
     }));
     return function changePhoto(_x) {
-      return _ref.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
   var changeStatus = function changeStatus(options) {
@@ -368,8 +369,16 @@ function useGafpriCategory() {
     setData(newData);
     onIsReady();
   };
+  var offCategory = function offCategory() {
+    setData({
+      data: {
+        items: null
+      }
+    });
+    notReady();
+  };
   var getCategory = /*#__PURE__*/function () {
-    var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
+    var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
       var _category$data$items;
       var lastEntryDateAndCount, lastDate, count;
       return _regenerator["default"].wrap(function _callee2$(_context2) {
@@ -382,13 +391,20 @@ function useGafpriCategory() {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_category$data$items = category.data.items) === null || _category$data$items === void 0 ? void 0 : _category$data$items.length) || 0;
             if (category.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              (0, _helpers.gafpriFetch)({
-                initMethod: 'GET',
-                initApi: 'http://localhost:4000',
-                initRoute: 'api/v1/category',
-                functionFetching: notReady,
-                functionSuccess: onCategory
-              });
+              if (token) {
+                (0, _helpers.gafpriFetch)({
+                  initMethod: 'GET',
+                  initApi: 'http://localhost:4000',
+                  initRoute: 'api/v1/category',
+                  initToken: {
+                    token: token
+                  },
+                  functionFetching: notReady,
+                  functionSuccess: onCategory
+                });
+              } else {
+                notReady();
+              }
             } else {
               onIsReady();
             }
@@ -399,7 +415,7 @@ function useGafpriCategory() {
       }, _callee2);
     }));
     return function getCategory() {
-      return _ref2.apply(this, arguments);
+      return _ref3.apply(this, arguments);
     };
   }();
   var handleNewCategory = function handleNewCategory(newCategory) {
@@ -428,8 +444,8 @@ function useGafpriCategory() {
       return newData;
     });
   };
-  var handleDeletedCategory = function handleDeletedCategory(_ref3) {
-    var itemId = _ref3.itemId;
+  var handleDeletedCategory = function handleDeletedCategory(_ref4) {
+    var itemId = _ref4.itemId;
     setCategory(function (prevState) {
       var _prevState$data$items2;
       var filteredItems = ((_prevState$data$items2 = prevState.data.items) === null || _prevState$data$items2 === void 0 ? void 0 : _prevState$data$items2.filter(function (item) {
@@ -479,7 +495,7 @@ function useGafpriCategory() {
     }
   };
   var add = function add() {
-    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid) {
+    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token) {
       var payload = {
         name: name,
         parentId: parentId,
@@ -495,6 +511,9 @@ function useGafpriCategory() {
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/category',
         initCredentials: updatedPayload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -518,30 +537,35 @@ function useGafpriCategory() {
     return children;
   }
   function deleteParentId(id) {
-    var currentCategory = getById(id);
-    var data = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, currentCategory !== null && currentCategory !== void 0 && currentCategory.name ? {
-      name: currentCategory.name
-    } : {}), currentCategory !== null && currentCategory !== void 0 && currentCategory.status ? {
-      status: currentCategory.status
-    } : {}), currentCategory !== null && currentCategory !== void 0 && currentCategory.description ? {
-      description: currentCategory.description
-    } : {}), currentCategory !== null && currentCategory !== void 0 && currentCategory.photo ? {
-      photo: currentCategory.photo
-    } : {}), {}, {
-      parentId: null
-    });
-    (0, _helpers.gafpriFetch)({
-      initMethod: 'PATCH',
-      initApi: 'http://localhost:4000',
-      initRoute: "api/v1/category/".concat(id),
-      initCredentials: data,
-      functionFetching: onChildrenFetching,
-      functionSuccess: outChildrenFetching,
-      functionError: outChildrenFetching
-    });
+    if (token) {
+      var currentCategory = getById(id);
+      var data = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, currentCategory !== null && currentCategory !== void 0 && currentCategory.name ? {
+        name: currentCategory.name
+      } : {}), currentCategory !== null && currentCategory !== void 0 && currentCategory.status ? {
+        status: currentCategory.status
+      } : {}), currentCategory !== null && currentCategory !== void 0 && currentCategory.description ? {
+        description: currentCategory.description
+      } : {}), currentCategory !== null && currentCategory !== void 0 && currentCategory.photo ? {
+        photo: currentCategory.photo
+      } : {}), {}, {
+        parentId: null
+      });
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'PATCH',
+        initApi: 'http://localhost:4000',
+        initRoute: "api/v1/category/".concat(id),
+        initCredentials: data,
+        initToken: {
+          token: token
+        },
+        functionFetching: onChildrenFetching,
+        functionSuccess: outChildrenFetching,
+        functionError: outChildrenFetching
+      });
+    }
   }
   var update = function update() {
-    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid) {
+    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token) {
       var payload = {
         name: name,
         parentId: parentId,
@@ -557,6 +581,9 @@ function useGafpriCategory() {
         initApi: 'http://localhost:4000',
         initRoute: "api/v1/category/".concat(currentId),
         initCredentials: updatedPayload,
+        initToken: {
+          token: token
+        },
         functionFetching: onFetching,
         functionSuccess: returnInit,
         functionError: newError
@@ -564,14 +591,19 @@ function useGafpriCategory() {
     }
   };
   var deleteCategory = function deleteCategory(id) {
-    (0, _helpers.gafpriFetch)({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: "api/v1/category/".concat(id),
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete
-    });
+    if (token) {
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: "api/v1/category/".concat(id),
+        initToken: {
+          token: token
+        },
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete
+      });
+    }
   };
   function sortByName(items, order) {
     if (items) {
@@ -609,7 +641,7 @@ function useGafpriCategory() {
 
   _react["default"].useEffect(function () {
     getCategory();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   _react["default"].useEffect(function () {
     setCurrentPage(1);
@@ -696,6 +728,7 @@ function useGafpriCategory() {
     onAdd: onAdd,
     goAdd: goAdd,
     onUpdate: onUpdate,
+    offCategory: offCategory,
     add: add,
     update: update,
     getById: getById,

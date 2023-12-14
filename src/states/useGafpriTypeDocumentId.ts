@@ -88,6 +88,8 @@ type Actions = {
 
   onUpdate: () => void;
 
+  offTypeDocumentId: () => void;
+
   add: () => void;
 
   getById: (id: number) => TypeDocumentIdAttributes | null;
@@ -129,7 +131,13 @@ export type UseTypeDocumentIdReturn = {
   actions: Actions;
 };
 
-export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
+export type UseTypeDocumentIdProps = {
+  token: string | null;
+};
+
+export function useGafpriTypeDocumentId({
+  token,
+}: UseTypeDocumentIdProps): UseTypeDocumentIdReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
   const [country, setCountry] = useState('');
@@ -289,6 +297,15 @@ export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
     onIsReady();
   };
 
+  const offTypeDocumentId = (): void => {
+    setData({
+      data: {
+        items: null,
+      },
+    });
+    notReady();
+  };
+
   const getTypeDocumentId = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount(
       'type-document-id'
@@ -301,13 +318,18 @@ export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      gafpriFetch({
-        initMethod: 'GET',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/type-document-id',
-        functionFetching: notReady,
-        functionSuccess: onTypeDocumentId,
-      });
+      if (token) {
+        gafpriFetch({
+          initMethod: 'GET',
+          initApi: 'http://localhost:4000',
+          initRoute: 'api/v1/type-document-id',
+          initToken: { token },
+          functionFetching: notReady,
+          functionSuccess: onTypeDocumentId,
+        });
+      } else {
+        notReady();
+      }
     } else {
       onIsReady();
     }
@@ -416,11 +438,12 @@ export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
   };
 
   const add = (): void => {
-    if (nameValid && countryValid) {
+    if (nameValid && countryValid && token) {
       gafpriFetch({
         initMethod: 'POST',
         initApi: 'http://localhost:4000',
         initRoute: 'api/v1/type-document-id',
+        initToken: { token },
         initCredentials: {
           name,
           country,
@@ -437,11 +460,12 @@ export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
   }
 
   const update = (): void => {
-    if (nameValid && countryValid) {
+    if (nameValid && countryValid && token) {
       gafpriFetch({
         initMethod: 'PATCH',
         initApi: 'http://localhost:4000',
         initRoute: `api/v1/type-document-id/${currentId}`,
+        initToken: { token },
         initCredentials: {
           name,
           country,
@@ -454,14 +478,17 @@ export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
   };
 
   const deleteTypeDocumentId = (id: number): void => {
-    gafpriFetch({
-      initMethod: 'DELETE',
-      initApi: 'http://localhost:4000',
-      initRoute: `api/v1/type-document-id/${id}`,
-      functionFetching: onFetching,
-      functionSuccess: returnInit,
-      functionError: newErrorDelete,
-    });
+    if (token) {
+      gafpriFetch({
+        initMethod: 'DELETE',
+        initApi: 'http://localhost:4000',
+        initRoute: `api/v1/type-document-id/${id}`,
+        initToken: { token },
+        functionFetching: onFetching,
+        functionSuccess: returnInit,
+        functionError: newErrorDelete,
+      });
+    }
   };
 
   function sortByName(
@@ -511,7 +538,7 @@ export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
 
   React.useEffect(() => {
     getTypeDocumentId();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
     setCurrentPage(1);
@@ -566,6 +593,7 @@ export function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn {
     goAddUsa,
     onUpdate,
 
+    offTypeDocumentId,
     add,
     update,
     getById,

@@ -47,6 +47,7 @@ type Actions = {
     goAddUsa: () => void;
     update: () => void;
     onUpdate: () => void;
+    offTypeDocumentId: () => void;
     add: () => void;
     getById: (id: number) => TypeDocumentIdAttributes | null;
     goUpdate: (id: number) => void;
@@ -65,5 +66,8 @@ export type UseTypeDocumentIdReturn = {
     states: State;
     actions: Actions;
 };
-export declare function useGafpriTypeDocumentId(): UseTypeDocumentIdReturn;
+export type UseTypeDocumentIdProps = {
+    token: string | null;
+};
+export declare function useGafpriTypeDocumentId({ token, }: UseTypeDocumentIdProps): UseTypeDocumentIdReturn;
 export {};

@@ -89,11 +89,15 @@ export const changeInputText = ({
 };
 
 export function toTitleCase(str: string): string {
-  return str
-    .toLocaleLowerCase()
-    .replace(/(^|\s|\.|,|&)[a-z\u00E0-\u00FF]/g, (match) =>
-      match.toUpperCase()
-    );
+  const exceptions = ['de'];
+
+  return str.replace(/(^|\s|\.|,|&)[a-z\u00E0-\u00FF]/g, (match) => {
+    if (exceptions.includes(match.trim().toLowerCase())) {
+      return match.toLowerCase();
+    }
+
+    return match.toUpperCase();
+  });
 }
 
 export type ChangeSelect = {

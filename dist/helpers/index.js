@@ -80,7 +80,11 @@ var changeInputText = function changeInputText(_ref) {
 };
 exports.changeInputText = changeInputText;
 function toTitleCase(str) {
-  return str.toLocaleLowerCase().replace(/(^|\s|\.|,|&)[a-z\u00E0-\u00FF]/g, function (match) {
+  var exceptions = ['de'];
+  return str.replace(/(^|\s|\.|,|&)[a-z\u00E0-\u00FF]/g, function (match) {
+    if (exceptions.includes(match.trim().toLowerCase())) {
+      return match.toLowerCase();
+    }
     return match.toUpperCase();
   });
 }

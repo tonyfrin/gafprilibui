@@ -89,15 +89,19 @@ export const changeInputText = ({
 };
 
 export function toTitleCase(str: string): string {
-  const exceptions = ['de'];
+  const exceptions = ['de', 'del', 'la'];
 
-  return str.replace(/(^|\s|\.|,|&)[a-z\u00E0-\u00FF]/g, (match) => {
-    if (exceptions.includes(match.trim().toLowerCase())) {
-      return match.toLowerCase();
+  return str.replace(
+    /(^|\s|\.|,|&)([a-z\u00E0-\u00FF]+)/g,
+    (match, separator, word) => {
+      const lowerWord = word.toLowerCase();
+      if (exceptions.includes(lowerWord)) {
+        return separator + lowerWord;
+      }
+
+      return separator + lowerWord.charAt(0).toUpperCase() + lowerWord.slice(1);
     }
-
-    return match.toUpperCase();
-  });
+  );
 }
 
 export type ChangeSelect = {

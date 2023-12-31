@@ -80,12 +80,13 @@ var changeInputText = function changeInputText(_ref) {
 };
 exports.changeInputText = changeInputText;
 function toTitleCase(str) {
-  var exceptions = ['de'];
-  return str.replace(/(^|\s|\.|,|&)[a-z\u00E0-\u00FF]/g, function (match) {
-    if (exceptions.includes(match.trim().toLowerCase())) {
-      return match.toLowerCase();
+  var exceptions = ['de', 'del', 'la'];
+  return str.replace(/(^|\s|\.|,|&)([a-z\u00E0-\u00FF]+)/g, function (match, separator, word) {
+    var lowerWord = word.toLowerCase();
+    if (exceptions.includes(lowerWord)) {
+      return separator + lowerWord;
     }
-    return match.toUpperCase();
+    return separator + lowerWord.charAt(0).toUpperCase() + lowerWord.slice(1);
   });
 }
 var changeSelect = function changeSelect(_ref2) {

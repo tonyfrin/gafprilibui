@@ -775,19 +775,14 @@ export const useGafpriEntity = ({
   const validationTypeDocumentIdId = (value: string): boolean => {
     const validation: boolean = validationSelect(
       value,
-      'entityTypeDocumentIdId',
-      'gs-input-alert'
+      'entityTypeDocumentIdId'
     );
     setTypeDocumentIdIdValid(validation);
     return validation;
   };
 
   const validationIndex = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'entityDocumentIndex',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'entityDocumentIndex');
     setIndexValid(validation);
     return validation;
   };
@@ -797,7 +792,6 @@ export const useGafpriEntity = ({
       value,
       /^\d{1,12}(-\d{1,12})?$/,
       'entityDocumentDigit',
-      'gs-input-alert',
       true
     );
     setDigitValid(valid);
@@ -805,11 +799,7 @@ export const useGafpriEntity = ({
   };
 
   const validationAddressType = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'addressType',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'addressType');
     setAddressTypeValid(validation);
     return validation;
   };
@@ -832,31 +822,19 @@ export const useGafpriEntity = ({
   };
 
   const validationCity = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'entityCity',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'entityCity');
     setCityValid(validation);
     return validation;
   };
 
   const validationStateCountry = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'entityStateCountry',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'entityStateCountry');
     setStateCountryValid(validation);
     return validation;
   };
 
   const validationCountry = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'entityCountry',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'entityCountry');
     setCountryValid(validation);
     return validation;
   };
@@ -865,8 +843,7 @@ export const useGafpriEntity = ({
     const valid = validationInput(
       value,
       /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/,
-      'entityCodePost',
-      'gs-input-alert'
+      'entityCodePost'
     );
     setPostCodeValid(valid);
     return valid;
@@ -877,7 +854,6 @@ export const useGafpriEntity = ({
       value,
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
       'entityEmail',
-      'gs-input-alert',
       false
     );
     setEmailValid(valid);
@@ -885,22 +861,13 @@ export const useGafpriEntity = ({
   };
 
   const validationPhone = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[0-9]{10,20}/,
-      'entityPhone',
-      'gs-input-alert'
-    );
+    const valid = validationInput(value, /^[0-9]{10,20}/, 'entityPhone');
     setPhoneValid(valid);
     return valid;
   };
 
   const validationType = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'roleUser',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'roleUser');
     setTypeValid(validation);
     return validation;
   };
@@ -909,8 +876,7 @@ export const useGafpriEntity = ({
     const valid = validationInput(
       value,
       /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-      'entityPhoto',
-      'gs-input-alert'
+      'entityPhoto'
     );
     setPhotoValid(valid);
     return valid;
@@ -920,19 +886,14 @@ export const useGafpriEntity = ({
     const valid = validationInput(
       value,
       /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-      'entityDocumentPhoto',
-      'gs-input-alert'
+      'entityDocumentPhoto'
     );
     setDocumentPhotoValid(valid);
     return valid;
   };
 
   const validationStatus = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'isActiveUser',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'isActiveUser');
     setStatusValid(validation);
     return validation;
   };

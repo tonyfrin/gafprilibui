@@ -452,7 +452,6 @@ export const useGafpriUsers = ({
       value,
       /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/,
       'userEmail',
-      'gs-input-alert',
       true
     );
     setEmailValid(valid);
@@ -460,43 +459,25 @@ export const useGafpriUsers = ({
   };
 
   const validationPhoneNumber = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[0-9]{10}$/,
-      'userPhone',
-      'gs-input-alert',
-      true
-    );
+    const valid = validationInput(value, /^[0-9]{10}$/, 'userPhone', true);
     setPhoneNumberValid(valid);
     return valid;
   };
 
   const validationAreaCode = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'areaCodeUser',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'areaCodeUser');
     setAreaCodeValid(validation);
     return validation;
   };
 
   const validationSite = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'userSite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'userSite');
     setSiteValid(validation);
     return validation;
   };
 
   const validationRole = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'userRole',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'userRole');
     setRoleValid(validation);
     return validation;
   };
@@ -505,19 +486,14 @@ export const useGafpriUsers = ({
     const valid = validationInput(
       value,
       /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-      'photoUser',
-      'gs-input-alert'
+      'photoUser'
     );
     setPhotoValid(valid);
     return valid;
   };
 
   const validationIsActive = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'isActiveUser',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'isActiveUser');
     setIsActiveValid(validation);
     return validation;
   };

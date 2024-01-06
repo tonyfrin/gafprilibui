@@ -223,7 +223,6 @@ export function useGafpriCurrencies({
       newValue,
       /\$|Bs|€/,
       'symbolCurrencies',
-      'gs-input-alert',
       true
     );
     setSymbolValid(valid);

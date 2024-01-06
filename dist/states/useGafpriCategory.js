@@ -213,7 +213,7 @@ function useGafpriCategory(_ref) {
     });
   };
   var validationParentId = function validationParentId(newValue) {
-    var valid = (0, _helpers.validationSelect)(newValue, 'parentId', 'gs-input-alert');
+    var valid = (0, _helpers.validationSelect)(newValue, 'parentId');
     setParentIdValid(valid);
     return valid;
   };
@@ -233,7 +233,7 @@ function useGafpriCategory(_ref) {
     });
   };
   var validationPhoto = function validationPhoto(value) {
-    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'photoCategory', 'gs-input-alert');
+    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'photoCategory');
     setPhotoValid(valid);
     return valid;
   };

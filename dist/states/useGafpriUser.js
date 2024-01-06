@@ -355,37 +355,37 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     });
   };
   var validationEmail = function validationEmail(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/, 'userEmail', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/, 'userEmail', true);
     setEmailValid(valid);
     return valid;
   };
   var validationPhoneNumber = function validationPhoneNumber(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10}$/, 'userPhone', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10}$/, 'userPhone', true);
     setPhoneNumberValid(valid);
     return valid;
   };
   var validationAreaCode = function validationAreaCode(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'areaCodeUser', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'areaCodeUser');
     setAreaCodeValid(validation);
     return validation;
   };
   var validationSite = function validationSite(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'userSite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'userSite');
     setSiteValid(validation);
     return validation;
   };
   var validationRole = function validationRole(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'userRole', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'userRole');
     setRoleValid(validation);
     return validation;
   };
   var validationPhoto = function validationPhoto(value) {
-    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'photoUser', 'gs-input-alert');
+    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'photoUser');
     setPhotoValid(valid);
     return valid;
   };
   var validationIsActive = function validationIsActive(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'isActiveUser', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'isActiveUser');
     setIsActiveValid(validation);
     return validation;
   };

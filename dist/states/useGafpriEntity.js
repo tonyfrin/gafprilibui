@@ -617,22 +617,22 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     });
   };
   var validationTypeDocumentIdId = function validationTypeDocumentIdId(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityTypeDocumentIdId', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'entityTypeDocumentIdId');
     setTypeDocumentIdIdValid(validation);
     return validation;
   };
   var validationIndex = function validationIndex(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityDocumentIndex', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'entityDocumentIndex');
     setIndexValid(validation);
     return validation;
   };
   var validationDigit = function validationDigit(value) {
-    var valid = (0, _helpers.validationInput)(value, /^\d{1,12}(-\d{1,12})?$/, 'entityDocumentDigit', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(value, /^\d{1,12}(-\d{1,12})?$/, 'entityDocumentDigit', true);
     setDigitValid(valid);
     return valid;
   };
   var validationAddressType = function validationAddressType(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'addressType', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'addressType');
     setAddressTypeValid(validation);
     return validation;
   };
@@ -652,52 +652,52 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     });
   };
   var validationCity = function validationCity(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityCity', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'entityCity');
     setCityValid(validation);
     return validation;
   };
   var validationStateCountry = function validationStateCountry(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityStateCountry', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'entityStateCountry');
     setStateCountryValid(validation);
     return validation;
   };
   var validationCountry = function validationCountry(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityCountry', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'entityCountry');
     setCountryValid(validation);
     return validation;
   };
   var validationPostCode = function validationPostCode(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, 'entityCodePost', 'gs-input-alert');
+    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, 'entityCodePost');
     setPostCodeValid(valid);
     return valid;
   };
   var validationEmail = function validationEmail(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'entityEmail', 'gs-input-alert', false);
+    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'entityEmail', false);
     setEmailValid(valid);
     return valid;
   };
   var validationPhone = function validationPhone(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10,20}/, 'entityPhone', 'gs-input-alert');
+    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10,20}/, 'entityPhone');
     setPhoneValid(valid);
     return valid;
   };
   var validationType = function validationType(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'roleUser', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'roleUser');
     setTypeValid(validation);
     return validation;
   };
   var validationPhoto = function validationPhoto(value) {
-    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'entityPhoto', 'gs-input-alert');
+    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'entityPhoto');
     setPhotoValid(valid);
     return valid;
   };
   var validationDocumentPhoto = function validationDocumentPhoto(value) {
-    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'entityDocumentPhoto', 'gs-input-alert');
+    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'entityDocumentPhoto');
     setDocumentPhotoValid(valid);
     return valid;
   };
   var validationStatus = function validationStatus(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'isActiveUser', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'isActiveUser');
     setStatusValid(validation);
     return validation;
   };

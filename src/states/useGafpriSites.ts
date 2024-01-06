@@ -559,11 +559,7 @@ export const useGafpriSites = ({
   };
 
   const validationDocumentIndex = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'documentIndex',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'documentIndex');
     setDocumentIndexValid(validation);
     return validation;
   };
@@ -573,7 +569,6 @@ export const useGafpriSites = ({
       value,
       /^\d{1,12}(-\d{1,12})?$/,
       'documentNumber',
-      'gs-input-alert',
       true
     );
     setDocumentNumberValid(valid);
@@ -585,7 +580,6 @@ export const useGafpriSites = ({
       value,
       /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/,
       'address1',
-      'gs-input-alert',
       true
     );
     setAddress1Valid(valid);
@@ -596,39 +590,26 @@ export const useGafpriSites = ({
     const valid = validationInput(
       value,
       /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/,
-      'address2',
-      'gs-input-alert'
+      'address2'
     );
     setAddress2Valid(valid);
     return valid;
   };
 
   const validationCity = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'citySite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'citySite');
     setCityValid(validation);
     return validation;
   };
 
   const validationStateCountry = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'stateCountrySite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'stateCountrySite');
     setStateCountryValid(validation);
     return validation;
   };
 
   const validationCountry = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'countrySite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'countrySite');
     setCountryValid(validation);
     return validation;
   };
@@ -637,8 +618,7 @@ export const useGafpriSites = ({
     const valid = validationInput(
       value,
       /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/,
-      'postCodeSite',
-      'gs-input-alert'
+      'postCodeSite'
     );
     setPostCodeValid(valid);
     return valid;
@@ -649,7 +629,6 @@ export const useGafpriSites = ({
       value,
       /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/,
       'emailSite',
-      'gs-input-alert',
       true
     );
     setEmailValid(valid);
@@ -657,63 +636,37 @@ export const useGafpriSites = ({
   };
 
   const validationPhone = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[0-9]{10,20}/,
-      'phoneSite',
-      'gs-input-alert',
-      true
-    );
+    const valid = validationInput(value, /^[0-9]{10,20}/, 'phoneSite', true);
     setPhoneValid(valid);
     return valid;
   };
 
   const validationCurrenciesId = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'currencySite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'currencySite');
     setCurrenciesIdValid(validation);
     return validation;
   };
 
   const validationCurrencyLocation = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'currencyLocationSite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'currencyLocationSite');
     setCurrencyLocationValid(validation);
     return validation;
   };
 
   const validationSeparator = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'separatorSite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'separatorSite');
     setSeparatorValid(validation);
     return validation;
   };
 
   const validationDecimalNumbers = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'decimalNumbersSite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'decimalNumbersSite');
     setDecimalNumbersValid(validation);
     return validation;
   };
 
   const validationTaxes = (value: string): boolean => {
-    const validation: boolean = validationSelect(
-      value,
-      'taxesSite',
-      'gs-input-alert'
-    );
+    const validation: boolean = validationSelect(value, 'taxesSite');
     setTaxesValid(validation);
     return validation;
   };
@@ -723,7 +676,6 @@ export const useGafpriSites = ({
       value,
       /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/,
       'hostSite',
-      'gs-input-alert',
       true
     );
     setHostValid(valid);

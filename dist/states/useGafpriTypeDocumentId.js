@@ -149,7 +149,7 @@ function useGafpriTypeDocumentId(_ref) {
     });
   };
   var validationCountry = function validationCountry(newValue) {
-    var valid = (0, _helpers.validationInput)(newValue, /US|VE/, 'countryTypeDocumentId', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(newValue, /US|VE/, 'countryTypeDocumentId', true);
     setCountryValid(valid);
     return valid;
   };

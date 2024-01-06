@@ -139,7 +139,7 @@ function useGafpriCurrencies(_ref) {
     });
   };
   var validationSymbol = function validationSymbol(newValue) {
-    var valid = (0, _helpers.validationInput)(newValue, /\$|Bs|€/, 'symbolCurrencies', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(newValue, /\$|Bs|€/, 'symbolCurrencies', true);
     setSymbolValid(valid);
     return valid;
   };

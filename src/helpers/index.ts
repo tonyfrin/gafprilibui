@@ -1,5 +1,6 @@
 /* eslint-disable object-shorthand */
 import { SingleValue } from 'react-select';
+import { ALERT } from '../Constans';
 
 export type SelectDefault = {
   value: string;
@@ -24,15 +25,14 @@ export const removeClass = (element: string, className: string): void => {
 
 export const validationSelect = (
   value: string,
-  componentId: string,
-  className: string
+  componentId: string
 ): boolean => {
   if (value === '') {
-    addClass(componentId, className);
+    addClass(componentId, ALERT);
     return false;
   }
 
-  removeClass(componentId, className);
+  removeClass(componentId, ALERT);
   return true;
 };
 
@@ -44,27 +44,26 @@ export const validationInput = (
   value: string,
   match: RegExp,
   componentId: string,
-  className: string,
   required = false
 ): boolean => {
   const valid = validationHidden(value, match);
 
   if (required && (!valid || !value)) {
-    addClass(componentId, className);
+    addClass(componentId, ALERT);
     return false;
   }
 
   if (value && valid) {
-    removeClass(componentId, className);
+    removeClass(componentId, ALERT);
     return true;
   }
 
   if (!required && !value) {
-    removeClass(componentId, className);
+    removeClass(componentId, ALERT);
     return true;
   }
 
-  addClass(componentId, className);
+  addClass(componentId, ALERT);
   return false;
 };
 
@@ -163,7 +162,6 @@ export const validationInputName = ({
     name,
     /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'@-\s]+$/,
     inputId,
-    'gs-input-alert',
     required
   );
   setValid(valid);
@@ -187,7 +185,6 @@ export const validationInputAddress = ({
     value,
     /^[a-zA-Z0-9#]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/,
     inputId,
-    'gs-input-alert',
     required
   );
   setValid(valid);
@@ -204,7 +201,6 @@ export const validationInputPostcode = ({
     value,
     /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/,
     inputId,
-    'gs-input-alert',
     required
   );
   setValid(valid);
@@ -221,7 +217,6 @@ export const validationInputEmail = ({
     value,
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     inputId,
-    'gs-input-alert',
     required
   );
   setValid(valid);
@@ -234,13 +229,7 @@ export const validationInputPhone = ({
   setValid,
   required = true,
 }: ValidationInputAdress): boolean => {
-  const valid = validationInput(
-    value,
-    /^[0-9]{10,20}/,
-    inputId,
-    'gs-input-alert',
-    required
-  );
+  const valid = validationInput(value, /^[0-9]{10,20}/, inputId, required);
   setValid(valid);
   return valid;
 };
@@ -255,7 +244,6 @@ export const validationInputPassword = ({
     value,
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
     inputId,
-    'gs-input-alert',
     required
   );
   setValid(valid);

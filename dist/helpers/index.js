@@ -18,10 +18,9 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
+var _Constans = require("../Constans");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-/* eslint-disable object-shorthand */
-
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; } /* eslint-disable object-shorthand */
 var addClass = function addClass(element, className) {
   var input = document.getElementById(element);
   if (input && input.classList && !input.classList.contains(className)) {
@@ -36,34 +35,34 @@ var removeClass = function removeClass(element, className) {
   }
 };
 exports.removeClass = removeClass;
-var validationSelect = function validationSelect(value, componentId, className) {
+var validationSelect = function validationSelect(value, componentId) {
   if (value === '') {
-    addClass(componentId, className);
+    addClass(componentId, _Constans.ALERT);
     return false;
   }
-  removeClass(componentId, className);
+  removeClass(componentId, _Constans.ALERT);
   return true;
 };
 exports.validationSelect = validationSelect;
 function validationHidden(value, validate) {
   return validate.test(value);
 }
-var validationInput = function validationInput(value, match, componentId, className) {
-  var required = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+var validationInput = function validationInput(value, match, componentId) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   var valid = validationHidden(value, match);
   if (required && (!valid || !value)) {
-    addClass(componentId, className);
+    addClass(componentId, _Constans.ALERT);
     return false;
   }
   if (value && valid) {
-    removeClass(componentId, className);
+    removeClass(componentId, _Constans.ALERT);
     return true;
   }
   if (!required && !value) {
-    removeClass(componentId, className);
+    removeClass(componentId, _Constans.ALERT);
     return true;
   }
-  addClass(componentId, className);
+  addClass(componentId, _Constans.ALERT);
   return false;
 };
 exports.validationInput = validationInput;
@@ -121,7 +120,7 @@ var validationInputName = function validationInputName(_ref3) {
     setValid = _ref3.setValid,
     _ref3$required = _ref3.required,
     required = _ref3$required === void 0 ? true : _ref3$required;
-  var valid = validationInput(name, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'@-\s]+$/, inputId, 'gs-input-alert', required);
+  var valid = validationInput(name, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'@-\s]+$/, inputId, required);
   setValid(valid);
   return valid;
 };
@@ -132,7 +131,7 @@ var validationInputAddress = function validationInputAddress(_ref4) {
     setValid = _ref4.setValid,
     _ref4$required = _ref4.required,
     required = _ref4$required === void 0 ? true : _ref4$required;
-  var valid = validationInput(value, /^[a-zA-Z0-9#]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, inputId, 'gs-input-alert', required);
+  var valid = validationInput(value, /^[a-zA-Z0-9#]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, inputId, required);
   setValid(valid);
   return valid;
 };
@@ -143,7 +142,7 @@ var validationInputPostcode = function validationInputPostcode(_ref5) {
     setValid = _ref5.setValid,
     _ref5$required = _ref5.required,
     required = _ref5$required === void 0 ? true : _ref5$required;
-  var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, 'gs-input-alert', required);
+  var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, required);
   setValid(valid);
   return valid;
 };
@@ -154,7 +153,7 @@ var validationInputEmail = function validationInputEmail(_ref6) {
     setValid = _ref6.setValid,
     _ref6$required = _ref6.required,
     required = _ref6$required === void 0 ? true : _ref6$required;
-  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, 'gs-input-alert', required);
+  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, required);
   setValid(valid);
   return valid;
 };
@@ -165,7 +164,7 @@ var validationInputPhone = function validationInputPhone(_ref7) {
     setValid = _ref7.setValid,
     _ref7$required = _ref7.required,
     required = _ref7$required === void 0 ? true : _ref7$required;
-  var valid = validationInput(value, /^[0-9]{10,20}/, inputId, 'gs-input-alert', required);
+  var valid = validationInput(value, /^[0-9]{10,20}/, inputId, required);
   setValid(valid);
   return valid;
 };
@@ -176,7 +175,7 @@ var validationInputPassword = function validationInputPassword(_ref8) {
     setValid = _ref8.setValid,
     _ref8$required = _ref8.required,
     required = _ref8$required === void 0 ? true : _ref8$required;
-  var valid = validationInput(value, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, inputId, 'gs-input-alert', required);
+  var valid = validationInput(value, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, inputId, required);
   setValid(valid);
   return valid;
 };

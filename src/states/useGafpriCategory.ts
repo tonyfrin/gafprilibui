@@ -317,7 +317,7 @@ export function useGafpriCategory({
   };
 
   const validationParentId = (newValue: string): boolean => {
-    const valid = validationSelect(newValue, 'parentId', 'gs-input-alert');
+    const valid = validationSelect(newValue, 'parentId');
     setParentIdValid(valid);
     return valid;
   };
@@ -343,8 +343,7 @@ export function useGafpriCategory({
     const valid = validationInput(
       value,
       /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-      'photoCategory',
-      'gs-input-alert'
+      'photoCategory'
     );
     setPhotoValid(valid);
     return valid;

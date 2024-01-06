@@ -240,7 +240,6 @@ export function useGafpriTypeDocumentId({
       newValue,
       /US|VE/,
       'countryTypeDocumentId',
-      'gs-input-alert',
       true
     );
     setCountryValid(valid);

@@ -3,3 +3,4 @@ export { StatesCountries } from './StatesCountries';
 export { Cities } from './Cities';
 export { DocumentsIndex } from './DocumentsIndex';
 export { AllRoles } from './AllRoles';
+export { ALERT, DISABLED } from './Class';

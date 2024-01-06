@@ -469,82 +469,82 @@ var useGafpriSites = function useGafpriSites(_ref) {
     });
   };
   var validationDocumentIndex = function validationDocumentIndex(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'documentIndex', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'documentIndex');
     setDocumentIndexValid(validation);
     return validation;
   };
   var validationDocumentNumber = function validationDocumentNumber(value) {
-    var valid = (0, _helpers.validationInput)(value, /^\d{1,12}(-\d{1,12})?$/, 'documentNumber', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(value, /^\d{1,12}(-\d{1,12})?$/, 'documentNumber', true);
     setDocumentNumberValid(valid);
     return valid;
   };
   var validationAddress1 = function validationAddress1(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, 'address1', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, 'address1', true);
     setAddress1Valid(valid);
     return valid;
   };
   var validationAddress2 = function validationAddress2(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, 'address2', 'gs-input-alert');
+    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, 'address2');
     setAddress2Valid(valid);
     return valid;
   };
   var validationCity = function validationCity(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'citySite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'citySite');
     setCityValid(validation);
     return validation;
   };
   var validationStateCountry = function validationStateCountry(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'stateCountrySite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'stateCountrySite');
     setStateCountryValid(validation);
     return validation;
   };
   var validationCountry = function validationCountry(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'countrySite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'countrySite');
     setCountryValid(validation);
     return validation;
   };
   var validationPostCode = function validationPostCode(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, 'postCodeSite', 'gs-input-alert');
+    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, 'postCodeSite');
     setPostCodeValid(valid);
     return valid;
   };
   var validationEmail = function validationEmail(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/, 'emailSite', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/, 'emailSite', true);
     setEmailValid(valid);
     return valid;
   };
   var validationPhone = function validationPhone(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10,20}/, 'phoneSite', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10,20}/, 'phoneSite', true);
     setPhoneValid(valid);
     return valid;
   };
   var validationCurrenciesId = function validationCurrenciesId(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'currencySite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'currencySite');
     setCurrenciesIdValid(validation);
     return validation;
   };
   var validationCurrencyLocation = function validationCurrencyLocation(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'currencyLocationSite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'currencyLocationSite');
     setCurrencyLocationValid(validation);
     return validation;
   };
   var validationSeparator = function validationSeparator(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'separatorSite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'separatorSite');
     setSeparatorValid(validation);
     return validation;
   };
   var validationDecimalNumbers = function validationDecimalNumbers(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'decimalNumbersSite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'decimalNumbersSite');
     setDecimalNumbersValid(validation);
     return validation;
   };
   var validationTaxes = function validationTaxes(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'taxesSite', 'gs-input-alert');
+    var validation = (0, _helpers.validationSelect)(value, 'taxesSite');
     setTaxesValid(validation);
     return validation;
   };
   var validationHost = function validationHost(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/, 'hostSite', 'gs-input-alert', true);
+    var valid = (0, _helpers.validationInput)(value, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/, 'hostSite', true);
     setHostValid(valid);
     return valid;
   };

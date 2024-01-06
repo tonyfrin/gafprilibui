@@ -489,6 +489,12 @@ Object.defineProperty(exports, "useGafpriEntity", {
     return _states.useGafpriEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriError", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriError;
+  }
+});
 Object.defineProperty(exports, "useGafpriRoles", {
   enumerable: true,
   get: function get() {

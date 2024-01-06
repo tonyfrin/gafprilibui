@@ -17,7 +17,8 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function useGafpriTypeDocumentId(_ref) {
   var _typeDocumentId$data;
-  var token = _ref.token;
+  var token = _ref.token,
+    useError = _ref.useError;
   var _useState = (0, _react.useState)(''),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     name = _useState2[0],
@@ -62,33 +63,30 @@ function useGafpriTypeDocumentId(_ref) {
     _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
     typeDocumentId = _useState20[0],
     setTypeDocumentId = _useState20[1];
-  var _useState21 = (0, _react.useState)([]),
+  var error = useError.states.error;
+  var _useState21 = (0, _react.useState)(0),
     _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
-    error = _useState22[0],
-    setError = _useState22[1];
-  var _useState23 = (0, _react.useState)(0),
+    currentId = _useState22[0],
+    setCurrentId = _useState22[1];
+  var _useState23 = (0, _react.useState)('asc'),
     _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
-    currentId = _useState24[0],
-    setCurrentId = _useState24[1];
-  var _useState25 = (0, _react.useState)('asc'),
+    orderList = _useState24[0],
+    setOrderList = _useState24[1];
+  var _useState25 = (0, _react.useState)(''),
     _useState26 = (0, _slicedToArray2["default"])(_useState25, 2),
-    orderList = _useState26[0],
-    setOrderList = _useState26[1];
-  var _useState27 = (0, _react.useState)(''),
+    searchTerm = _useState26[0],
+    setSearchTerm = _useState26[1];
+  var _useState27 = (0, _react.useState)(1),
     _useState28 = (0, _slicedToArray2["default"])(_useState27, 2),
-    searchTerm = _useState28[0],
-    setSearchTerm = _useState28[1];
-  var _useState29 = (0, _react.useState)(1),
-    _useState30 = (0, _slicedToArray2["default"])(_useState29, 2),
-    currentPage = _useState30[0],
-    setCurrentPage = _useState30[1];
+    currentPage = _useState28[0],
+    setCurrentPage = _useState28[1];
   var itemsPerPage = 6;
   var infoReset = function infoReset() {
     setName('');
     setCountry('');
     setNameValid(false);
     setCountryValid(false);
-    setError([]);
+    useError.actions.changeError([]);
   };
   var onFetching = function onFetching() {
     setIsFetching(true);
@@ -290,40 +288,16 @@ function useGafpriTypeDocumentId(_ref) {
     onInit();
   };
   var newError = function newError(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onAdd();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onAdd
+    });
   };
   var newErrorDelete = function newErrorDelete(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onInit();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onInit();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onInit();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onInit
+    });
   };
   var add = function add() {
     if (nameValid && countryValid && token) {

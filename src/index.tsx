@@ -195,6 +195,7 @@ export {
   useGafpriEntity,
   useGafpriSites,
   useGafpriUsers,
+  useGafpriError,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -216,6 +217,8 @@ export type {
   UserAttributes,
   UseUserReturn,
   UseUserProps,
+  UseErrorReturn,
+  newErrorProps,
 } from './states';
 export {
   Countries,

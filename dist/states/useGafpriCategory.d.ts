@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
+import type { UseErrorReturn } from './useGafpriError';
 import type { SelectDefault } from '../helpers';
 export interface CategoryAttributes {
     id: number;
@@ -69,6 +70,7 @@ type Actions = {
         value: string;
         label: string;
     }>) => void;
+    changeError: (value: string[]) => void;
     validationStatus: (value: string) => void;
     validationButtonNext: () => void;
     setIsReady: (value: boolean) => void;
@@ -94,7 +96,6 @@ type Actions = {
     handleNewCategory: (newCurrency: CategoryAttributes) => void;
     handleUpdatedCategory: (updatedCurrency: CategoryAttributes) => void;
     handleDeletedCategory: ({ itemId }: DeletedCategory) => void;
-    changeError: (value: string[]) => void;
 };
 export type UseCategoryReturn = {
     states: State;
@@ -102,6 +103,7 @@ export type UseCategoryReturn = {
 };
 export type UseCategoryProps = {
     token: string | null;
+    useError: UseErrorReturn;
 };
-export declare function useGafpriCategory({ token, }: UseCategoryProps): UseCategoryReturn;
+export declare function useGafpriCategory({ token, useError, }: UseCategoryProps): UseCategoryReturn;
 export {};

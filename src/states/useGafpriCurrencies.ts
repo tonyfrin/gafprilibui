@@ -8,12 +8,11 @@ import {
   toTitleCase,
   getLastEntryDateAndCount,
   ErrorResponseProps,
-  isErrorResponse,
   CustomErrorResponseProps,
-  isCustomErrorResponse,
   gafpriFetch,
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
+import type { UseErrorReturn } from './useGafpriError';
 
 export interface CurrenciesAttributes {
   id: number;
@@ -128,10 +127,12 @@ export type UseCurrenciesReturn = {
 
 export type UseCurrenciesProps = {
   token: string | null;
+  useError: UseErrorReturn;
 };
 
 export function useGafpriCurrencies({
   token,
+  useError,
 }: UseCurrenciesProps): UseCurrenciesReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
@@ -147,7 +148,8 @@ export function useGafpriCurrencies({
       items: getItem('GS_CURRENCIES_V2', null),
     },
   });
-  const [error, setError] = useState<string[]>([]);
+  const { error } = useError.states;
+
   const [currentId, setCurrentId] = useState(0);
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
@@ -159,7 +161,7 @@ export function useGafpriCurrencies({
     setSymbol('');
     setNameValid(false);
     setSymbolValid(false);
-    setError([]);
+    useError.actions.changeError([]);
   };
 
   const onFetching = (): void => {
@@ -371,45 +373,19 @@ export function useGafpriCurrencies({
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError([`${newErrorValue}`]);
-      onAdd();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onAdd,
+    });
   };
 
   const newErrorDelete = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onInit();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onInit();
-    } else {
-      setError([`${newErrorValue}`]);
-      onInit();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onInit,
+    });
   };
 
   const addCurrencies = (): void => {

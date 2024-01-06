@@ -6,8 +6,6 @@ import type {
   SelectDefault,
 } from '../helpers';
 import {
-  isCustomErrorResponse,
-  isErrorResponse,
   getLastEntryDateAndCount,
   removeClass,
   addClass,
@@ -22,6 +20,7 @@ import {
 import { Countries, StatesCountries, Cities } from '../Constans';
 import { getItem, saveItem } from '../Context';
 import type { UseCurrenciesReturn } from './useGafpriCurrencies';
+import type { UseErrorReturn } from './useGafpriError';
 
 type DeletedSite = {
   itemId: number;
@@ -242,11 +241,13 @@ export type UseSitesReturn = {
 export type UseSitesProps = {
   useCurrencies: UseCurrenciesReturn;
   token: string | null;
+  useError: UseErrorReturn;
 };
 
 export const useGafpriSites = ({
   useCurrencies,
   token,
+  useError,
 }: UseSitesProps): UseSitesReturn => {
   // Define los estados necesarios para los atributos de Site
   const [isReady, setIsReady] = useState(false);
@@ -394,7 +395,8 @@ export const useGafpriSites = ({
       items: getItem('GS_SITES_V2', null),
     },
   });
-  const [error, setError] = useState<string[]>([]);
+  const { error } = useError.states;
+
   const [siteId, setSiteId] = useState(0);
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
@@ -472,7 +474,7 @@ export const useGafpriSites = ({
     setHost('');
     setHostValid(false);
 
-    setError([]);
+    useError.actions.changeError([]);
   };
 
   // Funciones de paginas
@@ -1003,67 +1005,28 @@ export const useGafpriSites = ({
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError([`${newErrorValue}`]);
-      onAdd();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onAdd,
+    });
   };
 
   const newErrorUpdate = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onUpdate();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onUpdate();
-    } else {
-      setError([`${newErrorValue}`]);
-      onUpdate();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onUpdate,
+    });
   };
 
   const newErrorDelete = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onInit();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onInit();
-    } else {
-      setError([`${newErrorValue}`]);
-      onInit();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onInit,
+    });
   };
 
   const add = (): void => {

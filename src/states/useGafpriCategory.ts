@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
 import axios, { AxiosRequestConfig } from 'axios';
+import type { UseErrorReturn } from './useGafpriError';
 import {
   changeInputText,
   getLastEntryDateAndCount,
@@ -13,8 +14,6 @@ import {
   gafpriFetch,
   changeSelect,
   validationInputAddress,
-  isErrorResponse,
-  isCustomErrorResponse,
   getMimeTypeByExtension,
 } from '../helpers';
 import type {
@@ -109,6 +108,9 @@ type Actions = {
   changeStatus: (
     options: SingleValue<{ value: string; label: string }>
   ) => void;
+
+  changeError: (value: string[]) => void;
+
   validationStatus: (value: string) => void;
 
   validationButtonNext: () => void;
@@ -168,8 +170,6 @@ type Actions = {
   handleUpdatedCategory: (updatedCurrency: CategoryAttributes) => void;
 
   handleDeletedCategory: ({ itemId }: DeletedCategory) => void;
-
-  changeError: (value: string[]) => void;
 };
 
 export type UseCategoryReturn = {
@@ -179,10 +179,12 @@ export type UseCategoryReturn = {
 
 export type UseCategoryProps = {
   token: string | null;
+  useError: UseErrorReturn;
 };
 
 export function useGafpriCategory({
   token,
+  useError,
 }: UseCategoryProps): UseCategoryReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
@@ -227,8 +229,9 @@ export function useGafpriCategory({
   const [isInit, setIsInit] = useState(true);
   const [isAdd, setIsAdd] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
+  const { error } = useError.states;
+  const { changeError } = useError.actions;
 
-  const [error, setError] = useState<string[]>([]);
   const [currentId, setCurrentId] = useState(0);
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
@@ -249,7 +252,7 @@ export function useGafpriCategory({
     setStatus('active');
     setStatusValid(false);
     setCurrentId(0);
-    setError([]);
+    useError.actions.resetError();
   };
 
   const onFetching = (): void => {
@@ -399,13 +402,6 @@ export function useGafpriCategory({
     });
   };
 
-  const changeError = (value: string[]): void => {
-    setError(value);
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
-  };
-
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
@@ -416,7 +412,7 @@ export function useGafpriCategory({
     // Obtén el tipo MIME en función de la extensión del archivo
     const mimeType = getMimeTypeByExtension(newFile.name);
     if (!mimeType) {
-      changeError([
+      useError.actions.changeError([
         'El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.',
       ]);
       return;
@@ -444,7 +440,7 @@ export function useGafpriCategory({
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (newErrorValue: any) {
-      changeError([`${newErrorValue.message}`]);
+      useError.actions.changeError([`${newErrorValue.message}`]);
       setSubmitting(false);
     }
   };
@@ -572,37 +568,19 @@ export function useGafpriCategory({
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      changeError([newErrorValue.message]);
-      onAdd();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      changeError(errorMessage);
-      onAdd();
-    } else {
-      changeError([`${newErrorValue}`]);
-      onAdd();
-    }
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onAdd,
+    });
   };
 
   const newErrorDelete = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      changeError([newErrorValue.message]);
-      onInit();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      changeError(errorMessage);
-      onInit();
-    } else {
-      changeError([`${newErrorValue}`]);
-      onInit();
-    }
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onInit,
+    });
   };
 
   const add = (): void => {
@@ -867,6 +845,8 @@ export function useGafpriCategory({
     changeStatus,
     validationStatus,
 
+    changeError,
+
     validationButtonNext,
 
     setIsReady,
@@ -894,7 +874,6 @@ export function useGafpriCategory({
     handleNewCategory,
     handleUpdatedCategory,
     handleDeletedCategory,
-    changeError,
   };
 
   return {

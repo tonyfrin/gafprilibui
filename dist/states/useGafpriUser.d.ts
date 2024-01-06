@@ -3,6 +3,7 @@ import { SingleValue } from 'react-select';
 import type { SelectDefault, RoleArray } from '../helpers';
 import type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
 import type { UseSitesReturn } from './useGafpriSites';
+import { UseErrorReturn } from './useGafpriError';
 export interface UserAttributes {
     id: number;
     login: string;
@@ -144,6 +145,7 @@ export type UseUserProps = {
     useRoles: UseRolesReturn;
     useSites: UseSitesReturn;
     token: string | null;
+    useError: UseErrorReturn;
 };
-export declare const useGafpriUsers: ({ useRoles, useSites, token, }: UseUserProps) => UseUserReturn;
+export declare const useGafpriUsers: ({ useRoles, useSites, token, useError, }: UseUserProps) => UseUserReturn;
 export {};

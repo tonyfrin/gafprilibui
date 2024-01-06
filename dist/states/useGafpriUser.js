@@ -23,7 +23,8 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
   var _useRoles$states$role, _useRoles$states$role2, _useSites$states$site, _useSites$states$site2, _users$data;
   var useRoles = _ref.useRoles,
     useSites = _ref.useSites,
-    token = _ref.token;
+    token = _ref.token,
+    useError = _ref.useError;
   // Define los estados necesarios para los atributos de Site
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -187,37 +188,35 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     _useState60 = (0, _slicedToArray2["default"])(_useState59, 2),
     users = _useState60[0],
     setUsers = _useState60[1];
-  var _useState61 = (0, _react.useState)([]),
+  var error = useError.states.error;
+  var changeError = useError.actions.changeError;
+  var _useState61 = (0, _react.useState)(0),
     _useState62 = (0, _slicedToArray2["default"])(_useState61, 2),
-    error = _useState62[0],
-    setError = _useState62[1];
-  var _useState63 = (0, _react.useState)(0),
+    userId = _useState62[0],
+    setUserId = _useState62[1];
+  var _useState63 = (0, _react.useState)('asc'),
     _useState64 = (0, _slicedToArray2["default"])(_useState63, 2),
-    userId = _useState64[0],
-    setUserId = _useState64[1];
-  var _useState65 = (0, _react.useState)('asc'),
+    orderList = _useState64[0],
+    setOrderList = _useState64[1];
+  var _useState65 = (0, _react.useState)(''),
     _useState66 = (0, _slicedToArray2["default"])(_useState65, 2),
-    orderList = _useState66[0],
-    setOrderList = _useState66[1];
-  var _useState67 = (0, _react.useState)(''),
+    searchTerm = _useState66[0],
+    setSearchTerm = _useState66[1];
+  var _useState67 = (0, _react.useState)(1),
     _useState68 = (0, _slicedToArray2["default"])(_useState67, 2),
-    searchTerm = _useState68[0],
-    setSearchTerm = _useState68[1];
-  var _useState69 = (0, _react.useState)(1),
+    currentPage = _useState68[0],
+    setCurrentPage = _useState68[1];
+  var _useState69 = (0, _react.useState)('name'),
     _useState70 = (0, _slicedToArray2["default"])(_useState69, 2),
-    currentPage = _useState70[0],
-    setCurrentPage = _useState70[1];
-  var _useState71 = (0, _react.useState)('name'),
-    _useState72 = (0, _slicedToArray2["default"])(_useState71, 2),
-    searchBy = _useState72[0],
-    setSearchBy = _useState72[1];
-  var _useState73 = (0, _react.useState)({
+    searchBy = _useState70[0],
+    setSearchBy = _useState70[1];
+  var _useState71 = (0, _react.useState)({
       value: 'name',
       label: 'Nombre'
     }),
-    _useState74 = (0, _slicedToArray2["default"])(_useState73, 2),
-    searchByDefault = _useState74[0],
-    setSearchByDefault = _useState74[1];
+    _useState72 = (0, _slicedToArray2["default"])(_useState71, 2),
+    searchByDefault = _useState72[0],
+    setSearchByDefault = _useState72[1];
   var searchByOptions = [{
     value: 'name',
     label: 'Nombre'
@@ -268,7 +267,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
       value: 'true',
       label: 'Activo'
     });
-    setError([]);
+    useError.actions.changeError([]);
     setUserId(0);
     setOrderList('asc');
     setSearchTerm('');
@@ -447,12 +446,6 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
       setValue: setSite
     });
   };
-  var changeError = function changeError(value) {
-    setError(value);
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
-  };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
       var newFile, mimeType, formData, config, response;
@@ -472,7 +465,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
               _context.next = 7;
               break;
             }
-            changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
+            useError.actions.changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
             return _context.abrupt("return");
           case 7:
             formData = new FormData();
@@ -501,7 +494,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
           case 19:
             _context.prev = 19;
             _context.t0 = _context["catch"](12);
-            changeError(["".concat(_context.t0.message)]);
+            useError.actions.changeError(["".concat(_context.t0.message)]);
             setSubmitting(false);
           case 23:
           case "end":
@@ -636,40 +629,16 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     onInit();
   };
   var newError = function newError(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onAdd();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onAdd
+    });
   };
   var newErrorUpdate = function newErrorUpdate(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onUpdate();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onUpdate();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onUpdate();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onUpdate
+    });
   };
   var add = function add() {
     if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && siteValid && photoValid && isActiveValid && token) {

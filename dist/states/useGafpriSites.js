@@ -22,7 +22,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var useGafpriSites = function useGafpriSites(_ref) {
   var _useCurrencies$states, _sites$data;
   var useCurrencies = _ref.useCurrencies,
-    token = _ref.token;
+    token = _ref.token,
+    useError = _ref.useError;
   // Define los estados necesarios para los atributos de Site
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -328,26 +329,23 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState104 = (0, _slicedToArray2["default"])(_useState103, 2),
     sites = _useState104[0],
     setSites = _useState104[1];
-  var _useState105 = (0, _react.useState)([]),
+  var error = useError.states.error;
+  var _useState105 = (0, _react.useState)(0),
     _useState106 = (0, _slicedToArray2["default"])(_useState105, 2),
-    error = _useState106[0],
-    setError = _useState106[1];
-  var _useState107 = (0, _react.useState)(0),
+    siteId = _useState106[0],
+    setSiteId = _useState106[1];
+  var _useState107 = (0, _react.useState)('asc'),
     _useState108 = (0, _slicedToArray2["default"])(_useState107, 2),
-    siteId = _useState108[0],
-    setSiteId = _useState108[1];
-  var _useState109 = (0, _react.useState)('asc'),
+    orderList = _useState108[0],
+    setOrderList = _useState108[1];
+  var _useState109 = (0, _react.useState)(''),
     _useState110 = (0, _slicedToArray2["default"])(_useState109, 2),
-    orderList = _useState110[0],
-    setOrderList = _useState110[1];
-  var _useState111 = (0, _react.useState)(''),
+    searchTerm = _useState110[0],
+    setSearchTerm = _useState110[1];
+  var _useState111 = (0, _react.useState)(1),
     _useState112 = (0, _slicedToArray2["default"])(_useState111, 2),
-    searchTerm = _useState112[0],
-    setSearchTerm = _useState112[1];
-  var _useState113 = (0, _react.useState)(1),
-    _useState114 = (0, _slicedToArray2["default"])(_useState113, 2),
-    currentPage = _useState114[0],
-    setCurrentPage = _useState114[1];
+    currentPage = _useState112[0],
+    setCurrentPage = _useState112[1];
   var itemsPerPage = 6;
   var infoReset = function infoReset() {
     setName('');
@@ -409,7 +407,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     });
     setHost('');
     setHostValid(false);
-    setError([]);
+    useError.actions.changeError([]);
   };
 
   // Funciones de paginas
@@ -854,58 +852,22 @@ var useGafpriSites = function useGafpriSites(_ref) {
     onInit();
   };
   var newError = function newError(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onAdd();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onAdd
+    });
   };
   var newErrorUpdate = function newErrorUpdate(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onUpdate();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onUpdate();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onUpdate();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onUpdate
+    });
   };
   var newErrorDelete = function newErrorDelete(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onInit();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onInit();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onInit();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onInit
+    });
   };
   var add = function add() {
     if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token) {

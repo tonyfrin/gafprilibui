@@ -23,6 +23,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var useGafpriEntity = function useGafpriEntity(_ref) {
   var _useTypeDocumentId$st, _useTypeDocumentId$st2, _entities$data;
   var useTypeDocumentId = _ref.useTypeDocumentId,
+    useError = _ref.useError,
     token = _ref.token;
   // Define los estados necesarios para los atributos de Site
   var _useState = (0, _react.useState)(false),
@@ -348,41 +349,39 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     _useState122 = (0, _slicedToArray2["default"])(_useState121, 2),
     entities = _useState122[0],
     setEntities = _useState122[1];
-  var _useState123 = (0, _react.useState)([]),
+  var error = useError.states.error;
+  var changeError = useError.actions.changeError;
+  var _useState123 = (0, _react.useState)(0),
     _useState124 = (0, _slicedToArray2["default"])(_useState123, 2),
-    error = _useState124[0],
-    setError = _useState124[1];
-  var _useState125 = (0, _react.useState)(0),
+    entityId = _useState124[0],
+    setEntityId = _useState124[1];
+  var _useState125 = (0, _react.useState)('asc'),
     _useState126 = (0, _slicedToArray2["default"])(_useState125, 2),
-    entityId = _useState126[0],
-    setEntityId = _useState126[1];
-  var _useState127 = (0, _react.useState)('asc'),
+    orderList = _useState126[0],
+    setOrderList = _useState126[1];
+  var _useState127 = (0, _react.useState)(''),
     _useState128 = (0, _slicedToArray2["default"])(_useState127, 2),
-    orderList = _useState128[0],
-    setOrderList = _useState128[1];
-  var _useState129 = (0, _react.useState)(''),
+    searchTerm = _useState128[0],
+    setSearchTerm = _useState128[1];
+  var _useState129 = (0, _react.useState)(1),
     _useState130 = (0, _slicedToArray2["default"])(_useState129, 2),
-    searchTerm = _useState130[0],
-    setSearchTerm = _useState130[1];
+    currentPage = _useState130[0],
+    setCurrentPage = _useState130[1];
   var _useState131 = (0, _react.useState)(1),
     _useState132 = (0, _slicedToArray2["default"])(_useState131, 2),
-    currentPage = _useState132[0],
-    setCurrentPage = _useState132[1];
-  var _useState133 = (0, _react.useState)(1),
+    documentCurrentPage = _useState132[0],
+    setDocumentCurrentPage = _useState132[1];
+  var _useState133 = (0, _react.useState)('name'),
     _useState134 = (0, _slicedToArray2["default"])(_useState133, 2),
-    documentCurrentPage = _useState134[0],
-    setDocumentCurrentPage = _useState134[1];
-  var _useState135 = (0, _react.useState)('name'),
-    _useState136 = (0, _slicedToArray2["default"])(_useState135, 2),
-    searchBy = _useState136[0],
-    setSearchBy = _useState136[1];
-  var _useState137 = (0, _react.useState)({
+    searchBy = _useState134[0],
+    setSearchBy = _useState134[1];
+  var _useState135 = (0, _react.useState)({
       value: 'name',
       label: 'Nombre'
     }),
-    _useState138 = (0, _slicedToArray2["default"])(_useState137, 2),
-    searchByDefault = _useState138[0],
-    setSearchByDefault = _useState138[1];
+    _useState136 = (0, _slicedToArray2["default"])(_useState135, 2),
+    searchByDefault = _useState136[0],
+    setSearchByDefault = _useState136[1];
   var searchByOptions = [{
     value: 'name',
     label: 'Nombre'
@@ -471,7 +470,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     });
     setAddress([]);
     setAddressValid(true);
-    setError([]);
+    useError.actions.changeError([]);
     setEntityId(0);
     setOrderList('asc');
     setSearchTerm('');
@@ -878,12 +877,6 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       setValue: setType
     });
   };
-  var changeError = function changeError(value) {
-    setError(value);
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
-  };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
       var newFile, mimeType, formData, config, response;
@@ -903,7 +896,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
               _context.next = 7;
               break;
             }
-            changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
+            useError.actions.changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
             return _context.abrupt("return");
           case 7:
             formData = new FormData();
@@ -932,7 +925,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
           case 19:
             _context.prev = 19;
             _context.t0 = _context["catch"](12);
-            changeError(["".concat(_context.t0.message)]);
+            useError.actions.changeError(["".concat(_context.t0.message)]);
             setSubmitting(false);
           case 23:
           case "end":
@@ -963,7 +956,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
               _context2.next = 7;
               break;
             }
-            changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
+            useError.actions.changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
             return _context2.abrupt("return");
           case 7:
             formData = new FormData();
@@ -992,7 +985,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
           case 19:
             _context2.prev = 19;
             _context2.t0 = _context2["catch"](12);
-            changeError(["".concat(_context2.t0.message)]);
+            useError.actions.changeError(["".concat(_context2.t0.message)]);
             setDocumentSubmitting(false);
           case 23:
           case "end":
@@ -1119,40 +1112,16 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     onInit();
   };
   var newError = function newError(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onAdd();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onAdd
+    });
   };
   var newErrorUpdate = function newErrorUpdate(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onUpdate();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      setError(errorMessage);
-      onUpdate();
-    } else {
-      setError(["".concat(newErrorValue)]);
-      onUpdate();
-    }
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onUpdate
+    });
   };
   var add = function add() {
     if (nameValid && lastNameValid && typeDocumentIdIdValid && indexValid && digitValid && addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid && emailValid && phoneValid && typeValid && photoValid && statusValid && token) {

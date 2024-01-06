@@ -1,6 +1,7 @@
 import { SingleValue } from 'react-select';
 import type { SelectDefault } from '../helpers';
 import type { UseCurrenciesReturn } from './useGafpriCurrencies';
+import type { UseErrorReturn } from './useGafpriError';
 type DeletedSite = {
     itemId: number;
 };
@@ -197,6 +198,7 @@ export type UseSitesReturn = {
 export type UseSitesProps = {
     useCurrencies: UseCurrenciesReturn;
     token: string | null;
+    useError: UseErrorReturn;
 };
-export declare const useGafpriSites: ({ useCurrencies, token, }: UseSitesProps) => UseSitesReturn;
+export declare const useGafpriSites: ({ useCurrencies, token, useError, }: UseSitesProps) => UseSitesReturn;
 export {};

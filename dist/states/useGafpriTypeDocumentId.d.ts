@@ -1,3 +1,4 @@
+import { UseErrorReturn } from './useGafpriError';
 export interface TypeDocumentIdAttributes {
     id: number;
     name: string;
@@ -68,6 +69,7 @@ export type UseTypeDocumentIdReturn = {
 };
 export type UseTypeDocumentIdProps = {
     token: string | null;
+    useError: UseErrorReturn;
 };
-export declare function useGafpriTypeDocumentId({ token, }: UseTypeDocumentIdProps): UseTypeDocumentIdReturn;
+export declare function useGafpriTypeDocumentId({ token, useError, }: UseTypeDocumentIdProps): UseTypeDocumentIdReturn;
 export {};

@@ -7,12 +7,11 @@ import {
   toTitleCase,
   gafpriFetch,
   getLastEntryDateAndCount,
-  isErrorResponse,
-  isCustomErrorResponse,
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
 import { AllRoles } from '../Constans';
+import type { UseErrorReturn } from './useGafpriError';
 
 export interface RolesAttributes {
   id: number;
@@ -128,9 +127,13 @@ export type UseRolesReturn = {
 
 export type UseRolesProps = {
   token: string | null;
+  useError: UseErrorReturn;
 };
 
-export function useGafpriRoles({ token }: UseRolesProps): UseRolesReturn {
+export function useGafpriRoles({
+  token,
+  useError,
+}: UseRolesProps): UseRolesReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
   const [permissions, setPermissions] = useState<string[]>([]);
@@ -145,7 +148,8 @@ export function useGafpriRoles({ token }: UseRolesProps): UseRolesReturn {
       items: getItem('GS_ROLES_V2', null),
     },
   });
-  const [error, setError] = useState<string[]>([]);
+  const { error } = useError.states;
+
   const [currentId, setCurrentId] = useState(0);
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
@@ -156,7 +160,7 @@ export function useGafpriRoles({ token }: UseRolesProps): UseRolesReturn {
     setName('');
     setPermissions([]);
     setNameValid(false);
-    setError([]);
+    useError.actions.changeError([]);
   };
 
   const onFetching = (): void => {
@@ -367,45 +371,19 @@ export function useGafpriRoles({ token }: UseRolesProps): UseRolesReturn {
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError([`${newErrorValue}`]);
-      onAdd();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onAdd,
+    });
   };
 
   const newErrorDelete = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onInit();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onInit();
-    } else {
-      setError([`${newErrorValue}`]);
-      onInit();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onInit,
+    });
   };
 
   const add = (): void => {

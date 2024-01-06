@@ -35,3 +35,5 @@ export type {
   UseUserReturn,
   UseUserProps,
 } from './useGafpriUser';
+export { useGafpriError } from './useGafpriError';
+export type { UseErrorReturn, newErrorProps } from './useGafpriError';

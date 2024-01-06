@@ -2,6 +2,7 @@ import { ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
 import type { ErrorResponseProps, CustomErrorResponseProps, SelectDefault } from '../helpers';
 import type { UseTypeDocumentIdReturn } from './useGafpriTypeDocumentId';
+import type { UseErrorReturn } from './useGafpriError';
 interface typeDocumentId {
     id: number;
     country: string;
@@ -246,7 +247,8 @@ export type UseEntityReturn = {
 };
 export type UseEntityProps = {
     useTypeDocumentId: UseTypeDocumentIdReturn;
+    useError: UseErrorReturn;
     token: string | null;
 };
-export declare const useGafpriEntity: ({ useTypeDocumentId, token, }: UseEntityProps) => UseEntityReturn;
+export declare const useGafpriEntity: ({ useTypeDocumentId, useError, token, }: UseEntityProps) => UseEntityReturn;
 export {};

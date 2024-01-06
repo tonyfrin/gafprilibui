@@ -7,12 +7,11 @@ import {
   toTitleCase,
   gafpriFetch,
   getLastEntryDateAndCount,
-  isErrorResponse,
   changeInputText,
-  isCustomErrorResponse,
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
+import { UseErrorReturn } from './useGafpriError';
 
 export interface TypeDocumentIdAttributes {
   id: number;
@@ -133,10 +132,12 @@ export type UseTypeDocumentIdReturn = {
 
 export type UseTypeDocumentIdProps = {
   token: string | null;
+  useError: UseErrorReturn;
 };
 
 export function useGafpriTypeDocumentId({
   token,
+  useError,
 }: UseTypeDocumentIdProps): UseTypeDocumentIdReturn {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
@@ -152,7 +153,7 @@ export function useGafpriTypeDocumentId({
       items: getItem('GS_TYPE_DOCUMENT_ID_V2', null),
     },
   });
-  const [error, setError] = useState<string[]>([]);
+  const { error } = useError.states;
   const [currentId, setCurrentId] = useState(0);
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
@@ -164,7 +165,7 @@ export function useGafpriTypeDocumentId({
     setCountry('');
     setNameValid(false);
     setCountryValid(false);
-    setError([]);
+    useError.actions.changeError([]);
   };
 
   const onFetching = (): void => {
@@ -395,45 +396,19 @@ export function useGafpriTypeDocumentId({
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError([`${newErrorValue}`]);
-      onAdd();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onAdd,
+    });
   };
 
   const newErrorDelete = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onInit();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onInit();
-    } else {
-      setError([`${newErrorValue}`]);
-      onInit();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onInit,
+    });
   };
 
   const add = (): void => {

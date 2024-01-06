@@ -1,3 +1,4 @@
+import type { UseErrorReturn } from './useGafpriError';
 export interface CurrenciesAttributes {
     id: number;
     name: string;
@@ -66,6 +67,7 @@ export type UseCurrenciesReturn = {
 };
 export type UseCurrenciesProps = {
     token: string | null;
+    useError: UseErrorReturn;
 };
-export declare function useGafpriCurrencies({ token, }: UseCurrenciesProps): UseCurrenciesReturn;
+export declare function useGafpriCurrencies({ token, useError, }: UseCurrenciesProps): UseCurrenciesReturn;
 export {};

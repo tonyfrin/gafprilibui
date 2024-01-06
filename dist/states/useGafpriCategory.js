@@ -21,7 +21,8 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function useGafpriCategory(_ref) {
   var _category$data;
-  var token = _ref.token;
+  var token = _ref.token,
+    useError = _ref.useError;
   var _useState = (0, _react.useState)(''),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     name = _useState2[0],
@@ -123,26 +124,24 @@ function useGafpriCategory(_ref) {
     _useState42 = (0, _slicedToArray2["default"])(_useState41, 2),
     isUpdate = _useState42[0],
     setIsUpdate = _useState42[1];
-  var _useState43 = (0, _react.useState)([]),
+  var error = useError.states.error;
+  var changeError = useError.actions.changeError;
+  var _useState43 = (0, _react.useState)(0),
     _useState44 = (0, _slicedToArray2["default"])(_useState43, 2),
-    error = _useState44[0],
-    setError = _useState44[1];
-  var _useState45 = (0, _react.useState)(0),
+    currentId = _useState44[0],
+    setCurrentId = _useState44[1];
+  var _useState45 = (0, _react.useState)('asc'),
     _useState46 = (0, _slicedToArray2["default"])(_useState45, 2),
-    currentId = _useState46[0],
-    setCurrentId = _useState46[1];
-  var _useState47 = (0, _react.useState)('asc'),
+    orderList = _useState46[0],
+    setOrderList = _useState46[1];
+  var _useState47 = (0, _react.useState)(''),
     _useState48 = (0, _slicedToArray2["default"])(_useState47, 2),
-    orderList = _useState48[0],
-    setOrderList = _useState48[1];
-  var _useState49 = (0, _react.useState)(''),
+    searchTerm = _useState48[0],
+    setSearchTerm = _useState48[1];
+  var _useState49 = (0, _react.useState)(1),
     _useState50 = (0, _slicedToArray2["default"])(_useState49, 2),
-    searchTerm = _useState50[0],
-    setSearchTerm = _useState50[1];
-  var _useState51 = (0, _react.useState)(1),
-    _useState52 = (0, _slicedToArray2["default"])(_useState51, 2),
-    currentPage = _useState52[0],
-    setCurrentPage = _useState52[1];
+    currentPage = _useState50[0],
+    setCurrentPage = _useState50[1];
   var itemsPerPage = 6;
   var infoReset = function infoReset() {
     setName('');
@@ -156,7 +155,7 @@ function useGafpriCategory(_ref) {
     setStatus('active');
     setStatusValid(false);
     setCurrentId(0);
-    setError([]);
+    useError.actions.resetError();
   };
   var onFetching = function onFetching() {
     setIsFetching(true);
@@ -279,12 +278,6 @@ function useGafpriCategory(_ref) {
       setValue: setDescription
     });
   };
-  var changeError = function changeError(value) {
-    setError(value);
-    setTimeout(function () {
-      setError([]);
-    }, 5000);
-  };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
       var newFile, mimeType, formData, config, response;
@@ -304,7 +297,7 @@ function useGafpriCategory(_ref) {
               _context.next = 7;
               break;
             }
-            changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
+            useError.actions.changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
             return _context.abrupt("return");
           case 7:
             formData = new FormData();
@@ -332,7 +325,7 @@ function useGafpriCategory(_ref) {
           case 19:
             _context.prev = 19;
             _context.t0 = _context["catch"](12);
-            changeError(["".concat(_context.t0.message)]);
+            useError.actions.changeError(["".concat(_context.t0.message)]);
             setSubmitting(false);
           case 23:
           case "end":
@@ -465,34 +458,16 @@ function useGafpriCategory(_ref) {
     onInit();
   };
   var newError = function newError(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      changeError([newErrorValue.message]);
-      onAdd();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      changeError(errorMessage);
-      onAdd();
-    } else {
-      changeError(["".concat(newErrorValue)]);
-      onAdd();
-    }
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onAdd
+    });
   };
   var newErrorDelete = function newErrorDelete(newErrorValue) {
-    if ((0, _helpers.isErrorResponse)(newErrorValue)) {
-      changeError([newErrorValue.message]);
-      onInit();
-    } else if ((0, _helpers.isCustomErrorResponse)(newErrorValue)) {
-      var errorMessage = newErrorValue.errors.map(function (item) {
-        return item.message;
-      });
-      changeError(errorMessage);
-      onInit();
-    } else {
-      changeError(["".concat(newErrorValue)]);
-      onInit();
-    }
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: onInit
+    });
   };
   var add = function add() {
     if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token) {
@@ -720,6 +695,7 @@ function useGafpriCategory(_ref) {
     setSubmitting: setSubmitting,
     changeStatus: changeStatus,
     validationStatus: validationStatus,
+    changeError: changeError,
     validationButtonNext: validationButtonNext,
     setIsReady: setIsReady,
     onFetching: onFetching,
@@ -743,8 +719,7 @@ function useGafpriCategory(_ref) {
     deleteCategory: deleteCategory,
     handleNewCategory: handleNewCategory,
     handleUpdatedCategory: handleUpdatedCategory,
-    handleDeletedCategory: handleDeletedCategory,
-    changeError: changeError
+    handleDeletedCategory: handleDeletedCategory
   };
   return {
     states: states,

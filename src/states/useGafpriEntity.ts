@@ -13,8 +13,6 @@ import {
   validationInput,
   gafpriFetch,
   getLastEntryDateAndCount,
-  isErrorResponse,
-  isCustomErrorResponse,
   getMimeTypeByExtension,
 } from '../helpers';
 import type {
@@ -25,6 +23,7 @@ import type {
 import { Countries, StatesCountries, Cities } from '../Constans';
 import { getItem, saveItem } from '../Context';
 import type { UseTypeDocumentIdReturn } from './useGafpriTypeDocumentId';
+import type { UseErrorReturn } from './useGafpriError';
 
 interface typeDocumentId {
   id: number;
@@ -325,11 +324,13 @@ export type UseEntityReturn = {
 
 export type UseEntityProps = {
   useTypeDocumentId: UseTypeDocumentIdReturn;
+  useError: UseErrorReturn;
   token: string | null;
 };
 
 export const useGafpriEntity = ({
   useTypeDocumentId,
+  useError,
   token,
 }: UseEntityProps): UseEntityReturn => {
   // Define los estados necesarios para los atributos de Site
@@ -478,7 +479,9 @@ export const useGafpriEntity = ({
       items: getItem('GS_ENTITY_V2', null),
     },
   });
-  const [error, setError] = useState<string[]>([]);
+  const { error } = useError.states;
+  const { changeError } = useError.actions;
+
   const [entityId, setEntityId] = useState(0);
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
@@ -570,7 +573,7 @@ export const useGafpriEntity = ({
     setAddress([]);
     setAddressValid(true);
 
-    setError([]);
+    useError.actions.changeError([]);
     setEntityId(0);
     setOrderList('asc');
     setSearchTerm('');
@@ -1103,13 +1106,6 @@ export const useGafpriEntity = ({
     });
   };
 
-  const changeError = (value: string[]): void => {
-    setError(value);
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
-  };
-
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
@@ -1120,7 +1116,7 @@ export const useGafpriEntity = ({
     // Obtén el tipo MIME en función de la extensión del archivo
     const mimeType = getMimeTypeByExtension(newFile.name);
     if (!mimeType) {
-      changeError([
+      useError.actions.changeError([
         'El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.',
       ]);
       return;
@@ -1149,7 +1145,7 @@ export const useGafpriEntity = ({
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (event: any) {
-      changeError([`${event.message}`]);
+      useError.actions.changeError([`${event.message}`]);
       setSubmitting(false);
     }
   };
@@ -1164,7 +1160,7 @@ export const useGafpriEntity = ({
     // Obtén el tipo MIME en función de la extensión del archivo
     const mimeType = getMimeTypeByExtension(newFile.name);
     if (!mimeType) {
-      changeError([
+      useError.actions.changeError([
         'El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.',
       ]);
       return;
@@ -1193,7 +1189,7 @@ export const useGafpriEntity = ({
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (event: any) {
-      changeError([`${event.message}`]);
+      useError.actions.changeError([`${event.message}`]);
       setDocumentSubmitting(false);
     }
   };
@@ -1325,45 +1321,19 @@ export const useGafpriEntity = ({
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError([`${newErrorValue}`]);
-      onAdd();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onAdd,
+    });
   };
 
   const newErrorUpdate = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onUpdate();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onUpdate();
-    } else {
-      setError([`${newErrorValue}`]);
-      onUpdate();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onUpdate,
+    });
   };
 
   const add = (): void => {

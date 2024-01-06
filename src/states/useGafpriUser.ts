@@ -3,8 +3,6 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { SingleValue } from 'react-select';
 import {
   getMimeTypeByExtension,
-  isCustomErrorResponse,
-  isErrorResponse,
   removeClass,
   addClass,
   validationInputName,
@@ -25,6 +23,7 @@ import type {
 import { getItem, saveItem } from '../Context';
 import type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
 import type { UseSitesReturn } from './useGafpriSites';
+import { UseErrorReturn } from './useGafpriError';
 
 export interface UserAttributes {
   id: number;
@@ -203,12 +202,14 @@ export type UseUserProps = {
   useRoles: UseRolesReturn;
   useSites: UseSitesReturn;
   token: string | null;
+  useError: UseErrorReturn;
 };
 
 export const useGafpriUsers = ({
   useRoles,
   useSites,
   token,
+  useError,
 }: UseUserProps): UseUserReturn => {
   // Define los estados necesarios para los atributos de Site
   const [isReady, setIsReady] = useState(false);
@@ -284,7 +285,8 @@ export const useGafpriUsers = ({
       items: getItem('GS_USERS_V2', null),
     },
   });
-  const [error, setError] = useState<string[]>([]);
+  const { error } = useError.states;
+  const { changeError } = useError.actions;
   const [userId, setUserId] = useState(0);
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
@@ -339,7 +341,7 @@ export const useGafpriUsers = ({
     setIsActiveValid(false);
     setIsActiveDefault({ value: 'true', label: 'Activo' });
 
-    setError([]);
+    useError.actions.changeError([]);
     setUserId(0);
     setOrderList('asc');
     setSearchTerm('');
@@ -568,13 +570,6 @@ export const useGafpriUsers = ({
     });
   };
 
-  const changeError = (value: string[]): void => {
-    setError(value);
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
-  };
-
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
@@ -585,7 +580,7 @@ export const useGafpriUsers = ({
     // Obtén el tipo MIME en función de la extensión del archivo
     const mimeType = getMimeTypeByExtension(newFile.name);
     if (!mimeType) {
-      changeError([
+      useError.actions.changeError([
         'El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.',
       ]);
       return;
@@ -614,7 +609,7 @@ export const useGafpriUsers = ({
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (event: any) {
-      changeError([`${event.message}`]);
+      useError.actions.changeError([`${event.message}`]);
       setSubmitting(false);
     }
   };
@@ -754,45 +749,19 @@ export const useGafpriUsers = ({
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onAdd();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onAdd();
-    } else {
-      setError([`${newErrorValue}`]);
-      onAdd();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onAdd,
+    });
   };
 
   const newErrorUpdate = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
-    if (isErrorResponse(newErrorValue)) {
-      setError([newErrorValue.message]);
-      onUpdate();
-    } else if (isCustomErrorResponse(newErrorValue)) {
-      const errorMessage = newErrorValue.errors.map((item) => {
-        return item.message;
-      });
-      setError(errorMessage);
-      onUpdate();
-    } else {
-      setError([`${newErrorValue}`]);
-      onUpdate();
-    }
-
-    setTimeout(() => {
-      setError([]);
-    }, 5000);
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: onUpdate,
+    });
   };
 
   const add = (): void => {

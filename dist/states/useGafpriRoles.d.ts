@@ -1,3 +1,4 @@
+import type { UseErrorReturn } from './useGafpriError';
 export interface RolesAttributes {
     id: number;
     name: string;
@@ -67,6 +68,7 @@ export type UseRolesReturn = {
 };
 export type UseRolesProps = {
     token: string | null;
+    useError: UseErrorReturn;
 };
-export declare function useGafpriRoles({ token }: UseRolesProps): UseRolesReturn;
+export declare function useGafpriRoles({ token, useError, }: UseRolesProps): UseRolesReturn;
 export {};

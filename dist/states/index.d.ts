@@ -12,3 +12,5 @@ export { useGafpriSites } from './useGafpriSites';
 export type { UseSitesReturn, SitesAttributes, UseSitesProps, } from './useGafpriSites';
 export { useGafpriUsers } from './useGafpriUser';
 export type { UserAttributes, UseUserReturn, UseUserProps, } from './useGafpriUser';
+export { useGafpriError } from './useGafpriError';
+export type { UseErrorReturn, newErrorProps } from './useGafpriError';

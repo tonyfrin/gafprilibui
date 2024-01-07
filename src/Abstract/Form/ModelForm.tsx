@@ -10,6 +10,7 @@ import { Error } from '../Error';
 import type { ErrorProps } from '../Error';
 import type { Box1Props } from '../Box';
 import { css } from '@emotion/css';
+import { BUTTON_NEXT_INPUT } from '../../Constans';
 
 const defaultTitleContainerStyle = css`
   margin-top: 22px;
@@ -129,7 +130,7 @@ export const ModelForm = ({
               title={buttonTitles.mainButton}
               buttonProps={{
                 onClick: () => handleActions('submit', {}),
-                id: 'buttonNext',
+                id: BUTTON_NEXT_INPUT,
               }}
               {...mainButtonProps}
             />

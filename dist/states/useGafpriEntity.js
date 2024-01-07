@@ -14,6 +14,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = _interopRequireWildcard(require("react"));
 var _axios = _interopRequireDefault(require("axios"));
 var _helpers = require("../helpers");
+var _Validations = require("../Validations");
 var _Constans = require("../Constans");
 var _Context = require("../Context");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -636,16 +637,18 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     return validation;
   };
   var validationAddress1 = function validationAddress1(value) {
-    return (0, _helpers.validationInputAddress)({
+    return (0, _Validations.validationInputAddress)({
       value: value,
+      currentValid: address1Valid,
       inputId: 'address1',
       setValid: setAddress1Valid
     });
   };
   var validationAddress2 = function validationAddress2(value) {
-    return (0, _helpers.validationInputAddress)({
+    return (0, _Validations.validationInputAddress)({
       value: value,
       inputId: 'address2',
+      currentValid: address2Valid,
       setValid: setAddress2Valid,
       required: false
     });

@@ -6,19 +6,16 @@ import type { UseCategoryReturn } from '../../states';
 import { ListPropsExtended } from '../List';
 import type { LoadingProps } from '../../Components';
 import type { ButtonProps } from '../Button';
+import type { PhotoCategoryProps } from '../Form';
 export type CategoryFormProps = {
     use: UseCategoryReturn;
     formType: 'add' | 'update';
     optionsButtonMainContainerStyle?: string;
     formContainerStyle?: string;
     imageContainerStyle?: string;
-    imageFormConatinerStyle?: string;
-    loadingContainerStyle?: string;
-    imageStyle?: string;
     infoContainerStyle?: string;
     deleteButtonProps?: ButtonProps;
     modelFormProps?: ModelFormPropsExtended;
-    changePhotoButtonProps?: ButtonProps;
     loadingProps?: LoadingProps;
     nameContainerProps?: ContainerButtonPropsExtended;
     nameInputProps?: InputProps;
@@ -29,6 +26,7 @@ export type CategoryFormProps = {
     statusContainerProps?: ContainerButtonPropsExtended;
     statusInputProps?: GsSelectPropsExtended;
     dependentsListProps?: ListPropsExtended;
+    propsPhotoCategory?: PhotoCategoryProps['props'];
 };
 export type CategoryFormPropsExtended = {
     use?: UseCategoryReturn;
@@ -36,13 +34,9 @@ export type CategoryFormPropsExtended = {
     optionsButtonMainContainerStyle?: string;
     formContainerStyle?: string;
     imageContainerStyle?: string;
-    imageFormConatinerStyle?: string;
-    loadingContainerStyle?: string;
-    imageStyle?: string;
     infoContainerStyle?: string;
     deleteButtonProps?: ButtonProps;
     modelFormProps?: ModelFormPropsExtended;
-    changePhotoButtonProps?: ButtonProps;
     loadingProps?: LoadingProps;
     nameContainerProps?: ContainerButtonPropsExtended;
     nameInputProps?: InputProps;
@@ -53,5 +47,6 @@ export type CategoryFormPropsExtended = {
     statusContainerProps?: ContainerButtonPropsExtended;
     statusInputProps?: GsSelectPropsExtended;
     dependentsListProps?: ListPropsExtended;
+    propsPhotoCategory?: PhotoCategoryProps['props'];
 };
-export declare const CategoryForm: ({ use, formType, optionsButtonMainContainerStyle, formContainerStyle, imageContainerStyle, imageFormConatinerStyle, loadingContainerStyle, imageStyle, infoContainerStyle, deleteButtonProps, modelFormProps, changePhotoButtonProps, loadingProps, nameContainerProps, nameInputProps, descriptionContainerProps, descriptionInputProps, parentIdContainerProps, parentIdInputProps, statusContainerProps, statusInputProps, dependentsListProps, }: CategoryFormProps) => JSX.Element;
+export declare const CategoryForm: ({ use, formType, optionsButtonMainContainerStyle, formContainerStyle, imageContainerStyle, infoContainerStyle, deleteButtonProps, modelFormProps, loadingProps, nameContainerProps, nameInputProps, descriptionContainerProps, descriptionInputProps, parentIdContainerProps, parentIdInputProps, statusContainerProps, statusInputProps, dependentsListProps, propsPhotoCategory, }: CategoryFormProps) => JSX.Element;

@@ -23,7 +23,25 @@ export type {
 } from './Containers';
 export { Globo } from './Icons';
 export type { GloboStyle } from './Icons';
-export { Input, GsSelect } from './Input';
+export {
+  Input,
+  GsSelect,
+  InputAddress1,
+  InputAddress2,
+  InputCity,
+  InputDescription,
+  InputName,
+  InputPassword,
+  InputStateCountry,
+  InputUserName,
+  InputZipCode,
+  SelectCity,
+  SelectCountry,
+  SelectSite,
+  SelectStateCountry,
+  SelectParentId,
+  SelectStatus,
+} from './Input';
 export type {
   InputStyle,
   SelectStyle,
@@ -31,6 +49,21 @@ export type {
   GsSelectProps,
   InputProps,
   GsSelectPropsExtended,
+  InputAddress1Props,
+  InputAddress2Props,
+  InputCityProps,
+  InputDescriptionProps,
+  InputNameProps,
+  InputPasswordProps,
+  InputStateCountryProps,
+  InputUserNameProps,
+  InputZipCodeProps,
+  SelectCityProps,
+  SelectCountryProps,
+  SelectSiteProps,
+  SelectStateCountryProps,
+  SelectParentIdProps,
+  SelectStatusProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -49,8 +82,14 @@ export { MainContent } from './Content';
 export type { MainContentProps } from './Content';
 export { FadeIn } from './Fade';
 export type { FadeInProps } from './Fade';
-export { ModelForm } from './Form';
-export type { ModelFormProps, ModelFormPropsExtended } from './Form';
+export { ModelForm, PhotoForm, PhotoCategory } from './Form';
+export type {
+  ModelFormProps,
+  ModelFormPropsExtended,
+  PhotoFormProps,
+  PhotoFormPropsExtended,
+  PhotoCategoryProps,
+} from './Form';
 export { Menu1, Menu2, MenuButton } from './Menu';
 export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem } from './Menu';
 export { Header } from './Header';

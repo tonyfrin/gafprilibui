@@ -14,6 +14,7 @@ var _Title = require("../Title");
 var _Button = require("../Button");
 var _Error = require("../Error");
 var _css = require("@emotion/css");
+var _Constans = require("../../Constans");
 var _templateObject, _templateObject2, _templateObject3;
 var defaultTitleContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  margin-top: 22px;\n  padding-left: 38px;\n  margin-bottom: 30px;\n"])));
 var defaultActionButtonContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  margin-bottom: 0px;\n  justify-content: flex-end;\n  margin-top: 22px;\n  width: 85%;\n"])));
@@ -58,7 +59,7 @@ var ModelForm = function ModelForm(_ref) {
       onClick: function onClick() {
         return handleActions('submit', {});
       },
-      id: 'buttonNext'
+      id: _Constans.BUTTON_NEXT_INPUT
     }
   }, mainButtonProps))), (buttonTitles === null || buttonTitles === void 0 ? void 0 : buttonTitles.returnButton) !== '' && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(returnButtonConatinerStyle)

@@ -1,27 +1,28 @@
 import React, { useState, ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
-import axios, { AxiosRequestConfig } from 'axios';
 import type { UseErrorReturn } from './useGafpriError';
+import { getLastEntryDateAndCount, gafpriFetch } from '../helpers';
 import {
-  changeInputText,
-  getLastEntryDateAndCount,
-  removeClass,
-  addClass,
-  validationInput,
-  validationInputName,
-  validationSelect,
-  toTitleCase,
-  gafpriFetch,
-  changeSelect,
-  validationInputAddress,
-  getMimeTypeByExtension,
-} from '../helpers';
+  generalValidationName,
+  generalValidationParentId,
+  generalValidationDescription,
+  generalValidationStatus,
+  generalValidationPhotoCategory,
+  generalValidationButtonNext,
+} from '../Validations';
 import type {
   ErrorResponseProps,
   CustomErrorResponseProps,
   SelectDefault,
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
+import {
+  generalChangeName,
+  generalChangeParentId,
+  generalChangeDescription,
+  generalChangePhoto,
+  generalChangeStatus,
+} from '../Changes';
 
 export interface CategoryAttributes {
   id: number;
@@ -312,148 +313,69 @@ export function useGafpriCategory({
 
   // Funciones de Validacion
   const validationName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: `nameCategory`,
-      setValid: setNameValid,
-    });
+    return generalValidationName(value, setNameValid, nameValid);
   };
 
   const validationParentId = (newValue: string): boolean => {
-    const valid = validationSelect(newValue, 'parentId');
-    setParentIdValid(valid);
-    return valid;
+    return generalValidationParentId(newValue, setParentIdValid, parentIdValid);
   };
 
   const validationDescription = (newValue: string): boolean => {
-    return validationInputAddress({
-      value: newValue,
-      inputId: `descriptionCategory`,
-      setValid: setDescriptionValid,
-      required: false,
-    });
+    return generalValidationDescription(
+      newValue,
+      setDescriptionValid,
+      descriptionValid
+    );
   };
 
   const validationStatus = (newValue: string): boolean => {
-    return validationInputAddress({
-      value: newValue,
-      inputId: `statusCategory`,
-      setValid: setStatusValid,
-    });
+    return generalValidationStatus(newValue, setStatusValid, statusValid);
   };
 
   const validationPhoto = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-      'photoCategory'
-    );
-    setPhotoValid(valid);
-    return valid;
+    return generalValidationPhotoCategory(value, setPhotoValid, photoValid);
   };
 
   const validationButtonNext = (): void => {
-    if (
-      nameValid &&
-      parentIdValid &&
-      descriptionValid &&
-      photoValid &&
+    generalValidationButtonNext(
+      nameValid,
+      parentIdValid,
+      descriptionValid,
+      photoValid,
       statusValid
-    ) {
-      removeClass(`buttonNext`, 'gs-disabled');
-    } else {
-      addClass(`buttonNext`, 'gs-disabled');
-    }
+    );
   };
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    const newName = toTitleCase(value);
-    changeInputText({
-      value: newName,
-      validation: validationName,
-      setValue: setName,
-    });
+    generalChangeName(value, validationName, setName);
   };
 
   const changeParentId = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    let value: number | null = null;
-    if (options && options.value !== 'null') {
-      value = parseInt(options.value, 10);
-    }
-    const label = options?.label || 'Sin categoría padre';
-    const newOptions = { value, label };
-    changeSelect({
-      newValue: newOptions,
-      validation: validationParentId,
-      setDefault: setParentIdDefault,
-      setValue: setParentId,
-    });
+    generalChangeParentId(
+      options,
+      validationParentId,
+      setParentIdDefault,
+      setParentId
+    );
   };
 
   const changeDescription = (value: string): void => {
-    const newDescription = toTitleCase(value);
-    changeInputText({
-      value: newDescription,
-      validation: validationDescription,
-      setValue: setDescription,
-    });
+    generalChangeDescription(value, validationDescription, setDescription);
   };
 
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    const newFile = e.target.files && e.target.files[0];
-
-    if (!newFile) return;
-
-    // Obtén el tipo MIME en función de la extensión del archivo
-    const mimeType = getMimeTypeByExtension(newFile.name);
-    if (!mimeType) {
-      useError.actions.changeError([
-        'El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.',
-      ]);
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', newFile);
-    formData.append('fileName', newFile.name);
-
-    setSubmitting(true);
-
-    const config: AxiosRequestConfig = {
-      headers: {
-        'content-type': 'multipart/form-data',
-      },
-    };
-
-    try {
-      const response = await axios.post('/api/upload', formData, config);
-
-      if (response.status === 200) {
-        setPhoto(response.data.imageUrl);
-      } else {
-        setSubmitting(false);
-      }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (newErrorValue: any) {
-      useError.actions.changeError([`${newErrorValue.message}`]);
-      setSubmitting(false);
-    }
+    generalChangePhoto(e, changeError, setSubmitting, setPhoto);
   };
 
   const changeStatus = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationStatus,
-      setDefault: setStatusDefault,
-      setValue: setStatus,
-    });
+    generalChangeStatus(options, validationStatus, setStatusDefault, setStatus);
   };
 
   // Manejo de la data de Category

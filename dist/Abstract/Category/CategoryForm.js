@@ -5,24 +5,24 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.CategoryForm = void 0;
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
 var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
-var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
 var _List = require("../List");
 var _Components = require("../../Components");
 var _Button = require("../Button");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
+var _Input = require("../Input");
+var _templateObject, _templateObject2, _templateObject3;
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var defaultOptionsButtonMainContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
 var defaultFormContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n  margin-top: 10px;\n"])));
-var defaultImageStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  width: 100%;\n  max-width: 300px;\n  max-height: 300px;\n  object-fit: cover;\n  border: 1px solid #ebebeb;\n  margin: auto;\n  border-radius: 10px;\n"])));
-var defaultImageFormConatinerStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  flex-direction: column-reverse;\n  width: 100%;\n"])));
-var defaultImageContainerStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
-var defaultLoadingContainerStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  width: 300px;\n  height: 300px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 10px;\n  margin: auto;\n"])));
+var defaultImageContainerStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
 var CategoryForm = function CategoryForm(_ref) {
   var _paginated$map;
   var use = _ref.use,
@@ -33,12 +33,6 @@ var CategoryForm = function CategoryForm(_ref) {
     formContainerStyle = _ref$formContainerSty === void 0 ? defaultFormContainerStyle : _ref$formContainerSty,
     _ref$imageContainerSt = _ref.imageContainerStyle,
     imageContainerStyle = _ref$imageContainerSt === void 0 ? defaultImageContainerStyle : _ref$imageContainerSt,
-    _ref$imageFormConatin = _ref.imageFormConatinerStyle,
-    imageFormConatinerStyle = _ref$imageFormConatin === void 0 ? defaultImageFormConatinerStyle : _ref$imageFormConatin,
-    _ref$loadingContainer = _ref.loadingContainerStyle,
-    loadingContainerStyle = _ref$loadingContainer === void 0 ? defaultLoadingContainerStyle : _ref$loadingContainer,
-    _ref$imageStyle = _ref.imageStyle,
-    imageStyle = _ref$imageStyle === void 0 ? defaultImageStyle : _ref$imageStyle,
     _ref$infoContainerSty = _ref.infoContainerStyle,
     infoContainerStyle = _ref$infoContainerSty === void 0 ? defaultImageContainerStyle : _ref$infoContainerSty,
     _ref$deleteButtonProp = _ref.deleteButtonProps,
@@ -50,15 +44,6 @@ var CategoryForm = function CategoryForm(_ref) {
       }
     } : _ref$deleteButtonProp,
     modelFormProps = _ref.modelFormProps,
-    _ref$changePhotoButto = _ref.changePhotoButtonProps,
-    changePhotoButtonProps = _ref$changePhotoButto === void 0 ? {
-      title: 'Cambiar Foto',
-      styles: {
-        fontSize: '10px',
-        margin: '20px auto 40px auto',
-        backgroundColor: '#439b57'
-      }
-    } : _ref$changePhotoButto,
     loadingProps = _ref.loadingProps,
     nameContainerProps = _ref.nameContainerProps,
     nameInputProps = _ref.nameInputProps,
@@ -68,7 +53,8 @@ var CategoryForm = function CategoryForm(_ref) {
     parentIdInputProps = _ref.parentIdInputProps,
     statusContainerProps = _ref.statusContainerProps,
     statusInputProps = _ref.statusInputProps,
-    dependentsListProps = _ref.dependentsListProps;
+    dependentsListProps = _ref.dependentsListProps,
+    propsPhotoCategory = _ref.propsPhotoCategory;
   var isAddForm = formType === 'add';
   var isUpdateForm = formType === 'update';
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
@@ -79,7 +65,6 @@ var CategoryForm = function CategoryForm(_ref) {
     _React$useState4 = (0, _slicedToArray2["default"])(_React$useState3, 2),
     InputStatus = _React$useState4[0],
     setInputStatus = _React$useState4[1];
-  var fileInputRef = _react["default"].useRef(null);
   var currentCategory = isUpdateForm ? use.actions.getById(use.states.currentId) : null;
   var children = currentCategory ? use.actions.getChildren(currentCategory.id) : [];
   var ButtonUpdate = function ButtonUpdate(_ref2) {
@@ -118,15 +103,6 @@ var CategoryForm = function CategoryForm(_ref) {
     label: 'Descendente'
   };
   var totalPages = Math.ceil(category.length / use.states.itemsPerPage);
-  var handleButtonClick = function handleButtonClick() {
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
-    }
-  };
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
-  };
   _react["default"].useEffect(function () {
     use.actions.validationName(use.states.name);
     use.actions.validationDescription(use.states.description);
@@ -166,30 +142,32 @@ var CategoryForm = function CategoryForm(_ref) {
     }
     if (isAddForm) {
       setInputParentId(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "parentId",
-          onChange: function onChange(e) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectParentId, {
+          changeParentId: function changeParentId(e) {
             return use.actions.changeParentId(e);
           },
-          options: use.states.parentIdOptions,
-          defaultValue: use.states.parentIdDefault,
-          styles: {
-            width: '100%'
-          }
-        }, parentIdInputProps));
+          props: _objectSpread({
+            options: use.states.parentIdOptions,
+            defaultValue: use.states.parentIdDefault,
+            styles: {
+              width: '100%'
+            }
+          }, parentIdInputProps)
+        });
       });
       setInputStatus(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "status",
-          onChange: function onChange(e) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectStatus, {
+          changeStatus: function changeStatus(e) {
             return use.actions.changeStatus(e);
           },
-          options: use.states.statusOptions,
-          defaultValue: use.states.statusDefault,
-          styles: {
-            width: '100%'
-          }
-        }, statusInputProps));
+          props: _objectSpread({
+            options: use.states.statusOptions,
+            defaultValue: use.states.statusDefault,
+            styles: {
+              width: '100%'
+            }
+          }, statusInputProps)
+        });
       });
     }
   }, []);
@@ -197,31 +175,33 @@ var CategoryForm = function CategoryForm(_ref) {
     if (isUpdateForm && currentCategory) {
       if (use.states.parentIdDefault.value === 'null' && currentCategory.parentId === null || use.states.parentIdDefault.value !== 'null' && currentCategory.parentId !== null) {
         setInputParentId(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "parentId",
-            onChange: function onChange(e) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectParentId, {
+            changeParentId: function changeParentId(e) {
               return use.actions.changeParentId(e);
             },
-            options: use.states.parentIdOptions,
-            defaultValue: use.states.parentIdDefault,
-            styles: {
-              width: '100%'
-            }
-          }, parentIdInputProps));
+            props: _objectSpread({
+              options: use.states.parentIdOptions,
+              defaultValue: use.states.parentIdDefault,
+              styles: {
+                width: '100%'
+              }
+            }, parentIdInputProps)
+          });
         });
       }
       setInputStatus(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "status",
-          onChange: function onChange(e) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectStatus, {
+          changeStatus: function changeStatus(e) {
             return use.actions.changeStatus(e);
           },
-          options: use.states.statusOptions,
-          defaultValue: use.states.statusDefault,
-          styles: {
-            width: '100%'
-          }
-        }, statusInputProps));
+          props: _objectSpread({
+            options: use.states.statusOptions,
+            defaultValue: use.states.statusDefault,
+            styles: {
+              width: '100%'
+            }
+          }, statusInputProps)
+        });
       });
     }
   }, [use.states.parentIdDefault, use.states.statusDefault]);
@@ -241,19 +221,6 @@ var CategoryForm = function CategoryForm(_ref) {
         console.log('Acción desconocida:', action);
     }
   };
-  _react["default"].useEffect(function () {
-    if (use.states.photo) {
-      var img = new Image();
-      img.src = use.states.photo;
-      img.onload = function () {
-        use.actions.setSubmitting(false);
-      };
-      img.onerror = function () {
-        use.actions.changeError(["Error al cargar la imagen: ".concat(use.states.photo)]);
-        use.actions.setSubmitting(true);
-      };
-    }
-  }, [use.states.photo]);
   return /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, (0, _extends2["default"])({
     titles: {
       title1: title1Text,
@@ -269,67 +236,48 @@ var CategoryForm = function CategoryForm(_ref) {
     className: (0, _css.css)(formContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(imageContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement("form", {
-    className: (0, _css.css)(imageFormConatinerStyle),
-    onSubmit: handleSubmit,
-    id: "photoCategory"
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
-    type: "file",
-    id: "file-input",
-    ref: fileInputRef,
-    hidden: true,
-    onChange: use.actions.changePhoto
-  }), /*#__PURE__*/_react["default"].createElement(_Button.Button, (0, _extends2["default"])({
-    buttonProps: {
-      onClick: handleButtonClick
-    }
-  }, changePhotoButtonProps))), use.states.submitting ? /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _css.css)(loadingContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement(_Components.Loading, loadingProps)) : use.states.photo && /*#__PURE__*/_react["default"].createElement("img", {
-    className: (0, _css.css)(imageStyle),
-    src: use.states.photo,
-    alt: "Category"
-  }))), /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement(_Form.PhotoCategory, {
+    photo: use.states.photo,
+    changePhoto: use.actions.changePhoto,
+    changeError: use.actions.changeError,
+    submitting: use.states.submitting,
+    setSubmitting: use.actions.setSubmitting,
+    props: propsPhotoCategory
+  })), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(infoContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'end'
     }
-  }, nameContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Nombre',
-      type: 'text',
-      id: "nameCategory",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeName(event.target.value);
+  }, nameContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
+    changeName: use.actions.changeName,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.name
       },
-      defaultValue: use.states.name
-    },
-    styles: {
-      padding: '10px 19px',
-      width: '100%'
-    }
-  }, nameInputProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+      styles: {
+        width: '100%',
+        padding: '10px 19px'
+      }
+    }, nameInputProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'end'
     }
-  }, descriptionContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Descripción',
-      type: 'text',
-      id: "descriptionCategory",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeDescription(event.target.value);
+  }, descriptionContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputDescription, {
+    changeDescription: use.actions.changeDescription,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.description
       },
-      defaultValue: use.states.description
-    },
-    styles: {
-      padding: '10px 19px',
-      width: '100%'
-    }
-  }, descriptionInputProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+      styles: {
+        width: '100%',
+        padding: '10px 19px'
+      }
+    }, descriptionInputProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'end'

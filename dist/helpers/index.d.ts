@@ -38,11 +38,9 @@ export type ValidationInputAdress = {
     setValid: (value: boolean) => void;
     required?: boolean;
 };
-export declare const validationInputAddress: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
 export declare const validationInputPostcode: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
 export declare const validationInputEmail: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
 export declare const validationInputPhone: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
-export declare const validationInputPassword: ({ value, inputId, setValid, required, }: ValidationInputAdress) => boolean;
 export interface InitToken {
     token?: string | undefined;
 }

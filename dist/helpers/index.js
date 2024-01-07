@@ -13,7 +13,7 @@ exports.isCustomErrorResponse = isCustomErrorResponse;
 exports.removeClass = exports.isSelectDefaultArray = exports.isSelectDefault = exports.isErrorResponse = void 0;
 exports.toTitleCase = toTitleCase;
 exports.validationHidden = validationHidden;
-exports.validationSelect = exports.validationInputPostcode = exports.validationInputPhone = exports.validationInputPassword = exports.validationInputName = exports.validationInputEmail = exports.validationInputAddress = exports.validationInput = void 0;
+exports.validationSelect = exports.validationInputPostcode = exports.validationInputPhone = exports.validationInputName = exports.validationInputEmail = exports.validationInput = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
@@ -125,70 +125,48 @@ var validationInputName = function validationInputName(_ref3) {
   return valid;
 };
 exports.validationInputName = validationInputName;
-var validationInputAddress = function validationInputAddress(_ref4) {
+var validationInputPostcode = function validationInputPostcode(_ref4) {
   var value = _ref4.value,
     inputId = _ref4.inputId,
     setValid = _ref4.setValid,
     _ref4$required = _ref4.required,
     required = _ref4$required === void 0 ? true : _ref4$required;
-  var valid = validationInput(value, /^[a-zA-Z0-9#]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, inputId, required);
-  setValid(valid);
-  return valid;
-};
-exports.validationInputAddress = validationInputAddress;
-var validationInputPostcode = function validationInputPostcode(_ref5) {
-  var value = _ref5.value,
-    inputId = _ref5.inputId,
-    setValid = _ref5.setValid,
-    _ref5$required = _ref5.required,
-    required = _ref5$required === void 0 ? true : _ref5$required;
   var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, required);
   setValid(valid);
   return valid;
 };
 exports.validationInputPostcode = validationInputPostcode;
-var validationInputEmail = function validationInputEmail(_ref6) {
-  var value = _ref6.value,
-    inputId = _ref6.inputId,
-    setValid = _ref6.setValid,
-    _ref6$required = _ref6.required,
-    required = _ref6$required === void 0 ? true : _ref6$required;
+var validationInputEmail = function validationInputEmail(_ref5) {
+  var value = _ref5.value,
+    inputId = _ref5.inputId,
+    setValid = _ref5.setValid,
+    _ref5$required = _ref5.required,
+    required = _ref5$required === void 0 ? true : _ref5$required;
   var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, required);
   setValid(valid);
   return valid;
 };
 exports.validationInputEmail = validationInputEmail;
-var validationInputPhone = function validationInputPhone(_ref7) {
-  var value = _ref7.value,
-    inputId = _ref7.inputId,
-    setValid = _ref7.setValid,
-    _ref7$required = _ref7.required,
-    required = _ref7$required === void 0 ? true : _ref7$required;
+var validationInputPhone = function validationInputPhone(_ref6) {
+  var value = _ref6.value,
+    inputId = _ref6.inputId,
+    setValid = _ref6.setValid,
+    _ref6$required = _ref6.required,
+    required = _ref6$required === void 0 ? true : _ref6$required;
   var valid = validationInput(value, /^[0-9]{10,20}/, inputId, required);
   setValid(valid);
   return valid;
 };
 exports.validationInputPhone = validationInputPhone;
-var validationInputPassword = function validationInputPassword(_ref8) {
-  var value = _ref8.value,
-    inputId = _ref8.inputId,
-    setValid = _ref8.setValid,
-    _ref8$required = _ref8.required,
-    required = _ref8$required === void 0 ? true : _ref8$required;
-  var valid = validationInput(value, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, inputId, required);
-  setValid(valid);
-  return valid;
-};
-exports.validationInputPassword = validationInputPassword;
-function gafpriFetch(_ref9) {
-  var initMethod = _ref9.initMethod,
-    initApi = _ref9.initApi,
-    initRoute = _ref9.initRoute,
-    initToken = _ref9.initToken,
-    initCredentials = _ref9.initCredentials,
-    functionFetching = _ref9.functionFetching,
-    functionSuccess = _ref9.functionSuccess,
-    functionError = _ref9.functionError;
+function gafpriFetch(_ref7) {
+  var initMethod = _ref7.initMethod,
+    initApi = _ref7.initApi,
+    initRoute = _ref7.initRoute,
+    initToken = _ref7.initToken,
+    initCredentials = _ref7.initCredentials,
+    functionFetching = _ref7.functionFetching,
+    functionSuccess = _ref7.functionSuccess,
+    functionError = _ref7.functionError;
   if (functionFetching !== undefined) {
     functionFetching();
   }
@@ -238,7 +216,7 @@ var isSelectDefaultArray = function isSelectDefaultArray(obj) {
 };
 exports.isSelectDefaultArray = isSelectDefaultArray;
 var getLastEntryDateAndCount = /*#__PURE__*/function () {
-  var _ref10 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(service) {
+  var _ref8 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(service) {
     var response;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
@@ -273,7 +251,7 @@ var getLastEntryDateAndCount = /*#__PURE__*/function () {
     }, _callee, null, [[0, 10]]);
   }));
   return function getLastEntryDateAndCount(_x) {
-    return _ref10.apply(this, arguments);
+    return _ref8.apply(this, arguments);
   };
 }();
 exports.getLastEntryDateAndCount = getLastEntryDateAndCount;

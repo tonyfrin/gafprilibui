@@ -5,7 +5,6 @@ import {
   removeClass,
   addClass,
   validationInputName,
-  validationInputAddress,
   toTitleCase,
   changeInputText,
   validationSelect,
@@ -15,6 +14,7 @@ import {
   getLastEntryDateAndCount,
   getMimeTypeByExtension,
 } from '../helpers';
+import { validationInputAddress } from '../Validations';
 import type {
   ErrorResponseProps,
   CustomErrorResponseProps,
@@ -810,6 +810,7 @@ export const useGafpriEntity = ({
   const validationAddress1 = (value: string): boolean => {
     return validationInputAddress({
       value,
+      currentValid: address1Valid,
       inputId: 'address1',
       setValid: setAddress1Valid,
     });
@@ -819,6 +820,7 @@ export const useGafpriEntity = ({
     return validationInputAddress({
       value,
       inputId: 'address2',
+      currentValid: address2Valid,
       setValid: setAddress2Valid,
       required: false,
     });

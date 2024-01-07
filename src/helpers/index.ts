@@ -175,22 +175,6 @@ export type ValidationInputAdress = {
   required?: boolean;
 };
 
-export const validationInputAddress = ({
-  value,
-  inputId,
-  setValid,
-  required = true,
-}: ValidationInputAdress): boolean => {
-  const valid = validationInput(
-    value,
-    /^[a-zA-Z0-9#]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/,
-    inputId,
-    required
-  );
-  setValid(valid);
-  return valid;
-};
-
 export const validationInputPostcode = ({
   value,
   inputId,
@@ -230,22 +214,6 @@ export const validationInputPhone = ({
   required = true,
 }: ValidationInputAdress): boolean => {
   const valid = validationInput(value, /^[0-9]{10,20}/, inputId, required);
-  setValid(valid);
-  return valid;
-};
-
-export const validationInputPassword = ({
-  value,
-  inputId,
-  setValid,
-  required = true,
-}: ValidationInputAdress): boolean => {
-  const valid = validationInput(
-    value,
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-    inputId,
-    required
-  );
   setValid(valid);
   return valid;
 };

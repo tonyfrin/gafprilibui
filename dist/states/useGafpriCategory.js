@@ -12,9 +12,10 @@ var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
-var _axios = _interopRequireDefault(require("axios"));
 var _helpers = require("../helpers");
+var _Validations = require("../Validations");
 var _Context = require("../Context");
+var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -205,145 +206,52 @@ function useGafpriCategory(_ref) {
 
   // Funciones de Validacion
   var validationName = function validationName(value) {
-    return (0, _helpers.validationInputName)({
-      name: value,
-      inputId: "nameCategory",
-      setValid: setNameValid
-    });
+    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
   };
   var validationParentId = function validationParentId(newValue) {
-    var valid = (0, _helpers.validationSelect)(newValue, 'parentId');
-    setParentIdValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationParentId)(newValue, setParentIdValid, parentIdValid);
   };
   var validationDescription = function validationDescription(newValue) {
-    return (0, _helpers.validationInputAddress)({
-      value: newValue,
-      inputId: "descriptionCategory",
-      setValid: setDescriptionValid,
-      required: false
-    });
+    return (0, _Validations.generalValidationDescription)(newValue, setDescriptionValid, descriptionValid);
   };
   var validationStatus = function validationStatus(newValue) {
-    return (0, _helpers.validationInputAddress)({
-      value: newValue,
-      inputId: "statusCategory",
-      setValid: setStatusValid
-    });
+    return (0, _Validations.generalValidationStatus)(newValue, setStatusValid, statusValid);
   };
   var validationPhoto = function validationPhoto(value) {
-    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'photoCategory');
-    setPhotoValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPhotoCategory)(value, setPhotoValid, photoValid);
   };
   var validationButtonNext = function validationButtonNext() {
-    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid) {
-      (0, _helpers.removeClass)("buttonNext", 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)("buttonNext", 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(nameValid, parentIdValid, descriptionValid, photoValid, statusValid);
   };
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    var newName = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newName,
-      validation: validationName,
-      setValue: setName
-    });
+    (0, _Changes.generalChangeName)(value, validationName, setName);
   };
   var changeParentId = function changeParentId(options) {
-    var value = null;
-    if (options && options.value !== 'null') {
-      value = parseInt(options.value, 10);
-    }
-    var label = (options === null || options === void 0 ? void 0 : options.label) || 'Sin categoría padre';
-    var newOptions = {
-      value: value,
-      label: label
-    };
-    (0, _helpers.changeSelect)({
-      newValue: newOptions,
-      validation: validationParentId,
-      setDefault: setParentIdDefault,
-      setValue: setParentId
-    });
+    (0, _Changes.generalChangeParentId)(options, validationParentId, setParentIdDefault, setParentId);
   };
   var changeDescription = function changeDescription(value) {
-    var newDescription = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newDescription,
-      validation: validationDescription,
-      setValue: setDescription
-    });
+    (0, _Changes.generalChangeDescription)(value, validationDescription, setDescription);
   };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
-      var newFile, mimeType, formData, config, response;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            newFile = e.target.files && e.target.files[0];
-            if (newFile) {
-              _context.next = 3;
-              break;
-            }
-            return _context.abrupt("return");
-          case 3:
-            // Obtén el tipo MIME en función de la extensión del archivo
-            mimeType = (0, _helpers.getMimeTypeByExtension)(newFile.name);
-            if (mimeType) {
-              _context.next = 7;
-              break;
-            }
-            useError.actions.changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
-            return _context.abrupt("return");
-          case 7:
-            formData = new FormData();
-            formData.append('file', newFile);
-            formData.append('fileName', newFile.name);
-            setSubmitting(true);
-            config = {
-              headers: {
-                'content-type': 'multipart/form-data'
-              }
-            };
-            _context.prev = 12;
-            _context.next = 15;
-            return _axios["default"].post('/api/upload', formData, config);
-          case 15:
-            response = _context.sent;
-            if (response.status === 200) {
-              setPhoto(response.data.imageUrl);
-            } else {
-              setSubmitting(false);
-            }
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            _context.next = 23;
-            break;
-          case 19:
-            _context.prev = 19;
-            _context.t0 = _context["catch"](12);
-            useError.actions.changeError(["".concat(_context.t0.message)]);
-            setSubmitting(false);
-          case 23:
+            (0, _Changes.generalChangePhoto)(e, changeError, setSubmitting, setPhoto);
+          case 1:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[12, 19]]);
+      }, _callee);
     }));
     return function changePhoto(_x) {
       return _ref2.apply(this, arguments);
     };
   }();
   var changeStatus = function changeStatus(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationStatus,
-      setDefault: setStatusDefault,
-      setValue: setStatus
-    });
+    (0, _Changes.generalChangeStatus)(options, validationStatus, setStatusDefault, setStatus);
   };
 
   // Manejo de la data de Category

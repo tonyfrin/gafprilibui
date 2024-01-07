@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { Input, GsSelect } from '../Input';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
@@ -13,6 +12,14 @@ import { Loading } from '../../Components';
 import type { LoadingProps } from '../../Components';
 import { Button } from '../Button';
 import type { ButtonProps } from '../Button';
+import { PhotoCategory } from '../Form';
+import type { PhotoCategoryProps } from '../Form';
+import {
+  InputName,
+  InputDescription,
+  SelectParentId,
+  SelectStatus,
+} from '../Input';
 
 export type CategoryFormProps = {
   use: UseCategoryReturn;
@@ -20,13 +27,9 @@ export type CategoryFormProps = {
   optionsButtonMainContainerStyle?: string;
   formContainerStyle?: string;
   imageContainerStyle?: string;
-  imageFormConatinerStyle?: string;
-  loadingContainerStyle?: string;
-  imageStyle?: string;
   infoContainerStyle?: string;
   deleteButtonProps?: ButtonProps;
   modelFormProps?: ModelFormPropsExtended;
-  changePhotoButtonProps?: ButtonProps;
   loadingProps?: LoadingProps;
   nameContainerProps?: ContainerButtonPropsExtended;
   nameInputProps?: InputProps;
@@ -37,6 +40,7 @@ export type CategoryFormProps = {
   statusContainerProps?: ContainerButtonPropsExtended;
   statusInputProps?: GsSelectPropsExtended;
   dependentsListProps?: ListPropsExtended;
+  propsPhotoCategory?: PhotoCategoryProps['props'];
 };
 
 export type CategoryFormPropsExtended = {
@@ -45,13 +49,9 @@ export type CategoryFormPropsExtended = {
   optionsButtonMainContainerStyle?: string;
   formContainerStyle?: string;
   imageContainerStyle?: string;
-  imageFormConatinerStyle?: string;
-  loadingContainerStyle?: string;
-  imageStyle?: string;
   infoContainerStyle?: string;
   deleteButtonProps?: ButtonProps;
   modelFormProps?: ModelFormPropsExtended;
-  changePhotoButtonProps?: ButtonProps;
   loadingProps?: LoadingProps;
   nameContainerProps?: ContainerButtonPropsExtended;
   nameInputProps?: InputProps;
@@ -62,6 +62,7 @@ export type CategoryFormPropsExtended = {
   statusContainerProps?: ContainerButtonPropsExtended;
   statusInputProps?: GsSelectPropsExtended;
   dependentsListProps?: ListPropsExtended;
+  propsPhotoCategory?: PhotoCategoryProps['props'];
 };
 
 const defaultOptionsButtonMainContainerStyle = css`
@@ -75,36 +76,8 @@ const defaultFormContainerStyle = css`
   margin-top: 10px;
 `;
 
-const defaultImageStyle = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 300px;
-  max-height: 300px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 10px;
-`;
-
-const defaultImageFormConatinerStyle = css`
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-`;
-
 const defaultImageContainerStyle = css`
   width: 100%;
-`;
-
-const defaultLoadingContainerStyle = css`
-  transition: all 1s ease 0s;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  margin: auto;
 `;
 
 export const CategoryForm = ({
@@ -113,9 +86,6 @@ export const CategoryForm = ({
   optionsButtonMainContainerStyle = defaultOptionsButtonMainContainerStyle,
   formContainerStyle = defaultFormContainerStyle,
   imageContainerStyle = defaultImageContainerStyle,
-  imageFormConatinerStyle = defaultImageFormConatinerStyle,
-  loadingContainerStyle = defaultLoadingContainerStyle,
-  imageStyle = defaultImageStyle,
   infoContainerStyle = defaultImageContainerStyle,
   deleteButtonProps = {
     title: 'Eliminar',
@@ -125,14 +95,6 @@ export const CategoryForm = ({
     },
   },
   modelFormProps,
-  changePhotoButtonProps = {
-    title: 'Cambiar Foto',
-    styles: {
-      fontSize: '10px',
-      margin: '20px auto 40px auto',
-      backgroundColor: '#439b57',
-    },
-  },
   loadingProps,
   nameContainerProps,
   nameInputProps,
@@ -143,12 +105,13 @@ export const CategoryForm = ({
   statusContainerProps,
   statusInputProps,
   dependentsListProps,
+  propsPhotoCategory,
 }: CategoryFormProps): JSX.Element => {
   const isAddForm = formType === 'add';
   const isUpdateForm = formType === 'update';
   const [InputParentId, setInputParentId] = React.useState(<></>);
   const [InputStatus, setInputStatus] = React.useState(<></>);
-  const fileInputRef = React.useRef<HTMLInputElement>(null);
+
   const currentCategory = isUpdateForm
     ? use.actions.getById(use.states.currentId)
     : null;
@@ -196,17 +159,6 @@ export const CategoryForm = ({
       : { value: 'desc', label: 'Descendente' };
 
   const totalPages = Math.ceil(category.length / use.states.itemsPerPage);
-
-  const handleButtonClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
 
   React.useEffect(() => {
     use.actions.validationName(use.states.name);
@@ -269,30 +221,32 @@ export const CategoryForm = ({
     if (isAddForm) {
       setInputParentId((): JSX.Element => {
         return (
-          <GsSelect
-            id="parentId"
-            onChange={(e) => use.actions.changeParentId(e)}
-            options={use.states.parentIdOptions}
-            defaultValue={use.states.parentIdDefault}
-            styles={{
-              width: '100%',
+          <SelectParentId
+            changeParentId={(e) => use.actions.changeParentId(e)}
+            props={{
+              options: use.states.parentIdOptions,
+              defaultValue: use.states.parentIdDefault,
+              styles: {
+                width: '100%',
+              },
+              ...parentIdInputProps,
             }}
-            {...parentIdInputProps}
           />
         );
       });
 
       setInputStatus((): JSX.Element => {
         return (
-          <GsSelect
-            id="status"
-            onChange={(e) => use.actions.changeStatus(e)}
-            options={use.states.statusOptions}
-            defaultValue={use.states.statusDefault}
-            styles={{
-              width: '100%',
+          <SelectStatus
+            changeStatus={(e) => use.actions.changeStatus(e)}
+            props={{
+              options: use.states.statusOptions,
+              defaultValue: use.states.statusDefault,
+              styles: {
+                width: '100%',
+              },
+              ...statusInputProps,
             }}
-            {...statusInputProps}
           />
         );
       });
@@ -309,15 +263,16 @@ export const CategoryForm = ({
       ) {
         setInputParentId((): JSX.Element => {
           return (
-            <GsSelect
-              id="parentId"
-              onChange={(e) => use.actions.changeParentId(e)}
-              options={use.states.parentIdOptions}
-              defaultValue={use.states.parentIdDefault}
-              styles={{
-                width: '100%',
+            <SelectParentId
+              changeParentId={(e) => use.actions.changeParentId(e)}
+              props={{
+                options: use.states.parentIdOptions,
+                defaultValue: use.states.parentIdDefault,
+                styles: {
+                  width: '100%',
+                },
+                ...parentIdInputProps,
               }}
-              {...parentIdInputProps}
             />
           );
         });
@@ -325,15 +280,16 @@ export const CategoryForm = ({
 
       setInputStatus((): JSX.Element => {
         return (
-          <GsSelect
-            id="status"
-            onChange={(e) => use.actions.changeStatus(e)}
-            options={use.states.statusOptions}
-            defaultValue={use.states.statusDefault}
-            styles={{
-              width: '100%',
+          <SelectStatus
+            changeStatus={(e) => use.actions.changeStatus(e)}
+            props={{
+              options: use.states.statusOptions,
+              defaultValue: use.states.statusDefault,
+              styles: {
+                width: '100%',
+              },
+              ...statusInputProps,
             }}
-            {...statusInputProps}
           />
         );
       });
@@ -361,22 +317,6 @@ export const CategoryForm = ({
     }
   };
 
-  React.useEffect(() => {
-    if (use.states.photo) {
-      const img = new Image();
-      img.src = use.states.photo;
-      img.onload = () => {
-        use.actions.setSubmitting(false);
-      };
-      img.onerror = () => {
-        use.actions.changeError([
-          `Error al cargar la imagen: ${use.states.photo}`,
-        ]);
-        use.actions.setSubmitting(true);
-      };
-    }
-  }, [use.states.photo]);
-
   return (
     <ModelForm
       titles={{
@@ -394,40 +334,14 @@ export const CategoryForm = ({
       <>
         <div className={css(formContainerStyle)}>
           <div className={css(imageContainerStyle)}>
-            <form
-              className={css(imageFormConatinerStyle)}
-              onSubmit={handleSubmit}
-              id="photoCategory"
-            >
-              <>
-                <input
-                  type="file"
-                  id="file-input"
-                  ref={fileInputRef}
-                  hidden
-                  onChange={use.actions.changePhoto}
-                />
-                <Button
-                  buttonProps={{
-                    onClick: handleButtonClick,
-                  }}
-                  {...changePhotoButtonProps}
-                />
-              </>
-              {use.states.submitting ? (
-                <div className={css(loadingContainerStyle)}>
-                  <Loading {...loadingProps} />
-                </div>
-              ) : (
-                use.states.photo && (
-                  <img
-                    className={css(imageStyle)}
-                    src={use.states.photo}
-                    alt="Category"
-                  />
-                )
-              )}
-            </form>
+            <PhotoCategory
+              photo={use.states.photo}
+              changePhoto={use.actions.changePhoto}
+              changeError={use.actions.changeError}
+              submitting={use.states.submitting}
+              setSubmitting={use.actions.setSubmitting}
+              props={propsPhotoCategory}
+            />
           </div>
           <div className={css(infoContainerStyle)}>
             <ContainerButton
@@ -438,22 +352,18 @@ export const CategoryForm = ({
               {...nameContainerProps}
             >
               <>
-                <Input
-                  inputProps={{
-                    placeholder: 'Nombre',
-                    type: 'text',
-                    id: `nameCategory`,
-                    onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                      use.actions.changeName(
-                        (event.target as HTMLInputElement).value
-                      ),
-                    defaultValue: use.states.name,
+                <InputName
+                  changeName={use.actions.changeName}
+                  props={{
+                    inputProps: {
+                      defaultValue: use.states.name,
+                    },
+                    styles: {
+                      width: '100%',
+                      padding: '10px 19px',
+                    },
+                    ...nameInputProps,
                   }}
-                  styles={{
-                    padding: '10px 19px',
-                    width: '100%',
-                  }}
-                  {...nameInputProps}
                 />
               </>
             </ContainerButton>
@@ -465,22 +375,18 @@ export const CategoryForm = ({
               {...descriptionContainerProps}
             >
               <>
-                <Input
-                  inputProps={{
-                    placeholder: 'Descripción',
-                    type: 'text',
-                    id: `descriptionCategory`,
-                    onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                      use.actions.changeDescription(
-                        (event.target as HTMLInputElement).value
-                      ),
-                    defaultValue: use.states.description,
+                <InputDescription
+                  changeDescription={use.actions.changeDescription}
+                  props={{
+                    inputProps: {
+                      defaultValue: use.states.description,
+                    },
+                    styles: {
+                      width: '100%',
+                      padding: '10px 19px',
+                    },
+                    ...descriptionInputProps,
                   }}
-                  styles={{
-                    padding: '10px 19px',
-                    width: '100%',
-                  }}
-                  {...descriptionInputProps}
                 />
               </>
             </ContainerButton>

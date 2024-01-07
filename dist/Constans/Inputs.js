@@ -1,0 +1,46 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ZIP_CODE_INPUT = exports.USER_NAME_INPUT = exports.STATUS_INPUT = exports.STATE_COUNTRY_INPUT = exports.SKU_INPUT = exports.SITE_INPUT = exports.PHOTO_INPUT = exports.PHOTO_CATEGORY_INPUT = exports.PASSWORD_INPUT = exports.PARENT_ID_INPUT = exports.NAME_INPUT = exports.LAST_NAME_INPUT = exports.GALLERY_IMAGE_INPUT = exports.DESCRIPTION_INPUT = exports.COUNTRY_INPUT = exports.CITY_INPUT = exports.CATEGORIES_INPUT = exports.BUTTON_NEXT_INPUT = exports.ADDRESS2_INPUT = exports.ADDRESS1_INPUT = void 0;
+var NAME_INPUT = 'name-input-id';
+exports.NAME_INPUT = NAME_INPUT;
+var LAST_NAME_INPUT = 'last-name-input-id';
+exports.LAST_NAME_INPUT = LAST_NAME_INPUT;
+var USER_NAME_INPUT = 'user-name-input-id';
+exports.USER_NAME_INPUT = USER_NAME_INPUT;
+var PASSWORD_INPUT = 'password-input-id';
+exports.PASSWORD_INPUT = PASSWORD_INPUT;
+var BUTTON_NEXT_INPUT = 'button-next-id';
+exports.BUTTON_NEXT_INPUT = BUTTON_NEXT_INPUT;
+var DESCRIPTION_INPUT = 'description-input-id';
+exports.DESCRIPTION_INPUT = DESCRIPTION_INPUT;
+var ADDRESS1_INPUT = 'address-1-input-id';
+exports.ADDRESS1_INPUT = ADDRESS1_INPUT;
+var ADDRESS2_INPUT = 'address-2-input-id';
+exports.ADDRESS2_INPUT = ADDRESS2_INPUT;
+var CITY_INPUT = 'city-input-id';
+exports.CITY_INPUT = CITY_INPUT;
+var STATE_COUNTRY_INPUT = 'state-country-input-id';
+exports.STATE_COUNTRY_INPUT = STATE_COUNTRY_INPUT;
+var COUNTRY_INPUT = 'country-input-id';
+exports.COUNTRY_INPUT = COUNTRY_INPUT;
+var ZIP_CODE_INPUT = 'zip-code-input-id';
+exports.ZIP_CODE_INPUT = ZIP_CODE_INPUT;
+var SITE_INPUT = 'site-input-id';
+exports.SITE_INPUT = SITE_INPUT;
+var CATEGORIES_INPUT = 'categories-input-id';
+exports.CATEGORIES_INPUT = CATEGORIES_INPUT;
+var SKU_INPUT = 'sku-input-id';
+exports.SKU_INPUT = SKU_INPUT;
+var PHOTO_INPUT = 'photo-input-id';
+exports.PHOTO_INPUT = PHOTO_INPUT;
+var GALLERY_IMAGE_INPUT = 'gallery-image-input-id';
+exports.GALLERY_IMAGE_INPUT = GALLERY_IMAGE_INPUT;
+var PARENT_ID_INPUT = 'parent-id-input-id';
+exports.PARENT_ID_INPUT = PARENT_ID_INPUT;
+var STATUS_INPUT = 'status-input-id';
+exports.STATUS_INPUT = STATUS_INPUT;
+var PHOTO_CATEGORY_INPUT = 'photo-category-input-id';
+exports.PHOTO_CATEGORY_INPUT = PHOTO_CATEGORY_INPUT;

@@ -10,5 +10,5 @@ var getApiUrl = function getApiUrl() {
 exports.getApiUrl = getApiUrl;
 var API_URL = getApiUrl();
 exports.API_URL = API_URL;
-var UPLOAD_PHOTO_ROUTE = "".concat(getApiUrl(), "/upload-photo");
+var UPLOAD_PHOTO_ROUTE = "".concat(getApiUrl(), "//upload-file");
 exports.UPLOAD_PHOTO_ROUTE = UPLOAD_PHOTO_ROUTE;

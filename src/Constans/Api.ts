@@ -1,2 +1,3 @@
-export const { API_URL } = process.env;
-export const UPLOAD_PHOTO_ROUTE = `${API_URL}/upload-photo`;
+const getApiUrl = (): string | undefined => process.env.API_URL;
+export const API_URL = getApiUrl();
+export const UPLOAD_PHOTO_ROUTE = `${getApiUrl()}/upload-photo`;

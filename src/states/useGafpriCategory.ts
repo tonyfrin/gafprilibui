@@ -197,6 +197,7 @@ export function useGafpriCategory({
     },
   });
 
+  console.log(API_URL); // eslint-disable-line no-console
   const [parentId, setParentId] = useState<number | null>(null);
   const [parentIdValid, setParentIdValid] = useState(false);
   const [parentIdDefault, setParentIdDefault] = useState<SelectDefault>({

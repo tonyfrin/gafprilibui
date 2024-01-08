@@ -1,0 +1,41 @@
+/// <reference types="react" />
+import type { InputProps, GsSelectPropsExtended } from '../Input';
+import type { ContainerButtonPropsExtended } from '../Containers';
+import type { ModelFormPropsExtended } from '../Form';
+import type { UseEntityReturn } from 'src/states';
+export type AddressFormProps = {
+    use: UseEntityReturn;
+    inputCityProps?: InputProps;
+    selectCityProps?: GsSelectPropsExtended;
+    inputStateProps?: InputProps;
+    selectStateProps?: GsSelectPropsExtended;
+    selectCountryProps?: GsSelectPropsExtended;
+    selectTypeProps?: GsSelectPropsExtended;
+    mainTitle?: string;
+    subTitle?: string;
+    modelFormProps?: ModelFormPropsExtended;
+    containerAddressProps?: ContainerButtonPropsExtended;
+    inputAddress1Props?: InputProps;
+    inputAddress2Props?: InputProps;
+    containerCountryProps?: ContainerButtonPropsExtended;
+    containerPostCodeProps?: ContainerButtonPropsExtended;
+    inputPostCodeProps?: InputProps;
+};
+export type AddressFormPropsExtended = {
+    inputCityProps?: InputProps;
+    selectCityProps?: GsSelectPropsExtended;
+    inputStateProps?: InputProps;
+    selectStateProps?: GsSelectPropsExtended;
+    selectCountryProps?: GsSelectPropsExtended;
+    selectTypeProps?: GsSelectPropsExtended;
+    mainTitle?: string;
+    subTitle?: string;
+    modelFormProps?: ModelFormPropsExtended;
+    containerAddressProps?: ContainerButtonPropsExtended;
+    inputAddress1Props?: InputProps;
+    inputAddress2Props?: InputProps;
+    containerCountryProps?: ContainerButtonPropsExtended;
+    containerPostCodeProps?: ContainerButtonPropsExtended;
+    inputPostCodeProps?: InputProps;
+};
+export declare const AddressAddForm: ({ use, inputCityProps, selectCityProps, inputStateProps, selectStateProps, selectCountryProps, selectTypeProps, mainTitle, subTitle, modelFormProps, containerAddressProps, inputAddress1Props, inputAddress2Props, containerCountryProps, containerPostCodeProps, inputPostCodeProps, }: AddressFormProps) => JSX.Element;

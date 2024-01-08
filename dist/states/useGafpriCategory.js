@@ -41,6 +41,7 @@ function useGafpriCategory(_ref) {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     category = _useState6[0],
     setCategory = _useState6[1];
+  console.log(_Constans.API_URL); // eslint-disable-line no-console
   var _useState7 = (0, _react.useState)(null),
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
     parentId = _useState8[0],

@@ -21,12 +21,6 @@ Object.defineProperty(exports, "ALERT", {
     return _Class.ALERT;
   }
 });
-Object.defineProperty(exports, "API_URL", {
-  enumerable: true,
-  get: function get() {
-    return _Api.API_URL;
-  }
-});
 Object.defineProperty(exports, "AllRoles", {
   enumerable: true,
   get: function get() {
@@ -193,6 +187,12 @@ Object.defineProperty(exports, "ZIP_CODE_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.ZIP_CODE_INPUT;
+  }
+});
+Object.defineProperty(exports, "getApiUrl", {
+  enumerable: true,
+  get: function get() {
+    return _Api.getApiUrl;
   }
 });
 var _Countries = require("./Countries");

@@ -23,7 +23,7 @@ import {
   generalChangePhoto,
   generalChangeStatus,
 } from '../Changes';
-import { API_URL } from '../Constans';
+import { getApiUrl } from '../Constans';
 
 export interface CategoryAttributes {
   id: number;
@@ -188,6 +188,7 @@ export function useGafpriCategory({
   token,
   useError,
 }: UseCategoryProps): UseCategoryReturn {
+  const API_URL = getApiUrl();
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
 

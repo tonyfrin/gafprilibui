@@ -21,12 +21,6 @@ Object.defineProperty(exports, "ALERT", {
     return _Constans.ALERT;
   }
 });
-Object.defineProperty(exports, "API_URL", {
-  enumerable: true,
-  get: function get() {
-    return _Constans.API_URL;
-  }
-});
 Object.defineProperty(exports, "AddressAddForm", {
   enumerable: true,
   get: function get() {
@@ -781,6 +775,12 @@ Object.defineProperty(exports, "generalValidationUserName", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationUserName;
+  }
+});
+Object.defineProperty(exports, "getApiUrl", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.getApiUrl;
   }
 });
 Object.defineProperty(exports, "getBase64", {

@@ -297,7 +297,7 @@ function useGafpriCategory(_ref) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
                   initApi: _Constans.API_URL,
-                  initRoute: 'api/v1/category',
+                  initRoute: '/category',
                   initToken: {
                     token: token
                   },
@@ -393,7 +393,7 @@ function useGafpriCategory(_ref) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
         initApi: _Constans.API_URL,
-        initRoute: 'api/v1/category',
+        initRoute: '/category',
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -437,7 +437,7 @@ function useGafpriCategory(_ref) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
         initApi: _Constans.API_URL,
-        initRoute: "api/v1/category/".concat(id),
+        initRoute: "/category/".concat(id),
         initCredentials: data,
         initToken: {
           token: token
@@ -463,7 +463,7 @@ function useGafpriCategory(_ref) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
         initApi: _Constans.API_URL,
-        initRoute: "api/v1/category/".concat(currentId),
+        initRoute: "/category/".concat(currentId),
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -479,7 +479,7 @@ function useGafpriCategory(_ref) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
         initApi: _Constans.API_URL,
-        initRoute: "api/v1/category/".concat(id),
+        initRoute: "/category/".concat(id),
         initToken: {
           token: token
         },

@@ -425,7 +425,7 @@ export function useGafpriCategory({
         gafpriFetch({
           initMethod: 'GET',
           initApi: API_URL,
-          initRoute: 'api/v1/category',
+          initRoute: '/category',
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onCategory,
@@ -531,7 +531,7 @@ export function useGafpriCategory({
       gafpriFetch({
         initMethod: 'POST',
         initApi: API_URL,
-        initRoute: 'api/v1/category',
+        initRoute: '/category',
         initCredentials: updatedPayload,
         initToken: { token },
         functionFetching: onFetching,
@@ -570,7 +570,7 @@ export function useGafpriCategory({
       gafpriFetch({
         initMethod: 'PATCH',
         initApi: API_URL,
-        initRoute: `api/v1/category/${id}`,
+        initRoute: `/category/${id}`,
         initCredentials: data,
         initToken: { token },
         functionFetching: onChildrenFetching,
@@ -605,7 +605,7 @@ export function useGafpriCategory({
       gafpriFetch({
         initMethod: 'PATCH',
         initApi: API_URL,
-        initRoute: `api/v1/category/${currentId}`,
+        initRoute: `/category/${currentId}`,
         initCredentials: updatedPayload,
         initToken: { token },
         functionFetching: onFetching,
@@ -620,7 +620,7 @@ export function useGafpriCategory({
       gafpriFetch({
         initMethod: 'DELETE',
         initApi: API_URL,
-        initRoute: `api/v1/category/${id}`,
+        initRoute: `/category/${id}`,
         initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,

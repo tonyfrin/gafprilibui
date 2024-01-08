@@ -16,6 +16,7 @@ var _helpers = require("../helpers");
 var _Validations = require("../Validations");
 var _Context = require("../Context");
 var _Changes = require("../Changes");
+var _Constans = require("../Constans");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -292,10 +293,10 @@ function useGafpriCategory(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_category$data$items = category.data.items) === null || _category$data$items === void 0 ? void 0 : _category$data$items.length) || 0;
             if (category.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token) {
+              if (token && _Constans.API_URL) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: 'http://localhost:4000',
+                  initApi: _Constans.API_URL,
                   initRoute: 'api/v1/category',
                   initToken: {
                     token: token
@@ -378,7 +379,7 @@ function useGafpriCategory(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token) {
+    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token && _Constans.API_URL) {
       var payload = {
         name: name,
         parentId: parentId,
@@ -391,7 +392,7 @@ function useGafpriCategory(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
+        initApi: _Constans.API_URL,
         initRoute: 'api/v1/category',
         initCredentials: updatedPayload,
         initToken: {
@@ -420,7 +421,7 @@ function useGafpriCategory(_ref) {
     return children;
   }
   function deleteParentId(id) {
-    if (token) {
+    if (token && _Constans.API_URL) {
       var currentCategory = getById(id);
       var data = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, currentCategory !== null && currentCategory !== void 0 && currentCategory.name ? {
         name: currentCategory.name
@@ -435,7 +436,7 @@ function useGafpriCategory(_ref) {
       });
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
+        initApi: _Constans.API_URL,
         initRoute: "api/v1/category/".concat(id),
         initCredentials: data,
         initToken: {
@@ -448,7 +449,7 @@ function useGafpriCategory(_ref) {
     }
   }
   var update = function update() {
-    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token) {
+    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token && _Constans.API_URL) {
       var payload = {
         name: name,
         parentId: parentId,
@@ -461,7 +462,7 @@ function useGafpriCategory(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
+        initApi: _Constans.API_URL,
         initRoute: "api/v1/category/".concat(currentId),
         initCredentials: updatedPayload,
         initToken: {
@@ -474,10 +475,10 @@ function useGafpriCategory(_ref) {
     }
   };
   var deleteCategory = function deleteCategory(id) {
-    if (token) {
+    if (token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
+        initApi: _Constans.API_URL,
         initRoute: "api/v1/category/".concat(id),
         initToken: {
           token: token

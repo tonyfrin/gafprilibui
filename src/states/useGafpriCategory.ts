@@ -23,6 +23,7 @@ import {
   generalChangePhoto,
   generalChangeStatus,
 } from '../Changes';
+import { API_URL } from '../Constans';
 
 export interface CategoryAttributes {
   id: number;
@@ -420,10 +421,10 @@ export function useGafpriCategory({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token) {
+      if (token && API_URL) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: 'http://localhost:4000',
+          initApi: API_URL,
           initRoute: 'api/v1/category',
           initToken: { token },
           functionFetching: notReady,
@@ -512,7 +513,8 @@ export function useGafpriCategory({
       descriptionValid &&
       photoValid &&
       statusValid &&
-      token
+      token &&
+      API_URL
     ) {
       const payload = {
         name,
@@ -528,7 +530,7 @@ export function useGafpriCategory({
 
       gafpriFetch({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
+        initApi: API_URL,
         initRoute: 'api/v1/category',
         initCredentials: updatedPayload,
         initToken: { token },
@@ -554,7 +556,7 @@ export function useGafpriCategory({
   }
 
   function deleteParentId(id: number): void {
-    if (token) {
+    if (token && API_URL) {
       const currentCategory = getById(id);
       const data = {
         ...(currentCategory?.name ? { name: currentCategory.name } : {}),
@@ -567,7 +569,7 @@ export function useGafpriCategory({
       };
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
+        initApi: API_URL,
         initRoute: `api/v1/category/${id}`,
         initCredentials: data,
         initToken: { token },
@@ -585,7 +587,8 @@ export function useGafpriCategory({
       descriptionValid &&
       photoValid &&
       statusValid &&
-      token
+      token &&
+      API_URL
     ) {
       const payload = {
         name,
@@ -601,7 +604,7 @@ export function useGafpriCategory({
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
+        initApi: API_URL,
         initRoute: `api/v1/category/${currentId}`,
         initCredentials: updatedPayload,
         initToken: { token },
@@ -613,10 +616,10 @@ export function useGafpriCategory({
   };
 
   const deleteCategory = (id: number): void => {
-    if (token) {
+    if (token && API_URL) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
+        initApi: API_URL,
         initRoute: `api/v1/category/${id}`,
         initToken: { token },
         functionFetching: onFetching,

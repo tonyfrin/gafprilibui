@@ -21,6 +21,12 @@ Object.defineProperty(exports, "ALERT", {
     return _Class.ALERT;
   }
 });
+Object.defineProperty(exports, "API_URL", {
+  enumerable: true,
+  get: function get() {
+    return _Api.API_URL;
+  }
+});
 Object.defineProperty(exports, "AllRoles", {
   enumerable: true,
   get: function get() {

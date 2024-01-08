@@ -31,4 +31,4 @@ export {
   STATE_COUNTRY_DEFAULT,
   CITY_DEFAULT,
 } from './DefaultValue';
-export { getApiUrl, UPLOAD_PHOTO_ROUTE } from './Api';
+export { getApiUrl, UPLOAD_PHOTO_ROUTE, API_URL } from './Api';

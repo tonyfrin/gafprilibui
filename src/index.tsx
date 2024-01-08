@@ -258,6 +258,7 @@ export {
   STATE_COUNTRY_DEFAULT,
   CITY_DEFAULT,
   getApiUrl,
+  API_URL,
   UPLOAD_PHOTO_ROUTE,
   PHOTO_CATEGORY_INPUT,
 } from './Constans';

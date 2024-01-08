@@ -21,6 +21,12 @@ Object.defineProperty(exports, "ALERT", {
     return _Constans.ALERT;
   }
 });
+Object.defineProperty(exports, "API_URL", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.API_URL;
+  }
+});
 Object.defineProperty(exports, "AddressAddForm", {
   enumerable: true,
   get: function get() {

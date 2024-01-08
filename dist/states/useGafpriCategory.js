@@ -25,7 +25,6 @@ function useGafpriCategory(_ref) {
   var _category$data;
   var token = _ref.token,
     useError = _ref.useError;
-  var API_URL = (0, _Constans.getApiUrl)();
   var _useState = (0, _react.useState)(''),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     name = _useState2[0],
@@ -42,7 +41,7 @@ function useGafpriCategory(_ref) {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     category = _useState6[0],
     setCategory = _useState6[1];
-  console.log(API_URL); // eslint-disable-line no-console
+  console.log(_Constans.API_URL); // eslint-disable-line no-console
   var _useState7 = (0, _react.useState)(null),
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
     parentId = _useState8[0],
@@ -295,10 +294,10 @@ function useGafpriCategory(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_category$data$items = category.data.items) === null || _category$data$items === void 0 ? void 0 : _category$data$items.length) || 0;
             if (category.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token && API_URL) {
+              if (token && _Constans.API_URL) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: API_URL,
+                  initApi: _Constans.API_URL,
                   initRoute: '/category',
                   initToken: {
                     token: token
@@ -381,7 +380,7 @@ function useGafpriCategory(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token && API_URL) {
+    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token && _Constans.API_URL) {
       var payload = {
         name: name,
         parentId: parentId,
@@ -394,7 +393,7 @@ function useGafpriCategory(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: API_URL,
+        initApi: _Constans.API_URL,
         initRoute: '/category',
         initCredentials: updatedPayload,
         initToken: {
@@ -423,7 +422,7 @@ function useGafpriCategory(_ref) {
     return children;
   }
   function deleteParentId(id) {
-    if (token && API_URL) {
+    if (token && _Constans.API_URL) {
       var currentCategory = getById(id);
       var data = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, currentCategory !== null && currentCategory !== void 0 && currentCategory.name ? {
         name: currentCategory.name
@@ -438,7 +437,7 @@ function useGafpriCategory(_ref) {
       });
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: API_URL,
+        initApi: _Constans.API_URL,
         initRoute: "/category/".concat(id),
         initCredentials: data,
         initToken: {
@@ -451,7 +450,7 @@ function useGafpriCategory(_ref) {
     }
   }
   var update = function update() {
-    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token && API_URL) {
+    if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token && _Constans.API_URL) {
       var payload = {
         name: name,
         parentId: parentId,
@@ -464,7 +463,7 @@ function useGafpriCategory(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: API_URL,
+        initApi: _Constans.API_URL,
         initRoute: "/category/".concat(currentId),
         initCredentials: updatedPayload,
         initToken: {
@@ -477,10 +476,10 @@ function useGafpriCategory(_ref) {
     }
   };
   var deleteCategory = function deleteCategory(id) {
-    if (token && API_URL) {
+    if (token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: API_URL,
+        initApi: _Constans.API_URL,
         initRoute: "/category/".concat(id),
         initToken: {
           token: token

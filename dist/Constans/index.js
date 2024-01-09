@@ -45,6 +45,18 @@ Object.defineProperty(exports, "CATEGORIES_INPUT", {
     return _Inputs.CATEGORIES_INPUT;
   }
 });
+Object.defineProperty(exports, "CATEGORY_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.CATEGORY_ROUTE;
+  }
+});
+Object.defineProperty(exports, "CATEGORY_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.CATEGORY_STORAGE;
+  }
+});
 Object.defineProperty(exports, "CITY_DEFAULT", {
   enumerable: true,
   get: function get() {
@@ -210,3 +222,4 @@ var _Class = require("./Class");
 var _Inputs = require("./Inputs");
 var _DefaultValue = require("./DefaultValue");
 var _Api = require("./Api");
+var _LocalStorage = require("./LocalStorage");

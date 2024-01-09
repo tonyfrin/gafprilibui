@@ -35,13 +35,12 @@ function useGafpriCategory(_ref) {
     setNameValid = _useState4[1];
   var _useState5 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)('GS_CATEGORY_V2', null)
+        items: (0, _Context.getItem)(_Constans.CATEGORY_STORAGE, null)
       }
     }),
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     category = _useState6[0],
     setCategory = _useState6[1];
-  console.log(_Constans.API_URL); // eslint-disable-line no-console
   var _useState7 = (0, _react.useState)(null),
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
     parentId = _useState8[0],
@@ -262,7 +261,7 @@ function useGafpriCategory(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)('GS_CATEGORY_V2', newData.data.items);
+    (0, _Context.saveItem)(_Constans.CATEGORY_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setCategory(newData);
@@ -298,7 +297,7 @@ function useGafpriCategory(_ref) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
                   initApi: _Constans.API_URL,
-                  initRoute: '/category',
+                  initRoute: _Constans.CATEGORY_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -394,7 +393,7 @@ function useGafpriCategory(_ref) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
         initApi: _Constans.API_URL,
-        initRoute: '/category',
+        initRoute: _Constans.CATEGORY_ROUTE,
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -438,7 +437,7 @@ function useGafpriCategory(_ref) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
         initApi: _Constans.API_URL,
-        initRoute: "/category/".concat(id),
+        initRoute: "".concat(_Constans.CATEGORY_ROUTE, "/").concat(id),
         initCredentials: data,
         initToken: {
           token: token
@@ -464,7 +463,7 @@ function useGafpriCategory(_ref) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
         initApi: _Constans.API_URL,
-        initRoute: "/category/".concat(currentId),
+        initRoute: "".concat(_Constans.CATEGORY_ROUTE, "/").concat(currentId),
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -480,7 +479,7 @@ function useGafpriCategory(_ref) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
         initApi: _Constans.API_URL,
-        initRoute: "/category/".concat(id),
+        initRoute: "".concat(_Constans.CATEGORY_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

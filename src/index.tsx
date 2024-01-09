@@ -261,6 +261,8 @@ export {
   API_URL,
   UPLOAD_PHOTO_ROUTE,
   PHOTO_CATEGORY_INPUT,
+  CATEGORY_STORAGE,
+  CATEGORY_ROUTE,
 } from './Constans';
 export { getItem, saveItem } from './Context';
 export {

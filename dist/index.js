@@ -75,6 +75,18 @@ Object.defineProperty(exports, "CATEGORIES_INPUT", {
     return _Constans.CATEGORIES_INPUT;
   }
 });
+Object.defineProperty(exports, "CATEGORY_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.CATEGORY_ROUTE;
+  }
+});
+Object.defineProperty(exports, "CATEGORY_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.CATEGORY_STORAGE;
+  }
+});
 Object.defineProperty(exports, "CITY_DEFAULT", {
   enumerable: true,
   get: function get() {

@@ -26,6 +26,7 @@ import {
   ALERT,
   DISABLED,
   PHOTO_CATEGORY_INPUT,
+  CURRENCIES_SYMBOL_INPUT,
 } from '../Constans';
 
 export type ValidationInput = {
@@ -460,6 +461,24 @@ export const generalValidationStatus = (
   currentValid: boolean
 ): boolean => {
   const valid = validationSelect(newValue, STATUS_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationCurrenciesSymbol = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean,
+  required = true
+): boolean => {
+  const valid = validationInput(
+    newValue,
+    /\$|Bs|€/,
+    CURRENCIES_SYMBOL_INPUT,
+    required
+  );
   if (valid !== currentValid) {
     setValid(valid);
   }

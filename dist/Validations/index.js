@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationUserName = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationPostCode = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationDescription = exports.generalValidationButtonNext = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
+exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationUserName = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationPostCode = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationDescription = exports.generalValidationCurrenciesSymbol = exports.generalValidationButtonNext = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
 var _helpers = require("../helpers");
 var _Constans = require("../Constans");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
@@ -321,3 +321,12 @@ var generalValidationStatus = function generalValidationStatus(newValue, setVali
   return valid;
 };
 exports.generalValidationStatus = generalValidationStatus;
+var generalValidationCurrenciesSymbol = function generalValidationCurrenciesSymbol(newValue, setValid, currentValid) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var valid = (0, _helpers.validationInput)(newValue, /\$|Bs|€/, _Constans.CURRENCIES_SYMBOL_INPUT, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationCurrenciesSymbol = generalValidationCurrenciesSymbol;

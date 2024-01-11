@@ -18,3 +18,4 @@ export declare const GALLERY_IMAGE_INPUT = "gallery-image-input-id";
 export declare const PARENT_ID_INPUT = "parent-id-input-id";
 export declare const STATUS_INPUT = "status-input-id";
 export declare const PHOTO_CATEGORY_INPUT = "photo-category-input-id";
+export declare const CURRENCIES_SYMBOL_INPUT = "currencies-symbol-input-id";

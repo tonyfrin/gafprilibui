@@ -6,6 +6,7 @@ import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';
 import type { UseCurrenciesReturn } from '../../states';
+import { InputName, InputCurrenciesSymbol } from '../Input';
 
 export type CurrencyFormProps = {
   use: UseCurrenciesReturn;
@@ -102,37 +103,29 @@ export const CurrencyForm = ({
           {...infoContainerProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Nombre',
-                type: 'text',
-                id: `nameCurrencies`,
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeName(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.name,
+            <InputName
+              changeName={use.actions.changeName}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.name,
+                },
+                styles: {
+                  width: '85%',
+                },
+                ...nameInputProps,
               }}
-              styles={{
-                width: '85%',
-              }}
-              {...nameInputProps}
             />
-            <Input
-              inputProps={{
-                placeholder: 'Símbolo',
-                type: 'text',
-                id: `symbolCurrencies`,
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeSymbol(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.symbol,
+            <InputCurrenciesSymbol
+              changeSymbol={use.actions.changeSymbol}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.symbol,
+                },
+                styles: {
+                  width: '85%',
+                },
+                ...symbolInputProps,
               }}
-              styles={{
-                width: '85%',
-              }}
-              {...symbolInputProps}
             />
           </>
         </ContainerButton>

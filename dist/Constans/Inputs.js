@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ZIP_CODE_INPUT = exports.USER_NAME_INPUT = exports.STATUS_INPUT = exports.STATE_COUNTRY_INPUT = exports.SKU_INPUT = exports.SITE_INPUT = exports.PHOTO_INPUT = exports.PHOTO_CATEGORY_INPUT = exports.PASSWORD_INPUT = exports.PARENT_ID_INPUT = exports.NAME_INPUT = exports.LAST_NAME_INPUT = exports.GALLERY_IMAGE_INPUT = exports.DESCRIPTION_INPUT = exports.COUNTRY_INPUT = exports.CITY_INPUT = exports.CATEGORIES_INPUT = exports.BUTTON_NEXT_INPUT = exports.ADDRESS2_INPUT = exports.ADDRESS1_INPUT = void 0;
+exports.ZIP_CODE_INPUT = exports.USER_NAME_INPUT = exports.STATUS_INPUT = exports.STATE_COUNTRY_INPUT = exports.SKU_INPUT = exports.SITE_INPUT = exports.PHOTO_INPUT = exports.PHOTO_CATEGORY_INPUT = exports.PASSWORD_INPUT = exports.PARENT_ID_INPUT = exports.NAME_INPUT = exports.LAST_NAME_INPUT = exports.GALLERY_IMAGE_INPUT = exports.DESCRIPTION_INPUT = exports.CURRENCIES_SYMBOL_INPUT = exports.COUNTRY_INPUT = exports.CITY_INPUT = exports.CATEGORIES_INPUT = exports.BUTTON_NEXT_INPUT = exports.ADDRESS2_INPUT = exports.ADDRESS1_INPUT = void 0;
 var NAME_INPUT = 'name-input-id';
 exports.NAME_INPUT = NAME_INPUT;
 var LAST_NAME_INPUT = 'last-name-input-id';
@@ -44,3 +44,5 @@ var STATUS_INPUT = 'status-input-id';
 exports.STATUS_INPUT = STATUS_INPUT;
 var PHOTO_CATEGORY_INPUT = 'photo-category-input-id';
 exports.PHOTO_CATEGORY_INPUT = PHOTO_CATEGORY_INPUT;
+var CURRENCIES_SYMBOL_INPUT = 'currencies-symbol-input-id';
+exports.CURRENCIES_SYMBOL_INPUT = CURRENCIES_SYMBOL_INPUT;

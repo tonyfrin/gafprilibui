@@ -274,3 +274,17 @@ export const generalChangeStatus = (
     setValue,
   });
 };
+
+export const generalChangeCurrenciesSymbol = (
+  value: string,
+  validation: (valueValid: string) => boolean,
+  setValue: (transformedValue: string) => void
+): void => {
+  const valueClean = DOMPurify.sanitize(value);
+  const name = toTitleCase(valueClean);
+  changeInputText({
+    value: name,
+    validation,
+    setValue,
+  });
+};

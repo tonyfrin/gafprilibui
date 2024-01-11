@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.generalChangeUserName = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeDescription = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAddress = void 0;
+exports.generalChangeUserName = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAddress = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _axios = _interopRequireDefault(require("axios"));
@@ -237,3 +237,13 @@ var generalChangeStatus = function generalChangeStatus(options, validation, setD
   });
 };
 exports.generalChangeStatus = generalChangeStatus;
+var generalChangeCurrenciesSymbol = function generalChangeCurrenciesSymbol(value, validation, setValue) {
+  var valueClean = _dompurify["default"].sanitize(value);
+  var name = (0, _helpers.toTitleCase)(valueClean);
+  (0, _helpers.changeInputText)({
+    value: name,
+    validation: validation,
+    setValue: setValue
+  });
+};
+exports.generalChangeCurrenciesSymbol = generalChangeCurrenciesSymbol;

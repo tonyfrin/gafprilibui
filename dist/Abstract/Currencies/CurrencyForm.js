@@ -6,10 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CurrencyForm = void 0;
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _react = _interopRequireDefault(require("react"));
-var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
+var _Input = require("../Input");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var CurrencyForm = function CurrencyForm(_ref) {
   var use = _ref.use,
     formType = _ref.formType,
@@ -65,32 +68,26 @@ var CurrencyForm = function CurrencyForm(_ref) {
     styles: {
       width: '96.5%'
     }
-  }, infoContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Nombre',
-      type: 'text',
-      id: "nameCurrencies",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeName(event.target.value);
+  }, infoContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
+    changeName: use.actions.changeName,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.name
       },
-      defaultValue: use.states.name
-    },
-    styles: {
-      width: '85%'
-    }
-  }, nameInputProps)), /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Símbolo',
-      type: 'text',
-      id: "symbolCurrencies",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeSymbol(event.target.value);
+      styles: {
+        width: '85%'
+      }
+    }, nameInputProps)
+  }), /*#__PURE__*/_react["default"].createElement(_Input.InputCurrenciesSymbol, {
+    changeSymbol: use.actions.changeSymbol,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.symbol
       },
-      defaultValue: use.states.symbol
-    },
-    styles: {
-      width: '85%'
-    }
-  }, symbolInputProps))))));
+      styles: {
+        width: '85%'
+      }
+    }, symbolInputProps)
+  })))));
 };
 exports.CurrencyForm = CurrencyForm;

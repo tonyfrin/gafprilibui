@@ -81,6 +81,24 @@ Object.defineProperty(exports, "COUNTRY_INPUT", {
     return _Inputs.COUNTRY_INPUT;
   }
 });
+Object.defineProperty(exports, "CURRENCIES_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.CURRENCIES_ROUTE;
+  }
+});
+Object.defineProperty(exports, "CURRENCIES_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.CURRENCIES_STORAGE;
+  }
+});
+Object.defineProperty(exports, "CURRENCIES_SYMBOL_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CURRENCIES_SYMBOL_INPUT;
+  }
+});
 Object.defineProperty(exports, "Cities", {
   enumerable: true,
   get: function get() {

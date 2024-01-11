@@ -33,3 +33,4 @@ export declare const validationInputArray: (values: string[], match: RegExp, com
 export declare const generalValidationGalleryImage: (value: string[], setValid: (valueValid: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
 export declare const generalValidationParentId: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
 export declare const generalValidationStatus: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationCurrenciesSymbol: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;

@@ -37,3 +37,5 @@ export { SelectParentId } from './SelectParentId';
 export type { SelectParentIdProps } from './SelectParentId';
 export { SelectStatus } from './SelectStatus';
 export type { SelectStatusProps } from './SelectStatus';
+export { InputCurrenciesSymbol } from './InputCurrenciesSymbol';
+export type { InputCurrenciesSymbolProps } from './InputCurrenciesSymbol';

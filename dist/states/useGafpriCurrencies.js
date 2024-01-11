@@ -13,6 +13,9 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
 var _Context = require("../Context");
+var _Constans = require("../Constans");
+var _Validations = require("../Validations");
+var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function useGafpriCurrencies(_ref) {
@@ -57,7 +60,7 @@ function useGafpriCurrencies(_ref) {
     setIsUpdate = _useState18[1];
   var _useState19 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)('GS_CURRENCIES_V2', null)
+        items: (0, _Context.getItem)(_Constans.CURRENCIES_STORAGE, null)
       }
     }),
     _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
@@ -130,41 +133,21 @@ function useGafpriCurrencies(_ref) {
 
   // Funciones de Validacion
   var validationName = function validationName(value) {
-    return (0, _helpers.validationInputName)({
-      name: value,
-      inputId: "nameCurrencies",
-      setValid: setNameValid
-    });
+    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
   };
   var validationSymbol = function validationSymbol(newValue) {
-    var valid = (0, _helpers.validationInput)(newValue, /\$|Bs|€/, 'symbolCurrencies', true);
-    setSymbolValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationCurrenciesSymbol)(newValue, setSymbolValid, symbolValid);
   };
   var validationButtonNext = function validationButtonNext() {
-    if (nameValid && symbolValid) {
-      (0, _helpers.removeClass)("buttonNextCurrencies", 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)("buttonNextCurrencies", 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(nameValid, symbolValid);
   };
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    var newName = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newName,
-      validation: validationName,
-      setValue: setName
-    });
+    (0, _Changes.generalChangeName)(value, validationName, setName);
   };
   var changeSymbol = function changeSymbol(value) {
-    var newLastName = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newLastName,
-      validation: validationSymbol,
-      setValue: setSymbol
-    });
+    (0, _Changes.generalChangeCurrenciesSymbol)(value, validationSymbol, setSymbol);
   };
 
   // Manejo de la data de Currencies
@@ -173,7 +156,7 @@ function useGafpriCurrencies(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setCurrenciesDataStorage = function setCurrenciesDataStorage(newData) {
-    (0, _Context.saveItem)('GS_CURRENCIES_V2', newData.data.items);
+    (0, _Context.saveItem)(_Constans.CURRENCIES_STORAGE, newData.data.items);
   };
   var setCurrenciesData = function setCurrenciesData(newData) {
     setCurrencies(newData);
@@ -205,11 +188,11 @@ function useGafpriCurrencies(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_currencies$data$item = currencies.data.items) === null || _currencies$data$item === void 0 ? void 0 : _currencies$data$item.length) || 0;
             if (currencies.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token) {
+              if (token && _Constans.API_URL) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: 'http://localhost:4000',
-                  initRoute: 'api/v1/currencies',
+                  initApi: _Constans.API_URL,
+                  initRoute: _Constans.CURRENCIES_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -291,11 +274,11 @@ function useGafpriCurrencies(_ref) {
     });
   };
   var addCurrencies = function addCurrencies() {
-    if (nameValid && symbolValid && token) {
+    if (nameValid && symbolValid && token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/currencies',
+        initApi: _Constans.API_URL,
+        initRoute: _Constans.CURRENCIES_ROUTE,
         initCredentials: {
           name: name,
           symbol: symbol
@@ -316,11 +299,11 @@ function useGafpriCurrencies(_ref) {
     })) || null;
   }
   var updateCurrency = function updateCurrency() {
-    if (nameValid && symbolValid && token) {
+    if (nameValid && symbolValid && token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/currencies/".concat(currentId),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.CURRENCIES_ROUTE, "/").concat(currentId),
         initCredentials: {
           name: name,
           symbol: symbol
@@ -335,11 +318,11 @@ function useGafpriCurrencies(_ref) {
     }
   };
   var deleteCurrency = function deleteCurrency(id) {
-    if (token) {
+    if (token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/currencies/".concat(id),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.CURRENCIES_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

@@ -27,3 +27,4 @@ export declare const generalChangeStatus: (options: SingleValue<{
     value: string;
     label: string;
 }>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeCurrenciesSymbol: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;

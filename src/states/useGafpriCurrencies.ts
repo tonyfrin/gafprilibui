@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
 import {
-  changeInputText,
-  removeClass,
-  addClass,
-  validationInputName,
-  validationInput,
-  toTitleCase,
   getLastEntryDateAndCount,
   ErrorResponseProps,
   CustomErrorResponseProps,
@@ -13,6 +7,13 @@ import {
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { UseErrorReturn } from './useGafpriError';
+import { API_URL, CURRENCIES_STORAGE, CURRENCIES_ROUTE } from '../Constans';
+import {
+  generalValidationName,
+  generalValidationCurrenciesSymbol,
+  generalValidationButtonNext,
+} from '../Validations';
+import { generalChangeName, generalChangeCurrenciesSymbol } from '../Changes';
 
 export interface CurrenciesAttributes {
   id: number;
@@ -145,7 +146,7 @@ export function useGafpriCurrencies({
   const [isUpdate, setIsUpdate] = useState(false);
   const [currencies, setCurrencies] = useState<CurrenciesData>({
     data: {
-      items: getItem('GS_CURRENCIES_V2', null),
+      items: getItem(CURRENCIES_STORAGE, null),
     },
   });
   const { error } = useError.states;
@@ -213,49 +214,28 @@ export function useGafpriCurrencies({
 
   // Funciones de Validacion
   const validationName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: `nameCurrencies`,
-      setValid: setNameValid,
-    });
+    return generalValidationName(value, setNameValid, nameValid);
   };
 
   const validationSymbol = (newValue: string): boolean => {
-    const valid = validationInput(
+    return generalValidationCurrenciesSymbol(
       newValue,
-      /\$|Bs|€/,
-      'symbolCurrencies',
-      true
+      setSymbolValid,
+      symbolValid
     );
-    setSymbolValid(valid);
-    return valid;
   };
 
   const validationButtonNext = (): void => {
-    if (nameValid && symbolValid) {
-      removeClass(`buttonNextCurrencies`, 'gs-disabled');
-    } else {
-      addClass(`buttonNextCurrencies`, 'gs-disabled');
-    }
+    generalValidationButtonNext(nameValid, symbolValid);
   };
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    const newName = toTitleCase(value);
-    changeInputText({
-      value: newName,
-      validation: validationName,
-      setValue: setName,
-    });
+    generalChangeName(value, validationName, setName);
   };
 
   const changeSymbol = (value: string): void => {
-    const newLastName = toTitleCase(value);
-    changeInputText({
-      value: newLastName,
-      validation: validationSymbol,
-      setValue: setSymbol,
-    });
+    generalChangeCurrenciesSymbol(value, validationSymbol, setSymbol);
   };
 
   // Manejo de la data de Currencies
@@ -268,7 +248,7 @@ export function useGafpriCurrencies({
     : null;
 
   const setCurrenciesDataStorage = (newData: CurrenciesData): void => {
-    saveItem('GS_CURRENCIES_V2', newData.data.items);
+    saveItem(CURRENCIES_STORAGE, newData.data.items);
   };
 
   const setCurrenciesData = (newData: CurrenciesData): void => {
@@ -300,11 +280,11 @@ export function useGafpriCurrencies({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token) {
+      if (token && API_URL) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: 'http://localhost:4000',
-          initRoute: 'api/v1/currencies',
+          initApi: API_URL,
+          initRoute: CURRENCIES_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onCurrencies,
@@ -389,11 +369,11 @@ export function useGafpriCurrencies({
   };
 
   const addCurrencies = (): void => {
-    if (nameValid && symbolValid && token) {
+    if (nameValid && symbolValid && token && API_URL) {
       gafpriFetch({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/currencies',
+        initApi: API_URL,
+        initRoute: CURRENCIES_ROUTE,
         initCredentials: {
           name,
           symbol,
@@ -413,11 +393,11 @@ export function useGafpriCurrencies({
   }
 
   const updateCurrency = (): void => {
-    if (nameValid && symbolValid && token) {
+    if (nameValid && symbolValid && token && API_URL) {
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/currencies/${currentId}`,
+        initApi: API_URL,
+        initRoute: `${CURRENCIES_ROUTE}/${currentId}`,
         initCredentials: {
           name,
           symbol,
@@ -431,11 +411,11 @@ export function useGafpriCurrencies({
   };
 
   const deleteCurrency = (id: number): void => {
-    if (token) {
+    if (token && API_URL) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/currencies/${id}`,
+        initApi: API_URL,
+        initRoute: `${CURRENCIES_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,

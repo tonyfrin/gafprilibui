@@ -195,6 +195,12 @@ Object.defineProperty(exports, "InputCity", {
     return _Input.InputCity;
   }
 });
+Object.defineProperty(exports, "InputCurrenciesSymbol", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputCurrenciesSymbol;
+  }
+});
 Object.defineProperty(exports, "InputDescription", {
   enumerable: true,
   get: function get() {

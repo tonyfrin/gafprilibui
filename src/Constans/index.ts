@@ -25,11 +25,18 @@ export {
   PARENT_ID_INPUT,
   STATUS_INPUT,
   PHOTO_CATEGORY_INPUT,
+  CURRENCIES_SYMBOL_INPUT,
 } from './Inputs';
 export {
   COUNTRY_DEFAULT,
   STATE_COUNTRY_DEFAULT,
   CITY_DEFAULT,
 } from './DefaultValue';
-export { getApiUrl, UPLOAD_PHOTO_ROUTE, API_URL, CATEGORY_ROUTE } from './Api';
-export { CATEGORY_STORAGE } from './LocalStorage';
+export {
+  getApiUrl,
+  UPLOAD_PHOTO_ROUTE,
+  API_URL,
+  CATEGORY_ROUTE,
+  CURRENCIES_ROUTE,
+} from './Api';
+export { CATEGORY_STORAGE, CURRENCIES_STORAGE } from './LocalStorage';

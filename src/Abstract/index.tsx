@@ -41,6 +41,7 @@ export {
   SelectStateCountry,
   SelectParentId,
   SelectStatus,
+  InputCurrenciesSymbol,
 } from './Input';
 export type {
   InputStyle,
@@ -64,6 +65,7 @@ export type {
   SelectStateCountryProps,
   SelectParentIdProps,
   SelectStatusProps,
+  InputCurrenciesSymbolProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';

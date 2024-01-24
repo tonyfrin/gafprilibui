@@ -12,11 +12,11 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
-var _axios = _interopRequireDefault(require("axios"));
 var _helpers = require("../helpers");
 var _Validations = require("../Validations");
-var _Constans = require("../Constans");
+var _Changes = require("../Changes");
 var _Context = require("../Context");
+var _Constans = require("../Constans");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -59,41 +59,45 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
     isAddDocument = _useState16[0],
     setIsAddDocument = _useState16[1];
-  var _useState17 = (0, _react.useState)('personal'),
+  var _useState17 = (0, _react.useState)(true),
     _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
-    formType = _useState18[0],
-    setFormType = _useState18[1];
-  var _useState19 = (0, _react.useState)(''),
+    isReset = _useState18[0],
+    setIsReset = _useState18[1];
+  var _useState19 = (0, _react.useState)('personal'),
     _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
-    name = _useState20[0],
-    setName = _useState20[1];
-  var _useState21 = (0, _react.useState)(false),
+    formType = _useState20[0],
+    setFormType = _useState20[1];
+  var _useState21 = (0, _react.useState)(''),
     _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
-    nameValid = _useState22[0],
-    setNameValid = _useState22[1];
-  var _useState23 = (0, _react.useState)(''),
+    name = _useState22[0],
+    setName = _useState22[1];
+  var _useState23 = (0, _react.useState)(false),
     _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
-    lastName = _useState24[0],
-    setLastName = _useState24[1];
-  var _useState25 = (0, _react.useState)(true),
+    nameValid = _useState24[0],
+    setNameValid = _useState24[1];
+  var _useState25 = (0, _react.useState)(''),
     _useState26 = (0, _slicedToArray2["default"])(_useState25, 2),
-    lastNameValid = _useState26[0],
-    setLastNameValid = _useState26[1];
-  var _useState27 = (0, _react.useState)(null),
+    lastName = _useState26[0],
+    setLastName = _useState26[1];
+  var _useState27 = (0, _react.useState)(true),
     _useState28 = (0, _slicedToArray2["default"])(_useState27, 2),
-    typeDocumentIdId = _useState28[0],
-    setTypeDocumentIdId = _useState28[1];
-  var _useState29 = (0, _react.useState)(false),
+    lastNameValid = _useState28[0],
+    setLastNameValid = _useState28[1];
+  var _useState29 = (0, _react.useState)(null),
     _useState30 = (0, _slicedToArray2["default"])(_useState29, 2),
-    typeDocumentIdIdValid = _useState30[0],
-    setTypeDocumentIdIdValid = _useState30[1];
-  var _useState31 = (0, _react.useState)({
+    typeDocumentIdId = _useState30[0],
+    setTypeDocumentIdId = _useState30[1];
+  var _useState31 = (0, _react.useState)(false),
+    _useState32 = (0, _slicedToArray2["default"])(_useState31, 2),
+    typeDocumentIdIdValid = _useState32[0],
+    setTypeDocumentIdIdValid = _useState32[1];
+  var _useState33 = (0, _react.useState)({
       value: '',
       label: 'Elija el tipo de Documento'
     }),
-    _useState32 = (0, _slicedToArray2["default"])(_useState31, 2),
-    typeDocumentIdIdDefault = _useState32[0],
-    setTypeDocumentIdIdDefault = _useState32[1];
+    _useState34 = (0, _slicedToArray2["default"])(_useState33, 2),
+    typeDocumentIdIdDefault = _useState34[0],
+    setTypeDocumentIdIdDefault = _useState34[1];
   var typeDocumentIdIdOptions = ((_useTypeDocumentId$st = useTypeDocumentId.states.typeDocumentId.data) === null || _useTypeDocumentId$st === void 0 ? void 0 : (_useTypeDocumentId$st2 = _useTypeDocumentId$st.items) === null || _useTypeDocumentId$st2 === void 0 ? void 0 : _useTypeDocumentId$st2.map(function (item) {
     var countryName = _Constans.Countries[0][item.country];
     var label = "".concat(item.name, " (").concat(countryName, ")");
@@ -102,21 +106,21 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       label: label
     };
   })) || [];
-  var _useState33 = (0, _react.useState)(''),
-    _useState34 = (0, _slicedToArray2["default"])(_useState33, 2),
-    index = _useState34[0],
-    setIndex = _useState34[1];
-  var _useState35 = (0, _react.useState)(false),
+  var _useState35 = (0, _react.useState)(''),
     _useState36 = (0, _slicedToArray2["default"])(_useState35, 2),
-    indexValid = _useState36[0],
-    setIndexValid = _useState36[1];
-  var _useState37 = (0, _react.useState)({
+    index = _useState36[0],
+    setIndex = _useState36[1];
+  var _useState37 = (0, _react.useState)(false),
+    _useState38 = (0, _slicedToArray2["default"])(_useState37, 2),
+    indexValid = _useState38[0],
+    setIndexValid = _useState38[1];
+  var _useState39 = (0, _react.useState)({
       value: '',
       label: 'Elija el tipo de Documento'
     }),
-    _useState38 = (0, _slicedToArray2["default"])(_useState37, 2),
-    indexDefault = _useState38[0],
-    setIndexDefault = _useState38[1];
+    _useState40 = (0, _slicedToArray2["default"])(_useState39, 2),
+    indexDefault = _useState40[0],
+    setIndexDefault = _useState40[1];
   var indexOptions = [{
     label: 'J',
     value: 'J'
@@ -130,29 +134,29 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     label: 'No Aplica',
     value: 'null'
   }];
-  var _useState39 = (0, _react.useState)(''),
-    _useState40 = (0, _slicedToArray2["default"])(_useState39, 2),
-    digit = _useState40[0],
-    setDigit = _useState40[1];
-  var _useState41 = (0, _react.useState)(false),
+  var _useState41 = (0, _react.useState)(''),
     _useState42 = (0, _slicedToArray2["default"])(_useState41, 2),
-    digitValid = _useState42[0],
-    setDigitValid = _useState42[1];
-  var _useState43 = (0, _react.useState)('bill'),
+    digit = _useState42[0],
+    setDigit = _useState42[1];
+  var _useState43 = (0, _react.useState)(false),
     _useState44 = (0, _slicedToArray2["default"])(_useState43, 2),
-    addressType = _useState44[0],
-    setAddressType = _useState44[1];
-  var _useState45 = (0, _react.useState)(true),
+    digitValid = _useState44[0],
+    setDigitValid = _useState44[1];
+  var _useState45 = (0, _react.useState)('bill'),
     _useState46 = (0, _slicedToArray2["default"])(_useState45, 2),
-    addressTypeValid = _useState46[0],
-    setAddressTypeValid = _useState46[1];
-  var _useState47 = (0, _react.useState)({
+    addressType = _useState46[0],
+    setAddressType = _useState46[1];
+  var _useState47 = (0, _react.useState)(true),
+    _useState48 = (0, _slicedToArray2["default"])(_useState47, 2),
+    addressTypeValid = _useState48[0],
+    setAddressTypeValid = _useState48[1];
+  var _useState49 = (0, _react.useState)({
       value: 'bill',
       label: 'Facturación'
     }),
-    _useState48 = (0, _slicedToArray2["default"])(_useState47, 2),
-    addressTypeDefault = _useState48[0],
-    setAddressTypeDefault = _useState48[1];
+    _useState50 = (0, _slicedToArray2["default"])(_useState49, 2),
+    addressTypeDefault = _useState50[0],
+    setAddressTypeDefault = _useState50[1];
   var addressTypeOptions = [{
     label: 'Envío',
     value: 'shipping'
@@ -160,75 +164,75 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     label: 'Facturación',
     value: 'bill'
   }];
-  var _useState49 = (0, _react.useState)(''),
-    _useState50 = (0, _slicedToArray2["default"])(_useState49, 2),
-    address1 = _useState50[0],
-    setAddress1 = _useState50[1];
-  var _useState51 = (0, _react.useState)(false),
+  var _useState51 = (0, _react.useState)(''),
     _useState52 = (0, _slicedToArray2["default"])(_useState51, 2),
-    address1Valid = _useState52[0],
-    setAddress1Valid = _useState52[1];
-  var _useState53 = (0, _react.useState)(''),
+    address1 = _useState52[0],
+    setAddress1 = _useState52[1];
+  var _useState53 = (0, _react.useState)(false),
     _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
-    address2 = _useState54[0],
-    setAddress2 = _useState54[1];
-  var _useState55 = (0, _react.useState)(true),
+    address1Valid = _useState54[0],
+    setAddress1Valid = _useState54[1];
+  var _useState55 = (0, _react.useState)(''),
     _useState56 = (0, _slicedToArray2["default"])(_useState55, 2),
-    address2Valid = _useState56[0],
-    setAddress2Valid = _useState56[1];
-  var _useState57 = (0, _react.useState)(''),
+    address2 = _useState56[0],
+    setAddress2 = _useState56[1];
+  var _useState57 = (0, _react.useState)(true),
     _useState58 = (0, _slicedToArray2["default"])(_useState57, 2),
-    city = _useState58[0],
-    setCity = _useState58[1];
-  var _useState59 = (0, _react.useState)(false),
+    address2Valid = _useState58[0],
+    setAddress2Valid = _useState58[1];
+  var _useState59 = (0, _react.useState)(''),
     _useState60 = (0, _slicedToArray2["default"])(_useState59, 2),
-    cityValid = _useState60[0],
-    setCityValid = _useState60[1];
-  var _useState61 = (0, _react.useState)({
+    city = _useState60[0],
+    setCity = _useState60[1];
+  var _useState61 = (0, _react.useState)(false),
+    _useState62 = (0, _slicedToArray2["default"])(_useState61, 2),
+    cityValid = _useState62[0],
+    setCityValid = _useState62[1];
+  var _useState63 = (0, _react.useState)({
       value: '',
       label: 'Elija la ciudad'
     }),
-    _useState62 = (0, _slicedToArray2["default"])(_useState61, 2),
-    cityDefault = _useState62[0],
-    setCityDefault = _useState62[1];
-  var _useState63 = (0, _react.useState)([]),
     _useState64 = (0, _slicedToArray2["default"])(_useState63, 2),
-    cityOptions = _useState64[0],
-    setCityOptions = _useState64[1];
-  var _useState65 = (0, _react.useState)(''),
+    cityDefault = _useState64[0],
+    setCityDefault = _useState64[1];
+  var _useState65 = (0, _react.useState)([]),
     _useState66 = (0, _slicedToArray2["default"])(_useState65, 2),
-    state = _useState66[0],
-    setStateCountry = _useState66[1];
-  var _useState67 = (0, _react.useState)(false),
+    cityOptions = _useState66[0],
+    setCityOptions = _useState66[1];
+  var _useState67 = (0, _react.useState)(''),
     _useState68 = (0, _slicedToArray2["default"])(_useState67, 2),
-    stateCountryValid = _useState68[0],
-    setStateCountryValid = _useState68[1];
-  var _useState69 = (0, _react.useState)({
+    state = _useState68[0],
+    setStateCountry = _useState68[1];
+  var _useState69 = (0, _react.useState)(false),
+    _useState70 = (0, _slicedToArray2["default"])(_useState69, 2),
+    stateCountryValid = _useState70[0],
+    setStateCountryValid = _useState70[1];
+  var _useState71 = (0, _react.useState)({
       value: '',
       label: 'Elija el Estado'
     }),
-    _useState70 = (0, _slicedToArray2["default"])(_useState69, 2),
-    stateCountryDefault = _useState70[0],
-    setStateCountryDefault = _useState70[1];
-  var _useState71 = (0, _react.useState)([]),
     _useState72 = (0, _slicedToArray2["default"])(_useState71, 2),
-    stateCountryOptions = _useState72[0],
-    setStateCountryOptions = _useState72[1];
-  var _useState73 = (0, _react.useState)(''),
+    stateCountryDefault = _useState72[0],
+    setStateCountryDefault = _useState72[1];
+  var _useState73 = (0, _react.useState)([]),
     _useState74 = (0, _slicedToArray2["default"])(_useState73, 2),
-    country = _useState74[0],
-    setCountry = _useState74[1];
-  var _useState75 = (0, _react.useState)(false),
+    stateCountryOptions = _useState74[0],
+    setStateCountryOptions = _useState74[1];
+  var _useState75 = (0, _react.useState)(''),
     _useState76 = (0, _slicedToArray2["default"])(_useState75, 2),
-    countryValid = _useState76[0],
-    setCountryValid = _useState76[1];
-  var _useState77 = (0, _react.useState)({
+    country = _useState76[0],
+    setCountry = _useState76[1];
+  var _useState77 = (0, _react.useState)(false),
+    _useState78 = (0, _slicedToArray2["default"])(_useState77, 2),
+    countryValid = _useState78[0],
+    setCountryValid = _useState78[1];
+  var _useState79 = (0, _react.useState)({
       value: '',
       label: 'Elija el Pais'
     }),
-    _useState78 = (0, _slicedToArray2["default"])(_useState77, 2),
-    countryDefault = _useState78[0],
-    setCountryDefault = _useState78[1];
+    _useState80 = (0, _slicedToArray2["default"])(_useState79, 2),
+    countryDefault = _useState80[0],
+    setCountryDefault = _useState80[1];
   var countryOptions = [];
   _Constans.Countries.forEach(function (item) {
     Object.keys(item).forEach(function (key) {
@@ -238,45 +242,45 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       });
     });
   });
-  var _useState79 = (0, _react.useState)(''),
-    _useState80 = (0, _slicedToArray2["default"])(_useState79, 2),
-    postCode = _useState80[0],
-    setPostCode = _useState80[1];
-  var _useState81 = (0, _react.useState)(true),
+  var _useState81 = (0, _react.useState)(''),
     _useState82 = (0, _slicedToArray2["default"])(_useState81, 2),
-    postCodeValid = _useState82[0],
-    setPostCodeValid = _useState82[1];
-  var _useState83 = (0, _react.useState)(''),
+    postCode = _useState82[0],
+    setPostCode = _useState82[1];
+  var _useState83 = (0, _react.useState)(true),
     _useState84 = (0, _slicedToArray2["default"])(_useState83, 2),
-    email = _useState84[0],
-    setEmail = _useState84[1];
-  var _useState85 = (0, _react.useState)(false),
+    postCodeValid = _useState84[0],
+    setPostCodeValid = _useState84[1];
+  var _useState85 = (0, _react.useState)(''),
     _useState86 = (0, _slicedToArray2["default"])(_useState85, 2),
-    emailValid = _useState86[0],
-    setEmailValid = _useState86[1];
-  var _useState87 = (0, _react.useState)(''),
+    email = _useState86[0],
+    setEmail = _useState86[1];
+  var _useState87 = (0, _react.useState)(false),
     _useState88 = (0, _slicedToArray2["default"])(_useState87, 2),
-    phone = _useState88[0],
-    setPhone = _useState88[1];
-  var _useState89 = (0, _react.useState)(false),
+    emailValid = _useState88[0],
+    setEmailValid = _useState88[1];
+  var _useState89 = (0, _react.useState)(''),
     _useState90 = (0, _slicedToArray2["default"])(_useState89, 2),
-    phoneValid = _useState90[0],
-    setPhoneValid = _useState90[1];
-  var _useState91 = (0, _react.useState)(''),
+    phone = _useState90[0],
+    setPhone = _useState90[1];
+  var _useState91 = (0, _react.useState)(false),
     _useState92 = (0, _slicedToArray2["default"])(_useState91, 2),
-    type = _useState92[0],
-    setType = _useState92[1];
-  var _useState93 = (0, _react.useState)(false),
+    phoneValid = _useState92[0],
+    setPhoneValid = _useState92[1];
+  var _useState93 = (0, _react.useState)(''),
     _useState94 = (0, _slicedToArray2["default"])(_useState93, 2),
-    typeValid = _useState94[0],
-    setTypeValid = _useState94[1];
-  var _useState95 = (0, _react.useState)({
+    type = _useState94[0],
+    setType = _useState94[1];
+  var _useState95 = (0, _react.useState)(false),
+    _useState96 = (0, _slicedToArray2["default"])(_useState95, 2),
+    typeValid = _useState96[0],
+    setTypeValid = _useState96[1];
+  var _useState97 = (0, _react.useState)({
       value: '',
       label: 'Elija el tipo de Entidad'
     }),
-    _useState96 = (0, _slicedToArray2["default"])(_useState95, 2),
-    typeDefault = _useState96[0],
-    setTypeDefault = _useState96[1];
+    _useState98 = (0, _slicedToArray2["default"])(_useState97, 2),
+    typeDefault = _useState98[0],
+    setTypeDefault = _useState98[1];
   var typeOptions = [{
     value: 'personal',
     label: 'Natural'
@@ -284,45 +288,45 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     value: 'legal',
     label: 'Jurídica'
   }];
-  var _useState97 = (0, _react.useState)('https://categorygafpri.s3.us-east-2.amazonaws.com/fotousuariogafpri.png'),
-    _useState98 = (0, _slicedToArray2["default"])(_useState97, 2),
-    photo = _useState98[0],
-    setPhoto = _useState98[1];
-  var _useState99 = (0, _react.useState)(false),
+  var _useState99 = (0, _react.useState)('https://categorygafpri.s3.us-east-2.amazonaws.com/fotousuariogafpri.png'),
     _useState100 = (0, _slicedToArray2["default"])(_useState99, 2),
-    photoValid = _useState100[0],
-    setPhotoValid = _useState100[1];
+    photo = _useState100[0],
+    setPhoto = _useState100[1];
   var _useState101 = (0, _react.useState)(false),
     _useState102 = (0, _slicedToArray2["default"])(_useState101, 2),
-    submitting = _useState102[0],
-    setSubmitting = _useState102[1];
-  var _useState103 = (0, _react.useState)('https://categorygafpri.s3.us-east-2.amazonaws.com/fotousuariogafpri.png'),
+    photoValid = _useState102[0],
+    setPhotoValid = _useState102[1];
+  var _useState103 = (0, _react.useState)(false),
     _useState104 = (0, _slicedToArray2["default"])(_useState103, 2),
-    documentPhoto = _useState104[0],
-    setDocumentPhoto = _useState104[1];
-  var _useState105 = (0, _react.useState)(false),
+    submitting = _useState104[0],
+    setSubmitting = _useState104[1];
+  var _useState105 = (0, _react.useState)('https://categorygafpri.s3.us-east-2.amazonaws.com/fotousuariogafpri.png'),
     _useState106 = (0, _slicedToArray2["default"])(_useState105, 2),
-    documentPhotoValid = _useState106[0],
-    setDocumentPhotoValid = _useState106[1];
+    documentPhoto = _useState106[0],
+    setDocumentPhoto = _useState106[1];
   var _useState107 = (0, _react.useState)(false),
     _useState108 = (0, _slicedToArray2["default"])(_useState107, 2),
-    documentSubmitting = _useState108[0],
-    setDocumentSubmitting = _useState108[1];
-  var _useState109 = (0, _react.useState)('active'),
+    documentPhotoValid = _useState108[0],
+    setDocumentPhotoValid = _useState108[1];
+  var _useState109 = (0, _react.useState)(false),
     _useState110 = (0, _slicedToArray2["default"])(_useState109, 2),
-    status = _useState110[0],
-    setStatus = _useState110[1];
-  var _useState111 = (0, _react.useState)(false),
+    documentSubmitting = _useState110[0],
+    setDocumentSubmitting = _useState110[1];
+  var _useState111 = (0, _react.useState)('active'),
     _useState112 = (0, _slicedToArray2["default"])(_useState111, 2),
-    statusValid = _useState112[0],
-    setStatusValid = _useState112[1];
-  var _useState113 = (0, _react.useState)({
+    status = _useState112[0],
+    setStatus = _useState112[1];
+  var _useState113 = (0, _react.useState)(false),
+    _useState114 = (0, _slicedToArray2["default"])(_useState113, 2),
+    statusValid = _useState114[0],
+    setStatusValid = _useState114[1];
+  var _useState115 = (0, _react.useState)({
       value: 'active',
       label: 'Activo'
     }),
-    _useState114 = (0, _slicedToArray2["default"])(_useState113, 2),
-    statusDefault = _useState114[0],
-    setStatusDefault = _useState114[1];
+    _useState116 = (0, _slicedToArray2["default"])(_useState115, 2),
+    statusDefault = _useState116[0],
+    setStatusDefault = _useState116[1];
   var statusOptions = [{
     label: 'Activo',
     value: 'active'
@@ -330,59 +334,59 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     label: 'Inactivo',
     value: 'inactive'
   }];
-  var _useState115 = (0, _react.useState)([]),
-    _useState116 = (0, _slicedToArray2["default"])(_useState115, 2),
-    documentId = _useState116[0],
-    setDocumentId = _useState116[1];
   var _useState117 = (0, _react.useState)([]),
     _useState118 = (0, _slicedToArray2["default"])(_useState117, 2),
-    address = _useState118[0],
-    setAddress = _useState118[1];
-  var _useState119 = (0, _react.useState)(false),
+    documentId = _useState118[0],
+    setDocumentId = _useState118[1];
+  var _useState119 = (0, _react.useState)([]),
     _useState120 = (0, _slicedToArray2["default"])(_useState119, 2),
-    addressValid = _useState120[0],
-    setAddressValid = _useState120[1];
-  var _useState121 = (0, _react.useState)({
+    address = _useState120[0],
+    setAddress = _useState120[1];
+  var _useState121 = (0, _react.useState)(false),
+    _useState122 = (0, _slicedToArray2["default"])(_useState121, 2),
+    addressValid = _useState122[0],
+    setAddressValid = _useState122[1];
+  var _useState123 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)('GS_ENTITY_V2', null)
+        items: (0, _Context.getItem)(_Constans.ENTITY_STORAGE, null)
       }
     }),
-    _useState122 = (0, _slicedToArray2["default"])(_useState121, 2),
-    entities = _useState122[0],
-    setEntities = _useState122[1];
+    _useState124 = (0, _slicedToArray2["default"])(_useState123, 2),
+    entities = _useState124[0],
+    setEntities = _useState124[1];
   var error = useError.states.error;
   var changeError = useError.actions.changeError;
-  var _useState123 = (0, _react.useState)(0),
-    _useState124 = (0, _slicedToArray2["default"])(_useState123, 2),
-    entityId = _useState124[0],
-    setEntityId = _useState124[1];
-  var _useState125 = (0, _react.useState)('asc'),
+  var _useState125 = (0, _react.useState)(0),
     _useState126 = (0, _slicedToArray2["default"])(_useState125, 2),
-    orderList = _useState126[0],
-    setOrderList = _useState126[1];
-  var _useState127 = (0, _react.useState)(''),
+    entityId = _useState126[0],
+    setEntityId = _useState126[1];
+  var _useState127 = (0, _react.useState)('asc'),
     _useState128 = (0, _slicedToArray2["default"])(_useState127, 2),
-    searchTerm = _useState128[0],
-    setSearchTerm = _useState128[1];
-  var _useState129 = (0, _react.useState)(1),
+    orderList = _useState128[0],
+    setOrderList = _useState128[1];
+  var _useState129 = (0, _react.useState)(''),
     _useState130 = (0, _slicedToArray2["default"])(_useState129, 2),
-    currentPage = _useState130[0],
-    setCurrentPage = _useState130[1];
+    searchTerm = _useState130[0],
+    setSearchTerm = _useState130[1];
   var _useState131 = (0, _react.useState)(1),
     _useState132 = (0, _slicedToArray2["default"])(_useState131, 2),
-    documentCurrentPage = _useState132[0],
-    setDocumentCurrentPage = _useState132[1];
-  var _useState133 = (0, _react.useState)('name'),
+    currentPage = _useState132[0],
+    setCurrentPage = _useState132[1];
+  var _useState133 = (0, _react.useState)(1),
     _useState134 = (0, _slicedToArray2["default"])(_useState133, 2),
-    searchBy = _useState134[0],
-    setSearchBy = _useState134[1];
-  var _useState135 = (0, _react.useState)({
+    documentCurrentPage = _useState134[0],
+    setDocumentCurrentPage = _useState134[1];
+  var _useState135 = (0, _react.useState)('name'),
+    _useState136 = (0, _slicedToArray2["default"])(_useState135, 2),
+    searchBy = _useState136[0],
+    setSearchBy = _useState136[1];
+  var _useState137 = (0, _react.useState)({
       value: 'name',
       label: 'Nombre'
     }),
-    _useState136 = (0, _slicedToArray2["default"])(_useState135, 2),
-    searchByDefault = _useState136[0],
-    setSearchByDefault = _useState136[1];
+    _useState138 = (0, _slicedToArray2["default"])(_useState137, 2),
+    searchByDefault = _useState138[0],
+    setSearchByDefault = _useState138[1];
   var searchByOptions = [{
     value: 'name',
     label: 'Nombre'
@@ -401,6 +405,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
   }];
   var itemsPerPage = 6;
   var infoReset = function infoReset() {
+    setIsReset(true);
     setName('');
     setNameValid(false);
     setLastName('');
@@ -574,199 +579,96 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    if (nameValid && lastNameValid && typeDocumentIdIdValid && indexValid && digitValid && addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid && emailValid && phoneValid && typeValid && photoValid && statusValid) {
-      (0, _helpers.removeClass)('buttonNext', 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)('buttonNext', 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(nameValid, lastNameValid, typeDocumentIdIdValid, indexValid, digitValid, addressTypeValid, address1Valid, address2Valid, cityValid, stateCountryValid, countryValid, postCodeValid, emailValid, phoneValid, typeValid, photoValid, statusValid);
   };
   var validationButtonNextAddress = function validationButtonNextAddress() {
-    if (addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid) {
-      (0, _helpers.removeClass)('buttonNext', 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)('buttonNext', 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(addressTypeValid, address1Valid, address2Valid, cityValid, stateCountryValid, countryValid, postCodeValid);
   };
   var validationButtonNextDocument = function validationButtonNextDocument() {
-    if (typeDocumentIdIdValid && indexValid && digitValid && documentPhotoValid) {
-      (0, _helpers.removeClass)('buttonNext', 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)('buttonNext', 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(typeDocumentIdIdValid, indexValid, digitValid, documentPhotoValid);
   };
   var validationButtonNextUpdate = function validationButtonNextUpdate() {
-    if (nameValid && lastNameValid && emailValid && phoneValid && typeValid && photoValid && statusValid) {
-      (0, _helpers.removeClass)('buttonNext', 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)('buttonNext', 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(nameValid, lastNameValid, emailValid, phoneValid, typeValid, photoValid, statusValid);
   };
   var validationName = function validationName(value) {
-    return (0, _helpers.validationInputName)({
-      name: value,
-      inputId: 'userName',
-      setValid: setNameValid
-    });
+    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
   };
   var validationLastName = function validationLastName(value) {
-    return (0, _helpers.validationInputName)({
-      name: value,
-      inputId: 'userLastName',
-      setValid: setLastNameValid,
-      required: false
-    });
+    return (0, _Validations.generalValidationLastName)(value, setLastNameValid, lastNameValid);
   };
   var validationTypeDocumentIdId = function validationTypeDocumentIdId(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityTypeDocumentIdId');
-    setTypeDocumentIdIdValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationTypeDocumentIdId)(value, setTypeDocumentIdIdValid, typeDocumentIdIdValid);
   };
   var validationIndex = function validationIndex(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityDocumentIndex');
-    setIndexValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationTypeDocumentIdIndex)(value, setIndexValid, indexValid);
   };
   var validationDigit = function validationDigit(value) {
-    var valid = (0, _helpers.validationInput)(value, /^\d{1,12}(-\d{1,12})?$/, 'entityDocumentDigit', true);
-    setDigitValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationTypeDocumentIdDigit)(value, setDigitValid, digitValid);
   };
   var validationAddressType = function validationAddressType(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'addressType');
-    setAddressTypeValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationAddressType)(value, setAddressTypeValid, addressTypeValid);
   };
   var validationAddress1 = function validationAddress1(value) {
-    return (0, _Validations.validationInputAddress)({
-      value: value,
-      currentValid: address1Valid,
-      inputId: 'address1',
-      setValid: setAddress1Valid
-    });
+    return (0, _Validations.generalValidationAddress1)(value, setAddress1Valid, address1Valid);
   };
   var validationAddress2 = function validationAddress2(value) {
-    return (0, _Validations.validationInputAddress)({
-      value: value,
-      inputId: 'address2',
-      currentValid: address2Valid,
-      setValid: setAddress2Valid,
-      required: false
-    });
+    return (0, _Validations.generalValidationAddress2)(value, setAddress2Valid, address2Valid);
   };
   var validationCity = function validationCity(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityCity');
-    setCityValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectCity)(value, setCityValid, cityValid);
   };
   var validationStateCountry = function validationStateCountry(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityStateCountry');
-    setStateCountryValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectStateCountry)(value, setStateCountryValid, stateCountryValid);
   };
   var validationCountry = function validationCountry(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'entityCountry');
-    setCountryValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectCountry)(value, setCountryValid, countryValid);
   };
   var validationPostCode = function validationPostCode(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, 'entityCodePost');
-    setPostCodeValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPostCode)(value, setPostCodeValid, postCodeValid);
   };
   var validationEmail = function validationEmail(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'entityEmail', false);
-    setEmailValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationEmail)(value, setEmailValid, emailValid);
   };
   var validationPhone = function validationPhone(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10,20}/, 'entityPhone');
-    setPhoneValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPhone)(value, setPhoneValid, phoneValid);
   };
   var validationType = function validationType(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'roleUser');
-    setTypeValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationType)(value, setTypeValid, typeValid);
   };
   var validationPhoto = function validationPhoto(value) {
-    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'entityPhoto');
-    setPhotoValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPhotoEntity)(value, setPhotoValid, photoValid);
   };
   var validationDocumentPhoto = function validationDocumentPhoto(value) {
-    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'entityDocumentPhoto');
-    setDocumentPhotoValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPhotoDocumentId)(value, setDocumentPhotoValid, documentPhotoValid);
   };
   var validationStatus = function validationStatus(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'isActiveUser');
-    setStatusValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationStatus)(value, setStatusValid, statusValid);
   };
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    var newValue = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newValue,
-      validation: validationName,
-      setValue: setName
-    });
+    (0, _Changes.generalChangeName)(value, validationName, setName);
   };
   var changeLastName = function changeLastName(value) {
-    var newValue = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newValue,
-      validation: validationLastName,
-      setValue: setLastName
-    });
+    (0, _Changes.generalChangeLastName)(value, validationLastName, setLastName);
   };
   var changeTypeDocumentIdId = function changeTypeDocumentIdId(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationTypeDocumentIdId,
-      setDefault: setTypeDocumentIdIdDefault,
-      setValue: setTypeDocumentIdId
-    });
+    (0, _Changes.generalChangeTypeDocumentIdId)(options, validationTypeDocumentIdId, setTypeDocumentIdIdDefault, setTypeDocumentIdId);
   };
   var changeIndex = function changeIndex(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationIndex,
-      setDefault: setIndexDefault,
-      setValue: setIndex
-    });
+    (0, _Changes.generalChangeDocumentIdIndex)(options, validationIndex, setIndexDefault, setIndex);
   };
   var changeDigit = function changeDigit(newDigit) {
-    (0, _helpers.changeInputText)({
-      value: newDigit,
-      validation: validationDigit,
-      setValue: setDigit
-    });
+    (0, _Changes.generalChangeDocumentIdDigit)(newDigit, validationDigit, setDigit);
   };
   var changeAddressType = function changeAddressType(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationAddressType,
-      setDefault: setAddressTypeDefault,
-      setValue: setAddressType
-    });
+    (0, _Changes.generalChangeAddressType)(options, validationAddressType, setAddressTypeDefault, setAddressType);
   };
   var changeAddress1 = function changeAddress1(value) {
-    var newAddress = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newAddress,
-      validation: validationAddress1,
-      setValue: setAddress1
-    });
+    (0, _Changes.generalChangeAddress)(value, validationAddress1, setAddress1);
   };
   var changeAddress2 = function changeAddress2(value) {
-    var newAddress = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newAddress,
-      validation: validationAddress2,
-      setValue: setAddress2
-    });
+    (0, _Changes.generalChangeAddress)(value, validationAddress2, setAddress2);
   };
   var changeTypeInAllAddresses = function changeTypeInAllAddresses(addresses, newType) {
     return addresses.map(function (item) {
@@ -786,155 +688,45 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     });
   };
   var changeCity = function changeCity(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationCity,
-      setDefault: setCityDefault,
-      setValue: setCity
-    });
+    (0, _Changes.generalChangeCityStateCountry)(options, validationCity, setCityDefault, setCity, setIsReset);
   };
   var changeCityOptions = _react["default"].useCallback(function () {
-    var newValueCity = [];
-    if (_Constans.Cities[0][country]) {
-      if (Array.isArray(_Constans.Cities[0][country][0][state])) {
-        _Constans.Cities[0][country][0][state].forEach(function (item) {
-          Object.keys(item).forEach(function (key) {
-            newValueCity.push({
-              value: item[key],
-              label: item[key]
-            });
-          });
-        });
-      }
-    }
-    setCityDefault({
-      label: 'Elija la ciudad',
-      value: ''
-    });
-    setCity('');
-    setCityOptions(newValueCity);
-  }, [country, state]);
+    (0, _Changes.generalChangeCityOptions)(country, state, setCityDefault, setCity, setCityOptions, isReset);
+  }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
+
   var changeStateCountry = function changeStateCountry(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationStateCountry,
-      setDefault: setStateCountryDefault,
-      setValue: setStateCountry
-    });
+    (0, _Changes.generalChangeCityStateCountry)(options, validationStateCountry, setStateCountryDefault, setStateCountry, setIsReset);
   };
   var changeStateCountryOptions = _react["default"].useCallback(function () {
-    var newValueState = [];
-    if (country && _Constans.StatesCountries[0][country].length > 0) {
-      _Constans.StatesCountries[0][country].forEach(function (item) {
-        Object.keys(item).forEach(function (key) {
-          newValueState.push({
-            value: key,
-            label: item[key]
-          });
-        });
-      });
-    }
-    setStateCountryDefault({
-      label: 'Elija el Estado',
-      value: ''
-    });
-    setStateCountry('');
-    setStateCountryOptions(newValueState);
-  }, [country]);
+    (0, _Changes.generalChangeStateCountryOptions)(country, setStateCountryDefault, setStateCountry, setStateCountryOptions, isReset);
+  }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
+
   var changeCountry = function changeCountry(options) {
-    changeStateCountryOptions();
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationCountry,
-      setDefault: setCountryDefault,
-      setValue: setCountry
-    });
+    (0, _Changes.generalChangeCityStateCountry)(options, validationCountry, setCountryDefault, setCountry, setIsReset);
   };
   var changePostCode = function changePostCode(newPostCode) {
-    (0, _helpers.changeInputText)({
-      value: newPostCode,
-      validation: validationPostCode,
-      setValue: setPostCode
-    });
+    (0, _Changes.generalChangePostCode)(newPostCode, validationPostCode, setPostCode);
   };
   var changeEmail = function changeEmail(inputValue) {
-    var newEmail = inputValue.toLocaleLowerCase();
-    (0, _helpers.changeInputText)({
-      value: newEmail,
-      validation: validationEmail,
-      setValue: setEmail
-    });
+    (0, _Changes.generalChangeEmail)(inputValue, validationEmail, setEmail);
   };
   var changePhone = function changePhone(newPhone) {
-    (0, _helpers.changeInputText)({
-      value: newPhone,
-      validation: validationPhone,
-      setValue: setPhone
-    });
+    (0, _Changes.generalChangePhone)(newPhone, validationPhone, setPhone);
   };
   var changeType = function changeType(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationType,
-      setDefault: setTypeDefault,
-      setValue: setType
-    });
+    (0, _Changes.generalChangeType)(options, validationType, setTypeDefault, setType);
   };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
-      var newFile, mimeType, formData, config, response;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            newFile = e.target.files && e.target.files[0];
-            if (newFile) {
-              _context.next = 3;
-              break;
-            }
-            return _context.abrupt("return");
-          case 3:
-            // Obtén el tipo MIME en función de la extensión del archivo
-            mimeType = (0, _helpers.getMimeTypeByExtension)(newFile.name);
-            if (mimeType) {
-              _context.next = 7;
-              break;
-            }
-            useError.actions.changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
-            return _context.abrupt("return");
-          case 7:
-            formData = new FormData();
-            formData.append('file', newFile);
-            formData.append('fileName', newFile.name);
-            setSubmitting(true);
-            config = {
-              headers: {
-                'content-type': 'multipart/form-data'
-              }
-            };
-            _context.prev = 12;
-            _context.next = 15;
-            return _axios["default"].post('/api/upload', formData, config);
-          case 15:
-            response = _context.sent;
-            if (response.status === 200) {
-              setPhoto(response.data.imageUrl);
-              validationPhoto(response.data.imageUrl);
-            } else {
-              setSubmitting(false);
-            }
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            _context.next = 23;
-            break;
-          case 19:
-            _context.prev = 19;
-            _context.t0 = _context["catch"](12);
-            useError.actions.changeError(["".concat(_context.t0.message)]);
-            setSubmitting(false);
-          case 23:
+            (0, _Changes.generalChangePhoto)(e, changeError, setSubmitting, setPhoto);
+          case 1:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[12, 19]]);
+      }, _callee);
     }));
     return function changePhoto(_x) {
       return _ref2.apply(this, arguments);
@@ -942,71 +734,22 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
   }();
   var changeDocumentPhoto = /*#__PURE__*/function () {
     var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(e) {
-      var newFile, mimeType, formData, config, response;
       return _regenerator["default"].wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            newFile = e.target.files && e.target.files[0];
-            if (newFile) {
-              _context2.next = 3;
-              break;
-            }
-            return _context2.abrupt("return");
-          case 3:
-            // Obtén el tipo MIME en función de la extensión del archivo
-            mimeType = (0, _helpers.getMimeTypeByExtension)(newFile.name);
-            if (mimeType) {
-              _context2.next = 7;
-              break;
-            }
-            useError.actions.changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
-            return _context2.abrupt("return");
-          case 7:
-            formData = new FormData();
-            formData.append('file', newFile);
-            formData.append('fileName', newFile.name);
-            setDocumentSubmitting(true);
-            config = {
-              headers: {
-                'content-type': 'multipart/form-data'
-              }
-            };
-            _context2.prev = 12;
-            _context2.next = 15;
-            return _axios["default"].post('/api/upload', formData, config);
-          case 15:
-            response = _context2.sent;
-            if (response.status === 200) {
-              setDocumentPhoto(response.data.imageUrl);
-              validationDocumentPhoto(response.data.imageUrl);
-            } else {
-              setDocumentSubmitting(false);
-            }
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            _context2.next = 23;
-            break;
-          case 19:
-            _context2.prev = 19;
-            _context2.t0 = _context2["catch"](12);
-            useError.actions.changeError(["".concat(_context2.t0.message)]);
-            setDocumentSubmitting(false);
-          case 23:
+            (0, _Changes.generalChangePhoto)(e, changeError, setDocumentSubmitting, setDocumentPhoto);
+          case 1:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[12, 19]]);
+      }, _callee2);
     }));
     return function changeDocumentPhoto(_x2) {
       return _ref3.apply(this, arguments);
     };
   }();
   var changeStatus = function changeStatus(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationStatus,
-      setDefault: setStatusDefault,
-      setValue: setStatus
-    });
+    (0, _Changes.generalChangeStatus)(options, validationStatus, setStatusDefault, setStatus);
   };
   var changeSearchBy = function changeSearchBy(options) {
     var label = options !== null && options !== void 0 && options.label ? options.label : 'Nombre';
@@ -1024,7 +767,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)('GS_ENTITY_V2', newData.data.items);
+    (0, _Context.saveItem)(_Constans.ENTITY_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setEntities(newData);
@@ -1057,11 +800,11 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_entities$data$items = entities.data.items) === null || _entities$data$items === void 0 ? void 0 : _entities$data$items.length) || 0;
             if (entities.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token) {
+              if (token && _Constans.API_URL) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: 'http://localhost:4000',
-                  initRoute: 'api/v1/entity',
+                  initApi: _Constans.API_URL,
+                  initRoute: _Constans.ENTITY_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -1127,7 +870,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && lastNameValid && typeDocumentIdIdValid && indexValid && digitValid && addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid && emailValid && phoneValid && typeValid && photoValid && statusValid && token) {
+    if (nameValid && lastNameValid && typeDocumentIdIdValid && indexValid && digitValid && addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid && emailValid && phoneValid && typeValid && photoValid && statusValid && token && _Constans.API_URL) {
       var payload = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
         name: name,
         type: type,
@@ -1163,8 +906,8 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       });
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/entity',
+        initApi: _Constans.API_URL,
+        initRoute: _Constans.ENTITY_ROUTE,
         initCredentials: payload,
         initToken: {
           token: token
@@ -1182,7 +925,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     })) || null;
   }
   var update = function update() {
-    if (nameValid && lastNameValid && typeValid && photoValid && statusValid && phoneValid && emailValid && token) {
+    if (nameValid && lastNameValid && typeValid && photoValid && statusValid && phoneValid && emailValid && token && _Constans.API_URL) {
       var payload = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, name ? {
         name: name
       } : {}), type ? {
@@ -1200,8 +943,8 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/entity/".concat(entityId),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
           token: token
@@ -1213,14 +956,14 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     }
   };
   var updateAddress = function updateAddress(newAddress) {
-    if (token) {
+    if (token && _Constans.API_URL) {
       var payload = {
         address: newAddress
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/entity/".concat(entityId),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
           token: token
@@ -1234,14 +977,14 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     }
   };
   var updateDocument = function updateDocument(newDocument) {
-    if (token) {
+    if (token && _Constans.API_URL) {
       var payload = {
         documentId: newDocument
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/entity/".concat(entityId),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
           token: token
@@ -1298,7 +1041,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     updateAddress(updateNewAddress);
   };
   var deleteAddress = function deleteAddress(id) {
-    if (token) {
+    if (token && _Constans.API_URL) {
       var payload = {
         address: [{
           id: id
@@ -1306,8 +1049,8 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/entity/".concat(entityId),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
           token: token
@@ -1321,7 +1064,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     }
   };
   var deleteDocument = function deleteDocument(id) {
-    if (documentId.length > 1 && token) {
+    if (documentId.length > 1 && token && _Constans.API_URL) {
       var payload = {
         documentId: [{
           id: id
@@ -1329,8 +1072,8 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/entity/".concat(entityId),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
           token: token

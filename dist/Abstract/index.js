@@ -207,6 +207,24 @@ Object.defineProperty(exports, "InputDescription", {
     return _Input.InputDescription;
   }
 });
+Object.defineProperty(exports, "InputDocumentiIdDigit", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputDocumentiIdDigit;
+  }
+});
+Object.defineProperty(exports, "InputEmail", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputEmail;
+  }
+});
+Object.defineProperty(exports, "InputLastName", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputLastName;
+  }
+});
 Object.defineProperty(exports, "InputName", {
   enumerable: true,
   get: function get() {
@@ -217,6 +235,12 @@ Object.defineProperty(exports, "InputPassword", {
   enumerable: true,
   get: function get() {
     return _Input.InputPassword;
+  }
+});
+Object.defineProperty(exports, "InputPhone", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputPhone;
   }
 });
 Object.defineProperty(exports, "InputStateCountry", {
@@ -291,6 +315,12 @@ Object.defineProperty(exports, "PhotoCategory", {
     return _Form.PhotoCategory;
   }
 });
+Object.defineProperty(exports, "PhotoEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Form.PhotoEntity;
+  }
+});
 Object.defineProperty(exports, "PhotoForm", {
   enumerable: true,
   get: function get() {
@@ -327,6 +357,12 @@ Object.defineProperty(exports, "SelectCountry", {
     return _Input.SelectCountry;
   }
 });
+Object.defineProperty(exports, "SelectDocumentIdIndex", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectDocumentIdIndex;
+  }
+});
 Object.defineProperty(exports, "SelectParentId", {
   enumerable: true,
   get: function get() {
@@ -349,6 +385,12 @@ Object.defineProperty(exports, "SelectStatus", {
   enumerable: true,
   get: function get() {
     return _Input.SelectStatus;
+  }
+});
+Object.defineProperty(exports, "SelectTypeDocumentIdId", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectTypeDocumentIdId;
   }
 });
 Object.defineProperty(exports, "SitesForm", {

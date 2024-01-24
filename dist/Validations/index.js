@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationUserName = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationPostCode = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationDescription = exports.generalValidationCurrenciesSymbol = exports.generalValidationButtonNext = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
+exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationUserName = exports.generalValidationTypeDocumentIdIndex = exports.generalValidationTypeDocumentIdId = exports.generalValidationTypeDocumentIdDigit = exports.generalValidationType = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationPostCode = exports.generalValidationPhotoEntity = exports.generalValidationPhotoDocumentId = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPhone = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationEmail = exports.generalValidationDescription = exports.generalValidationCurrenciesSymbol = exports.generalValidationButtonNext = exports.generalValidationAddressType = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
 var _helpers = require("../helpers");
 var _Constans = require("../Constans");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
@@ -175,6 +175,14 @@ var generalValidationAddress2 = function generalValidationAddress2(value, setVal
   });
 };
 exports.generalValidationAddress2 = generalValidationAddress2;
+var generalValidationAddressType = function generalValidationAddressType(newValue, setValid, currentValid) {
+  var valid = (0, _helpers.validationSelect)(newValue, _Constans.ADDRESS_TYPE_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationAddressType = generalValidationAddressType;
 var generalValidationSelectCity = function generalValidationSelectCity(value, setValid, currentValid) {
   var validation = (0, _helpers.validationSelect)(value, _Constans.CITY_INPUT);
   if (validation !== currentValid) {
@@ -276,6 +284,28 @@ var generalValidationPhotoCategory = function generalValidationPhotoCategory(val
   });
 };
 exports.generalValidationPhotoCategory = generalValidationPhotoCategory;
+var generalValidationPhotoEntity = function generalValidationPhotoEntity(value, setValid, currentValid) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  return validationPhoto({
+    value: value,
+    inputId: _Constans.PHOTO_ENTITY_INPUT,
+    setValid: setValid,
+    currentValid: currentValid,
+    required: required
+  });
+};
+exports.generalValidationPhotoEntity = generalValidationPhotoEntity;
+var generalValidationPhotoDocumentId = function generalValidationPhotoDocumentId(value, setValid, currentValid) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  return validationPhoto({
+    value: value,
+    inputId: _Constans.PHOTO_DOCUMENT_ID_INPUT,
+    setValid: setValid,
+    currentValid: currentValid,
+    required: required
+  });
+};
+exports.generalValidationPhotoDocumentId = generalValidationPhotoDocumentId;
 var validationInputArray = function validationInputArray(values, match, componentId) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   var allValid = true;
@@ -330,3 +360,54 @@ var generalValidationCurrenciesSymbol = function generalValidationCurrenciesSymb
   return valid;
 };
 exports.generalValidationCurrenciesSymbol = generalValidationCurrenciesSymbol;
+var generalValidationTypeDocumentIdId = function generalValidationTypeDocumentIdId(newValue, setValid, currentValid) {
+  var valid = (0, _helpers.validationSelect)(newValue, _Constans.TYPE_DOCUMENT_ID_ID_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationTypeDocumentIdId = generalValidationTypeDocumentIdId;
+var generalValidationTypeDocumentIdIndex = function generalValidationTypeDocumentIdIndex(newValue, setValid, currentValid) {
+  var valid = (0, _helpers.validationSelect)(newValue, _Constans.TYPE_DOCUMENT_ID_INDEX_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationTypeDocumentIdIndex = generalValidationTypeDocumentIdIndex;
+var generalValidationTypeDocumentIdDigit = function generalValidationTypeDocumentIdDigit(newValue, setValid, currentValid) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var valid = (0, _helpers.validationInput)(newValue, /^\d{1,12}(-\d{1,12})?$/, _Constans.TYPE_DOCUMENT_ID_DIGIT_INPUT, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationTypeDocumentIdDigit = generalValidationTypeDocumentIdDigit;
+var generalValidationEmail = function generalValidationEmail(newValue, setValid, currentValid) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  var valid = (0, _helpers.validationInput)(newValue, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, _Constans.EMAIL_INPUT, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationEmail = generalValidationEmail;
+var generalValidationPhone = function generalValidationPhone(newValue, setValid, currentValid) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  var valid = (0, _helpers.validationInput)(newValue, /^[0-9]{10,20}/, _Constans.PHONE_INPUT, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationPhone = generalValidationPhone;
+var generalValidationType = function generalValidationType(newValue, setValid, currentValid) {
+  var valid = (0, _helpers.validationSelect)(newValue, _Constans.TYPE_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationType = generalValidationType;

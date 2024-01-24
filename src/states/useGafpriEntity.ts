@@ -1,29 +1,54 @@
 import React, { useState, ChangeEvent } from 'react';
-import axios, { AxiosRequestConfig } from 'axios';
 import { SingleValue } from 'react-select';
+import { gafpriFetch, getLastEntryDateAndCount } from '../helpers';
 import {
-  removeClass,
-  addClass,
-  validationInputName,
-  toTitleCase,
-  changeInputText,
-  validationSelect,
-  changeSelect,
-  validationInput,
-  gafpriFetch,
-  getLastEntryDateAndCount,
-  getMimeTypeByExtension,
-} from '../helpers';
-import { validationInputAddress } from '../Validations';
+  generalValidationLastName,
+  generalValidationName,
+  generalValidationTypeDocumentIdId,
+  generalValidationButtonNext,
+  generalValidationTypeDocumentIdIndex,
+  generalValidationTypeDocumentIdDigit,
+  generalValidationAddressType,
+  generalValidationAddress1,
+  generalValidationAddress2,
+  generalValidationSelectCity,
+  generalValidationSelectStateCountry,
+  generalValidationSelectCountry,
+  generalValidationPostCode,
+  generalValidationEmail,
+  generalValidationPhone,
+  generalValidationType,
+  generalValidationPhotoEntity,
+  generalValidationPhotoDocumentId,
+  generalValidationStatus,
+} from '../Validations';
+import {
+  generalChangeLastName,
+  generalChangeName,
+  generalChangeTypeDocumentIdId,
+  generalChangeDocumentIdIndex,
+  generalChangeDocumentIdDigit,
+  generalChangeAddressType,
+  generalChangeAddress,
+  generalChangeCityStateCountry,
+  generalChangeCityOptions,
+  generalChangeStateCountryOptions,
+  generalChangePostCode,
+  generalChangeEmail,
+  generalChangePhone,
+  generalChangeType,
+  generalChangePhoto,
+  generalChangeStatus,
+} from '../Changes';
 import type {
   ErrorResponseProps,
   CustomErrorResponseProps,
   SelectDefault,
 } from '../helpers';
-import { Countries, StatesCountries, Cities } from '../Constans';
 import { getItem, saveItem } from '../Context';
 import type { UseTypeDocumentIdReturn } from './useGafpriTypeDocumentId';
 import type { UseErrorReturn } from './useGafpriError';
+import { API_URL, ENTITY_STORAGE, ENTITY_ROUTE, Countries } from '../Constans';
 
 interface typeDocumentId {
   id: number;
@@ -342,6 +367,7 @@ export const useGafpriEntity = ({
   const [isView, setIsView] = useState(false);
   const [isAddAddress, setIsAddAddress] = useState(false);
   const [isAddDocument, setIsAddDocument] = useState(false);
+  const [isReset, setIsReset] = useState(true);
 
   const [formType, setFormType] = useState<'personal' | 'legal'>('personal');
 
@@ -476,7 +502,7 @@ export const useGafpriEntity = ({
 
   const [entities, setEntities] = useState<EntityData>({
     data: {
-      items: getItem('GS_ENTITY_V2', null),
+      items: getItem(ENTITY_STORAGE, null),
     },
   });
   const { error } = useError.states;
@@ -504,6 +530,7 @@ export const useGafpriEntity = ({
   const itemsPerPage = 6;
 
   const infoReset = (): void => {
+    setIsReset(true);
     setName('');
     setNameValid(false);
 
@@ -688,297 +715,208 @@ export const useGafpriEntity = ({
 
   // Funciones de Validacion
   const validationButtonNext = (): void => {
-    if (
-      nameValid &&
-      lastNameValid &&
-      typeDocumentIdIdValid &&
-      indexValid &&
-      digitValid &&
-      addressTypeValid &&
-      address1Valid &&
-      address2Valid &&
-      cityValid &&
-      stateCountryValid &&
-      countryValid &&
-      postCodeValid &&
-      emailValid &&
-      phoneValid &&
-      typeValid &&
-      photoValid &&
+    generalValidationButtonNext(
+      nameValid,
+      lastNameValid,
+      typeDocumentIdIdValid,
+      indexValid,
+      digitValid,
+      addressTypeValid,
+      address1Valid,
+      address2Valid,
+      cityValid,
+      stateCountryValid,
+      countryValid,
+      postCodeValid,
+      emailValid,
+      phoneValid,
+      typeValid,
+      photoValid,
       statusValid
-    ) {
-      removeClass('buttonNext', 'gs-disabled');
-    } else {
-      addClass('buttonNext', 'gs-disabled');
-    }
+    );
   };
 
   const validationButtonNextAddress = (): void => {
-    if (
-      addressTypeValid &&
-      address1Valid &&
-      address2Valid &&
-      cityValid &&
-      stateCountryValid &&
-      countryValid &&
+    generalValidationButtonNext(
+      addressTypeValid,
+      address1Valid,
+      address2Valid,
+      cityValid,
+      stateCountryValid,
+      countryValid,
       postCodeValid
-    ) {
-      removeClass('buttonNext', 'gs-disabled');
-    } else {
-      addClass('buttonNext', 'gs-disabled');
-    }
+    );
   };
 
   const validationButtonNextDocument = (): void => {
-    if (
-      typeDocumentIdIdValid &&
-      indexValid &&
-      digitValid &&
+    generalValidationButtonNext(
+      typeDocumentIdIdValid,
+      indexValid,
+      digitValid,
       documentPhotoValid
-    ) {
-      removeClass('buttonNext', 'gs-disabled');
-    } else {
-      addClass('buttonNext', 'gs-disabled');
-    }
+    );
   };
 
   const validationButtonNextUpdate = (): void => {
-    if (
-      nameValid &&
-      lastNameValid &&
-      emailValid &&
-      phoneValid &&
-      typeValid &&
-      photoValid &&
+    generalValidationButtonNext(
+      nameValid,
+      lastNameValid,
+      emailValid,
+      phoneValid,
+      typeValid,
+      photoValid,
       statusValid
-    ) {
-      removeClass('buttonNext', 'gs-disabled');
-    } else {
-      addClass('buttonNext', 'gs-disabled');
-    }
+    );
   };
 
   const validationName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: 'userName',
-      setValid: setNameValid,
-    });
+    return generalValidationName(value, setNameValid, nameValid);
   };
 
   const validationLastName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: 'userLastName',
-      setValid: setLastNameValid,
-      required: false,
-    });
+    return generalValidationLastName(value, setLastNameValid, lastNameValid);
   };
 
   const validationTypeDocumentIdId = (value: string): boolean => {
-    const validation: boolean = validationSelect(
+    return generalValidationTypeDocumentIdId(
       value,
-      'entityTypeDocumentIdId'
+      setTypeDocumentIdIdValid,
+      typeDocumentIdIdValid
     );
-    setTypeDocumentIdIdValid(validation);
-    return validation;
   };
 
   const validationIndex = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'entityDocumentIndex');
-    setIndexValid(validation);
-    return validation;
+    return generalValidationTypeDocumentIdIndex(
+      value,
+      setIndexValid,
+      indexValid
+    );
   };
 
   const validationDigit = (value: string): boolean => {
-    const valid = validationInput(
+    return generalValidationTypeDocumentIdDigit(
       value,
-      /^\d{1,12}(-\d{1,12})?$/,
-      'entityDocumentDigit',
-      true
+      setDigitValid,
+      digitValid
     );
-    setDigitValid(valid);
-    return valid;
   };
 
   const validationAddressType = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'addressType');
-    setAddressTypeValid(validation);
-    return validation;
+    return generalValidationAddressType(
+      value,
+      setAddressTypeValid,
+      addressTypeValid
+    );
   };
 
   const validationAddress1 = (value: string): boolean => {
-    return validationInputAddress({
-      value,
-      currentValid: address1Valid,
-      inputId: 'address1',
-      setValid: setAddress1Valid,
-    });
+    return generalValidationAddress1(value, setAddress1Valid, address1Valid);
   };
 
   const validationAddress2 = (value: string): boolean => {
-    return validationInputAddress({
-      value,
-      inputId: 'address2',
-      currentValid: address2Valid,
-      setValid: setAddress2Valid,
-      required: false,
-    });
+    return generalValidationAddress2(value, setAddress2Valid, address2Valid);
   };
 
   const validationCity = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'entityCity');
-    setCityValid(validation);
-    return validation;
+    return generalValidationSelectCity(value, setCityValid, cityValid);
   };
 
   const validationStateCountry = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'entityStateCountry');
-    setStateCountryValid(validation);
-    return validation;
+    return generalValidationSelectStateCountry(
+      value,
+      setStateCountryValid,
+      stateCountryValid
+    );
   };
 
   const validationCountry = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'entityCountry');
-    setCountryValid(validation);
-    return validation;
+    return generalValidationSelectCountry(value, setCountryValid, countryValid);
   };
 
   const validationPostCode = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/,
-      'entityCodePost'
-    );
-    setPostCodeValid(valid);
-    return valid;
+    return generalValidationPostCode(value, setPostCodeValid, postCodeValid);
   };
 
   const validationEmail = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-      'entityEmail',
-      false
-    );
-    setEmailValid(valid);
-    return valid;
+    return generalValidationEmail(value, setEmailValid, emailValid);
   };
 
   const validationPhone = (value: string): boolean => {
-    const valid = validationInput(value, /^[0-9]{10,20}/, 'entityPhone');
-    setPhoneValid(valid);
-    return valid;
+    return generalValidationPhone(value, setPhoneValid, phoneValid);
   };
 
   const validationType = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'roleUser');
-    setTypeValid(validation);
-    return validation;
+    return generalValidationType(value, setTypeValid, typeValid);
   };
 
   const validationPhoto = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-      'entityPhoto'
-    );
-    setPhotoValid(valid);
-    return valid;
+    return generalValidationPhotoEntity(value, setPhotoValid, photoValid);
   };
 
   const validationDocumentPhoto = (value: string): boolean => {
-    const valid = validationInput(
+    return generalValidationPhotoDocumentId(
       value,
-      /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-      'entityDocumentPhoto'
+      setDocumentPhotoValid,
+      documentPhotoValid
     );
-    setDocumentPhotoValid(valid);
-    return valid;
   };
 
   const validationStatus = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'isActiveUser');
-    setStatusValid(validation);
-    return validation;
+    return generalValidationStatus(value, setStatusValid, statusValid);
   };
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    const newValue = toTitleCase(value);
-    changeInputText({
-      value: newValue,
-      validation: validationName,
-      setValue: setName,
-    });
+    generalChangeName(value, validationName, setName);
   };
 
   const changeLastName = (value: string): void => {
-    const newValue = toTitleCase(value);
-    changeInputText({
-      value: newValue,
-      validation: validationLastName,
-      setValue: setLastName,
-    });
+    generalChangeLastName(value, validationLastName, setLastName);
   };
 
   const changeTypeDocumentIdId = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationTypeDocumentIdId,
-      setDefault: setTypeDocumentIdIdDefault,
-      setValue: setTypeDocumentIdId,
-    });
+    generalChangeTypeDocumentIdId(
+      options,
+      validationTypeDocumentIdId,
+      setTypeDocumentIdIdDefault,
+      setTypeDocumentIdId
+    );
   };
 
   const changeIndex = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationIndex,
-      setDefault: setIndexDefault,
-      setValue: setIndex,
-    });
+    generalChangeDocumentIdIndex(
+      options,
+      validationIndex,
+      setIndexDefault,
+      setIndex
+    );
   };
 
   const changeDigit = (newDigit: string): void => {
-    changeInputText({
-      value: newDigit,
-      validation: validationDigit,
-      setValue: setDigit,
-    });
+    generalChangeDocumentIdDigit(newDigit, validationDigit, setDigit);
   };
 
   const changeAddressType = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationAddressType,
-      setDefault: setAddressTypeDefault,
-      setValue: setAddressType,
-    });
+    generalChangeAddressType(
+      options,
+      validationAddressType,
+      setAddressTypeDefault,
+      setAddressType
+    );
   };
 
   const changeAddress1 = (value: string): void => {
-    const newAddress = toTitleCase(value);
-    changeInputText({
-      value: newAddress,
-      validation: validationAddress1,
-      setValue: setAddress1,
-    });
+    generalChangeAddress(value, validationAddress1, setAddress1);
   };
 
   const changeAddress2 = (value: string): void => {
-    const newAddress = toTitleCase(value);
-    changeInputText({
-      value: newAddress,
-      validation: validationAddress2,
-      setValue: setAddress2,
-    });
+    generalChangeAddress(value, validationAddress2, setAddress2);
   };
 
   const changeTypeInAllAddresses = (
@@ -1010,201 +948,94 @@ export const useGafpriEntity = ({
   const changeCity = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationCity,
-      setDefault: setCityDefault,
-      setValue: setCity,
-    });
+    generalChangeCityStateCountry(
+      options,
+      validationCity,
+      setCityDefault,
+      setCity,
+      setIsReset
+    );
   };
 
   const changeCityOptions = React.useCallback((): void => {
-    const newValueCity: SelectDefault[] = [];
-    if (Cities[0][country]) {
-      if (Array.isArray(Cities[0][country][0][state])) {
-        Cities[0][country][0][state].forEach((item) => {
-          Object.keys(item).forEach((key) => {
-            newValueCity.push({ value: item[key], label: item[key] });
-          });
-        });
-      }
-    }
-    setCityDefault({ label: 'Elija la ciudad', value: '' });
-    setCity('');
-    setCityOptions(newValueCity);
-  }, [country, state]);
+    generalChangeCityOptions(
+      country,
+      state,
+      setCityDefault,
+      setCity,
+      setCityOptions,
+      isReset
+    );
+  }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeStateCountry = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationStateCountry,
-      setDefault: setStateCountryDefault,
-      setValue: setStateCountry,
-    });
+    generalChangeCityStateCountry(
+      options,
+      validationStateCountry,
+      setStateCountryDefault,
+      setStateCountry,
+      setIsReset
+    );
   };
 
   const changeStateCountryOptions = React.useCallback((): void => {
-    const newValueState: SelectDefault[] = [];
-    if (country && StatesCountries[0][country].length > 0) {
-      StatesCountries[0][country].forEach((item) => {
-        Object.keys(item).forEach((key) => {
-          newValueState.push({ value: key, label: item[key] });
-        });
-      });
-    }
-
-    setStateCountryDefault({ label: 'Elija el Estado', value: '' });
-    setStateCountry('');
-    setStateCountryOptions(newValueState);
-  }, [country]);
+    generalChangeStateCountryOptions(
+      country,
+      setStateCountryDefault,
+      setStateCountry,
+      setStateCountryOptions,
+      isReset
+    );
+  }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeCountry = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeStateCountryOptions();
-    changeSelect({
-      newValue: options,
-      validation: validationCountry,
-      setDefault: setCountryDefault,
-      setValue: setCountry,
-    });
+    generalChangeCityStateCountry(
+      options,
+      validationCountry,
+      setCountryDefault,
+      setCountry,
+      setIsReset
+    );
   };
 
   const changePostCode = (newPostCode: string): void => {
-    changeInputText({
-      value: newPostCode,
-      validation: validationPostCode,
-      setValue: setPostCode,
-    });
+    generalChangePostCode(newPostCode, validationPostCode, setPostCode);
   };
 
   const changeEmail = (inputValue: string): void => {
-    const newEmail = inputValue.toLocaleLowerCase();
-    changeInputText({
-      value: newEmail,
-      validation: validationEmail,
-      setValue: setEmail,
-    });
+    generalChangeEmail(inputValue, validationEmail, setEmail);
   };
 
   const changePhone = (newPhone: string): void => {
-    changeInputText({
-      value: newPhone,
-      validation: validationPhone,
-      setValue: setPhone,
-    });
+    generalChangePhone(newPhone, validationPhone, setPhone);
   };
 
   const changeType = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationType,
-      setDefault: setTypeDefault,
-      setValue: setType,
-    });
+    generalChangeType(options, validationType, setTypeDefault, setType);
   };
 
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    const newFile = e.target.files && e.target.files[0];
-
-    if (!newFile) return;
-
-    // Obtén el tipo MIME en función de la extensión del archivo
-    const mimeType = getMimeTypeByExtension(newFile.name);
-    if (!mimeType) {
-      useError.actions.changeError([
-        'El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.',
-      ]);
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', newFile);
-    formData.append('fileName', newFile.name);
-
-    setSubmitting(true);
-
-    const config: AxiosRequestConfig = {
-      headers: {
-        'content-type': 'multipart/form-data',
-      },
-    };
-
-    try {
-      const response = await axios.post('/api/upload', formData, config);
-
-      if (response.status === 200) {
-        setPhoto(response.data.imageUrl);
-        validationPhoto(response.data.imageUrl);
-      } else {
-        setSubmitting(false);
-      }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (event: any) {
-      useError.actions.changeError([`${event.message}`]);
-      setSubmitting(false);
-    }
+    generalChangePhoto(e, changeError, setSubmitting, setPhoto);
   };
 
   const changeDocumentPhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    const newFile = e.target.files && e.target.files[0];
-
-    if (!newFile) return;
-
-    // Obtén el tipo MIME en función de la extensión del archivo
-    const mimeType = getMimeTypeByExtension(newFile.name);
-    if (!mimeType) {
-      useError.actions.changeError([
-        'El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.',
-      ]);
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', newFile);
-    formData.append('fileName', newFile.name);
-
-    setDocumentSubmitting(true);
-
-    const config: AxiosRequestConfig = {
-      headers: {
-        'content-type': 'multipart/form-data',
-      },
-    };
-
-    try {
-      const response = await axios.post('/api/upload', formData, config);
-
-      if (response.status === 200) {
-        setDocumentPhoto(response.data.imageUrl);
-        validationDocumentPhoto(response.data.imageUrl);
-      } else {
-        setDocumentSubmitting(false);
-      }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (event: any) {
-      useError.actions.changeError([`${event.message}`]);
-      setDocumentSubmitting(false);
-    }
+    generalChangePhoto(e, changeError, setDocumentSubmitting, setDocumentPhoto);
   };
 
   const changeStatus = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationStatus,
-      setDefault: setStatusDefault,
-      setValue: setStatus,
-    });
+    generalChangeStatus(options, validationStatus, setStatusDefault, setStatus);
   };
 
   const changeSearchBy = (
@@ -1237,7 +1068,7 @@ export const useGafpriEntity = ({
     : null;
 
   const setDataStorage = (newData: EntityData): void => {
-    saveItem('GS_ENTITY_V2', newData.data.items);
+    saveItem(ENTITY_STORAGE, newData.data.items);
   };
 
   const setData = (newData: EntityData): void => {
@@ -1270,11 +1101,11 @@ export const useGafpriEntity = ({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token) {
+      if (token && API_URL) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: 'http://localhost:4000',
-          initRoute: 'api/v1/entity',
+          initApi: API_URL,
+          initRoute: ENTITY_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onEntity,
@@ -1357,7 +1188,8 @@ export const useGafpriEntity = ({
       typeValid &&
       photoValid &&
       statusValid &&
-      token
+      token &&
+      API_URL
     ) {
       const payload = {
         name,
@@ -1385,8 +1217,8 @@ export const useGafpriEntity = ({
 
       gafpriFetch({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/entity',
+        initApi: API_URL,
+        initRoute: ENTITY_ROUTE,
         initCredentials: payload,
         initToken: { token },
         functionFetching: onFetching,
@@ -1409,7 +1241,8 @@ export const useGafpriEntity = ({
       statusValid &&
       phoneValid &&
       emailValid &&
-      token
+      token &&
+      API_URL
     ) {
       const payload = {
         ...(name ? { name } : {}),
@@ -1423,8 +1256,8 @@ export const useGafpriEntity = ({
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/entity/${entityId}`,
+        initApi: API_URL,
+        initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
         functionFetching: onFetching,
@@ -1435,15 +1268,15 @@ export const useGafpriEntity = ({
   };
 
   const updateAddress = (newAddress: AddressAttributes[]): void => {
-    if (token) {
+    if (token && API_URL) {
       const payload = {
         address: newAddress,
       };
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/entity/${entityId}`,
+        initApi: API_URL,
+        initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
         functionFetching: onFetching,
@@ -1454,15 +1287,15 @@ export const useGafpriEntity = ({
   };
 
   const updateDocument = (newDocument: DocumentIdAttributes[]): void => {
-    if (token) {
+    if (token && API_URL) {
       const payload = {
         documentId: newDocument,
       };
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/entity/${entityId}`,
+        initApi: API_URL,
+        initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
         functionFetching: onFetching,
@@ -1529,7 +1362,7 @@ export const useGafpriEntity = ({
   };
 
   const deleteAddress = (id: number): void => {
-    if (token) {
+    if (token && API_URL) {
       const payload = {
         address: [
           {
@@ -1540,8 +1373,8 @@ export const useGafpriEntity = ({
 
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/entity/${entityId}`,
+        initApi: API_URL,
+        initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
         functionFetching: onFetching,
@@ -1552,7 +1385,7 @@ export const useGafpriEntity = ({
   };
 
   const deleteDocument = (id: number): void => {
-    if (documentId.length > 1 && token) {
+    if (documentId.length > 1 && token && API_URL) {
       const payload = {
         documentId: [
           {
@@ -1563,8 +1396,8 @@ export const useGafpriEntity = ({
 
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/entity/${entityId}`,
+        initApi: API_URL,
+        initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
         functionFetching: onFetching,

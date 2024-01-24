@@ -7,6 +7,10 @@ export declare const generalChangeLastName: (value: string, validation: (valueVa
 export declare const generalChangePassword: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
 export declare const generalChangeDescription: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
 export declare const generalChangeAddress: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeAddressType: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
 export declare const generalChangeCityStateCountry: (options: SingleValue<{
     value: string;
     label: string;
@@ -28,3 +32,18 @@ export declare const generalChangeStatus: (options: SingleValue<{
     label: string;
 }>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
 export declare const generalChangeCurrenciesSymbol: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeTypeDocumentIdId: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number | null) => void) => void;
+export declare const generalChangeDocumentIdIndex: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeDocumentIdDigit: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeEmail: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangePhone: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeType: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;

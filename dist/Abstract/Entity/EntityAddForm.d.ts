@@ -2,15 +2,12 @@
 import type { UseEntityReturn } from '../../states';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
-import type { ModelFormPropsExtended } from '../Form';
+import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
 export type EntityAddFormProps = {
     use: UseEntityReturn;
     formType: 'personal' | 'legal';
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    photoStyle?: string;
     nameContainerStyle?: string;
     modelFormProps?: ModelFormPropsExtended;
     nameProps?: InputProps;
@@ -33,6 +30,7 @@ export type EntityAddFormProps = {
     containerEmailPhoneProps?: ContainerButtonPropsExtended;
     emailProps?: InputProps;
     phoneProps?: InputProps;
+    propsPhoto?: PhotoEntityProps['props'];
 };
 export type EntityAddFormPropsExtended = {
     photoMainContainerStyle?: string;
@@ -63,4 +61,4 @@ export type EntityAddFormPropsExtended = {
     emailProps?: InputProps;
     phoneProps?: InputProps;
 };
-export declare const EntityAddForm: ({ use, formType, photoMainContainerStyle, photoContainerStyle, photoFormStyle, loadingContainerStyle, photoStyle, nameContainerStyle, modelFormProps, nameProps, lastNameProps, typeDocumentIdIdProps, containerDocumentProps, indexProps, digitProps, containerAddressProps, address1Props, address2Props, containerCityStateProps, cityInputProps, stateInputProps, citySelectProps, stateSelectProps, containerCountryProps, countryProps, codePostProps, containerEmailPhoneProps, emailProps, phoneProps, }: EntityAddFormProps) => JSX.Element;
+export declare const EntityAddForm: ({ use, formType, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, nameProps, lastNameProps, typeDocumentIdIdProps, containerDocumentProps, indexProps, digitProps, containerAddressProps, address1Props, address2Props, containerCityStateProps, cityInputProps, stateInputProps, citySelectProps, stateSelectProps, containerCountryProps, countryProps, codePostProps, containerEmailPhoneProps, emailProps, phoneProps, propsPhoto, }: EntityAddFormProps) => JSX.Element;

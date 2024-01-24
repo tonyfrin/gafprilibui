@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ZIP_CODE_INPUT = exports.USER_NAME_INPUT = exports.STATUS_INPUT = exports.STATE_COUNTRY_INPUT = exports.SKU_INPUT = exports.SITE_INPUT = exports.PHOTO_INPUT = exports.PHOTO_CATEGORY_INPUT = exports.PASSWORD_INPUT = exports.PARENT_ID_INPUT = exports.NAME_INPUT = exports.LAST_NAME_INPUT = exports.GALLERY_IMAGE_INPUT = exports.DESCRIPTION_INPUT = exports.CURRENCIES_SYMBOL_INPUT = exports.COUNTRY_INPUT = exports.CITY_INPUT = exports.CATEGORIES_INPUT = exports.BUTTON_NEXT_INPUT = exports.ADDRESS2_INPUT = exports.ADDRESS1_INPUT = void 0;
+exports.ZIP_CODE_INPUT = exports.USER_NAME_INPUT = exports.TYPE_INPUT = exports.TYPE_DOCUMENT_ID_INDEX_INPUT = exports.TYPE_DOCUMENT_ID_ID_INPUT = exports.TYPE_DOCUMENT_ID_DIGIT_INPUT = exports.STATUS_INPUT = exports.STATE_COUNTRY_INPUT = exports.SKU_INPUT = exports.SITE_INPUT = exports.PHOTO_INPUT = exports.PHOTO_ENTITY_INPUT = exports.PHOTO_DOCUMENT_ID_INPUT = exports.PHOTO_CATEGORY_INPUT = exports.PHONE_INPUT = exports.PASSWORD_INPUT = exports.PARENT_ID_INPUT = exports.NAME_INPUT = exports.LAST_NAME_INPUT = exports.GALLERY_IMAGE_INPUT = exports.EMAIL_INPUT = exports.DESCRIPTION_INPUT = exports.CURRENCIES_SYMBOL_INPUT = exports.COUNTRY_INPUT = exports.CITY_INPUT = exports.CATEGORIES_INPUT = exports.BUTTON_NEXT_INPUT = exports.ADDRESS_TYPE_INPUT = exports.ADDRESS2_INPUT = exports.ADDRESS1_INPUT = void 0;
 var NAME_INPUT = 'name-input-id';
 exports.NAME_INPUT = NAME_INPUT;
 var LAST_NAME_INPUT = 'last-name-input-id';
@@ -20,6 +20,8 @@ var ADDRESS1_INPUT = 'address-1-input-id';
 exports.ADDRESS1_INPUT = ADDRESS1_INPUT;
 var ADDRESS2_INPUT = 'address-2-input-id';
 exports.ADDRESS2_INPUT = ADDRESS2_INPUT;
+var ADDRESS_TYPE_INPUT = 'address-type-input-id';
+exports.ADDRESS_TYPE_INPUT = ADDRESS_TYPE_INPUT;
 var CITY_INPUT = 'city-input-id';
 exports.CITY_INPUT = CITY_INPUT;
 var STATE_COUNTRY_INPUT = 'state-country-input-id';
@@ -46,3 +48,19 @@ var PHOTO_CATEGORY_INPUT = 'photo-category-input-id';
 exports.PHOTO_CATEGORY_INPUT = PHOTO_CATEGORY_INPUT;
 var CURRENCIES_SYMBOL_INPUT = 'currencies-symbol-input-id';
 exports.CURRENCIES_SYMBOL_INPUT = CURRENCIES_SYMBOL_INPUT;
+var TYPE_DOCUMENT_ID_ID_INPUT = 'type-document-id-id--input-id';
+exports.TYPE_DOCUMENT_ID_ID_INPUT = TYPE_DOCUMENT_ID_ID_INPUT;
+var TYPE_DOCUMENT_ID_INDEX_INPUT = 'type-document-id-index-input-id';
+exports.TYPE_DOCUMENT_ID_INDEX_INPUT = TYPE_DOCUMENT_ID_INDEX_INPUT;
+var TYPE_DOCUMENT_ID_DIGIT_INPUT = 'type-document-id-digit-input-id';
+exports.TYPE_DOCUMENT_ID_DIGIT_INPUT = TYPE_DOCUMENT_ID_DIGIT_INPUT;
+var EMAIL_INPUT = 'email-input-id';
+exports.EMAIL_INPUT = EMAIL_INPUT;
+var PHONE_INPUT = 'phone-input-id';
+exports.PHONE_INPUT = PHONE_INPUT;
+var TYPE_INPUT = 'type-input-id';
+exports.TYPE_INPUT = TYPE_INPUT;
+var PHOTO_ENTITY_INPUT = 'photo-entity-input-id';
+exports.PHOTO_ENTITY_INPUT = PHOTO_ENTITY_INPUT;
+var PHOTO_DOCUMENT_ID_INPUT = 'photo-document-id-input-id';
+exports.PHOTO_DOCUMENT_ID_INPUT = PHOTO_DOCUMENT_ID_INPUT;

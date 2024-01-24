@@ -4,3 +4,5 @@ export { PhotoForm } from './PhotoForm';
 export type { PhotoFormProps, PhotoFormPropsExtended } from './PhotoForm';
 export { PhotoCategory } from './PhotoCategory';
 export type { PhotoCategoryProps } from './PhotoCategory';
+export { PhotoEntity } from './PhotoEntity';
+export type { PhotoEntityProps } from './PhotoEntity';

@@ -27,6 +27,15 @@ import {
   DISABLED,
   PHOTO_CATEGORY_INPUT,
   CURRENCIES_SYMBOL_INPUT,
+  TYPE_DOCUMENT_ID_ID_INPUT,
+  TYPE_DOCUMENT_ID_INDEX_INPUT,
+  TYPE_DOCUMENT_ID_DIGIT_INPUT,
+  ADDRESS_TYPE_INPUT,
+  EMAIL_INPUT,
+  PHONE_INPUT,
+  TYPE_INPUT,
+  PHOTO_ENTITY_INPUT,
+  PHOTO_DOCUMENT_ID_INPUT,
 } from '../Constans';
 
 export type ValidationInput = {
@@ -251,6 +260,18 @@ export const generalValidationAddress2 = (
   });
 };
 
+export const generalValidationAddressType = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const valid = validationSelect(newValue, ADDRESS_TYPE_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
 export const generalValidationSelectCity = (
   value: string,
   setValid: (valueValid: boolean) => void,
@@ -396,6 +417,36 @@ export const generalValidationPhotoCategory = (
   });
 };
 
+export const generalValidationPhotoEntity = (
+  value: string,
+  setValid: (valueValid: boolean) => void,
+  currentValid: boolean,
+  required = true
+): boolean => {
+  return validationPhoto({
+    value,
+    inputId: PHOTO_ENTITY_INPUT,
+    setValid,
+    currentValid,
+    required,
+  });
+};
+
+export const generalValidationPhotoDocumentId = (
+  value: string,
+  setValid: (valueValid: boolean) => void,
+  currentValid: boolean,
+  required = true
+): boolean => {
+  return validationPhoto({
+    value,
+    inputId: PHOTO_DOCUMENT_ID_INPUT,
+    setValid,
+    currentValid,
+    required,
+  });
+};
+
 export const validationInputArray = (
   values: string[],
   match: RegExp,
@@ -479,6 +530,96 @@ export const generalValidationCurrenciesSymbol = (
     CURRENCIES_SYMBOL_INPUT,
     required
   );
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationTypeDocumentIdId = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const valid = validationSelect(newValue, TYPE_DOCUMENT_ID_ID_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationTypeDocumentIdIndex = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const valid = validationSelect(newValue, TYPE_DOCUMENT_ID_INDEX_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationTypeDocumentIdDigit = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean,
+  required = true
+): boolean => {
+  const valid = validationInput(
+    newValue,
+    /^\d{1,12}(-\d{1,12})?$/,
+    TYPE_DOCUMENT_ID_DIGIT_INPUT,
+    required
+  );
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationEmail = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean,
+  required = false
+): boolean => {
+  const valid = validationInput(
+    newValue,
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    EMAIL_INPUT,
+    required
+  );
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationPhone = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean,
+  required = false
+): boolean => {
+  const valid = validationInput(
+    newValue,
+    /^[0-9]{10,20}/,
+    PHONE_INPUT,
+    required
+  );
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationType = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const valid = validationSelect(newValue, TYPE_INPUT);
   if (valid !== currentValid) {
     setValid(valid);
   }

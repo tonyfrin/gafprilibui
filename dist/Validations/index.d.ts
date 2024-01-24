@@ -19,6 +19,7 @@ export declare const generalValidationDescription: (value: string, setValid: (va
 export declare const validationInputAddress: ({ value, currentValid, inputId, setValid, required, }: ValidationInput) => boolean;
 export declare const generalValidationAddress1: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
 export declare const generalValidationAddress2: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
+export declare const generalValidationAddressType: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
 export declare const generalValidationSelectCity: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
 export declare const generalValidationSelectStateCountry: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
 export declare const generalValidationSelectCountry: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
@@ -29,8 +30,16 @@ export declare const generalValidationSku: (value: string, setValid: (valueValid
 export declare const validationPhoto: ({ value, inputId, currentValid, setValid, required, }: ValidationInput) => boolean;
 export declare const generalValidationPhoto: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean, required: boolean, inputId: string) => boolean;
 export declare const generalValidationPhotoCategory: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
+export declare const generalValidationPhotoEntity: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
+export declare const generalValidationPhotoDocumentId: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
 export declare const validationInputArray: (values: string[], match: RegExp, componentId: string, required?: boolean) => boolean;
 export declare const generalValidationGalleryImage: (value: string[], setValid: (valueValid: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
 export declare const generalValidationParentId: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
 export declare const generalValidationStatus: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
 export declare const generalValidationCurrenciesSymbol: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
+export declare const generalValidationTypeDocumentIdId: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationTypeDocumentIdIndex: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationTypeDocumentIdDigit: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
+export declare const generalValidationEmail: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
+export declare const generalValidationPhone: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
+export declare const generalValidationType: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;

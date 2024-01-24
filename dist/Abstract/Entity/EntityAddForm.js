@@ -6,22 +6,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.EntityAddForm = void 0;
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
 var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
 var _Input = require("../Input");
 var _Containers = require("../Containers");
-var _Button = require("../Button");
-var _Components = require("../../Components");
 var _Form = require("../Form");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
+var _templateObject, _templateObject2, _templateObject3;
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var defaultPhotoContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
-var defaultPhotoFormStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  flex-direction: column-reverse;\n  width: 100%;\n"])));
-var defaultLoadingContainerStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  width: 100%;\n  max-width: 120px;\n  max-height: 120px;\n  object-fit: cover;\n  border: 1px solid #ebebeb;\n  margin: auto;\n  border-radius: 100%;\n"])));
-var defaultphotoStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  width: 100%;\n  max-width: 120px;\n  max-height: 120px;\n  object-fit: cover;\n  border: 1px solid #ebebeb;\n  margin: auto;\n  border-radius: 100%;\n"])));
-var defaultPhotoMainContainerStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n"])));
-var defaultNameContainerStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
+var defaultPhotoMainContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n"])));
+var defaultNameContainerStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
 var EntityAddForm = function EntityAddForm(_ref) {
   var use = _ref.use,
     formType = _ref.formType,
@@ -29,12 +27,6 @@ var EntityAddForm = function EntityAddForm(_ref) {
     photoMainContainerStyle = _ref$photoMainContain === void 0 ? defaultPhotoMainContainerStyle : _ref$photoMainContain,
     _ref$photoContainerSt = _ref.photoContainerStyle,
     photoContainerStyle = _ref$photoContainerSt === void 0 ? defaultPhotoContainerStyle : _ref$photoContainerSt,
-    _ref$photoFormStyle = _ref.photoFormStyle,
-    photoFormStyle = _ref$photoFormStyle === void 0 ? defaultPhotoFormStyle : _ref$photoFormStyle,
-    _ref$loadingContainer = _ref.loadingContainerStyle,
-    loadingContainerStyle = _ref$loadingContainer === void 0 ? defaultLoadingContainerStyle : _ref$loadingContainer,
-    _ref$photoStyle = _ref.photoStyle,
-    photoStyle = _ref$photoStyle === void 0 ? defaultphotoStyle : _ref$photoStyle,
     _ref$nameContainerSty = _ref.nameContainerStyle,
     nameContainerStyle = _ref$nameContainerSty === void 0 ? defaultNameContainerStyle : _ref$nameContainerSty,
     modelFormProps = _ref.modelFormProps,
@@ -57,7 +49,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     codePostProps = _ref.codePostProps,
     containerEmailPhoneProps = _ref.containerEmailPhoneProps,
     emailProps = _ref.emailProps,
-    phoneProps = _ref.phoneProps;
+    phoneProps = _ref.phoneProps,
+    propsPhoto = _ref.propsPhoto;
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
     _React$useState2 = (0, _slicedToArray2["default"])(_React$useState, 2),
     InputTypeDocumentIdId = _React$useState2[0],
@@ -79,7 +72,6 @@ var EntityAddForm = function EntityAddForm(_ref) {
     InputCountry = _React$useState10[0],
     setInputCountry = _React$useState10[1];
   var isPersonalForm = formType === 'personal';
-  var fileInputRef = _react["default"].useRef(null);
   _react["default"].useEffect(function () {
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationName(use.states.name);
@@ -128,140 +120,113 @@ var EntityAddForm = function EntityAddForm(_ref) {
         console.log('Acción desconocida:', action);
     }
   };
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
-  };
-  var handleButtonClick = function handleButtonClick() {
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
-    }
-  };
-  _react["default"].useEffect(function () {
-    if (use.states.photo) {
-      var img = new Image();
-      img.src = use.states.photo;
-      img.onload = function () {
-        use.actions.setSubmitting(false);
-      };
-      img.onerror = function () {
-        use.actions.changeError(["Error al cargar la imagen: ".concat(use.states.photo)]);
-        use.actions.setSubmitting(true);
-      };
-    }
-  }, [use.states.photo]);
   _react["default"].useEffect(function () {
     setInputTypeDocumentIdId(function () {
-      return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-        id: "entityTypeDocumentIdId",
-        onChange: function onChange(e) {
+      return /*#__PURE__*/_react["default"].createElement(_Input.SelectTypeDocumentIdId, {
+        changeTypeDocumentIdId: function changeTypeDocumentIdId(e) {
           return use.actions.changeTypeDocumentIdId(e);
         },
-        options: use.states.typeDocumentIdIdOptions,
-        defaultValue: use.states.typeDocumentIdIdDefault,
-        styles: {
-          width: '100%'
-        }
-      }, typeDocumentIdIdProps));
+        props: _objectSpread({
+          options: use.states.typeDocumentIdIdOptions,
+          defaultValue: use.states.typeDocumentIdIdDefault,
+          styles: {
+            width: '100%'
+          }
+        }, typeDocumentIdIdProps)
+      });
     });
     setInputIndex(function () {
-      return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-        id: "entityDocumentIndex",
-        onChange: function onChange(e) {
+      return /*#__PURE__*/_react["default"].createElement(_Input.SelectDocumentIdIndex, {
+        changeIndex: function changeIndex(e) {
           return use.actions.changeIndex(e);
         },
-        options: use.states.indexOptions,
-        defaultValue: use.states.indexDefault,
-        styles: {
-          width: '92%'
-        }
-      }, indexProps));
+        props: _objectSpread({
+          options: use.states.indexOptions,
+          defaultValue: use.states.indexDefault,
+          styles: {
+            width: '92%'
+          }
+        }, indexProps)
+      });
     });
     setInputCountry(function () {
-      return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-        id: "entityCountry",
-        onChange: function onChange(event) {
-          return use.actions.changeCountry(event);
+      return /*#__PURE__*/_react["default"].createElement(_Input.SelectCountry, {
+        changeCountry: function changeCountry(e) {
+          return use.actions.changeCountry(e);
         },
-        options: use.states.countryOptions,
-        defaultValue: use.states.countryDefault,
-        styles: {
-          width: '92%'
-        }
-      }, countryProps));
+        props: _objectSpread({
+          options: use.states.countryOptions,
+          defaultValue: use.states.countryDefault,
+          styles: {
+            width: '92%'
+          }
+        }, countryProps)
+      });
     });
   }, []);
   _react["default"].useEffect(function () {
     if (use.states.stateCountryOptions.length > 0) {
       setInputState(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "entityStateCountry",
-          onChange: function onChange(event) {
-            return use.actions.changeStateCountry(event);
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectStateCountry, {
+          changeStateCountry: function changeStateCountry(e) {
+            return use.actions.changeStateCountry(e);
           },
-          options: use.states.stateCountryOptions,
-          defaultValue: use.states.stateCountryDefault,
-          styles: {
-            width: '90%'
-          }
-        }, stateSelectProps));
+          props: _objectSpread({
+            options: use.states.stateCountryOptions,
+            defaultValue: use.states.stateCountryDefault,
+            styles: {
+              width: '90%'
+            }
+          }, stateSelectProps)
+        });
       });
     } else {
       setInputState(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-          inputProps: {
-            placeholder: 'Estado',
-            type: 'text',
-            id: 'entityStateCountry',
-            onKeyUp: function onKeyUp(event) {
-              return use.actions.changeStateCountry({
-                label: event.target.value,
-                value: event.target.value
-              });
-            },
-            defaultValue: use.states.state
+        return /*#__PURE__*/_react["default"].createElement(_Input.InputStateCountry, {
+          changeStateCountry: function changeStateCountry(e) {
+            return use.actions.changeStateCountry(e);
           },
-          styles: {
-            padding: '10px 19px',
-            width: '90%'
-          }
-        }, stateInputProps));
+          props: _objectSpread({
+            inputProps: {
+              defaultValue: use.states.state
+            },
+            styles: {
+              padding: '10px 19px',
+              width: '90%'
+            }
+          }, stateInputProps)
+        });
       });
     }
     if (use.states.cityOptions.length > 0) {
       setInputCity(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "entityCity",
-          onChange: function onChange(event) {
-            return use.actions.changeCity(event);
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectCity, {
+          changeCity: function changeCity(e) {
+            return use.actions.changeCity(e);
           },
-          options: use.states.cityOptions,
-          defaultValue: use.states.cityDefault,
-          styles: {
-            width: '90%'
-          }
-        }, citySelectProps));
+          props: _objectSpread({
+            options: use.states.cityOptions,
+            defaultValue: use.states.cityDefault,
+            styles: {
+              width: '90%'
+            }
+          }, citySelectProps)
+        });
       });
     } else {
       setInputCity(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-          inputProps: {
-            placeholder: 'Ciudad',
-            type: 'text',
-            id: 'entityCity',
-            onKeyUp: function onKeyUp(event) {
-              return use.actions.changeCity({
-                label: event.target.value,
-                value: event.target.value
-              });
+        return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputCity, {
+          changeCity: use.actions.changeCity,
+          props: _objectSpread({
+            inputProps: {
+              defaultValue: use.states.city
             },
-            defaultValue: use.states.city
-          },
-          styles: {
-            padding: '10px 19px',
-            width: '90%'
-          }
-        }, cityInputProps));
+            styles: {
+              padding: '10px 19px',
+              width: '90%'
+            }
+          }, cityInputProps)
+        }));
       });
     }
   }, [use.states.country, use.states.stateCountryOptions, use.states.cityOptions]);
@@ -286,126 +251,79 @@ var EntityAddForm = function EntityAddForm(_ref) {
     className: (0, _css.css)(photoMainContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement("form", {
-    className: (0, _css.css)(photoFormStyle),
-    onSubmit: handleSubmit,
-    id: "entityPhoto"
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
-    type: "file",
-    id: "file-input",
-    ref: fileInputRef,
-    hidden: true,
-    onChange: use.actions.changePhoto
-  }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    title: "Cambiar Foto",
-    buttonProps: {
-      onClick: handleButtonClick
-    },
-    styles: {
-      fontSize: '6px',
-      margin: '20px auto 40px auto',
-      backgroundColor: '#439b57'
-    }
-  })), use.states.submitting ? /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _css.css)(loadingContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement(_Components.Loading, {
-    mainStyles: {
-      padding: '38px'
-    },
-    divStyle: {
-      width: '35px',
-      height: '35px',
-      border: '4px solid #eee',
-      borderTop: '4px solid #077bb4'
-    }
-  })) : use.states.photo && /*#__PURE__*/_react["default"].createElement("img", {
-    className: (0, _css.css)(photoStyle),
-    src: use.states.photo,
-    alt: "Foto de Entidad"
-  }))), /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement(_Form.PhotoEntity, {
+    photo: use.states.photo,
+    changePhoto: use.actions.changePhoto,
+    submitting: use.states.submitting,
+    changeError: use.actions.changeError,
+    setSubmitting: use.actions.setSubmitting,
+    props: propsPhoto
+  })), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(nameContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Nombre',
-      type: 'text',
-      id: "userName",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeName(event.target.value);
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
+    changeName: use.actions.changeName,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.name
       },
-      defaultValue: use.states.name
-    },
-    styles: {
-      width: '100%'
-    }
-  }, nameProps)), isPersonalForm && /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Apellido',
-      type: 'text',
-      id: "userLastName",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeLastName(event.target.value);
+      styles: {
+        width: '100%'
+      }
+    }, nameProps)
+  }), isPersonalForm && /*#__PURE__*/_react["default"].createElement(_Input.InputLastName, {
+    changeLastName: use.actions.changeLastName,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.lastName
       },
-      defaultValue: use.states.lastName
-    },
-    styles: {
-      width: '100%'
-    }
-  }, lastNameProps)), InputTypeDocumentIdId))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+      styles: {
+        width: '100%'
+      }
+    }, lastNameProps)
+  }), InputTypeDocumentIdId))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'start'
     }
-  }, containerDocumentProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputIndex, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Número de identificación',
-      type: 'number',
-      min: '0',
-      step: '1',
-      id: 'entityDocumentDigit',
-      title: 'Solo números, ejemplo: 181234678',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeDigit(event.target.value);
+  }, containerDocumentProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputIndex, /*#__PURE__*/_react["default"].createElement(_Input.InputDocumentiIdDigit, {
+    changeDocumentiIdDigit: use.actions.changeDigit,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.digit
       },
-      defaultValue: use.states.digit
-    },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, digitProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, digitProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'start'
     }
-  }, containerAddressProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Dirección 1',
-      type: 'text',
-      id: 'address1',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeAddress1(event.target.value);
+  }, containerAddressProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputAddress1, {
+    changeAddress1: use.actions.changeAddress1,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.address1
       },
-      defaultValue: use.states.address1
-    },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, address1Props)), /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Dirección 2',
-      type: 'text',
-      id: 'address2',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeAddress2(event.target.value);
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, address1Props)
+  }), /*#__PURE__*/_react["default"].createElement(_Input.InputAddress2, {
+    changeAddress2: use.actions.changeAddress2,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.address2
       },
-      defaultValue: use.states.address2
-    },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, address2Props)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, address2Props)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'start'
@@ -415,56 +333,44 @@ var EntityAddForm = function EntityAddForm(_ref) {
       width: '100%',
       justifyContent: 'start'
     }
-  }, containerCountryProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputCountry, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Código Postal',
-      type: 'text',
-      id: 'entityCodePost',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changePostCode(event.target.value);
+  }, containerCountryProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputCountry, /*#__PURE__*/_react["default"].createElement(_Input.InputZipCode, {
+    changeZipCode: use.actions.changePostCode,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.postCode
       },
-      defaultValue: use.states.postCode
-    },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, codePostProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, codePostProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'start'
     }
-  }, containerEmailPhoneProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Email',
-      type: 'email',
-      id: 'entityEmail',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeEmail(event.target.value);
+  }, containerEmailPhoneProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputEmail, {
+    changeEmail: use.actions.changeEmail,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.email
       },
-      defaultValue: use.states.email
-    },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, emailProps)), /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Teléfono',
-      type: 'number',
-      min: '0',
-      step: '1',
-      title: 'Solo números y sin comenzar en 0, ejemplo: 4241234000',
-      id: 'entityPhone',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changePhone(event.target.value);
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, emailProps)
+  }), /*#__PURE__*/_react["default"].createElement(_Input.InputPhone, {
+    changePhone: use.actions.changePhone,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.phone
       },
-      defaultValue: use.states.phone
-    },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, phoneProps))))));
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, phoneProps)
+  })))));
 };
 exports.EntityAddForm = EntityAddForm;

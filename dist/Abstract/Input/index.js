@@ -45,6 +45,24 @@ Object.defineProperty(exports, "InputDescription", {
     return _InputDescription.InputDescription;
   }
 });
+Object.defineProperty(exports, "InputDocumentiIdDigit", {
+  enumerable: true,
+  get: function get() {
+    return _InputDocumentIdDigit.InputDocumentiIdDigit;
+  }
+});
+Object.defineProperty(exports, "InputEmail", {
+  enumerable: true,
+  get: function get() {
+    return _InputEmail.InputEmail;
+  }
+});
+Object.defineProperty(exports, "InputLastName", {
+  enumerable: true,
+  get: function get() {
+    return _InputLastName.InputLastName;
+  }
+});
 Object.defineProperty(exports, "InputName", {
   enumerable: true,
   get: function get() {
@@ -55,6 +73,12 @@ Object.defineProperty(exports, "InputPassword", {
   enumerable: true,
   get: function get() {
     return _InputPassword.InputPassword;
+  }
+});
+Object.defineProperty(exports, "InputPhone", {
+  enumerable: true,
+  get: function get() {
+    return _InputPhone.InputPhone;
   }
 });
 Object.defineProperty(exports, "InputStateCountry", {
@@ -87,6 +111,12 @@ Object.defineProperty(exports, "SelectCountry", {
     return _SelectCountry.SelectCountry;
   }
 });
+Object.defineProperty(exports, "SelectDocumentIdIndex", {
+  enumerable: true,
+  get: function get() {
+    return _SelectDocumentIdIndex.SelectDocumentIdIndex;
+  }
+});
 Object.defineProperty(exports, "SelectParentId", {
   enumerable: true,
   get: function get() {
@@ -111,6 +141,12 @@ Object.defineProperty(exports, "SelectStatus", {
     return _SelectStatus.SelectStatus;
   }
 });
+Object.defineProperty(exports, "SelectTypeDocumentIdId", {
+  enumerable: true,
+  get: function get() {
+    return _SelectTypeDocumentIdId.SelectTypeDocumentIdId;
+  }
+});
 var _Input = require("./Input");
 var _InputAddress = require("./InputAddress1");
 var _InputAddress2 = require("./InputAddress2");
@@ -128,3 +164,9 @@ var _SelectStateCountry = require("./SelectStateCountry");
 var _SelectParentId = require("./SelectParentId");
 var _SelectStatus = require("./SelectStatus");
 var _InputCurrenciesSymbol = require("./InputCurrenciesSymbol");
+var _InputLastName = require("./InputLastName");
+var _InputDocumentIdDigit = require("./InputDocumentIdDigit");
+var _InputEmail = require("./InputEmail");
+var _InputPhone = require("./InputPhone");
+var _SelectDocumentIdIndex = require("./SelectDocumentIdIndex");
+var _SelectTypeDocumentIdId = require("./SelectTypeDocumentIdId");

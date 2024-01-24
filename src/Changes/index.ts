@@ -99,6 +99,20 @@ export const generalChangeAddress = (
   });
 };
 
+export const generalChangeAddressType = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: string) => void
+): void => {
+  changeSelect({
+    newValue: options,
+    validation,
+    setDefault,
+    setValue,
+  });
+};
+
 export const generalChangeCityStateCountry = (
   options: SingleValue<{ value: string; label: string }>,
   validation: (valueValid: string) => boolean,
@@ -285,6 +299,88 @@ export const generalChangeCurrenciesSymbol = (
   changeInputText({
     value: name,
     validation,
+    setValue,
+  });
+};
+
+export const generalChangeTypeDocumentIdId = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: number | null) => void
+): void => {
+  changeSelect({
+    newValue: options,
+    validation,
+    setDefault,
+    setValue,
+  });
+};
+
+export const generalChangeDocumentIdIndex = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: string) => void
+): void => {
+  changeSelect({
+    newValue: options,
+    validation,
+    setDefault,
+    setValue,
+  });
+};
+
+export const generalChangeDocumentIdDigit = (
+  value: string,
+  validation: (valueValid: string) => boolean,
+  setValue: (transformedValue: string) => void
+): void => {
+  const valueClean = DOMPurify.sanitize(value);
+  changeInputText({
+    value: valueClean,
+    validation,
+    setValue,
+  });
+};
+
+export const generalChangeEmail = (
+  value: string,
+  validation: (valueValid: string) => boolean,
+  setValue: (transformedValue: string) => void
+): void => {
+  const valueClean = DOMPurify.sanitize(value);
+  const name = toTitleCase(valueClean);
+  changeInputText({
+    value: name,
+    validation,
+    setValue,
+  });
+};
+
+export const generalChangePhone = (
+  value: string,
+  validation: (valueValid: string) => boolean,
+  setValue: (transformedValue: string) => void
+): void => {
+  const valueClean = DOMPurify.sanitize(value);
+  changeInputText({
+    value: valueClean,
+    validation,
+    setValue,
+  });
+};
+
+export const generalChangeType = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: string) => void
+): void => {
+  changeSelect({
+    newValue: options,
+    validation,
+    setDefault,
     setValue,
   });
 };

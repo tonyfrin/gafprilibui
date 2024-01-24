@@ -15,6 +15,12 @@ Object.defineProperty(exports, "ADDRESS2_INPUT", {
     return _Constans.ADDRESS2_INPUT;
   }
 });
+Object.defineProperty(exports, "ADDRESS_TYPE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.ADDRESS_TYPE_INPUT;
+  }
+});
 Object.defineProperty(exports, "ALERT", {
   enumerable: true,
   get: function get() {
@@ -207,6 +213,18 @@ Object.defineProperty(exports, "DocumentsIndex", {
     return _Constans.DocumentsIndex;
   }
 });
+Object.defineProperty(exports, "EMAIL_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.EMAIL_INPUT;
+  }
+});
+Object.defineProperty(exports, "ENTITY_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.ENTITY_ROUTE;
+  }
+});
 Object.defineProperty(exports, "EntityAddForm", {
   enumerable: true,
   get: function get() {
@@ -313,6 +331,30 @@ Object.defineProperty(exports, "InputCurrenciesSymbol", {
   enumerable: true,
   get: function get() {
     return _Abstract.InputCurrenciesSymbol;
+  }
+});
+Object.defineProperty(exports, "InputDocumentiIdDigit", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputDocumentiIdDigit;
+  }
+});
+Object.defineProperty(exports, "InputEmail", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputEmail;
+  }
+});
+Object.defineProperty(exports, "InputLastName", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputLastName;
+  }
+});
+Object.defineProperty(exports, "InputPhone", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputPhone;
   }
 });
 Object.defineProperty(exports, "LAST_NAME_INPUT", {
@@ -435,10 +477,28 @@ Object.defineProperty(exports, "PASSWORD_INPUT", {
     return _Constans.PASSWORD_INPUT;
   }
 });
+Object.defineProperty(exports, "PHONE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.PHONE_INPUT;
+  }
+});
 Object.defineProperty(exports, "PHOTO_CATEGORY_INPUT", {
   enumerable: true,
   get: function get() {
     return _Constans.PHOTO_CATEGORY_INPUT;
+  }
+});
+Object.defineProperty(exports, "PHOTO_DOCUMENT_ID_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.PHOTO_DOCUMENT_ID_INPUT;
+  }
+});
+Object.defineProperty(exports, "PHOTO_ENTITY_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.PHOTO_ENTITY_INPUT;
   }
 });
 Object.defineProperty(exports, "PHOTO_INPUT", {
@@ -513,6 +573,12 @@ Object.defineProperty(exports, "SearchBar", {
     return _Abstract.SearchBar;
   }
 });
+Object.defineProperty(exports, "SelectDocumentIdIndex", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectDocumentIdIndex;
+  }
+});
 Object.defineProperty(exports, "SelectParentId", {
   enumerable: true,
   get: function get() {
@@ -523,6 +589,12 @@ Object.defineProperty(exports, "SelectStatus", {
   enumerable: true,
   get: function get() {
     return _Abstract.SelectStatus;
+  }
+});
+Object.defineProperty(exports, "SelectTypeDocumentIdId", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectTypeDocumentIdId;
   }
 });
 Object.defineProperty(exports, "SitesForm", {
@@ -541,6 +613,30 @@ Object.defineProperty(exports, "Step", {
   enumerable: true,
   get: function get() {
     return _Abstract.Step;
+  }
+});
+Object.defineProperty(exports, "TYPE_DOCUMENT_ID_DIGIT_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.TYPE_DOCUMENT_ID_DIGIT_INPUT;
+  }
+});
+Object.defineProperty(exports, "TYPE_DOCUMENT_ID_ID_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.TYPE_DOCUMENT_ID_ID_INPUT;
+  }
+});
+Object.defineProperty(exports, "TYPE_DOCUMENT_ID_INDEX_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.TYPE_DOCUMENT_ID_INDEX_INPUT;
+  }
+});
+Object.defineProperty(exports, "TYPE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.TYPE_INPUT;
   }
 });
 Object.defineProperty(exports, "Title1", {
@@ -633,6 +729,12 @@ Object.defineProperty(exports, "generalChangeAddress", {
     return _Changes.generalChangeAddress;
   }
 });
+Object.defineProperty(exports, "generalChangeAddressType", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeAddressType;
+  }
+});
 Object.defineProperty(exports, "generalChangeCityOptions", {
   enumerable: true,
   get: function get() {
@@ -657,6 +759,24 @@ Object.defineProperty(exports, "generalChangeDescription", {
     return _Changes.generalChangeDescription;
   }
 });
+Object.defineProperty(exports, "generalChangeDocumentIdDigit", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeDocumentIdDigit;
+  }
+});
+Object.defineProperty(exports, "generalChangeDocumentIdIndex", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeDocumentIdIndex;
+  }
+});
+Object.defineProperty(exports, "generalChangeEmail", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeEmail;
+  }
+});
 Object.defineProperty(exports, "generalChangeLastName", {
   enumerable: true,
   get: function get() {
@@ -679,6 +799,12 @@ Object.defineProperty(exports, "generalChangePassword", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangePassword;
+  }
+});
+Object.defineProperty(exports, "generalChangePhone", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangePhone;
   }
 });
 Object.defineProperty(exports, "generalChangePhoto", {
@@ -711,6 +837,18 @@ Object.defineProperty(exports, "generalChangeStatus", {
     return _Changes.generalChangeStatus;
   }
 });
+Object.defineProperty(exports, "generalChangeType", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeType;
+  }
+});
+Object.defineProperty(exports, "generalChangeTypeDocumentIdId", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeTypeDocumentIdId;
+  }
+});
 Object.defineProperty(exports, "generalChangeUserName", {
   enumerable: true,
   get: function get() {
@@ -729,6 +867,12 @@ Object.defineProperty(exports, "generalValidationAddress2", {
     return _Validations.generalValidationAddress2;
   }
 });
+Object.defineProperty(exports, "generalValidationAddressType", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationAddressType;
+  }
+});
 Object.defineProperty(exports, "generalValidationButtonNext", {
   enumerable: true,
   get: function get() {
@@ -745,6 +889,12 @@ Object.defineProperty(exports, "generalValidationDescription", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationDescription;
+  }
+});
+Object.defineProperty(exports, "generalValidationEmail", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationEmail;
   }
 });
 Object.defineProperty(exports, "generalValidationGalleryImage", {
@@ -771,6 +921,12 @@ Object.defineProperty(exports, "generalValidationPassword", {
     return _Validations.generalValidationPassword;
   }
 });
+Object.defineProperty(exports, "generalValidationPhone", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationPhone;
+  }
+});
 Object.defineProperty(exports, "generalValidationPhoto", {
   enumerable: true,
   get: function get() {
@@ -781,6 +937,18 @@ Object.defineProperty(exports, "generalValidationPhotoCategory", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationPhotoCategory;
+  }
+});
+Object.defineProperty(exports, "generalValidationPhotoDocumentId", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationPhotoDocumentId;
+  }
+});
+Object.defineProperty(exports, "generalValidationPhotoEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationPhotoEntity;
   }
 });
 Object.defineProperty(exports, "generalValidationPostCode", {
@@ -823,6 +991,30 @@ Object.defineProperty(exports, "generalValidationSku", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationSku;
+  }
+});
+Object.defineProperty(exports, "generalValidationType", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationType;
+  }
+});
+Object.defineProperty(exports, "generalValidationTypeDocumentIdDigit", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationTypeDocumentIdDigit;
+  }
+});
+Object.defineProperty(exports, "generalValidationTypeDocumentIdId", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationTypeDocumentIdId;
+  }
+});
+Object.defineProperty(exports, "generalValidationTypeDocumentIdIndex", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationTypeDocumentIdIndex;
   }
 });
 Object.defineProperty(exports, "generalValidationUserName", {

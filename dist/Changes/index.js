@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.generalChangeUserName = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAddress = void 0;
+exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAddressType = exports.generalChangeAddress = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _axios = _interopRequireDefault(require("axios"));
@@ -69,6 +69,15 @@ var generalChangeAddress = function generalChangeAddress(value, validation, setV
   });
 };
 exports.generalChangeAddress = generalChangeAddress;
+var generalChangeAddressType = function generalChangeAddressType(options, validation, setDefault, setValue) {
+  (0, _helpers.changeSelect)({
+    newValue: options,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeAddressType = generalChangeAddressType;
 var generalChangeCityStateCountry = function generalChangeCityStateCountry(options, validation, setDefault, setValue, setIsReset) {
   setIsReset(false);
   (0, _helpers.changeSelect)({
@@ -247,3 +256,58 @@ var generalChangeCurrenciesSymbol = function generalChangeCurrenciesSymbol(value
   });
 };
 exports.generalChangeCurrenciesSymbol = generalChangeCurrenciesSymbol;
+var generalChangeTypeDocumentIdId = function generalChangeTypeDocumentIdId(options, validation, setDefault, setValue) {
+  (0, _helpers.changeSelect)({
+    newValue: options,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeTypeDocumentIdId = generalChangeTypeDocumentIdId;
+var generalChangeDocumentIdIndex = function generalChangeDocumentIdIndex(options, validation, setDefault, setValue) {
+  (0, _helpers.changeSelect)({
+    newValue: options,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeDocumentIdIndex = generalChangeDocumentIdIndex;
+var generalChangeDocumentIdDigit = function generalChangeDocumentIdDigit(value, validation, setValue) {
+  var valueClean = _dompurify["default"].sanitize(value);
+  (0, _helpers.changeInputText)({
+    value: valueClean,
+    validation: validation,
+    setValue: setValue
+  });
+};
+exports.generalChangeDocumentIdDigit = generalChangeDocumentIdDigit;
+var generalChangeEmail = function generalChangeEmail(value, validation, setValue) {
+  var valueClean = _dompurify["default"].sanitize(value);
+  var name = (0, _helpers.toTitleCase)(valueClean);
+  (0, _helpers.changeInputText)({
+    value: name,
+    validation: validation,
+    setValue: setValue
+  });
+};
+exports.generalChangeEmail = generalChangeEmail;
+var generalChangePhone = function generalChangePhone(value, validation, setValue) {
+  var valueClean = _dompurify["default"].sanitize(value);
+  (0, _helpers.changeInputText)({
+    value: valueClean,
+    validation: validation,
+    setValue: setValue
+  });
+};
+exports.generalChangePhone = generalChangePhone;
+var generalChangeType = function generalChangeType(options, validation, setDefault, setValue) {
+  (0, _helpers.changeSelect)({
+    newValue: options,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeType = generalChangeType;

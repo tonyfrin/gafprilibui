@@ -15,6 +15,12 @@ Object.defineProperty(exports, "ADDRESS2_INPUT", {
     return _Inputs.ADDRESS2_INPUT;
   }
 });
+Object.defineProperty(exports, "ADDRESS_TYPE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.ADDRESS_TYPE_INPUT;
+  }
+});
 Object.defineProperty(exports, "ALERT", {
   enumerable: true,
   get: function get() {
@@ -129,6 +135,24 @@ Object.defineProperty(exports, "DocumentsIndex", {
     return _DocumentsIndex.DocumentsIndex;
   }
 });
+Object.defineProperty(exports, "EMAIL_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.EMAIL_INPUT;
+  }
+});
+Object.defineProperty(exports, "ENTITY_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.ENTITY_ROUTE;
+  }
+});
+Object.defineProperty(exports, "ENTITY_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.ENTITY_STORAGE;
+  }
+});
 Object.defineProperty(exports, "GALLERY_IMAGE_INPUT", {
   enumerable: true,
   get: function get() {
@@ -159,10 +183,28 @@ Object.defineProperty(exports, "PASSWORD_INPUT", {
     return _Inputs.PASSWORD_INPUT;
   }
 });
+Object.defineProperty(exports, "PHONE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.PHONE_INPUT;
+  }
+});
 Object.defineProperty(exports, "PHOTO_CATEGORY_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.PHOTO_CATEGORY_INPUT;
+  }
+});
+Object.defineProperty(exports, "PHOTO_DOCUMENT_ID_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.PHOTO_DOCUMENT_ID_INPUT;
+  }
+});
+Object.defineProperty(exports, "PHOTO_ENTITY_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.PHOTO_ENTITY_INPUT;
   }
 });
 Object.defineProperty(exports, "PHOTO_INPUT", {
@@ -205,6 +247,30 @@ Object.defineProperty(exports, "StatesCountries", {
   enumerable: true,
   get: function get() {
     return _StatesCountries.StatesCountries;
+  }
+});
+Object.defineProperty(exports, "TYPE_DOCUMENT_ID_DIGIT_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TYPE_DOCUMENT_ID_DIGIT_INPUT;
+  }
+});
+Object.defineProperty(exports, "TYPE_DOCUMENT_ID_ID_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TYPE_DOCUMENT_ID_ID_INPUT;
+  }
+});
+Object.defineProperty(exports, "TYPE_DOCUMENT_ID_INDEX_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TYPE_DOCUMENT_ID_INDEX_INPUT;
+  }
+});
+Object.defineProperty(exports, "TYPE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TYPE_INPUT;
   }
 });
 Object.defineProperty(exports, "UPLOAD_PHOTO_ROUTE", {

@@ -2,9 +2,8 @@
 import type { InputProps } from '../Input';
 import { ContainerButtonPropsExtended } from '../Containers';
 import type { ButtonPropsExtended } from '../Button';
-import type { LoadingProps } from '../../Components';
 import type { ListPropsExtended } from '../List';
-import type { ModelFormPropsExtended } from '../Form';
+import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
 import type { UseEntityReturn } from '../../states';
 export type EntityUpdateFormProps = {
     use: UseEntityReturn;
@@ -14,9 +13,6 @@ export type EntityUpdateFormProps = {
     optionsButtonDeleteContainerStyle?: string;
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    photoStyle?: string;
     nameContainerStyle?: string;
     addressListContainerStyle?: string;
     documentListContainerStyle?: string;
@@ -25,8 +21,6 @@ export type EntityUpdateFormProps = {
     buttonAddressFactProps?: ButtonPropsExtended;
     buttonAddressDeleteProps?: ButtonPropsExtended;
     modelFormProps?: ModelFormPropsExtended;
-    buttonPhotoChangeProps?: ButtonPropsExtended;
-    loadingProps?: LoadingProps;
     nameInputProps?: InputProps;
     lastNameInputProps?: InputProps;
     emailPhoneConatinerProps?: ContainerButtonPropsExtended;
@@ -34,6 +28,7 @@ export type EntityUpdateFormProps = {
     phoneInputProps?: InputProps;
     addressListProps?: ListPropsExtended;
     documentListProps?: ListPropsExtended;
+    propsPhoto?: PhotoEntityProps['props'];
 };
 export type EntityUpdateFormPropsExtended = {
     optionsButtonStatusContainerStyle?: string;
@@ -42,9 +37,6 @@ export type EntityUpdateFormPropsExtended = {
     optionsButtonDeleteContainerStyle?: string;
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    photoStyle?: string;
     nameContainerStyle?: string;
     addressListContainerStyle?: string;
     documentListContainerStyle?: string;
@@ -53,8 +45,6 @@ export type EntityUpdateFormPropsExtended = {
     buttonAddressFactProps?: ButtonPropsExtended;
     buttonAddressDeleteProps?: ButtonPropsExtended;
     modelFormProps?: ModelFormPropsExtended;
-    buttonPhotoChangeProps?: ButtonPropsExtended;
-    loadingProps?: LoadingProps;
     nameInputProps?: InputProps;
     lastNameInputProps?: InputProps;
     emailPhoneConatinerProps?: ContainerButtonPropsExtended;
@@ -62,5 +52,6 @@ export type EntityUpdateFormPropsExtended = {
     phoneInputProps?: InputProps;
     addressListProps?: ListPropsExtended;
     documentListProps?: ListPropsExtended;
+    propsPhoto?: PhotoEntityProps['props'];
 };
-export declare const EntityUpdateForm: ({ use, optionsButtonStatusContainerStyle, optionsButtonTypeContainerStyle, optionsButtonUpdateContainerStyle, optionsButtonDeleteContainerStyle, photoMainContainerStyle, photoContainerStyle, photoFormStyle, loadingContainerStyle, photoStyle, nameContainerStyle, addressListContainerStyle, documentListContainerStyle, buttonStatusProps, buttonTypeProps, buttonAddressFactProps, buttonAddressDeleteProps, modelFormProps, buttonPhotoChangeProps, loadingProps, nameInputProps, lastNameInputProps, emailPhoneConatinerProps, emailInputProps, phoneInputProps, addressListProps, documentListProps, }: EntityUpdateFormProps) => JSX.Element;
+export declare const EntityUpdateForm: ({ use, optionsButtonStatusContainerStyle, optionsButtonTypeContainerStyle, optionsButtonUpdateContainerStyle, optionsButtonDeleteContainerStyle, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, addressListContainerStyle, documentListContainerStyle, buttonStatusProps, buttonTypeProps, buttonAddressFactProps, buttonAddressDeleteProps, modelFormProps, nameInputProps, lastNameInputProps, emailPhoneConatinerProps, emailInputProps, phoneInputProps, addressListProps, documentListProps, propsPhoto, }: EntityUpdateFormProps) => JSX.Element;

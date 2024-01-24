@@ -52,6 +52,12 @@ export {
   SelectParentId,
   SelectStatus,
   InputCurrenciesSymbol,
+  InputLastName,
+  InputDocumentiIdDigit,
+  InputEmail,
+  InputPhone,
+  SelectDocumentIdIndex,
+  SelectTypeDocumentIdId,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -137,6 +143,12 @@ export type {
   SelectParentIdProps,
   SelectStatusProps,
   InputCurrenciesSymbolProps,
+  InputLastNameProps,
+  InputDocumentiIdDigitProps,
+  InputEmailProps,
+  InputPhoneProps,
+  SelectDocumentIdIndexProps,
+  SelectTypeDocumentIdIdProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -268,6 +280,16 @@ export {
   CURRENCIES_STORAGE,
   CURRENCIES_ROUTE,
   CURRENCIES_SYMBOL_INPUT,
+  ENTITY_ROUTE,
+  TYPE_DOCUMENT_ID_ID_INPUT,
+  TYPE_DOCUMENT_ID_INDEX_INPUT,
+  TYPE_DOCUMENT_ID_DIGIT_INPUT,
+  ADDRESS_TYPE_INPUT,
+  EMAIL_INPUT,
+  PHONE_INPUT,
+  TYPE_INPUT,
+  PHOTO_ENTITY_INPUT,
+  PHOTO_DOCUMENT_ID_INPUT,
 } from './Constans';
 export { getItem, saveItem } from './Context';
 export {
@@ -298,6 +320,15 @@ export {
   generalValidationGalleryImage,
   generalValidationPhotoCategory,
   generalValidationCurrenciesSymbol,
+  generalValidationTypeDocumentIdId,
+  generalValidationTypeDocumentIdIndex,
+  generalValidationTypeDocumentIdDigit,
+  generalValidationAddressType,
+  generalValidationEmail,
+  generalValidationPhone,
+  generalValidationType,
+  generalValidationPhotoEntity,
+  generalValidationPhotoDocumentId,
 } from './Validations';
 export type { ValidationInput } from './Validations';
 export {
@@ -316,4 +347,11 @@ export {
   generalChangePhoto,
   generalChangeStatus,
   generalChangeCurrenciesSymbol,
+  generalChangeTypeDocumentIdId,
+  generalChangeDocumentIdIndex,
+  generalChangeDocumentIdDigit,
+  generalChangeAddressType,
+  generalChangeEmail,
+  generalChangePhone,
+  generalChangeType,
 } from './Changes';

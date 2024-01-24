@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getApiUrl = exports.UPLOAD_PHOTO_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.API_URL = void 0;
+exports.getApiUrl = exports.UPLOAD_PHOTO_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.API_URL = void 0;
 var getApiUrl = function getApiUrl() {
   return process.env.API_URL;
 };
@@ -16,3 +16,5 @@ var CATEGORY_ROUTE = '/category';
 exports.CATEGORY_ROUTE = CATEGORY_ROUTE;
 var CURRENCIES_ROUTE = '/currencies';
 exports.CURRENCIES_ROUTE = CURRENCIES_ROUTE;
+var ENTITY_ROUTE = '/entity';
+exports.ENTITY_ROUTE = ENTITY_ROUTE;

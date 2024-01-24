@@ -1,23 +1,34 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import type { UseEntityReturn } from '../../states';
-import { Input, GsSelect } from '../Input';
+import {
+  InputName,
+  InputLastName,
+  InputDocumentiIdDigit,
+  InputAddress1,
+  InputAddress2,
+  InputZipCode,
+  InputEmail,
+  InputPhone,
+  SelectDocumentIdIndex,
+  SelectCity,
+  InputCity as InputCityGeneral,
+  SelectStateCountry,
+  InputStateCountry,
+  SelectCountry,
+  SelectTypeDocumentIdId,
+} from '../Input';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
-import { Button } from '../Button';
-import { Loading } from '../../Components';
-import { ModelForm } from '../Form';
-import type { ModelFormPropsExtended } from '../Form';
+import { ModelForm, PhotoEntity } from '../Form';
+import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
 
 export type EntityAddFormProps = {
   use: UseEntityReturn;
   formType: 'personal' | 'legal';
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
-  photoFormStyle?: string;
-  loadingContainerStyle?: string;
-  photoStyle?: string;
   nameContainerStyle?: string;
   modelFormProps?: ModelFormPropsExtended;
   nameProps?: InputProps;
@@ -40,6 +51,7 @@ export type EntityAddFormProps = {
   containerEmailPhoneProps?: ContainerButtonPropsExtended;
   emailProps?: InputProps;
   phoneProps?: InputProps;
+  propsPhoto?: PhotoEntityProps['props'];
 };
 
 export type EntityAddFormPropsExtended = {
@@ -76,34 +88,6 @@ const defaultPhotoContainerStyle = css`
   width: 100%;
 `;
 
-const defaultPhotoFormStyle = css`
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-`;
-
-const defaultLoadingContainerStyle = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 100%;
-`;
-
-const defaultphotoStyle = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 100%;
-`;
-
 const defaultPhotoMainContainerStyle = css`
   display: flex;
   justify-content: space-between;
@@ -118,9 +102,6 @@ export const EntityAddForm = ({
   formType,
   photoMainContainerStyle = defaultPhotoMainContainerStyle,
   photoContainerStyle = defaultPhotoContainerStyle,
-  photoFormStyle = defaultPhotoFormStyle,
-  loadingContainerStyle = defaultLoadingContainerStyle,
-  photoStyle = defaultphotoStyle,
   nameContainerStyle = defaultNameContainerStyle,
   modelFormProps,
   nameProps,
@@ -143,6 +124,7 @@ export const EntityAddForm = ({
   containerEmailPhoneProps,
   emailProps,
   phoneProps,
+  propsPhoto,
 }: EntityAddFormProps): JSX.Element => {
   const [InputTypeDocumentIdId, setInputTypeDocumentIdId] = React.useState(
     <></>
@@ -152,7 +134,6 @@ export const EntityAddForm = ({
   const [InputState, setInputState] = React.useState(<></>);
   const [InputCountry, setInputCountry] = React.useState(<></>);
   const isPersonalForm = formType === 'personal';
-  const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
     use.actions.validationPhoto(use.states.photo);
@@ -250,75 +231,51 @@ export const EntityAddForm = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
-
-  const handleButtonClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
-    }
-  };
-
-  React.useEffect(() => {
-    if (use.states.photo) {
-      const img = new Image();
-      img.src = use.states.photo;
-      img.onload = () => {
-        use.actions.setSubmitting(false);
-      };
-      img.onerror = () => {
-        use.actions.changeError([
-          `Error al cargar la imagen: ${use.states.photo}`,
-        ]);
-        use.actions.setSubmitting(true);
-      };
-    }
-  }, [use.states.photo]);
-
   React.useEffect(() => {
     setInputTypeDocumentIdId((): JSX.Element => {
       return (
-        <GsSelect
-          id="entityTypeDocumentIdId"
-          onChange={(e) => use.actions.changeTypeDocumentIdId(e)}
-          options={use.states.typeDocumentIdIdOptions}
-          defaultValue={use.states.typeDocumentIdIdDefault}
-          styles={{
-            width: '100%',
+        <SelectTypeDocumentIdId
+          changeTypeDocumentIdId={(e) => use.actions.changeTypeDocumentIdId(e)}
+          props={{
+            options: use.states.typeDocumentIdIdOptions,
+            defaultValue: use.states.typeDocumentIdIdDefault,
+            styles: {
+              width: '100%',
+            },
+            ...typeDocumentIdIdProps,
           }}
-          {...typeDocumentIdIdProps}
         />
       );
     });
 
     setInputIndex((): JSX.Element => {
       return (
-        <GsSelect
-          id="entityDocumentIndex"
-          onChange={(e) => use.actions.changeIndex(e)}
-          options={use.states.indexOptions}
-          defaultValue={use.states.indexDefault}
-          styles={{
-            width: '92%',
+        <SelectDocumentIdIndex
+          changeIndex={(e) => use.actions.changeIndex(e)}
+          props={{
+            options: use.states.indexOptions,
+            defaultValue: use.states.indexDefault,
+            styles: {
+              width: '92%',
+            },
+            ...indexProps,
           }}
-          {...indexProps}
         />
       );
     });
 
     setInputCountry((): JSX.Element => {
       return (
-        <GsSelect
-          id="entityCountry"
-          onChange={(event) => use.actions.changeCountry(event)}
-          options={use.states.countryOptions}
-          defaultValue={use.states.countryDefault}
-          styles={{
-            width: '92%',
+        <SelectCountry
+          changeCountry={(e) => use.actions.changeCountry(e)}
+          props={{
+            options: use.states.countryOptions,
+            defaultValue: use.states.countryDefault,
+            styles: {
+              width: '92%',
+            },
+            ...countryProps,
           }}
-          {...countryProps}
         />
       );
     });
@@ -328,38 +285,34 @@ export const EntityAddForm = ({
     if (use.states.stateCountryOptions.length > 0) {
       setInputState((): JSX.Element => {
         return (
-          <GsSelect
-            id="entityStateCountry"
-            onChange={(event) => use.actions.changeStateCountry(event)}
-            options={use.states.stateCountryOptions}
-            defaultValue={use.states.stateCountryDefault}
-            styles={{
-              width: '90%',
+          <SelectStateCountry
+            changeStateCountry={(e) => use.actions.changeStateCountry(e)}
+            props={{
+              options: use.states.stateCountryOptions,
+              defaultValue: use.states.stateCountryDefault,
+              styles: {
+                width: '90%',
+              },
+              ...stateSelectProps,
             }}
-            {...stateSelectProps}
           />
         );
       });
     } else {
       setInputState((): JSX.Element => {
         return (
-          <Input
-            inputProps={{
-              placeholder: 'Estado',
-              type: 'text',
-              id: 'entityStateCountry',
-              onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                use.actions.changeStateCountry({
-                  label: (event.target as HTMLInputElement).value,
-                  value: (event.target as HTMLInputElement).value,
-                }),
-              defaultValue: use.states.state,
+          <InputStateCountry
+            changeStateCountry={(e) => use.actions.changeStateCountry(e)}
+            props={{
+              inputProps: {
+                defaultValue: use.states.state,
+              },
+              styles: {
+                padding: '10px 19px',
+                width: '90%',
+              },
+              ...stateInputProps,
             }}
-            styles={{
-              padding: '10px 19px',
-              width: '90%',
-            }}
-            {...stateInputProps}
           />
         );
       });
@@ -368,39 +321,37 @@ export const EntityAddForm = ({
     if (use.states.cityOptions.length > 0) {
       setInputCity((): JSX.Element => {
         return (
-          <GsSelect
-            id="entityCity"
-            onChange={(event) => use.actions.changeCity(event)}
-            options={use.states.cityOptions}
-            defaultValue={use.states.cityDefault}
-            styles={{
-              width: '90%',
+          <SelectCity
+            changeCity={(e) => use.actions.changeCity(e)}
+            props={{
+              options: use.states.cityOptions,
+              defaultValue: use.states.cityDefault,
+              styles: {
+                width: '90%',
+              },
+              ...citySelectProps,
             }}
-            {...citySelectProps}
           />
         );
       });
     } else {
       setInputCity((): JSX.Element => {
         return (
-          <Input
-            inputProps={{
-              placeholder: 'Ciudad',
-              type: 'text',
-              id: 'entityCity',
-              onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                use.actions.changeCity({
-                  label: (event.target as HTMLInputElement).value,
-                  value: (event.target as HTMLInputElement).value,
-                }),
-              defaultValue: use.states.city,
-            }}
-            styles={{
-              padding: '10px 19px',
-              width: '90%',
-            }}
-            {...cityInputProps}
-          />
+          <>
+            <InputCityGeneral
+              changeCity={use.actions.changeCity}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.city,
+                },
+                styles: {
+                  padding: '10px 19px',
+                  width: '90%',
+                },
+                ...cityInputProps,
+              }}
+            />
+          </>
         );
       });
     }
@@ -435,90 +386,41 @@ export const EntityAddForm = ({
       <>
         <div className={css(photoMainContainerStyle)}>
           <div className={css(photoContainerStyle)}>
-            <form
-              className={css(photoFormStyle)}
-              onSubmit={handleSubmit}
-              id="entityPhoto"
-            >
-              <>
-                <input
-                  type="file"
-                  id="file-input"
-                  ref={fileInputRef}
-                  hidden
-                  onChange={use.actions.changePhoto}
-                />
-                <Button
-                  title="Cambiar Foto"
-                  buttonProps={{
-                    onClick: handleButtonClick,
-                  }}
-                  styles={{
-                    fontSize: '6px',
-                    margin: '20px auto 40px auto',
-                    backgroundColor: '#439b57',
-                  }}
-                />
-              </>
-              {use.states.submitting ? (
-                <div className={css(loadingContainerStyle)}>
-                  <Loading
-                    mainStyles={{
-                      padding: '38px',
-                    }}
-                    divStyle={{
-                      width: '35px',
-                      height: '35px',
-                      border: '4px solid #eee',
-                      borderTop: '4px solid #077bb4',
-                    }}
-                  />
-                </div>
-              ) : (
-                use.states.photo && (
-                  <img
-                    className={css(photoStyle)}
-                    src={use.states.photo}
-                    alt="Foto de Entidad"
-                  />
-                )
-              )}
-            </form>
+            <PhotoEntity
+              photo={use.states.photo}
+              changePhoto={use.actions.changePhoto}
+              submitting={use.states.submitting}
+              changeError={use.actions.changeError}
+              setSubmitting={use.actions.setSubmitting}
+              props={propsPhoto}
+            />
           </div>
           <div className={css(nameContainerStyle)}>
             <>
-              <Input
-                inputProps={{
-                  placeholder: 'Nombre',
-                  type: 'text',
-                  id: `userName`,
-                  onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                    use.actions.changeName(
-                      (event.target as HTMLInputElement).value
-                    ),
-                  defaultValue: use.states.name,
+              <InputName
+                changeName={use.actions.changeName}
+                props={{
+                  inputProps: {
+                    defaultValue: use.states.name,
+                  },
+                  styles: {
+                    width: '100%',
+                  },
+                  ...nameProps,
                 }}
-                styles={{
-                  width: '100%',
-                }}
-                {...nameProps}
               />
               {isPersonalForm && (
-                <Input
-                  inputProps={{
-                    placeholder: 'Apellido',
-                    type: 'text',
-                    id: `userLastName`,
-                    onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                      use.actions.changeLastName(
-                        (event.target as HTMLInputElement).value
-                      ),
-                    defaultValue: use.states.lastName,
+                <InputLastName
+                  changeLastName={use.actions.changeLastName}
+                  props={{
+                    inputProps: {
+                      defaultValue: use.states.lastName,
+                    },
+                    styles: {
+                      width: '100%',
+                    },
+                    ...lastNameProps,
                   }}
-                  styles={{
-                    width: '100%',
-                  }}
-                  {...lastNameProps}
                 />
               )}
               {InputTypeDocumentIdId}
@@ -534,25 +436,18 @@ export const EntityAddForm = ({
         >
           <>
             {InputIndex}
-            <Input
-              inputProps={{
-                placeholder: 'Número de identificación',
-                type: 'number',
-                min: '0',
-                step: '1',
-                id: 'entityDocumentDigit',
-                title: 'Solo números, ejemplo: 181234678',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeDigit(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.digit,
+            <InputDocumentiIdDigit
+              changeDocumentiIdDigit={use.actions.changeDigit}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.digit,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...digitProps,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...digitProps}
             />
           </>
         </ContainerButton>
@@ -564,39 +459,31 @@ export const EntityAddForm = ({
           {...containerAddressProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Dirección 1',
-                type: 'text',
-                id: 'address1',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeAddress1(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.address1,
+            <InputAddress1
+              changeAddress1={use.actions.changeAddress1}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.address1,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...address1Props,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...address1Props}
             />
-            <Input
-              inputProps={{
-                placeholder: 'Dirección 2',
-                type: 'text',
-                id: 'address2',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeAddress2(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.address2,
+            <InputAddress2
+              changeAddress2={use.actions.changeAddress2}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.address2,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...address2Props,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...address2Props}
             />
           </>
         </ContainerButton>
@@ -621,22 +508,18 @@ export const EntityAddForm = ({
         >
           <>
             {InputCountry}
-            <Input
-              inputProps={{
-                placeholder: 'Código Postal',
-                type: 'text',
-                id: 'entityCodePost',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changePostCode(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.postCode,
+            <InputZipCode
+              changeZipCode={use.actions.changePostCode}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.postCode,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...codePostProps,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...codePostProps}
             />
           </>
         </ContainerButton>
@@ -648,42 +531,31 @@ export const EntityAddForm = ({
           {...containerEmailPhoneProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Email',
-                type: 'email',
-                id: 'entityEmail',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeEmail(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.email,
+            <InputEmail
+              changeEmail={use.actions.changeEmail}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.email,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...emailProps,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...emailProps}
             />
-            <Input
-              inputProps={{
-                placeholder: 'Teléfono',
-                type: 'number',
-                min: '0',
-                step: '1',
-                title: 'Solo números y sin comenzar en 0, ejemplo: 4241234000',
-                id: 'entityPhone',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changePhone(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.phone,
+            <InputPhone
+              changePhone={use.actions.changePhone}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.phone,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...phoneProps,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...phoneProps}
             />
           </>
         </ContainerButton>

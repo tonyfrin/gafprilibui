@@ -42,6 +42,12 @@ export {
   SelectParentId,
   SelectStatus,
   InputCurrenciesSymbol,
+  InputLastName,
+  InputDocumentiIdDigit,
+  InputEmail,
+  InputPhone,
+  SelectDocumentIdIndex,
+  SelectTypeDocumentIdId,
 } from './Input';
 export type {
   InputStyle,
@@ -66,6 +72,12 @@ export type {
   SelectParentIdProps,
   SelectStatusProps,
   InputCurrenciesSymbolProps,
+  InputLastNameProps,
+  InputDocumentiIdDigitProps,
+  InputEmailProps,
+  InputPhoneProps,
+  SelectDocumentIdIndexProps,
+  SelectTypeDocumentIdIdProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -84,13 +96,14 @@ export { MainContent } from './Content';
 export type { MainContentProps } from './Content';
 export { FadeIn } from './Fade';
 export type { FadeInProps } from './Fade';
-export { ModelForm, PhotoForm, PhotoCategory } from './Form';
+export { ModelForm, PhotoForm, PhotoCategory, PhotoEntity } from './Form';
 export type {
   ModelFormProps,
   ModelFormPropsExtended,
   PhotoFormProps,
   PhotoFormPropsExtended,
   PhotoCategoryProps,
+  PhotoEntityProps,
 } from './Form';
 export { Menu1, Menu2, MenuButton } from './Menu';
 export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem } from './Menu';

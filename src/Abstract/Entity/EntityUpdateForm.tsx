@@ -1,18 +1,22 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import { StatesCountries, Countries } from '../../Constans';
-import { Input } from '../Input';
+import {
+  Input,
+  InputName,
+  InputLastName,
+  InputEmail,
+  InputPhone,
+} from '../Input';
 import type { InputProps } from '../Input';
 import { ContainerButton } from '../Containers';
 import { ContainerButtonPropsExtended } from '../Containers';
 import { Button } from '../Button';
 import type { ButtonPropsExtended } from '../Button';
-import { Loading } from '../../Components';
-import type { LoadingProps } from '../../Components';
 import { List } from '../List';
 import type { ListPropsExtended } from '../List';
-import { ModelForm } from '../Form';
-import type { ModelFormPropsExtended } from '../Form';
+import { ModelForm, PhotoEntity } from '../Form';
+import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
 import type {
   AddressAttributes,
   DocumentIdAttributes,
@@ -27,9 +31,6 @@ export type EntityUpdateFormProps = {
   optionsButtonDeleteContainerStyle?: string;
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
-  photoFormStyle?: string;
-  loadingContainerStyle?: string;
-  photoStyle?: string;
   nameContainerStyle?: string;
   addressListContainerStyle?: string;
   documentListContainerStyle?: string;
@@ -38,8 +39,6 @@ export type EntityUpdateFormProps = {
   buttonAddressFactProps?: ButtonPropsExtended;
   buttonAddressDeleteProps?: ButtonPropsExtended;
   modelFormProps?: ModelFormPropsExtended;
-  buttonPhotoChangeProps?: ButtonPropsExtended;
-  loadingProps?: LoadingProps;
   nameInputProps?: InputProps;
   lastNameInputProps?: InputProps;
   emailPhoneConatinerProps?: ContainerButtonPropsExtended;
@@ -47,6 +46,7 @@ export type EntityUpdateFormProps = {
   phoneInputProps?: InputProps;
   addressListProps?: ListPropsExtended;
   documentListProps?: ListPropsExtended;
+  propsPhoto?: PhotoEntityProps['props'];
 };
 
 export type EntityUpdateFormPropsExtended = {
@@ -56,9 +56,6 @@ export type EntityUpdateFormPropsExtended = {
   optionsButtonDeleteContainerStyle?: string;
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
-  photoFormStyle?: string;
-  loadingContainerStyle?: string;
-  photoStyle?: string;
   nameContainerStyle?: string;
   addressListContainerStyle?: string;
   documentListContainerStyle?: string;
@@ -67,8 +64,6 @@ export type EntityUpdateFormPropsExtended = {
   buttonAddressFactProps?: ButtonPropsExtended;
   buttonAddressDeleteProps?: ButtonPropsExtended;
   modelFormProps?: ModelFormPropsExtended;
-  buttonPhotoChangeProps?: ButtonPropsExtended;
-  loadingProps?: LoadingProps;
   nameInputProps?: InputProps;
   lastNameInputProps?: InputProps;
   emailPhoneConatinerProps?: ContainerButtonPropsExtended;
@@ -76,38 +71,11 @@ export type EntityUpdateFormPropsExtended = {
   phoneInputProps?: InputProps;
   addressListProps?: ListPropsExtended;
   documentListProps?: ListPropsExtended;
+  propsPhoto?: PhotoEntityProps['props'];
 };
 
 const photoContainerStyleDefault = css`
   width: 100%;
-`;
-
-const photoFormStyleDefault = css`
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-`;
-
-const loadingContainerStyleDefault = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 100%;
-`;
-
-const photoStyleDefault = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 100%;
 `;
 
 const photoMainContainerStyleDefault = css`
@@ -147,9 +115,6 @@ export const EntityUpdateForm = ({
   optionsButtonDeleteContainerStyle = optionsButtonUpdateContainerStyleDefault,
   photoMainContainerStyle = photoMainContainerStyleDefault,
   photoContainerStyle = photoContainerStyleDefault,
-  photoFormStyle = photoFormStyleDefault,
-  loadingContainerStyle = loadingContainerStyleDefault,
-  photoStyle = photoStyleDefault,
   nameContainerStyle = nameContainerStyleDefault,
   addressListContainerStyle = addressListContainerStyleDefault,
   documentListContainerStyle = addressListContainerStyleDefault,
@@ -158,8 +123,6 @@ export const EntityUpdateForm = ({
   buttonAddressFactProps,
   buttonAddressDeleteProps,
   modelFormProps,
-  buttonPhotoChangeProps,
-  loadingProps,
   nameInputProps,
   lastNameInputProps,
   emailPhoneConatinerProps,
@@ -167,6 +130,7 @@ export const EntityUpdateForm = ({
   phoneInputProps,
   addressListProps,
   documentListProps,
+  propsPhoto,
 }: EntityUpdateFormProps): JSX.Element => {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
@@ -423,33 +387,6 @@ export const EntityUpdateForm = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
-
-  const handleButtonClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
-    }
-  };
-
-  React.useEffect(() => {
-    if (use.states.photo) {
-      const img = new Image();
-      img.src = use.states.photo;
-      img.onload = () => {
-        use.actions.setSubmitting(false);
-      };
-      img.onerror = () => {
-        use.actions.changeError([
-          `Error al cargar la imagen: ${use.states.photo}`,
-        ]);
-        use.actions.setSubmitting(true);
-      };
-    }
-  }, [use.states.photo]);
-
   return (
     <>
       <ModelForm
@@ -473,92 +410,41 @@ export const EntityUpdateForm = ({
         <>
           <div className={css(photoMainContainerStyle)}>
             <div className={css(photoContainerStyle)}>
-              <form
-                className={css(photoFormStyle)}
-                onSubmit={handleSubmit}
-                id="entityPhoto"
-              >
-                <>
-                  <input
-                    type="file"
-                    id="file-input"
-                    ref={fileInputRef}
-                    hidden
-                    onChange={use.actions.changePhoto}
-                  />
-                  <Button
-                    title="Cambiar Foto"
-                    buttonProps={{
-                      onClick: handleButtonClick,
-                    }}
-                    styles={{
-                      fontSize: '6px',
-                      margin: '20px auto 40px auto',
-                      backgroundColor: '#439b57',
-                    }}
-                    {...buttonPhotoChangeProps}
-                  />
-                </>
-                {use.states.submitting ? (
-                  <div className={css(loadingContainerStyle)}>
-                    <Loading
-                      mainStyles={{
-                        padding: '38px',
-                      }}
-                      divStyle={{
-                        width: '35px',
-                        height: '35px',
-                        border: '4px solid #eee',
-                        borderTop: '4px solid #077bb4',
-                      }}
-                      {...loadingProps}
-                    />
-                  </div>
-                ) : (
-                  use.states.photo && (
-                    <img
-                      className={css(photoStyle)}
-                      src={use.states.photo}
-                      alt="Entity Image"
-                    />
-                  )
-                )}
-              </form>
+              <PhotoEntity
+                photo={use.states.photo}
+                changePhoto={use.actions.changePhoto}
+                submitting={use.states.submitting}
+                changeError={use.actions.changeError}
+                setSubmitting={use.actions.setSubmitting}
+                props={propsPhoto}
+              />
             </div>
             <div className={css(nameContainerStyle)}>
               <>
-                <Input
-                  inputProps={{
-                    placeholder: 'Nombre',
-                    type: 'text',
-                    id: `userName`,
-                    onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                      use.actions.changeName(
-                        (event.target as HTMLInputElement).value
-                      ),
-                    defaultValue: use.states.name,
+                <InputName
+                  changeName={use.actions.changeName}
+                  props={{
+                    inputProps: {
+                      defaultValue: use.states.name,
+                    },
+                    styles: {
+                      width: '100%',
+                    },
+                    ...nameInputProps,
                   }}
-                  styles={{
-                    width: '100%',
-                  }}
-                  {...nameInputProps}
                 />
                 {isPersonalForm && (
-                  <Input
-                    inputProps={{
-                      placeholder: 'Apellido',
-                      type: 'text',
-                      id: `userLastName`,
-                      onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                        use.actions.changeLastName(
-                          (event.target as HTMLInputElement).value
-                        ),
-                      defaultValue: use.states.lastName,
+                  <InputLastName
+                    changeLastName={use.actions.changeLastName}
+                    props={{
+                      inputProps: {
+                        defaultValue: use.states.lastName,
+                      },
+                      styles: {
+                        width: '100%',
+                      },
+                      ...lastNameInputProps,
                     }}
-                    styles={{
-                      width: '100%',
-                    }}
-                    {...lastNameInputProps}
                   />
                 )}
                 <ButtonStatus />
@@ -574,43 +460,31 @@ export const EntityUpdateForm = ({
             {...emailPhoneConatinerProps}
           >
             <>
-              <Input
-                inputProps={{
-                  placeholder: 'Email',
-                  type: 'email',
-                  id: 'entityEmail',
-                  onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                    use.actions.changeEmail(
-                      (event.target as HTMLInputElement).value
-                    ),
-                  defaultValue: use.states.email,
+              <InputEmail
+                changeEmail={use.actions.changeEmail}
+                props={{
+                  inputProps: {
+                    defaultValue: use.states.email,
+                  },
+                  styles: {
+                    width: '92%',
+                    padding: '09px 19px',
+                  },
+                  ...emailInputProps,
                 }}
-                styles={{
-                  width: '92%',
-                  padding: '09px 19px',
-                }}
-                {...emailInputProps}
               />
-              <Input
-                inputProps={{
-                  placeholder: 'Teléfono',
-                  type: 'number',
-                  min: '0',
-                  step: '1',
-                  title:
-                    'Solo números y sin comenzar en 0, ejemplo: 4241234000',
-                  id: 'entityPhone',
-                  onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                    use.actions.changePhone(
-                      (event.target as HTMLInputElement).value
-                    ),
-                  defaultValue: use.states.phone,
+              <InputPhone
+                changePhone={use.actions.changePhone}
+                props={{
+                  inputProps: {
+                    defaultValue: use.states.phone,
+                  },
+                  styles: {
+                    width: '92%',
+                    padding: '09px 19px',
+                  },
+                  ...phoneInputProps,
                 }}
-                styles={{
-                  width: '92%',
-                  padding: '09px 19px',
-                }}
-                {...phoneInputProps}
               />
             </>
           </ContainerButton>

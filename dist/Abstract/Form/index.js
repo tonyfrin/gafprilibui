@@ -15,6 +15,12 @@ Object.defineProperty(exports, "PhotoCategory", {
     return _PhotoCategory.PhotoCategory;
   }
 });
+Object.defineProperty(exports, "PhotoEntity", {
+  enumerable: true,
+  get: function get() {
+    return _PhotoEntity.PhotoEntity;
+  }
+});
 Object.defineProperty(exports, "PhotoForm", {
   enumerable: true,
   get: function get() {
@@ -24,3 +30,4 @@ Object.defineProperty(exports, "PhotoForm", {
 var _ModelForm = require("./ModelForm");
 var _PhotoForm = require("./PhotoForm");
 var _PhotoCategory = require("./PhotoCategory");
+var _PhotoEntity = require("./PhotoEntity");

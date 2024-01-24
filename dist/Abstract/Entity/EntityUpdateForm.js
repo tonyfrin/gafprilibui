@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.EntityUpdateForm = void 0;
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
 var _react = _interopRequireDefault(require("react"));
@@ -13,19 +14,17 @@ var _Constans = require("../../Constans");
 var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Button = require("../Button");
-var _Components = require("../../Components");
 var _List = require("../List");
 var _Form = require("../Form");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var photoContainerStyleDefault = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
-var photoFormStyleDefault = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  flex-direction: column-reverse;\n  width: 100%;\n"])));
-var loadingContainerStyleDefault = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  width: 100%;\n  max-width: 120px;\n  max-height: 120px;\n  object-fit: cover;\n  border: 1px solid #ebebeb;\n  margin: auto;\n  border-radius: 100%;\n"])));
-var photoStyleDefault = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  width: 100%;\n  max-width: 120px;\n  max-height: 120px;\n  object-fit: cover;\n  border: 1px solid #ebebeb;\n  margin: auto;\n  border-radius: 100%;\n"])));
-var photoMainContainerStyleDefault = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n"])));
-var nameContainerStyleDefault = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
-var optionsButtonContainerStyleDefault = (0, _css.css)(_templateObject7 || (_templateObject7 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n  width: 91.66667%;\n  margin: 10px 0px;\n"])));
-var optionsButtonUpdateContainerStyleDefault = (0, _css.css)(_templateObject8 || (_templateObject8 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n  width: 100%;\n"])));
-var addressListContainerStyleDefault = (0, _css.css)(_templateObject9 || (_templateObject9 = (0, _taggedTemplateLiteral2["default"])(["\n  border-top: 0.1rem solid rgb(227, 223, 218);\n  padding-top: 10px;\n  width: 96%;\n  margin-top: 15px;\n"])));
+var photoMainContainerStyleDefault = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n"])));
+var nameContainerStyleDefault = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
+var optionsButtonContainerStyleDefault = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n  width: 91.66667%;\n  margin: 10px 0px;\n"])));
+var optionsButtonUpdateContainerStyleDefault = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n  width: 100%;\n"])));
+var addressListContainerStyleDefault = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  border-top: 0.1rem solid rgb(227, 223, 218);\n  padding-top: 10px;\n  width: 96%;\n  margin-top: 15px;\n"])));
 var EntityUpdateForm = function EntityUpdateForm(_ref) {
   var _paginated$map, _documentPaginated$ma;
   var use = _ref.use,
@@ -41,12 +40,6 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     photoMainContainerStyle = _ref$photoMainContain === void 0 ? photoMainContainerStyleDefault : _ref$photoMainContain,
     _ref$photoContainerSt = _ref.photoContainerStyle,
     photoContainerStyle = _ref$photoContainerSt === void 0 ? photoContainerStyleDefault : _ref$photoContainerSt,
-    _ref$photoFormStyle = _ref.photoFormStyle,
-    photoFormStyle = _ref$photoFormStyle === void 0 ? photoFormStyleDefault : _ref$photoFormStyle,
-    _ref$loadingContainer = _ref.loadingContainerStyle,
-    loadingContainerStyle = _ref$loadingContainer === void 0 ? loadingContainerStyleDefault : _ref$loadingContainer,
-    _ref$photoStyle = _ref.photoStyle,
-    photoStyle = _ref$photoStyle === void 0 ? photoStyleDefault : _ref$photoStyle,
     _ref$nameContainerSty = _ref.nameContainerStyle,
     nameContainerStyle = _ref$nameContainerSty === void 0 ? nameContainerStyleDefault : _ref$nameContainerSty,
     _ref$addressListConta = _ref.addressListContainerStyle,
@@ -58,15 +51,14 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     buttonAddressFactProps = _ref.buttonAddressFactProps,
     buttonAddressDeleteProps = _ref.buttonAddressDeleteProps,
     modelFormProps = _ref.modelFormProps,
-    buttonPhotoChangeProps = _ref.buttonPhotoChangeProps,
-    loadingProps = _ref.loadingProps,
     nameInputProps = _ref.nameInputProps,
     lastNameInputProps = _ref.lastNameInputProps,
     emailPhoneConatinerProps = _ref.emailPhoneConatinerProps,
     emailInputProps = _ref.emailInputProps,
     phoneInputProps = _ref.phoneInputProps,
     addressListProps = _ref.addressListProps,
-    documentListProps = _ref.documentListProps;
+    documentListProps = _ref.documentListProps,
+    propsPhoto = _ref.propsPhoto;
   var fileInputRef = _react["default"].useRef(null);
   var currentEntity = use.actions.getById(use.states.entityId);
   var isPersonalForm = (currentEntity === null || currentEntity === void 0 ? void 0 : currentEntity.type) === 'personal';
@@ -248,28 +240,6 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
         console.log('Acción desconocida:', action);
     }
   };
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
-  };
-  var handleButtonClick = function handleButtonClick() {
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
-    }
-  };
-  _react["default"].useEffect(function () {
-    if (use.states.photo) {
-      var img = new Image();
-      img.src = use.states.photo;
-      img.onload = function () {
-        use.actions.setSubmitting(false);
-      };
-      img.onerror = function () {
-        use.actions.changeError(["Error al cargar la imagen: ".concat(use.states.photo)]);
-        use.actions.setSubmitting(true);
-      };
-    }
-  }, [use.states.photo]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, (0, _extends2["default"])({
     titles: {
       title1: title1Text,
@@ -290,107 +260,63 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     className: (0, _css.css)(photoMainContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement("form", {
-    className: (0, _css.css)(photoFormStyle),
-    onSubmit: handleSubmit,
-    id: "entityPhoto"
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
-    type: "file",
-    id: "file-input",
-    ref: fileInputRef,
-    hidden: true,
-    onChange: use.actions.changePhoto
-  }), /*#__PURE__*/_react["default"].createElement(_Button.Button, (0, _extends2["default"])({
-    title: "Cambiar Foto",
-    buttonProps: {
-      onClick: handleButtonClick
-    },
-    styles: {
-      fontSize: '6px',
-      margin: '20px auto 40px auto',
-      backgroundColor: '#439b57'
-    }
-  }, buttonPhotoChangeProps))), use.states.submitting ? /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _css.css)(loadingContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement(_Components.Loading, (0, _extends2["default"])({
-    mainStyles: {
-      padding: '38px'
-    },
-    divStyle: {
-      width: '35px',
-      height: '35px',
-      border: '4px solid #eee',
-      borderTop: '4px solid #077bb4'
-    }
-  }, loadingProps))) : use.states.photo && /*#__PURE__*/_react["default"].createElement("img", {
-    className: (0, _css.css)(photoStyle),
-    src: use.states.photo,
-    alt: "Entity Image"
-  }))), /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement(_Form.PhotoEntity, {
+    photo: use.states.photo,
+    changePhoto: use.actions.changePhoto,
+    submitting: use.states.submitting,
+    changeError: use.actions.changeError,
+    setSubmitting: use.actions.setSubmitting,
+    props: propsPhoto
+  })), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(nameContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Nombre',
-      type: 'text',
-      id: "userName",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeName(event.target.value);
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
+    changeName: use.actions.changeName,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.name
       },
-      defaultValue: use.states.name
-    },
-    styles: {
-      width: '100%'
-    }
-  }, nameInputProps)), isPersonalForm && /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Apellido',
-      type: 'text',
-      id: "userLastName",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeLastName(event.target.value);
+      styles: {
+        width: '100%'
+      }
+    }, nameInputProps)
+  }), isPersonalForm && /*#__PURE__*/_react["default"].createElement(_Input.InputLastName, {
+    changeLastName: use.actions.changeLastName,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.lastName
       },
-      defaultValue: use.states.lastName
-    },
-    styles: {
-      width: '100%'
-    }
-  }, lastNameInputProps)), /*#__PURE__*/_react["default"].createElement(ButtonStatus, null), /*#__PURE__*/_react["default"].createElement(ButtonType, null)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+      styles: {
+        width: '100%'
+      }
+    }, lastNameInputProps)
+  }), /*#__PURE__*/_react["default"].createElement(ButtonStatus, null), /*#__PURE__*/_react["default"].createElement(ButtonType, null)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'start'
     }
-  }, emailPhoneConatinerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Email',
-      type: 'email',
-      id: 'entityEmail',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeEmail(event.target.value);
+  }, emailPhoneConatinerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputEmail, {
+    changeEmail: use.actions.changeEmail,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.email
       },
-      defaultValue: use.states.email
-    },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, emailInputProps)), /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Teléfono',
-      type: 'number',
-      min: '0',
-      step: '1',
-      title: 'Solo números y sin comenzar en 0, ejemplo: 4241234000',
-      id: 'entityPhone',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changePhone(event.target.value);
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, emailInputProps)
+  }), /*#__PURE__*/_react["default"].createElement(_Input.InputPhone, {
+    changePhone: use.actions.changePhone,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.phone
       },
-      defaultValue: use.states.phone
-    },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, phoneInputProps)))), /*#__PURE__*/_react["default"].createElement("div", {
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, phoneInputProps)
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(addressListContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_List.List, (0, _extends2["default"])({
     title: "Direcciones",

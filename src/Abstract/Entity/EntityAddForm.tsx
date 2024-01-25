@@ -218,13 +218,19 @@ export const EntityAddForm = ({
 
   const buttonTitle = 'Agregar';
 
+  const returnInit = () => {
+    setInputState(<></>);
+    setInputCountry(<></>);
+    use.actions.returnInit();
+  };
+
   const handleActions = (action: string, value: any) => {
     switch (action) {
       case 'submit':
         use.actions.add();
         break;
       case 'return':
-        use.actions.returnInit();
+        returnInit();
         break;
       default:
         console.log('Acción desconocida:', action);

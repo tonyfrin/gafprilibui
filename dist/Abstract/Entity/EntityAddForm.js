@@ -108,13 +108,18 @@ var EntityAddForm = function EntityAddForm(_ref) {
   var title1Text = isPersonalForm ? 'Nueva personal natural' : 'Nueva persona jurídica';
   var title2Text = isPersonalForm ? 'Agrega una nueva persona natural' : "Agrega una nueva persona jur\xEDdica";
   var buttonTitle = 'Agregar';
+  var returnInit = function returnInit() {
+    setInputState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
+    setInputCountry( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
+    use.actions.returnInit();
+  };
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':
         use.actions.add();
         break;
       case 'return':
-        use.actions.returnInit();
+        returnInit();
         break;
       default:
         console.log('Acción desconocida:', action);

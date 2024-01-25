@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import {
-  changeInputText,
-  removeClass,
-  addClass,
-  validationInputName,
-  toTitleCase,
-  gafpriFetch,
-  getLastEntryDateAndCount,
-} from '../helpers';
+import { gafpriFetch, getLastEntryDateAndCount } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
-import { AllRoles } from '../Constans';
 import type { UseErrorReturn } from './useGafpriError';
+import { API_URL, ROLES_ROUTE, ROLES_STORAGE, AllRoles } from '../Constans';
+import {
+  generalValidationButtonNext,
+  generalValidationName,
+} from '../Validations';
+import { generalChangeName } from '../Changes';
 
 export interface RolesAttributes {
   id: number;
@@ -145,7 +142,7 @@ export function useGafpriRoles({
   const [isUpdate, setIsUpdate] = useState(false);
   const [roles, setRoles] = useState<RolesData>({
     data: {
-      items: getItem('GS_ROLES_V2', null),
+      items: getItem(ROLES_STORAGE, null),
     },
   });
   const { error } = useError.states;
@@ -212,29 +209,16 @@ export function useGafpriRoles({
 
   // Funciones de Validacion
   const validationName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: `nameRoles`,
-      setValid: setNameValid,
-    });
+    return generalValidationName(value, setNameValid, nameValid);
   };
 
   const validationButtonNext = (): void => {
-    if (nameValid) {
-      removeClass(`buttonNext`, 'gs-disabled');
-    } else {
-      addClass(`buttonNext`, 'gs-disabled');
-    }
+    generalValidationButtonNext(nameValid);
   };
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    const newName = toTitleCase(value);
-    changeInputText({
-      value: newName,
-      validation: validationName,
-      setValue: setName,
-    });
+    generalChangeName(value, validationName, setName);
   };
 
   const changePermissions = (
@@ -269,7 +253,7 @@ export function useGafpriRoles({
   };
 
   const setDataStorage = (newData: RolesData): void => {
-    saveItem('GS_ROLES_V2', newData.data.items);
+    saveItem(ROLES_STORAGE, newData.data.items);
   };
 
   const setData = (newData: RolesData): void => {
@@ -301,11 +285,11 @@ export function useGafpriRoles({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token) {
+      if (token && API_URL) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: 'http://localhost:4000',
-          initRoute: 'api/v1/roles',
+          initApi: API_URL,
+          initRoute: ROLES_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onRoles,
@@ -387,11 +371,11 @@ export function useGafpriRoles({
   };
 
   const add = (): void => {
-    if (nameValid && token) {
+    if (nameValid && token && API_URL) {
       gafpriFetch({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/roles',
+        initApi: API_URL,
+        initRoute: ROLES_ROUTE,
         initCredentials: {
           name,
           permissions,
@@ -409,11 +393,11 @@ export function useGafpriRoles({
   }
 
   const update = (): void => {
-    if (nameValid && token) {
+    if (nameValid && token && API_URL) {
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/roles/${currentId}`,
+        initApi: API_URL,
+        initRoute: `${ROLES_ROUTE}/${currentId}`,
         initCredentials: {
           name,
           permissions,
@@ -427,11 +411,11 @@ export function useGafpriRoles({
   };
 
   const deleteRoles = (id: number): void => {
-    if (token) {
+    if (token && API_URL) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/roles/${id}`,
+        initApi: API_URL,
+        initRoute: `${ROLES_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,

@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.RolesForm = void 0;
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
 var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
@@ -16,6 +17,8 @@ var _Constans = require("../../Constans");
 var _Form = require("../Form");
 var _RolePermissions = require("./RolePermissions");
 var _templateObject, _templateObject2;
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var defaultPermissionsContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  margin: 30px;\n"])));
 var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-around;\n  padding-bottom: 20px;\n"])));
 var RolesForm = function RolesForm(_ref) {
@@ -98,20 +101,17 @@ var RolesForm = function RolesForm(_ref) {
     styles: {
       width: '100%'
     }
-  }, nameContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Nombre',
-      type: 'text',
-      id: "nameCurrencies",
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeName(event.target.value);
+  }, nameContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
+    changeName: use.actions.changeName,
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.name
       },
-      defaultValue: use.states.name
-    },
-    styles: {
-      width: '100%'
-    }
-  }, nameInputProps)))), /*#__PURE__*/_react["default"].createElement("div", {
+      styles: {
+        width: '100%'
+      }
+    }, nameInputProps)
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(permissionsContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(optionButtonContainerStyle)

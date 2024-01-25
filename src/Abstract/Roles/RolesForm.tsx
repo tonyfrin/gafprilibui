@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { Input } from '../Input';
+import { Input, InputName } from '../Input';
 import type { InputProps } from '../Input';
 import { Button } from '../Button';
 import { ButtonProps } from '../Button';
@@ -145,21 +145,17 @@ export const RolesForm = ({
           {...nameContainerProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Nombre',
-                type: 'text',
-                id: `nameCurrencies`,
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeName(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.name,
+            <InputName
+              changeName={use.actions.changeName}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.name,
+                },
+                styles: {
+                  width: '100%',
+                },
+                ...nameInputProps,
               }}
-              styles={{
-                width: '100%',
-              }}
-              {...nameInputProps}
             />
           </>
         </ContainerButton>

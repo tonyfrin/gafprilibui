@@ -14,6 +14,8 @@ var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
 var _Context = require("../Context");
 var _Constans = require("../Constans");
+var _Validations = require("../Validations");
+var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function useGafpriRoles(_ref) {
@@ -54,7 +56,7 @@ function useGafpriRoles(_ref) {
     setIsUpdate = _useState16[1];
   var _useState17 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)('GS_ROLES_V2', null)
+        items: (0, _Context.getItem)(_Constans.ROLES_STORAGE, null)
       }
     }),
     _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
@@ -126,28 +128,15 @@ function useGafpriRoles(_ref) {
 
   // Funciones de Validacion
   var validationName = function validationName(value) {
-    return (0, _helpers.validationInputName)({
-      name: value,
-      inputId: "nameRoles",
-      setValid: setNameValid
-    });
+    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
   };
   var validationButtonNext = function validationButtonNext() {
-    if (nameValid) {
-      (0, _helpers.removeClass)("buttonNext", 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)("buttonNext", 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(nameValid);
   };
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    var newName = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newName,
-      validation: validationName,
-      setValue: setName
-    });
+    (0, _Changes.generalChangeName)(value, validationName, setName);
   };
   var changePermissions = function changePermissions(permissionValue, checked) {
     setPermissions(function (prevSelectedPermissions) {
@@ -174,7 +163,7 @@ function useGafpriRoles(_ref) {
     setPermissions([]);
   };
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)('GS_ROLES_V2', newData.data.items);
+    (0, _Context.saveItem)(_Constans.ROLES_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setRoles(newData);
@@ -206,11 +195,11 @@ function useGafpriRoles(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_roles$data$items = roles.data.items) === null || _roles$data$items === void 0 ? void 0 : _roles$data$items.length) || 0;
             if (roles.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token) {
+              if (token && _Constans.API_URL) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: 'http://localhost:4000',
-                  initRoute: 'api/v1/roles',
+                  initApi: _Constans.API_URL,
+                  initRoute: _Constans.ROLES_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -292,11 +281,11 @@ function useGafpriRoles(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && token) {
+    if (nameValid && token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/roles',
+        initApi: _Constans.API_URL,
+        initRoute: _Constans.ROLES_ROUTE,
         initCredentials: {
           name: name,
           permissions: permissions
@@ -317,11 +306,11 @@ function useGafpriRoles(_ref) {
     })) || null;
   }
   var update = function update() {
-    if (nameValid && token) {
+    if (nameValid && token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/roles/".concat(currentId),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.ROLES_ROUTE, "/").concat(currentId),
         initCredentials: {
           name: name,
           permissions: permissions
@@ -336,11 +325,11 @@ function useGafpriRoles(_ref) {
     }
   };
   var deleteRoles = function deleteRoles(id) {
-    if (token) {
+    if (token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/roles/".concat(id),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.ROLES_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

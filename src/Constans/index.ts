@@ -48,9 +48,11 @@ export {
   CATEGORY_ROUTE,
   CURRENCIES_ROUTE,
   ENTITY_ROUTE,
+  ROLES_ROUTE,
 } from './Api';
 export {
   CATEGORY_STORAGE,
   CURRENCIES_STORAGE,
   ENTITY_STORAGE,
+  ROLES_STORAGE,
 } from './LocalStorage';

@@ -294,6 +294,8 @@ export {
   TYPE_INPUT,
   PHOTO_ENTITY_INPUT,
   PHOTO_DOCUMENT_ID_INPUT,
+  ROLES_ROUTE,
+  ROLES_STORAGE,
 } from './Constans';
 export { getItem, saveItem } from './Context';
 export {

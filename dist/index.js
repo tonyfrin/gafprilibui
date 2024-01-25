@@ -531,6 +531,18 @@ Object.defineProperty(exports, "PhotoForm", {
     return _Abstract.PhotoForm;
   }
 });
+Object.defineProperty(exports, "ROLES_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.ROLES_ROUTE;
+  }
+});
+Object.defineProperty(exports, "ROLES_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.ROLES_STORAGE;
+  }
+});
 Object.defineProperty(exports, "RolePermissions", {
   enumerable: true,
   get: function get() {

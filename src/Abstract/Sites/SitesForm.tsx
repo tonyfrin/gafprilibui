@@ -1,5 +1,27 @@
 import React from 'react';
-import { Input, GsSelect } from '../Input';
+import {
+  Input,
+  GsSelect,
+  SelectDocumentIdIndex,
+  SelectCity,
+  InputCity as GeneralInputCity,
+  SelectStateCountry,
+  InputStateCountry,
+  SelectCountry,
+  SelectCurrencies,
+  SelectCurrenciesLocations,
+  SelectCurrenciesSeparator,
+  SelectCurrenciesDecimalNumbers,
+  SelectTaxes,
+  InputName,
+  InputDocumentiIdDigit,
+  InputAddress1,
+  InputAddress2,
+  InputZipCode,
+  InputPhone,
+  InputEmail,
+  InputWebSite,
+} from '../Input';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
@@ -309,105 +331,118 @@ export const SitesForm = ({
     if (isAddForm) {
       setInputTypeDocument((): JSX.Element => {
         return (
-          <GsSelect
-            id="documentIndex"
-            onChange={(event) => use.actions.changeDocumentIndex(event)}
-            options={use.states.documentIndexOptions}
-            defaultValue={use.states.documentIndexDefault}
-            styles={{
-              width: '90%',
+          <SelectDocumentIdIndex
+            changeIndex={(event) => use.actions.changeDocumentIndex(event)}
+            props={{
+              options: use.states.documentIndexOptions,
+              defaultValue: use.states.documentIndexDefault,
+              styles: {
+                width: '90%',
+              },
+              ...documentTypeSelectProps,
             }}
-            {...documentTypeSelectProps}
           />
         );
       });
 
       setInputCountry((): JSX.Element => {
         return (
-          <GsSelect
-            id="countrySite"
-            onChange={(event) => use.actions.changeCountry(event)}
-            options={use.states.countryOptions}
-            defaultValue={use.states.countryDefault}
-            styles={{
-              width: '90%',
+          <SelectCountry
+            changeCountry={(event) => use.actions.changeCountry(event)}
+            props={{
+              options: use.states.countryOptions,
+              defaultValue: use.states.countryDefault,
+              styles: {
+                width: '90%',
+              },
+              ...countrySelectProps,
             }}
-            {...countrySelectProps}
           />
         );
       });
 
       setInputCurrency((): JSX.Element => {
         return (
-          <GsSelect
-            id="currencySite"
-            onChange={(event) => use.actions.changeCurrenciesId(event)}
-            options={use.states.currenciesIdOptions}
-            defaultValue={use.states.currenciesIdDefault}
-            styles={{
-              width: '90%',
+          <SelectCurrencies
+            changeCurrencies={(event) => use.actions.changeCurrenciesId(event)}
+            props={{
+              options: use.states.currenciesIdOptions,
+              defaultValue: use.states.currenciesIdDefault,
+              styles: {
+                width: '90%',
+              },
+              ...currencySelectProps,
             }}
-            {...currencySelectProps}
           />
         );
       });
 
       setInputCurrencyLocation((): JSX.Element => {
         return (
-          <GsSelect
-            id="currencyLocationSite"
-            onChange={(event) => use.actions.changeCurrencyLocation(event)}
-            options={use.states.currencyLocationOptions}
-            defaultValue={use.states.currencyLocationDefault}
-            styles={{
-              width: '90%',
+          <SelectCurrenciesLocations
+            changeCurrenciesLocations={(event) =>
+              use.actions.changeCurrencyLocation(event)
+            }
+            props={{
+              options: use.states.currencyLocationOptions,
+              defaultValue: use.states.currencyLocationDefault,
+              styles: {
+                width: '90%',
+              },
+              ...currencyLocationSelectProps,
             }}
-            {...currencyLocationSelectProps}
           />
         );
       });
 
       setInputSeparator((): JSX.Element => {
         return (
-          <GsSelect
-            id="separatorSite"
-            onChange={(event) => use.actions.changeSeparator(event)}
-            options={use.states.separatorOptions}
-            defaultValue={use.states.separatorDefault}
-            styles={{
-              width: '90%',
+          <SelectCurrenciesSeparator
+            changeCurrenciesSeparator={(event) =>
+              use.actions.changeSeparator(event)
+            }
+            props={{
+              options: use.states.separatorOptions,
+              defaultValue: use.states.separatorDefault,
+              styles: {
+                width: '90%',
+              },
+              ...separatorSelectProps,
             }}
-            {...separatorSelectProps}
           />
         );
       });
 
       setInputDecimalNumbers((): JSX.Element => {
         return (
-          <GsSelect
-            id="decimalNumbersSite"
-            onChange={(event) => use.actions.changeDecimalNumbers(event)}
-            options={use.states.decimalNumbersOptions}
-            defaultValue={use.states.decimalNumbersDefault}
-            styles={{
-              width: '90%',
+          <SelectCurrenciesDecimalNumbers
+            changeCurrenciesDecimalNumbers={(event) =>
+              use.actions.changeDecimalNumbers(event)
+            }
+            props={{
+              options: use.states.decimalNumbersOptions,
+              defaultValue: use.states.decimalNumbersDefault,
+              styles: {
+                width: '90%',
+              },
+              ...decimalSelectProps,
             }}
-            {...decimalSelectProps}
           />
         );
       });
 
       setInputTaxes((): JSX.Element => {
         return (
-          <GsSelect
-            id="taxesSite"
-            onChange={(event) => use.actions.changeTaxes(event)}
-            options={use.states.taxesOptions}
-            defaultValue={use.states.taxesDefault}
-            styles={{
-              width: '90%',
+          <SelectTaxes
+            changeTaxes={(event) => use.actions.changeTaxes(event)}
+            props={{
+              options: use.states.taxesOptions,
+              defaultValue: use.states.taxesDefault,
+              styles: {
+                width: '90%',
+              },
+              ...taxesSelectProps,
             }}
-            {...taxesSelectProps}
           />
         );
       });
@@ -419,38 +454,38 @@ export const SitesForm = ({
       if (use.states.stateCountryOptions.length > 0) {
         setInputState((): JSX.Element => {
           return (
-            <GsSelect
-              id="stateCountrySite"
-              onChange={(event) => use.actions.changeStateCountry(event)}
-              options={use.states.stateCountryOptions}
-              defaultValue={use.states.stateCountryDefault}
-              styles={{
-                width: '90%',
+            <SelectStateCountry
+              changeStateCountry={(event) =>
+                use.actions.changeStateCountry(event)
+              }
+              props={{
+                options: use.states.stateCountryOptions,
+                defaultValue: use.states.stateCountryDefault,
+                styles: {
+                  width: '90%',
+                },
+                ...stateSelectProps,
               }}
-              {...stateSelectProps}
             />
           );
         });
       } else {
         setInputState((): JSX.Element => {
           return (
-            <Input
-              inputProps={{
-                placeholder: 'Estado',
-                type: 'text',
-                id: 'stateCountrySite',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeStateCountry({
-                    label: (event.target as HTMLInputElement).value,
-                    value: (event.target as HTMLInputElement).value,
-                  }),
-                defaultValue: use.states.state,
+            <InputStateCountry
+              changeStateCountry={(event) =>
+                use.actions.changeStateCountry(event)
+              }
+              props={{
+                inputProps: {
+                  defaultValue: use.states.state,
+                },
+                styles: {
+                  padding: '10px 19px',
+                  width: '90%',
+                },
+                ...stateInputProps,
               }}
-              styles={{
-                padding: '10px 19px',
-                width: '90%',
-              }}
-              {...stateInputProps}
             />
           );
         });
@@ -459,38 +494,34 @@ export const SitesForm = ({
       if (use.states.cityOptions.length > 0) {
         setInputCity((): JSX.Element => {
           return (
-            <GsSelect
-              id="citySite"
-              onChange={(event) => use.actions.changeCity(event)}
-              options={use.states.cityOptions}
-              defaultValue={use.states.cityDefault}
-              styles={{
-                width: '90%',
+            <SelectCity
+              changeCity={(event) => use.actions.changeCity(event)}
+              props={{
+                options: use.states.cityOptions,
+                defaultValue: use.states.cityDefault,
+                styles: {
+                  width: '90%',
+                },
+                ...citySelectProps,
               }}
-              {...citySelectProps}
             />
           );
         });
       } else {
         setInputCity((): JSX.Element => {
           return (
-            <Input
-              inputProps={{
-                placeholder: 'Ciudad',
-                type: 'text',
-                id: 'citySite',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeCity({
-                    label: (event.target as HTMLInputElement).value,
-                    value: (event.target as HTMLInputElement).value,
-                  }),
-                defaultValue: use.states.city,
+            <GeneralInputCity
+              changeCity={(event) => use.actions.changeCity(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.city,
+                },
+                styles: {
+                  padding: '10px 19px',
+                  width: '90%',
+                },
+                ...cityInputProps,
               }}
-              styles={{
-                padding: '10px 19px',
-                width: '90%',
-              }}
-              {...cityInputProps}
             />
           );
         });
@@ -509,15 +540,16 @@ export const SitesForm = ({
       ) {
         setInputTypeDocument((): JSX.Element => {
           return (
-            <GsSelect
-              id="documentIndex"
-              onChange={(event) => use.actions.changeDocumentIndex(event)}
-              options={use.states.documentIndexOptions}
-              defaultValue={use.states.documentIndexDefault}
-              styles={{
-                width: '90%',
+            <SelectDocumentIdIndex
+              changeIndex={(event) => use.actions.changeDocumentIndex(event)}
+              props={{
+                options: use.states.documentIndexOptions,
+                defaultValue: use.states.documentIndexDefault,
+                styles: {
+                  width: '90%',
+                },
+                ...documentTypeSelectProps,
               }}
-              {...documentTypeSelectProps}
             />
           );
         });
@@ -528,15 +560,18 @@ export const SitesForm = ({
       ) {
         setInputCurrency((): JSX.Element => {
           return (
-            <GsSelect
-              id="currencySite"
-              onChange={(event) => use.actions.changeCurrenciesId(event)}
-              options={use.states.currenciesIdOptions}
-              defaultValue={use.states.currenciesIdDefault}
-              styles={{
-                width: '90%',
+            <SelectCurrencies
+              changeCurrencies={(event) =>
+                use.actions.changeCurrenciesId(event)
+              }
+              props={{
+                options: use.states.currenciesIdOptions,
+                defaultValue: use.states.currenciesIdDefault,
+                styles: {
+                  width: '90%',
+                },
+                ...currencySelectProps,
               }}
-              {...currencySelectProps}
             />
           );
         });
@@ -548,15 +583,18 @@ export const SitesForm = ({
       ) {
         setInputCurrencyLocation((): JSX.Element => {
           return (
-            <GsSelect
-              id="currencyLocationSite"
-              onChange={(event) => use.actions.changeCurrencyLocation(event)}
-              options={use.states.currencyLocationOptions}
-              defaultValue={use.states.currencyLocationDefault}
-              styles={{
-                width: '90%',
+            <SelectCurrenciesLocations
+              changeCurrenciesLocations={(event) =>
+                use.actions.changeCurrencyLocation(event)
+              }
+              props={{
+                options: use.states.currencyLocationOptions,
+                defaultValue: use.states.currencyLocationDefault,
+                styles: {
+                  width: '90%',
+                },
+                ...currencyLocationSelectProps,
               }}
-              {...currencyLocationSelectProps}
             />
           );
         });
@@ -568,15 +606,18 @@ export const SitesForm = ({
       ) {
         setInputSeparator((): JSX.Element => {
           return (
-            <GsSelect
-              id="separatorSite"
-              onChange={(event) => use.actions.changeSeparator(event)}
-              options={use.states.separatorOptions}
-              defaultValue={use.states.separatorDefault}
-              styles={{
-                width: '90%',
+            <SelectCurrenciesSeparator
+              changeCurrenciesSeparator={(event) =>
+                use.actions.changeSeparator(event)
+              }
+              props={{
+                options: use.states.separatorOptions,
+                defaultValue: use.states.separatorDefault,
+                styles: {
+                  width: '90%',
+                },
+                ...separatorSelectProps,
               }}
-              {...separatorSelectProps}
             />
           );
         });
@@ -588,15 +629,18 @@ export const SitesForm = ({
       ) {
         setInputDecimalNumbers((): JSX.Element => {
           return (
-            <GsSelect
-              id="decimalNumbersSite"
-              onChange={(event) => use.actions.changeDecimalNumbers(event)}
-              options={use.states.decimalNumbersOptions}
-              defaultValue={use.states.decimalNumbersDefault}
-              styles={{
-                width: '90%',
+            <SelectCurrenciesDecimalNumbers
+              changeCurrenciesDecimalNumbers={(event) =>
+                use.actions.changeDecimalNumbers(event)
+              }
+              props={{
+                options: use.states.decimalNumbersOptions,
+                defaultValue: use.states.decimalNumbersDefault,
+                styles: {
+                  width: '90%',
+                },
+                ...decimalSelectProps,
               }}
-              {...decimalSelectProps}
             />
           );
         });
@@ -608,15 +652,16 @@ export const SitesForm = ({
       ) {
         setInputTaxes((): JSX.Element => {
           return (
-            <GsSelect
-              id="taxesSite"
-              onChange={(event) => use.actions.changeTaxes(event)}
-              options={use.states.taxesOptions}
-              defaultValue={use.states.taxesDefault}
-              styles={{
-                width: '90%',
+            <SelectTaxes
+              changeTaxes={(event) => use.actions.changeTaxes(event)}
+              props={{
+                options: use.states.taxesOptions,
+                defaultValue: use.states.taxesDefault,
+                styles: {
+                  width: '90%',
+                },
+                ...taxesSelectProps,
               }}
-              {...taxesSelectProps}
             />
           );
         });
@@ -651,38 +696,40 @@ export const SitesForm = ({
 
       setInputState((): JSX.Element => {
         return (
-          <Input
-            inputProps={{
-              placeholder: 'Estado',
-              type: 'text',
-              id: 'stateCountrySite',
-              defaultValue: labelStateCountry,
-              readOnly: true,
+          <InputStateCountry
+            changeStateCountry={(event) =>
+              use.actions.changeStateCountry(event)
+            }
+            props={{
+              inputProps: {
+                defaultValue: labelStateCountry,
+                readOnly: true,
+              },
+              styles: {
+                padding: '10px 19px',
+                width: '90%',
+              },
+              ...stateInputProps,
             }}
-            styles={{
-              padding: '10px 19px',
-              width: '90%',
-            }}
-            {...stateInputProps}
           />
         );
       });
 
       setInputCity((): JSX.Element => {
         return (
-          <Input
-            inputProps={{
-              placeholder: 'Ciudad',
-              type: 'text',
-              id: 'citySite',
-              defaultValue: use.states.city,
-              readOnly: true,
+          <GeneralInputCity
+            changeCity={(event) => use.actions.changeCity(event)}
+            props={{
+              inputProps: {
+                defaultValue: use.states.city,
+                readOnly: true,
+              },
+              styles: {
+                padding: '10px 19px',
+                width: '90%',
+              },
+              ...cityInputProps,
             }}
-            styles={{
-              padding: '10px 19px',
-              width: '90%',
-            }}
-            {...cityInputProps}
           />
         );
       });
@@ -745,22 +792,18 @@ export const SitesForm = ({
           {...nameContainerProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Nombre del sitio',
-                type: 'text',
-                id: 'siteName',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeName(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.name,
+            <InputName
+              changeName={(event) => use.actions.changeName(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.name,
+                },
+                styles: {
+                  width: '100%',
+                  padding: '10px 19px',
+                },
+                ...nameInputProps,
               }}
-              styles={{
-                width: '100%',
-                padding: '10px 19px',
-              }}
-              {...nameInputProps}
             />
           </>
         </ContainerButton>
@@ -773,22 +816,20 @@ export const SitesForm = ({
           <>
             {InputTypeDocument}
 
-            <Input
-              inputProps={{
-                placeholder: 'Numero de documento legal',
-                type: 'text',
-                id: 'documentNumber',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeDocumentNumber(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.documentNumber,
+            <InputDocumentiIdDigit
+              changeDocumentiIdDigit={(event) =>
+                use.actions.changeDocumentNumber(event)
+              }
+              props={{
+                inputProps: {
+                  defaultValue: use.states.documentNumber,
+                },
+                styles: {
+                  padding: '10px 19px',
+                  width: '90%',
+                },
+                ...documentNumberInputProps,
               }}
-              styles={{
-                padding: '10px 19px',
-                width: '90%',
-              }}
-              {...documentNumberInputProps}
             />
           </>
         </ContainerButton>
@@ -799,40 +840,32 @@ export const SitesForm = ({
           {...addressContainerProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Dirección 1',
-                type: 'text',
-                id: 'address1',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeAddress1(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.address1,
+            <InputAddress1
+              changeAddress1={(event) => use.actions.changeAddress1(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.address1,
+                },
+                styles: {
+                  width: '90%',
+                  padding: '10px 19px',
+                },
+                ...address1InputProps,
               }}
-              styles={{
-                width: '90%',
-                padding: '10px 19px',
-              }}
-              {...address1InputProps}
             />
 
-            <Input
-              inputProps={{
-                placeholder: 'Dirección 2',
-                type: 'text',
-                id: 'address2',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeAddress2(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.address2,
+            <InputAddress2
+              changeAddress2={(event) => use.actions.changeAddress2(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.address2,
+                },
+                styles: {
+                  width: '90%',
+                  padding: '10px 19px',
+                },
+                ...address2InputProps,
               }}
-              styles={{
-                width: '90%',
-                padding: '10px 19px',
-              }}
-              {...address2InputProps}
             />
           </>
         </ContainerButton>
@@ -855,22 +888,18 @@ export const SitesForm = ({
         >
           <>
             {InputCountry}
-            <Input
-              inputProps={{
-                placeholder: 'Código Postal',
-                type: 'text',
-                id: 'postcodeSite',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changePostCode(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.postCode,
+            <InputZipCode
+              changeZipCode={(event) => use.actions.changePostCode(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.postCode,
+                },
+                styles: {
+                  padding: '10px 19px',
+                  width: '90%',
+                },
+                ...postCodeInputProps,
               }}
-              styles={{
-                padding: '10px 19px',
-                width: '90%',
-              }}
-              {...postCodeInputProps}
             />
           </>
         </ContainerButton>
@@ -881,39 +910,31 @@ export const SitesForm = ({
           {...phoneEmailContainerProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Teléfono',
-                type: 'phone',
-                id: 'phoneSite',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changePhone(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.phone,
+            <InputPhone
+              changePhone={(event) => use.actions.changePhone(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.phone,
+                },
+                styles: {
+                  padding: '10px 19px',
+                  width: '90%',
+                },
+                ...phoneInputProps,
               }}
-              styles={{
-                padding: '10px 19px',
-                width: '90%',
-              }}
-              {...phoneInputProps}
             />
-            <Input
-              inputProps={{
-                placeholder: 'Email',
-                type: 'email',
-                id: 'emailSite',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeEmail(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.email,
+            <InputEmail
+              changeEmail={(event) => use.actions.changeEmail(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.email,
+                },
+                styles: {
+                  padding: '10px 19px',
+                  width: '90%',
+                },
+                ...emailInputProps,
               }}
-              styles={{
-                padding: '10px 19px',
-                width: '90%',
-              }}
-              {...emailInputProps}
             />
           </>
         </ContainerButton>
@@ -947,22 +968,18 @@ export const SitesForm = ({
         >
           <>
             {InputTaxes}
-            <Input
-              inputProps={{
-                placeholder: 'Host',
-                type: 'text',
-                id: 'hostSite',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeHost(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.host,
+            <InputWebSite
+              changeWebSite={(event) => use.actions.changeHost(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.host,
+                },
+                styles: {
+                  padding: '10px 19px',
+                  width: '90%',
+                },
+                ...hostInputProps,
               }}
-              styles={{
-                padding: '10px 19px',
-                width: '90%',
-              }}
-              {...hostInputProps}
             />
           </>
         </ContainerButton>

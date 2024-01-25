@@ -47,3 +47,16 @@ export declare const generalChangeType: (options: SingleValue<{
     value: string;
     label: string;
 }>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeCurrenciesId: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number) => void) => void;
+export declare const generalChangeCurrenciesDecimalNumbers: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number) => void) => void;
+export declare const generalChangeTaxes: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: boolean) => void) => void;
+export declare const generalChangeWebSite: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;

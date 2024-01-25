@@ -49,6 +49,12 @@ export {
   SelectDocumentIdIndex,
   SelectTypeDocumentIdId,
   SelectAddressType,
+  SelectCurrencies,
+  SelectCurrenciesLocations,
+  SelectCurrenciesSeparator,
+  SelectCurrenciesDecimalNumbers,
+  SelectTaxes,
+  InputWebSite,
 } from './Input';
 export type {
   InputStyle,
@@ -80,6 +86,12 @@ export type {
   SelectDocumentIdIndexProps,
   SelectTypeDocumentIdIdProps,
   SelectAddressTypeProps,
+  SelectCurrenciesProps,
+  SelectCurrenciesLocationsProps,
+  SelectCurrenciesSeparatorProps,
+  SelectCurrenciesDecimalNumbersProps,
+  SelectTaxesProps,
+  InputWebSiteProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';

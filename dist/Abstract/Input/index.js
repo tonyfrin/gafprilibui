@@ -93,6 +93,12 @@ Object.defineProperty(exports, "InputUserName", {
     return _InputUserName.InputUserName;
   }
 });
+Object.defineProperty(exports, "InputWebSite", {
+  enumerable: true,
+  get: function get() {
+    return _InputWebSite.InputWebSite;
+  }
+});
 Object.defineProperty(exports, "InputZipCode", {
   enumerable: true,
   get: function get() {
@@ -115,6 +121,30 @@ Object.defineProperty(exports, "SelectCountry", {
   enumerable: true,
   get: function get() {
     return _SelectCountry.SelectCountry;
+  }
+});
+Object.defineProperty(exports, "SelectCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _SelectCurrencies.SelectCurrencies;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesDecimalNumbers", {
+  enumerable: true,
+  get: function get() {
+    return _SelectCurrenciesDecimalNumbers.SelectCurrenciesDecimalNumbers;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesLocations", {
+  enumerable: true,
+  get: function get() {
+    return _SelectCurrenciesLocations.SelectCurrenciesLocations;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesSeparator", {
+  enumerable: true,
+  get: function get() {
+    return _SelectCurrenciesSeparator.SelectCurrenciesSeparator;
   }
 });
 Object.defineProperty(exports, "SelectDocumentIdIndex", {
@@ -147,6 +177,12 @@ Object.defineProperty(exports, "SelectStatus", {
     return _SelectStatus.SelectStatus;
   }
 });
+Object.defineProperty(exports, "SelectTaxes", {
+  enumerable: true,
+  get: function get() {
+    return _SelectTaxes.SelectTaxes;
+  }
+});
 Object.defineProperty(exports, "SelectTypeDocumentIdId", {
   enumerable: true,
   get: function get() {
@@ -177,3 +213,9 @@ var _InputPhone = require("./InputPhone");
 var _SelectDocumentIdIndex = require("./SelectDocumentIdIndex");
 var _SelectTypeDocumentIdId = require("./SelectTypeDocumentIdId");
 var _SelectAddressType = require("./SelectAddressType");
+var _SelectCurrencies = require("./SelectCurrencies");
+var _SelectCurrenciesLocations = require("./SelectCurrenciesLocations");
+var _SelectCurrenciesSeparator = require("./SelectCurrenciesSeparator");
+var _SelectCurrenciesDecimalNumbers = require("./SelectCurrenciesDecimalNumbers");
+var _SelectTaxes = require("./SelectTaxes");
+var _InputWebSite = require("./InputWebSite");

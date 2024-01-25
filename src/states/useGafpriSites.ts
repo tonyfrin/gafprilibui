@@ -7,20 +7,50 @@ import type {
 } from '../helpers';
 import {
   getLastEntryDateAndCount,
-  removeClass,
-  addClass,
-  validationInputName,
-  toTitleCase,
-  changeInputText,
-  validationSelect,
   changeSelect,
-  validationInput,
   gafpriFetch,
 } from '../helpers';
-import { Countries, StatesCountries, Cities } from '../Constans';
+import { Countries, API_URL, SITES_ROUTE, SITES_STORAGE } from '../Constans';
 import { getItem, saveItem } from '../Context';
 import type { UseCurrenciesReturn } from './useGafpriCurrencies';
 import type { UseErrorReturn } from './useGafpriError';
+import {
+  generalValidationAddress1,
+  generalValidationAddress2,
+  generalValidationButtonNext,
+  generalValidationEmail,
+  generalValidationName,
+  generalValidationPhone,
+  generalValidationPostCode,
+  generalValidationSelectCity,
+  generalValidationSelectCountry,
+  generalValidationSelectCurrencies,
+  generalValidationSelectCurrenciesDecimalNumbers,
+  generalValidationSelectCurrenciesLocations,
+  generalValidationSelectCurrenciesSeparator,
+  generalValidationSelectStateCountry,
+  generalValidationSelectTaxes,
+  generalValidationTypeDocumentIdDigit,
+  generalValidationTypeDocumentIdIndex,
+  generalValidationWebSite,
+} from '../Validations';
+import {
+  generalChangeAddress,
+  generalChangeCityOptions,
+  generalChangeCityStateCountry,
+  generalChangeDocumentIdDigit,
+  generalChangeDocumentIdIndex,
+  generalChangeEmail,
+  generalChangeName,
+  generalChangePostCode,
+  generalChangeStateCountryOptions,
+  generalChangePhone,
+  generalChangeCurrenciesId,
+  generalChangeType,
+  generalChangeCurrenciesDecimalNumbers,
+  generalChangeTaxes,
+  generalChangeWebSite,
+} from '../Changes';
 
 type DeletedSite = {
   itemId: number;
@@ -255,6 +285,7 @@ export const useGafpriSites = ({
   const [isInit, setIsInit] = useState(true);
   const [isAdd, setIsAdd] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
+  const [isReset, setIsReset] = useState(true);
 
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
@@ -392,7 +423,7 @@ export const useGafpriSites = ({
 
   const [sites, setSites] = useState<SitesData>({
     data: {
-      items: getItem('GS_SITES_V2', null),
+      items: getItem(SITES_STORAGE, null),
     },
   });
   const { error } = useError.states;
@@ -404,6 +435,7 @@ export const useGafpriSites = ({
   const itemsPerPage = 6;
 
   const infoReset = (): void => {
+    setIsReset(true);
     setName('');
     setNameValid(false);
 
@@ -527,303 +559,233 @@ export const useGafpriSites = ({
 
   // Funciones de Validacion
   const validationButtonNext = (): void => {
-    if (
-      nameValid &&
-      documentIndexValid &&
-      documentNumberValid &&
-      address1Valid &&
-      address2Valid &&
-      cityValid &&
-      stateCountryValid &&
-      postCodeValid &&
-      countryValid &&
-      emailValid &&
-      phoneValid &&
-      currenciesIdValid &&
-      currencyLocationValid &&
-      separatorValid &&
-      decimalNumbersValid &&
-      taxesValid &&
+    generalValidationButtonNext(
+      nameValid,
+      documentIndexValid,
+      documentNumberValid,
+      address1Valid,
+      address2Valid,
+      cityValid,
+      stateCountryValid,
+      postCodeValid,
+      countryValid,
+      emailValid,
+      phoneValid,
+      currenciesIdValid,
+      currencyLocationValid,
+      separatorValid,
+      decimalNumbersValid,
+      taxesValid,
       hostValid
-    ) {
-      removeClass('buttonNext', 'gs-disabled');
-    } else {
-      addClass('buttonNext', 'gs-disabled');
-    }
+    );
   };
 
   const validationName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: 'siteName',
-      setValid: setNameValid,
-    });
+    return generalValidationName(value, setNameValid, nameValid);
   };
 
   const validationDocumentIndex = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'documentIndex');
-    setDocumentIndexValid(validation);
-    return validation;
+    return generalValidationTypeDocumentIdIndex(
+      value,
+      setDocumentIndexValid,
+      documentIndexValid
+    );
   };
 
   const validationDocumentNumber = (value: string): boolean => {
-    const valid = validationInput(
+    return generalValidationTypeDocumentIdDigit(
       value,
-      /^\d{1,12}(-\d{1,12})?$/,
-      'documentNumber',
-      true
+      setDocumentNumberValid,
+      documentNumberValid
     );
-    setDocumentNumberValid(valid);
-    return valid;
   };
 
   const validationAddress1 = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/,
-      'address1',
-      true
-    );
-    setAddress1Valid(valid);
-    return valid;
+    return generalValidationAddress1(value, setAddress1Valid, address1Valid);
   };
 
   const validationAddress2 = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/,
-      'address2'
-    );
-    setAddress2Valid(valid);
-    return valid;
+    return generalValidationAddress2(value, setAddress2Valid, address2Valid);
   };
 
   const validationCity = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'citySite');
-    setCityValid(validation);
-    return validation;
+    return generalValidationSelectCity(value, setCityValid, cityValid);
   };
 
   const validationStateCountry = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'stateCountrySite');
-    setStateCountryValid(validation);
-    return validation;
+    return generalValidationSelectStateCountry(
+      value,
+      setStateCountryValid,
+      stateCountryValid
+    );
   };
 
   const validationCountry = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'countrySite');
-    setCountryValid(validation);
-    return validation;
+    return generalValidationSelectCountry(value, setCountryValid, countryValid);
   };
 
   const validationPostCode = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/,
-      'postCodeSite'
-    );
-    setPostCodeValid(valid);
-    return valid;
+    return generalValidationPostCode(value, setPostCodeValid, postCodeValid);
   };
 
   const validationEmail = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/,
-      'emailSite',
-      true
-    );
-    setEmailValid(valid);
-    return valid;
+    return generalValidationEmail(value, setEmailValid, emailValid);
   };
 
   const validationPhone = (value: string): boolean => {
-    const valid = validationInput(value, /^[0-9]{10,20}/, 'phoneSite', true);
-    setPhoneValid(valid);
-    return valid;
+    return generalValidationPhone(value, setPhoneValid, phoneValid);
   };
 
   const validationCurrenciesId = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'currencySite');
-    setCurrenciesIdValid(validation);
-    return validation;
+    return generalValidationSelectCurrencies(
+      value,
+      setCurrenciesIdValid,
+      currenciesIdValid
+    );
   };
 
   const validationCurrencyLocation = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'currencyLocationSite');
-    setCurrencyLocationValid(validation);
-    return validation;
+    return generalValidationSelectCurrenciesLocations(
+      value,
+      setCurrencyLocationValid,
+      currencyLocationValid
+    );
   };
 
   const validationSeparator = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'separatorSite');
-    setSeparatorValid(validation);
-    return validation;
+    return generalValidationSelectCurrenciesSeparator(
+      value,
+      setSeparatorValid,
+      separatorValid
+    );
   };
 
   const validationDecimalNumbers = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'decimalNumbersSite');
-    setDecimalNumbersValid(validation);
-    return validation;
+    return generalValidationSelectCurrenciesDecimalNumbers(
+      value,
+      setDecimalNumbersValid,
+      decimalNumbersValid
+    );
   };
 
   const validationTaxes = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'taxesSite');
-    setTaxesValid(validation);
-    return validation;
+    return generalValidationSelectTaxes(value, setTaxesValid, taxesValid);
   };
 
   const validationHost = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/,
-      'hostSite',
-      true
-    );
-    setHostValid(valid);
-    return valid;
+    return generalValidationWebSite(value, setHostValid, hostValid);
   };
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    const newValue = toTitleCase(value);
-    changeInputText({
-      value: newValue,
-      validation: validationName,
-      setValue: setName,
-    });
+    generalChangeName(value, validationName, setName);
   };
 
   const changeDocumentIndex = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationDocumentIndex,
-      setDefault: setDocumentIndexDefault,
-      setValue: setDocumentIndex,
-    });
+    generalChangeDocumentIdIndex(
+      options,
+      validationDocumentIndex,
+      setDocumentIndexDefault,
+      setDocumentIndex
+    );
   };
 
   const changeDocumentNumber = (newDocument: string): void => {
-    changeInputText({
-      value: newDocument,
-      validation: validationDocumentNumber,
-      setValue: setDocumentNumber,
-    });
+    generalChangeDocumentIdDigit(
+      newDocument,
+      validationDocumentNumber,
+      setDocumentNumber
+    );
   };
 
   const changeAddress1 = (value: string): void => {
-    const address = toTitleCase(value);
-    changeInputText({
-      value: address,
-      validation: validationAddress1,
-      setValue: setAddress1,
-    });
+    generalChangeAddress(value, validationAddress1, setAddress1);
   };
 
   const changeAddress2 = (value: string): void => {
-    const address = toTitleCase(value);
-    changeInputText({
-      value: address,
-      validation: validationAddress2,
-      setValue: setAddress2,
-    });
+    generalChangeAddress(value, validationAddress2, setAddress2);
   };
 
   const changeCity = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationCity,
-      setDefault: setCityDefault,
-      setValue: setCity,
-    });
+    generalChangeCityStateCountry(
+      options,
+      validationCity,
+      setCityDefault,
+      setCity,
+      setIsReady
+    );
   };
 
   const changeCityOptions = React.useCallback((): void => {
-    const newValueCity: SelectDefault[] = [];
-    if (Cities[0][country]) {
-      if (Array.isArray(Cities[0][country][0][state])) {
-        Cities[0][country][0][state].forEach((item) => {
-          Object.keys(item).forEach((key) => {
-            newValueCity.push({ value: item[key], label: item[key] });
-          });
-        });
-      }
-    }
-    setCityDefault({ label: 'Elija la ciudad', value: '' });
-    setCity('');
-    setCityOptions(newValueCity);
-  }, [country, state]);
+    generalChangeCityOptions(
+      country,
+      state,
+      setCityDefault,
+      setCity,
+      setCityOptions,
+      isReset
+    );
+  }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeStateCountry = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationStateCountry,
-      setDefault: setStateCountryDefault,
-      setValue: setStateCountry,
-    });
+    generalChangeCityStateCountry(
+      options,
+      validationStateCountry,
+      setStateCountryDefault,
+      setStateCountry,
+      setIsReady
+    );
   };
 
   const changeStateCountryOptions = React.useCallback((): void => {
-    const newValueState: SelectDefault[] = [];
-    if (country && StatesCountries[0][country].length > 0) {
-      StatesCountries[0][country].forEach((item) => {
-        Object.keys(item).forEach((key) => {
-          newValueState.push({ value: key, label: item[key] });
-        });
-      });
-    }
-
-    setStateCountryDefault({ label: 'Elija el Estado', value: '' });
-    setStateCountry('');
-    setStateCountryOptions(newValueState);
-  }, [country]);
+    generalChangeStateCountryOptions(
+      country,
+      setStateCountryDefault,
+      setStateCountry,
+      setStateCountryOptions,
+      isReset
+    );
+  }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeCountry = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeStateCountryOptions();
-    changeSelect({
-      newValue: options,
-      validation: validationCountry,
-      setDefault: setCountryDefault,
-      setValue: setCountry,
-    });
+    generalChangeCityStateCountry(
+      options,
+      validationCountry,
+      setCountryDefault,
+      setCountry,
+      setIsReady
+    );
   };
 
   const changePostCode = (newPostCode: string): void => {
-    changeInputText({
-      value: newPostCode,
-      validation: validationPostCode,
-      setValue: setPostCode,
-    });
+    generalChangePostCode(newPostCode, validationPostCode, setPostCode);
   };
 
   const changeEmail = (inputValue: string): void => {
-    const newEmail = inputValue.toLocaleLowerCase();
-    changeInputText({
-      value: newEmail,
-      validation: validationEmail,
-      setValue: setEmail,
-    });
+    generalChangeEmail(inputValue, validationEmail, setEmail);
   };
 
   const changePhone = (newPhone: string): void => {
-    changeInputText({
-      value: newPhone,
-      validation: validationPhone,
-      setValue: setPhone,
-    });
+    return generalChangePhone(newPhone, validationPhone, setPhone);
   };
 
   const changeCurrenciesId = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
+    generalChangeCurrenciesId(
+      options,
+      validationCurrenciesId,
+      setCurrenciesIdDefault,
+      setCurrenciesId
+    );
     const value = options ? parseInt(options.value, 10) : 0;
     const label = options?.label || '';
     const newOptions = { value, label };
@@ -838,60 +800,44 @@ export const useGafpriSites = ({
   const changeCurrencyLocation = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationCurrencyLocation,
-      setDefault: setCurrencyLocationDefault,
-      setValue: setCurrencyLocation,
-    });
+    generalChangeType(
+      options,
+      validationCurrencyLocation,
+      setCurrencyLocationDefault,
+      setCurrencyLocation
+    );
   };
 
   const changeSeparator = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationSeparator,
-      setDefault: setSeparatorDefault,
-      setValue: setSeparator,
-    });
+    generalChangeType(
+      options,
+      validationSeparator,
+      setSeparatorDefault,
+      setSeparator
+    );
   };
 
   const changeDecimalNumbers = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    const value = options ? parseInt(options.value, 10) : 0;
-    const label = options?.label || '';
-    const newOptions = { value, label };
-    changeSelect({
-      newValue: newOptions,
-      validation: validationDecimalNumbers,
-      setDefault: setDecimalNumbersDefault,
-      setValue: setDecimalNumbers,
-    });
+    generalChangeCurrenciesDecimalNumbers(
+      options,
+      validationDecimalNumbers,
+      setDecimalNumbersDefault,
+      setDecimalNumbers
+    );
   };
 
   const changeTaxes = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    const value = options && options.value === 'true';
-    const label = options?.label || '';
-    const newOptions = { value, label };
-    changeSelect({
-      newValue: newOptions,
-      validation: validationTaxes,
-      setDefault: setTaxesDefault,
-      setValue: setTaxes,
-    });
+    generalChangeTaxes(options, validationTaxes, setTaxesDefault, setTaxes);
   };
 
   const changeHost = (value: string): void => {
-    const NewHost = value.toLocaleLowerCase();
-    changeInputText({
-      value: NewHost,
-      validation: validationHost,
-      setValue: setHost,
-    });
+    generalChangeWebSite(value, validationHost, setHost);
   };
 
   // Manejo de la data en DB
@@ -903,7 +849,7 @@ export const useGafpriSites = ({
     : null;
 
   const setDataStorage = (newData: SitesData): void => {
-    saveItem('GS_SITES_V2', newData.data.items);
+    saveItem(SITES_STORAGE, newData.data.items);
   };
 
   const setData = (newData: SitesData): void => {
@@ -935,11 +881,11 @@ export const useGafpriSites = ({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token) {
+      if (token && API_URL) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: 'http://localhost:4000',
-          initRoute: 'api/v1/sites',
+          initApi: API_URL,
+          initRoute: SITES_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onSites,
@@ -1048,7 +994,8 @@ export const useGafpriSites = ({
       decimalNumbersValid &&
       taxesValid &&
       hostValid &&
-      token
+      token &&
+      API_URL
     ) {
       const payload = {
         name,
@@ -1077,8 +1024,8 @@ export const useGafpriSites = ({
 
       gafpriFetch({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/sites',
+        initApi: API_URL,
+        initRoute: SITES_ROUTE,
         initCredentials: updatedPayload,
         initToken: { token },
         functionFetching: onFetching,
@@ -1119,7 +1066,8 @@ export const useGafpriSites = ({
       decimalNumbersValid &&
       taxesValid &&
       hostValid &&
-      token
+      token &&
+      API_URL
     ) {
       const payload = {
         name,
@@ -1148,8 +1096,8 @@ export const useGafpriSites = ({
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/sites/${siteId}`,
+        initApi: API_URL,
+        initRoute: `${SITES_ROUTE}/${siteId}`,
         initCredentials: updatedPayload,
         initToken: { token },
         functionFetching: onFetching,
@@ -1160,11 +1108,11 @@ export const useGafpriSites = ({
   };
 
   const deleteSites = (id: number): void => {
-    if (token) {
+    if (token && API_URL) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/sites/${id}`,
+        initApi: API_URL,
+        initRoute: `${SITES_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,

@@ -87,10 +87,34 @@ Object.defineProperty(exports, "COUNTRY_INPUT", {
     return _Inputs.COUNTRY_INPUT;
   }
 });
+Object.defineProperty(exports, "CURRENCIES_DECIMAL_NUMBERS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CURRENCIES_DECIMAL_NUMBERS_INPUT;
+  }
+});
+Object.defineProperty(exports, "CURRENCIES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CURRENCIES_INPUT;
+  }
+});
+Object.defineProperty(exports, "CURRENCIES_LOCATIONS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CURRENCIES_LOCATIONS_INPUT;
+  }
+});
 Object.defineProperty(exports, "CURRENCIES_ROUTE", {
   enumerable: true,
   get: function get() {
     return _Api.CURRENCIES_ROUTE;
+  }
+});
+Object.defineProperty(exports, "CURRENCIES_SEPARATOR_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CURRENCIES_SEPARATOR_INPUT;
   }
 });
 Object.defineProperty(exports, "CURRENCIES_STORAGE", {
@@ -225,6 +249,18 @@ Object.defineProperty(exports, "ROLES_STORAGE", {
     return _LocalStorage.ROLES_STORAGE;
   }
 });
+Object.defineProperty(exports, "SITES_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.SITES_ROUTE;
+  }
+});
+Object.defineProperty(exports, "SITES_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.SITES_STORAGE;
+  }
+});
 Object.defineProperty(exports, "SITE_INPUT", {
   enumerable: true,
   get: function get() {
@@ -261,6 +297,12 @@ Object.defineProperty(exports, "StatesCountries", {
     return _StatesCountries.StatesCountries;
   }
 });
+Object.defineProperty(exports, "TAXES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TAXES_INPUT;
+  }
+});
 Object.defineProperty(exports, "TYPE_DOCUMENT_ID_DIGIT_INPUT", {
   enumerable: true,
   get: function get() {
@@ -295,6 +337,12 @@ Object.defineProperty(exports, "USER_NAME_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.USER_NAME_INPUT;
+  }
+});
+Object.defineProperty(exports, "WEB_SITE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.WEB_SITE_INPUT;
   }
 });
 Object.defineProperty(exports, "ZIP_CODE_INPUT", {

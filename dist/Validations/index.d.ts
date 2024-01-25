@@ -43,3 +43,9 @@ export declare const generalValidationTypeDocumentIdDigit: (newValue: string, se
 export declare const generalValidationEmail: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
 export declare const generalValidationPhone: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
 export declare const generalValidationType: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationSelectCurrencies: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationSelectCurrenciesLocations: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationSelectCurrenciesSeparator: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationSelectCurrenciesDecimalNumbers: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationSelectTaxes: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationWebSite: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;

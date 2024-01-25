@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAddressType = exports.generalChangeAddress = void 0;
+exports.generalChangeWebSite = exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeTaxes = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCurrenciesId = exports.generalChangeCurrenciesDecimalNumbers = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAddressType = exports.generalChangeAddress = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _axios = _interopRequireDefault(require("axios"));
@@ -311,3 +311,58 @@ var generalChangeType = function generalChangeType(options, validation, setDefau
   });
 };
 exports.generalChangeType = generalChangeType;
+var generalChangeCurrenciesId = function generalChangeCurrenciesId(options, validation, setDefault, setValue) {
+  var value = options ? parseInt(options.value, 10) : 0;
+  var label = (options === null || options === void 0 ? void 0 : options.label) || '';
+  var newOptions = {
+    value: value,
+    label: label
+  };
+  (0, _helpers.changeSelect)({
+    newValue: newOptions,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeCurrenciesId = generalChangeCurrenciesId;
+var generalChangeCurrenciesDecimalNumbers = function generalChangeCurrenciesDecimalNumbers(options, validation, setDefault, setValue) {
+  var value = options ? parseInt(options.value, 10) : 0;
+  var label = (options === null || options === void 0 ? void 0 : options.label) || '';
+  var newOptions = {
+    value: value,
+    label: label
+  };
+  (0, _helpers.changeSelect)({
+    newValue: newOptions,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeCurrenciesDecimalNumbers = generalChangeCurrenciesDecimalNumbers;
+var generalChangeTaxes = function generalChangeTaxes(options, validation, setDefault, setValue) {
+  var value = options && options.value === 'true';
+  var label = (options === null || options === void 0 ? void 0 : options.label) || '';
+  var newOptions = {
+    value: value,
+    label: label
+  };
+  (0, _helpers.changeSelect)({
+    newValue: newOptions,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeTaxes = generalChangeTaxes;
+var generalChangeWebSite = function generalChangeWebSite(value, validation, setValue) {
+  var valueClean = _dompurify["default"].sanitize(value);
+  var host = valueClean.toLocaleLowerCase();
+  (0, _helpers.changeInputText)({
+    value: host,
+    validation: validation,
+    setValue: setValue
+  });
+};
+exports.generalChangeWebSite = generalChangeWebSite;

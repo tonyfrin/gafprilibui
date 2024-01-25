@@ -384,3 +384,68 @@ export const generalChangeType = (
     setValue,
   });
 };
+
+export const generalChangeCurrenciesId = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: number) => void
+): void => {
+  const value = options ? parseInt(options.value, 10) : 0;
+  const label = options?.label || '';
+  const newOptions = { value, label };
+  changeSelect({
+    newValue: newOptions,
+    validation,
+    setDefault,
+    setValue,
+  });
+};
+
+export const generalChangeCurrenciesDecimalNumbers = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: number) => void
+): void => {
+  const value = options ? parseInt(options.value, 10) : 0;
+  const label = options?.label || '';
+  const newOptions = { value, label };
+  changeSelect({
+    newValue: newOptions,
+    validation,
+    setDefault,
+    setValue,
+  });
+};
+
+export const generalChangeTaxes = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: boolean) => void
+): void => {
+  const value = options && options.value === 'true';
+  const label = options?.label || '';
+  const newOptions = { value, label };
+  changeSelect({
+    newValue: newOptions,
+    validation,
+    setDefault,
+    setValue,
+  });
+};
+
+export const generalChangeWebSite = (
+  value: string,
+  validation: (valueValid: string) => boolean,
+  setValue: (transformedValue: string) => void
+): void => {
+  const valueClean = DOMPurify.sanitize(value);
+  const host = valueClean.toLocaleLowerCase();
+  changeInputText({
+    value: host,
+    validation,
+    setValue,
+  });
+};

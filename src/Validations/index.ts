@@ -36,6 +36,12 @@ import {
   TYPE_INPUT,
   PHOTO_ENTITY_INPUT,
   PHOTO_DOCUMENT_ID_INPUT,
+  CURRENCIES_INPUT,
+  CURRENCIES_LOCATIONS_INPUT,
+  CURRENCIES_SEPARATOR_INPUT,
+  CURRENCIES_DECIMAL_NUMBERS_INPUT,
+  TAXES_INPUT,
+  WEB_SITE_INPUT,
 } from '../Constans';
 
 export type ValidationInput = {
@@ -620,6 +626,93 @@ export const generalValidationType = (
   currentValid: boolean
 ): boolean => {
   const valid = validationSelect(newValue, TYPE_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationSelectCurrencies = (
+  value: string,
+  setValid: (valueValid: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const validation: boolean = validationSelect(value, CURRENCIES_INPUT);
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+
+export const generalValidationSelectCurrenciesLocations = (
+  value: string,
+  setValid: (valueValid: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const validation: boolean = validationSelect(
+    value,
+    CURRENCIES_LOCATIONS_INPUT
+  );
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+
+export const generalValidationSelectCurrenciesSeparator = (
+  value: string,
+  setValid: (valueValid: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const validation: boolean = validationSelect(
+    value,
+    CURRENCIES_SEPARATOR_INPUT
+  );
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+
+export const generalValidationSelectCurrenciesDecimalNumbers = (
+  value: string,
+  setValid: (valueValid: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const validation: boolean = validationSelect(
+    value,
+    CURRENCIES_DECIMAL_NUMBERS_INPUT
+  );
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+
+export const generalValidationSelectTaxes = (
+  value: string,
+  setValid: (valueValid: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const validation: boolean = validationSelect(value, TAXES_INPUT);
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+
+export const generalValidationWebSite = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean,
+  required = false
+): boolean => {
+  const valid = validationInput(
+    newValue,
+    /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/,
+    WEB_SITE_INPUT,
+    required
+  );
   if (valid !== currentValid) {
     setValid(valid);
   }

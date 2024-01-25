@@ -28,3 +28,10 @@ export const PHONE_INPUT = 'phone-input-id';
 export const TYPE_INPUT = 'type-input-id';
 export const PHOTO_ENTITY_INPUT = 'photo-entity-input-id';
 export const PHOTO_DOCUMENT_ID_INPUT = 'photo-document-id-input-id';
+export const CURRENCIES_INPUT = 'currencies-input-id';
+export const CURRENCIES_LOCATIONS_INPUT = 'currencies-locations-input-id';
+export const CURRENCIES_SEPARATOR_INPUT = 'currencies-separator-input-id';
+export const CURRENCIES_DECIMAL_NUMBERS_INPUT =
+  'currencies-decimal-numbers-input-id';
+export const TAXES_INPUT = 'taxes-input-id';
+export const WEB_SITE_INPUT = 'web-site-input-id';

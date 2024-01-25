@@ -6,12 +6,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SitesForm = void 0;
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireDefault(require("react"));
 var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
 var _Constans = require("../../Constans");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var SitesForm = function SitesForm(_ref) {
   var use = _ref.use,
     formType = _ref.formType,
@@ -171,95 +174,102 @@ var SitesForm = function SitesForm(_ref) {
     }
     if (isAddForm) {
       setInputTypeDocument(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "documentIndex",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectDocumentIdIndex, {
+          changeIndex: function changeIndex(event) {
             return use.actions.changeDocumentIndex(event);
           },
-          options: use.states.documentIndexOptions,
-          defaultValue: use.states.documentIndexDefault,
-          styles: {
-            width: '90%'
-          }
-        }, documentTypeSelectProps));
+          props: _objectSpread({
+            options: use.states.documentIndexOptions,
+            defaultValue: use.states.documentIndexDefault,
+            styles: {
+              width: '90%'
+            }
+          }, documentTypeSelectProps)
+        });
       });
       setInputCountry(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "countrySite",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectCountry, {
+          changeCountry: function changeCountry(event) {
             return use.actions.changeCountry(event);
           },
-          options: use.states.countryOptions,
-          defaultValue: use.states.countryDefault,
-          styles: {
-            width: '90%'
-          }
-        }, countrySelectProps));
+          props: _objectSpread({
+            options: use.states.countryOptions,
+            defaultValue: use.states.countryDefault,
+            styles: {
+              width: '90%'
+            }
+          }, countrySelectProps)
+        });
       });
       setInputCurrency(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "currencySite",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrencies, {
+          changeCurrencies: function changeCurrencies(event) {
             return use.actions.changeCurrenciesId(event);
           },
-          options: use.states.currenciesIdOptions,
-          defaultValue: use.states.currenciesIdDefault,
-          styles: {
-            width: '90%'
-          }
-        }, currencySelectProps));
+          props: _objectSpread({
+            options: use.states.currenciesIdOptions,
+            defaultValue: use.states.currenciesIdDefault,
+            styles: {
+              width: '90%'
+            }
+          }, currencySelectProps)
+        });
       });
       setInputCurrencyLocation(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "currencyLocationSite",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrenciesLocations, {
+          changeCurrenciesLocations: function changeCurrenciesLocations(event) {
             return use.actions.changeCurrencyLocation(event);
           },
-          options: use.states.currencyLocationOptions,
-          defaultValue: use.states.currencyLocationDefault,
-          styles: {
-            width: '90%'
-          }
-        }, currencyLocationSelectProps));
+          props: _objectSpread({
+            options: use.states.currencyLocationOptions,
+            defaultValue: use.states.currencyLocationDefault,
+            styles: {
+              width: '90%'
+            }
+          }, currencyLocationSelectProps)
+        });
       });
       setInputSeparator(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "separatorSite",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrenciesSeparator, {
+          changeCurrenciesSeparator: function changeCurrenciesSeparator(event) {
             return use.actions.changeSeparator(event);
           },
-          options: use.states.separatorOptions,
-          defaultValue: use.states.separatorDefault,
-          styles: {
-            width: '90%'
-          }
-        }, separatorSelectProps));
+          props: _objectSpread({
+            options: use.states.separatorOptions,
+            defaultValue: use.states.separatorDefault,
+            styles: {
+              width: '90%'
+            }
+          }, separatorSelectProps)
+        });
       });
       setInputDecimalNumbers(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "decimalNumbersSite",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrenciesDecimalNumbers, {
+          changeCurrenciesDecimalNumbers: function changeCurrenciesDecimalNumbers(event) {
             return use.actions.changeDecimalNumbers(event);
           },
-          options: use.states.decimalNumbersOptions,
-          defaultValue: use.states.decimalNumbersDefault,
-          styles: {
-            width: '90%'
-          }
-        }, decimalSelectProps));
+          props: _objectSpread({
+            options: use.states.decimalNumbersOptions,
+            defaultValue: use.states.decimalNumbersDefault,
+            styles: {
+              width: '90%'
+            }
+          }, decimalSelectProps)
+        });
       });
       setInputTaxes(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "taxesSite",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectTaxes, {
+          changeTaxes: function changeTaxes(event) {
             return use.actions.changeTaxes(event);
           },
-          options: use.states.taxesOptions,
-          defaultValue: use.states.taxesDefault,
-          styles: {
-            width: '90%'
-          }
-        }, taxesSelectProps));
+          props: _objectSpread({
+            options: use.states.taxesOptions,
+            defaultValue: use.states.taxesDefault,
+            styles: {
+              width: '90%'
+            }
+          }, taxesSelectProps)
+        });
       });
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -268,74 +278,68 @@ var SitesForm = function SitesForm(_ref) {
     if (isAddForm) {
       if (use.states.stateCountryOptions.length > 0) {
         setInputState(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "stateCountrySite",
-            onChange: function onChange(event) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectStateCountry, {
+            changeStateCountry: function changeStateCountry(event) {
               return use.actions.changeStateCountry(event);
             },
-            options: use.states.stateCountryOptions,
-            defaultValue: use.states.stateCountryDefault,
-            styles: {
-              width: '90%'
-            }
-          }, stateSelectProps));
+            props: _objectSpread({
+              options: use.states.stateCountryOptions,
+              defaultValue: use.states.stateCountryDefault,
+              styles: {
+                width: '90%'
+              }
+            }, stateSelectProps)
+          });
         });
       } else {
         setInputState(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-            inputProps: {
-              placeholder: 'Estado',
-              type: 'text',
-              id: 'stateCountrySite',
-              onKeyUp: function onKeyUp(event) {
-                return use.actions.changeStateCountry({
-                  label: event.target.value,
-                  value: event.target.value
-                });
-              },
-              defaultValue: use.states.state
+          return /*#__PURE__*/_react["default"].createElement(_Input.InputStateCountry, {
+            changeStateCountry: function changeStateCountry(event) {
+              return use.actions.changeStateCountry(event);
             },
-            styles: {
-              padding: '10px 19px',
-              width: '90%'
-            }
-          }, stateInputProps));
+            props: _objectSpread({
+              inputProps: {
+                defaultValue: use.states.state
+              },
+              styles: {
+                padding: '10px 19px',
+                width: '90%'
+              }
+            }, stateInputProps)
+          });
         });
       }
       if (use.states.cityOptions.length > 0) {
         setInputCity(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "citySite",
-            onChange: function onChange(event) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectCity, {
+            changeCity: function changeCity(event) {
               return use.actions.changeCity(event);
             },
-            options: use.states.cityOptions,
-            defaultValue: use.states.cityDefault,
-            styles: {
-              width: '90%'
-            }
-          }, citySelectProps));
+            props: _objectSpread({
+              options: use.states.cityOptions,
+              defaultValue: use.states.cityDefault,
+              styles: {
+                width: '90%'
+              }
+            }, citySelectProps)
+          });
         });
       } else {
         setInputCity(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-            inputProps: {
-              placeholder: 'Ciudad',
-              type: 'text',
-              id: 'citySite',
-              onKeyUp: function onKeyUp(event) {
-                return use.actions.changeCity({
-                  label: event.target.value,
-                  value: event.target.value
-                });
-              },
-              defaultValue: use.states.city
+          return /*#__PURE__*/_react["default"].createElement(_Input.InputCity, {
+            changeCity: function changeCity(event) {
+              return use.actions.changeCity(event);
             },
-            styles: {
-              padding: '10px 19px',
-              width: '90%'
-            }
-          }, cityInputProps));
+            props: _objectSpread({
+              inputProps: {
+                defaultValue: use.states.city
+              },
+              styles: {
+                padding: '10px 19px',
+                width: '90%'
+              }
+            }, cityInputProps)
+          });
         });
       }
     }
@@ -345,92 +349,98 @@ var SitesForm = function SitesForm(_ref) {
       var _use$states$documentI, _use$states$currencie, _use$states$currencyL, _use$states$separator, _use$states$decimalNu, _use$states$taxesDefa;
       if (((_use$states$documentI = use.states.documentIndexDefault) === null || _use$states$documentI === void 0 ? void 0 : _use$states$documentI.label) !== 'Elija el tipo de Documento') {
         setInputTypeDocument(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "documentIndex",
-            onChange: function onChange(event) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectDocumentIdIndex, {
+            changeIndex: function changeIndex(event) {
               return use.actions.changeDocumentIndex(event);
             },
-            options: use.states.documentIndexOptions,
-            defaultValue: use.states.documentIndexDefault,
-            styles: {
-              width: '90%'
-            }
-          }, documentTypeSelectProps));
+            props: _objectSpread({
+              options: use.states.documentIndexOptions,
+              defaultValue: use.states.documentIndexDefault,
+              styles: {
+                width: '90%'
+              }
+            }, documentTypeSelectProps)
+          });
         });
       }
       if (((_use$states$currencie = use.states.currenciesIdDefault) === null || _use$states$currencie === void 0 ? void 0 : _use$states$currencie.label) !== 'Elija la moneda del Sitio') {
         setInputCurrency(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "currencySite",
-            onChange: function onChange(event) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrencies, {
+            changeCurrencies: function changeCurrencies(event) {
               return use.actions.changeCurrenciesId(event);
             },
-            options: use.states.currenciesIdOptions,
-            defaultValue: use.states.currenciesIdDefault,
-            styles: {
-              width: '90%'
-            }
-          }, currencySelectProps));
+            props: _objectSpread({
+              options: use.states.currenciesIdOptions,
+              defaultValue: use.states.currenciesIdDefault,
+              styles: {
+                width: '90%'
+              }
+            }, currencySelectProps)
+          });
         });
       }
       if (((_use$states$currencyL = use.states.currencyLocationDefault) === null || _use$states$currencyL === void 0 ? void 0 : _use$states$currencyL.label) !== 'Elija la ubicación del símbolo de la moneda') {
         setInputCurrencyLocation(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "currencyLocationSite",
-            onChange: function onChange(event) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrenciesLocations, {
+            changeCurrenciesLocations: function changeCurrenciesLocations(event) {
               return use.actions.changeCurrencyLocation(event);
             },
-            options: use.states.currencyLocationOptions,
-            defaultValue: use.states.currencyLocationDefault,
-            styles: {
-              width: '90%'
-            }
-          }, currencyLocationSelectProps));
+            props: _objectSpread({
+              options: use.states.currencyLocationOptions,
+              defaultValue: use.states.currencyLocationDefault,
+              styles: {
+                width: '90%'
+              }
+            }, currencyLocationSelectProps)
+          });
         });
       }
       if (((_use$states$separator = use.states.separatorDefault) === null || _use$states$separator === void 0 ? void 0 : _use$states$separator.label) !== 'Selecciona los separadores de la moneda') {
         setInputSeparator(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "separatorSite",
-            onChange: function onChange(event) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrenciesSeparator, {
+            changeCurrenciesSeparator: function changeCurrenciesSeparator(event) {
               return use.actions.changeSeparator(event);
             },
-            options: use.states.separatorOptions,
-            defaultValue: use.states.separatorDefault,
-            styles: {
-              width: '90%'
-            }
-          }, separatorSelectProps));
+            props: _objectSpread({
+              options: use.states.separatorOptions,
+              defaultValue: use.states.separatorDefault,
+              styles: {
+                width: '90%'
+              }
+            }, separatorSelectProps)
+          });
         });
       }
       if (((_use$states$decimalNu = use.states.decimalNumbersDefault) === null || _use$states$decimalNu === void 0 ? void 0 : _use$states$decimalNu.label) !== 'Selecciona el número de decimales') {
         setInputDecimalNumbers(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "decimalNumbersSite",
-            onChange: function onChange(event) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrenciesDecimalNumbers, {
+            changeCurrenciesDecimalNumbers: function changeCurrenciesDecimalNumbers(event) {
               return use.actions.changeDecimalNumbers(event);
             },
-            options: use.states.decimalNumbersOptions,
-            defaultValue: use.states.decimalNumbersDefault,
-            styles: {
-              width: '90%'
-            }
-          }, decimalSelectProps));
+            props: _objectSpread({
+              options: use.states.decimalNumbersOptions,
+              defaultValue: use.states.decimalNumbersDefault,
+              styles: {
+                width: '90%'
+              }
+            }, decimalSelectProps)
+          });
         });
       }
       if (((_use$states$taxesDefa = use.states.taxesDefault) === null || _use$states$taxesDefa === void 0 ? void 0 : _use$states$taxesDefa.label) !== 'Selecciona la opción para los impuestos') {
         setInputTaxes(function () {
-          return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-            id: "taxesSite",
-            onChange: function onChange(event) {
+          return /*#__PURE__*/_react["default"].createElement(_Input.SelectTaxes, {
+            changeTaxes: function changeTaxes(event) {
               return use.actions.changeTaxes(event);
             },
-            options: use.states.taxesOptions,
-            defaultValue: use.states.taxesDefault,
-            styles: {
-              width: '90%'
-            }
-          }, taxesSelectProps));
+            props: _objectSpread({
+              options: use.states.taxesOptions,
+              defaultValue: use.states.taxesDefault,
+              styles: {
+                width: '90%'
+              }
+            }, taxesSelectProps)
+          });
         });
       }
     }
@@ -456,34 +466,38 @@ var SitesForm = function SitesForm(_ref) {
         }, countryInputProps));
       });
       setInputState(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-          inputProps: {
-            placeholder: 'Estado',
-            type: 'text',
-            id: 'stateCountrySite',
-            defaultValue: labelStateCountry,
-            readOnly: true
+        return /*#__PURE__*/_react["default"].createElement(_Input.InputStateCountry, {
+          changeStateCountry: function changeStateCountry(event) {
+            return use.actions.changeStateCountry(event);
           },
-          styles: {
-            padding: '10px 19px',
-            width: '90%'
-          }
-        }, stateInputProps));
+          props: _objectSpread({
+            inputProps: {
+              defaultValue: labelStateCountry,
+              readOnly: true
+            },
+            styles: {
+              padding: '10px 19px',
+              width: '90%'
+            }
+          }, stateInputProps)
+        });
       });
       setInputCity(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-          inputProps: {
-            placeholder: 'Ciudad',
-            type: 'text',
-            id: 'citySite',
-            defaultValue: use.states.city,
-            readOnly: true
+        return /*#__PURE__*/_react["default"].createElement(_Input.InputCity, {
+          changeCity: function changeCity(event) {
+            return use.actions.changeCity(event);
           },
-          styles: {
-            padding: '10px 19px',
-            width: '90%'
-          }
-        }, cityInputProps));
+          props: _objectSpread({
+            inputProps: {
+              defaultValue: use.states.city,
+              readOnly: true
+            },
+            styles: {
+              padding: '10px 19px',
+              width: '90%'
+            }
+          }, cityInputProps)
+        });
       });
     }
   }, [currentSite, use.states.city]);
@@ -529,71 +543,67 @@ var SitesForm = function SitesForm(_ref) {
       width: '100%',
       justifyContent: 'start'
     }
-  }, nameContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Nombre del sitio',
-      type: 'text',
-      id: 'siteName',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeName(event.target.value);
-      },
-      defaultValue: use.states.name
+  }, nameContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
+    changeName: function changeName(event) {
+      return use.actions.changeName(event);
     },
-    styles: {
-      width: '100%',
-      padding: '10px 19px'
-    }
-  }, nameInputProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.name
+      },
+      styles: {
+        width: '100%',
+        padding: '10px 19px'
+      }
+    }, nameInputProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '96.5%'
     }
-  }, documentContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputTypeDocument, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Numero de documento legal',
-      type: 'text',
-      id: 'documentNumber',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeDocumentNumber(event.target.value);
-      },
-      defaultValue: use.states.documentNumber
+  }, documentContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputTypeDocument, /*#__PURE__*/_react["default"].createElement(_Input.InputDocumentiIdDigit, {
+    changeDocumentiIdDigit: function changeDocumentiIdDigit(event) {
+      return use.actions.changeDocumentNumber(event);
     },
-    styles: {
-      padding: '10px 19px',
-      width: '90%'
-    }
-  }, documentNumberInputProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.documentNumber
+      },
+      styles: {
+        padding: '10px 19px',
+        width: '90%'
+      }
+    }, documentNumberInputProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '96.5%'
     }
-  }, addressContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Dirección 1',
-      type: 'text',
-      id: 'address1',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeAddress1(event.target.value);
-      },
-      defaultValue: use.states.address1
+  }, addressContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputAddress1, {
+    changeAddress1: function changeAddress1(event) {
+      return use.actions.changeAddress1(event);
     },
-    styles: {
-      width: '90%',
-      padding: '10px 19px'
-    }
-  }, address1InputProps)), /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Dirección 2',
-      type: 'text',
-      id: 'address2',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeAddress2(event.target.value);
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.address1
       },
-      defaultValue: use.states.address2
+      styles: {
+        width: '90%',
+        padding: '10px 19px'
+      }
+    }, address1InputProps)
+  }), /*#__PURE__*/_react["default"].createElement(_Input.InputAddress2, {
+    changeAddress2: function changeAddress2(event) {
+      return use.actions.changeAddress2(event);
     },
-    styles: {
-      width: '90%',
-      padding: '10px 19px'
-    }
-  }, address2InputProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.address2
+      },
+      styles: {
+        width: '90%',
+        padding: '10px 19px'
+      }
+    }, address2InputProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '96.5%'
     }
@@ -601,53 +611,50 @@ var SitesForm = function SitesForm(_ref) {
     styles: {
       width: '96.5%'
     }
-  }, countryContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputCountry, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Código Postal',
-      type: 'text',
-      id: 'postcodeSite',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changePostCode(event.target.value);
-      },
-      defaultValue: use.states.postCode
+  }, countryContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputCountry, /*#__PURE__*/_react["default"].createElement(_Input.InputZipCode, {
+    changeZipCode: function changeZipCode(event) {
+      return use.actions.changePostCode(event);
     },
-    styles: {
-      padding: '10px 19px',
-      width: '90%'
-    }
-  }, postCodeInputProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.postCode
+      },
+      styles: {
+        padding: '10px 19px',
+        width: '90%'
+      }
+    }, postCodeInputProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '96.5%'
     }
-  }, phoneEmailContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Teléfono',
-      type: 'phone',
-      id: 'phoneSite',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changePhone(event.target.value);
-      },
-      defaultValue: use.states.phone
+  }, phoneEmailContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputPhone, {
+    changePhone: function changePhone(event) {
+      return use.actions.changePhone(event);
     },
-    styles: {
-      padding: '10px 19px',
-      width: '90%'
-    }
-  }, phoneInputProps)), /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Email',
-      type: 'email',
-      id: 'emailSite',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeEmail(event.target.value);
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.phone
       },
-      defaultValue: use.states.email
+      styles: {
+        padding: '10px 19px',
+        width: '90%'
+      }
+    }, phoneInputProps)
+  }), /*#__PURE__*/_react["default"].createElement(_Input.InputEmail, {
+    changeEmail: function changeEmail(event) {
+      return use.actions.changeEmail(event);
     },
-    styles: {
-      padding: '10px 19px',
-      width: '90%'
-    }
-  }, emailInputProps)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.email
+      },
+      styles: {
+        padding: '10px 19px',
+        width: '90%'
+      }
+    }, emailInputProps)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '96.5%'
     }
@@ -659,20 +666,19 @@ var SitesForm = function SitesForm(_ref) {
     styles: {
       width: '96.5%'
     }
-  }, taxesHostContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputTaxes, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Host',
-      type: 'text',
-      id: 'hostSite',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeHost(event.target.value);
-      },
-      defaultValue: use.states.host
+  }, taxesHostContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputTaxes, /*#__PURE__*/_react["default"].createElement(_Input.InputWebSite, {
+    changeWebSite: function changeWebSite(event) {
+      return use.actions.changeHost(event);
     },
-    styles: {
-      padding: '10px 19px',
-      width: '90%'
-    }
-  }, hostInputProps))))));
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.host
+      },
+      styles: {
+        padding: '10px 19px',
+        width: '90%'
+      }
+    }, hostInputProps)
+  })))));
 };
 exports.SitesForm = SitesForm;

@@ -117,10 +117,34 @@ Object.defineProperty(exports, "COUNTRY_INPUT", {
     return _Constans.COUNTRY_INPUT;
   }
 });
+Object.defineProperty(exports, "CURRENCIES_DECIMAL_NUMBERS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.CURRENCIES_DECIMAL_NUMBERS_INPUT;
+  }
+});
+Object.defineProperty(exports, "CURRENCIES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.CURRENCIES_INPUT;
+  }
+});
+Object.defineProperty(exports, "CURRENCIES_LOCATIONS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.CURRENCIES_LOCATIONS_INPUT;
+  }
+});
 Object.defineProperty(exports, "CURRENCIES_ROUTE", {
   enumerable: true,
   get: function get() {
     return _Constans.CURRENCIES_ROUTE;
+  }
+});
+Object.defineProperty(exports, "CURRENCIES_SEPARATOR_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.CURRENCIES_SEPARATOR_INPUT;
   }
 });
 Object.defineProperty(exports, "CURRENCIES_STORAGE", {
@@ -357,6 +381,12 @@ Object.defineProperty(exports, "InputPhone", {
     return _Abstract.InputPhone;
   }
 });
+Object.defineProperty(exports, "InputWebSite", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputWebSite;
+  }
+});
 Object.defineProperty(exports, "LAST_NAME_INPUT", {
   enumerable: true,
   get: function get() {
@@ -555,6 +585,18 @@ Object.defineProperty(exports, "RolesForm", {
     return _Abstract.RolesForm;
   }
 });
+Object.defineProperty(exports, "SITES_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.SITES_ROUTE;
+  }
+});
+Object.defineProperty(exports, "SITES_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.SITES_STORAGE;
+  }
+});
 Object.defineProperty(exports, "SITE_INPUT", {
   enumerable: true,
   get: function get() {
@@ -597,6 +639,30 @@ Object.defineProperty(exports, "SelectAddressType", {
     return _Abstract.SelectAddressType;
   }
 });
+Object.defineProperty(exports, "SelectCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectCurrencies;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesDecimalNumbers", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectCurrenciesDecimalNumbers;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesLocations", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectCurrenciesLocations;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesSeparator", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectCurrenciesSeparator;
+  }
+});
 Object.defineProperty(exports, "SelectDocumentIdIndex", {
   enumerable: true,
   get: function get() {
@@ -637,6 +703,12 @@ Object.defineProperty(exports, "Step", {
   enumerable: true,
   get: function get() {
     return _Abstract.Step;
+  }
+});
+Object.defineProperty(exports, "TAXES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.TAXES_INPUT;
   }
 });
 Object.defineProperty(exports, "TYPE_DOCUMENT_ID_DIGIT_INPUT", {
@@ -711,6 +783,12 @@ Object.defineProperty(exports, "UserView", {
     return _Abstract.UserView;
   }
 });
+Object.defineProperty(exports, "WEB_SITE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.WEB_SITE_INPUT;
+  }
+});
 Object.defineProperty(exports, "ZIP_CODE_INPUT", {
   enumerable: true,
   get: function get() {
@@ -769,6 +847,18 @@ Object.defineProperty(exports, "generalChangeCityStateCountry", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeCityStateCountry;
+  }
+});
+Object.defineProperty(exports, "generalChangeCurrenciesDecimalNumbers", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeCurrenciesDecimalNumbers;
+  }
+});
+Object.defineProperty(exports, "generalChangeCurrenciesId", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeCurrenciesId;
   }
 });
 Object.defineProperty(exports, "generalChangeCurrenciesSymbol", {
@@ -859,6 +949,12 @@ Object.defineProperty(exports, "generalChangeStatus", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeStatus;
+  }
+});
+Object.defineProperty(exports, "generalChangeTaxes", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeTaxes;
   }
 });
 Object.defineProperty(exports, "generalChangeType", {
@@ -993,6 +1089,30 @@ Object.defineProperty(exports, "generalValidationSelectCountry", {
     return _Validations.generalValidationSelectCountry;
   }
 });
+Object.defineProperty(exports, "generalValidationSelectCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationSelectCurrencies;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCurrenciesDecimalNumbers", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationSelectCurrenciesDecimalNumbers;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCurrenciesLocations", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationSelectCurrenciesLocations;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCurrenciesSeparator", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationSelectCurrenciesSeparator;
+  }
+});
 Object.defineProperty(exports, "generalValidationSelectSite", {
   enumerable: true,
   get: function get() {
@@ -1003,6 +1123,12 @@ Object.defineProperty(exports, "generalValidationSelectStateCountry", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationSelectStateCountry;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectTaxes", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationSelectTaxes;
   }
 });
 Object.defineProperty(exports, "generalValidationSinglePassword", {
@@ -1045,6 +1171,12 @@ Object.defineProperty(exports, "generalValidationUserName", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationUserName;
+  }
+});
+Object.defineProperty(exports, "generalValidationWebSite", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationWebSite;
   }
 });
 Object.defineProperty(exports, "getApiUrl", {

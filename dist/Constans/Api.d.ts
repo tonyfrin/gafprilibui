@@ -5,3 +5,4 @@ export declare const CATEGORY_ROUTE = "/category";
 export declare const CURRENCIES_ROUTE = "/currencies";
 export declare const ENTITY_ROUTE = "/entity";
 export declare const ROLES_ROUTE = "/roles";
+export declare const SITES_ROUTE = "/sites";

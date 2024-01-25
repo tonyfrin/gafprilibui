@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationUserName = exports.generalValidationTypeDocumentIdIndex = exports.generalValidationTypeDocumentIdId = exports.generalValidationTypeDocumentIdDigit = exports.generalValidationType = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationPostCode = exports.generalValidationPhotoEntity = exports.generalValidationPhotoDocumentId = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPhone = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationEmail = exports.generalValidationDescription = exports.generalValidationCurrenciesSymbol = exports.generalValidationButtonNext = exports.generalValidationAddressType = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
+exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationWebSite = exports.generalValidationUserName = exports.generalValidationTypeDocumentIdIndex = exports.generalValidationTypeDocumentIdId = exports.generalValidationTypeDocumentIdDigit = exports.generalValidationType = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectTaxes = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCurrenciesSeparator = exports.generalValidationSelectCurrenciesLocations = exports.generalValidationSelectCurrenciesDecimalNumbers = exports.generalValidationSelectCurrencies = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationPostCode = exports.generalValidationPhotoEntity = exports.generalValidationPhotoDocumentId = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPhone = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationEmail = exports.generalValidationDescription = exports.generalValidationCurrenciesSymbol = exports.generalValidationButtonNext = exports.generalValidationAddressType = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
 var _helpers = require("../helpers");
 var _Constans = require("../Constans");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
@@ -411,3 +411,52 @@ var generalValidationType = function generalValidationType(newValue, setValid, c
   return valid;
 };
 exports.generalValidationType = generalValidationType;
+var generalValidationSelectCurrencies = function generalValidationSelectCurrencies(value, setValid, currentValid) {
+  var validation = (0, _helpers.validationSelect)(value, _Constans.CURRENCIES_INPUT);
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+exports.generalValidationSelectCurrencies = generalValidationSelectCurrencies;
+var generalValidationSelectCurrenciesLocations = function generalValidationSelectCurrenciesLocations(value, setValid, currentValid) {
+  var validation = (0, _helpers.validationSelect)(value, _Constans.CURRENCIES_LOCATIONS_INPUT);
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+exports.generalValidationSelectCurrenciesLocations = generalValidationSelectCurrenciesLocations;
+var generalValidationSelectCurrenciesSeparator = function generalValidationSelectCurrenciesSeparator(value, setValid, currentValid) {
+  var validation = (0, _helpers.validationSelect)(value, _Constans.CURRENCIES_SEPARATOR_INPUT);
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+exports.generalValidationSelectCurrenciesSeparator = generalValidationSelectCurrenciesSeparator;
+var generalValidationSelectCurrenciesDecimalNumbers = function generalValidationSelectCurrenciesDecimalNumbers(value, setValid, currentValid) {
+  var validation = (0, _helpers.validationSelect)(value, _Constans.CURRENCIES_DECIMAL_NUMBERS_INPUT);
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+exports.generalValidationSelectCurrenciesDecimalNumbers = generalValidationSelectCurrenciesDecimalNumbers;
+var generalValidationSelectTaxes = function generalValidationSelectTaxes(value, setValid, currentValid) {
+  var validation = (0, _helpers.validationSelect)(value, _Constans.TAXES_INPUT);
+  if (validation !== currentValid) {
+    setValid(validation);
+  }
+  return validation;
+};
+exports.generalValidationSelectTaxes = generalValidationSelectTaxes;
+var generalValidationWebSite = function generalValidationWebSite(newValue, setValid, currentValid) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  var valid = (0, _helpers.validationInput)(newValue, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/, _Constans.WEB_SITE_INPUT, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationWebSite = generalValidationWebSite;

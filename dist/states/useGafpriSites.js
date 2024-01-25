@@ -15,6 +15,8 @@ var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
 var _Constans = require("../Constans");
 var _Context = require("../Context");
+var _Validations = require("../Validations");
+var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -45,29 +47,33 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
     isUpdate = _useState10[0],
     setIsUpdate = _useState10[1];
-  var _useState11 = (0, _react.useState)(''),
+  var _useState11 = (0, _react.useState)(true),
     _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
-    name = _useState12[0],
-    setName = _useState12[1];
-  var _useState13 = (0, _react.useState)(false),
+    isReset = _useState12[0],
+    setIsReset = _useState12[1];
+  var _useState13 = (0, _react.useState)(''),
     _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
-    nameValid = _useState14[0],
-    setNameValid = _useState14[1];
-  var _useState15 = (0, _react.useState)(''),
+    name = _useState14[0],
+    setName = _useState14[1];
+  var _useState15 = (0, _react.useState)(false),
     _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
-    documentIndex = _useState16[0],
-    setDocumentIndex = _useState16[1];
-  var _useState17 = (0, _react.useState)(false),
+    nameValid = _useState16[0],
+    setNameValid = _useState16[1];
+  var _useState17 = (0, _react.useState)(''),
     _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
-    documentIndexValid = _useState18[0],
-    setDocumentIndexValid = _useState18[1];
-  var _useState19 = (0, _react.useState)({
+    documentIndex = _useState18[0],
+    setDocumentIndex = _useState18[1];
+  var _useState19 = (0, _react.useState)(false),
+    _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
+    documentIndexValid = _useState20[0],
+    setDocumentIndexValid = _useState20[1];
+  var _useState21 = (0, _react.useState)({
       value: '',
       label: 'Elija el tipo de Documento'
     }),
-    _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
-    documentIndexDefault = _useState20[0],
-    setDocumentIndexDefault = _useState20[1];
+    _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
+    documentIndexDefault = _useState22[0],
+    setDocumentIndexDefault = _useState22[1];
   var documentIndexOptions = [{
     label: 'J',
     value: 'J'
@@ -81,83 +87,83 @@ var useGafpriSites = function useGafpriSites(_ref) {
     label: 'No Aplica',
     value: 'null'
   }];
-  var _useState21 = (0, _react.useState)(''),
-    _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
-    documentNumber = _useState22[0],
-    setDocumentNumber = _useState22[1];
-  var _useState23 = (0, _react.useState)(false),
+  var _useState23 = (0, _react.useState)(''),
     _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
-    documentNumberValid = _useState24[0],
-    setDocumentNumberValid = _useState24[1];
-  var _useState25 = (0, _react.useState)(''),
+    documentNumber = _useState24[0],
+    setDocumentNumber = _useState24[1];
+  var _useState25 = (0, _react.useState)(false),
     _useState26 = (0, _slicedToArray2["default"])(_useState25, 2),
-    address1 = _useState26[0],
-    setAddress1 = _useState26[1];
-  var _useState27 = (0, _react.useState)(false),
+    documentNumberValid = _useState26[0],
+    setDocumentNumberValid = _useState26[1];
+  var _useState27 = (0, _react.useState)(''),
     _useState28 = (0, _slicedToArray2["default"])(_useState27, 2),
-    address1Valid = _useState28[0],
-    setAddress1Valid = _useState28[1];
-  var _useState29 = (0, _react.useState)(''),
+    address1 = _useState28[0],
+    setAddress1 = _useState28[1];
+  var _useState29 = (0, _react.useState)(false),
     _useState30 = (0, _slicedToArray2["default"])(_useState29, 2),
-    address2 = _useState30[0],
-    setAddress2 = _useState30[1];
-  var _useState31 = (0, _react.useState)(true),
+    address1Valid = _useState30[0],
+    setAddress1Valid = _useState30[1];
+  var _useState31 = (0, _react.useState)(''),
     _useState32 = (0, _slicedToArray2["default"])(_useState31, 2),
-    address2Valid = _useState32[0],
-    setAddress2Valid = _useState32[1];
-  var _useState33 = (0, _react.useState)(''),
+    address2 = _useState32[0],
+    setAddress2 = _useState32[1];
+  var _useState33 = (0, _react.useState)(true),
     _useState34 = (0, _slicedToArray2["default"])(_useState33, 2),
-    city = _useState34[0],
-    setCity = _useState34[1];
-  var _useState35 = (0, _react.useState)(false),
+    address2Valid = _useState34[0],
+    setAddress2Valid = _useState34[1];
+  var _useState35 = (0, _react.useState)(''),
     _useState36 = (0, _slicedToArray2["default"])(_useState35, 2),
-    cityValid = _useState36[0],
-    setCityValid = _useState36[1];
-  var _useState37 = (0, _react.useState)({
+    city = _useState36[0],
+    setCity = _useState36[1];
+  var _useState37 = (0, _react.useState)(false),
+    _useState38 = (0, _slicedToArray2["default"])(_useState37, 2),
+    cityValid = _useState38[0],
+    setCityValid = _useState38[1];
+  var _useState39 = (0, _react.useState)({
       value: '',
       label: 'Elija la ciudad'
     }),
-    _useState38 = (0, _slicedToArray2["default"])(_useState37, 2),
-    cityDefault = _useState38[0],
-    setCityDefault = _useState38[1];
-  var _useState39 = (0, _react.useState)([]),
     _useState40 = (0, _slicedToArray2["default"])(_useState39, 2),
-    cityOptions = _useState40[0],
-    setCityOptions = _useState40[1];
-  var _useState41 = (0, _react.useState)(''),
+    cityDefault = _useState40[0],
+    setCityDefault = _useState40[1];
+  var _useState41 = (0, _react.useState)([]),
     _useState42 = (0, _slicedToArray2["default"])(_useState41, 2),
-    state = _useState42[0],
-    setStateCountry = _useState42[1];
-  var _useState43 = (0, _react.useState)(false),
+    cityOptions = _useState42[0],
+    setCityOptions = _useState42[1];
+  var _useState43 = (0, _react.useState)(''),
     _useState44 = (0, _slicedToArray2["default"])(_useState43, 2),
-    stateCountryValid = _useState44[0],
-    setStateCountryValid = _useState44[1];
-  var _useState45 = (0, _react.useState)({
+    state = _useState44[0],
+    setStateCountry = _useState44[1];
+  var _useState45 = (0, _react.useState)(false),
+    _useState46 = (0, _slicedToArray2["default"])(_useState45, 2),
+    stateCountryValid = _useState46[0],
+    setStateCountryValid = _useState46[1];
+  var _useState47 = (0, _react.useState)({
       value: '',
       label: 'Elija el Estado'
     }),
-    _useState46 = (0, _slicedToArray2["default"])(_useState45, 2),
-    stateCountryDefault = _useState46[0],
-    setStateCountryDefault = _useState46[1];
-  var _useState47 = (0, _react.useState)([]),
     _useState48 = (0, _slicedToArray2["default"])(_useState47, 2),
-    stateCountryOptions = _useState48[0],
-    setStateCountryOptions = _useState48[1];
-  var _useState49 = (0, _react.useState)(''),
+    stateCountryDefault = _useState48[0],
+    setStateCountryDefault = _useState48[1];
+  var _useState49 = (0, _react.useState)([]),
     _useState50 = (0, _slicedToArray2["default"])(_useState49, 2),
-    country = _useState50[0],
-    setCountry = _useState50[1];
-  var _useState51 = (0, _react.useState)(false),
+    stateCountryOptions = _useState50[0],
+    setStateCountryOptions = _useState50[1];
+  var _useState51 = (0, _react.useState)(''),
     _useState52 = (0, _slicedToArray2["default"])(_useState51, 2),
-    countryValid = _useState52[0],
-    setCountryValid = _useState52[1];
-  var _useState53 = (0, _react.useState)({
+    country = _useState52[0],
+    setCountry = _useState52[1];
+  var _useState53 = (0, _react.useState)(false),
+    _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
+    countryValid = _useState54[0],
+    setCountryValid = _useState54[1];
+  var _useState55 = (0, _react.useState)({
       value: '',
       label: 'Elija el Pais'
     }),
-    _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
-    countryDefault = _useState54[0],
-    setCountryDefault = _useState54[1];
+    _useState56 = (0, _slicedToArray2["default"])(_useState55, 2),
+    countryDefault = _useState56[0],
+    setCountryDefault = _useState56[1];
   var countryOptions = [];
   _Constans.Countries.forEach(function (item) {
     Object.keys(item).forEach(function (key) {
@@ -167,66 +173,66 @@ var useGafpriSites = function useGafpriSites(_ref) {
       });
     });
   });
-  var _useState55 = (0, _react.useState)(''),
-    _useState56 = (0, _slicedToArray2["default"])(_useState55, 2),
-    postCode = _useState56[0],
-    setPostCode = _useState56[1];
-  var _useState57 = (0, _react.useState)(true),
+  var _useState57 = (0, _react.useState)(''),
     _useState58 = (0, _slicedToArray2["default"])(_useState57, 2),
-    postCodeValid = _useState58[0],
-    setPostCodeValid = _useState58[1];
-  var _useState59 = (0, _react.useState)(''),
+    postCode = _useState58[0],
+    setPostCode = _useState58[1];
+  var _useState59 = (0, _react.useState)(true),
     _useState60 = (0, _slicedToArray2["default"])(_useState59, 2),
-    email = _useState60[0],
-    setEmail = _useState60[1];
-  var _useState61 = (0, _react.useState)(false),
+    postCodeValid = _useState60[0],
+    setPostCodeValid = _useState60[1];
+  var _useState61 = (0, _react.useState)(''),
     _useState62 = (0, _slicedToArray2["default"])(_useState61, 2),
-    emailValid = _useState62[0],
-    setEmailValid = _useState62[1];
-  var _useState63 = (0, _react.useState)(''),
+    email = _useState62[0],
+    setEmail = _useState62[1];
+  var _useState63 = (0, _react.useState)(false),
     _useState64 = (0, _slicedToArray2["default"])(_useState63, 2),
-    phone = _useState64[0],
-    setPhone = _useState64[1];
-  var _useState65 = (0, _react.useState)(false),
+    emailValid = _useState64[0],
+    setEmailValid = _useState64[1];
+  var _useState65 = (0, _react.useState)(''),
     _useState66 = (0, _slicedToArray2["default"])(_useState65, 2),
-    phoneValid = _useState66[0],
-    setPhoneValid = _useState66[1];
-  var _useState67 = (0, _react.useState)(0),
+    phone = _useState66[0],
+    setPhone = _useState66[1];
+  var _useState67 = (0, _react.useState)(false),
     _useState68 = (0, _slicedToArray2["default"])(_useState67, 2),
-    currenciesId = _useState68[0],
-    setCurrenciesId = _useState68[1];
-  var _useState69 = (0, _react.useState)(false),
+    phoneValid = _useState68[0],
+    setPhoneValid = _useState68[1];
+  var _useState69 = (0, _react.useState)(0),
     _useState70 = (0, _slicedToArray2["default"])(_useState69, 2),
-    currenciesIdValid = _useState70[0],
-    setCurrenciesIdValid = _useState70[1];
-  var _useState71 = (0, _react.useState)({
+    currenciesId = _useState70[0],
+    setCurrenciesId = _useState70[1];
+  var _useState71 = (0, _react.useState)(false),
+    _useState72 = (0, _slicedToArray2["default"])(_useState71, 2),
+    currenciesIdValid = _useState72[0],
+    setCurrenciesIdValid = _useState72[1];
+  var _useState73 = (0, _react.useState)({
       value: '',
       label: 'Elija la moneda del Sitio'
     }),
-    _useState72 = (0, _slicedToArray2["default"])(_useState71, 2),
-    currenciesIdDefault = _useState72[0],
-    setCurrenciesIdDefault = _useState72[1];
+    _useState74 = (0, _slicedToArray2["default"])(_useState73, 2),
+    currenciesIdDefault = _useState74[0],
+    setCurrenciesIdDefault = _useState74[1];
   var currenciesIdOptions = ((_useCurrencies$states = useCurrencies.states.currencies.data.items) === null || _useCurrencies$states === void 0 ? void 0 : _useCurrencies$states.map(function (item) {
     return {
       label: "".concat(item.name, " ").concat(item.symbol),
       value: "".concat(item.id)
     };
   })) || [];
-  var _useState73 = (0, _react.useState)(''),
-    _useState74 = (0, _slicedToArray2["default"])(_useState73, 2),
-    currencyLocation = _useState74[0],
-    setCurrencyLocation = _useState74[1];
-  var _useState75 = (0, _react.useState)(false),
+  var _useState75 = (0, _react.useState)(''),
     _useState76 = (0, _slicedToArray2["default"])(_useState75, 2),
-    currencyLocationValid = _useState76[0],
-    setCurrencyLocationValid = _useState76[1];
-  var _useState77 = (0, _react.useState)({
+    currencyLocation = _useState76[0],
+    setCurrencyLocation = _useState76[1];
+  var _useState77 = (0, _react.useState)(false),
+    _useState78 = (0, _slicedToArray2["default"])(_useState77, 2),
+    currencyLocationValid = _useState78[0],
+    setCurrencyLocationValid = _useState78[1];
+  var _useState79 = (0, _react.useState)({
       value: '',
       label: 'Elija la ubicación del símbolo de la moneda'
     }),
-    _useState78 = (0, _slicedToArray2["default"])(_useState77, 2),
-    currencyLocationDefault = _useState78[0],
-    setCurrencyLocationDefault = _useState78[1];
+    _useState80 = (0, _slicedToArray2["default"])(_useState79, 2),
+    currencyLocationDefault = _useState80[0],
+    setCurrencyLocationDefault = _useState80[1];
   var currencyLocationOptions = [{
     label: 'Izquierda',
     value: 'left'
@@ -234,25 +240,25 @@ var useGafpriSites = function useGafpriSites(_ref) {
     label: 'Derecha',
     value: 'right'
   }];
-  var _useState79 = (0, _react.useState)(''),
-    _useState80 = (0, _slicedToArray2["default"])(_useState79, 2),
-    thousandsSeparator = _useState80[0],
-    setThousandsSeparator = _useState80[1];
   var _useState81 = (0, _react.useState)(''),
     _useState82 = (0, _slicedToArray2["default"])(_useState81, 2),
-    decimalSeparator = _useState82[0],
-    setDecimalSeparator = _useState82[1];
-  var _useState83 = (0, _react.useState)(false),
+    thousandsSeparator = _useState82[0],
+    setThousandsSeparator = _useState82[1];
+  var _useState83 = (0, _react.useState)(''),
     _useState84 = (0, _slicedToArray2["default"])(_useState83, 2),
-    separatorValid = _useState84[0],
-    setSeparatorValid = _useState84[1];
-  var _useState85 = (0, _react.useState)({
+    decimalSeparator = _useState84[0],
+    setDecimalSeparator = _useState84[1];
+  var _useState85 = (0, _react.useState)(false),
+    _useState86 = (0, _slicedToArray2["default"])(_useState85, 2),
+    separatorValid = _useState86[0],
+    setSeparatorValid = _useState86[1];
+  var _useState87 = (0, _react.useState)({
       value: '',
       label: 'Selecciona los separadores de la moneda'
     }),
-    _useState86 = (0, _slicedToArray2["default"])(_useState85, 2),
-    separatorDefault = _useState86[0],
-    setSeparatorDefault = _useState86[1];
+    _useState88 = (0, _slicedToArray2["default"])(_useState87, 2),
+    separatorDefault = _useState88[0],
+    setSeparatorDefault = _useState88[1];
   var separatorOptions = [{
     label: 'Miles: " . "    Decimal: " , "',
     value: '.'
@@ -269,21 +275,21 @@ var useGafpriSites = function useGafpriSites(_ref) {
       setDecimalSeparator('.');
     }
   };
-  var _useState87 = (0, _react.useState)(0),
-    _useState88 = (0, _slicedToArray2["default"])(_useState87, 2),
-    decimalNumbers = _useState88[0],
-    setDecimalNumbers = _useState88[1];
-  var _useState89 = (0, _react.useState)(false),
+  var _useState89 = (0, _react.useState)(0),
     _useState90 = (0, _slicedToArray2["default"])(_useState89, 2),
-    decimalNumbersValid = _useState90[0],
-    setDecimalNumbersValid = _useState90[1];
-  var _useState91 = (0, _react.useState)({
+    decimalNumbers = _useState90[0],
+    setDecimalNumbers = _useState90[1];
+  var _useState91 = (0, _react.useState)(false),
+    _useState92 = (0, _slicedToArray2["default"])(_useState91, 2),
+    decimalNumbersValid = _useState92[0],
+    setDecimalNumbersValid = _useState92[1];
+  var _useState93 = (0, _react.useState)({
       value: '',
       label: 'Selecciona el número de decimales'
     }),
-    _useState92 = (0, _slicedToArray2["default"])(_useState91, 2),
-    decimalNumbersDefault = _useState92[0],
-    setDecimalNumbersDefault = _useState92[1];
+    _useState94 = (0, _slicedToArray2["default"])(_useState93, 2),
+    decimalNumbersDefault = _useState94[0],
+    setDecimalNumbersDefault = _useState94[1];
   var decimalNumbersOptions = [{
     label: '0',
     value: '0'
@@ -291,21 +297,21 @@ var useGafpriSites = function useGafpriSites(_ref) {
     label: '2',
     value: '2'
   }];
-  var _useState93 = (0, _react.useState)(false),
-    _useState94 = (0, _slicedToArray2["default"])(_useState93, 2),
-    taxes = _useState94[0],
-    setTaxes = _useState94[1];
   var _useState95 = (0, _react.useState)(false),
     _useState96 = (0, _slicedToArray2["default"])(_useState95, 2),
-    taxesValid = _useState96[0],
-    setTaxesValid = _useState96[1];
-  var _useState97 = (0, _react.useState)({
+    taxes = _useState96[0],
+    setTaxes = _useState96[1];
+  var _useState97 = (0, _react.useState)(false),
+    _useState98 = (0, _slicedToArray2["default"])(_useState97, 2),
+    taxesValid = _useState98[0],
+    setTaxesValid = _useState98[1];
+  var _useState99 = (0, _react.useState)({
       value: '',
       label: 'Selecciona la opción para los impuestos'
     }),
-    _useState98 = (0, _slicedToArray2["default"])(_useState97, 2),
-    taxesDefault = _useState98[0],
-    setTaxesDefault = _useState98[1];
+    _useState100 = (0, _slicedToArray2["default"])(_useState99, 2),
+    taxesDefault = _useState100[0],
+    setTaxesDefault = _useState100[1];
   var taxesOptions = [{
     label: 'Si trabaja con impuestos',
     value: 'true'
@@ -313,41 +319,42 @@ var useGafpriSites = function useGafpriSites(_ref) {
     label: 'No trabaja con impuestos',
     value: 'false'
   }];
-  var _useState99 = (0, _react.useState)(''),
-    _useState100 = (0, _slicedToArray2["default"])(_useState99, 2),
-    host = _useState100[0],
-    setHost = _useState100[1];
-  var _useState101 = (0, _react.useState)(false),
+  var _useState101 = (0, _react.useState)(''),
     _useState102 = (0, _slicedToArray2["default"])(_useState101, 2),
-    hostValid = _useState102[0],
-    setHostValid = _useState102[1];
-  var _useState103 = (0, _react.useState)({
+    host = _useState102[0],
+    setHost = _useState102[1];
+  var _useState103 = (0, _react.useState)(false),
+    _useState104 = (0, _slicedToArray2["default"])(_useState103, 2),
+    hostValid = _useState104[0],
+    setHostValid = _useState104[1];
+  var _useState105 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)('GS_SITES_V2', null)
+        items: (0, _Context.getItem)(_Constans.SITES_STORAGE, null)
       }
     }),
-    _useState104 = (0, _slicedToArray2["default"])(_useState103, 2),
-    sites = _useState104[0],
-    setSites = _useState104[1];
-  var error = useError.states.error;
-  var _useState105 = (0, _react.useState)(0),
     _useState106 = (0, _slicedToArray2["default"])(_useState105, 2),
-    siteId = _useState106[0],
-    setSiteId = _useState106[1];
-  var _useState107 = (0, _react.useState)('asc'),
+    sites = _useState106[0],
+    setSites = _useState106[1];
+  var error = useError.states.error;
+  var _useState107 = (0, _react.useState)(0),
     _useState108 = (0, _slicedToArray2["default"])(_useState107, 2),
-    orderList = _useState108[0],
-    setOrderList = _useState108[1];
-  var _useState109 = (0, _react.useState)(''),
+    siteId = _useState108[0],
+    setSiteId = _useState108[1];
+  var _useState109 = (0, _react.useState)('asc'),
     _useState110 = (0, _slicedToArray2["default"])(_useState109, 2),
-    searchTerm = _useState110[0],
-    setSearchTerm = _useState110[1];
-  var _useState111 = (0, _react.useState)(1),
+    orderList = _useState110[0],
+    setOrderList = _useState110[1];
+  var _useState111 = (0, _react.useState)(''),
     _useState112 = (0, _slicedToArray2["default"])(_useState111, 2),
-    currentPage = _useState112[0],
-    setCurrentPage = _useState112[1];
+    searchTerm = _useState112[0],
+    setSearchTerm = _useState112[1];
+  var _useState113 = (0, _react.useState)(1),
+    _useState114 = (0, _slicedToArray2["default"])(_useState113, 2),
+    currentPage = _useState114[0],
+    setCurrentPage = _useState114[1];
   var itemsPerPage = 6;
   var infoReset = function infoReset() {
+    setIsReset(true);
     setName('');
     setNameValid(false);
     setDocumentIndex('');
@@ -453,228 +460,104 @@ var useGafpriSites = function useGafpriSites(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid) {
-      (0, _helpers.removeClass)('buttonNext', 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)('buttonNext', 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(nameValid, documentIndexValid, documentNumberValid, address1Valid, address2Valid, cityValid, stateCountryValid, postCodeValid, countryValid, emailValid, phoneValid, currenciesIdValid, currencyLocationValid, separatorValid, decimalNumbersValid, taxesValid, hostValid);
   };
   var validationName = function validationName(value) {
-    return (0, _helpers.validationInputName)({
-      name: value,
-      inputId: 'siteName',
-      setValid: setNameValid
-    });
+    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
   };
   var validationDocumentIndex = function validationDocumentIndex(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'documentIndex');
-    setDocumentIndexValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationTypeDocumentIdIndex)(value, setDocumentIndexValid, documentIndexValid);
   };
   var validationDocumentNumber = function validationDocumentNumber(value) {
-    var valid = (0, _helpers.validationInput)(value, /^\d{1,12}(-\d{1,12})?$/, 'documentNumber', true);
-    setDocumentNumberValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationTypeDocumentIdDigit)(value, setDocumentNumberValid, documentNumberValid);
   };
   var validationAddress1 = function validationAddress1(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, 'address1', true);
-    setAddress1Valid(valid);
-    return valid;
+    return (0, _Validations.generalValidationAddress1)(value, setAddress1Valid, address1Valid);
   };
   var validationAddress2 = function validationAddress2(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#'()\-.,\s]+$/, 'address2');
-    setAddress2Valid(valid);
-    return valid;
+    return (0, _Validations.generalValidationAddress2)(value, setAddress2Valid, address2Valid);
   };
   var validationCity = function validationCity(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'citySite');
-    setCityValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectCity)(value, setCityValid, cityValid);
   };
   var validationStateCountry = function validationStateCountry(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'stateCountrySite');
-    setStateCountryValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectStateCountry)(value, setStateCountryValid, stateCountryValid);
   };
   var validationCountry = function validationCountry(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'countrySite');
-    setCountryValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectCountry)(value, setCountryValid, countryValid);
   };
   var validationPostCode = function validationPostCode(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, 'postCodeSite');
-    setPostCodeValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPostCode)(value, setPostCodeValid, postCodeValid);
   };
   var validationEmail = function validationEmail(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/, 'emailSite', true);
-    setEmailValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationEmail)(value, setEmailValid, emailValid);
   };
   var validationPhone = function validationPhone(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10,20}/, 'phoneSite', true);
-    setPhoneValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPhone)(value, setPhoneValid, phoneValid);
   };
   var validationCurrenciesId = function validationCurrenciesId(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'currencySite');
-    setCurrenciesIdValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectCurrencies)(value, setCurrenciesIdValid, currenciesIdValid);
   };
   var validationCurrencyLocation = function validationCurrencyLocation(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'currencyLocationSite');
-    setCurrencyLocationValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectCurrenciesLocations)(value, setCurrencyLocationValid, currencyLocationValid);
   };
   var validationSeparator = function validationSeparator(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'separatorSite');
-    setSeparatorValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectCurrenciesSeparator)(value, setSeparatorValid, separatorValid);
   };
   var validationDecimalNumbers = function validationDecimalNumbers(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'decimalNumbersSite');
-    setDecimalNumbersValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectCurrenciesDecimalNumbers)(value, setDecimalNumbersValid, decimalNumbersValid);
   };
   var validationTaxes = function validationTaxes(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'taxesSite');
-    setTaxesValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectTaxes)(value, setTaxesValid, taxesValid);
   };
   var validationHost = function validationHost(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/, 'hostSite', true);
-    setHostValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationWebSite)(value, setHostValid, hostValid);
   };
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    var newValue = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newValue,
-      validation: validationName,
-      setValue: setName
-    });
+    (0, _Changes.generalChangeName)(value, validationName, setName);
   };
   var changeDocumentIndex = function changeDocumentIndex(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationDocumentIndex,
-      setDefault: setDocumentIndexDefault,
-      setValue: setDocumentIndex
-    });
+    (0, _Changes.generalChangeDocumentIdIndex)(options, validationDocumentIndex, setDocumentIndexDefault, setDocumentIndex);
   };
   var changeDocumentNumber = function changeDocumentNumber(newDocument) {
-    (0, _helpers.changeInputText)({
-      value: newDocument,
-      validation: validationDocumentNumber,
-      setValue: setDocumentNumber
-    });
+    (0, _Changes.generalChangeDocumentIdDigit)(newDocument, validationDocumentNumber, setDocumentNumber);
   };
   var changeAddress1 = function changeAddress1(value) {
-    var address = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: address,
-      validation: validationAddress1,
-      setValue: setAddress1
-    });
+    (0, _Changes.generalChangeAddress)(value, validationAddress1, setAddress1);
   };
   var changeAddress2 = function changeAddress2(value) {
-    var address = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: address,
-      validation: validationAddress2,
-      setValue: setAddress2
-    });
+    (0, _Changes.generalChangeAddress)(value, validationAddress2, setAddress2);
   };
   var changeCity = function changeCity(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationCity,
-      setDefault: setCityDefault,
-      setValue: setCity
-    });
+    (0, _Changes.generalChangeCityStateCountry)(options, validationCity, setCityDefault, setCity, setIsReady);
   };
   var changeCityOptions = _react["default"].useCallback(function () {
-    var newValueCity = [];
-    if (_Constans.Cities[0][country]) {
-      if (Array.isArray(_Constans.Cities[0][country][0][state])) {
-        _Constans.Cities[0][country][0][state].forEach(function (item) {
-          Object.keys(item).forEach(function (key) {
-            newValueCity.push({
-              value: item[key],
-              label: item[key]
-            });
-          });
-        });
-      }
-    }
-    setCityDefault({
-      label: 'Elija la ciudad',
-      value: ''
-    });
-    setCity('');
-    setCityOptions(newValueCity);
-  }, [country, state]);
+    (0, _Changes.generalChangeCityOptions)(country, state, setCityDefault, setCity, setCityOptions, isReset);
+  }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
+
   var changeStateCountry = function changeStateCountry(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationStateCountry,
-      setDefault: setStateCountryDefault,
-      setValue: setStateCountry
-    });
+    (0, _Changes.generalChangeCityStateCountry)(options, validationStateCountry, setStateCountryDefault, setStateCountry, setIsReady);
   };
   var changeStateCountryOptions = _react["default"].useCallback(function () {
-    var newValueState = [];
-    if (country && _Constans.StatesCountries[0][country].length > 0) {
-      _Constans.StatesCountries[0][country].forEach(function (item) {
-        Object.keys(item).forEach(function (key) {
-          newValueState.push({
-            value: key,
-            label: item[key]
-          });
-        });
-      });
-    }
-    setStateCountryDefault({
-      label: 'Elija el Estado',
-      value: ''
-    });
-    setStateCountry('');
-    setStateCountryOptions(newValueState);
-  }, [country]);
+    (0, _Changes.generalChangeStateCountryOptions)(country, setStateCountryDefault, setStateCountry, setStateCountryOptions, isReset);
+  }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
+
   var changeCountry = function changeCountry(options) {
-    changeStateCountryOptions();
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationCountry,
-      setDefault: setCountryDefault,
-      setValue: setCountry
-    });
+    (0, _Changes.generalChangeCityStateCountry)(options, validationCountry, setCountryDefault, setCountry, setIsReady);
   };
   var changePostCode = function changePostCode(newPostCode) {
-    (0, _helpers.changeInputText)({
-      value: newPostCode,
-      validation: validationPostCode,
-      setValue: setPostCode
-    });
+    (0, _Changes.generalChangePostCode)(newPostCode, validationPostCode, setPostCode);
   };
   var changeEmail = function changeEmail(inputValue) {
-    var newEmail = inputValue.toLocaleLowerCase();
-    (0, _helpers.changeInputText)({
-      value: newEmail,
-      validation: validationEmail,
-      setValue: setEmail
-    });
+    (0, _Changes.generalChangeEmail)(inputValue, validationEmail, setEmail);
   };
   var changePhone = function changePhone(newPhone) {
-    (0, _helpers.changeInputText)({
-      value: newPhone,
-      validation: validationPhone,
-      setValue: setPhone
-    });
+    return (0, _Changes.generalChangePhone)(newPhone, validationPhone, setPhone);
   };
   var changeCurrenciesId = function changeCurrenciesId(options) {
+    (0, _Changes.generalChangeCurrenciesId)(options, validationCurrenciesId, setCurrenciesIdDefault, setCurrenciesId);
     var value = options ? parseInt(options.value, 10) : 0;
     var label = (options === null || options === void 0 ? void 0 : options.label) || '';
     var newOptions = {
@@ -689,56 +572,19 @@ var useGafpriSites = function useGafpriSites(_ref) {
     });
   };
   var changeCurrencyLocation = function changeCurrencyLocation(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationCurrencyLocation,
-      setDefault: setCurrencyLocationDefault,
-      setValue: setCurrencyLocation
-    });
+    (0, _Changes.generalChangeType)(options, validationCurrencyLocation, setCurrencyLocationDefault, setCurrencyLocation);
   };
   var changeSeparator = function changeSeparator(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationSeparator,
-      setDefault: setSeparatorDefault,
-      setValue: setSeparator
-    });
+    (0, _Changes.generalChangeType)(options, validationSeparator, setSeparatorDefault, setSeparator);
   };
   var changeDecimalNumbers = function changeDecimalNumbers(options) {
-    var value = options ? parseInt(options.value, 10) : 0;
-    var label = (options === null || options === void 0 ? void 0 : options.label) || '';
-    var newOptions = {
-      value: value,
-      label: label
-    };
-    (0, _helpers.changeSelect)({
-      newValue: newOptions,
-      validation: validationDecimalNumbers,
-      setDefault: setDecimalNumbersDefault,
-      setValue: setDecimalNumbers
-    });
+    (0, _Changes.generalChangeCurrenciesDecimalNumbers)(options, validationDecimalNumbers, setDecimalNumbersDefault, setDecimalNumbers);
   };
   var changeTaxes = function changeTaxes(options) {
-    var value = options && options.value === 'true';
-    var label = (options === null || options === void 0 ? void 0 : options.label) || '';
-    var newOptions = {
-      value: value,
-      label: label
-    };
-    (0, _helpers.changeSelect)({
-      newValue: newOptions,
-      validation: validationTaxes,
-      setDefault: setTaxesDefault,
-      setValue: setTaxes
-    });
+    (0, _Changes.generalChangeTaxes)(options, validationTaxes, setTaxesDefault, setTaxes);
   };
   var changeHost = function changeHost(value) {
-    var NewHost = value.toLocaleLowerCase();
-    (0, _helpers.changeInputText)({
-      value: NewHost,
-      validation: validationHost,
-      setValue: setHost
-    });
+    (0, _Changes.generalChangeWebSite)(value, validationHost, setHost);
   };
 
   // Manejo de la data en DB
@@ -746,7 +592,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)('GS_SITES_V2', newData.data.items);
+    (0, _Context.saveItem)(_Constans.SITES_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setSites(newData);
@@ -778,11 +624,11 @@ var useGafpriSites = function useGafpriSites(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_sites$data$items = sites.data.items) === null || _sites$data$items === void 0 ? void 0 : _sites$data$items.length) || 0;
             if (sites.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token) {
+              if (token && _Constans.API_URL) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: 'http://localhost:4000',
-                  initRoute: 'api/v1/sites',
+                  initApi: _Constans.API_URL,
+                  initRoute: _Constans.SITES_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -870,7 +716,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token) {
+    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token && _Constans.API_URL) {
       var payload = {
         name: name,
         documentIndex: documentIndex,
@@ -896,8 +742,8 @@ var useGafpriSites = function useGafpriSites(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/sites',
+        initApi: _Constans.API_URL,
+        initRoute: _Constans.SITES_ROUTE,
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -921,7 +767,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     return null;
   }
   var update = function update() {
-    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token) {
+    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token && _Constans.API_URL) {
       var payload = {
         name: name,
         documentIndex: documentIndex,
@@ -947,8 +793,8 @@ var useGafpriSites = function useGafpriSites(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/sites/".concat(siteId),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.SITES_ROUTE, "/").concat(siteId),
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -960,11 +806,11 @@ var useGafpriSites = function useGafpriSites(_ref) {
     }
   };
   var deleteSites = function deleteSites(id) {
-    if (token) {
+    if (token && _Constans.API_URL) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/sites/".concat(id),
+        initApi: _Constans.API_URL,
+        initRoute: "".concat(_Constans.SITES_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

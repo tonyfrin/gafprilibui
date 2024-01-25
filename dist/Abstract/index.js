@@ -255,6 +255,12 @@ Object.defineProperty(exports, "InputUserName", {
     return _Input.InputUserName;
   }
 });
+Object.defineProperty(exports, "InputWebSite", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputWebSite;
+  }
+});
 Object.defineProperty(exports, "InputZipCode", {
   enumerable: true,
   get: function get() {
@@ -369,6 +375,30 @@ Object.defineProperty(exports, "SelectCountry", {
     return _Input.SelectCountry;
   }
 });
+Object.defineProperty(exports, "SelectCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectCurrencies;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesDecimalNumbers", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectCurrenciesDecimalNumbers;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesLocations", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectCurrenciesLocations;
+  }
+});
+Object.defineProperty(exports, "SelectCurrenciesSeparator", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectCurrenciesSeparator;
+  }
+});
 Object.defineProperty(exports, "SelectDocumentIdIndex", {
   enumerable: true,
   get: function get() {
@@ -397,6 +427,12 @@ Object.defineProperty(exports, "SelectStatus", {
   enumerable: true,
   get: function get() {
     return _Input.SelectStatus;
+  }
+});
+Object.defineProperty(exports, "SelectTaxes", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectTaxes;
   }
 });
 Object.defineProperty(exports, "SelectTypeDocumentIdId", {

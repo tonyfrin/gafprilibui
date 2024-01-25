@@ -59,6 +59,7 @@ export {
   SelectDocumentIdIndex,
   SelectTypeDocumentIdId,
   SelectAddressType,
+  PhotoDocumentId,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -151,6 +152,7 @@ export type {
   SelectDocumentIdIndexProps,
   SelectTypeDocumentIdIdProps,
   SelectAddressTypeProps,
+  PhotoDocumentIdProps,
 } from './Abstract';
 export {
   MainFooter,

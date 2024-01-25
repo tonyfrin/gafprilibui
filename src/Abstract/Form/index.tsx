@@ -6,3 +6,5 @@ export { PhotoCategory } from './PhotoCategory';
 export type { PhotoCategoryProps } from './PhotoCategory';
 export { PhotoEntity } from './PhotoEntity';
 export type { PhotoEntityProps } from './PhotoEntity';
+export { PhotoDocumentId } from './PhotoDocumentId';
+export type { PhotoDocumentIdProps } from './PhotoDocumentId';

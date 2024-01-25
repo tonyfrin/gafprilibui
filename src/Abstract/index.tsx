@@ -98,7 +98,13 @@ export { MainContent } from './Content';
 export type { MainContentProps } from './Content';
 export { FadeIn } from './Fade';
 export type { FadeInProps } from './Fade';
-export { ModelForm, PhotoForm, PhotoCategory, PhotoEntity } from './Form';
+export {
+  ModelForm,
+  PhotoForm,
+  PhotoCategory,
+  PhotoEntity,
+  PhotoDocumentId,
+} from './Form';
 export type {
   ModelFormProps,
   ModelFormPropsExtended,
@@ -106,6 +112,7 @@ export type {
   PhotoFormPropsExtended,
   PhotoCategoryProps,
   PhotoEntityProps,
+  PhotoDocumentIdProps,
 } from './Form';
 export { Menu1, Menu2, MenuButton } from './Menu';
 export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem } from './Menu';

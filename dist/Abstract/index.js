@@ -315,6 +315,12 @@ Object.defineProperty(exports, "PhotoCategory", {
     return _Form.PhotoCategory;
   }
 });
+Object.defineProperty(exports, "PhotoDocumentId", {
+  enumerable: true,
+  get: function get() {
+    return _Form.PhotoDocumentId;
+  }
+});
 Object.defineProperty(exports, "PhotoEntity", {
   enumerable: true,
   get: function get() {

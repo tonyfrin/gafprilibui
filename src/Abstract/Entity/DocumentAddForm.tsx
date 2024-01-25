@@ -1,81 +1,45 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { Input, GsSelect } from '../Input';
+import {
+  SelectTypeDocumentIdId,
+  SelectDocumentIdIndex,
+  InputDocumentiIdDigit,
+} from '../Input';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
-import { Button } from '../Button';
-import { ButtonPropsExtended } from '../Button';
-import { Loading } from '../../Components';
-import { LoadingProps } from '../../Components';
-import { ModelForm } from '../Form';
-import type { ModelFormPropsExtended } from '../Form';
+import { ModelForm, PhotoDocumentId } from '../Form';
+import type { ModelFormPropsExtended, PhotoDocumentIdProps } from '../Form';
 import type { UseEntityReturn } from '../../states';
 
 export type DocumentAddFormProps = {
   use: UseEntityReturn;
   photoMainContainerStyle?: string;
   photoInfoContainerStyle?: string;
-  photoFormStyle?: string;
-  loadingContainerStyle?: string;
-  imageStyle?: string;
   nameLastNameContainerStyle?: string;
   inputTypeDocumentIdIdProps?: GsSelectPropsExtended;
   inputIndexProps?: GsSelectPropsExtended;
   mainTitle?: string;
   subTitle?: string;
   modelFormProps?: ModelFormPropsExtended;
-  photoButtonProps?: ButtonPropsExtended;
-  loadingProps?: LoadingProps;
   inputDigitProps?: InputProps;
+  propsPhoto?: PhotoDocumentIdProps['props'];
 };
 
 export type DocumentAddFormPropsExtended = {
   use: UseEntityReturn;
   photoMainContainerStyle?: string;
   photoInfoContainerStyle?: string;
-  photoFormStyle?: string;
-  loadingContainerStyle?: string;
-  imageStyle?: string;
   nameLastNameContainerStyle?: string;
   inputTypeDocumentIdIdProps?: GsSelectPropsExtended;
   inputIndexProps?: GsSelectPropsExtended;
   mainTitle?: string;
   subTitle?: string;
   modelFormProps?: ModelFormPropsExtended;
-  photoButtonProps?: ButtonPropsExtended;
-  loadingProps?: LoadingProps;
   inputDigitProps?: InputProps;
+  propsPhoto?: PhotoDocumentIdProps['props'];
 };
 
 const photoInfoContainerStyleDefault = css`
   width: 100%;
-`;
-
-const photoFormStyleDefault = css`
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-`;
-
-const loadingContainerStyleDefault = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 100%;
-`;
-
-const imageStyleDefault = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 100%;
 `;
 
 const photoMainContainerStyleDefault = css`
@@ -91,18 +55,14 @@ export const DocumentAddForm = ({
   use,
   photoMainContainerStyle = photoMainContainerStyleDefault,
   photoInfoContainerStyle = photoInfoContainerStyleDefault,
-  photoFormStyle = photoFormStyleDefault,
-  loadingContainerStyle = loadingContainerStyleDefault,
-  imageStyle = imageStyleDefault,
   nameLastNameContainerStyle = nameLastNameContainerStyleDefault,
   inputTypeDocumentIdIdProps,
   inputIndexProps,
   mainTitle = 'Nuevo documento',
   subTitle = 'Agrega un nuevo documento de identificación',
   modelFormProps,
-  photoButtonProps,
-  loadingProps,
   inputDigitProps,
+  propsPhoto,
 }: DocumentAddFormProps): JSX.Element => {
   const [InputTypeDocumentIdId, setInputTypeDocumentIdId] = React.useState(
     <></>
@@ -152,17 +112,6 @@ export const DocumentAddForm = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
-
-  const handleButtonClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
-    }
-  };
-
   React.useEffect(() => {
     if (use.states.documentPhoto) {
       const img = new Image();
@@ -182,30 +131,32 @@ export const DocumentAddForm = ({
   React.useEffect(() => {
     setInputTypeDocumentIdId((): JSX.Element => {
       return (
-        <GsSelect
-          id="entityTypeDocumentIdId"
-          onChange={(e) => use.actions.changeTypeDocumentIdId(e)}
-          options={use.states.typeDocumentIdIdOptions}
-          defaultValue={use.states.typeDocumentIdIdDefault}
-          styles={{
-            width: '92%',
+        <SelectTypeDocumentIdId
+          changeTypeDocumentIdId={use.actions.changeTypeDocumentIdId}
+          props={{
+            options: use.states.typeDocumentIdIdOptions,
+            defaultValue: use.states.typeDocumentIdIdDefault,
+            styles: {
+              width: '92%',
+            },
+            ...inputTypeDocumentIdIdProps,
           }}
-          {...inputTypeDocumentIdIdProps}
         />
       );
     });
 
     setInputIndex((): JSX.Element => {
       return (
-        <GsSelect
-          id="entityDocumentIndex"
-          onChange={(e) => use.actions.changeIndex(e)}
-          options={use.states.indexOptions}
-          defaultValue={use.states.indexDefault}
-          styles={{
-            width: '92%',
+        <SelectDocumentIdIndex
+          changeIndex={use.actions.changeIndex}
+          props={{
+            options: use.states.indexOptions,
+            defaultValue: use.states.indexDefault,
+            styles: {
+              width: '92%',
+            },
+            ...inputIndexProps,
           }}
-          {...inputIndexProps}
         />
       );
     });
@@ -228,81 +179,33 @@ export const DocumentAddForm = ({
       <>
         <div className={css(photoMainContainerStyle)}>
           <div className={css(photoInfoContainerStyle)}>
-            <form
-              className={css(photoFormStyle)}
-              onSubmit={handleSubmit}
-              id="entityDocumentPhoto"
-            >
-              <>
-                <input
-                  type="file"
-                  id="file-input"
-                  ref={fileInputRef}
-                  hidden
-                  onChange={use.actions.changeDocumentPhoto}
-                />
-                <Button
-                  title="Cambiar Foto"
-                  buttonProps={{
-                    onClick: handleButtonClick,
-                  }}
-                  styles={{
-                    fontSize: '6px',
-                    margin: '20px auto 40px auto',
-                    backgroundColor: '#439b57',
-                  }}
-                  {...photoButtonProps}
-                />
-              </>
-              {use.states.documentSubmitting ? (
-                <div className={css(loadingContainerStyle)}>
-                  <Loading
-                    mainStyles={{
-                      padding: '38px',
-                    }}
-                    divStyle={{
-                      width: '35px',
-                      height: '35px',
-                      border: '4px solid #eee',
-                      borderTop: '4px solid #077bb4',
-                    }}
-                    {...loadingProps}
-                  />
-                </div>
-              ) : (
-                use.states.documentPhoto && (
-                  <img
-                    className={css(imageStyle)}
-                    src={use.states.documentPhoto}
-                    alt="Document Id"
-                  />
-                )
-              )}
-            </form>
+            <PhotoDocumentId
+              photo={use.states.documentPhoto}
+              changePhoto={use.actions.changeDocumentPhoto}
+              submitting={use.states.submitting}
+              changeError={use.actions.changeError}
+              setSubmitting={use.actions.setSubmitting}
+              props={propsPhoto}
+            />
           </div>
           <div className={css(nameLastNameContainerStyle)}>
             <>
               {InputTypeDocumentIdId}
               {InputIndex}
-              <Input
-                inputProps={{
-                  placeholder: 'Número de identificación',
-                  type: 'number',
-                  min: '0',
-                  step: '1',
-                  id: 'entityDocumentDigit',
-                  title: 'Solo números, ejemplo: 181234678',
-                  onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                    use.actions.changeDigit(
-                      (event.target as HTMLInputElement).value
-                    ),
-                  defaultValue: use.states.digit,
+              <InputDocumentiIdDigit
+                changeDocumentiIdDigit={(event) =>
+                  use.actions.changeDigit(event)
+                }
+                props={{
+                  inputProps: {
+                    defaultValue: use.states.digit,
+                  },
+                  styles: {
+                    width: '92%',
+                    padding: '09px 19px',
+                  },
+                  ...inputDigitProps,
                 }}
-                styles={{
-                  width: '92%',
-                  padding: '09px 19px',
-                }}
-                {...inputDigitProps}
               />
             </>
           </div>

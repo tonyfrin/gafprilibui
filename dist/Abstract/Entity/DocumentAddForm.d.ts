@@ -1,41 +1,31 @@
 /// <reference types="react" />
 import type { InputProps, GsSelectPropsExtended } from '../Input';
-import { ButtonPropsExtended } from '../Button';
-import { LoadingProps } from '../../Components';
-import type { ModelFormPropsExtended } from '../Form';
+import type { ModelFormPropsExtended, PhotoDocumentIdProps } from '../Form';
 import type { UseEntityReturn } from '../../states';
 export type DocumentAddFormProps = {
     use: UseEntityReturn;
     photoMainContainerStyle?: string;
     photoInfoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    imageStyle?: string;
     nameLastNameContainerStyle?: string;
     inputTypeDocumentIdIdProps?: GsSelectPropsExtended;
     inputIndexProps?: GsSelectPropsExtended;
     mainTitle?: string;
     subTitle?: string;
     modelFormProps?: ModelFormPropsExtended;
-    photoButtonProps?: ButtonPropsExtended;
-    loadingProps?: LoadingProps;
     inputDigitProps?: InputProps;
+    propsPhoto?: PhotoDocumentIdProps['props'];
 };
 export type DocumentAddFormPropsExtended = {
     use: UseEntityReturn;
     photoMainContainerStyle?: string;
     photoInfoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    imageStyle?: string;
     nameLastNameContainerStyle?: string;
     inputTypeDocumentIdIdProps?: GsSelectPropsExtended;
     inputIndexProps?: GsSelectPropsExtended;
     mainTitle?: string;
     subTitle?: string;
     modelFormProps?: ModelFormPropsExtended;
-    photoButtonProps?: ButtonPropsExtended;
-    loadingProps?: LoadingProps;
     inputDigitProps?: InputProps;
+    propsPhoto?: PhotoDocumentIdProps['props'];
 };
-export declare const DocumentAddForm: ({ use, photoMainContainerStyle, photoInfoContainerStyle, photoFormStyle, loadingContainerStyle, imageStyle, nameLastNameContainerStyle, inputTypeDocumentIdIdProps, inputIndexProps, mainTitle, subTitle, modelFormProps, photoButtonProps, loadingProps, inputDigitProps, }: DocumentAddFormProps) => JSX.Element;
+export declare const DocumentAddForm: ({ use, photoMainContainerStyle, photoInfoContainerStyle, nameLastNameContainerStyle, inputTypeDocumentIdIdProps, inputIndexProps, mainTitle, subTitle, modelFormProps, inputDigitProps, propsPhoto, }: DocumentAddFormProps) => JSX.Element;

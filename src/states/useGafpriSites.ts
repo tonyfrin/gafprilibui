@@ -10,7 +10,15 @@ import {
   changeSelect,
   gafpriFetch,
 } from '../helpers';
-import { Countries, API_URL, SITES_ROUTE, SITES_STORAGE } from '../Constans';
+import {
+  Countries,
+  API_URL,
+  SITES_ROUTE,
+  SITES_STORAGE,
+  CITY_DEFAULT,
+  STATE_COUNTRY_DEFAULT,
+  COUNTRY_DEFAULT,
+} from '../Constans';
 import { getItem, saveItem } from '../Context';
 import type { UseCurrenciesReturn } from './useGafpriCurrencies';
 import type { UseErrorReturn } from './useGafpriError';
@@ -310,29 +318,24 @@ export const useGafpriSites = ({
   const [address2, setAddress2] = useState('');
   const [address2Valid, setAddress2Valid] = useState(true);
 
-  const [city, setCity] = useState('');
-  const [cityValid, setCityValid] = useState(false);
-  const [cityDefault, setCityDefault] = useState<SelectDefault>({
-    value: '',
-    label: 'Elija la ciudad',
-  });
+  const [city, setCity] = useState(CITY_DEFAULT.value);
+  const [cityValid, setCityValid] = useState(true);
+  const [cityDefault, setCityDefault] = useState<SelectDefault>(CITY_DEFAULT);
   const [cityOptions, setCityOptions] = useState<SelectDefault[]>([]);
 
-  const [state, setStateCountry] = useState('');
-  const [stateCountryValid, setStateCountryValid] = useState(false);
+  const [state, setStateCountry] = useState(STATE_COUNTRY_DEFAULT.value);
+  const [stateCountryValid, setStateCountryValid] = useState(true);
   const [stateCountryDefault, setStateCountryDefault] = useState<SelectDefault>(
-    { value: '', label: 'Elija el Estado' }
+    STATE_COUNTRY_DEFAULT
   );
   const [stateCountryOptions, setStateCountryOptions] = useState<
     SelectDefault[]
   >([]);
 
-  const [country, setCountry] = useState('');
-  const [countryValid, setCountryValid] = useState(false);
-  const [countryDefault, setCountryDefault] = useState<SelectDefault>({
-    value: '',
-    label: 'Elija el Pais',
-  });
+  const [country, setCountry] = useState(COUNTRY_DEFAULT.value);
+  const [countryValid, setCountryValid] = useState(true);
+  const [countryDefault, setCountryDefault] =
+    useState<SelectDefault>(COUNTRY_DEFAULT);
   const countryOptions: SelectDefault[] = [];
 
   Countries.forEach((item) => {
@@ -452,14 +455,17 @@ export const useGafpriSites = ({
     setAddress2('');
     setAddress2Valid(true);
 
-    setCity('');
-    setCityValid(false);
+    setCity(CITY_DEFAULT.value);
+    setCityValid(true);
+    setCityDefault(CITY_DEFAULT);
 
-    setStateCountry('');
+    setStateCountry(STATE_COUNTRY_DEFAULT.value);
     setStateCountryValid(false);
+    setStateCountryDefault(STATE_COUNTRY_DEFAULT);
 
-    setCountry('');
-    setCountryValid(false);
+    setCountry(COUNTRY_DEFAULT.value);
+    setCountryValid(true);
+    setCountryDefault(COUNTRY_DEFAULT);
 
     setPostCode('');
     setPostCodeValid(true);
@@ -716,7 +722,7 @@ export const useGafpriSites = ({
       validationCity,
       setCityDefault,
       setCity,
-      setIsReady
+      setIsReset
     );
   };
 
@@ -739,7 +745,7 @@ export const useGafpriSites = ({
       validationStateCountry,
       setStateCountryDefault,
       setStateCountry,
-      setIsReady
+      setIsReset
     );
   };
 
@@ -761,7 +767,7 @@ export const useGafpriSites = ({
       validationCountry,
       setCountryDefault,
       setCountry,
-      setIsReady
+      setIsReset
     );
   };
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Input,
-  GsSelect,
   SelectDocumentIdIndex,
   SelectCity,
   InputCity as GeneralInputCity,

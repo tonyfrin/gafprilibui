@@ -111,18 +111,15 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState34 = (0, _slicedToArray2["default"])(_useState33, 2),
     address2Valid = _useState34[0],
     setAddress2Valid = _useState34[1];
-  var _useState35 = (0, _react.useState)(''),
+  var _useState35 = (0, _react.useState)(_Constans.CITY_DEFAULT.value),
     _useState36 = (0, _slicedToArray2["default"])(_useState35, 2),
     city = _useState36[0],
     setCity = _useState36[1];
-  var _useState37 = (0, _react.useState)(false),
+  var _useState37 = (0, _react.useState)(true),
     _useState38 = (0, _slicedToArray2["default"])(_useState37, 2),
     cityValid = _useState38[0],
     setCityValid = _useState38[1];
-  var _useState39 = (0, _react.useState)({
-      value: '',
-      label: 'Elija la ciudad'
-    }),
+  var _useState39 = (0, _react.useState)(_Constans.CITY_DEFAULT),
     _useState40 = (0, _slicedToArray2["default"])(_useState39, 2),
     cityDefault = _useState40[0],
     setCityDefault = _useState40[1];
@@ -130,18 +127,15 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState42 = (0, _slicedToArray2["default"])(_useState41, 2),
     cityOptions = _useState42[0],
     setCityOptions = _useState42[1];
-  var _useState43 = (0, _react.useState)(''),
+  var _useState43 = (0, _react.useState)(_Constans.STATE_COUNTRY_DEFAULT.value),
     _useState44 = (0, _slicedToArray2["default"])(_useState43, 2),
     state = _useState44[0],
     setStateCountry = _useState44[1];
-  var _useState45 = (0, _react.useState)(false),
+  var _useState45 = (0, _react.useState)(true),
     _useState46 = (0, _slicedToArray2["default"])(_useState45, 2),
     stateCountryValid = _useState46[0],
     setStateCountryValid = _useState46[1];
-  var _useState47 = (0, _react.useState)({
-      value: '',
-      label: 'Elija el Estado'
-    }),
+  var _useState47 = (0, _react.useState)(_Constans.STATE_COUNTRY_DEFAULT),
     _useState48 = (0, _slicedToArray2["default"])(_useState47, 2),
     stateCountryDefault = _useState48[0],
     setStateCountryDefault = _useState48[1];
@@ -149,18 +143,15 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState50 = (0, _slicedToArray2["default"])(_useState49, 2),
     stateCountryOptions = _useState50[0],
     setStateCountryOptions = _useState50[1];
-  var _useState51 = (0, _react.useState)(''),
+  var _useState51 = (0, _react.useState)(_Constans.COUNTRY_DEFAULT.value),
     _useState52 = (0, _slicedToArray2["default"])(_useState51, 2),
     country = _useState52[0],
     setCountry = _useState52[1];
-  var _useState53 = (0, _react.useState)(false),
+  var _useState53 = (0, _react.useState)(true),
     _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
     countryValid = _useState54[0],
     setCountryValid = _useState54[1];
-  var _useState55 = (0, _react.useState)({
-      value: '',
-      label: 'Elija el Pais'
-    }),
+  var _useState55 = (0, _react.useState)(_Constans.COUNTRY_DEFAULT),
     _useState56 = (0, _slicedToArray2["default"])(_useState55, 2),
     countryDefault = _useState56[0],
     setCountryDefault = _useState56[1];
@@ -369,12 +360,15 @@ var useGafpriSites = function useGafpriSites(_ref) {
     setAddress1Valid(false);
     setAddress2('');
     setAddress2Valid(true);
-    setCity('');
-    setCityValid(false);
-    setStateCountry('');
+    setCity(_Constans.CITY_DEFAULT.value);
+    setCityValid(true);
+    setCityDefault(_Constans.CITY_DEFAULT);
+    setStateCountry(_Constans.STATE_COUNTRY_DEFAULT.value);
     setStateCountryValid(false);
-    setCountry('');
-    setCountryValid(false);
+    setStateCountryDefault(_Constans.STATE_COUNTRY_DEFAULT);
+    setCountry(_Constans.COUNTRY_DEFAULT.value);
+    setCountryValid(true);
+    setCountryDefault(_Constans.COUNTRY_DEFAULT);
     setPostCode('');
     setPostCodeValid(true);
     setEmail('');
@@ -531,21 +525,21 @@ var useGafpriSites = function useGafpriSites(_ref) {
     (0, _Changes.generalChangeAddress)(value, validationAddress2, setAddress2);
   };
   var changeCity = function changeCity(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationCity, setCityDefault, setCity, setIsReady);
+    (0, _Changes.generalChangeCityStateCountry)(options, validationCity, setCityDefault, setCity, setIsReset);
   };
   var changeCityOptions = _react["default"].useCallback(function () {
     (0, _Changes.generalChangeCityOptions)(country, state, setCityDefault, setCity, setCityOptions, isReset);
   }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   var changeStateCountry = function changeStateCountry(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationStateCountry, setStateCountryDefault, setStateCountry, setIsReady);
+    (0, _Changes.generalChangeCityStateCountry)(options, validationStateCountry, setStateCountryDefault, setStateCountry, setIsReset);
   };
   var changeStateCountryOptions = _react["default"].useCallback(function () {
     (0, _Changes.generalChangeStateCountryOptions)(country, setStateCountryDefault, setStateCountry, setStateCountryOptions, isReset);
   }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
 
   var changeCountry = function changeCountry(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationCountry, setCountryDefault, setCountry, setIsReady);
+    (0, _Changes.generalChangeCityStateCountry)(options, validationCountry, setCountryDefault, setCountry, setIsReset);
   };
   var changePostCode = function changePostCode(newPostCode) {
     (0, _Changes.generalChangePostCode)(newPostCode, validationPostCode, setPostCode);

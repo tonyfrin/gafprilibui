@@ -48,7 +48,15 @@ import type {
 import { getItem, saveItem } from '../Context';
 import type { UseTypeDocumentIdReturn } from './useGafpriTypeDocumentId';
 import type { UseErrorReturn } from './useGafpriError';
-import { API_URL, ENTITY_STORAGE, ENTITY_ROUTE, Countries } from '../Constans';
+import {
+  API_URL,
+  ENTITY_STORAGE,
+  ENTITY_ROUTE,
+  Countries,
+  COUNTRY_DEFAULT,
+  STATE_COUNTRY_DEFAULT,
+  CITY_DEFAULT,
+} from '../Constans';
 
 interface typeDocumentId {
   id: number;
@@ -421,29 +429,24 @@ export const useGafpriEntity = ({
   const [address2, setAddress2] = useState('');
   const [address2Valid, setAddress2Valid] = useState(true);
 
-  const [city, setCity] = useState('');
-  const [cityValid, setCityValid] = useState(false);
-  const [cityDefault, setCityDefault] = useState<SelectDefault>({
-    value: '',
-    label: 'Elija la ciudad',
-  });
+  const [city, setCity] = useState(CITY_DEFAULT.value);
+  const [cityValid, setCityValid] = useState(true);
+  const [cityDefault, setCityDefault] = useState<SelectDefault>(CITY_DEFAULT);
   const [cityOptions, setCityOptions] = useState<SelectDefault[]>([]);
 
-  const [state, setStateCountry] = useState('');
-  const [stateCountryValid, setStateCountryValid] = useState(false);
+  const [state, setStateCountry] = useState(STATE_COUNTRY_DEFAULT.value);
+  const [stateCountryValid, setStateCountryValid] = useState(true);
   const [stateCountryDefault, setStateCountryDefault] = useState<SelectDefault>(
-    { value: '', label: 'Elija el Estado' }
+    STATE_COUNTRY_DEFAULT
   );
   const [stateCountryOptions, setStateCountryOptions] = useState<
     SelectDefault[]
   >([]);
 
-  const [country, setCountry] = useState('');
-  const [countryValid, setCountryValid] = useState(false);
-  const [countryDefault, setCountryDefault] = useState<SelectDefault>({
-    value: '',
-    label: 'Elija el Pais',
-  });
+  const [country, setCountry] = useState(COUNTRY_DEFAULT.value);
+  const [countryValid, setCountryValid] = useState(true);
+  const [countryDefault, setCountryDefault] =
+    useState<SelectDefault>(COUNTRY_DEFAULT);
   const countryOptions: SelectDefault[] = [];
 
   Countries.forEach((item) => {
@@ -561,18 +564,18 @@ export const useGafpriEntity = ({
     setAddress2('');
     setAddress2Valid(true);
 
-    setCity('');
-    setCityValid(false);
-    setCityDefault({ value: '', label: 'Elija la ciudad' });
+    setCity(CITY_DEFAULT.value);
+    setCityValid(true);
+    setCityDefault(CITY_DEFAULT);
 
-    setStateCountry('');
-    setStateCountryValid(false);
-    setStateCountryDefault({ value: '', label: 'Elija el Estado' });
+    setStateCountry(STATE_COUNTRY_DEFAULT.value);
+    setStateCountryValid(true);
+    setStateCountryDefault(STATE_COUNTRY_DEFAULT);
     setStateCountryOptions([]);
 
-    setCountry('');
-    setCountryValid(false);
-    setCountryDefault({ value: '', label: 'Elija el Pais' });
+    setCountry(COUNTRY_DEFAULT.value);
+    setCountryValid(true);
+    setCountryDefault(COUNTRY_DEFAULT);
 
     setPostCode('');
     setPostCodeValid(true);

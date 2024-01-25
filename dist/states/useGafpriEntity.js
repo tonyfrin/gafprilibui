@@ -180,18 +180,15 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     _useState58 = (0, _slicedToArray2["default"])(_useState57, 2),
     address2Valid = _useState58[0],
     setAddress2Valid = _useState58[1];
-  var _useState59 = (0, _react.useState)(''),
+  var _useState59 = (0, _react.useState)(_Constans.CITY_DEFAULT.value),
     _useState60 = (0, _slicedToArray2["default"])(_useState59, 2),
     city = _useState60[0],
     setCity = _useState60[1];
-  var _useState61 = (0, _react.useState)(false),
+  var _useState61 = (0, _react.useState)(true),
     _useState62 = (0, _slicedToArray2["default"])(_useState61, 2),
     cityValid = _useState62[0],
     setCityValid = _useState62[1];
-  var _useState63 = (0, _react.useState)({
-      value: '',
-      label: 'Elija la ciudad'
-    }),
+  var _useState63 = (0, _react.useState)(_Constans.CITY_DEFAULT),
     _useState64 = (0, _slicedToArray2["default"])(_useState63, 2),
     cityDefault = _useState64[0],
     setCityDefault = _useState64[1];
@@ -199,18 +196,15 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     _useState66 = (0, _slicedToArray2["default"])(_useState65, 2),
     cityOptions = _useState66[0],
     setCityOptions = _useState66[1];
-  var _useState67 = (0, _react.useState)(''),
+  var _useState67 = (0, _react.useState)(_Constans.STATE_COUNTRY_DEFAULT.value),
     _useState68 = (0, _slicedToArray2["default"])(_useState67, 2),
     state = _useState68[0],
     setStateCountry = _useState68[1];
-  var _useState69 = (0, _react.useState)(false),
+  var _useState69 = (0, _react.useState)(true),
     _useState70 = (0, _slicedToArray2["default"])(_useState69, 2),
     stateCountryValid = _useState70[0],
     setStateCountryValid = _useState70[1];
-  var _useState71 = (0, _react.useState)({
-      value: '',
-      label: 'Elija el Estado'
-    }),
+  var _useState71 = (0, _react.useState)(_Constans.STATE_COUNTRY_DEFAULT),
     _useState72 = (0, _slicedToArray2["default"])(_useState71, 2),
     stateCountryDefault = _useState72[0],
     setStateCountryDefault = _useState72[1];
@@ -218,18 +212,15 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     _useState74 = (0, _slicedToArray2["default"])(_useState73, 2),
     stateCountryOptions = _useState74[0],
     setStateCountryOptions = _useState74[1];
-  var _useState75 = (0, _react.useState)(''),
+  var _useState75 = (0, _react.useState)(_Constans.COUNTRY_DEFAULT.value),
     _useState76 = (0, _slicedToArray2["default"])(_useState75, 2),
     country = _useState76[0],
     setCountry = _useState76[1];
-  var _useState77 = (0, _react.useState)(false),
+  var _useState77 = (0, _react.useState)(true),
     _useState78 = (0, _slicedToArray2["default"])(_useState77, 2),
     countryValid = _useState78[0],
     setCountryValid = _useState78[1];
-  var _useState79 = (0, _react.useState)({
-      value: '',
-      label: 'Elija el Pais'
-    }),
+  var _useState79 = (0, _react.useState)(_Constans.COUNTRY_DEFAULT),
     _useState80 = (0, _slicedToArray2["default"])(_useState79, 2),
     countryDefault = _useState80[0],
     setCountryDefault = _useState80[1];
@@ -434,25 +425,16 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     setAddress1Valid(false);
     setAddress2('');
     setAddress2Valid(true);
-    setCity('');
-    setCityValid(false);
-    setCityDefault({
-      value: '',
-      label: 'Elija la ciudad'
-    });
-    setStateCountry('');
-    setStateCountryValid(false);
-    setStateCountryDefault({
-      value: '',
-      label: 'Elija el Estado'
-    });
+    setCity(_Constans.CITY_DEFAULT.value);
+    setCityValid(true);
+    setCityDefault(_Constans.CITY_DEFAULT);
+    setStateCountry(_Constans.STATE_COUNTRY_DEFAULT.value);
+    setStateCountryValid(true);
+    setStateCountryDefault(_Constans.STATE_COUNTRY_DEFAULT);
     setStateCountryOptions([]);
-    setCountry('');
-    setCountryValid(false);
-    setCountryDefault({
-      value: '',
-      label: 'Elija el Pais'
-    });
+    setCountry(_Constans.COUNTRY_DEFAULT.value);
+    setCountryValid(true);
+    setCountryDefault(_Constans.COUNTRY_DEFAULT);
     setPostCode('');
     setPostCodeValid(true);
     setEmail('');

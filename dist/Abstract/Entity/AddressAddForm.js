@@ -6,11 +6,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.AddressAddForm = void 0;
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireDefault(require("react"));
 var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var AddressAddForm = function AddressAddForm(_ref) {
   var use = _ref.use,
     inputCityProps = _ref.inputCityProps,
@@ -73,103 +76,99 @@ var AddressAddForm = function AddressAddForm(_ref) {
   };
   _react["default"].useEffect(function () {
     setInputCountry(function () {
-      return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-        id: "entityCountry",
-        onChange: function onChange(event) {
+      return /*#__PURE__*/_react["default"].createElement(_Input.SelectCountry, {
+        changeCountry: function changeCountry(event) {
           return use.actions.changeCountry(event);
         },
-        options: use.states.countryOptions,
-        defaultValue: use.states.countryDefault,
-        styles: {
-          width: '89%'
-        }
-      }, selectCountryProps));
+        props: _objectSpread({
+          options: use.states.countryOptions,
+          defaultValue: use.states.countryDefault,
+          styles: {
+            width: '89%'
+          }
+        }, selectCountryProps)
+      });
     });
     setInputType(function () {
-      return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-        id: "entityAddressType",
-        onChange: function onChange(event) {
+      return /*#__PURE__*/_react["default"].createElement(_Input.SelectAddressType, {
+        changeAddressType: function changeAddressType(event) {
           return use.actions.changeAddressType(event);
         },
-        options: use.states.addressTypeOptions,
-        defaultValue: use.states.addressTypeDefault,
-        styles: {
-          width: '92%'
-        }
-      }, selectTypeProps));
+        props: _objectSpread({
+          options: use.states.addressTypeOptions,
+          defaultValue: use.states.addressTypeDefault,
+          styles: {
+            width: '92%'
+          }
+        }, selectTypeProps)
+      });
     });
   }, []);
   _react["default"].useEffect(function () {
     if (use.states.stateCountryOptions.length > 0) {
       setInputState(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "entityStateCountry",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectStateCountry, {
+          changeStateCountry: function changeStateCountry(event) {
             return use.actions.changeStateCountry(event);
           },
-          options: use.states.stateCountryOptions,
-          defaultValue: use.states.stateCountryDefault,
-          styles: {
-            width: '89%'
-          }
-        }, selectStateProps));
+          props: _objectSpread({
+            options: use.states.stateCountryOptions,
+            defaultValue: use.states.stateCountryDefault,
+            styles: {
+              width: '89%'
+            }
+          }, selectStateProps)
+        });
       });
     } else {
       setInputState(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-          inputProps: {
-            placeholder: 'Estado',
-            type: 'text',
-            id: 'entityStateCountry',
-            onKeyUp: function onKeyUp(event) {
-              return use.actions.changeStateCountry({
-                label: event.target.value,
-                value: event.target.value
-              });
-            },
-            defaultValue: use.states.state
+        return /*#__PURE__*/_react["default"].createElement(_Input.InputStateCountry, {
+          changeStateCountry: function changeStateCountry(event) {
+            return use.actions.changeStateCountry(event);
           },
-          styles: {
-            padding: '10px 19px',
-            width: '89%'
-          }
-        }, inputStateProps));
+          props: _objectSpread({
+            inputProps: {
+              defaultValue: use.states.state
+            },
+            styles: {
+              padding: '10px 19px',
+              width: '89%'
+            }
+          }, inputStateProps)
+        });
       });
     }
     if (use.states.cityOptions.length > 0) {
       setInputCity(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, (0, _extends2["default"])({
-          id: "entityCity",
-          onChange: function onChange(event) {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectCity, {
+          changeCity: function changeCity(event) {
             return use.actions.changeCity(event);
           },
-          options: use.states.cityOptions,
-          defaultValue: use.states.cityDefault,
-          styles: {
-            width: '89%'
-          }
-        }, selectCityProps));
+          props: _objectSpread({
+            options: use.states.cityOptions,
+            defaultValue: use.states.cityDefault,
+            styles: {
+              width: '89%'
+            }
+          }, selectCityProps)
+        });
       });
     } else {
       setInputCity(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-          inputProps: {
-            placeholder: 'Ciudad',
-            type: 'text',
-            id: 'entityCity',
-            onKeyUp: function onKeyUp(event) {
-              return use.actions.changeCity({
-                label: event.target.value,
-                value: event.target.value
-              });
-            },
-            defaultValue: use.states.city
+        return /*#__PURE__*/_react["default"].createElement(_Input.InputCity, {
+          changeCity: function changeCity(event) {
+            return use.actions.changeCity(event);
           },
-          styles: {
-            padding: '10px 19px',
-            width: '89%'
-          }
-        }, inputCityProps));
+          props: _objectSpread({
+            inputProps: {
+              defaultValue: use.states.city
+            },
+            styles: {
+              padding: '10px 19px',
+              width: '89%'
+            }
+          }, inputCityProps)
+        });
       });
     }
   }, [use.states.country, use.states.stateCountryOptions, use.states.cityOptions]);
@@ -195,35 +194,33 @@ var AddressAddForm = function AddressAddForm(_ref) {
       width: '100%',
       justifyContent: 'start'
     }
-  }, containerAddressProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Dirección 1',
-      type: 'text',
-      id: 'address1',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeAddress1(event.target.value);
-      },
-      defaultValue: use.states.address1
+  }, containerAddressProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputAddress1, {
+    changeAddress1: function changeAddress1(event) {
+      return use.actions.changeAddress1(event);
     },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, inputAddress1Props)), /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Dirección 2',
-      type: 'text',
-      id: 'address2',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changeAddress2(event.target.value);
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.address1
       },
-      defaultValue: use.states.address2
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, inputAddress1Props)
+  }), /*#__PURE__*/_react["default"].createElement(_Input.InputAddress2, {
+    changeAddress2: function changeAddress2(event) {
+      return use.actions.changeAddress2(event);
     },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, inputAddress2Props)))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.address2
+      },
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, inputAddress2Props)
+  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
       justifyContent: 'start'
@@ -233,20 +230,19 @@ var AddressAddForm = function AddressAddForm(_ref) {
       width: '100%',
       justifyContent: 'start'
     }
-  }, containerPostCodeProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
-    inputProps: {
-      placeholder: 'Código Postal',
-      type: 'text',
-      id: 'entityCodePost',
-      onKeyUp: function onKeyUp(event) {
-        return use.actions.changePostCode(event.target.value);
-      },
-      defaultValue: use.states.postCode
+  }, containerPostCodeProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputZipCode, {
+    changeZipCode: function changeZipCode(event) {
+      return use.actions.changePostCode(event);
     },
-    styles: {
-      width: '92%',
-      padding: '09px 19px'
-    }
-  }, inputPostCodeProps)), InputType))));
+    props: _objectSpread({
+      inputProps: {
+        defaultValue: use.states.postCode
+      },
+      styles: {
+        width: '92%',
+        padding: '09px 19px'
+      }
+    }, inputPostCodeProps)
+  }), InputType))));
 };
 exports.AddressAddForm = AddressAddForm;

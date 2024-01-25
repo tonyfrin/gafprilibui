@@ -44,3 +44,5 @@ export { SelectDocumentIdIndex } from './SelectDocumentIdIndex';
 export type { SelectDocumentIdIndexProps } from './SelectDocumentIdIndex';
 export { SelectTypeDocumentIdId } from './SelectTypeDocumentIdId';
 export type { SelectTypeDocumentIdIdProps } from './SelectTypeDocumentIdId';
+export { SelectAddressType } from './SelectAddressType';
+export type { SelectAddressTypeProps } from './SelectAddressType';

@@ -48,6 +48,7 @@ export {
   InputPhone,
   SelectDocumentIdIndex,
   SelectTypeDocumentIdId,
+  SelectAddressType,
 } from './Input';
 export type {
   InputStyle,
@@ -78,6 +79,7 @@ export type {
   InputPhoneProps,
   SelectDocumentIdIndexProps,
   SelectTypeDocumentIdIdProps,
+  SelectAddressTypeProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';

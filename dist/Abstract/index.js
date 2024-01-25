@@ -345,6 +345,12 @@ Object.defineProperty(exports, "SearchBar", {
     return _Bar.SearchBar;
   }
 });
+Object.defineProperty(exports, "SelectAddressType", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectAddressType;
+  }
+});
 Object.defineProperty(exports, "SelectCity", {
   enumerable: true,
   get: function get() {

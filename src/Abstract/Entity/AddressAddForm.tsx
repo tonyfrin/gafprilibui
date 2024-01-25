@@ -1,5 +1,15 @@
 import React from 'react';
-import { Input, GsSelect } from '../Input';
+import {
+  SelectAddressType,
+  SelectCity,
+  InputCity as InputCityGeneral,
+  SelectStateCountry,
+  InputStateCountry,
+  SelectCountry,
+  InputAddress1,
+  InputAddress2,
+  InputZipCode,
+} from '../Input';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
@@ -118,30 +128,32 @@ export const AddressAddForm = ({
   React.useEffect(() => {
     setInputCountry((): JSX.Element => {
       return (
-        <GsSelect
-          id="entityCountry"
-          onChange={(event) => use.actions.changeCountry(event)}
-          options={use.states.countryOptions}
-          defaultValue={use.states.countryDefault}
-          styles={{
-            width: '89%',
+        <SelectCountry
+          changeCountry={(event) => use.actions.changeCountry(event)}
+          props={{
+            options: use.states.countryOptions,
+            defaultValue: use.states.countryDefault,
+            styles: {
+              width: '89%',
+            },
+            ...selectCountryProps,
           }}
-          {...selectCountryProps}
         />
       );
     });
 
     setInputType((): JSX.Element => {
       return (
-        <GsSelect
-          id="entityAddressType"
-          onChange={(event) => use.actions.changeAddressType(event)}
-          options={use.states.addressTypeOptions}
-          defaultValue={use.states.addressTypeDefault}
-          styles={{
-            width: '92%',
+        <SelectAddressType
+          changeAddressType={(event) => use.actions.changeAddressType(event)}
+          props={{
+            options: use.states.addressTypeOptions,
+            defaultValue: use.states.addressTypeDefault,
+            styles: {
+              width: '92%',
+            },
+            ...selectTypeProps,
           }}
-          {...selectTypeProps}
         />
       );
     });
@@ -151,38 +163,38 @@ export const AddressAddForm = ({
     if (use.states.stateCountryOptions.length > 0) {
       setInputState((): JSX.Element => {
         return (
-          <GsSelect
-            id="entityStateCountry"
-            onChange={(event) => use.actions.changeStateCountry(event)}
-            options={use.states.stateCountryOptions}
-            defaultValue={use.states.stateCountryDefault}
-            styles={{
-              width: '89%',
+          <SelectStateCountry
+            changeStateCountry={(event) =>
+              use.actions.changeStateCountry(event)
+            }
+            props={{
+              options: use.states.stateCountryOptions,
+              defaultValue: use.states.stateCountryDefault,
+              styles: {
+                width: '89%',
+              },
+              ...selectStateProps,
             }}
-            {...selectStateProps}
           />
         );
       });
     } else {
       setInputState((): JSX.Element => {
         return (
-          <Input
-            inputProps={{
-              placeholder: 'Estado',
-              type: 'text',
-              id: 'entityStateCountry',
-              onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                use.actions.changeStateCountry({
-                  label: (event.target as HTMLInputElement).value,
-                  value: (event.target as HTMLInputElement).value,
-                }),
-              defaultValue: use.states.state,
+          <InputStateCountry
+            changeStateCountry={(event) =>
+              use.actions.changeStateCountry(event)
+            }
+            props={{
+              inputProps: {
+                defaultValue: use.states.state,
+              },
+              styles: {
+                padding: '10px 19px',
+                width: '89%',
+              },
+              ...inputStateProps,
             }}
-            styles={{
-              padding: '10px 19px',
-              width: '89%',
-            }}
-            {...inputStateProps}
           />
         );
       });
@@ -191,38 +203,34 @@ export const AddressAddForm = ({
     if (use.states.cityOptions.length > 0) {
       setInputCity((): JSX.Element => {
         return (
-          <GsSelect
-            id="entityCity"
-            onChange={(event) => use.actions.changeCity(event)}
-            options={use.states.cityOptions}
-            defaultValue={use.states.cityDefault}
-            styles={{
-              width: '89%',
+          <SelectCity
+            changeCity={(event) => use.actions.changeCity(event)}
+            props={{
+              options: use.states.cityOptions,
+              defaultValue: use.states.cityDefault,
+              styles: {
+                width: '89%',
+              },
+              ...selectCityProps,
             }}
-            {...selectCityProps}
           />
         );
       });
     } else {
       setInputCity((): JSX.Element => {
         return (
-          <Input
-            inputProps={{
-              placeholder: 'Ciudad',
-              type: 'text',
-              id: 'entityCity',
-              onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                use.actions.changeCity({
-                  label: (event.target as HTMLInputElement).value,
-                  value: (event.target as HTMLInputElement).value,
-                }),
-              defaultValue: use.states.city,
+          <InputCityGeneral
+            changeCity={(event) => use.actions.changeCity(event)}
+            props={{
+              inputProps: {
+                defaultValue: use.states.city,
+              },
+              styles: {
+                padding: '10px 19px',
+                width: '89%',
+              },
+              ...inputCityProps,
             }}
-            styles={{
-              padding: '10px 19px',
-              width: '89%',
-            }}
-            {...inputCityProps}
           />
         );
       });
@@ -264,39 +272,31 @@ export const AddressAddForm = ({
           {...containerAddressProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Dirección 1',
-                type: 'text',
-                id: 'address1',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeAddress1(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.address1,
+            <InputAddress1
+              changeAddress1={(event) => use.actions.changeAddress1(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.address1,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...inputAddress1Props,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...inputAddress1Props}
             />
-            <Input
-              inputProps={{
-                placeholder: 'Dirección 2',
-                type: 'text',
-                id: 'address2',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeAddress2(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.address2,
+            <InputAddress2
+              changeAddress2={(event) => use.actions.changeAddress2(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.address2,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...inputAddress2Props,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...inputAddress2Props}
             />
           </>
         </ContainerButton>
@@ -321,22 +321,18 @@ export const AddressAddForm = ({
           {...containerPostCodeProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Código Postal',
-                type: 'text',
-                id: 'entityCodePost',
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changePostCode(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.postCode,
+            <InputZipCode
+              changeZipCode={(event) => use.actions.changePostCode(event)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.postCode,
+                },
+                styles: {
+                  width: '92%',
+                  padding: '09px 19px',
+                },
+                ...inputPostCodeProps,
               }}
-              styles={{
-                width: '92%',
-                padding: '09px 19px',
-              }}
-              {...inputPostCodeProps}
             />
             {InputType}
           </>

@@ -99,6 +99,12 @@ Object.defineProperty(exports, "InputZipCode", {
     return _InputZipCode.InputZipCode;
   }
 });
+Object.defineProperty(exports, "SelectAddressType", {
+  enumerable: true,
+  get: function get() {
+    return _SelectAddressType.SelectAddressType;
+  }
+});
 Object.defineProperty(exports, "SelectCity", {
   enumerable: true,
   get: function get() {
@@ -170,3 +176,4 @@ var _InputEmail = require("./InputEmail");
 var _InputPhone = require("./InputPhone");
 var _SelectDocumentIdIndex = require("./SelectDocumentIdIndex");
 var _SelectTypeDocumentIdId = require("./SelectTypeDocumentIdId");
+var _SelectAddressType = require("./SelectAddressType");

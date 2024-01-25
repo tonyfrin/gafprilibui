@@ -58,6 +58,7 @@ export {
   InputPhone,
   SelectDocumentIdIndex,
   SelectTypeDocumentIdId,
+  SelectAddressType,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -149,6 +150,7 @@ export type {
   InputPhoneProps,
   SelectDocumentIdIndexProps,
   SelectTypeDocumentIdIdProps,
+  SelectAddressTypeProps,
 } from './Abstract';
 export {
   MainFooter,

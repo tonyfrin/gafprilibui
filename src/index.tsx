@@ -314,6 +314,8 @@ export {
   CURRENCIES_DECIMAL_NUMBERS_INPUT,
   TAXES_INPUT,
   WEB_SITE_INPUT,
+  TYPE_DOCUMENT_ID_ROUTE,
+  TYPE_DOCUMENT_ID_STORAGE,
 } from './Constans';
 export { getItem, saveItem } from './Context';
 export {

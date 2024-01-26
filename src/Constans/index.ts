@@ -56,6 +56,7 @@ export {
   ENTITY_ROUTE,
   ROLES_ROUTE,
   SITES_ROUTE,
+  TYPE_DOCUMENT_ID_ROUTE,
 } from './Api';
 export {
   CATEGORY_STORAGE,
@@ -63,4 +64,5 @@ export {
   ENTITY_STORAGE,
   ROLES_STORAGE,
   SITES_STORAGE,
+  TYPE_DOCUMENT_ID_STORAGE,
 } from './LocalStorage';

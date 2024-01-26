@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import {
-  removeClass,
-  addClass,
-  validationInputName,
-  validationInput,
-  toTitleCase,
   gafpriFetch,
   getLastEntryDateAndCount,
   changeInputText,
@@ -12,6 +7,17 @@ import {
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
 import { UseErrorReturn } from './useGafpriError';
+import {
+  API_URL,
+  TYPE_DOCUMENT_ID_ROUTE,
+  TYPE_DOCUMENT_ID_STORAGE,
+} from '../Constans';
+import {
+  generalValidationButtonNext,
+  generalValidationName,
+  generalValidationSelectCountry,
+} from '../Validations';
+import { generalChangeName } from '../Changes';
 
 export interface TypeDocumentIdAttributes {
   id: number;
@@ -150,7 +156,7 @@ export function useGafpriTypeDocumentId({
   const [isUpdate, setIsUpdate] = useState(false);
   const [typeDocumentId, setTypeDocumentId] = useState<TypeDocumentIdData>({
     data: {
-      items: getItem('GS_TYPE_DOCUMENT_ID_V2', null),
+      items: getItem(TYPE_DOCUMENT_ID_STORAGE, null),
     },
   });
   const { error } = useError.states;
@@ -229,40 +235,24 @@ export function useGafpriTypeDocumentId({
 
   // Funciones de Validacion
   const validationName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: `nameTypeDocumentId`,
-      setValid: setNameValid,
-    });
+    return generalValidationName(value, setNameValid, nameValid);
   };
 
   const validationCountry = (newValue: string): boolean => {
-    const valid = validationInput(
+    return generalValidationSelectCountry(
       newValue,
-      /US|VE/,
-      'countryTypeDocumentId',
-      true
+      setCountryValid,
+      countryValid
     );
-    setCountryValid(valid);
-    return valid;
   };
 
   const validationButtonNext = (): void => {
-    if (nameValid && countryValid) {
-      removeClass(`buttonNext`, 'gs-disabled');
-    } else {
-      addClass(`buttonNext`, 'gs-disabled');
-    }
+    generalValidationButtonNext(nameValid, countryValid);
   };
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    const newName = toTitleCase(value);
-    changeInputText({
-      value: newName,
-      validation: validationName,
-      setValue: setName,
-    });
+    generalChangeName(value, validationName, setName);
   };
 
   const changeCountry = (newValue: string): void => {
@@ -284,7 +274,7 @@ export function useGafpriTypeDocumentId({
     : null;
 
   const setDataStorage = (newData: TypeDocumentIdData): void => {
-    saveItem('GS_TYPE_DOCUMENT_ID_V2', newData.data.items);
+    saveItem(TYPE_DOCUMENT_ID_STORAGE, newData.data.items);
   };
 
   const setData = (newData: TypeDocumentIdData): void => {
@@ -318,11 +308,11 @@ export function useGafpriTypeDocumentId({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token) {
+      if (token && API_URL) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: 'http://localhost:4000',
-          initRoute: 'api/v1/type-document-id',
+          initApi: API_URL,
+          initRoute: TYPE_DOCUMENT_ID_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onTypeDocumentId,
@@ -412,11 +402,11 @@ export function useGafpriTypeDocumentId({
   };
 
   const add = (): void => {
-    if (nameValid && countryValid && token) {
+    if (nameValid && countryValid && token && API_URL) {
       gafpriFetch({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/type-document-id',
+        initApi: API_URL,
+        initRoute: TYPE_DOCUMENT_ID_ROUTE,
         initToken: { token },
         initCredentials: {
           name,
@@ -434,11 +424,11 @@ export function useGafpriTypeDocumentId({
   }
 
   const update = (): void => {
-    if (nameValid && countryValid && token) {
+    if (nameValid && countryValid && token && API_URL) {
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/type-document-id/${currentId}`,
+        initApi: API_URL,
+        initRoute: `${TYPE_DOCUMENT_ID_ROUTE}/${currentId}`,
         initToken: { token },
         initCredentials: {
           name,
@@ -452,11 +442,11 @@ export function useGafpriTypeDocumentId({
   };
 
   const deleteTypeDocumentId = (id: number): void => {
-    if (token) {
+    if (token && API_URL) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/type-document-id/${id}`,
+        initApi: API_URL,
+        initRoute: `${TYPE_DOCUMENT_ID_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: onFetching,
         functionSuccess: returnInit,

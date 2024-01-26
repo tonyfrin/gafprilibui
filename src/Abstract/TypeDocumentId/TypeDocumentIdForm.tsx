@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from '../Input';
+import { InputName } from '../Input';
 import type { InputProps } from '../Input';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
@@ -99,21 +99,17 @@ export const TypeDocumentIdForm = ({
           {...infoContainerProps}
         >
           <>
-            <Input
-              inputProps={{
-                placeholder: 'Nombre',
-                type: 'text',
-                id: `nameTypeDocumentId`,
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changeName(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.name,
+            <InputName
+              changeName={use.actions.changeName}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.name,
+                },
+                styles: {
+                  width: '100%',
+                },
+                ...nameInputProps,
               }}
-              styles={{
-                width: '100%',
-              }}
-              {...nameInputProps}
             />
           </>
         </ContainerButton>

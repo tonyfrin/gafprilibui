@@ -321,6 +321,18 @@ Object.defineProperty(exports, "TYPE_DOCUMENT_ID_INDEX_INPUT", {
     return _Inputs.TYPE_DOCUMENT_ID_INDEX_INPUT;
   }
 });
+Object.defineProperty(exports, "TYPE_DOCUMENT_ID_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.TYPE_DOCUMENT_ID_ROUTE;
+  }
+});
+Object.defineProperty(exports, "TYPE_DOCUMENT_ID_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.TYPE_DOCUMENT_ID_STORAGE;
+  }
+});
 Object.defineProperty(exports, "TYPE_INPUT", {
   enumerable: true,
   get: function get() {

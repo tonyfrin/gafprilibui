@@ -36,7 +36,6 @@ var UserForm = function UserForm(_ref) {
     phoneContainerProps = _ref.phoneContainerProps,
     areaCodeSelectProps = _ref.areaCodeSelectProps,
     phoneInputProps = _ref.phoneInputProps,
-    roleContainerProps = _ref.roleContainerProps,
     roleSelectProps = _ref.roleSelectProps,
     propsPhoto = _ref.propsPhoto;
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
@@ -172,7 +171,7 @@ var UserForm = function UserForm(_ref) {
         width: '100%'
       }
     }, emailInputProps)
-  })))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+  }), InputRole))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%'
     }
@@ -188,10 +187,6 @@ var UserForm = function UserForm(_ref) {
         width: '96%'
       }
     }, phoneInputProps)
-  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
-    styles: {
-      width: '100%'
-    }
-  }, roleContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputRole))));
+  })))));
 };
 exports.UserForm = UserForm;

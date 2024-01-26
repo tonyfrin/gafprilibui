@@ -118,21 +118,23 @@ export const UserFormUpdate = ({
   ]);
 
   React.useEffect(() => {
-    setInputRole((): JSX.Element => {
-      return (
-        <SelectRoles
-          changeRoles={(e) => use.actions.changeRole(e)}
-          props={{
-            options: use.states.roleOptions,
-            defaultValue: use.states.roleDefault,
-            styles: {
-              width: '96%',
-            },
-            ...roleSelectProps,
-          }}
-        />
-      );
-    });
+    if (use.states.roleDefault.value !== '') {
+      setInputRole((): JSX.Element => {
+        return (
+          <SelectRoles
+            changeRoles={(e) => use.actions.changeRole(e)}
+            props={{
+              options: use.states.roleOptions,
+              defaultValue: use.states.roleDefault,
+              styles: {
+                width: '96%',
+              },
+              ...roleSelectProps,
+            }}
+          />
+        );
+      });
+    }
   }, [use.states.roleDefault]);
 
   React.useEffect(() => {

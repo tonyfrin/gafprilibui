@@ -61,20 +61,22 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
     use.actions.validationButtonNext();
   }, [use.states.nameValid, use.states.lastNameValid, use.states.emailValid, use.states.phoneNumberValid, use.states.areaCodeValid, use.states.roleValid, use.states.photoValid, use.states.isActiveValid]);
   _react["default"].useEffect(function () {
-    setInputRole(function () {
-      return /*#__PURE__*/_react["default"].createElement(_Input.SelectRoles, {
-        changeRoles: function changeRoles(e) {
-          return use.actions.changeRole(e);
-        },
-        props: _objectSpread({
-          options: use.states.roleOptions,
-          defaultValue: use.states.roleDefault,
-          styles: {
-            width: '96%'
-          }
-        }, roleSelectProps)
+    if (use.states.roleDefault.value !== '') {
+      setInputRole(function () {
+        return /*#__PURE__*/_react["default"].createElement(_Input.SelectRoles, {
+          changeRoles: function changeRoles(e) {
+            return use.actions.changeRole(e);
+          },
+          props: _objectSpread({
+            options: use.states.roleOptions,
+            defaultValue: use.states.roleDefault,
+            styles: {
+              width: '96%'
+            }
+          }, roleSelectProps)
+        });
       });
-    });
+    }
   }, [use.states.roleDefault]);
   _react["default"].useEffect(function () {
     if (use.states.name !== '') {

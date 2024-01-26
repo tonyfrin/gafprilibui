@@ -31,7 +31,6 @@ export type UserFormProps = {
   phoneContainerProps?: ContainerButtonPropsExtended;
   areaCodeSelectProps?: GsSelectPropsExtended;
   phoneInputProps?: InputProps;
-  roleContainerProps?: ContainerButtonPropsExtended;
   roleSelectProps?: GsSelectPropsExtended;
   propsPhoto?: PhotoUserProps['props'];
 };
@@ -49,7 +48,6 @@ export type UserFormPropsExtended = {
   phoneContainerProps?: ContainerButtonPropsExtended;
   areaCodeSelectProps?: GsSelectPropsExtended;
   phoneInputProps?: InputProps;
-  roleContainerProps?: ContainerButtonPropsExtended;
   roleSelectProps?: GsSelectPropsExtended;
   propsPhoto?: PhotoUserProps['props'];
 };
@@ -80,7 +78,6 @@ export const UserForm = ({
   phoneContainerProps,
   areaCodeSelectProps,
   phoneInputProps,
-  roleContainerProps,
   roleSelectProps,
   propsPhoto,
 }: UserFormProps): JSX.Element => {
@@ -250,6 +247,7 @@ export const UserForm = ({
                   ...emailInputProps,
                 }}
               />
+              {InputRole}
             </>
           </div>
         </div>
@@ -274,14 +272,6 @@ export const UserForm = ({
               }}
             />
           </>
-        </ContainerButton>
-        <ContainerButton
-          styles={{
-            width: '100%',
-          }}
-          {...roleContainerProps}
-        >
-          <>{InputRole}</>
         </ContainerButton>
       </>
     </ModelForm>

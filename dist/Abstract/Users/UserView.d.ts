@@ -3,10 +3,9 @@ import type { InputProps } from '../Input';
 import type { ButtonPropsExtended } from '../Button';
 import type { ListPropsExtended } from '../List';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseUserReturn, UseSitesReturn } from '../../states';
+import type { UseUserReturn } from '../../states';
 export type UserViewProps = {
     use: UseUserReturn;
-    useSites: UseSitesReturn;
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
     photoFormStyle?: string;
@@ -21,7 +20,6 @@ export type UserViewProps = {
 };
 export type UserViewPropsExtended = {
     use?: UseUserReturn;
-    useSites?: UseSitesReturn;
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
     photoFormStyle?: string;
@@ -34,4 +32,4 @@ export type UserViewPropsExtended = {
     lastNameInputProps?: InputProps;
     roleListProps?: ListPropsExtended;
 };
-export declare const UserView: ({ use, useSites, photoMainContainerStyle, photoContainerStyle, photoFormStyle, photoStyle, nameContainerStyle, optionButtonContainerStyle, emailPhoneButtonProps, modelFormProps, nameInputProps, lastNameInputProps, roleListProps, }: UserViewProps) => JSX.Element;
+export declare const UserView: ({ use, photoMainContainerStyle, photoContainerStyle, photoFormStyle, photoStyle, nameContainerStyle, optionButtonContainerStyle, emailPhoneButtonProps, modelFormProps, nameInputProps, lastNameInputProps, roleListProps, }: UserViewProps) => JSX.Element;

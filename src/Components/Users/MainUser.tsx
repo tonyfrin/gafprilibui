@@ -1,6 +1,6 @@
 import React from 'react';
 import { Loading } from '../Loading';
-import type { UseUserReturn, UseSitesReturn } from '../../states';
+import type { UseUserReturn } from '../../states';
 import {
   InitUser,
   UserForm,
@@ -17,7 +17,6 @@ import type {
 
 export type MainUserProps = {
   use: UseUserReturn;
-  useSites: UseSitesReturn;
   initProps?: InitUserPropsExtended;
   addFormProps?: UserFormPropsExtended;
   updateFormProps?: UserFormUpdatePropsExtended;
@@ -26,7 +25,6 @@ export type MainUserProps = {
 
 export type MainUserPropsExtended = {
   use?: UseUserReturn;
-  useSites?: UseSitesReturn;
   initProps?: InitUserPropsExtended;
   addFormProps?: UserFormPropsExtended;
   updateFormProps?: UserFormUpdatePropsExtended;
@@ -35,7 +33,6 @@ export type MainUserPropsExtended = {
 
 export const MainUser = ({
   use,
-  useSites,
   initProps,
   addFormProps,
   updateFormProps,
@@ -56,12 +53,12 @@ export const MainUser = ({
       )}
       {use.states.isUpdate && (
         <FadeIn keyName="update" isVisible={use.states.isUpdate}>
-          <UserFormUpdate use={use} useSites={useSites} {...updateFormProps} />
+          <UserFormUpdate use={use} {...updateFormProps} />
         </FadeIn>
       )}
       {use.states.isView && (
         <FadeIn keyName="view" isVisible={use.states.isView}>
-          <UserView use={use} useSites={useSites} {...viewFormProps} />
+          <UserView use={use} {...viewFormProps} />
         </FadeIn>
       )}
     </>

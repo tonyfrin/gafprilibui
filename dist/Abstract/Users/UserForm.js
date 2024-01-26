@@ -38,7 +38,6 @@ var UserForm = function UserForm(_ref) {
     phoneInputProps = _ref.phoneInputProps,
     roleContainerProps = _ref.roleContainerProps,
     roleSelectProps = _ref.roleSelectProps,
-    siteSelectProps = _ref.siteSelectProps,
     propsPhoto = _ref.propsPhoto;
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
     _React$useState2 = (0, _slicedToArray2["default"])(_React$useState, 2),
@@ -48,10 +47,6 @@ var UserForm = function UserForm(_ref) {
     _React$useState4 = (0, _slicedToArray2["default"])(_React$useState3, 2),
     InputRole = _React$useState4[0],
     setInputRole = _React$useState4[1];
-  var _React$useState5 = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
-    _React$useState6 = (0, _slicedToArray2["default"])(_React$useState5, 2),
-    InputSite = _React$useState6[0],
-    setInputSite = _React$useState6[1];
   var isAddForm = formType === 'add';
   var isUpdateForm = formType === 'update';
   var currentUser = isUpdateForm ? use.actions.getById(use.states.userId) : null;
@@ -62,14 +57,13 @@ var UserForm = function UserForm(_ref) {
     use.actions.validationAreaCode(use.states.areaCode);
     use.actions.validationPhoneNumber(use.states.phoneNumber);
     use.actions.validationRole(use.states.rolesId);
-    use.actions.validationSite(use.states.site);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationIsActive("".concat(use.states.isActive));
     use.actions.validationButtonNext();
-  }, [use.states.name, use.states.lastName, use.states.email, use.states.phoneNumber, use.states.areaCode, use.states.rolesId, use.states.site, use.states.photo, use.states.isActive, InputRole, InputSite, InputAreaCode]);
+  }, [use.states.name, use.states.lastName, use.states.email, use.states.phoneNumber, use.states.areaCode, use.states.rolesId, use.states.photo, use.states.isActive, InputRole, InputAreaCode]);
   _react["default"].useEffect(function () {
     use.actions.validationButtonNext();
-  }, [use.states.nameValid, use.states.lastNameValid, use.states.emailValid, use.states.phoneNumberValid, use.states.areaCodeValid, use.states.roleValid, use.states.siteValid, use.states.photoValid, use.states.isActiveValid]);
+  }, [use.states.nameValid, use.states.lastNameValid, use.states.emailValid, use.states.phoneNumberValid, use.states.areaCodeValid, use.states.roleValid, use.states.photoValid, use.states.isActiveValid]);
   _react["default"].useEffect(function () {
     if (isAddForm) {
       setInputAreaCode(function () {
@@ -98,20 +92,6 @@ var UserForm = function UserForm(_ref) {
               width: '96%'
             }
           }, roleSelectProps)
-        });
-      });
-      setInputSite(function () {
-        return /*#__PURE__*/_react["default"].createElement(_Input.SelectSite, {
-          changeSite: function changeSite(e) {
-            return use.actions.changeSite(e);
-          },
-          props: _objectSpread({
-            options: use.states.siteOptions,
-            defaultValue: use.states.siteDefault,
-            styles: {
-              width: '96%'
-            }
-          }, siteSelectProps)
         });
       });
     }
@@ -212,6 +192,6 @@ var UserForm = function UserForm(_ref) {
     styles: {
       width: '100%'
     }
-  }, roleContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputRole, InputSite))));
+  }, roleContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputRole))));
 };
 exports.UserForm = UserForm;

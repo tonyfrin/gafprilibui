@@ -33,7 +33,6 @@ export type UserFormProps = {
   phoneInputProps?: InputProps;
   roleContainerProps?: ContainerButtonPropsExtended;
   roleSelectProps?: GsSelectPropsExtended;
-  siteSelectProps?: GsSelectPropsExtended;
   propsPhoto?: PhotoUserProps['props'];
 };
 
@@ -52,7 +51,6 @@ export type UserFormPropsExtended = {
   phoneInputProps?: InputProps;
   roleContainerProps?: ContainerButtonPropsExtended;
   roleSelectProps?: GsSelectPropsExtended;
-  siteSelectProps?: GsSelectPropsExtended;
   propsPhoto?: PhotoUserProps['props'];
 };
 
@@ -84,12 +82,10 @@ export const UserForm = ({
   phoneInputProps,
   roleContainerProps,
   roleSelectProps,
-  siteSelectProps,
   propsPhoto,
 }: UserFormProps): JSX.Element => {
   const [InputAreaCode, setInputAreaCode] = React.useState(<></>);
   const [InputRole, setInputRole] = React.useState(<></>);
-  const [InputSite, setInputSite] = React.useState(<></>);
   const isAddForm = formType === 'add';
   const isUpdateForm = formType === 'update';
 
@@ -104,7 +100,6 @@ export const UserForm = ({
     use.actions.validationAreaCode(use.states.areaCode);
     use.actions.validationPhoneNumber(use.states.phoneNumber);
     use.actions.validationRole(use.states.rolesId);
-    use.actions.validationSite(use.states.site);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationIsActive(`${use.states.isActive}`);
     use.actions.validationButtonNext();
@@ -115,11 +110,9 @@ export const UserForm = ({
     use.states.phoneNumber,
     use.states.areaCode,
     use.states.rolesId,
-    use.states.site,
     use.states.photo,
     use.states.isActive,
     InputRole,
-    InputSite,
     InputAreaCode,
   ]);
 
@@ -132,7 +125,6 @@ export const UserForm = ({
     use.states.phoneNumberValid,
     use.states.areaCodeValid,
     use.states.roleValid,
-    use.states.siteValid,
     use.states.photoValid,
     use.states.isActiveValid,
   ]);
@@ -166,22 +158,6 @@ export const UserForm = ({
                 width: '96%',
               },
               ...roleSelectProps,
-            }}
-          />
-        );
-      });
-
-      setInputSite((): JSX.Element => {
-        return (
-          <SelectSite
-            changeSite={(e) => use.actions.changeSite(e)}
-            props={{
-              options: use.states.siteOptions,
-              defaultValue: use.states.siteDefault,
-              styles: {
-                width: '96%',
-              },
-              ...siteSelectProps,
             }}
           />
         );
@@ -305,10 +281,7 @@ export const UserForm = ({
           }}
           {...roleContainerProps}
         >
-          <>
-            {InputRole}
-            {InputSite}
-          </>
+          <>{InputRole}</>
         </ContainerButton>
       </>
     </ModelForm>

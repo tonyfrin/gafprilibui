@@ -11,7 +11,6 @@ var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
 var MainUser = function MainUser(_ref) {
   var use = _ref.use,
-    useSites = _ref.useSites,
     initProps = _ref.initProps,
     addFormProps = _ref.addFormProps,
     updateFormProps = _ref.updateFormProps,
@@ -31,14 +30,12 @@ var MainUser = function MainUser(_ref) {
     keyName: "update",
     isVisible: use.states.isUpdate
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.UserFormUpdate, (0, _extends2["default"])({
-    use: use,
-    useSites: useSites
+    use: use
   }, updateFormProps))), use.states.isView && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "view",
     isVisible: use.states.isView
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.UserView, (0, _extends2["default"])({
-    use: use,
-    useSites: useSites
+    use: use
   }, viewFormProps))));
 };
 exports.MainUser = MainUser;

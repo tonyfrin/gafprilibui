@@ -2,7 +2,6 @@ import { ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
 import type { SelectDefault, RoleArray } from '../helpers';
 import type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
-import type { UseSitesReturn } from './useGafpriSites';
 import { UseErrorReturn } from './useGafpriError';
 export interface UserAttributes {
     id: number;
@@ -45,10 +44,6 @@ export type UseUserReturn = {
         roleValid: boolean;
         roleDefault: SelectDefault;
         roleOptions: SelectDefault[];
-        site: string;
-        siteValid: boolean;
-        siteDefault: SelectDefault;
-        siteOptions: SelectDefault[];
         photo: string;
         photoValid: boolean;
         submitting: boolean;
@@ -89,7 +84,6 @@ export type UseUserReturn = {
         validationPhoneNumber: (value: string) => boolean;
         validationAreaCode: (value: string) => boolean;
         validationRole: (value: string) => boolean;
-        validationSite: (value: string) => boolean;
         validationPhoto: (value: string) => boolean;
         validationIsActive: (value: string) => boolean;
         changeName: (value: string) => void;
@@ -101,10 +95,6 @@ export type UseUserReturn = {
             label: string;
         }>) => void;
         changeRole: (options: SingleValue<{
-            value: string;
-            label: string;
-        }>) => void;
-        changeSite: (options: SingleValue<{
             value: string;
             label: string;
         }>) => void;
@@ -143,9 +133,8 @@ export type UseUserReturn = {
 };
 export type UseUserProps = {
     useRoles: UseRolesReturn;
-    useSites: UseSitesReturn;
     token: string | null;
     useError: UseErrorReturn;
 };
-export declare const useGafpriUsers: ({ useRoles, useSites, token, useError, }: UseUserProps) => UseUserReturn;
+export declare const useGafpriUsers: ({ useRoles, token, useError, }: UseUserProps) => UseUserReturn;
 export {};

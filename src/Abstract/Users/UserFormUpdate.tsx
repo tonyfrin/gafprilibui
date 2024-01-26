@@ -1,11 +1,8 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import {
-  Input,
-  GsSelect,
   SelectAreaCode,
   SelectRoles,
-  SelectSite,
   InputName,
   InputLastName,
   InputEmail,
@@ -14,20 +11,12 @@ import {
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
-import { Button } from '../Button';
-import type { ButtonPropsExtended } from '../Button';
-import { Loading } from '../../Components';
-import type { LoadingProps } from '../../Components';
-import { List } from '../List';
-import type { ListPropsExtended } from '../List';
 import { ModelForm, PhotoUser } from '../Form';
 import type { ModelFormPropsExtended, PhotoUserProps } from '../Form';
-import { RoleArray } from '../../helpers';
 import type { UseUserReturn, UseSitesReturn } from '../../states';
 
 export type UserFormUpdateProps = {
   use: UseUserReturn;
-  useSites: UseSitesReturn;
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
   nameContainerStyle?: string;
@@ -40,14 +29,11 @@ export type UserFormUpdateProps = {
   phoneInputProps?: InputProps;
   roleContainerProps?: ContainerButtonPropsExtended;
   roleSelectProps?: GsSelectPropsExtended;
-  siteSelectProps?: GsSelectPropsExtended;
-  roleListProps?: ListPropsExtended;
   propsPhoto?: PhotoUserProps['props'];
 };
 
 export type UserFormUpdatePropsExtended = {
   use?: UseUserReturn;
-  useSites?: UseSitesReturn;
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
   nameContainerStyle?: string;
@@ -60,8 +46,6 @@ export type UserFormUpdatePropsExtended = {
   phoneInputProps?: InputProps;
   roleContainerProps?: ContainerButtonPropsExtended;
   roleSelectProps?: GsSelectPropsExtended;
-  siteSelectProps?: GsSelectPropsExtended;
-  roleListProps?: ListPropsExtended;
   propsPhoto?: PhotoUserProps['props'];
 };
 
@@ -80,7 +64,6 @@ const defaultNameContainerStyle = css`
 
 export const UserFormUpdate = ({
   use,
-  useSites,
   photoMainContainerStyle = defaultPhotoMainContainerStyle,
   photoContainerStyle = defaultPhotoContainerStyle,
   nameContainerStyle = defaultNameContainerStyle,
@@ -93,15 +76,11 @@ export const UserFormUpdate = ({
   phoneInputProps,
   roleContainerProps,
   roleSelectProps,
-  siteSelectProps,
-  roleListProps,
   propsPhoto,
 }: UserFormUpdateProps): JSX.Element => {
   const [InputAreaCode, setInputAreaCode] = React.useState(<></>);
 
   const [InputRole, setInputRole] = React.useState(<></>);
-
-  const [InputSite, setInputSite] = React.useState(<></>);
 
   const currentUser = use.actions.getById(use.states.userId);
 
@@ -112,7 +91,6 @@ export const UserFormUpdate = ({
     use.actions.validationAreaCode(use.states.areaCode);
     use.actions.validationPhoneNumber(use.states.phoneNumber);
     use.actions.validationRole(use.states.rolesId);
-    use.actions.validationSite(use.states.site);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationIsActive(`${use.states.isActive}`);
     use.actions.validationButtonNext();
@@ -123,11 +101,9 @@ export const UserFormUpdate = ({
     use.states.phoneNumber,
     use.states.areaCode,
     use.states.rolesId,
-    use.states.site,
     use.states.photo,
     use.states.isActive,
     InputRole,
-    InputSite,
     InputAreaCode,
   ]);
 
@@ -140,7 +116,6 @@ export const UserFormUpdate = ({
     use.states.phoneNumberValid,
     use.states.areaCodeValid,
     use.states.roleValid,
-    use.states.siteValid,
     use.states.photoValid,
     use.states.isActiveValid,
   ]);
@@ -157,22 +132,6 @@ export const UserFormUpdate = ({
               width: '96%',
             },
             ...roleSelectProps,
-          }}
-        />
-      );
-    });
-
-    setInputSite((): JSX.Element => {
-      return (
-        <SelectSite
-          changeSite={(e) => use.actions.changeSite(e)}
-          props={{
-            options: use.states.siteOptions,
-            defaultValue: use.states.siteDefault,
-            styles: {
-              width: '96%',
-            },
-            ...siteSelectProps,
           }}
         />
       );
@@ -206,6 +165,13 @@ export const UserFormUpdate = ({
         use.actions.changeLastName(currentUser.lastName);
       use.actions.changeEmail(currentUser.email);
       if (currentUser?.photo) use.actions.setPhoto(currentUser.photo);
+      if (currentUser?.roles) {
+        const currentRole = {
+          label: currentUser.roles.name,
+          value: `${currentUser.roles.id}`,
+        };
+        use.actions.changeRole(currentRole);
+      }
       const countryCode = currentUser.phone.slice(0, -10);
       const countryCodeLabel =
         countryCode === '0058'
@@ -235,44 +201,6 @@ export const UserFormUpdate = ({
         console.log('Acción desconocida:', action);
     }
   };
-
-  const sites: RoleArray[] = [
-    {
-      id: `${useSites.actions.getMainSite()?.id}`,
-      name: useSites.actions.getMainSite()?.name || '',
-      role: currentUser?.roles?.name || '',
-    },
-  ];
-
-  const filtered = use.actions.filterRoleByName(sites, use.states.searchTerm);
-
-  const roles =
-    use.actions.sortRoleByName(filtered, use.states.orderList) || [];
-
-  const paginated = use.actions.getRolePaginated(
-    roles,
-    use.states.currentPage,
-    use.states.itemsPerPage
-  );
-
-  const items =
-    paginated?.map((item) => {
-      return [item.id, item.name, item.role];
-    }) ?? [];
-
-  const headers = ['# Sitio', 'Nombre del Sitio', 'Rol'];
-
-  const options = [
-    { value: 'asc', label: 'Ascendente' },
-    { value: 'desc', label: 'Descendente' },
-  ];
-
-  const valueDefaul =
-    use.states.orderList === 'asc'
-      ? { value: 'asc', label: 'Ascendente' }
-      : { value: 'desc', label: 'Descendente' };
-
-  const totalPages = Math.ceil(roles.length / use.states.itemsPerPage);
 
   return (
     <ModelForm
@@ -369,42 +297,8 @@ export const UserFormUpdate = ({
           }}
           {...roleContainerProps}
         >
-          <>
-            {InputRole}
-            {InputSite}
-          </>
+          <>{InputRole}</>
         </ContainerButton>
-        <div>
-          <List
-            title="Roles"
-            items={items}
-            headers={headers}
-            columns={3}
-            selectProps={{
-              options: options,
-              onChange: (event) => {
-                if (event?.value) {
-                  use.actions.setOrderList(event.value as 'asc' | 'desc');
-                }
-              },
-              defaultValue: valueDefaul,
-              styles: {
-                width: '100%',
-              },
-            }}
-            inputProps={{
-              value: use.states.searchTerm,
-              onChange: (e) => use.actions.setSearchTerm(e.target.value),
-              placeholder: 'Buscar por nombre...',
-            }}
-            propsPagination={{
-              currentPage: use.states.currentPage,
-              setCurrentPage: use.actions.setCurrentPage,
-              totalPages: totalPages,
-            }}
-            {...roleListProps}
-          />
-        </div>
       </>
     </ModelForm>
   );

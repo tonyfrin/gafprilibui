@@ -1,9 +1,8 @@
 /// <reference types="react" />
-import type { UseUserReturn, UseSitesReturn } from '../../states';
+import type { UseUserReturn } from '../../states';
 import type { InitUserPropsExtended, UserFormPropsExtended, UserFormUpdatePropsExtended, UserViewPropsExtended } from '../../Abstract';
 export type MainUserProps = {
     use: UseUserReturn;
-    useSites: UseSitesReturn;
     initProps?: InitUserPropsExtended;
     addFormProps?: UserFormPropsExtended;
     updateFormProps?: UserFormUpdatePropsExtended;
@@ -11,10 +10,9 @@ export type MainUserProps = {
 };
 export type MainUserPropsExtended = {
     use?: UseUserReturn;
-    useSites?: UseSitesReturn;
     initProps?: InitUserPropsExtended;
     addFormProps?: UserFormPropsExtended;
     updateFormProps?: UserFormUpdatePropsExtended;
     viewFormProps?: UserViewPropsExtended;
 };
-export declare const MainUser: ({ use, useSites, initProps, addFormProps, updateFormProps, viewFormProps, }: MainUserProps) => JSX.Element;
+export declare const MainUser: ({ use, initProps, addFormProps, updateFormProps, viewFormProps, }: MainUserProps) => JSX.Element;

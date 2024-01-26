@@ -12,7 +12,6 @@ var _css = require("@emotion/css");
 var _Input = require("../Input");
 var _helpers = require("../../helpers");
 var _Button = require("../Button");
-var _List = require("../List");
 var _Form = require("../Form");
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
 var defaultPhotoContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
@@ -22,9 +21,7 @@ var defaultPhotoMainContainerStyle = (0, _css.css)(_templateObject4 || (_templat
 var defaultNameContainerStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
 var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n  width: 91.66667%;\n  margin: 10px 0px;\n"])));
 var UserView = function UserView(_ref) {
-  var _useSites$actions$get, _useSites$actions$get2, _currentUser$roles, _paginated$map;
   var use = _ref.use,
-    useSites = _ref.useSites,
     _ref$photoMainContain = _ref.photoMainContainerStyle,
     photoMainContainerStyle = _ref$photoMainContain === void 0 ? defaultPhotoMainContainerStyle : _ref$photoMainContain,
     _ref$photoContainerSt = _ref.photoContainerStyle,
@@ -72,33 +69,6 @@ var UserView = function UserView(_ref) {
       }
     }, emailPhoneButtonProps)));
   };
-  var sites = [{
-    id: "".concat((_useSites$actions$get = useSites.actions.getMainSite()) === null || _useSites$actions$get === void 0 ? void 0 : _useSites$actions$get.id),
-    name: ((_useSites$actions$get2 = useSites.actions.getMainSite()) === null || _useSites$actions$get2 === void 0 ? void 0 : _useSites$actions$get2.name) || '',
-    role: (currentUser === null || currentUser === void 0 ? void 0 : (_currentUser$roles = currentUser.roles) === null || _currentUser$roles === void 0 ? void 0 : _currentUser$roles.name) || ''
-  }];
-  var filtered = use.actions.filterRoleByName(sites, use.states.searchTerm);
-  var roles = use.actions.sortRoleByName(filtered, use.states.orderList) || [];
-  var paginated = use.actions.getRolePaginated(roles, use.states.currentPage, use.states.itemsPerPage);
-  var items = (_paginated$map = paginated === null || paginated === void 0 ? void 0 : paginated.map(function (item) {
-    return [item.id, item.name, item.role];
-  })) !== null && _paginated$map !== void 0 ? _paginated$map : [];
-  var headers = ['# Sitio', 'Nombre del Sitio', 'Rol'];
-  var options = [{
-    value: 'asc',
-    label: 'Ascendente'
-  }, {
-    value: 'desc',
-    label: 'Descendente'
-  }];
-  var valueDefaul = use.states.orderList === 'asc' ? {
-    value: 'asc',
-    label: 'Ascendente'
-  } : {
-    value: 'desc',
-    label: 'Descendente'
-  };
-  var totalPages = Math.ceil(roles.length / use.states.itemsPerPage);
   return /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, (0, _extends2["default"])({
     titles: {
       title1: 'Ver',
@@ -152,35 +122,16 @@ var UserView = function UserView(_ref) {
   }), /*#__PURE__*/_react["default"].createElement(ButtonEmailPhone, {
     email: currentUser !== null && currentUser !== void 0 && currentUser.phone ? (0, _helpers.formatPhoneNumber)(currentUser.phone) : '',
     isActive: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.phoneConfirmation) || false
-  })))), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_List.List, (0, _extends2["default"])({
-    title: "Roles",
-    items: items,
-    headers: headers,
-    columns: 3,
-    selectProps: {
-      options: options,
-      onChange: function onChange(event) {
-        if (event !== null && event !== void 0 && event.value) {
-          use.actions.setOrderList(event.value);
-        }
-      },
-      defaultValue: valueDefaul,
-      styles: {
-        width: '100%'
-      }
-    },
+  }), /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
     inputProps: {
-      value: use.states.searchTerm,
-      onChange: function onChange(e) {
-        return use.actions.setSearchTerm(e.target.value);
-      },
-      placeholder: 'Buscar por nombre...'
+      placeholder: 'Rol',
+      type: 'text',
+      readOnly: true,
+      defaultValue: currentUser === null || currentUser === void 0 ? void 0 : currentUser.roles.name
     },
-    propsPagination: {
-      currentPage: use.states.currentPage,
-      setCurrentPage: use.actions.setCurrentPage,
-      totalPages: totalPages
+    styles: {
+      width: '100%'
     }
-  }, roleListProps)))));
+  }, nameInputProps)))))));
 };
 exports.UserView = UserView;

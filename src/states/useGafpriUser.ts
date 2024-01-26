@@ -9,7 +9,6 @@ import type {
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
-import type { UseSitesReturn } from './useGafpriSites';
 import { UseErrorReturn } from './useGafpriError';
 import { USERS_STORAGE, USERS_ROUTE } from '../Constans';
 import {
@@ -22,7 +21,6 @@ import {
   generalValidationPhotoUsers,
   generalValidationRoles,
   generalValidationStatus,
-  generalValidationSelectSite,
 } from '../Validations';
 import {
   generalChangeAreaCode,
@@ -32,7 +30,6 @@ import {
   generalChangePhone,
   generalChangePhoto,
   generalChangeRoles,
-  generalChangeSite,
   generalChanceIsActive,
 } from '../Changes';
 
@@ -85,11 +82,6 @@ export type UseUserReturn = {
     roleDefault: SelectDefault;
     roleOptions: SelectDefault[];
 
-    site: string;
-    siteValid: boolean;
-    siteDefault: SelectDefault;
-    siteOptions: SelectDefault[];
-
     photo: string;
     photoValid: boolean;
     submitting: boolean;
@@ -135,7 +127,6 @@ export type UseUserReturn = {
     validationPhoneNumber: (value: string) => boolean;
     validationAreaCode: (value: string) => boolean;
     validationRole: (value: string) => boolean;
-    validationSite: (value: string) => boolean;
     validationPhoto: (value: string) => boolean;
     validationIsActive: (value: string) => boolean;
 
@@ -147,9 +138,6 @@ export type UseUserReturn = {
       options: SingleValue<{ value: string; label: string }>
     ) => void;
     changeRole: (
-      options: SingleValue<{ value: string; label: string }>
-    ) => void;
-    changeSite: (
       options: SingleValue<{ value: string; label: string }>
     ) => void;
     changeError: (value: string[]) => void;
@@ -211,14 +199,12 @@ export type UseUserReturn = {
 
 export type UseUserProps = {
   useRoles: UseRolesReturn;
-  useSites: UseSitesReturn;
   token: string | null;
   useError: UseErrorReturn;
 };
 
 export const useGafpriUsers = ({
   useRoles,
-  useSites,
   token,
   useError,
 }: UseUserProps): UseUserReturn => {
@@ -260,17 +246,6 @@ export const useGafpriUsers = ({
   });
   const roleOptions =
     useRoles.states.roles.data?.items?.map((item) => {
-      return { value: `${item.id}`, label: item.name };
-    }) || [];
-
-  const [site, setSite] = useState('');
-  const [siteValid, setSiteValid] = useState(false);
-  const [siteDefault, setSiteDefault] = useState<SelectDefault>({
-    value: '',
-    label: 'Elija el sitio web',
-  });
-  const siteOptions =
-    useSites.states.sites.data?.items?.map((item) => {
       return { value: `${item.id}`, label: item.name };
     }) || [];
 
@@ -337,10 +312,6 @@ export const useGafpriUsers = ({
     setRole('');
     setRoleValid(false);
     setRoleDefault({ value: '', label: 'Elija el rol del usuario' });
-
-    setSite('');
-    setSiteValid(false);
-    setSiteDefault({ value: '', label: 'Elija el sitio web' });
 
     setPhoto(
       'https://categorygafpri.s3.us-east-2.amazonaws.com/fotousuariogafpri.png'
@@ -433,7 +404,6 @@ export const useGafpriUsers = ({
       areaCodeValid,
       phoneNumberValid,
       roleValid,
-      siteValid,
       photoValid,
       isActiveValid
     );
@@ -462,10 +432,6 @@ export const useGafpriUsers = ({
 
   const validationAreaCode = (value: string): boolean => {
     return generalValidationAreaCode(value, setAreaCodeValid, areaCodeValid);
-  };
-
-  const validationSite = (value: string): boolean => {
-    return generalValidationSelectSite(value, setSiteValid, siteValid);
   };
 
   const validationRole = (value: string): boolean => {
@@ -512,12 +478,6 @@ export const useGafpriUsers = ({
     options: SingleValue<{ value: string; label: string }>
   ): void => {
     generalChangeRoles(options, validationRole, setRoleDefault, setRole);
-  };
-
-  const changeSite = (
-    options: SingleValue<{ value: string; label: string }>
-  ): void => {
-    generalChangeSite(options, validationSite, setSiteDefault, setSite);
   };
 
   const changePhoto = async (
@@ -689,7 +649,6 @@ export const useGafpriUsers = ({
       phoneNumberValid &&
       areaCodeValid &&
       roleValid &&
-      siteValid &&
       photoValid &&
       isActiveValid &&
       token
@@ -732,7 +691,6 @@ export const useGafpriUsers = ({
       phoneNumberValid &&
       areaCodeValid &&
       roleValid &&
-      siteValid &&
       photoValid &&
       isActiveValid &&
       token
@@ -910,11 +868,6 @@ export const useGafpriUsers = ({
     roleDefault,
     roleOptions,
 
-    site,
-    siteValid,
-    siteDefault,
-    siteOptions,
-
     photo,
     photoValid,
     submitting,
@@ -957,7 +910,6 @@ export const useGafpriUsers = ({
     validationPhoneNumber,
     validationAreaCode,
     validationRole,
-    validationSite,
     validationPhoto,
     validationIsActive,
 
@@ -967,7 +919,6 @@ export const useGafpriUsers = ({
     changePhoneNumber,
     changeAreaCode,
     changeRole,
-    changeSite,
     changeError,
     changePhoto,
     setSubmitting,

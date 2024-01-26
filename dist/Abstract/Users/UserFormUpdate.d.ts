@@ -1,12 +1,10 @@
 /// <reference types="react" />
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
-import type { ListPropsExtended } from '../List';
 import type { ModelFormPropsExtended, PhotoUserProps } from '../Form';
-import type { UseUserReturn, UseSitesReturn } from '../../states';
+import type { UseUserReturn } from '../../states';
 export type UserFormUpdateProps = {
     use: UseUserReturn;
-    useSites: UseSitesReturn;
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
     nameContainerStyle?: string;
@@ -19,13 +17,10 @@ export type UserFormUpdateProps = {
     phoneInputProps?: InputProps;
     roleContainerProps?: ContainerButtonPropsExtended;
     roleSelectProps?: GsSelectPropsExtended;
-    siteSelectProps?: GsSelectPropsExtended;
-    roleListProps?: ListPropsExtended;
     propsPhoto?: PhotoUserProps['props'];
 };
 export type UserFormUpdatePropsExtended = {
     use?: UseUserReturn;
-    useSites?: UseSitesReturn;
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
     nameContainerStyle?: string;
@@ -38,8 +33,6 @@ export type UserFormUpdatePropsExtended = {
     phoneInputProps?: InputProps;
     roleContainerProps?: ContainerButtonPropsExtended;
     roleSelectProps?: GsSelectPropsExtended;
-    siteSelectProps?: GsSelectPropsExtended;
-    roleListProps?: ListPropsExtended;
     propsPhoto?: PhotoUserProps['props'];
 };
-export declare const UserFormUpdate: ({ use, useSites, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, nameInputProps, lastNameInputProps, emailInputProps, phoneContainerProps, areaCodeSelectProps, phoneInputProps, roleContainerProps, roleSelectProps, siteSelectProps, roleListProps, propsPhoto, }: UserFormUpdateProps) => JSX.Element;
+export declare const UserFormUpdate: ({ use, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, nameInputProps, lastNameInputProps, emailInputProps, phoneContainerProps, areaCodeSelectProps, phoneInputProps, roleContainerProps, roleSelectProps, propsPhoto, }: UserFormUpdateProps) => JSX.Element;

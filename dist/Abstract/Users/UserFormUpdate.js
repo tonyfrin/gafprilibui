@@ -13,7 +13,6 @@ var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
 var _Input = require("../Input");
 var _Containers = require("../Containers");
-var _List = require("../List");
 var _Form = require("../Form");
 var _templateObject, _templateObject2, _templateObject3;
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -22,9 +21,7 @@ var defaultPhotoContainerStyle = (0, _css.css)(_templateObject || (_templateObje
 var defaultPhotoMainContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n"])));
 var defaultNameContainerStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
 var UserFormUpdate = function UserFormUpdate(_ref) {
-  var _useSites$actions$get, _useSites$actions$get2, _currentUser$roles, _paginated$map;
   var use = _ref.use,
-    useSites = _ref.useSites,
     _ref$photoMainContain = _ref.photoMainContainerStyle,
     photoMainContainerStyle = _ref$photoMainContain === void 0 ? defaultPhotoMainContainerStyle : _ref$photoMainContain,
     _ref$photoContainerSt = _ref.photoContainerStyle,
@@ -40,8 +37,6 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
     phoneInputProps = _ref.phoneInputProps,
     roleContainerProps = _ref.roleContainerProps,
     roleSelectProps = _ref.roleSelectProps,
-    siteSelectProps = _ref.siteSelectProps,
-    roleListProps = _ref.roleListProps,
     propsPhoto = _ref.propsPhoto;
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
     _React$useState2 = (0, _slicedToArray2["default"])(_React$useState, 2),
@@ -51,10 +46,6 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
     _React$useState4 = (0, _slicedToArray2["default"])(_React$useState3, 2),
     InputRole = _React$useState4[0],
     setInputRole = _React$useState4[1];
-  var _React$useState5 = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
-    _React$useState6 = (0, _slicedToArray2["default"])(_React$useState5, 2),
-    InputSite = _React$useState6[0],
-    setInputSite = _React$useState6[1];
   var currentUser = use.actions.getById(use.states.userId);
   _react["default"].useEffect(function () {
     use.actions.validationName(use.states.name);
@@ -63,14 +54,13 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
     use.actions.validationAreaCode(use.states.areaCode);
     use.actions.validationPhoneNumber(use.states.phoneNumber);
     use.actions.validationRole(use.states.rolesId);
-    use.actions.validationSite(use.states.site);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationIsActive("".concat(use.states.isActive));
     use.actions.validationButtonNext();
-  }, [use.states.name, use.states.lastName, use.states.email, use.states.phoneNumber, use.states.areaCode, use.states.rolesId, use.states.site, use.states.photo, use.states.isActive, InputRole, InputSite, InputAreaCode]);
+  }, [use.states.name, use.states.lastName, use.states.email, use.states.phoneNumber, use.states.areaCode, use.states.rolesId, use.states.photo, use.states.isActive, InputRole, InputAreaCode]);
   _react["default"].useEffect(function () {
     use.actions.validationButtonNext();
-  }, [use.states.nameValid, use.states.lastNameValid, use.states.emailValid, use.states.phoneNumberValid, use.states.areaCodeValid, use.states.roleValid, use.states.siteValid, use.states.photoValid, use.states.isActiveValid]);
+  }, [use.states.nameValid, use.states.lastNameValid, use.states.emailValid, use.states.phoneNumberValid, use.states.areaCodeValid, use.states.roleValid, use.states.photoValid, use.states.isActiveValid]);
   _react["default"].useEffect(function () {
     setInputRole(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectRoles, {
@@ -84,20 +74,6 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
             width: '96%'
           }
         }, roleSelectProps)
-      });
-    });
-    setInputSite(function () {
-      return /*#__PURE__*/_react["default"].createElement(_Input.SelectSite, {
-        changeSite: function changeSite(e) {
-          return use.actions.changeSite(e);
-        },
-        props: _objectSpread({
-          options: use.states.siteOptions,
-          defaultValue: use.states.siteDefault,
-          styles: {
-            width: '96%'
-          }
-        }, siteSelectProps)
       });
     });
   }, []);
@@ -125,6 +101,13 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
       if (currentUser !== null && currentUser !== void 0 && currentUser.lastName) use.actions.changeLastName(currentUser.lastName);
       use.actions.changeEmail(currentUser.email);
       if (currentUser !== null && currentUser !== void 0 && currentUser.photo) use.actions.setPhoto(currentUser.photo);
+      if (currentUser !== null && currentUser !== void 0 && currentUser.roles) {
+        var currentRole = {
+          label: currentUser.roles.name,
+          value: "".concat(currentUser.roles.id)
+        };
+        use.actions.changeRole(currentRole);
+      }
       var countryCode = currentUser.phone.slice(0, -10);
       var countryCodeLabel = countryCode === '0058' ? '(+58) Venezuela' : countryCode === '001' ? '(+1) Estados Unidos' : '';
       var countryCodeDefault = {
@@ -148,33 +131,6 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
         console.log('Acción desconocida:', action);
     }
   };
-  var sites = [{
-    id: "".concat((_useSites$actions$get = useSites.actions.getMainSite()) === null || _useSites$actions$get === void 0 ? void 0 : _useSites$actions$get.id),
-    name: ((_useSites$actions$get2 = useSites.actions.getMainSite()) === null || _useSites$actions$get2 === void 0 ? void 0 : _useSites$actions$get2.name) || '',
-    role: (currentUser === null || currentUser === void 0 ? void 0 : (_currentUser$roles = currentUser.roles) === null || _currentUser$roles === void 0 ? void 0 : _currentUser$roles.name) || ''
-  }];
-  var filtered = use.actions.filterRoleByName(sites, use.states.searchTerm);
-  var roles = use.actions.sortRoleByName(filtered, use.states.orderList) || [];
-  var paginated = use.actions.getRolePaginated(roles, use.states.currentPage, use.states.itemsPerPage);
-  var items = (_paginated$map = paginated === null || paginated === void 0 ? void 0 : paginated.map(function (item) {
-    return [item.id, item.name, item.role];
-  })) !== null && _paginated$map !== void 0 ? _paginated$map : [];
-  var headers = ['# Sitio', 'Nombre del Sitio', 'Rol'];
-  var options = [{
-    value: 'asc',
-    label: 'Ascendente'
-  }, {
-    value: 'desc',
-    label: 'Descendente'
-  }];
-  var valueDefaul = use.states.orderList === 'asc' ? {
-    value: 'asc',
-    label: 'Ascendente'
-  } : {
-    value: 'desc',
-    label: 'Descendente'
-  };
-  var totalPages = Math.ceil(roles.length / use.states.itemsPerPage);
   return /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, (0, _extends2["default"])({
     titles: {
       title1: 'Actualizar Usuario',
@@ -255,35 +211,6 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
     styles: {
       width: '100%'
     }
-  }, roleContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputRole, InputSite)), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_List.List, (0, _extends2["default"])({
-    title: "Roles",
-    items: items,
-    headers: headers,
-    columns: 3,
-    selectProps: {
-      options: options,
-      onChange: function onChange(event) {
-        if (event !== null && event !== void 0 && event.value) {
-          use.actions.setOrderList(event.value);
-        }
-      },
-      defaultValue: valueDefaul,
-      styles: {
-        width: '100%'
-      }
-    },
-    inputProps: {
-      value: use.states.searchTerm,
-      onChange: function onChange(e) {
-        return use.actions.setSearchTerm(e.target.value);
-      },
-      placeholder: 'Buscar por nombre...'
-    },
-    propsPagination: {
-      currentPage: use.states.currentPage,
-      setCurrentPage: use.actions.setCurrentPage,
-      totalPages: totalPages
-    }
-  }, roleListProps)))));
+  }, roleContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputRole))));
 };
 exports.UserFormUpdate = UserFormUpdate;

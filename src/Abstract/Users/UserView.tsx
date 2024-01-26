@@ -14,7 +14,6 @@ import type { RoleArray } from '../../helpers';
 
 export type UserViewProps = {
   use: UseUserReturn;
-  useSites: UseSitesReturn;
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
   photoFormStyle?: string;
@@ -30,7 +29,6 @@ export type UserViewProps = {
 
 export type UserViewPropsExtended = {
   use?: UseUserReturn;
-  useSites?: UseSitesReturn;
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
   photoFormStyle?: string;
@@ -83,7 +81,6 @@ const defaultOptionButtonContainerStyle = css`
 
 export const UserView = ({
   use,
-  useSites,
   photoMainContainerStyle = defaultPhotoMainContainerStyle,
   photoContainerStyle = defaultPhotoContainerStyle,
   photoFormStyle = defaultPhotoFormStyle,
@@ -132,44 +129,6 @@ export const UserView = ({
       </div>
     );
   };
-
-  const sites: RoleArray[] = [
-    {
-      id: `${useSites.actions.getMainSite()?.id}`,
-      name: useSites.actions.getMainSite()?.name || '',
-      role: currentUser?.roles?.name || '',
-    },
-  ];
-
-  const filtered = use.actions.filterRoleByName(sites, use.states.searchTerm);
-
-  const roles =
-    use.actions.sortRoleByName(filtered, use.states.orderList) || [];
-
-  const paginated = use.actions.getRolePaginated(
-    roles,
-    use.states.currentPage,
-    use.states.itemsPerPage
-  );
-
-  const items =
-    paginated?.map((item) => {
-      return [item.id, item.name, item.role];
-    }) ?? [];
-
-  const headers = ['# Sitio', 'Nombre del Sitio', 'Rol'];
-
-  const options = [
-    { value: 'asc', label: 'Ascendente' },
-    { value: 'desc', label: 'Descendente' },
-  ];
-
-  const valueDefaul =
-    use.states.orderList === 'asc'
-      ? { value: 'asc', label: 'Ascendente' }
-      : { value: 'desc', label: 'Descendente' };
-
-  const totalPages = Math.ceil(roles.length / use.states.itemsPerPage);
 
   return (
     <ModelForm
@@ -240,39 +199,20 @@ export const UserView = ({
                 }
                 isActive={currentUser?.phoneConfirmation || false}
               />
+              <Input
+                inputProps={{
+                  placeholder: 'Rol',
+                  type: 'text',
+                  readOnly: true,
+                  defaultValue: currentUser?.roles.name,
+                }}
+                styles={{
+                  width: '100%',
+                }}
+                {...nameInputProps}
+              />
             </>
           </div>
-        </div>
-        <div>
-          <List
-            title="Roles"
-            items={items}
-            headers={headers}
-            columns={3}
-            selectProps={{
-              options: options,
-              onChange: (event) => {
-                if (event?.value) {
-                  use.actions.setOrderList(event.value as 'asc' | 'desc');
-                }
-              },
-              defaultValue: valueDefaul,
-              styles: {
-                width: '100%',
-              },
-            }}
-            inputProps={{
-              value: use.states.searchTerm,
-              onChange: (e) => use.actions.setSearchTerm(e.target.value),
-              placeholder: 'Buscar por nombre...',
-            }}
-            propsPagination={{
-              currentPage: use.states.currentPage,
-              setCurrentPage: use.actions.setCurrentPage,
-              totalPages: totalPages,
-            }}
-            {...roleListProps}
-          />
         </div>
       </>
     </ModelForm>

@@ -22,9 +22,8 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var useGafpriUsers = function useGafpriUsers(_ref) {
-  var _useRoles$states$role, _useRoles$states$role2, _useSites$states$site, _useSites$states$site2, _users$data;
+  var _useRoles$states$role, _useRoles$states$role2, _users$data;
   var useRoles = _ref.useRoles,
-    useSites = _ref.useSites,
     token = _ref.token,
     useError = _ref.useError;
   // Define los estados necesarios para los atributos de Site
@@ -127,54 +126,33 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
       label: item.name
     };
   })) || [];
-  var _useState41 = (0, _react.useState)(''),
+  var _useState41 = (0, _react.useState)('https://categorygafpri.s3.us-east-2.amazonaws.com/fotousuariogafpri.png'),
     _useState42 = (0, _slicedToArray2["default"])(_useState41, 2),
-    site = _useState42[0],
-    setSite = _useState42[1];
+    photo = _useState42[0],
+    setPhoto = _useState42[1];
   var _useState43 = (0, _react.useState)(false),
     _useState44 = (0, _slicedToArray2["default"])(_useState43, 2),
-    siteValid = _useState44[0],
-    setSiteValid = _useState44[1];
-  var _useState45 = (0, _react.useState)({
-      value: '',
-      label: 'Elija el sitio web'
-    }),
+    photoValid = _useState44[0],
+    setPhotoValid = _useState44[1];
+  var _useState45 = (0, _react.useState)(false),
     _useState46 = (0, _slicedToArray2["default"])(_useState45, 2),
-    siteDefault = _useState46[0],
-    setSiteDefault = _useState46[1];
-  var siteOptions = ((_useSites$states$site = useSites.states.sites.data) === null || _useSites$states$site === void 0 ? void 0 : (_useSites$states$site2 = _useSites$states$site.items) === null || _useSites$states$site2 === void 0 ? void 0 : _useSites$states$site2.map(function (item) {
-    return {
-      value: "".concat(item.id),
-      label: item.name
-    };
-  })) || [];
-  var _useState47 = (0, _react.useState)('https://categorygafpri.s3.us-east-2.amazonaws.com/fotousuariogafpri.png'),
+    submitting = _useState46[0],
+    setSubmitting = _useState46[1];
+  var _useState47 = (0, _react.useState)(true),
     _useState48 = (0, _slicedToArray2["default"])(_useState47, 2),
-    photo = _useState48[0],
-    setPhoto = _useState48[1];
+    isActive = _useState48[0],
+    setIsActive = _useState48[1];
   var _useState49 = (0, _react.useState)(false),
     _useState50 = (0, _slicedToArray2["default"])(_useState49, 2),
-    photoValid = _useState50[0],
-    setPhotoValid = _useState50[1];
-  var _useState51 = (0, _react.useState)(false),
-    _useState52 = (0, _slicedToArray2["default"])(_useState51, 2),
-    submitting = _useState52[0],
-    setSubmitting = _useState52[1];
-  var _useState53 = (0, _react.useState)(true),
-    _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
-    isActive = _useState54[0],
-    setIsActive = _useState54[1];
-  var _useState55 = (0, _react.useState)(false),
-    _useState56 = (0, _slicedToArray2["default"])(_useState55, 2),
-    isActiveValid = _useState56[0],
-    setIsActiveValid = _useState56[1];
-  var _useState57 = (0, _react.useState)({
+    isActiveValid = _useState50[0],
+    setIsActiveValid = _useState50[1];
+  var _useState51 = (0, _react.useState)({
       value: 'true',
       label: 'Activo'
     }),
-    _useState58 = (0, _slicedToArray2["default"])(_useState57, 2),
-    isActiveDefault = _useState58[0],
-    setIsActiveDefault = _useState58[1];
+    _useState52 = (0, _slicedToArray2["default"])(_useState51, 2),
+    isActiveDefault = _useState52[0],
+    setIsActiveDefault = _useState52[1];
   var isActiveOptions = [{
     label: 'Activo',
     value: 'true'
@@ -182,43 +160,43 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     label: 'Inactivo',
     value: 'false'
   }];
-  var _useState59 = (0, _react.useState)({
+  var _useState53 = (0, _react.useState)({
       data: {
         items: (0, _Context.getItem)(_Constans.USERS_STORAGE, null)
       }
     }),
-    _useState60 = (0, _slicedToArray2["default"])(_useState59, 2),
-    users = _useState60[0],
-    setUsers = _useState60[1];
+    _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
+    users = _useState54[0],
+    setUsers = _useState54[1];
   var error = useError.states.error;
   var changeError = useError.actions.changeError;
-  var _useState61 = (0, _react.useState)(0),
+  var _useState55 = (0, _react.useState)(0),
+    _useState56 = (0, _slicedToArray2["default"])(_useState55, 2),
+    userId = _useState56[0],
+    setUserId = _useState56[1];
+  var _useState57 = (0, _react.useState)('asc'),
+    _useState58 = (0, _slicedToArray2["default"])(_useState57, 2),
+    orderList = _useState58[0],
+    setOrderList = _useState58[1];
+  var _useState59 = (0, _react.useState)(''),
+    _useState60 = (0, _slicedToArray2["default"])(_useState59, 2),
+    searchTerm = _useState60[0],
+    setSearchTerm = _useState60[1];
+  var _useState61 = (0, _react.useState)(1),
     _useState62 = (0, _slicedToArray2["default"])(_useState61, 2),
-    userId = _useState62[0],
-    setUserId = _useState62[1];
-  var _useState63 = (0, _react.useState)('asc'),
+    currentPage = _useState62[0],
+    setCurrentPage = _useState62[1];
+  var _useState63 = (0, _react.useState)('name'),
     _useState64 = (0, _slicedToArray2["default"])(_useState63, 2),
-    orderList = _useState64[0],
-    setOrderList = _useState64[1];
-  var _useState65 = (0, _react.useState)(''),
-    _useState66 = (0, _slicedToArray2["default"])(_useState65, 2),
-    searchTerm = _useState66[0],
-    setSearchTerm = _useState66[1];
-  var _useState67 = (0, _react.useState)(1),
-    _useState68 = (0, _slicedToArray2["default"])(_useState67, 2),
-    currentPage = _useState68[0],
-    setCurrentPage = _useState68[1];
-  var _useState69 = (0, _react.useState)('name'),
-    _useState70 = (0, _slicedToArray2["default"])(_useState69, 2),
-    searchBy = _useState70[0],
-    setSearchBy = _useState70[1];
-  var _useState71 = (0, _react.useState)({
+    searchBy = _useState64[0],
+    setSearchBy = _useState64[1];
+  var _useState65 = (0, _react.useState)({
       value: 'name',
       label: 'Nombre'
     }),
-    _useState72 = (0, _slicedToArray2["default"])(_useState71, 2),
-    searchByDefault = _useState72[0],
-    setSearchByDefault = _useState72[1];
+    _useState66 = (0, _slicedToArray2["default"])(_useState65, 2),
+    searchByDefault = _useState66[0],
+    setSearchByDefault = _useState66[1];
   var searchByOptions = [{
     value: 'name',
     label: 'Nombre'
@@ -253,12 +231,6 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     setRoleDefault({
       value: '',
       label: 'Elija el rol del usuario'
-    });
-    setSite('');
-    setSiteValid(false);
-    setSiteDefault({
-      value: '',
-      label: 'Elija el sitio web'
     });
     setPhoto('https://categorygafpri.s3.us-east-2.amazonaws.com/fotousuariogafpri.png');
     setPhotoValid(false);
@@ -334,7 +306,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)(nameValid, lastNameValid, emailValid, areaCodeValid, phoneNumberValid, roleValid, siteValid, photoValid, isActiveValid);
+    (0, _Validations.generalValidationButtonNext)(nameValid, lastNameValid, emailValid, areaCodeValid, phoneNumberValid, roleValid, photoValid, isActiveValid);
   };
   var validationName = function validationName(value) {
     return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
@@ -350,9 +322,6 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
   };
   var validationAreaCode = function validationAreaCode(value) {
     return (0, _Validations.generalValidationAreaCode)(value, setAreaCodeValid, areaCodeValid);
-  };
-  var validationSite = function validationSite(value) {
-    return (0, _Validations.generalValidationSelectSite)(value, setSiteValid, siteValid);
   };
   var validationRole = function validationRole(value) {
     return (0, _Validations.generalValidationRoles)(value, setRoleValid, roleValid);
@@ -382,9 +351,6 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
   };
   var changeRole = function changeRole(options) {
     (0, _Changes.generalChangeRoles)(options, validationRole, setRoleDefault, setRole);
-  };
-  var changeSite = function changeSite(options) {
-    (0, _Changes.generalChangeSite)(options, validationSite, setSiteDefault, setSite);
   };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
@@ -531,7 +497,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && siteValid && photoValid && isActiveValid && token) {
+    if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && photoValid && isActiveValid && token) {
       var payload = {
         name: name,
         email: email,
@@ -564,7 +530,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     })) || null;
   }
   var update = function update() {
-    if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && siteValid && photoValid && isActiveValid && token) {
+    if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && photoValid && isActiveValid && token) {
       var payload = {
         name: name,
         email: email,
@@ -695,10 +661,6 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     roleValid: roleValid,
     roleDefault: roleDefault,
     roleOptions: roleOptions,
-    site: site,
-    siteValid: siteValid,
-    siteDefault: siteDefault,
-    siteOptions: siteOptions,
     photo: photo,
     photoValid: photoValid,
     submitting: submitting,
@@ -737,7 +699,6 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     validationPhoneNumber: validationPhoneNumber,
     validationAreaCode: validationAreaCode,
     validationRole: validationRole,
-    validationSite: validationSite,
     validationPhoto: validationPhoto,
     validationIsActive: validationIsActive,
     changeName: changeName,
@@ -746,7 +707,6 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     changePhoneNumber: changePhoneNumber,
     changeAreaCode: changeAreaCode,
     changeRole: changeRole,
-    changeSite: changeSite,
     changeError: changeError,
     changePhoto: changePhoto,
     setSubmitting: setSubmitting,

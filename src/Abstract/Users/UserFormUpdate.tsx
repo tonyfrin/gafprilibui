@@ -1,6 +1,16 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { Input, GsSelect } from '../Input';
+import {
+  Input,
+  GsSelect,
+  SelectAreaCode,
+  SelectRoles,
+  SelectSite,
+  InputName,
+  InputLastName,
+  InputEmail,
+  InputPhone,
+} from '../Input';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
@@ -10,8 +20,8 @@ import { Loading } from '../../Components';
 import type { LoadingProps } from '../../Components';
 import { List } from '../List';
 import type { ListPropsExtended } from '../List';
-import { ModelForm } from '../Form';
-import type { ModelFormPropsExtended } from '../Form';
+import { ModelForm, PhotoUser } from '../Form';
+import type { ModelFormPropsExtended, PhotoUserProps } from '../Form';
 import { RoleArray } from '../../helpers';
 import type { UseUserReturn, UseSitesReturn } from '../../states';
 
@@ -20,13 +30,8 @@ export type UserFormUpdateProps = {
   useSites: UseSitesReturn;
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
-  photoFormStyle?: string;
-  loadingContainerStyle?: string;
-  photoStyle?: string;
   nameContainerStyle?: string;
   modelFormProps?: ModelFormPropsExtended;
-  photoButtonProps?: ButtonPropsExtended;
-  loadingProps?: LoadingProps;
   nameInputProps?: InputProps;
   lastNameInputProps?: InputProps;
   emailInputProps?: InputProps;
@@ -37,6 +42,7 @@ export type UserFormUpdateProps = {
   roleSelectProps?: GsSelectPropsExtended;
   siteSelectProps?: GsSelectPropsExtended;
   roleListProps?: ListPropsExtended;
+  propsPhoto?: PhotoUserProps['props'];
 };
 
 export type UserFormUpdatePropsExtended = {
@@ -44,13 +50,8 @@ export type UserFormUpdatePropsExtended = {
   useSites?: UseSitesReturn;
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
-  photoFormStyle?: string;
-  loadingContainerStyle?: string;
-  photoStyle?: string;
   nameContainerStyle?: string;
   modelFormProps?: ModelFormPropsExtended;
-  photoButtonProps?: ButtonPropsExtended;
-  loadingProps?: LoadingProps;
   nameInputProps?: InputProps;
   lastNameInputProps?: InputProps;
   emailInputProps?: InputProps;
@@ -61,38 +62,11 @@ export type UserFormUpdatePropsExtended = {
   roleSelectProps?: GsSelectPropsExtended;
   siteSelectProps?: GsSelectPropsExtended;
   roleListProps?: ListPropsExtended;
+  propsPhoto?: PhotoUserProps['props'];
 };
 
 const defaultPhotoContainerStyle = css`
   width: 100%;
-`;
-
-const defaultPhotoFormStyle = css`
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-`;
-
-const defaultLoadingContainerStyle = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 100%;
-`;
-
-const defaultPhotoStyle = css`
-  transition: all 1s ease 0s;
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px;
-  object-fit: cover;
-  border: 1px solid #ebebeb;
-  margin: auto;
-  border-radius: 100%;
 `;
 
 const defaultPhotoMainContainerStyle = css`
@@ -109,13 +83,8 @@ export const UserFormUpdate = ({
   useSites,
   photoMainContainerStyle = defaultPhotoMainContainerStyle,
   photoContainerStyle = defaultPhotoContainerStyle,
-  photoFormStyle = defaultPhotoFormStyle,
-  loadingContainerStyle = defaultLoadingContainerStyle,
-  photoStyle = defaultPhotoStyle,
   nameContainerStyle = defaultNameContainerStyle,
   modelFormProps,
-  photoButtonProps,
-  loadingProps,
   nameInputProps,
   lastNameInputProps,
   emailInputProps,
@@ -126,14 +95,13 @@ export const UserFormUpdate = ({
   roleSelectProps,
   siteSelectProps,
   roleListProps,
+  propsPhoto,
 }: UserFormUpdateProps): JSX.Element => {
   const [InputAreaCode, setInputAreaCode] = React.useState(<></>);
 
   const [InputRole, setInputRole] = React.useState(<></>);
 
   const [InputSite, setInputSite] = React.useState(<></>);
-
-  const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   const currentUser = use.actions.getById(use.states.userId);
 
@@ -180,30 +148,32 @@ export const UserFormUpdate = ({
   React.useEffect(() => {
     setInputRole((): JSX.Element => {
       return (
-        <GsSelect
-          id="userRole"
-          onChange={(e) => use.actions.changeRole(e)}
-          options={use.states.roleOptions}
-          defaultValue={use.states.roleDefault}
-          styles={{
-            width: '96%',
+        <SelectRoles
+          changeRoles={(e) => use.actions.changeRole(e)}
+          props={{
+            options: use.states.roleOptions,
+            defaultValue: use.states.roleDefault,
+            styles: {
+              width: '96%',
+            },
+            ...roleSelectProps,
           }}
-          {...roleSelectProps}
         />
       );
     });
 
     setInputSite((): JSX.Element => {
       return (
-        <GsSelect
-          id="userSite"
-          onChange={(e) => use.actions.changeSite(e)}
-          options={use.states.siteOptions}
-          defaultValue={use.states.siteDefault}
-          styles={{
-            width: '96%',
+        <SelectSite
+          changeSite={(e) => use.actions.changeSite(e)}
+          props={{
+            options: use.states.siteOptions,
+            defaultValue: use.states.siteDefault,
+            styles: {
+              width: '96%',
+            },
+            ...siteSelectProps,
           }}
-          {...siteSelectProps}
         />
       );
     });
@@ -213,15 +183,16 @@ export const UserFormUpdate = ({
     if (use.states.name !== '') {
       setInputAreaCode((): JSX.Element => {
         return (
-          <GsSelect
-            id="userAreaCode"
-            onChange={(e) => use.actions.changeAreaCode(e)}
-            options={use.states.areaCodeOptions}
-            defaultValue={use.states.areaCodeDefault}
-            styles={{
-              width: '96%',
+          <SelectAreaCode
+            changeAreaCode={(e) => use.actions.changeAreaCode(e)}
+            props={{
+              options: use.states.areaCodeOptions,
+              defaultValue: use.states.areaCodeDefault,
+              styles: {
+                width: '96%',
+              },
+              ...areaCodeSelectProps,
             }}
-            {...areaCodeSelectProps}
           />
         );
       });
@@ -262,17 +233,6 @@ export const UserFormUpdate = ({
         break;
       default:
         console.log('Acción desconocida:', action);
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
-
-  const handleButtonClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
     }
   };
 
@@ -331,96 +291,52 @@ export const UserFormUpdate = ({
       <>
         <div className={css(photoMainContainerStyle)}>
           <div className={css(photoContainerStyle)}>
-            <form
-              className={css(photoFormStyle)}
-              onSubmit={handleSubmit}
-              id="photoCategory"
-            >
-              <>
-                <input
-                  type="file"
-                  id="file-input"
-                  ref={fileInputRef}
-                  hidden
-                  onChange={use.actions.changePhoto}
-                />
-                <Button
-                  title="Cambiar Foto"
-                  buttonProps={{
-                    onClick: handleButtonClick,
-                  }}
-                  styles={{
-                    fontSize: '6px',
-                    margin: '20px auto 40px auto',
-                    backgroundColor: '#439b57',
-                  }}
-                  {...photoButtonProps}
-                />
-              </>
-              {use.states.submitting ? (
-                <div className={css(loadingContainerStyle)}>
-                  <Loading {...loadingProps} />
-                </div>
-              ) : (
-                use.states.photo && (
-                  <img
-                    className={css(photoStyle)}
-                    src={use.states.photo}
-                    alt="Foto de usuarios"
-                  />
-                )
-              )}
-            </form>
+            <PhotoUser
+              photo={use.states.photo}
+              changePhoto={use.actions.changePhoto}
+              submitting={use.states.submitting}
+              changeError={use.actions.changeError}
+              setSubmitting={use.actions.setSubmitting}
+              props={propsPhoto}
+            />
           </div>
           <div className={css(nameContainerStyle)}>
             <>
-              <Input
-                inputProps={{
-                  placeholder: 'Nombre',
-                  type: 'text',
-                  id: `userName`,
-                  onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                    use.actions.changeName(
-                      (event.target as HTMLInputElement).value
-                    ),
-                  defaultValue: use.states.name,
+              <InputName
+                changeName={(e) => use.actions.changeName(e)}
+                props={{
+                  inputProps: {
+                    defaultValue: use.states.name,
+                  },
+                  styles: {
+                    width: '100%',
+                  },
+                  ...nameInputProps,
                 }}
-                styles={{
-                  width: '100%',
-                }}
-                {...nameInputProps}
               />
-              <Input
-                inputProps={{
-                  placeholder: 'Apellido',
-                  type: 'text',
-                  id: `userLastName`,
-                  onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                    use.actions.changeLastName(
-                      (event.target as HTMLInputElement).value
-                    ),
-                  defaultValue: use.states.lastName,
+              <InputLastName
+                changeLastName={(e) => use.actions.changeLastName(e)}
+                props={{
+                  inputProps: {
+                    defaultValue: use.states.lastName,
+                  },
+                  styles: {
+                    width: '100%',
+                  },
+                  ...lastNameInputProps,
                 }}
-                styles={{
-                  width: '100%',
-                }}
-                {...lastNameInputProps}
               />
-              <Input
-                inputProps={{
-                  placeholder: 'Email',
-                  type: 'text',
-                  id: `userEmail`,
-                  onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                    use.actions.changeEmail(
-                      (event.target as HTMLInputElement).value
-                    ),
-                  defaultValue: use.states.email,
+              <InputEmail
+                changeEmail={(e) => use.actions.changeEmail(e)}
+                props={{
+                  inputProps: {
+                    defaultValue: use.states.email,
+                  },
+                  styles: {
+                    width: '100%',
+                  },
+                  ...emailInputProps,
                 }}
-                styles={{
-                  width: '100%',
-                }}
-                {...emailInputProps}
               />
             </>
           </div>
@@ -433,23 +349,17 @@ export const UserFormUpdate = ({
         >
           <>
             {InputAreaCode}
-            <Input
-              inputProps={{
-                placeholder: 'Teléfono',
-                type: 'number',
-                min: '0',
-                step: '1',
-                id: `userPhone`,
-                onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
-                  use.actions.changePhoneNumber(
-                    (event.target as HTMLInputElement).value
-                  ),
-                defaultValue: use.states.phoneNumber,
+            <InputPhone
+              changePhone={(e) => use.actions.changePhoneNumber(e)}
+              props={{
+                inputProps: {
+                  defaultValue: use.states.phoneNumber,
+                },
+                styles: {
+                  width: '96%',
+                },
+                ...phoneInputProps,
               }}
-              styles={{
-                width: '96%',
-              }}
-              {...phoneInputProps}
             />
           </>
         </ContainerButton>

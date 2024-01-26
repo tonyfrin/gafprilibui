@@ -1,23 +1,16 @@
 /// <reference types="react" />
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
-import type { ButtonPropsExtended } from '../Button';
-import type { LoadingProps } from '../../Components';
 import type { ListPropsExtended } from '../List';
-import type { ModelFormPropsExtended } from '../Form';
+import type { ModelFormPropsExtended, PhotoUserProps } from '../Form';
 import type { UseUserReturn, UseSitesReturn } from '../../states';
 export type UserFormUpdateProps = {
     use: UseUserReturn;
     useSites: UseSitesReturn;
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    photoStyle?: string;
     nameContainerStyle?: string;
     modelFormProps?: ModelFormPropsExtended;
-    photoButtonProps?: ButtonPropsExtended;
-    loadingProps?: LoadingProps;
     nameInputProps?: InputProps;
     lastNameInputProps?: InputProps;
     emailInputProps?: InputProps;
@@ -28,19 +21,15 @@ export type UserFormUpdateProps = {
     roleSelectProps?: GsSelectPropsExtended;
     siteSelectProps?: GsSelectPropsExtended;
     roleListProps?: ListPropsExtended;
+    propsPhoto?: PhotoUserProps['props'];
 };
 export type UserFormUpdatePropsExtended = {
     use?: UseUserReturn;
     useSites?: UseSitesReturn;
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    photoStyle?: string;
     nameContainerStyle?: string;
     modelFormProps?: ModelFormPropsExtended;
-    photoButtonProps?: ButtonPropsExtended;
-    loadingProps?: LoadingProps;
     nameInputProps?: InputProps;
     lastNameInputProps?: InputProps;
     emailInputProps?: InputProps;
@@ -51,5 +40,6 @@ export type UserFormUpdatePropsExtended = {
     roleSelectProps?: GsSelectPropsExtended;
     siteSelectProps?: GsSelectPropsExtended;
     roleListProps?: ListPropsExtended;
+    propsPhoto?: PhotoUserProps['props'];
 };
-export declare const UserFormUpdate: ({ use, useSites, photoMainContainerStyle, photoContainerStyle, photoFormStyle, loadingContainerStyle, photoStyle, nameContainerStyle, modelFormProps, photoButtonProps, loadingProps, nameInputProps, lastNameInputProps, emailInputProps, phoneContainerProps, areaCodeSelectProps, phoneInputProps, roleContainerProps, roleSelectProps, siteSelectProps, roleListProps, }: UserFormUpdateProps) => JSX.Element;
+export declare const UserFormUpdate: ({ use, useSites, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, nameInputProps, lastNameInputProps, emailInputProps, phoneContainerProps, areaCodeSelectProps, phoneInputProps, roleContainerProps, roleSelectProps, siteSelectProps, roleListProps, propsPhoto, }: UserFormUpdateProps) => JSX.Element;

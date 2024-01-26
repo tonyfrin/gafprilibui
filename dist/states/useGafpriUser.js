@@ -343,10 +343,10 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     return (0, _Validations.generalValidationLastName)(value, setLastNameValid, lastNameValid);
   };
   var validationEmail = function validationEmail(value) {
-    return (0, _Validations.generalValidationEmail)(value, setEmailValid, emailValid);
+    return (0, _Validations.generalValidationEmail)(value, setEmailValid, emailValid, true);
   };
   var validationPhoneNumber = function validationPhoneNumber(value) {
-    return (0, _Validations.generalValidationPhone)(value, setPhoneNumberValid, phoneNumberValid);
+    return (0, _Validations.generalValidationPhone)(value, setPhoneNumberValid, phoneNumberValid, true);
   };
   var validationAreaCode = function validationAreaCode(value) {
     return (0, _Validations.generalValidationAreaCode)(value, setAreaCodeValid, areaCodeValid);

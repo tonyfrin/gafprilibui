@@ -448,11 +448,16 @@ export const useGafpriUsers = ({
   };
 
   const validationEmail = (value: string): boolean => {
-    return generalValidationEmail(value, setEmailValid, emailValid);
+    return generalValidationEmail(value, setEmailValid, emailValid, true);
   };
 
   const validationPhoneNumber = (value: string): boolean => {
-    return generalValidationPhone(value, setPhoneNumberValid, phoneNumberValid);
+    return generalValidationPhone(
+      value,
+      setPhoneNumberValid,
+      phoneNumberValid,
+      true
+    );
   };
 
   const validationAreaCode = (value: string): boolean => {

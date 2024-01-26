@@ -49,3 +49,6 @@ export declare const generalValidationSelectCurrenciesSeparator: (value: string,
 export declare const generalValidationSelectCurrenciesDecimalNumbers: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
 export declare const generalValidationSelectTaxes: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean) => boolean;
 export declare const generalValidationWebSite: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean, required?: boolean) => boolean;
+export declare const generalValidationAreaCode: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationRoles: (newValue: string, setValid: (value: boolean) => void, currentValid: boolean) => boolean;
+export declare const generalValidationPhotoUsers: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean, required?: boolean) => boolean;

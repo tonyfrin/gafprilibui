@@ -34,3 +34,6 @@ export declare const CURRENCIES_SEPARATOR_INPUT = "currencies-separator-input-id
 export declare const CURRENCIES_DECIMAL_NUMBERS_INPUT = "currencies-decimal-numbers-input-id";
 export declare const TAXES_INPUT = "taxes-input-id";
 export declare const WEB_SITE_INPUT = "web-site-input-id";
+export declare const AREA_CODE_INPUT = "area-code-input-id";
+export declare const ROLES_INPUT = "roles-input-id";
+export declare const PHOTO_USERS_INPUT = "photo-users-input-id";

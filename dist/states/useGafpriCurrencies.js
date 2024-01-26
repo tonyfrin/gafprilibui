@@ -188,10 +188,9 @@ function useGafpriCurrencies(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_currencies$data$item = currencies.data.items) === null || _currencies$data$item === void 0 ? void 0 : _currencies$data$item.length) || 0;
             if (currencies.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token && _Constans.API_URL) {
+              if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: _Constans.API_URL,
                   initRoute: _Constans.CURRENCIES_ROUTE,
                   initToken: {
                     token: token
@@ -274,10 +273,9 @@ function useGafpriCurrencies(_ref) {
     });
   };
   var addCurrencies = function addCurrencies() {
-    if (nameValid && symbolValid && token && _Constans.API_URL) {
+    if (nameValid && symbolValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: _Constans.API_URL,
         initRoute: _Constans.CURRENCIES_ROUTE,
         initCredentials: {
           name: name,
@@ -299,10 +297,9 @@ function useGafpriCurrencies(_ref) {
     })) || null;
   }
   var updateCurrency = function updateCurrency() {
-    if (nameValid && symbolValid && token && _Constans.API_URL) {
+    if (nameValid && symbolValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.CURRENCIES_ROUTE, "/").concat(currentId),
         initCredentials: {
           name: name,
@@ -318,10 +315,9 @@ function useGafpriCurrencies(_ref) {
     }
   };
   var deleteCurrency = function deleteCurrency(id) {
-    if (token && _Constans.API_URL) {
+    if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.CURRENCIES_ROUTE, "/").concat(id),
         initToken: {
           token: token

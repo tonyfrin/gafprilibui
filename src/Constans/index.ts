@@ -41,6 +41,9 @@ export {
   CURRENCIES_DECIMAL_NUMBERS_INPUT,
   TAXES_INPUT,
   WEB_SITE_INPUT,
+  AREA_CODE_INPUT,
+  ROLES_INPUT,
+  PHOTO_USERS_INPUT,
 } from './Inputs';
 export {
   COUNTRY_DEFAULT,
@@ -57,6 +60,7 @@ export {
   ROLES_ROUTE,
   SITES_ROUTE,
   TYPE_DOCUMENT_ID_ROUTE,
+  USERS_ROUTE,
 } from './Api';
 export {
   CATEGORY_STORAGE,
@@ -65,4 +69,5 @@ export {
   ROLES_STORAGE,
   SITES_STORAGE,
   TYPE_DOCUMENT_ID_STORAGE,
+  USERS_STORAGE,
 } from './LocalStorage';

@@ -12,9 +12,11 @@ var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
-var _axios = _interopRequireDefault(require("axios"));
 var _helpers = require("../helpers");
 var _Context = require("../Context");
+var _Constans = require("../Constans");
+var _Validations = require("../Validations");
+var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -182,7 +184,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
   }];
   var _useState59 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)('GS_USERS_V2', null)
+        items: (0, _Context.getItem)(_Constans.USERS_STORAGE, null)
       }
     }),
     _useState60 = (0, _slicedToArray2["default"])(_useState59, 2),
@@ -332,187 +334,76 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    if (nameValid && lastNameValid && emailValid && areaCodeValid && phoneNumberValid && roleValid && siteValid && photoValid && isActiveValid) {
-      (0, _helpers.removeClass)('buttonNext', 'gs-disabled');
-    } else {
-      (0, _helpers.addClass)('buttonNext', 'gs-disabled');
-    }
+    (0, _Validations.generalValidationButtonNext)(nameValid, lastNameValid, emailValid, areaCodeValid, phoneNumberValid, roleValid, siteValid, photoValid, isActiveValid);
   };
   var validationName = function validationName(value) {
-    return (0, _helpers.validationInputName)({
-      name: value,
-      inputId: 'userName',
-      setValid: setNameValid
-    });
+    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
   };
   var validationLastName = function validationLastName(value) {
-    return (0, _helpers.validationInputName)({
-      name: value,
-      inputId: 'userLastName',
-      setValid: setLastNameValid,
-      required: false
-    });
+    return (0, _Validations.generalValidationLastName)(value, setLastNameValid, lastNameValid);
   };
   var validationEmail = function validationEmail(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/, 'userEmail', true);
-    setEmailValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationEmail)(value, setEmailValid, emailValid);
   };
   var validationPhoneNumber = function validationPhoneNumber(value) {
-    var valid = (0, _helpers.validationInput)(value, /^[0-9]{10}$/, 'userPhone', true);
-    setPhoneNumberValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPhone)(value, setPhoneNumberValid, phoneNumberValid);
   };
   var validationAreaCode = function validationAreaCode(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'areaCodeUser');
-    setAreaCodeValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationAreaCode)(value, setAreaCodeValid, areaCodeValid);
   };
   var validationSite = function validationSite(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'userSite');
-    setSiteValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationSelectSite)(value, setSiteValid, siteValid);
   };
   var validationRole = function validationRole(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'userRole');
-    setRoleValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationRoles)(value, setRoleValid, roleValid);
   };
   var validationPhoto = function validationPhoto(value) {
-    var valid = (0, _helpers.validationInput)(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, 'photoUser');
-    setPhotoValid(valid);
-    return valid;
+    return (0, _Validations.generalValidationPhotoUsers)(value, setPhotoValid, photoValid);
   };
   var validationIsActive = function validationIsActive(value) {
-    var validation = (0, _helpers.validationSelect)(value, 'isActiveUser');
-    setIsActiveValid(validation);
-    return validation;
+    return (0, _Validations.generalValidationStatus)(value, setIsActiveValid, isActiveValid);
   };
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    var newValue = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newValue,
-      validation: validationName,
-      setValue: setName
-    });
+    (0, _Changes.generalChangeName)(value, validationName, setName);
   };
   var changeLastName = function changeLastName(value) {
-    var newValue = (0, _helpers.toTitleCase)(value);
-    (0, _helpers.changeInputText)({
-      value: newValue,
-      validation: validationLastName,
-      setValue: setLastName
-    });
+    (0, _Changes.generalChangeLastName)(value, validationLastName, setLastName);
   };
   var changeEmail = function changeEmail(inputValue) {
-    var newEmail = inputValue.toLocaleLowerCase();
-    (0, _helpers.changeInputText)({
-      value: newEmail,
-      validation: validationEmail,
-      setValue: setEmail
-    });
+    (0, _Changes.generalChangeEmail)(inputValue, validationEmail, setEmail);
   };
   var changePhoneNumber = function changePhoneNumber(newPhone) {
-    var newValue = newPhone.startsWith('0') ? newPhone.slice(1) : newPhone;
-    (0, _helpers.changeInputText)({
-      value: newValue,
-      validation: validationPhoneNumber,
-      setValue: setPhoneNumber
-    });
+    (0, _Changes.generalChangePhone)(newPhone, validationPhoneNumber, setPhoneNumber);
   };
   var changeAreaCode = function changeAreaCode(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationAreaCode,
-      setDefault: setAreaCodeDefault,
-      setValue: setAreaCode
-    });
+    (0, _Changes.generalChangeAreaCode)(options, validationAreaCode, setAreaCodeDefault, setAreaCode);
   };
   var changeRole = function changeRole(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationRole,
-      setDefault: setRoleDefault,
-      setValue: setRole
-    });
+    (0, _Changes.generalChangeRoles)(options, validationRole, setRoleDefault, setRole);
   };
   var changeSite = function changeSite(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationSite,
-      setDefault: setSiteDefault,
-      setValue: setSite
-    });
+    (0, _Changes.generalChangeSite)(options, validationSite, setSiteDefault, setSite);
   };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
-      var newFile, mimeType, formData, config, response;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            newFile = e.target.files && e.target.files[0];
-            if (newFile) {
-              _context.next = 3;
-              break;
-            }
-            return _context.abrupt("return");
-          case 3:
-            // Obtén el tipo MIME en función de la extensión del archivo
-            mimeType = (0, _helpers.getMimeTypeByExtension)(newFile.name);
-            if (mimeType) {
-              _context.next = 7;
-              break;
-            }
-            useError.actions.changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
-            return _context.abrupt("return");
-          case 7:
-            formData = new FormData();
-            formData.append('file', newFile);
-            formData.append('fileName', newFile.name);
-            setSubmitting(true);
-            config = {
-              headers: {
-                'content-type': 'multipart/form-data'
-              }
-            };
-            _context.prev = 12;
-            _context.next = 15;
-            return _axios["default"].post('/api/upload', formData, config);
-          case 15:
-            response = _context.sent;
-            if (response.status === 200) {
-              setPhoto(response.data.imageUrl);
-              validationPhoto(response.data.imageUrl);
-            } else {
-              setSubmitting(false);
-            }
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            _context.next = 23;
-            break;
-          case 19:
-            _context.prev = 19;
-            _context.t0 = _context["catch"](12);
-            useError.actions.changeError(["".concat(_context.t0.message)]);
-            setSubmitting(false);
-          case 23:
+            (0, _Changes.generalChangePhoto)(e, changeError, setSubmitting, setPhoto, validationPhoto);
+          case 1:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[12, 19]]);
+      }, _callee);
     }));
     return function changePhoto(_x) {
       return _ref2.apply(this, arguments);
     };
   }();
   var changeIsActive = function changeIsActive(options) {
-    (0, _helpers.changeSelect)({
-      newValue: options,
-      validation: validationIsActive,
-      setDefault: setIsActiveDefault,
-      setValue: setIsActive
-    });
+    (0, _Changes.generalChanceIsActive)(options, validationIsActive, setIsActiveDefault, setIsActive);
   };
   var changeSearchBy = function changeSearchBy(options) {
     var label = options !== null && options !== void 0 && options.label ? options.label : 'Nombre';
@@ -530,7 +421,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)('GS_USERS_V2', newData.data.items);
+    (0, _Context.saveItem)(_Constans.USERS_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setUsers(newData);
@@ -574,8 +465,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
               if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: 'http://localhost:4000',
-                  initRoute: 'api/v1/users',
+                  initRoute: _Constans.USERS_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -656,8 +546,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/users',
+        initRoute: _Constans.USERS_ROUTE,
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -690,8 +579,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: "api/v1/users/".concat(userId),
+        initRoute: "".concat(_Constans.USERS_ROUTE, "/").concat(userId),
         initCredentials: updatedPayload,
         initToken: {
           token: token

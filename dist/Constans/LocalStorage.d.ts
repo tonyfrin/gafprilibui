@@ -4,3 +4,4 @@ export declare const ENTITY_STORAGE = "GS_ENTITY_V2";
 export declare const ROLES_STORAGE = "GS_ROLES_V2";
 export declare const SITES_STORAGE = "GS_SITES_V2";
 export declare const TYPE_DOCUMENT_ID_STORAGE = "GS_TYPE_DOCUMENT_ID_V2";
+export declare const USERS_STORAGE = "GS_USERS_V2";

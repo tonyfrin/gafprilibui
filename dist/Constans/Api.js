@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getApiUrl = exports.UPLOAD_PHOTO_ROUTE = exports.TYPE_DOCUMENT_ID_ROUTE = exports.SITES_ROUTE = exports.ROLES_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.API_URL = void 0;
+exports.getApiUrl = exports.USERS_ROUTE = exports.UPLOAD_PHOTO_ROUTE = exports.TYPE_DOCUMENT_ID_ROUTE = exports.SITES_ROUTE = exports.ROLES_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.API_URL = void 0;
 var getApiUrl = function getApiUrl() {
   return process.env.API_URL;
 };
@@ -24,3 +24,5 @@ var SITES_ROUTE = '/sites';
 exports.SITES_ROUTE = SITES_ROUTE;
 var TYPE_DOCUMENT_ID_ROUTE = '/type-document-id';
 exports.TYPE_DOCUMENT_ID_ROUTE = TYPE_DOCUMENT_ID_ROUTE;
+var USERS_ROUTE = '/users';
+exports.USERS_ROUTE = USERS_ROUTE;

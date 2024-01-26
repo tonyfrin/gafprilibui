@@ -111,6 +111,12 @@ Object.defineProperty(exports, "SelectAddressType", {
     return _SelectAddressType.SelectAddressType;
   }
 });
+Object.defineProperty(exports, "SelectAreaCode", {
+  enumerable: true,
+  get: function get() {
+    return _SelectAreaCode.SelectAreaCode;
+  }
+});
 Object.defineProperty(exports, "SelectCity", {
   enumerable: true,
   get: function get() {
@@ -157,6 +163,12 @@ Object.defineProperty(exports, "SelectParentId", {
   enumerable: true,
   get: function get() {
     return _SelectParentId.SelectParentId;
+  }
+});
+Object.defineProperty(exports, "SelectRoles", {
+  enumerable: true,
+  get: function get() {
+    return _SelectRoles.SelectRoles;
   }
 });
 Object.defineProperty(exports, "SelectSite", {
@@ -219,3 +231,5 @@ var _SelectCurrenciesSeparator = require("./SelectCurrenciesSeparator");
 var _SelectCurrenciesDecimalNumbers = require("./SelectCurrenciesDecimalNumbers");
 var _SelectTaxes = require("./SelectTaxes");
 var _InputWebSite = require("./InputWebSite");
+var _SelectAreaCode = require("./SelectAreaCode");
+var _SelectRoles = require("./SelectRoles");

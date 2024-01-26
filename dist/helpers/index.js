@@ -160,7 +160,8 @@ var validationInputPhone = function validationInputPhone(_ref6) {
 exports.validationInputPhone = validationInputPhone;
 function gafpriFetch(_ref7) {
   var initMethod = _ref7.initMethod,
-    initApi = _ref7.initApi,
+    _ref7$initApi = _ref7.initApi,
+    initApi = _ref7$initApi === void 0 ? _Constans.API_URL : _ref7$initApi,
     initRoute = _ref7.initRoute,
     initToken = _ref7.initToken,
     initCredentials = _ref7.initCredentials,

@@ -339,6 +339,12 @@ Object.defineProperty(exports, "PhotoForm", {
     return _Form.PhotoForm;
   }
 });
+Object.defineProperty(exports, "PhotoUser", {
+  enumerable: true,
+  get: function get() {
+    return _Form.PhotoUser;
+  }
+});
 Object.defineProperty(exports, "RolePermissions", {
   enumerable: true,
   get: function get() {
@@ -361,6 +367,12 @@ Object.defineProperty(exports, "SelectAddressType", {
   enumerable: true,
   get: function get() {
     return _Input.SelectAddressType;
+  }
+});
+Object.defineProperty(exports, "SelectAreaCode", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectAreaCode;
   }
 });
 Object.defineProperty(exports, "SelectCity", {
@@ -409,6 +421,12 @@ Object.defineProperty(exports, "SelectParentId", {
   enumerable: true,
   get: function get() {
     return _Input.SelectParentId;
+  }
+});
+Object.defineProperty(exports, "SelectRoles", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectRoles;
   }
 });
 Object.defineProperty(exports, "SelectSite", {

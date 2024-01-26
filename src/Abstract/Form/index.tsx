@@ -8,3 +8,5 @@ export { PhotoEntity } from './PhotoEntity';
 export type { PhotoEntityProps } from './PhotoEntity';
 export { PhotoDocumentId } from './PhotoDocumentId';
 export type { PhotoDocumentIdProps } from './PhotoDocumentId';
+export { PhotoUser } from './PhotoUser';
+export type { PhotoUserProps } from './PhotoUser';

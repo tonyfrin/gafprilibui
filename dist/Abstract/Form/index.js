@@ -33,8 +33,15 @@ Object.defineProperty(exports, "PhotoForm", {
     return _PhotoForm.PhotoForm;
   }
 });
+Object.defineProperty(exports, "PhotoUser", {
+  enumerable: true,
+  get: function get() {
+    return _PhotoUser.PhotoUser;
+  }
+});
 var _ModelForm = require("./ModelForm");
 var _PhotoForm = require("./PhotoForm");
 var _PhotoCategory = require("./PhotoCategory");
 var _PhotoEntity = require("./PhotoEntity");
 var _PhotoDocumentId = require("./PhotoDocumentId");
+var _PhotoUser = require("./PhotoUser");

@@ -7,7 +7,7 @@ import {
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { UseErrorReturn } from './useGafpriError';
-import { API_URL, CURRENCIES_STORAGE, CURRENCIES_ROUTE } from '../Constans';
+import { CURRENCIES_STORAGE, CURRENCIES_ROUTE } from '../Constans';
 import {
   generalValidationName,
   generalValidationCurrenciesSymbol,
@@ -280,10 +280,9 @@ export function useGafpriCurrencies({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token && API_URL) {
+      if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: API_URL,
           initRoute: CURRENCIES_ROUTE,
           initToken: { token },
           functionFetching: notReady,
@@ -369,10 +368,9 @@ export function useGafpriCurrencies({
   };
 
   const addCurrencies = (): void => {
-    if (nameValid && symbolValid && token && API_URL) {
+    if (nameValid && symbolValid && token) {
       gafpriFetch({
         initMethod: 'POST',
-        initApi: API_URL,
         initRoute: CURRENCIES_ROUTE,
         initCredentials: {
           name,
@@ -393,10 +391,9 @@ export function useGafpriCurrencies({
   }
 
   const updateCurrency = (): void => {
-    if (nameValid && symbolValid && token && API_URL) {
+    if (nameValid && symbolValid && token) {
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: API_URL,
         initRoute: `${CURRENCIES_ROUTE}/${currentId}`,
         initCredentials: {
           name,
@@ -411,10 +408,9 @@ export function useGafpriCurrencies({
   };
 
   const deleteCurrency = (id: number): void => {
-    if (token && API_URL) {
+    if (token) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: API_URL,
         initRoute: `${CURRENCIES_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: onFetching,

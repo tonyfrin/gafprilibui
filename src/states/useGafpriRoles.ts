@@ -3,7 +3,7 @@ import { gafpriFetch, getLastEntryDateAndCount } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
 import type { UseErrorReturn } from './useGafpriError';
-import { API_URL, ROLES_ROUTE, ROLES_STORAGE, AllRoles } from '../Constans';
+import { ROLES_ROUTE, ROLES_STORAGE, AllRoles } from '../Constans';
 import {
   generalValidationButtonNext,
   generalValidationName,
@@ -285,10 +285,9 @@ export function useGafpriRoles({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token && API_URL) {
+      if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: API_URL,
           initRoute: ROLES_ROUTE,
           initToken: { token },
           functionFetching: notReady,
@@ -371,10 +370,9 @@ export function useGafpriRoles({
   };
 
   const add = (): void => {
-    if (nameValid && token && API_URL) {
+    if (nameValid && token) {
       gafpriFetch({
         initMethod: 'POST',
-        initApi: API_URL,
         initRoute: ROLES_ROUTE,
         initCredentials: {
           name,
@@ -393,10 +391,9 @@ export function useGafpriRoles({
   }
 
   const update = (): void => {
-    if (nameValid && token && API_URL) {
+    if (nameValid && token) {
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: API_URL,
         initRoute: `${ROLES_ROUTE}/${currentId}`,
         initCredentials: {
           name,
@@ -411,10 +408,9 @@ export function useGafpriRoles({
   };
 
   const deleteRoles = (id: number): void => {
-    if (token && API_URL) {
+    if (token) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: API_URL,
         initRoute: `${ROLES_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: onFetching,

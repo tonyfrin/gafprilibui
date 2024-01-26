@@ -618,10 +618,9 @@ var useGafpriSites = function useGafpriSites(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_sites$data$items = sites.data.items) === null || _sites$data$items === void 0 ? void 0 : _sites$data$items.length) || 0;
             if (sites.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token && _Constans.API_URL) {
+              if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: _Constans.API_URL,
                   initRoute: _Constans.SITES_ROUTE,
                   initToken: {
                     token: token
@@ -710,7 +709,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token && _Constans.API_URL) {
+    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token) {
       var payload = {
         name: name,
         documentIndex: documentIndex,
@@ -736,7 +735,6 @@ var useGafpriSites = function useGafpriSites(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: _Constans.API_URL,
         initRoute: _Constans.SITES_ROUTE,
         initCredentials: updatedPayload,
         initToken: {
@@ -761,7 +759,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     return null;
   }
   var update = function update() {
-    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token && _Constans.API_URL) {
+    if (nameValid && documentIndexValid && documentNumberValid && address1Valid && address2Valid && cityValid && stateCountryValid && postCodeValid && countryValid && emailValid && phoneValid && currenciesIdValid && currencyLocationValid && separatorValid && decimalNumbersValid && taxesValid && hostValid && token) {
       var payload = {
         name: name,
         documentIndex: documentIndex,
@@ -787,7 +785,6 @@ var useGafpriSites = function useGafpriSites(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.SITES_ROUTE, "/").concat(siteId),
         initCredentials: updatedPayload,
         initToken: {
@@ -800,10 +797,9 @@ var useGafpriSites = function useGafpriSites(_ref) {
     }
   };
   var deleteSites = function deleteSites(id) {
-    if (token && _Constans.API_URL) {
+    if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.SITES_ROUTE, "/").concat(id),
         initToken: {
           token: token

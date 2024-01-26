@@ -46,7 +46,7 @@ export interface InitToken {
 }
 interface FetchOptions<T = unknown> {
     initMethod: 'POST' | 'GET' | 'PUT' | 'PATCH' | 'DELETE';
-    initApi: string;
+    initApi?: string;
     initRoute: string;
     initToken?: InitToken;
     initCredentials?: T;

@@ -49,7 +49,6 @@ import { getItem, saveItem } from '../Context';
 import type { UseTypeDocumentIdReturn } from './useGafpriTypeDocumentId';
 import type { UseErrorReturn } from './useGafpriError';
 import {
-  API_URL,
   ENTITY_STORAGE,
   ENTITY_ROUTE,
   Countries,
@@ -1026,13 +1025,25 @@ export const useGafpriEntity = ({
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    generalChangePhoto(e, changeError, setSubmitting, setPhoto);
+    generalChangePhoto(
+      e,
+      changeError,
+      setSubmitting,
+      setPhoto,
+      validationPhoto
+    );
   };
 
   const changeDocumentPhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    generalChangePhoto(e, changeError, setDocumentSubmitting, setDocumentPhoto);
+    generalChangePhoto(
+      e,
+      changeError,
+      setDocumentSubmitting,
+      setDocumentPhoto,
+      validationDocumentPhoto
+    );
   };
 
   const changeStatus = (
@@ -1104,10 +1115,9 @@ export const useGafpriEntity = ({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token && API_URL) {
+      if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: API_URL,
           initRoute: ENTITY_ROUTE,
           initToken: { token },
           functionFetching: notReady,
@@ -1191,8 +1201,7 @@ export const useGafpriEntity = ({
       typeValid &&
       photoValid &&
       statusValid &&
-      token &&
-      API_URL
+      token
     ) {
       const payload = {
         name,
@@ -1220,7 +1229,6 @@ export const useGafpriEntity = ({
 
       gafpriFetch({
         initMethod: 'POST',
-        initApi: API_URL,
         initRoute: ENTITY_ROUTE,
         initCredentials: payload,
         initToken: { token },
@@ -1244,8 +1252,7 @@ export const useGafpriEntity = ({
       statusValid &&
       phoneValid &&
       emailValid &&
-      token &&
-      API_URL
+      token
     ) {
       const payload = {
         ...(name ? { name } : {}),
@@ -1259,7 +1266,6 @@ export const useGafpriEntity = ({
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: API_URL,
         initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
@@ -1271,14 +1277,13 @@ export const useGafpriEntity = ({
   };
 
   const updateAddress = (newAddress: AddressAttributes[]): void => {
-    if (token && API_URL) {
+    if (token) {
       const payload = {
         address: newAddress,
       };
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: API_URL,
         initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
@@ -1290,14 +1295,13 @@ export const useGafpriEntity = ({
   };
 
   const updateDocument = (newDocument: DocumentIdAttributes[]): void => {
-    if (token && API_URL) {
+    if (token) {
       const payload = {
         documentId: newDocument,
       };
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: API_URL,
         initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
@@ -1365,7 +1369,7 @@ export const useGafpriEntity = ({
   };
 
   const deleteAddress = (id: number): void => {
-    if (token && API_URL) {
+    if (token) {
       const payload = {
         address: [
           {
@@ -1376,7 +1380,6 @@ export const useGafpriEntity = ({
 
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: API_URL,
         initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },
@@ -1388,7 +1391,7 @@ export const useGafpriEntity = ({
   };
 
   const deleteDocument = (id: number): void => {
-    if (documentId.length > 1 && token && API_URL) {
+    if (documentId.length > 1 && token) {
       const payload = {
         documentId: [
           {
@@ -1399,7 +1402,6 @@ export const useGafpriEntity = ({
 
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: API_URL,
         initRoute: `${ENTITY_ROUTE}/${entityId}`,
         initCredentials: payload,
         initToken: { token },

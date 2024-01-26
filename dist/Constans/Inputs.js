@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ZIP_CODE_INPUT = exports.WEB_SITE_INPUT = exports.USER_NAME_INPUT = exports.TYPE_INPUT = exports.TYPE_DOCUMENT_ID_INDEX_INPUT = exports.TYPE_DOCUMENT_ID_ID_INPUT = exports.TYPE_DOCUMENT_ID_DIGIT_INPUT = exports.TAXES_INPUT = exports.STATUS_INPUT = exports.STATE_COUNTRY_INPUT = exports.SKU_INPUT = exports.SITE_INPUT = exports.PHOTO_INPUT = exports.PHOTO_ENTITY_INPUT = exports.PHOTO_DOCUMENT_ID_INPUT = exports.PHOTO_CATEGORY_INPUT = exports.PHONE_INPUT = exports.PASSWORD_INPUT = exports.PARENT_ID_INPUT = exports.NAME_INPUT = exports.LAST_NAME_INPUT = exports.GALLERY_IMAGE_INPUT = exports.EMAIL_INPUT = exports.DESCRIPTION_INPUT = exports.CURRENCIES_SYMBOL_INPUT = exports.CURRENCIES_SEPARATOR_INPUT = exports.CURRENCIES_LOCATIONS_INPUT = exports.CURRENCIES_INPUT = exports.CURRENCIES_DECIMAL_NUMBERS_INPUT = exports.COUNTRY_INPUT = exports.CITY_INPUT = exports.CATEGORIES_INPUT = exports.BUTTON_NEXT_INPUT = exports.ADDRESS_TYPE_INPUT = exports.ADDRESS2_INPUT = exports.ADDRESS1_INPUT = void 0;
+exports.ZIP_CODE_INPUT = exports.WEB_SITE_INPUT = exports.USER_NAME_INPUT = exports.TYPE_INPUT = exports.TYPE_DOCUMENT_ID_INDEX_INPUT = exports.TYPE_DOCUMENT_ID_ID_INPUT = exports.TYPE_DOCUMENT_ID_DIGIT_INPUT = exports.TAXES_INPUT = exports.STATUS_INPUT = exports.STATE_COUNTRY_INPUT = exports.SKU_INPUT = exports.SITE_INPUT = exports.ROLES_INPUT = exports.PHOTO_USERS_INPUT = exports.PHOTO_INPUT = exports.PHOTO_ENTITY_INPUT = exports.PHOTO_DOCUMENT_ID_INPUT = exports.PHOTO_CATEGORY_INPUT = exports.PHONE_INPUT = exports.PASSWORD_INPUT = exports.PARENT_ID_INPUT = exports.NAME_INPUT = exports.LAST_NAME_INPUT = exports.GALLERY_IMAGE_INPUT = exports.EMAIL_INPUT = exports.DESCRIPTION_INPUT = exports.CURRENCIES_SYMBOL_INPUT = exports.CURRENCIES_SEPARATOR_INPUT = exports.CURRENCIES_LOCATIONS_INPUT = exports.CURRENCIES_INPUT = exports.CURRENCIES_DECIMAL_NUMBERS_INPUT = exports.COUNTRY_INPUT = exports.CITY_INPUT = exports.CATEGORIES_INPUT = exports.BUTTON_NEXT_INPUT = exports.AREA_CODE_INPUT = exports.ADDRESS_TYPE_INPUT = exports.ADDRESS2_INPUT = exports.ADDRESS1_INPUT = void 0;
 var NAME_INPUT = 'name-input-id';
 exports.NAME_INPUT = NAME_INPUT;
 var LAST_NAME_INPUT = 'last-name-input-id';
@@ -76,3 +76,9 @@ var TAXES_INPUT = 'taxes-input-id';
 exports.TAXES_INPUT = TAXES_INPUT;
 var WEB_SITE_INPUT = 'web-site-input-id';
 exports.WEB_SITE_INPUT = WEB_SITE_INPUT;
+var AREA_CODE_INPUT = 'area-code-input-id';
+exports.AREA_CODE_INPUT = AREA_CODE_INPUT;
+var ROLES_INPUT = 'roles-input-id';
+exports.ROLES_INPUT = ROLES_INPUT;
+var PHOTO_USERS_INPUT = 'photo-users-input-id';
+exports.PHOTO_USERS_INPUT = PHOTO_USERS_INPUT;

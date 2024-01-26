@@ -7,11 +7,7 @@ import {
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
 import { UseErrorReturn } from './useGafpriError';
-import {
-  API_URL,
-  TYPE_DOCUMENT_ID_ROUTE,
-  TYPE_DOCUMENT_ID_STORAGE,
-} from '../Constans';
+import { TYPE_DOCUMENT_ID_ROUTE, TYPE_DOCUMENT_ID_STORAGE } from '../Constans';
 import {
   generalValidationButtonNext,
   generalValidationName,
@@ -308,10 +304,9 @@ export function useGafpriTypeDocumentId({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token && API_URL) {
+      if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: API_URL,
           initRoute: TYPE_DOCUMENT_ID_ROUTE,
           initToken: { token },
           functionFetching: notReady,
@@ -402,10 +397,9 @@ export function useGafpriTypeDocumentId({
   };
 
   const add = (): void => {
-    if (nameValid && countryValid && token && API_URL) {
+    if (nameValid && countryValid && token) {
       gafpriFetch({
         initMethod: 'POST',
-        initApi: API_URL,
         initRoute: TYPE_DOCUMENT_ID_ROUTE,
         initToken: { token },
         initCredentials: {
@@ -424,10 +418,9 @@ export function useGafpriTypeDocumentId({
   }
 
   const update = (): void => {
-    if (nameValid && countryValid && token && API_URL) {
+    if (nameValid && countryValid && token) {
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: API_URL,
         initRoute: `${TYPE_DOCUMENT_ID_ROUTE}/${currentId}`,
         initToken: { token },
         initCredentials: {
@@ -442,10 +435,9 @@ export function useGafpriTypeDocumentId({
   };
 
   const deleteTypeDocumentId = (id: number): void => {
-    if (token && API_URL) {
+    if (token) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: API_URL,
         initRoute: `${TYPE_DOCUMENT_ID_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: onFetching,

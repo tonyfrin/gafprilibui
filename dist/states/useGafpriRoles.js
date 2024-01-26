@@ -195,10 +195,9 @@ function useGafpriRoles(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_roles$data$items = roles.data.items) === null || _roles$data$items === void 0 ? void 0 : _roles$data$items.length) || 0;
             if (roles.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token && _Constans.API_URL) {
+              if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: _Constans.API_URL,
                   initRoute: _Constans.ROLES_ROUTE,
                   initToken: {
                     token: token
@@ -281,10 +280,9 @@ function useGafpriRoles(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && token && _Constans.API_URL) {
+    if (nameValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: _Constans.API_URL,
         initRoute: _Constans.ROLES_ROUTE,
         initCredentials: {
           name: name,
@@ -306,10 +304,9 @@ function useGafpriRoles(_ref) {
     })) || null;
   }
   var update = function update() {
-    if (nameValid && token && _Constans.API_URL) {
+    if (nameValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.ROLES_ROUTE, "/").concat(currentId),
         initCredentials: {
           name: name,
@@ -325,10 +322,9 @@ function useGafpriRoles(_ref) {
     }
   };
   var deleteRoles = function deleteRoles(id) {
-    if (token && _Constans.API_URL) {
+    if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.ROLES_ROUTE, "/").concat(id),
         initToken: {
           token: token

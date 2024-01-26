@@ -703,7 +703,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            (0, _Changes.generalChangePhoto)(e, changeError, setSubmitting, setPhoto);
+            (0, _Changes.generalChangePhoto)(e, changeError, setSubmitting, setPhoto, validationPhoto);
           case 1:
           case "end":
             return _context.stop();
@@ -719,7 +719,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       return _regenerator["default"].wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            (0, _Changes.generalChangePhoto)(e, changeError, setDocumentSubmitting, setDocumentPhoto);
+            (0, _Changes.generalChangePhoto)(e, changeError, setDocumentSubmitting, setDocumentPhoto, validationDocumentPhoto);
           case 1:
           case "end":
             return _context2.stop();
@@ -782,10 +782,9 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_entities$data$items = entities.data.items) === null || _entities$data$items === void 0 ? void 0 : _entities$data$items.length) || 0;
             if (entities.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token && _Constans.API_URL) {
+              if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: _Constans.API_URL,
                   initRoute: _Constans.ENTITY_ROUTE,
                   initToken: {
                     token: token
@@ -852,7 +851,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && lastNameValid && typeDocumentIdIdValid && indexValid && digitValid && addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid && emailValid && phoneValid && typeValid && photoValid && statusValid && token && _Constans.API_URL) {
+    if (nameValid && lastNameValid && typeDocumentIdIdValid && indexValid && digitValid && addressTypeValid && address1Valid && address2Valid && cityValid && stateCountryValid && countryValid && postCodeValid && emailValid && phoneValid && typeValid && photoValid && statusValid && token) {
       var payload = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
         name: name,
         type: type,
@@ -888,7 +887,6 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       });
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: _Constans.API_URL,
         initRoute: _Constans.ENTITY_ROUTE,
         initCredentials: payload,
         initToken: {
@@ -907,7 +905,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     })) || null;
   }
   var update = function update() {
-    if (nameValid && lastNameValid && typeValid && photoValid && statusValid && phoneValid && emailValid && token && _Constans.API_URL) {
+    if (nameValid && lastNameValid && typeValid && photoValid && statusValid && phoneValid && emailValid && token) {
       var payload = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, name ? {
         name: name
       } : {}), type ? {
@@ -925,7 +923,6 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
@@ -938,13 +935,12 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     }
   };
   var updateAddress = function updateAddress(newAddress) {
-    if (token && _Constans.API_URL) {
+    if (token) {
       var payload = {
         address: newAddress
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
@@ -959,13 +955,12 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     }
   };
   var updateDocument = function updateDocument(newDocument) {
-    if (token && _Constans.API_URL) {
+    if (token) {
       var payload = {
         documentId: newDocument
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
@@ -1023,7 +1018,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     updateAddress(updateNewAddress);
   };
   var deleteAddress = function deleteAddress(id) {
-    if (token && _Constans.API_URL) {
+    if (token) {
       var payload = {
         address: [{
           id: id
@@ -1031,7 +1026,6 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {
@@ -1046,7 +1040,7 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
     }
   };
   var deleteDocument = function deleteDocument(id) {
-    if (documentId.length > 1 && token && _Constans.API_URL) {
+    if (documentId.length > 1 && token) {
       var payload = {
         documentId: [{
           id: id
@@ -1054,7 +1048,6 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.ENTITY_ROUTE, "/").concat(entityId),
         initCredentials: payload,
         initToken: {

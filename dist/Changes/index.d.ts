@@ -21,12 +21,12 @@ export declare const generalChangePostCode: (value: string, validation: (valueVa
 export declare const generalChangeSite: (options: SingleValue<{
     value: string;
     label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number) => void) => void;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
 export declare const generalChangeParentId: (options: SingleValue<{
     value: string;
     label: string;
 }>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number) => void) => void;
-export declare const generalChangePhoto: (e: ChangeEvent<HTMLInputElement>, changeError: (valueError: string[]) => void, setSubmitting: (valueSubmitting: boolean) => void, setPhoto: (valuePhoto: string) => void) => Promise<void>;
+export declare const generalChangePhoto: (e: ChangeEvent<HTMLInputElement>, changeError: (valueError: string[]) => void, setSubmitting: (valueSubmitting: boolean) => void, setPhoto: (valuePhoto: string) => void, validation: (valueValid: string) => boolean) => Promise<void>;
 export declare const generalChangeStatus: (options: SingleValue<{
     value: string;
     label: string;
@@ -60,3 +60,15 @@ export declare const generalChangeTaxes: (options: SingleValue<{
     label: string;
 }>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: boolean) => void) => void;
 export declare const generalChangeWebSite: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeAreaCode: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeRoles: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
+export declare const generalChanceIsActive: (options: SingleValue<{
+    value: string;
+    label: string;
+}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: boolean) => void) => void;

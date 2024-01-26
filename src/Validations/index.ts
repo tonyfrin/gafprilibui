@@ -42,6 +42,9 @@ import {
   CURRENCIES_DECIMAL_NUMBERS_INPUT,
   TAXES_INPUT,
   WEB_SITE_INPUT,
+  AREA_CODE_INPUT,
+  ROLES_INPUT,
+  PHOTO_USERS_INPUT,
 } from '../Constans';
 
 export type ValidationInput = {
@@ -717,4 +720,43 @@ export const generalValidationWebSite = (
     setValid(valid);
   }
   return valid;
+};
+
+export const generalValidationAreaCode = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const valid = validationSelect(newValue, AREA_CODE_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationRoles = (
+  newValue: string,
+  setValid: (value: boolean) => void,
+  currentValid: boolean
+): boolean => {
+  const valid = validationSelect(newValue, ROLES_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const generalValidationPhotoUsers = (
+  value: string,
+  setValid: (valueValid: boolean) => void,
+  currentValid: boolean,
+  required = true
+): boolean => {
+  return validationPhoto({
+    value,
+    inputId: PHOTO_USERS_INPUT,
+    setValid,
+    currentValid,
+    required,
+  });
 };

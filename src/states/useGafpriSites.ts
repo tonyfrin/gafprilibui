@@ -12,7 +12,6 @@ import {
 } from '../helpers';
 import {
   Countries,
-  API_URL,
   SITES_ROUTE,
   SITES_STORAGE,
   CITY_DEFAULT,
@@ -887,10 +886,9 @@ export const useGafpriSites = ({
       `${lastEntryDateAndCount?.date}` !== `${lastDate}` ||
       `${lastEntryDateAndCount?.count}` !== `${count}`
     ) {
-      if (token && API_URL) {
+      if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: API_URL,
           initRoute: SITES_ROUTE,
           initToken: { token },
           functionFetching: notReady,
@@ -1000,8 +998,7 @@ export const useGafpriSites = ({
       decimalNumbersValid &&
       taxesValid &&
       hostValid &&
-      token &&
-      API_URL
+      token
     ) {
       const payload = {
         name,
@@ -1030,7 +1027,6 @@ export const useGafpriSites = ({
 
       gafpriFetch({
         initMethod: 'POST',
-        initApi: API_URL,
         initRoute: SITES_ROUTE,
         initCredentials: updatedPayload,
         initToken: { token },
@@ -1072,8 +1068,7 @@ export const useGafpriSites = ({
       decimalNumbersValid &&
       taxesValid &&
       hostValid &&
-      token &&
-      API_URL
+      token
     ) {
       const payload = {
         name,
@@ -1102,7 +1097,6 @@ export const useGafpriSites = ({
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: API_URL,
         initRoute: `${SITES_ROUTE}/${siteId}`,
         initCredentials: updatedPayload,
         initToken: { token },
@@ -1114,10 +1108,9 @@ export const useGafpriSites = ({
   };
 
   const deleteSites = (id: number): void => {
-    if (token && API_URL) {
+    if (token) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initApi: API_URL,
         initRoute: `${SITES_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: onFetching,

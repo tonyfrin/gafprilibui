@@ -1,19 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
-import axios, { AxiosRequestConfig } from 'axios';
 import { SingleValue } from 'react-select';
-import {
-  getMimeTypeByExtension,
-  removeClass,
-  addClass,
-  validationInputName,
-  toTitleCase,
-  changeInputText,
-  validationSelect,
-  changeSelect,
-  validationInput,
-  gafpriFetch,
-  getLastEntryDateAndCount,
-} from '../helpers';
+import { gafpriFetch, getLastEntryDateAndCount } from '../helpers';
 import type {
   SelectDefault,
   ErrorResponseProps,
@@ -24,6 +11,30 @@ import { getItem, saveItem } from '../Context';
 import type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
 import type { UseSitesReturn } from './useGafpriSites';
 import { UseErrorReturn } from './useGafpriError';
+import { USERS_STORAGE, USERS_ROUTE } from '../Constans';
+import {
+  generalValidationAreaCode,
+  generalValidationButtonNext,
+  generalValidationEmail,
+  generalValidationLastName,
+  generalValidationName,
+  generalValidationPhone,
+  generalValidationPhotoUsers,
+  generalValidationRoles,
+  generalValidationStatus,
+  generalValidationSelectSite,
+} from '../Validations';
+import {
+  generalChangeAreaCode,
+  generalChangeEmail,
+  generalChangeLastName,
+  generalChangeName,
+  generalChangePhone,
+  generalChangePhoto,
+  generalChangeRoles,
+  generalChangeSite,
+  generalChanceIsActive,
+} from '../Changes';
 
 export interface UserAttributes {
   id: number;
@@ -282,7 +293,7 @@ export const useGafpriUsers = ({
 
   const [users, setUsers] = useState<UserData>({
     data: {
-      items: getItem('GS_USERS_V2', null),
+      items: getItem(USERS_STORAGE, null),
     },
   });
   const { error } = useError.states;
@@ -415,214 +426,116 @@ export const useGafpriUsers = ({
 
   // Funciones de Validacion
   const validationButtonNext = (): void => {
-    if (
-      nameValid &&
-      lastNameValid &&
-      emailValid &&
-      areaCodeValid &&
-      phoneNumberValid &&
-      roleValid &&
-      siteValid &&
-      photoValid &&
+    generalValidationButtonNext(
+      nameValid,
+      lastNameValid,
+      emailValid,
+      areaCodeValid,
+      phoneNumberValid,
+      roleValid,
+      siteValid,
+      photoValid,
       isActiveValid
-    ) {
-      removeClass('buttonNext', 'gs-disabled');
-    } else {
-      addClass('buttonNext', 'gs-disabled');
-    }
+    );
   };
 
   const validationName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: 'userName',
-      setValid: setNameValid,
-    });
+    return generalValidationName(value, setNameValid, nameValid);
   };
 
   const validationLastName = (value: string): boolean => {
-    return validationInputName({
-      name: value,
-      inputId: 'userLastName',
-      setValid: setLastNameValid,
-      required: false,
-    });
+    return generalValidationLastName(value, setLastNameValid, lastNameValid);
   };
 
   const validationEmail = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/,
-      'userEmail',
-      true
-    );
-    setEmailValid(valid);
-    return valid;
+    return generalValidationEmail(value, setEmailValid, emailValid);
   };
 
   const validationPhoneNumber = (value: string): boolean => {
-    const valid = validationInput(value, /^[0-9]{10}$/, 'userPhone', true);
-    setPhoneNumberValid(valid);
-    return valid;
+    return generalValidationPhone(value, setPhoneNumberValid, phoneNumberValid);
   };
 
   const validationAreaCode = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'areaCodeUser');
-    setAreaCodeValid(validation);
-    return validation;
+    return generalValidationAreaCode(value, setAreaCodeValid, areaCodeValid);
   };
 
   const validationSite = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'userSite');
-    setSiteValid(validation);
-    return validation;
+    return generalValidationSelectSite(value, setSiteValid, siteValid);
   };
 
   const validationRole = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'userRole');
-    setRoleValid(validation);
-    return validation;
+    return generalValidationRoles(value, setRoleValid, roleValid);
   };
 
   const validationPhoto = (value: string): boolean => {
-    const valid = validationInput(
-      value,
-      /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-      'photoUser'
-    );
-    setPhotoValid(valid);
-    return valid;
+    return generalValidationPhotoUsers(value, setPhotoValid, photoValid);
   };
 
   const validationIsActive = (value: string): boolean => {
-    const validation: boolean = validationSelect(value, 'isActiveUser');
-    setIsActiveValid(validation);
-    return validation;
+    return generalValidationStatus(value, setIsActiveValid, isActiveValid);
   };
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    const newValue = toTitleCase(value);
-    changeInputText({
-      value: newValue,
-      validation: validationName,
-      setValue: setName,
-    });
+    generalChangeName(value, validationName, setName);
   };
 
   const changeLastName = (value: string): void => {
-    const newValue = toTitleCase(value);
-    changeInputText({
-      value: newValue,
-      validation: validationLastName,
-      setValue: setLastName,
-    });
+    generalChangeLastName(value, validationLastName, setLastName);
   };
 
   const changeEmail = (inputValue: string): void => {
-    const newEmail = inputValue.toLocaleLowerCase();
-    changeInputText({
-      value: newEmail,
-      validation: validationEmail,
-      setValue: setEmail,
-    });
+    generalChangeEmail(inputValue, validationEmail, setEmail);
   };
 
   const changePhoneNumber = (newPhone: string): void => {
-    const newValue = newPhone.startsWith('0') ? newPhone.slice(1) : newPhone;
-    changeInputText({
-      value: newValue,
-      validation: validationPhoneNumber,
-      setValue: setPhoneNumber,
-    });
+    generalChangePhone(newPhone, validationPhoneNumber, setPhoneNumber);
   };
 
   const changeAreaCode = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationAreaCode,
-      setDefault: setAreaCodeDefault,
-      setValue: setAreaCode,
-    });
+    generalChangeAreaCode(
+      options,
+      validationAreaCode,
+      setAreaCodeDefault,
+      setAreaCode
+    );
   };
 
   const changeRole = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationRole,
-      setDefault: setRoleDefault,
-      setValue: setRole,
-    });
+    generalChangeRoles(options, validationRole, setRoleDefault, setRole);
   };
 
   const changeSite = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationSite,
-      setDefault: setSiteDefault,
-      setValue: setSite,
-    });
+    generalChangeSite(options, validationSite, setSiteDefault, setSite);
   };
 
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    const newFile = e.target.files && e.target.files[0];
-
-    if (!newFile) return;
-
-    // Obtén el tipo MIME en función de la extensión del archivo
-    const mimeType = getMimeTypeByExtension(newFile.name);
-    if (!mimeType) {
-      useError.actions.changeError([
-        'El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.',
-      ]);
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', newFile);
-    formData.append('fileName', newFile.name);
-
-    setSubmitting(true);
-
-    const config: AxiosRequestConfig = {
-      headers: {
-        'content-type': 'multipart/form-data',
-      },
-    };
-
-    try {
-      const response = await axios.post('/api/upload', formData, config);
-
-      if (response.status === 200) {
-        setPhoto(response.data.imageUrl);
-        validationPhoto(response.data.imageUrl);
-      } else {
-        setSubmitting(false);
-      }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (event: any) {
-      useError.actions.changeError([`${event.message}`]);
-      setSubmitting(false);
-    }
+    generalChangePhoto(
+      e,
+      changeError,
+      setSubmitting,
+      setPhoto,
+      validationPhoto
+    );
   };
 
   const changeIsActive = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    changeSelect({
-      newValue: options,
-      validation: validationIsActive,
-      setDefault: setIsActiveDefault,
-      setValue: setIsActive,
-    });
+    generalChanceIsActive(
+      options,
+      validationIsActive,
+      setIsActiveDefault,
+      setIsActive
+    );
   };
 
   const changeSearchBy = (
@@ -654,7 +567,7 @@ export const useGafpriUsers = ({
     : null;
 
   const setDataStorage = (newData: UserData): void => {
-    saveItem('GS_USERS_V2', newData.data.items);
+    saveItem(USERS_STORAGE, newData.data.items);
   };
 
   const setData = (newData: UserData): void => {
@@ -699,8 +612,7 @@ export const useGafpriUsers = ({
       if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initApi: 'http://localhost:4000',
-          initRoute: 'api/v1/users',
+          initRoute: USERS_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onUsers,
@@ -793,8 +705,7 @@ export const useGafpriUsers = ({
 
       gafpriFetch({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/users',
+        initRoute: USERS_ROUTE,
         initCredentials: updatedPayload,
         initToken: { token },
         functionFetching: onFetching,
@@ -837,8 +748,7 @@ export const useGafpriUsers = ({
 
       gafpriFetch({
         initMethod: 'PATCH',
-        initApi: 'http://localhost:4000',
-        initRoute: `api/v1/users/${userId}`,
+        initRoute: `${USERS_ROUTE}/${userId}`,
         initCredentials: updatedPayload,
         initToken: { token },
         functionFetching: onFetching,

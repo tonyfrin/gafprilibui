@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationWebSite = exports.generalValidationUserName = exports.generalValidationTypeDocumentIdIndex = exports.generalValidationTypeDocumentIdId = exports.generalValidationTypeDocumentIdDigit = exports.generalValidationType = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectTaxes = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCurrenciesSeparator = exports.generalValidationSelectCurrenciesLocations = exports.generalValidationSelectCurrenciesDecimalNumbers = exports.generalValidationSelectCurrencies = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationPostCode = exports.generalValidationPhotoEntity = exports.generalValidationPhotoDocumentId = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPhone = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationEmail = exports.generalValidationDescription = exports.generalValidationCurrenciesSymbol = exports.generalValidationButtonNext = exports.generalValidationAddressType = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
+exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationWebSite = exports.generalValidationUserName = exports.generalValidationTypeDocumentIdIndex = exports.generalValidationTypeDocumentIdId = exports.generalValidationTypeDocumentIdDigit = exports.generalValidationType = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectTaxes = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCurrenciesSeparator = exports.generalValidationSelectCurrenciesLocations = exports.generalValidationSelectCurrenciesDecimalNumbers = exports.generalValidationSelectCurrencies = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationRoles = exports.generalValidationPostCode = exports.generalValidationPhotoUsers = exports.generalValidationPhotoEntity = exports.generalValidationPhotoDocumentId = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPhone = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationEmail = exports.generalValidationDescription = exports.generalValidationCurrenciesSymbol = exports.generalValidationButtonNext = exports.generalValidationAreaCode = exports.generalValidationAddressType = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
 var _helpers = require("../helpers");
 var _Constans = require("../Constans");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
@@ -460,3 +460,30 @@ var generalValidationWebSite = function generalValidationWebSite(newValue, setVa
   return valid;
 };
 exports.generalValidationWebSite = generalValidationWebSite;
+var generalValidationAreaCode = function generalValidationAreaCode(newValue, setValid, currentValid) {
+  var valid = (0, _helpers.validationSelect)(newValue, _Constans.AREA_CODE_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationAreaCode = generalValidationAreaCode;
+var generalValidationRoles = function generalValidationRoles(newValue, setValid, currentValid) {
+  var valid = (0, _helpers.validationSelect)(newValue, _Constans.ROLES_INPUT);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.generalValidationRoles = generalValidationRoles;
+var generalValidationPhotoUsers = function generalValidationPhotoUsers(value, setValid, currentValid) {
+  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  return validationPhoto({
+    value: value,
+    inputId: _Constans.PHOTO_USERS_INPUT,
+    setValid: setValid,
+    currentValid: currentValid,
+    required: required
+  });
+};
+exports.generalValidationPhotoUsers = generalValidationPhotoUsers;

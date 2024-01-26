@@ -55,6 +55,8 @@ export {
   SelectCurrenciesDecimalNumbers,
   SelectTaxes,
   InputWebSite,
+  SelectAreaCode,
+  SelectRoles,
 } from './Input';
 export type {
   InputStyle,
@@ -92,6 +94,8 @@ export type {
   SelectCurrenciesDecimalNumbersProps,
   SelectTaxesProps,
   InputWebSiteProps,
+  SelectAreaCodeProps,
+  SelectRolesProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -116,6 +120,7 @@ export {
   PhotoCategory,
   PhotoEntity,
   PhotoDocumentId,
+  PhotoUser,
 } from './Form';
 export type {
   ModelFormProps,
@@ -125,6 +130,7 @@ export type {
   PhotoCategoryProps,
   PhotoEntityProps,
   PhotoDocumentIdProps,
+  PhotoUserProps,
 } from './Form';
 export { Menu1, Menu2, MenuButton } from './Menu';
 export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem } from './Menu';

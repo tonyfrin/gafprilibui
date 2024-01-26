@@ -35,3 +35,6 @@ export const CURRENCIES_DECIMAL_NUMBERS_INPUT =
   'currencies-decimal-numbers-input-id';
 export const TAXES_INPUT = 'taxes-input-id';
 export const WEB_SITE_INPUT = 'web-site-input-id';
+export const AREA_CODE_INPUT = 'area-code-input-id';
+export const ROLES_INPUT = 'roles-input-id';
+export const PHOTO_USERS_INPUT = 'photo-users-input-id';

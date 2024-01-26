@@ -202,10 +202,9 @@ function useGafpriTypeDocumentId(_ref) {
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
             count = ((_typeDocumentId$data$ = typeDocumentId.data.items) === null || _typeDocumentId$data$ === void 0 ? void 0 : _typeDocumentId$data$.length) || 0;
             if (typeDocumentId.data.items === null || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.date) !== "".concat(lastDate) || "".concat(lastEntryDateAndCount === null || lastEntryDateAndCount === void 0 ? void 0 : lastEntryDateAndCount.count) !== "".concat(count)) {
-              if (token && _Constans.API_URL) {
+              if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initApi: _Constans.API_URL,
                   initRoute: _Constans.TYPE_DOCUMENT_ID_ROUTE,
                   initToken: {
                     token: token
@@ -288,10 +287,9 @@ function useGafpriTypeDocumentId(_ref) {
     });
   };
   var add = function add() {
-    if (nameValid && countryValid && token && _Constans.API_URL) {
+    if (nameValid && countryValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initApi: _Constans.API_URL,
         initRoute: _Constans.TYPE_DOCUMENT_ID_ROUTE,
         initToken: {
           token: token
@@ -313,10 +311,9 @@ function useGafpriTypeDocumentId(_ref) {
     })) || null;
   }
   var update = function update() {
-    if (nameValid && countryValid && token && _Constans.API_URL) {
+    if (nameValid && countryValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.TYPE_DOCUMENT_ID_ROUTE, "/").concat(currentId),
         initToken: {
           token: token
@@ -332,10 +329,9 @@ function useGafpriTypeDocumentId(_ref) {
     }
   };
   var deleteTypeDocumentId = function deleteTypeDocumentId(id) {
-    if (token && _Constans.API_URL) {
+    if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initApi: _Constans.API_URL,
         initRoute: "".concat(_Constans.TYPE_DOCUMENT_ID_ROUTE, "/").concat(id),
         initToken: {
           token: token

@@ -7,3 +7,4 @@ export const ENTITY_ROUTE = '/entity';
 export const ROLES_ROUTE = '/roles';
 export const SITES_ROUTE = '/sites';
 export const TYPE_DOCUMENT_ID_ROUTE = '/type-document-id';
+export const USERS_ROUTE = '/users';

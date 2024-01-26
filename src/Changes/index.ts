@@ -199,7 +199,7 @@ export const generalChangeSite = (
   options: SingleValue<{ value: string; label: string }>,
   validation: (valueValid: string) => boolean,
   setDefault: (valueDefault: SelectDefault) => void,
-  setValue: (transformedValue: number) => void
+  setValue: (transformedValue: string) => void
 ): void => {
   changeSelect({
     newValue: options,
@@ -233,7 +233,8 @@ export const generalChangePhoto = async (
   e: ChangeEvent<HTMLInputElement>,
   changeError: (valueError: string[]) => void,
   setSubmitting: (valueSubmitting: boolean) => void,
-  setPhoto: (valuePhoto: string) => void
+  setPhoto: (valuePhoto: string) => void,
+  validation: (valueValid: string) => boolean
 ): Promise<void> => {
   const newFile = e.target.files && e.target.files[0];
 
@@ -265,6 +266,7 @@ export const generalChangePhoto = async (
 
     if (response.status === 200) {
       setPhoto(response.data.imageUrl);
+      validation(response.data.imageUrl);
     } else {
       setSubmitting(false);
     }
@@ -446,6 +448,48 @@ export const generalChangeWebSite = (
   changeInputText({
     value: host,
     validation,
+    setValue,
+  });
+};
+
+export const generalChangeAreaCode = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: string) => void
+): void => {
+  changeSelect({
+    newValue: options,
+    validation,
+    setDefault,
+    setValue,
+  });
+};
+
+export const generalChangeRoles = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: string) => void
+): void => {
+  changeSelect({
+    newValue: options,
+    validation,
+    setDefault,
+    setValue,
+  });
+};
+
+export const generalChanceIsActive = (
+  options: SingleValue<{ value: string; label: string }>,
+  validation: (valueValid: string) => boolean,
+  setDefault: (valueDefault: SelectDefault) => void,
+  setValue: (transformedValue: boolean) => void
+): void => {
+  changeSelect({
+    newValue: options,
+    validation,
+    setDefault,
     setValue,
   });
 };

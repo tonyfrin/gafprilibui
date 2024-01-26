@@ -1,6 +1,6 @@
 /* eslint-disable object-shorthand */
 import { SingleValue } from 'react-select';
-import { ALERT } from '../Constans';
+import { ALERT, API_URL } from '../Constans';
 
 export type SelectDefault = {
   value: string;
@@ -224,7 +224,7 @@ export interface InitToken {
 
 interface FetchOptions<T = unknown> {
   initMethod: 'POST' | 'GET' | 'PUT' | 'PATCH' | 'DELETE';
-  initApi: string;
+  initApi?: string;
   initRoute: string;
   initToken?: InitToken;
   initCredentials?: T;
@@ -235,7 +235,7 @@ interface FetchOptions<T = unknown> {
 
 export function gafpriFetch<T = unknown>({
   initMethod,
-  initApi,
+  initApi = API_URL,
   initRoute,
   initToken,
   initCredentials,

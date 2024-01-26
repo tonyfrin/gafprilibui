@@ -1,22 +1,16 @@
 /// <reference types="react" />
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
-import type { ButtonPropsExtended } from '../Button';
-import type { LoadingProps } from '../../Components';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseUserReturn } from 'src/states';
+import type { UseUserReturn } from '../../states';
+import type { PhotoUserProps } from '../Form';
 export type UserFormProps = {
     use: UseUserReturn;
     formType: 'add' | 'update';
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    photoStyle?: string;
     nameContainerStyle?: string;
     modelFormProps?: ModelFormPropsExtended;
-    photoButtonProps?: ButtonPropsExtended;
-    loadingProps?: LoadingProps;
     nameInputProps?: InputProps;
     lastNameInputProps?: InputProps;
     emailInputProps?: InputProps;
@@ -26,19 +20,15 @@ export type UserFormProps = {
     roleContainerProps?: ContainerButtonPropsExtended;
     roleSelectProps?: GsSelectPropsExtended;
     siteSelectProps?: GsSelectPropsExtended;
+    propsPhoto?: PhotoUserProps['props'];
 };
 export type UserFormPropsExtended = {
     use?: UseUserReturn;
     formType?: 'add' | 'update';
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;
-    photoFormStyle?: string;
-    loadingContainerStyle?: string;
-    photoStyle?: string;
     nameContainerStyle?: string;
     modelFormProps?: ModelFormPropsExtended;
-    photoButtonProps?: ButtonPropsExtended;
-    loadingProps?: LoadingProps;
     nameInputProps?: InputProps;
     lastNameInputProps?: InputProps;
     emailInputProps?: InputProps;
@@ -48,5 +38,6 @@ export type UserFormPropsExtended = {
     roleContainerProps?: ContainerButtonPropsExtended;
     roleSelectProps?: GsSelectPropsExtended;
     siteSelectProps?: GsSelectPropsExtended;
+    propsPhoto?: PhotoUserProps['props'];
 };
-export declare const UserForm: ({ use, formType, photoMainContainerStyle, photoContainerStyle, photoFormStyle, loadingContainerStyle, photoStyle, nameContainerStyle, modelFormProps, photoButtonProps, loadingProps, nameInputProps, lastNameInputProps, emailInputProps, phoneContainerProps, areaCodeSelectProps, phoneInputProps, roleContainerProps, roleSelectProps, siteSelectProps, }: UserFormProps) => JSX.Element;
+export declare const UserForm: ({ use, formType, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, nameInputProps, lastNameInputProps, emailInputProps, phoneContainerProps, areaCodeSelectProps, phoneInputProps, roleContainerProps, roleSelectProps, siteSelectProps, propsPhoto, }: UserFormProps) => JSX.Element;

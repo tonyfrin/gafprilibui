@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.generalChangeWebSite = exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeTaxes = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCurrenciesId = exports.generalChangeCurrenciesDecimalNumbers = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAddressType = exports.generalChangeAddress = void 0;
+exports.generalChangeWebSite = exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeTaxes = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangeRoles = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCurrenciesId = exports.generalChangeCurrenciesDecimalNumbers = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAreaCode = exports.generalChangeAddressType = exports.generalChangeAddress = exports.generalChanceIsActive = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _axios = _interopRequireDefault(require("axios"));
@@ -178,7 +178,7 @@ var generalChangeParentId = function generalChangeParentId(options, validation, 
 };
 exports.generalChangeParentId = generalChangeParentId;
 var generalChangePhoto = /*#__PURE__*/function () {
-  var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e, changeError, setSubmitting, setPhoto) {
+  var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e, changeError, setSubmitting, setPhoto, validation) {
     var newFile, mimeType, formData, config, response;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
@@ -215,6 +215,7 @@ var generalChangePhoto = /*#__PURE__*/function () {
           response = _context.sent;
           if (response.status === 200) {
             setPhoto(response.data.imageUrl);
+            validation(response.data.imageUrl);
           } else {
             setSubmitting(false);
           }
@@ -232,7 +233,7 @@ var generalChangePhoto = /*#__PURE__*/function () {
       }
     }, _callee, null, [[12, 19]]);
   }));
-  return function generalChangePhoto(_x, _x2, _x3, _x4) {
+  return function generalChangePhoto(_x, _x2, _x3, _x4, _x5) {
     return _ref.apply(this, arguments);
   };
 }();
@@ -366,3 +367,30 @@ var generalChangeWebSite = function generalChangeWebSite(value, validation, setV
   });
 };
 exports.generalChangeWebSite = generalChangeWebSite;
+var generalChangeAreaCode = function generalChangeAreaCode(options, validation, setDefault, setValue) {
+  (0, _helpers.changeSelect)({
+    newValue: options,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeAreaCode = generalChangeAreaCode;
+var generalChangeRoles = function generalChangeRoles(options, validation, setDefault, setValue) {
+  (0, _helpers.changeSelect)({
+    newValue: options,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChangeRoles = generalChangeRoles;
+var generalChanceIsActive = function generalChanceIsActive(options, validation, setDefault, setValue) {
+  (0, _helpers.changeSelect)({
+    newValue: options,
+    validation: validation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
+};
+exports.generalChanceIsActive = generalChanceIsActive;

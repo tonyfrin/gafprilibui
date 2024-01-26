@@ -15,7 +15,6 @@ export type UserFormUpdateProps = {
     phoneContainerProps?: ContainerButtonPropsExtended;
     areaCodeSelectProps?: GsSelectPropsExtended;
     phoneInputProps?: InputProps;
-    roleContainerProps?: ContainerButtonPropsExtended;
     roleSelectProps?: GsSelectPropsExtended;
     propsPhoto?: PhotoUserProps['props'];
 };
@@ -31,8 +30,7 @@ export type UserFormUpdatePropsExtended = {
     phoneContainerProps?: ContainerButtonPropsExtended;
     areaCodeSelectProps?: GsSelectPropsExtended;
     phoneInputProps?: InputProps;
-    roleContainerProps?: ContainerButtonPropsExtended;
     roleSelectProps?: GsSelectPropsExtended;
     propsPhoto?: PhotoUserProps['props'];
 };
-export declare const UserFormUpdate: ({ use, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, nameInputProps, lastNameInputProps, emailInputProps, phoneContainerProps, areaCodeSelectProps, phoneInputProps, roleContainerProps, roleSelectProps, propsPhoto, }: UserFormUpdateProps) => JSX.Element;
+export declare const UserFormUpdate: ({ use, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, nameInputProps, lastNameInputProps, emailInputProps, phoneContainerProps, areaCodeSelectProps, phoneInputProps, roleSelectProps, propsPhoto, }: UserFormUpdateProps) => JSX.Element;

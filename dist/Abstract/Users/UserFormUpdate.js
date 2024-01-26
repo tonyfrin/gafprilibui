@@ -35,7 +35,6 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
     phoneContainerProps = _ref.phoneContainerProps,
     areaCodeSelectProps = _ref.areaCodeSelectProps,
     phoneInputProps = _ref.phoneInputProps,
-    roleContainerProps = _ref.roleContainerProps,
     roleSelectProps = _ref.roleSelectProps,
     propsPhoto = _ref.propsPhoto;
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
@@ -76,7 +75,7 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
         }, roleSelectProps)
       });
     });
-  }, []);
+  }, [use.states.roleDefault]);
   _react["default"].useEffect(function () {
     if (use.states.name !== '') {
       setInputAreaCode(function () {
@@ -191,7 +190,7 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
         width: '100%'
       }
     }, emailInputProps)
-  })))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
+  }), InputRole))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%'
     }
@@ -207,10 +206,6 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
         width: '96%'
       }
     }, phoneInputProps)
-  }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
-    styles: {
-      width: '100%'
-    }
-  }, roleContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputRole))));
+  })))));
 };
 exports.UserFormUpdate = UserFormUpdate;

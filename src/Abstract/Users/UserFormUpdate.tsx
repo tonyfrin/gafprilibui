@@ -27,7 +27,6 @@ export type UserFormUpdateProps = {
   phoneContainerProps?: ContainerButtonPropsExtended;
   areaCodeSelectProps?: GsSelectPropsExtended;
   phoneInputProps?: InputProps;
-  roleContainerProps?: ContainerButtonPropsExtended;
   roleSelectProps?: GsSelectPropsExtended;
   propsPhoto?: PhotoUserProps['props'];
 };
@@ -44,7 +43,6 @@ export type UserFormUpdatePropsExtended = {
   phoneContainerProps?: ContainerButtonPropsExtended;
   areaCodeSelectProps?: GsSelectPropsExtended;
   phoneInputProps?: InputProps;
-  roleContainerProps?: ContainerButtonPropsExtended;
   roleSelectProps?: GsSelectPropsExtended;
   propsPhoto?: PhotoUserProps['props'];
 };
@@ -74,7 +72,6 @@ export const UserFormUpdate = ({
   phoneContainerProps,
   areaCodeSelectProps,
   phoneInputProps,
-  roleContainerProps,
   roleSelectProps,
   propsPhoto,
 }: UserFormUpdateProps): JSX.Element => {
@@ -136,7 +133,7 @@ export const UserFormUpdate = ({
         />
       );
     });
-  }, []);
+  }, [use.states.roleDefault]);
 
   React.useEffect(() => {
     if (use.states.name !== '') {
@@ -266,6 +263,7 @@ export const UserFormUpdate = ({
                   ...emailInputProps,
                 }}
               />
+              {InputRole}
             </>
           </div>
         </div>
@@ -290,14 +288,6 @@ export const UserFormUpdate = ({
               }}
             />
           </>
-        </ContainerButton>
-        <ContainerButton
-          styles={{
-            width: '100%',
-          }}
-          {...roleContainerProps}
-        >
-          <>{InputRole}</>
         </ContainerButton>
       </>
     </ModelForm>

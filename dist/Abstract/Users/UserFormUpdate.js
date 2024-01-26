@@ -129,7 +129,7 @@ var UserFormUpdate = function UserFormUpdate(_ref) {
         use.actions.returnInit();
         break;
       default:
-        console.log('Acción desconocida:', action);
+        console.log('Acciónes desconocidas:', action);
     }
   };
   return /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, (0, _extends2["default"])({

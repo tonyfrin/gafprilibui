@@ -197,7 +197,7 @@ export const UserFormUpdate = ({
         use.actions.returnInit();
         break;
       default:
-        console.log('Acción desconocida:', action);
+        console.log('Acciónes desconocidas:', action);
     }
   };
 

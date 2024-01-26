@@ -297,9 +297,8 @@ export const generalChangeCurrenciesSymbol = (
   setValue: (transformedValue: string) => void
 ): void => {
   const valueClean = DOMPurify.sanitize(value);
-  const name = toTitleCase(valueClean);
   changeInputText({
-    value: name,
+    value: valueClean,
     validation,
     setValue,
   });
@@ -352,9 +351,9 @@ export const generalChangeEmail = (
   setValue: (transformedValue: string) => void
 ): void => {
   const valueClean = DOMPurify.sanitize(value);
-  const name = toTitleCase(valueClean);
+  const email = valueClean.toLowerCase();
   changeInputText({
-    value: name,
+    value: email,
     validation,
     setValue,
   });

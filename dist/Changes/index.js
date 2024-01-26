@@ -249,9 +249,8 @@ var generalChangeStatus = function generalChangeStatus(options, validation, setD
 exports.generalChangeStatus = generalChangeStatus;
 var generalChangeCurrenciesSymbol = function generalChangeCurrenciesSymbol(value, validation, setValue) {
   var valueClean = _dompurify["default"].sanitize(value);
-  var name = (0, _helpers.toTitleCase)(valueClean);
   (0, _helpers.changeInputText)({
-    value: name,
+    value: valueClean,
     validation: validation,
     setValue: setValue
   });
@@ -286,9 +285,9 @@ var generalChangeDocumentIdDigit = function generalChangeDocumentIdDigit(value, 
 exports.generalChangeDocumentIdDigit = generalChangeDocumentIdDigit;
 var generalChangeEmail = function generalChangeEmail(value, validation, setValue) {
   var valueClean = _dompurify["default"].sanitize(value);
-  var name = (0, _helpers.toTitleCase)(valueClean);
+  var email = valueClean.toLowerCase();
   (0, _helpers.changeInputText)({
-    value: name,
+    value: email,
     validation: validation,
     setValue: setValue
   });

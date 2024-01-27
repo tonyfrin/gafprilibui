@@ -375,6 +375,7 @@ export {
   generalValidationAreaCode,
   generalValidationRoles,
   generalValidationPhotoUsers,
+  generalValidationStatus,
 } from './Validations';
 export type { ValidationInput } from './Validations';
 export {

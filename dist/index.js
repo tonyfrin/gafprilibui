@@ -1239,6 +1239,12 @@ Object.defineProperty(exports, "generalValidationSku", {
     return _Validations.generalValidationSku;
   }
 });
+Object.defineProperty(exports, "generalValidationStatus", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationStatus;
+  }
+});
 Object.defineProperty(exports, "generalValidationType", {
   enumerable: true,
   get: function get() {

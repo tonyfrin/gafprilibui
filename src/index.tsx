@@ -216,6 +216,7 @@ export {
   getMimeTypeByExtension,
   formatPhoneNumber,
   getBase64,
+  changeMultipleArrayStringSelect,
 } from './helpers';
 export type {
   ChangeInputText,
@@ -227,6 +228,7 @@ export type {
   CustomErrorResponseProps,
   SelectDefault,
   RoleArray,
+  ChangeMultipleArrayStringSelectProps,
 } from './helpers';
 export {
   useGafpriCurrencies,

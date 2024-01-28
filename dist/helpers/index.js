@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.changeSelect = exports.changeInputText = exports.addClass = void 0;
+exports.changeSelect = exports.changeMultipleArrayStringSelect = exports.changeInputText = exports.addClass = void 0;
 exports.formatPhoneNumber = formatPhoneNumber;
 exports.gafpriFetch = gafpriFetch;
 exports.getLastEntryDateAndCount = exports.getBase64 = void 0;
@@ -17,6 +17,7 @@ exports.validationSelect = exports.validationInputPostcode = exports.validationI
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 var _Constans = require("../Constans");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -114,60 +115,79 @@ var changeSelect = function changeSelect(_ref2) {
   }
 };
 exports.changeSelect = changeSelect;
-var validationInputName = function validationInputName(_ref3) {
-  var name = _ref3.name,
-    inputId = _ref3.inputId,
-    setValid = _ref3.setValid,
-    _ref3$required = _ref3.required,
-    required = _ref3$required === void 0 ? true : _ref3$required;
+var changeMultipleArrayStringSelect = function changeMultipleArrayStringSelect(_ref3) {
+  var newValue = _ref3.newValue,
+    selectedOptions = _ref3.selectedOptions,
+    validation = _ref3.validation,
+    setValue = _ref3.setValue,
+    setSelectedValue = _ref3.setSelectedValue;
+  if (newValue != null) {
+    var selectedOption = newValue.value;
+    if (!selectedOptions.includes(selectedOption)) {
+      var updatedOptions = [].concat((0, _toConsumableArray2["default"])(selectedOptions), [selectedOption]);
+      var valid = validation(updatedOptions);
+      if (valid) {
+        setValue(updatedOptions);
+        setSelectedValue('');
+      }
+    }
+  }
+};
+exports.changeMultipleArrayStringSelect = changeMultipleArrayStringSelect;
+var validationInputName = function validationInputName(_ref4) {
+  var name = _ref4.name,
+    inputId = _ref4.inputId,
+    setValid = _ref4.setValid,
+    _ref4$required = _ref4.required,
+    required = _ref4$required === void 0 ? true : _ref4$required;
   var valid = validationInput(name, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'@-\s]+$/, inputId, required);
   setValid(valid);
   return valid;
 };
 exports.validationInputName = validationInputName;
-var validationInputPostcode = function validationInputPostcode(_ref4) {
-  var value = _ref4.value,
-    inputId = _ref4.inputId,
-    setValid = _ref4.setValid,
-    _ref4$required = _ref4.required,
-    required = _ref4$required === void 0 ? true : _ref4$required;
-  var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, required);
-  setValid(valid);
-  return valid;
-};
-exports.validationInputPostcode = validationInputPostcode;
-var validationInputEmail = function validationInputEmail(_ref5) {
+var validationInputPostcode = function validationInputPostcode(_ref5) {
   var value = _ref5.value,
     inputId = _ref5.inputId,
     setValid = _ref5.setValid,
     _ref5$required = _ref5.required,
     required = _ref5$required === void 0 ? true : _ref5$required;
-  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, required);
+  var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, required);
   setValid(valid);
   return valid;
 };
-exports.validationInputEmail = validationInputEmail;
-var validationInputPhone = function validationInputPhone(_ref6) {
+exports.validationInputPostcode = validationInputPostcode;
+var validationInputEmail = function validationInputEmail(_ref6) {
   var value = _ref6.value,
     inputId = _ref6.inputId,
     setValid = _ref6.setValid,
     _ref6$required = _ref6.required,
     required = _ref6$required === void 0 ? true : _ref6$required;
+  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, required);
+  setValid(valid);
+  return valid;
+};
+exports.validationInputEmail = validationInputEmail;
+var validationInputPhone = function validationInputPhone(_ref7) {
+  var value = _ref7.value,
+    inputId = _ref7.inputId,
+    setValid = _ref7.setValid,
+    _ref7$required = _ref7.required,
+    required = _ref7$required === void 0 ? true : _ref7$required;
   var valid = validationInput(value, /^[0-9]{10,20}/, inputId, required);
   setValid(valid);
   return valid;
 };
 exports.validationInputPhone = validationInputPhone;
-function gafpriFetch(_ref7) {
-  var initMethod = _ref7.initMethod,
-    _ref7$initApi = _ref7.initApi,
-    initApi = _ref7$initApi === void 0 ? _Constans.API_URL : _ref7$initApi,
-    initRoute = _ref7.initRoute,
-    initToken = _ref7.initToken,
-    initCredentials = _ref7.initCredentials,
-    functionFetching = _ref7.functionFetching,
-    functionSuccess = _ref7.functionSuccess,
-    functionError = _ref7.functionError;
+function gafpriFetch(_ref8) {
+  var initMethod = _ref8.initMethod,
+    _ref8$initApi = _ref8.initApi,
+    initApi = _ref8$initApi === void 0 ? _Constans.API_URL : _ref8$initApi,
+    initRoute = _ref8.initRoute,
+    initToken = _ref8.initToken,
+    initCredentials = _ref8.initCredentials,
+    functionFetching = _ref8.functionFetching,
+    functionSuccess = _ref8.functionSuccess,
+    functionError = _ref8.functionError;
   if (functionFetching !== undefined) {
     functionFetching();
   }
@@ -217,7 +237,7 @@ var isSelectDefaultArray = function isSelectDefaultArray(obj) {
 };
 exports.isSelectDefaultArray = isSelectDefaultArray;
 var getLastEntryDateAndCount = /*#__PURE__*/function () {
-  var _ref8 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(service) {
+  var _ref9 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(service) {
     var response;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
@@ -252,7 +272,7 @@ var getLastEntryDateAndCount = /*#__PURE__*/function () {
     }, _callee, null, [[0, 10]]);
   }));
   return function getLastEntryDateAndCount(_x) {
-    return _ref8.apply(this, arguments);
+    return _ref9.apply(this, arguments);
   };
 }();
 exports.getLastEntryDateAndCount = getLastEntryDateAndCount;

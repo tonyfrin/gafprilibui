@@ -145,6 +145,39 @@ export const changeSelect = ({
   }
 };
 
+export type ChangeMultipleArrayStringSelectProps = {
+  newValue: SingleValue<{
+    value: string;
+    label: string;
+  }>;
+  selectedOptions: string[];
+  validation: (value: string[]) => boolean;
+  setValue: (value: string[]) => void;
+  setSelectedValue: (value: string) => void;
+};
+
+export const changeMultipleArrayStringSelect = ({
+  newValue,
+  selectedOptions,
+  validation,
+  setValue,
+  setSelectedValue,
+}: ChangeMultipleArrayStringSelectProps): void => {
+  if (newValue != null) {
+    const selectedOption = newValue.value;
+    if (!selectedOptions.includes(selectedOption)) {
+      const updatedOptions = [...selectedOptions, selectedOption];
+
+      const valid: boolean = validation(updatedOptions);
+
+      if (valid) {
+        setValue(updatedOptions);
+        setSelectedValue('');
+      }
+    }
+  }
+};
+
 export type ValidationInputName = {
   name: string;
   inputId: string;

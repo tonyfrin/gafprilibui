@@ -25,6 +25,17 @@ export type ChangeSelect = {
     setValue: ((value: string) => void) | ((value: number) => void) | ((value: boolean) => void) | ((value: null) => void);
 };
 export declare const changeSelect: ({ newValue, validation, setDefault, setValue, }: ChangeSelect) => void;
+export type ChangeMultipleArrayStringSelectProps = {
+    newValue: SingleValue<{
+        value: string;
+        label: string;
+    }>;
+    selectedOptions: string[];
+    validation: (value: string[]) => boolean;
+    setValue: (value: string[]) => void;
+    setSelectedValue: (value: string) => void;
+};
+export declare const changeMultipleArrayStringSelect: ({ newValue, selectedOptions, validation, setValue, setSelectedValue, }: ChangeMultipleArrayStringSelectProps) => void;
 export type ValidationInputName = {
     name: string;
     inputId: string;

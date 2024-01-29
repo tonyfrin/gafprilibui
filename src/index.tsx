@@ -68,6 +68,7 @@ export {
   SelectAreaCode,
   SelectRoles,
   PhotoUser,
+  InputName,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -169,6 +170,7 @@ export type {
   SelectAreaCodeProps,
   SelectRolesProps,
   PhotoUserProps,
+  InputNameProps,
 } from './Abstract';
 export {
   MainFooter,

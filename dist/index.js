@@ -381,6 +381,12 @@ Object.defineProperty(exports, "InputLastName", {
     return _Abstract.InputLastName;
   }
 });
+Object.defineProperty(exports, "InputName", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputName;
+  }
+});
 Object.defineProperty(exports, "InputPhone", {
   enumerable: true,
   get: function get() {

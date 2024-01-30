@@ -87,6 +87,18 @@ export const changeInputText = ({
   setValue(newValue);
 };
 
+export const changeInputNumers = (
+  value: number | string,
+  validation: (validValue: number | string) => boolean,
+  setValue: (newValue: number) => void
+): void => {
+  const numericValue = typeof value === 'string' ? parseInt(value, 10) : value;
+  const valid: boolean = validation(numericValue);
+  if (valid) {
+    setValue(numericValue);
+  }
+};
+
 export function toTitleCase(str: string): string {
   const exceptions = ['de', 'del', 'la'];
 

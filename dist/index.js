@@ -867,6 +867,12 @@ Object.defineProperty(exports, "addClass", {
     return _helpers.addClass;
   }
 });
+Object.defineProperty(exports, "changeInputNumers", {
+  enumerable: true,
+  get: function get() {
+    return _helpers.changeInputNumers;
+  }
+});
 Object.defineProperty(exports, "changeInputText", {
   enumerable: true,
   get: function get() {

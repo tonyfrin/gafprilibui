@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.changeSelect = exports.changeMultipleArrayStringSelect = exports.changeInputText = exports.addClass = void 0;
+exports.changeSelect = exports.changeMultipleArrayStringSelect = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
 exports.formatPhoneNumber = formatPhoneNumber;
 exports.gafpriFetch = gafpriFetch;
 exports.getLastEntryDateAndCount = exports.getBase64 = void 0;
@@ -79,6 +79,14 @@ var changeInputText = function changeInputText(_ref) {
   setValue(newValue);
 };
 exports.changeInputText = changeInputText;
+var changeInputNumers = function changeInputNumers(value, validation, setValue) {
+  var numericValue = typeof value === 'string' ? parseInt(value, 10) : value;
+  var valid = validation(numericValue);
+  if (valid) {
+    setValue(numericValue);
+  }
+};
+exports.changeInputNumers = changeInputNumers;
 function toTitleCase(str) {
   var exceptions = ['de', 'del', 'la'];
   return str.replace(/(^|\s|\.|,|&)([a-z\u00E0-\u00FF]+)/g, function (match, separator, word) {

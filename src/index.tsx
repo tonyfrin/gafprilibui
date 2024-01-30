@@ -219,6 +219,7 @@ export {
   formatPhoneNumber,
   getBase64,
   changeMultipleArrayStringSelect,
+  changeInputNumers,
 } from './helpers';
 export type {
   ChangeInputText,

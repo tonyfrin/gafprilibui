@@ -89,7 +89,7 @@ export const changeInputText = ({
 
 export const changeInputNumers = (
   value: number | string,
-  validation: (validValue: number | string) => boolean,
+  validation: (validValue: number) => boolean,
   setValue: (newValue: number) => void
 ): void => {
   const numericValue = typeof value === 'string' ? parseInt(value, 10) : value;

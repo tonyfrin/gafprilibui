@@ -14,7 +14,7 @@ export type ChangeInputText = {
     setValue: (value: string) => void;
 };
 export declare const changeInputText: ({ value, validation, setValue, }: ChangeInputText) => void;
-export declare const changeInputNumers: (value: number | string, validation: (validValue: number | string) => boolean, setValue: (newValue: number) => void) => void;
+export declare const changeInputNumers: (value: number | string, validation: (validValue: number) => boolean, setValue: (newValue: number) => void) => void;
 export declare function toTitleCase(str: string): string;
 export type ChangeSelect = {
     newValue: SingleValue<{

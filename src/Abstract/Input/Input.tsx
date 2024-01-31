@@ -81,12 +81,15 @@ export const Input = ({
   );
   return (
     <ContainerInput styles={containerStyles} containerClass={containerClass}>
-      <input
-        className={cx(InputStyles(styles), inputClass)}
-        autoComplete="off"
-        name={randomName}
-        {...inputProps}
-      />
+      <>
+        {inputProps?.title ? <span>{inputProps?.title}</span> : ''}
+        <input
+          className={cx(InputStyles(styles), inputClass)}
+          autoComplete="off"
+          name={randomName}
+          {...inputProps}
+        />
+      </>
     </ContainerInput>
   );
 };

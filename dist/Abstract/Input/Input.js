@@ -36,11 +36,11 @@ var Input = function Input(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_Containers.ContainerInput, {
     styles: containerStyles,
     containerClass: containerClass
-  }, /*#__PURE__*/_react["default"].createElement("input", (0, _extends2["default"])({
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, inputProps !== null && inputProps !== void 0 && inputProps.title ? /*#__PURE__*/_react["default"].createElement("span", null, inputProps === null || inputProps === void 0 ? void 0 : inputProps.title) : '', /*#__PURE__*/_react["default"].createElement("input", (0, _extends2["default"])({
     className: (0, _css.cx)(InputStyles(styles), inputClass),
     autoComplete: "off",
     name: randomName
-  }, inputProps)));
+  }, inputProps))));
 };
 exports.Input = Input;
 var SelectStyles = function SelectStyles(styles) {

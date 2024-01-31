@@ -23,6 +23,7 @@ export const SelectStatus = ({ changeStatus, props }: SelectStatusProps) => {
         containerStyles={props?.containerStyles}
         containerClass={props?.containerClass}
         defaultValue={props?.defaultValue}
+        title={props?.title}
       />
     </>
   );

@@ -21,6 +21,7 @@ export const SelectRoles = ({ changeRoles, props }: SelectRolesProps) => {
         containerStyles={props?.containerStyles}
         containerClass={props?.containerClass}
         defaultValue={props?.defaultValue}
+        title={props?.title}
       />
     </>
   );

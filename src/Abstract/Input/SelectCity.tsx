@@ -21,6 +21,7 @@ export const SelectCity = ({ changeCity, props }: SelectCityProps) => {
         containerStyles={props?.containerStyles}
         containerClass={props?.containerClass}
         defaultValue={props?.defaultValue}
+        title={props?.title}
       />
     </>
   );

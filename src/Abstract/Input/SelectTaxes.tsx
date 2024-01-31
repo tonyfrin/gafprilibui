@@ -21,6 +21,7 @@ export const SelectTaxes = ({ changeTaxes, props }: SelectTaxesProps) => {
         containerStyles={props?.containerStyles}
         containerClass={props?.containerClass}
         defaultValue={props?.defaultValue}
+        title={props?.title}
       />
     </>
   );

@@ -21,6 +21,7 @@ export const SelectSite = ({ changeSite, props }: SelectSiteProps) => {
         containerStyles={props?.containerStyles}
         containerClass={props?.containerClass}
         defaultValue={props?.defaultValue}
+        title={props?.title}
       />
     </>
   );

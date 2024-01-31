@@ -20,7 +20,8 @@ var SelectAddressType = function SelectAddressType(_ref) {
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,
     containerClass: props === null || props === void 0 ? void 0 : props.containerClass,
-    defaultValue: props === null || props === void 0 ? void 0 : props.defaultValue
+    defaultValue: props === null || props === void 0 ? void 0 : props.defaultValue,
+    title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
 exports.SelectAddressType = SelectAddressType;

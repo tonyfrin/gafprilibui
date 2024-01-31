@@ -24,6 +24,7 @@ export const SelectDocumentIdIndex = ({
         containerStyles={props?.containerStyles}
         containerClass={props?.containerClass}
         defaultValue={props?.defaultValue}
+        title={props?.title}
       />
     </>
   );

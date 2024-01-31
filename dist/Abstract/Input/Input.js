@@ -67,17 +67,22 @@ var GsSelect = function GsSelect(_ref2) {
     containerStyles = _ref2$containerStyles === void 0 ? {} : _ref2$containerStyles,
     _ref2$containerClass = _ref2.containerClass,
     containerClass = _ref2$containerClass === void 0 ? '' : _ref2$containerClass,
-    defaultValue = _ref2.defaultValue;
+    defaultValue = _ref2.defaultValue,
+    title = _ref2.title,
+    _ref2$stylesSpan = _ref2.stylesSpan,
+    stylesSpan = _ref2$stylesSpan === void 0 ? {} : _ref2$stylesSpan;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerInput, {
     styles: containerStyles,
     containerClass: containerClass
-  }, /*#__PURE__*/_react["default"].createElement(_reactSelect["default"], {
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, title ? /*#__PURE__*/_react["default"].createElement("span", {
+    className: (0, _css.cx)(SpanStyles(stylesSpan))
+  }, title) : '', /*#__PURE__*/_react["default"].createElement(_reactSelect["default"], {
     className: (0, _css.cx)(SelectStyles(styles), Class),
     options: options,
     id: id ? id : undefined,
     onChange: onChange,
     placeholder: placeholder ? placeholder : undefined,
     defaultValue: defaultValue
-  })));
+  }))));
 };
 exports.GsSelect = GsSelect;

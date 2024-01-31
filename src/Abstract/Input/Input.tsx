@@ -164,6 +164,8 @@ export type GsSelectProps = {
   containerStyles?: ContainerStyles;
   containerClass?: string;
   defaultValue?: { value: string; label: string };
+  title?: string;
+  stylesSpan?: SpanStyle | undefined;
 };
 
 export type GsSelectPropsExtended = {
@@ -176,6 +178,8 @@ export type GsSelectPropsExtended = {
   containerStyles?: ContainerStyles;
   containerClass?: string;
   defaultValue?: { value: string; label: string };
+  title?: string;
+  stylesSpan?: SpanStyle | undefined;
 };
 
 export const GsSelect = ({
@@ -188,18 +192,28 @@ export const GsSelect = ({
   containerStyles = {},
   containerClass = '',
   defaultValue,
+  title,
+  stylesSpan = {},
 }: GsSelectProps) => {
   return (
     <>
       <ContainerInput styles={containerStyles} containerClass={containerClass}>
-        <Select
-          className={cx(SelectStyles(styles), Class)}
-          options={options}
-          id={id ? id : undefined}
-          onChange={onChange}
-          placeholder={placeholder ? placeholder : undefined}
-          defaultValue={defaultValue}
-        />
+        <>
+          {title ? (
+            <span className={cx(SpanStyles(stylesSpan))}>{title}</span>
+          ) : (
+            ''
+          )}
+
+          <Select
+            className={cx(SelectStyles(styles), Class)}
+            options={options}
+            id={id ? id : undefined}
+            onChange={onChange}
+            placeholder={placeholder ? placeholder : undefined}
+            defaultValue={defaultValue}
+          />
+        </>
       </ContainerInput>
     </>
   );

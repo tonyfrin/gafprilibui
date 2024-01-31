@@ -70,6 +70,8 @@ export type GsSelectProps = {
         value: string;
         label: string;
     };
+    title?: string;
+    stylesSpan?: SpanStyle | undefined;
 };
 export type GsSelectPropsExtended = {
     styles?: SelectStyle;
@@ -87,6 +89,8 @@ export type GsSelectPropsExtended = {
         value: string;
         label: string;
     };
+    title?: string;
+    stylesSpan?: SpanStyle | undefined;
 };
-export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerClass, defaultValue, }: GsSelectProps) => JSX.Element;
+export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerClass, defaultValue, title, stylesSpan, }: GsSelectProps) => JSX.Element;
 export {};

@@ -9,6 +9,13 @@ export type OnChange = (
   actionMeta: ActionMeta<{ value: string; label: string }>
 ) => void | undefined;
 
+export type SpanStyle = {
+  fontSize?: string;
+  color?: string;
+  paddingLeft?: string;
+  props?: string;
+};
+
 const InputStyles = (styles: InputStyle) => css`
   width: ${styles.width || '100%'};
   border: ${styles.border || '2px solid #eaeaea'};
@@ -40,6 +47,13 @@ const InputStyles = (styles: InputStyle) => css`
   }
 `;
 
+const SpanStyles = (styles: SpanStyle) => css`
+  font-size: ${styles?.fontSize || 'x-small'};
+  color: ${styles?.color || '#8d8d8d'};
+  padding-left: ${styles?.paddingLeft || '5px'};
+  ${styles.props || ''}
+`;
+
 type Media = {
   fontSize?: string | number;
 };
@@ -62,6 +76,7 @@ export type InputStyle = {
 
 export type InputProps = {
   styles?: InputStyle | undefined;
+  stylesSpan?: SpanStyle | undefined;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   inputClass?: string | undefined;
   containerStyles?: ContainerStyles | undefined;
@@ -70,6 +85,7 @@ export type InputProps = {
 
 export const Input = ({
   styles = {},
+  stylesSpan = {},
   inputClass = '',
   inputProps = {},
   containerStyles = {},
@@ -82,7 +98,13 @@ export const Input = ({
   return (
     <ContainerInput styles={containerStyles} containerClass={containerClass}>
       <>
-        {inputProps?.title ? <span>{inputProps?.title}</span> : ''}
+        {inputProps?.title ? (
+          <span className={cx(SpanStyles(stylesSpan))}>
+            {inputProps?.title}
+          </span>
+        ) : (
+          ''
+        )}
         <input
           className={cx(InputStyles(styles), inputClass)}
           autoComplete="off"

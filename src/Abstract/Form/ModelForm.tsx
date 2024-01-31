@@ -39,10 +39,6 @@ const defaultReturnButtonConatinerStyle = css`
   padding-bottom: 100px;
 `;
 
-const defaultReturnButtonStyle = {
-  backgroundColor: '#c12429',
-};
-
 interface BoxProps {
   styles?: Box1Props['styles'];
   Class?: Box1Props['Class'];
@@ -105,7 +101,7 @@ export const ModelForm = ({
   handleActions,
   buttonTitles,
   mainButtonProps,
-  returnButtonStyle = defaultReturnButtonStyle,
+  returnButtonStyle,
   returnButtonProps,
   children,
   error,
@@ -140,7 +136,10 @@ export const ModelForm = ({
           <div className={css(returnButtonConatinerStyle)}>
             <Button
               title={buttonTitles.returnButton}
-              styles={returnButtonStyle}
+              styles={{
+                ...returnButtonStyle,
+                backgroundColor: '#c12429',
+              }}
               buttonProps={{
                 onClick: () => handleActions('return', {}),
               }}

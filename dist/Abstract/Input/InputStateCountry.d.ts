@@ -7,5 +7,6 @@ export type InputStateCountryProps = {
         label: string;
     }>) => void;
     props?: InputProps;
+    inputId?: string;
 };
-export declare const InputStateCountry: ({ changeStateCountry, props, }: InputStateCountryProps) => JSX.Element;
+export declare const InputStateCountry: ({ changeStateCountry, props, inputId, }: InputStateCountryProps) => JSX.Element;

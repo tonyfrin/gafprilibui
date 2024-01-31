@@ -139,7 +139,7 @@ function useGafpriCurrencies(_ref) {
     return (0, _Validations.generalValidationCurrenciesSymbol)(newValue, setSymbolValid, symbolValid);
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)(nameValid, symbolValid);
+    (0, _Validations.generalValidationButtonNext)([nameValid, symbolValid]);
   };
 
   // Funciones de cambios

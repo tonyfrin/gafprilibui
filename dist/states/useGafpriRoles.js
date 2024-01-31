@@ -131,7 +131,7 @@ function useGafpriRoles(_ref) {
     return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)(nameValid);
+    (0, _Validations.generalValidationButtonNext)([nameValid]);
   };
 
   // Funciones de cambios

@@ -213,7 +213,7 @@ export function useGafpriRoles({
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext(nameValid);
+    generalValidationButtonNext([nameValid]);
   };
 
   // Funciones de cambios

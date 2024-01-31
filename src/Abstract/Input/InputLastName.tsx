@@ -5,11 +5,13 @@ import { Input, InputProps } from './Input';
 export type InputLastNameProps = {
   changeLastName: (LastName: string) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
 export const InputLastName = ({
   changeLastName,
   props,
+  inputId = '',
 }: InputLastNameProps) => {
   return (
     <>
@@ -18,7 +20,7 @@ export const InputLastName = ({
         inputProps={{
           placeholder: 'Apellido',
           type: 'name',
-          id: LAST_NAME_INPUT,
+          id: `${LAST_NAME_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changeLastName(event.currentTarget.value),
           ...props?.inputProps,

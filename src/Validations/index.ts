@@ -78,11 +78,12 @@ export const generalValidationName = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationInputNameLastNameUserName({
     value,
-    inputId: NAME_INPUT,
+    inputId: `${NAME_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -93,11 +94,12 @@ export const generalValidationLastName = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationInputNameLastNameUserName({
     value,
-    inputId: LAST_NAME_INPUT,
+    inputId: `${LAST_NAME_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -108,11 +110,12 @@ export const generalValidationUserName = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationInputNameLastNameUserName({
     value,
-    inputId: USER_NAME_INPUT,
+    inputId: `${USER_NAME_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -153,11 +156,12 @@ export const generalValidationPassword = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationInputPassword({
     value,
-    inputId: PASSWORD_INPUT,
+    inputId: `${PASSWORD_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -168,11 +172,12 @@ export const generalValidationSinglePassword = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationInputSinglePassword({
     value,
-    inputId: PASSWORD_INPUT,
+    inputId: `${PASSWORD_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -180,14 +185,15 @@ export const generalValidationSinglePassword = (
 };
 
 export const generalValidationButtonNext = (
-  ...validations: boolean[]
+  validations: boolean[],
+  inputId?: string
 ): void => {
   const isAllValid = validations.every((validation) => validation);
 
   if (isAllValid) {
-    removeClass(BUTTON_NEXT_INPUT, DISABLED);
+    removeClass(`${BUTTON_NEXT_INPUT}${inputId}`, DISABLED);
   } else {
-    addClass(BUTTON_NEXT_INPUT, DISABLED);
+    addClass(`${BUTTON_NEXT_INPUT}${inputId}`, DISABLED);
   }
 };
 
@@ -209,11 +215,12 @@ export const generalValidationDescription = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationInputDescription({
     value,
-    inputId: DESCRIPTION_INPUT,
+    inputId: `${DESCRIPTION_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -243,11 +250,12 @@ export const generalValidationAddress1 = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationInputAddress({
     value,
-    inputId: ADDRESS1_INPUT,
+    inputId: `${ADDRESS1_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -258,11 +266,12 @@ export const generalValidationAddress2 = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = false
+  required = false,
+  inputId = ''
 ): boolean => {
   return validationInputAddress({
     value,
-    inputId: ADDRESS2_INPUT,
+    inputId: `${ADDRESS2_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -272,9 +281,10 @@ export const generalValidationAddress2 = (
 export const generalValidationAddressType = (
   newValue: string,
   setValid: (value: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const valid = validationSelect(newValue, ADDRESS_TYPE_INPUT);
+  const valid = validationSelect(newValue, `${ADDRESS_TYPE_INPUT}${inputId}`);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -284,9 +294,13 @@ export const generalValidationAddressType = (
 export const generalValidationSelectCity = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const validation: boolean = validationSelect(value, CITY_INPUT);
+  const validation: boolean = validationSelect(
+    value,
+    `${CITY_INPUT}${inputId}`
+  );
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -296,9 +310,13 @@ export const generalValidationSelectCity = (
 export const generalValidationSelectStateCountry = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const validation: boolean = validationSelect(value, STATE_COUNTRY_INPUT);
+  const validation: boolean = validationSelect(
+    value,
+    `${STATE_COUNTRY_INPUT}${inputId}`
+  );
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -308,9 +326,13 @@ export const generalValidationSelectStateCountry = (
 export const generalValidationSelectCountry = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const validation: boolean = validationSelect(value, COUNTRY_INPUT);
+  const validation: boolean = validationSelect(
+    value,
+    `${COUNTRY_INPUT}${inputId}`
+  );
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -321,12 +343,13 @@ export const generalValidationPostCode = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = false
+  required = false,
+  inputId = ''
 ): boolean => {
   const valid = validationInput(
     value,
     /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/,
-    ZIP_CODE_INPUT,
+    `${ZIP_CODE_INPUT}${inputId}`,
     required
   );
   if (valid !== currentValid) {
@@ -338,9 +361,13 @@ export const generalValidationPostCode = (
 export const generalValidationSelectSite = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const validation: boolean = validationSelect(value, SITE_INPUT);
+  const validation: boolean = validationSelect(
+    value,
+    `${SITE_INPUT}${inputId}`
+  );
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -365,11 +392,12 @@ export const generalValidationSku = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationInputSku({
     value,
-    inputId: SKU_INPUT,
+    inputId: `${SKU_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -415,11 +443,12 @@ export const generalValidationPhotoCategory = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationPhoto({
     value,
-    inputId: PHOTO_CATEGORY_INPUT,
+    inputId: `${PHOTO_CATEGORY_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -430,11 +459,12 @@ export const generalValidationPhotoEntity = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationPhoto({
     value,
-    inputId: PHOTO_ENTITY_INPUT,
+    inputId: `${PHOTO_ENTITY_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -445,11 +475,12 @@ export const generalValidationPhotoDocumentId = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationPhoto({
     value,
-    inputId: PHOTO_DOCUMENT_ID_INPUT,
+    inputId: `${PHOTO_DOCUMENT_ID_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,
@@ -489,12 +520,13 @@ export const generalValidationGalleryImage = (
   value: string[],
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = false
+  required = false,
+  inputId = ''
 ): boolean => {
   const valid = validationInputArray(
     value,
     /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i,
-    GALLERY_IMAGE_INPUT,
+    `${GALLERY_IMAGE_INPUT}${inputId}`,
     required
   );
   if (valid !== currentValid) {
@@ -506,9 +538,10 @@ export const generalValidationGalleryImage = (
 export const generalValidationParentId = (
   newValue: string,
   setValid: (value: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const valid = validationSelect(newValue, PARENT_ID_INPUT);
+  const valid = validationSelect(newValue, `${PARENT_ID_INPUT}${inputId}`);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -518,9 +551,10 @@ export const generalValidationParentId = (
 export const generalValidationStatus = (
   newValue: string,
   setValid: (value: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const valid = validationSelect(newValue, STATUS_INPUT);
+  const valid = validationSelect(newValue, `${STATUS_INPUT}${inputId}`);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -531,12 +565,13 @@ export const generalValidationCurrenciesSymbol = (
   newValue: string,
   setValid: (value: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   const valid = validationInput(
     newValue,
     /\$|Bs|€/,
-    CURRENCIES_SYMBOL_INPUT,
+    `${CURRENCIES_SYMBOL_INPUT}${inputId}`,
     required
   );
   if (valid !== currentValid) {
@@ -548,9 +583,13 @@ export const generalValidationCurrenciesSymbol = (
 export const generalValidationTypeDocumentIdId = (
   newValue: string,
   setValid: (value: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const valid = validationSelect(newValue, TYPE_DOCUMENT_ID_ID_INPUT);
+  const valid = validationSelect(
+    newValue,
+    `${TYPE_DOCUMENT_ID_ID_INPUT}${inputId}`
+  );
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -560,9 +599,13 @@ export const generalValidationTypeDocumentIdId = (
 export const generalValidationTypeDocumentIdIndex = (
   newValue: string,
   setValid: (value: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const valid = validationSelect(newValue, TYPE_DOCUMENT_ID_INDEX_INPUT);
+  const valid = validationSelect(
+    newValue,
+    `${TYPE_DOCUMENT_ID_INDEX_INPUT}${inputId}`
+  );
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -573,12 +616,13 @@ export const generalValidationTypeDocumentIdDigit = (
   newValue: string,
   setValid: (value: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   const valid = validationInput(
     newValue,
     /^\d{1,12}(-\d{1,12})?$/,
-    TYPE_DOCUMENT_ID_DIGIT_INPUT,
+    `${TYPE_DOCUMENT_ID_DIGIT_INPUT}${inputId}`,
     required
   );
   if (valid !== currentValid) {
@@ -591,12 +635,13 @@ export const generalValidationEmail = (
   newValue: string,
   setValid: (value: boolean) => void,
   currentValid: boolean,
-  required = false
+  required = false,
+  inputId = ''
 ): boolean => {
   const valid = validationInput(
     newValue,
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-    EMAIL_INPUT,
+    `${EMAIL_INPUT}${inputId}`,
     required
   );
   if (valid !== currentValid) {
@@ -609,12 +654,13 @@ export const generalValidationPhone = (
   newValue: string,
   setValid: (value: boolean) => void,
   currentValid: boolean,
-  required = false
+  required = false,
+  inputId = ''
 ): boolean => {
   const valid = validationInput(
     newValue,
     /^[0-9]{10,20}/,
-    PHONE_INPUT,
+    `${PHONE_INPUT}${inputId}`,
     required
   );
   if (valid !== currentValid) {
@@ -626,9 +672,10 @@ export const generalValidationPhone = (
 export const generalValidationType = (
   newValue: string,
   setValid: (value: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const valid = validationSelect(newValue, TYPE_INPUT);
+  const valid = validationSelect(newValue, `${TYPE_INPUT}${inputId}`);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -638,9 +685,13 @@ export const generalValidationType = (
 export const generalValidationSelectCurrencies = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const validation: boolean = validationSelect(value, CURRENCIES_INPUT);
+  const validation: boolean = validationSelect(
+    value,
+    `${CURRENCIES_INPUT}${inputId}`
+  );
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -650,11 +701,12 @@ export const generalValidationSelectCurrencies = (
 export const generalValidationSelectCurrenciesLocations = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
   const validation: boolean = validationSelect(
     value,
-    CURRENCIES_LOCATIONS_INPUT
+    `${CURRENCIES_LOCATIONS_INPUT}${inputId}`
   );
   if (validation !== currentValid) {
     setValid(validation);
@@ -665,11 +717,12 @@ export const generalValidationSelectCurrenciesLocations = (
 export const generalValidationSelectCurrenciesSeparator = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
   const validation: boolean = validationSelect(
     value,
-    CURRENCIES_SEPARATOR_INPUT
+    `${CURRENCIES_SEPARATOR_INPUT}${inputId}`
   );
   if (validation !== currentValid) {
     setValid(validation);
@@ -680,11 +733,12 @@ export const generalValidationSelectCurrenciesSeparator = (
 export const generalValidationSelectCurrenciesDecimalNumbers = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
   const validation: boolean = validationSelect(
     value,
-    CURRENCIES_DECIMAL_NUMBERS_INPUT
+    `${CURRENCIES_DECIMAL_NUMBERS_INPUT}${inputId}`
   );
   if (validation !== currentValid) {
     setValid(validation);
@@ -695,9 +749,13 @@ export const generalValidationSelectCurrenciesDecimalNumbers = (
 export const generalValidationSelectTaxes = (
   value: string,
   setValid: (valueValid: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const validation: boolean = validationSelect(value, TAXES_INPUT);
+  const validation: boolean = validationSelect(
+    value,
+    `${TAXES_INPUT}${inputId}`
+  );
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -708,12 +766,13 @@ export const generalValidationWebSite = (
   newValue: string,
   setValid: (value: boolean) => void,
   currentValid: boolean,
-  required = false
+  required = false,
+  inputId = ''
 ): boolean => {
   const valid = validationInput(
     newValue,
     /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/,
-    WEB_SITE_INPUT,
+    `${WEB_SITE_INPUT}${inputId}`,
     required
   );
   if (valid !== currentValid) {
@@ -725,9 +784,10 @@ export const generalValidationWebSite = (
 export const generalValidationAreaCode = (
   newValue: string,
   setValid: (value: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const valid = validationSelect(newValue, AREA_CODE_INPUT);
+  const valid = validationSelect(newValue, `${AREA_CODE_INPUT}${inputId}`);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -737,9 +797,10 @@ export const generalValidationAreaCode = (
 export const generalValidationRoles = (
   newValue: string,
   setValid: (value: boolean) => void,
-  currentValid: boolean
+  currentValid: boolean,
+  inputId = ''
 ): boolean => {
-  const valid = validationSelect(newValue, ROLES_INPUT);
+  const valid = validationSelect(newValue, `${ROLES_INPUT}${inputId}`);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -750,11 +811,12 @@ export const generalValidationPhotoUsers = (
   value: string,
   setValid: (valueValid: boolean) => void,
   currentValid: boolean,
-  required = true
+  required = true,
+  inputId = ''
 ): boolean => {
   return validationPhoto({
     value,
-    inputId: PHOTO_USERS_INPUT,
+    inputId: `${PHOTO_USERS_INPUT}${inputId}`,
     setValid,
     currentValid,
     required,

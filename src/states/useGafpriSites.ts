@@ -564,7 +564,7 @@ export const useGafpriSites = ({
 
   // Funciones de Validacion
   const validationButtonNext = (): void => {
-    generalValidationButtonNext(
+    generalValidationButtonNext([
       nameValid,
       documentIndexValid,
       documentNumberValid,
@@ -581,8 +581,8 @@ export const useGafpriSites = ({
       separatorValid,
       decimalNumbersValid,
       taxesValid,
-      hostValid
-    );
+      hostValid,
+    ]);
   };
 
   const validationName = (value: string): boolean => {

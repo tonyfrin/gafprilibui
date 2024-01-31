@@ -7,5 +7,6 @@ export type SelectCurrenciesDecimalNumbersProps = {
         label: string;
     }>) => void;
     props: GsSelectProps;
+    inputId?: string;
 };
-export declare const SelectCurrenciesDecimalNumbers: ({ changeCurrenciesDecimalNumbers, props, }: SelectCurrenciesDecimalNumbersProps) => JSX.Element;
+export declare const SelectCurrenciesDecimalNumbers: ({ changeCurrenciesDecimalNumbers, props, inputId, }: SelectCurrenciesDecimalNumbersProps) => JSX.Element;

@@ -3,5 +3,6 @@ import { InputProps } from './Input';
 export type InputPasswordProps = {
     changePassword: (password: string) => void;
     props?: InputProps;
+    inputId?: string;
 };
-export declare const InputPassword: ({ changePassword, props, }: InputPasswordProps) => JSX.Element;
+export declare const InputPassword: ({ changePassword, props, inputId, }: InputPasswordProps) => JSX.Element;

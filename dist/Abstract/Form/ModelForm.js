@@ -30,6 +30,8 @@ var ModelForm = function ModelForm(_ref) {
     handleActions = _ref.handleActions,
     buttonTitles = _ref.buttonTitles,
     mainButtonProps = _ref.mainButtonProps,
+    _ref$buttonNextId = _ref.buttonNextId,
+    buttonNextId = _ref$buttonNextId === void 0 ? '' : _ref$buttonNextId,
     returnButtonStyle = _ref.returnButtonStyle,
     returnButtonProps = _ref.returnButtonProps,
     children = _ref.children,

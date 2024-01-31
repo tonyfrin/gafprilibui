@@ -7,5 +7,6 @@ export type SelectRolesProps = {
         label: string;
     }>) => void;
     props: GsSelectProps;
+    inputId?: string;
 };
-export declare const SelectRoles: ({ changeRoles, props }: SelectRolesProps) => JSX.Element;
+export declare const SelectRoles: ({ changeRoles, props, inputId, }: SelectRolesProps) => JSX.Element;

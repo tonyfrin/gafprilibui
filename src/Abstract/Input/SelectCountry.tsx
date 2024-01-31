@@ -8,16 +8,21 @@ export type SelectCountryProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
-export const SelectCountry = ({ changeCountry, props }: SelectCountryProps) => {
+export const SelectCountry = ({
+  changeCountry,
+  props,
+  inputId = '',
+}: SelectCountryProps) => {
   return (
     <>
       <GsSelect
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={COUNTRY_INPUT}
+        id={`${COUNTRY_INPUT}${inputId}`}
         onChange={changeCountry}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

@@ -8,11 +8,13 @@ export type SelectCurrenciesSeparatorProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
 export const SelectCurrenciesSeparator = ({
   changeCurrenciesSeparator,
   props,
+  inputId = '',
 }: SelectCurrenciesSeparatorProps) => {
   return (
     <>
@@ -20,7 +22,7 @@ export const SelectCurrenciesSeparator = ({
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={CURRENCIES_SEPARATOR_INPUT}
+        id={`${CURRENCIES_SEPARATOR_INPUT}${inputId}`}
         onChange={changeCurrenciesSeparator}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

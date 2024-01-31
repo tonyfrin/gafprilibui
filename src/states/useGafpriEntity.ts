@@ -717,7 +717,7 @@ export const useGafpriEntity = ({
 
   // Funciones de Validacion
   const validationButtonNext = (): void => {
-    generalValidationButtonNext(
+    generalValidationButtonNext([
       nameValid,
       lastNameValid,
       typeDocumentIdIdValid,
@@ -734,41 +734,41 @@ export const useGafpriEntity = ({
       phoneValid,
       typeValid,
       photoValid,
-      statusValid
-    );
+      statusValid,
+    ]);
   };
 
   const validationButtonNextAddress = (): void => {
-    generalValidationButtonNext(
+    generalValidationButtonNext([
       addressTypeValid,
       address1Valid,
       address2Valid,
       cityValid,
       stateCountryValid,
       countryValid,
-      postCodeValid
-    );
+      postCodeValid,
+    ]);
   };
 
   const validationButtonNextDocument = (): void => {
-    generalValidationButtonNext(
+    generalValidationButtonNext([
       typeDocumentIdIdValid,
       indexValid,
       digitValid,
-      documentPhotoValid
-    );
+      documentPhotoValid,
+    ]);
   };
 
   const validationButtonNextUpdate = (): void => {
-    generalValidationButtonNext(
+    generalValidationButtonNext([
       nameValid,
       lastNameValid,
       emailValid,
       phoneValid,
       typeValid,
       photoValid,
-      statusValid
-    );
+      statusValid,
+    ]);
   };
 
   const validationName = (value: string): boolean => {

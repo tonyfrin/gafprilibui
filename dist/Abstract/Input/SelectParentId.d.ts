@@ -7,5 +7,6 @@ export type SelectParentIdProps = {
         label: string;
     }>) => void;
     props: GsSelectProps;
+    inputId?: string;
 };
-export declare const SelectParentId: ({ changeParentId, props, }: SelectParentIdProps) => JSX.Element;
+export declare const SelectParentId: ({ changeParentId, props, inputId, }: SelectParentIdProps) => JSX.Element;

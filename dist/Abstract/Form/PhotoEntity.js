@@ -14,9 +14,11 @@ var PhotoEntity = function PhotoEntity(_ref) {
     submitting = _ref.submitting,
     changeError = _ref.changeError,
     setSubmitting = _ref.setSubmitting,
-    props = _ref.props;
+    props = _ref.props,
+    _ref$inputId = _ref.inputId,
+    inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_PhotoForm.PhotoForm, {
-    formId: _Constans.PHOTO_ENTITY_INPUT,
+    formId: "".concat(_Constans.PHOTO_ENTITY_INPUT).concat(inputId),
     photo: photo,
     imageFormConatinerStyle: props === null || props === void 0 ? void 0 : props.imageFormConatinerStyle,
     changePhoto: changePhoto,

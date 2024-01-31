@@ -6,16 +6,21 @@ import { GsSelect, GsSelectProps } from './Input';
 export type SelectSiteProps = {
   changeSite: (options: SingleValue<{ value: string; label: string }>) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
-export const SelectSite = ({ changeSite, props }: SelectSiteProps) => {
+export const SelectSite = ({
+  changeSite,
+  props,
+  inputId = '',
+}: SelectSiteProps) => {
   return (
     <>
       <GsSelect
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={SITE_INPUT}
+        id={`${SITE_INPUT}${inputId}`}
         onChange={changeSite}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

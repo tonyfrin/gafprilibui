@@ -8,11 +8,13 @@ export type SelectAddressTypeProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
 export const SelectAddressType = ({
   changeAddressType,
   props,
+  inputId = '',
 }: SelectAddressTypeProps) => {
   return (
     <>
@@ -20,7 +22,7 @@ export const SelectAddressType = ({
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={ADDRESS_TYPE_INPUT}
+        id={`${ADDRESS_TYPE_INPUT}${inputId}`}
         onChange={changeAddressType}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

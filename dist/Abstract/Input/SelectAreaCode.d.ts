@@ -7,5 +7,6 @@ export type SelectAreaCodeProps = {
         label: string;
     }>) => void;
     props: GsSelectProps;
+    inputId?: string;
 };
-export declare const SelectAreaCode: ({ changeAreaCode, props, }: SelectAreaCodeProps) => JSX.Element;
+export declare const SelectAreaCode: ({ changeAreaCode, props, inputId, }: SelectAreaCodeProps) => JSX.Element;

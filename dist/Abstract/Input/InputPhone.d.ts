@@ -3,5 +3,6 @@ import { InputProps } from './Input';
 export type InputPhoneProps = {
     changePhone: (phone: string) => void;
     props?: InputProps;
+    inputId?: string;
 };
-export declare const InputPhone: ({ changePhone, props }: InputPhoneProps) => JSX.Element;
+export declare const InputPhone: ({ changePhone, props, inputId, }: InputPhoneProps) => JSX.Element;

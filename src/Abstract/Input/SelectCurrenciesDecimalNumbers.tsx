@@ -8,11 +8,13 @@ export type SelectCurrenciesDecimalNumbersProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
 export const SelectCurrenciesDecimalNumbers = ({
   changeCurrenciesDecimalNumbers,
   props,
+  inputId = '',
 }: SelectCurrenciesDecimalNumbersProps) => {
   return (
     <>
@@ -20,7 +22,7 @@ export const SelectCurrenciesDecimalNumbers = ({
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={CURRENCIES_DECIMAL_NUMBERS_INPUT}
+        id={`${CURRENCIES_DECIMAL_NUMBERS_INPUT}${inputId}`}
         onChange={changeCurrenciesDecimalNumbers}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

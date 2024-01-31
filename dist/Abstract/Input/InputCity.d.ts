@@ -7,5 +7,6 @@ export type InputCityProps = {
         label: string;
     }>) => void;
     props?: InputProps;
+    inputId?: string;
 };
-export declare const InputCity: ({ changeCity, props }: InputCityProps) => JSX.Element;
+export declare const InputCity: ({ changeCity, props, inputId, }: InputCityProps) => JSX.Element;

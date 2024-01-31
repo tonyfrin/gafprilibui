@@ -5,9 +5,14 @@ import { Input, InputProps } from './Input';
 export type InputEmailProps = {
   changeEmail: (email: string) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
-export const InputEmail = ({ changeEmail, props }: InputEmailProps) => {
+export const InputEmail = ({
+  changeEmail,
+  props,
+  inputId = '',
+}: InputEmailProps) => {
   return (
     <>
       <Input
@@ -15,7 +20,7 @@ export const InputEmail = ({ changeEmail, props }: InputEmailProps) => {
         inputProps={{
           placeholder: 'Email',
           type: 'email',
-          id: EMAIL_INPUT,
+          id: `${EMAIL_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changeEmail(event.currentTarget.value),
           ...props?.inputProps,

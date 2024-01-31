@@ -338,13 +338,13 @@ export function useGafpriCategory({
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext(
+    generalValidationButtonNext([
       nameValid,
       parentIdValid,
       descriptionValid,
       photoValid,
-      statusValid
-    );
+      statusValid,
+    ]);
   };
 
   // Funciones de cambios

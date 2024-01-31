@@ -561,16 +561,16 @@ var useGafpriEntity = function useGafpriEntity(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)(nameValid, lastNameValid, typeDocumentIdIdValid, indexValid, digitValid, addressTypeValid, address1Valid, address2Valid, cityValid, stateCountryValid, countryValid, postCodeValid, emailValid, phoneValid, typeValid, photoValid, statusValid);
+    (0, _Validations.generalValidationButtonNext)([nameValid, lastNameValid, typeDocumentIdIdValid, indexValid, digitValid, addressTypeValid, address1Valid, address2Valid, cityValid, stateCountryValid, countryValid, postCodeValid, emailValid, phoneValid, typeValid, photoValid, statusValid]);
   };
   var validationButtonNextAddress = function validationButtonNextAddress() {
-    (0, _Validations.generalValidationButtonNext)(addressTypeValid, address1Valid, address2Valid, cityValid, stateCountryValid, countryValid, postCodeValid);
+    (0, _Validations.generalValidationButtonNext)([addressTypeValid, address1Valid, address2Valid, cityValid, stateCountryValid, countryValid, postCodeValid]);
   };
   var validationButtonNextDocument = function validationButtonNextDocument() {
-    (0, _Validations.generalValidationButtonNext)(typeDocumentIdIdValid, indexValid, digitValid, documentPhotoValid);
+    (0, _Validations.generalValidationButtonNext)([typeDocumentIdIdValid, indexValid, digitValid, documentPhotoValid]);
   };
   var validationButtonNextUpdate = function validationButtonNextUpdate() {
-    (0, _Validations.generalValidationButtonNext)(nameValid, lastNameValid, emailValid, phoneValid, typeValid, photoValid, statusValid);
+    (0, _Validations.generalValidationButtonNext)([nameValid, lastNameValid, emailValid, phoneValid, typeValid, photoValid, statusValid]);
   };
   var validationName = function validationName(value) {
     return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);

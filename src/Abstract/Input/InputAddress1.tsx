@@ -5,11 +5,13 @@ import { Input, InputProps } from './Input';
 export type InputAddress1Props = {
   changeAddress1: (Address1: string) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
 export const InputAddress1 = ({
   changeAddress1,
   props,
+  inputId = '',
 }: InputAddress1Props) => {
   return (
     <>
@@ -18,7 +20,7 @@ export const InputAddress1 = ({
         inputProps={{
           placeholder: 'Dirección',
           type: 'text',
-          id: ADDRESS1_INPUT,
+          id: `${ADDRESS1_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changeAddress1(event.currentTarget.value),
           ...props?.inputProps,

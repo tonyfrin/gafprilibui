@@ -8,11 +8,13 @@ export type SelectCurrenciesLocationsProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
 export const SelectCurrenciesLocations = ({
   changeCurrenciesLocations,
   props,
+  inputId = '',
 }: SelectCurrenciesLocationsProps) => {
   return (
     <>
@@ -20,7 +22,7 @@ export const SelectCurrenciesLocations = ({
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={CURRENCIES_LOCATIONS_INPUT}
+        id={`${CURRENCIES_LOCATIONS_INPUT}${inputId}`}
         onChange={changeCurrenciesLocations}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

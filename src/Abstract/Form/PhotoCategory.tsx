@@ -10,6 +10,7 @@ export type PhotoCategoryProps = {
   changeError: (error: string[]) => void;
   setSubmitting: (submitting: boolean) => void;
   props?: PhotoFormPropsExtended;
+  inputId?: string;
 };
 
 export const PhotoCategory = ({
@@ -19,11 +20,12 @@ export const PhotoCategory = ({
   changeError,
   setSubmitting,
   props,
+  inputId = '',
 }: PhotoCategoryProps) => {
   return (
     <>
       <PhotoForm
-        formId={PHOTO_CATEGORY_INPUT}
+        formId={`${PHOTO_CATEGORY_INPUT}${inputId}`}
         photo={photo}
         imageFormConatinerStyle={props?.imageFormConatinerStyle}
         changePhoto={changePhoto}

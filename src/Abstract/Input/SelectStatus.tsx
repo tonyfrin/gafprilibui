@@ -8,16 +8,21 @@ export type SelectStatusProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
-export const SelectStatus = ({ changeStatus, props }: SelectStatusProps) => {
+export const SelectStatus = ({
+  changeStatus,
+  props,
+  inputId = '',
+}: SelectStatusProps) => {
   return (
     <>
       <GsSelect
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={STATUS_INPUT}
+        id={`${STATUS_INPUT}${inputId}`}
         onChange={changeStatus}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

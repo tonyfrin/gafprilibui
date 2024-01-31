@@ -8,11 +8,13 @@ export type SelectStateCountryProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
 export const SelectStateCountry = ({
   changeStateCountry,
   props,
+  inputId = '',
 }: SelectStateCountryProps) => {
   return (
     <>
@@ -20,7 +22,7 @@ export const SelectStateCountry = ({
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={STATE_COUNTRY_INPUT}
+        id={`${STATE_COUNTRY_INPUT}${inputId}`}
         onChange={changeStateCountry}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

@@ -7,5 +7,6 @@ export type SelectTypeDocumentIdIdProps = {
         label: string;
     }>) => void;
     props: GsSelectProps;
+    inputId?: string;
 };
-export declare const SelectTypeDocumentIdId: ({ changeTypeDocumentIdId, props, }: SelectTypeDocumentIdIdProps) => JSX.Element;
+export declare const SelectTypeDocumentIdId: ({ changeTypeDocumentIdId, props, inputId, }: SelectTypeDocumentIdIdProps) => JSX.Element;

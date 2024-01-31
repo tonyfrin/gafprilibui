@@ -5,9 +5,14 @@ import { Input, InputProps } from './Input';
 export type InputWebSiteProps = {
   changeWebSite: (email: string) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
-export const InputWebSite = ({ changeWebSite, props }: InputWebSiteProps) => {
+export const InputWebSite = ({
+  changeWebSite,
+  props,
+  inputId = '',
+}: InputWebSiteProps) => {
   return (
     <>
       <Input
@@ -15,7 +20,7 @@ export const InputWebSite = ({ changeWebSite, props }: InputWebSiteProps) => {
         inputProps={{
           placeholder: 'Web Site',
           type: 'text',
-          id: WEB_SITE_INPUT,
+          id: `${WEB_SITE_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changeWebSite(event.currentTarget.value),
           ...props?.inputProps,

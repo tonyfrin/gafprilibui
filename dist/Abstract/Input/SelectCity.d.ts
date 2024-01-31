@@ -7,5 +7,6 @@ export type SelectCityProps = {
         label: string;
     }>) => void;
     props: GsSelectProps;
+    inputId?: string;
 };
-export declare const SelectCity: ({ changeCity, props }: SelectCityProps) => JSX.Element;
+export declare const SelectCity: ({ changeCity, props, inputId, }: SelectCityProps) => JSX.Element;

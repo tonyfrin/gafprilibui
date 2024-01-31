@@ -22,9 +22,10 @@ var validationInputNameLastNameUserName = function validationInputNameLastNameUs
 exports.validationInputNameLastNameUserName = validationInputNameLastNameUserName;
 var generalValidationName = function generalValidationName(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputNameLastNameUserName({
     value: value,
-    inputId: _Constans.NAME_INPUT,
+    inputId: "".concat(_Constans.NAME_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -33,9 +34,10 @@ var generalValidationName = function generalValidationName(value, setValid, curr
 exports.generalValidationName = generalValidationName;
 var generalValidationLastName = function generalValidationLastName(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputNameLastNameUserName({
     value: value,
-    inputId: _Constans.LAST_NAME_INPUT,
+    inputId: "".concat(_Constans.LAST_NAME_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -44,9 +46,10 @@ var generalValidationLastName = function generalValidationLastName(value, setVal
 exports.generalValidationLastName = generalValidationLastName;
 var generalValidationUserName = function generalValidationUserName(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputNameLastNameUserName({
     value: value,
-    inputId: _Constans.USER_NAME_INPUT,
+    inputId: "".concat(_Constans.USER_NAME_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -80,9 +83,10 @@ var validationInputSinglePassword = function validationInputSinglePassword(_ref3
 exports.validationInputSinglePassword = validationInputSinglePassword;
 var generalValidationPassword = function generalValidationPassword(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputPassword({
     value: value,
-    inputId: _Constans.PASSWORD_INPUT,
+    inputId: "".concat(_Constans.PASSWORD_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -91,26 +95,24 @@ var generalValidationPassword = function generalValidationPassword(value, setVal
 exports.generalValidationPassword = generalValidationPassword;
 var generalValidationSinglePassword = function generalValidationSinglePassword(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputSinglePassword({
     value: value,
-    inputId: _Constans.PASSWORD_INPUT,
+    inputId: "".concat(_Constans.PASSWORD_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
   });
 };
 exports.generalValidationSinglePassword = generalValidationSinglePassword;
-var generalValidationButtonNext = function generalValidationButtonNext() {
-  for (var _len = arguments.length, validations = new Array(_len), _key = 0; _key < _len; _key++) {
-    validations[_key] = arguments[_key];
-  }
+var generalValidationButtonNext = function generalValidationButtonNext(validations, inputId) {
   var isAllValid = validations.every(function (validation) {
     return validation;
   });
   if (isAllValid) {
-    (0, _helpers.removeClass)(_Constans.BUTTON_NEXT_INPUT, _Constans.DISABLED);
+    (0, _helpers.removeClass)("".concat(_Constans.BUTTON_NEXT_INPUT).concat(inputId), _Constans.DISABLED);
   } else {
-    (0, _helpers.addClass)(_Constans.BUTTON_NEXT_INPUT, _Constans.DISABLED);
+    (0, _helpers.addClass)("".concat(_Constans.BUTTON_NEXT_INPUT).concat(inputId), _Constans.DISABLED);
   }
 };
 exports.generalValidationButtonNext = generalValidationButtonNext;
@@ -130,9 +132,10 @@ var validationInputDescription = function validationInputDescription(_ref4) {
 exports.validationInputDescription = validationInputDescription;
 var generalValidationDescription = function generalValidationDescription(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputDescription({
     value: value,
-    inputId: _Constans.DESCRIPTION_INPUT,
+    inputId: "".concat(_Constans.DESCRIPTION_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -155,9 +158,10 @@ var validationInputAddress = function validationInputAddress(_ref5) {
 exports.validationInputAddress = validationInputAddress;
 var generalValidationAddress1 = function generalValidationAddress1(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputAddress({
     value: value,
-    inputId: _Constans.ADDRESS1_INPUT,
+    inputId: "".concat(_Constans.ADDRESS1_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -166,9 +170,10 @@ var generalValidationAddress1 = function generalValidationAddress1(value, setVal
 exports.generalValidationAddress1 = generalValidationAddress1;
 var generalValidationAddress2 = function generalValidationAddress2(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputAddress({
     value: value,
-    inputId: _Constans.ADDRESS2_INPUT,
+    inputId: "".concat(_Constans.ADDRESS2_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -176,7 +181,8 @@ var generalValidationAddress2 = function generalValidationAddress2(value, setVal
 };
 exports.generalValidationAddress2 = generalValidationAddress2;
 var generalValidationAddressType = function generalValidationAddressType(newValue, setValid, currentValid) {
-  var valid = (0, _helpers.validationSelect)(newValue, _Constans.ADDRESS_TYPE_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.ADDRESS_TYPE_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -184,7 +190,8 @@ var generalValidationAddressType = function generalValidationAddressType(newValu
 };
 exports.generalValidationAddressType = generalValidationAddressType;
 var generalValidationSelectCity = function generalValidationSelectCity(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.CITY_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CITY_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -192,7 +199,8 @@ var generalValidationSelectCity = function generalValidationSelectCity(value, se
 };
 exports.generalValidationSelectCity = generalValidationSelectCity;
 var generalValidationSelectStateCountry = function generalValidationSelectStateCountry(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.STATE_COUNTRY_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.STATE_COUNTRY_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -200,7 +208,8 @@ var generalValidationSelectStateCountry = function generalValidationSelectStateC
 };
 exports.generalValidationSelectStateCountry = generalValidationSelectStateCountry;
 var generalValidationSelectCountry = function generalValidationSelectCountry(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.COUNTRY_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.COUNTRY_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -209,7 +218,8 @@ var generalValidationSelectCountry = function generalValidationSelectCountry(val
 exports.generalValidationSelectCountry = generalValidationSelectCountry;
 var generalValidationPostCode = function generalValidationPostCode(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, _Constans.ZIP_CODE_INPUT, required);
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+  var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, "".concat(_Constans.ZIP_CODE_INPUT).concat(inputId), required);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -217,7 +227,8 @@ var generalValidationPostCode = function generalValidationPostCode(value, setVal
 };
 exports.generalValidationPostCode = generalValidationPostCode;
 var generalValidationSelectSite = function generalValidationSelectSite(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.SITE_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.SITE_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -240,9 +251,10 @@ var validationInputSku = function validationInputSku(_ref6) {
 exports.validationInputSku = validationInputSku;
 var generalValidationSku = function generalValidationSku(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationInputSku({
     value: value,
-    inputId: _Constans.SKU_INPUT,
+    inputId: "".concat(_Constans.SKU_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -275,9 +287,10 @@ var generalValidationPhoto = function generalValidationPhoto(value, setValid, cu
 exports.generalValidationPhoto = generalValidationPhoto;
 var generalValidationPhotoCategory = function generalValidationPhotoCategory(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationPhoto({
     value: value,
-    inputId: _Constans.PHOTO_CATEGORY_INPUT,
+    inputId: "".concat(_Constans.PHOTO_CATEGORY_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -286,9 +299,10 @@ var generalValidationPhotoCategory = function generalValidationPhotoCategory(val
 exports.generalValidationPhotoCategory = generalValidationPhotoCategory;
 var generalValidationPhotoEntity = function generalValidationPhotoEntity(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationPhoto({
     value: value,
-    inputId: _Constans.PHOTO_ENTITY_INPUT,
+    inputId: "".concat(_Constans.PHOTO_ENTITY_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -297,9 +311,10 @@ var generalValidationPhotoEntity = function generalValidationPhotoEntity(value, 
 exports.generalValidationPhotoEntity = generalValidationPhotoEntity;
 var generalValidationPhotoDocumentId = function generalValidationPhotoDocumentId(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationPhoto({
     value: value,
-    inputId: _Constans.PHOTO_DOCUMENT_ID_INPUT,
+    inputId: "".concat(_Constans.PHOTO_DOCUMENT_ID_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required
@@ -328,7 +343,8 @@ var validationInputArray = function validationInputArray(values, match, componen
 exports.validationInputArray = validationInputArray;
 var generalValidationGalleryImage = function generalValidationGalleryImage(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var valid = validationInputArray(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, _Constans.GALLERY_IMAGE_INPUT, required);
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+  var valid = validationInputArray(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, "".concat(_Constans.GALLERY_IMAGE_INPUT).concat(inputId), required);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -336,7 +352,8 @@ var generalValidationGalleryImage = function generalValidationGalleryImage(value
 };
 exports.generalValidationGalleryImage = generalValidationGalleryImage;
 var generalValidationParentId = function generalValidationParentId(newValue, setValid, currentValid) {
-  var valid = (0, _helpers.validationSelect)(newValue, _Constans.PARENT_ID_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.PARENT_ID_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -344,7 +361,8 @@ var generalValidationParentId = function generalValidationParentId(newValue, set
 };
 exports.generalValidationParentId = generalValidationParentId;
 var generalValidationStatus = function generalValidationStatus(newValue, setValid, currentValid) {
-  var valid = (0, _helpers.validationSelect)(newValue, _Constans.STATUS_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.STATUS_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -353,7 +371,8 @@ var generalValidationStatus = function generalValidationStatus(newValue, setVali
 exports.generalValidationStatus = generalValidationStatus;
 var generalValidationCurrenciesSymbol = function generalValidationCurrenciesSymbol(newValue, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var valid = (0, _helpers.validationInput)(newValue, /\$|Bs|€/, _Constans.CURRENCIES_SYMBOL_INPUT, required);
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+  var valid = (0, _helpers.validationInput)(newValue, /\$|Bs|€/, "".concat(_Constans.CURRENCIES_SYMBOL_INPUT).concat(inputId), required);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -361,7 +380,8 @@ var generalValidationCurrenciesSymbol = function generalValidationCurrenciesSymb
 };
 exports.generalValidationCurrenciesSymbol = generalValidationCurrenciesSymbol;
 var generalValidationTypeDocumentIdId = function generalValidationTypeDocumentIdId(newValue, setValid, currentValid) {
-  var valid = (0, _helpers.validationSelect)(newValue, _Constans.TYPE_DOCUMENT_ID_ID_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.TYPE_DOCUMENT_ID_ID_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -369,7 +389,8 @@ var generalValidationTypeDocumentIdId = function generalValidationTypeDocumentId
 };
 exports.generalValidationTypeDocumentIdId = generalValidationTypeDocumentIdId;
 var generalValidationTypeDocumentIdIndex = function generalValidationTypeDocumentIdIndex(newValue, setValid, currentValid) {
-  var valid = (0, _helpers.validationSelect)(newValue, _Constans.TYPE_DOCUMENT_ID_INDEX_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.TYPE_DOCUMENT_ID_INDEX_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -378,7 +399,8 @@ var generalValidationTypeDocumentIdIndex = function generalValidationTypeDocumen
 exports.generalValidationTypeDocumentIdIndex = generalValidationTypeDocumentIdIndex;
 var generalValidationTypeDocumentIdDigit = function generalValidationTypeDocumentIdDigit(newValue, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var valid = (0, _helpers.validationInput)(newValue, /^\d{1,12}(-\d{1,12})?$/, _Constans.TYPE_DOCUMENT_ID_DIGIT_INPUT, required);
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+  var valid = (0, _helpers.validationInput)(newValue, /^\d{1,12}(-\d{1,12})?$/, "".concat(_Constans.TYPE_DOCUMENT_ID_DIGIT_INPUT).concat(inputId), required);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -387,7 +409,8 @@ var generalValidationTypeDocumentIdDigit = function generalValidationTypeDocumen
 exports.generalValidationTypeDocumentIdDigit = generalValidationTypeDocumentIdDigit;
 var generalValidationEmail = function generalValidationEmail(newValue, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var valid = (0, _helpers.validationInput)(newValue, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, _Constans.EMAIL_INPUT, required);
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+  var valid = (0, _helpers.validationInput)(newValue, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "".concat(_Constans.EMAIL_INPUT).concat(inputId), required);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -396,7 +419,8 @@ var generalValidationEmail = function generalValidationEmail(newValue, setValid,
 exports.generalValidationEmail = generalValidationEmail;
 var generalValidationPhone = function generalValidationPhone(newValue, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var valid = (0, _helpers.validationInput)(newValue, /^[0-9]{10,20}/, _Constans.PHONE_INPUT, required);
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+  var valid = (0, _helpers.validationInput)(newValue, /^[0-9]{10,20}/, "".concat(_Constans.PHONE_INPUT).concat(inputId), required);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -404,7 +428,8 @@ var generalValidationPhone = function generalValidationPhone(newValue, setValid,
 };
 exports.generalValidationPhone = generalValidationPhone;
 var generalValidationType = function generalValidationType(newValue, setValid, currentValid) {
-  var valid = (0, _helpers.validationSelect)(newValue, _Constans.TYPE_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.TYPE_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -412,7 +437,8 @@ var generalValidationType = function generalValidationType(newValue, setValid, c
 };
 exports.generalValidationType = generalValidationType;
 var generalValidationSelectCurrencies = function generalValidationSelectCurrencies(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.CURRENCIES_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CURRENCIES_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -420,7 +446,8 @@ var generalValidationSelectCurrencies = function generalValidationSelectCurrenci
 };
 exports.generalValidationSelectCurrencies = generalValidationSelectCurrencies;
 var generalValidationSelectCurrenciesLocations = function generalValidationSelectCurrenciesLocations(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.CURRENCIES_LOCATIONS_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CURRENCIES_LOCATIONS_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -428,7 +455,8 @@ var generalValidationSelectCurrenciesLocations = function generalValidationSelec
 };
 exports.generalValidationSelectCurrenciesLocations = generalValidationSelectCurrenciesLocations;
 var generalValidationSelectCurrenciesSeparator = function generalValidationSelectCurrenciesSeparator(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.CURRENCIES_SEPARATOR_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CURRENCIES_SEPARATOR_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -436,7 +464,8 @@ var generalValidationSelectCurrenciesSeparator = function generalValidationSelec
 };
 exports.generalValidationSelectCurrenciesSeparator = generalValidationSelectCurrenciesSeparator;
 var generalValidationSelectCurrenciesDecimalNumbers = function generalValidationSelectCurrenciesDecimalNumbers(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.CURRENCIES_DECIMAL_NUMBERS_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CURRENCIES_DECIMAL_NUMBERS_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -444,7 +473,8 @@ var generalValidationSelectCurrenciesDecimalNumbers = function generalValidation
 };
 exports.generalValidationSelectCurrenciesDecimalNumbers = generalValidationSelectCurrenciesDecimalNumbers;
 var generalValidationSelectTaxes = function generalValidationSelectTaxes(value, setValid, currentValid) {
-  var validation = (0, _helpers.validationSelect)(value, _Constans.TAXES_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.TAXES_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }
@@ -453,7 +483,8 @@ var generalValidationSelectTaxes = function generalValidationSelectTaxes(value, 
 exports.generalValidationSelectTaxes = generalValidationSelectTaxes;
 var generalValidationWebSite = function generalValidationWebSite(newValue, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var valid = (0, _helpers.validationInput)(newValue, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/, _Constans.WEB_SITE_INPUT, required);
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+  var valid = (0, _helpers.validationInput)(newValue, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/, "".concat(_Constans.WEB_SITE_INPUT).concat(inputId), required);
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -461,7 +492,8 @@ var generalValidationWebSite = function generalValidationWebSite(newValue, setVa
 };
 exports.generalValidationWebSite = generalValidationWebSite;
 var generalValidationAreaCode = function generalValidationAreaCode(newValue, setValid, currentValid) {
-  var valid = (0, _helpers.validationSelect)(newValue, _Constans.AREA_CODE_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.AREA_CODE_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -469,7 +501,8 @@ var generalValidationAreaCode = function generalValidationAreaCode(newValue, set
 };
 exports.generalValidationAreaCode = generalValidationAreaCode;
 var generalValidationRoles = function generalValidationRoles(newValue, setValid, currentValid) {
-  var valid = (0, _helpers.validationSelect)(newValue, _Constans.ROLES_INPUT);
+  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.ROLES_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }
@@ -478,9 +511,10 @@ var generalValidationRoles = function generalValidationRoles(newValue, setValid,
 exports.generalValidationRoles = generalValidationRoles;
 var generalValidationPhotoUsers = function generalValidationPhotoUsers(value, setValid, currentValid) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
   return validationPhoto({
     value: value,
-    inputId: _Constans.PHOTO_USERS_INPUT,
+    inputId: "".concat(_Constans.PHOTO_USERS_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required

@@ -8,11 +8,13 @@ export type SelectAreaCodeProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props: GsSelectProps;
+  inputId?: string;
 };
 
 export const SelectAreaCode = ({
   changeAreaCode,
   props,
+  inputId = '',
 }: SelectAreaCodeProps) => {
   return (
     <>
@@ -20,7 +22,7 @@ export const SelectAreaCode = ({
         styles={props?.styles}
         Class={props?.Class}
         options={props.options}
-        id={AREA_CODE_INPUT}
+        id={`${AREA_CODE_INPUT}${inputId}`}
         onChange={changeAreaCode}
         placeholder={props?.placeholder}
         containerStyles={props?.containerStyles}

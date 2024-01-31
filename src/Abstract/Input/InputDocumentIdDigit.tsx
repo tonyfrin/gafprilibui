@@ -5,11 +5,13 @@ import { Input, InputProps } from './Input';
 export type InputDocumentiIdDigitProps = {
   changeDocumentiIdDigit: (LastName: string) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
 export const InputDocumentiIdDigit = ({
   changeDocumentiIdDigit,
   props,
+  inputId = '',
 }: InputDocumentiIdDigitProps) => {
   return (
     <>
@@ -21,7 +23,7 @@ export const InputDocumentiIdDigit = ({
           min: '0',
           step: '1',
           title: 'Solo números, ejemplo: 181234678',
-          id: TYPE_DOCUMENT_ID_DIGIT_INPUT,
+          id: `${TYPE_DOCUMENT_ID_DIGIT_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changeDocumentiIdDigit(event.currentTarget.value),
           ...props?.inputProps,

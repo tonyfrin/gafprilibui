@@ -10,12 +10,14 @@ var _Constans = require("../../Constans");
 var _Input = require("./Input");
 var SelectStatus = function SelectStatus(_ref) {
   var changeStatus = _ref.changeStatus,
-    props = _ref.props;
+    props = _ref.props,
+    _ref$inputId = _ref.inputId,
+    inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, {
     styles: props === null || props === void 0 ? void 0 : props.styles,
     Class: props === null || props === void 0 ? void 0 : props.Class,
     options: props.options,
-    id: _Constans.STATUS_INPUT,
+    id: "".concat(_Constans.STATUS_INPUT).concat(inputId),
     onChange: changeStatus,
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,

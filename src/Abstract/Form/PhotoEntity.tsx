@@ -10,6 +10,7 @@ export type PhotoEntityProps = {
   changeError: (error: string[]) => void;
   setSubmitting: (submitting: boolean) => void;
   props?: PhotoFormPropsExtended;
+  inputId?: string;
 };
 
 export const PhotoEntity = ({
@@ -19,11 +20,12 @@ export const PhotoEntity = ({
   changeError,
   setSubmitting,
   props,
+  inputId = '',
 }: PhotoEntityProps) => {
   return (
     <>
       <PhotoForm
-        formId={PHOTO_ENTITY_INPUT}
+        formId={`${PHOTO_ENTITY_INPUT}${inputId}`}
         photo={photo}
         imageFormConatinerStyle={props?.imageFormConatinerStyle}
         changePhoto={changePhoto}

@@ -222,7 +222,7 @@ function useGafpriCategory(_ref) {
     return (0, _Validations.generalValidationPhotoCategory)(value, setPhotoValid, photoValid);
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)(nameValid, parentIdValid, descriptionValid, photoValid, statusValid);
+    (0, _Validations.generalValidationButtonNext)([nameValid, parentIdValid, descriptionValid, photoValid, statusValid]);
   };
 
   // Funciones de cambios

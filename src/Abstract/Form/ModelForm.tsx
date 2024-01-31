@@ -58,6 +58,7 @@ export type ModelFormProps = {
     returnButton: string;
   };
   mainButtonProps?: ButtonProps;
+  buttonNextId?: string;
   returnButtonStyle?: ButtonProps['styles'];
   returnButtonProps?: ButtonProps;
   children: React.ReactElement;
@@ -83,6 +84,7 @@ export type ModelFormPropsExtended = {
     returnButton: string;
   };
   mainButtonProps?: ButtonProps;
+  buttonNextId?: string;
   returnButtonStyle?: ButtonProps['styles'];
   returnButtonProps?: ButtonProps;
   error?: string[] | null;
@@ -101,6 +103,7 @@ export const ModelForm = ({
   handleActions,
   buttonTitles,
   mainButtonProps,
+  buttonNextId = '',
   returnButtonStyle,
   returnButtonProps,
   children,

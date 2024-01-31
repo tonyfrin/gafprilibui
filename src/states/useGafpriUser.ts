@@ -397,7 +397,7 @@ export const useGafpriUsers = ({
 
   // Funciones de Validacion
   const validationButtonNext = (): void => {
-    generalValidationButtonNext(
+    generalValidationButtonNext([
       nameValid,
       lastNameValid,
       emailValid,
@@ -405,8 +405,8 @@ export const useGafpriUsers = ({
       phoneNumberValid,
       roleValid,
       photoValid,
-      isActiveValid
-    );
+      isActiveValid,
+    ]);
   };
 
   const validationName = (value: string): boolean => {

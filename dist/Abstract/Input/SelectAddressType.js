@@ -10,12 +10,14 @@ var _Constans = require("../../Constans");
 var _Input = require("./Input");
 var SelectAddressType = function SelectAddressType(_ref) {
   var changeAddressType = _ref.changeAddressType,
-    props = _ref.props;
+    props = _ref.props,
+    _ref$inputId = _ref.inputId,
+    inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, {
     styles: props === null || props === void 0 ? void 0 : props.styles,
     Class: props === null || props === void 0 ? void 0 : props.Class,
     options: props.options,
-    id: _Constans.ADDRESS_TYPE_INPUT,
+    id: "".concat(_Constans.ADDRESS_TYPE_INPUT).concat(inputId),
     onChange: changeAddressType,
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,

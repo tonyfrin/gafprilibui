@@ -454,7 +454,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)(nameValid, documentIndexValid, documentNumberValid, address1Valid, address2Valid, cityValid, stateCountryValid, postCodeValid, countryValid, emailValid, phoneValid, currenciesIdValid, currencyLocationValid, separatorValid, decimalNumbersValid, taxesValid, hostValid);
+    (0, _Validations.generalValidationButtonNext)([nameValid, documentIndexValid, documentNumberValid, address1Valid, address2Valid, cityValid, stateCountryValid, postCodeValid, countryValid, emailValid, phoneValid, currenciesIdValid, currencyLocationValid, separatorValid, decimalNumbersValid, taxesValid, hostValid]);
   };
   var validationName = function validationName(value) {
     return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);

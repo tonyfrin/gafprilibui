@@ -7,5 +7,6 @@ export type PhotoEntityProps = {
     changeError: (error: string[]) => void;
     setSubmitting: (submitting: boolean) => void;
     props?: PhotoFormPropsExtended;
+    inputId?: string;
 };
-export declare const PhotoEntity: ({ photo, changePhoto, submitting, changeError, setSubmitting, props, }: PhotoEntityProps) => JSX.Element;
+export declare const PhotoEntity: ({ photo, changePhoto, submitting, changeError, setSubmitting, props, inputId, }: PhotoEntityProps) => JSX.Element;

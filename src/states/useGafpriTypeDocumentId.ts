@@ -243,7 +243,7 @@ export function useGafpriTypeDocumentId({
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext(nameValid, countryValid);
+    generalValidationButtonNext([nameValid, countryValid]);
   };
 
   // Funciones de cambios

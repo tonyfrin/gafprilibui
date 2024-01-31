@@ -6,9 +6,14 @@ import { Input, InputProps } from './Input';
 export type InputCityProps = {
   changeCity: (options: SingleValue<{ value: string; label: string }>) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
-export const InputCity = ({ changeCity, props }: InputCityProps) => {
+export const InputCity = ({
+  changeCity,
+  props,
+  inputId = '',
+}: InputCityProps) => {
   return (
     <>
       <Input
@@ -16,7 +21,7 @@ export const InputCity = ({ changeCity, props }: InputCityProps) => {
         inputProps={{
           placeholder: 'Ciudad',
           type: 'text',
-          id: CITY_INPUT,
+          id: `${CITY_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changeCity({
               label: (event.target as HTMLInputElement).value,

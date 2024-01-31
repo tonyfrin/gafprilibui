@@ -7,5 +7,6 @@ export type SelectCurrenciesLocationsProps = {
         label: string;
     }>) => void;
     props: GsSelectProps;
+    inputId?: string;
 };
-export declare const SelectCurrenciesLocations: ({ changeCurrenciesLocations, props, }: SelectCurrenciesLocationsProps) => JSX.Element;
+export declare const SelectCurrenciesLocations: ({ changeCurrenciesLocations, props, inputId, }: SelectCurrenciesLocationsProps) => JSX.Element;

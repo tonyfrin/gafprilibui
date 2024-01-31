@@ -7,5 +7,6 @@ export type SelectStatusProps = {
         label: string;
     }>) => void;
     props: GsSelectProps;
+    inputId?: string;
 };
-export declare const SelectStatus: ({ changeStatus, props }: SelectStatusProps) => JSX.Element;
+export declare const SelectStatus: ({ changeStatus, props, inputId, }: SelectStatusProps) => JSX.Element;

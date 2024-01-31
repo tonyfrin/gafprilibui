@@ -226,7 +226,7 @@ export function useGafpriCurrencies({
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext(nameValid, symbolValid);
+    generalValidationButtonNext([nameValid, symbolValid]);
   };
 
   // Funciones de cambios

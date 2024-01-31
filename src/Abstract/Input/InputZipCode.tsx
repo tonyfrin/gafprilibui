@@ -5,9 +5,14 @@ import { Input, InputProps } from './Input';
 export type InputZipCodeProps = {
   changeZipCode: (zipCode: string) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
-export const InputZipCode = ({ changeZipCode, props }: InputZipCodeProps) => {
+export const InputZipCode = ({
+  changeZipCode,
+  props,
+  inputId,
+}: InputZipCodeProps) => {
   return (
     <>
       <Input
@@ -15,7 +20,7 @@ export const InputZipCode = ({ changeZipCode, props }: InputZipCodeProps) => {
         inputProps={{
           placeholder: 'Código Postal',
           type: 'text',
-          id: ZIP_CODE_INPUT,
+          id: `${ZIP_CODE_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changeZipCode(event.currentTarget.value),
           ...props?.inputProps,

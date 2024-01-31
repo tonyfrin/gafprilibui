@@ -306,7 +306,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)(nameValid, lastNameValid, emailValid, areaCodeValid, phoneNumberValid, roleValid, photoValid, isActiveValid);
+    (0, _Validations.generalValidationButtonNext)([nameValid, lastNameValid, emailValid, areaCodeValid, phoneNumberValid, roleValid, photoValid, isActiveValid]);
   };
   var validationName = function validationName(value) {
     return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);

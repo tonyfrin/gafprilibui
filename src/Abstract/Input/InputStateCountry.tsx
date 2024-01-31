@@ -8,11 +8,13 @@ export type InputStateCountryProps = {
     options: SingleValue<{ value: string; label: string }>
   ) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
 export const InputStateCountry = ({
   changeStateCountry,
   props,
+  inputId = '',
 }: InputStateCountryProps) => {
   return (
     <>
@@ -21,7 +23,7 @@ export const InputStateCountry = ({
         inputProps={{
           placeholder: 'Estado o Provincia',
           type: 'text',
-          id: STATE_COUNTRY_INPUT,
+          id: `${STATE_COUNTRY_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changeStateCountry({
               label: (event.target as HTMLInputElement).value,

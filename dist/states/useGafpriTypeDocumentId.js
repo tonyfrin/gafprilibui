@@ -149,7 +149,7 @@ function useGafpriTypeDocumentId(_ref) {
     return (0, _Validations.generalValidationSelectCountry)(newValue, setCountryValid, countryValid);
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)(nameValid, countryValid);
+    (0, _Validations.generalValidationButtonNext)([nameValid, countryValid]);
   };
 
   // Funciones de cambios

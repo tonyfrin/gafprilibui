@@ -5,11 +5,13 @@ import { Input, InputProps } from './Input';
 export type InputPasswordProps = {
   changePassword: (password: string) => void;
   props?: InputProps;
+  inputId?: string;
 };
 
 export const InputPassword = ({
   changePassword,
   props,
+  inputId = '',
 }: InputPasswordProps) => {
   return (
     <>
@@ -18,7 +20,7 @@ export const InputPassword = ({
         inputProps={{
           placeholder: 'Contraseña',
           type: 'password',
-          id: PASSWORD_INPUT,
+          id: `${PASSWORD_INPUT}${inputId}`,
           onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) =>
             changePassword(event.currentTarget.value),
           ...props?.inputProps,

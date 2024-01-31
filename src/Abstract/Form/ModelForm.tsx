@@ -129,7 +129,7 @@ export const ModelForm = ({
               title={buttonTitles.mainButton}
               buttonProps={{
                 onClick: () => handleActions('submit', {}),
-                id: BUTTON_NEXT_INPUT,
+                id: `${BUTTON_NEXT_INPUT}${buttonNextId}`,
               }}
               {...mainButtonProps}
             />

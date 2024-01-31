@@ -60,7 +60,7 @@ var ModelForm = function ModelForm(_ref) {
       onClick: function onClick() {
         return handleActions('submit', {});
       },
-      id: _Constans.BUTTON_NEXT_INPUT
+      id: "".concat(_Constans.BUTTON_NEXT_INPUT).concat(buttonNextId)
     }
   }, mainButtonProps))), (buttonTitles === null || buttonTitles === void 0 ? void 0 : buttonTitles.returnButton) !== '' && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(returnButtonConatinerStyle)

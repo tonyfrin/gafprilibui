@@ -83,7 +83,7 @@ var changeInputNumers = function changeInputNumers(value, validation, setValue) 
   var numericValue = typeof value === 'string' ? parseFloat(value) : value;
   var valid = validation(numericValue);
   if (valid) {
-    setValue(numericValue);
+    setValue(value);
   }
 };
 exports.changeInputNumers = changeInputNumers;

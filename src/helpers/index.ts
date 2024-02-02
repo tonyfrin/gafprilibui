@@ -88,14 +88,14 @@ export const changeInputText = ({
 };
 
 export const changeInputNumers = (
-  value: number | string,
+  value: string,
   validation: (validValue: number) => boolean,
-  setValue: (newValue: number) => void
+  setValue: (newValue: string) => void
 ): void => {
   const numericValue = typeof value === 'string' ? parseFloat(value) : value;
   const valid: boolean = validation(numericValue);
   if (valid) {
-    setValue(numericValue);
+    setValue(value);
   }
 };
 

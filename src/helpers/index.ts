@@ -92,7 +92,7 @@ export const changeInputNumers = (
   validation: (validValue: number) => boolean,
   setValue: (newValue: number) => void
 ): void => {
-  const numericValue = typeof value === 'string' ? parseInt(value, 10) : value;
+  const numericValue = typeof value === 'string' ? parseFloat(value) : value;
   const valid: boolean = validation(numericValue);
   if (valid) {
     setValue(numericValue);

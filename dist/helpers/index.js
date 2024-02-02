@@ -80,7 +80,7 @@ var changeInputText = function changeInputText(_ref) {
 };
 exports.changeInputText = changeInputText;
 var changeInputNumers = function changeInputNumers(value, validation, setValue) {
-  var numericValue = typeof value === 'string' ? parseInt(value, 10) : value;
+  var numericValue = typeof value === 'string' ? parseFloat(value) : value;
   var valid = validation(numericValue);
   if (valid) {
     setValue(numericValue);

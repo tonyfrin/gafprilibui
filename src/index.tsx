@@ -72,6 +72,7 @@ export {
   InputCity,
   SelectCountry,
   SelectStateCountry,
+  InputStateCountry,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -177,6 +178,7 @@ export type {
   InputCityProps,
   SelectCountryProps,
   SelectStateCountryProps,
+  InputStateCountryProps,
 } from './Abstract';
 export {
   MainFooter,

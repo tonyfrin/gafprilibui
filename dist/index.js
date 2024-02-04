@@ -687,6 +687,12 @@ Object.defineProperty(exports, "SelectAreaCode", {
     return _Abstract.SelectAreaCode;
   }
 });
+Object.defineProperty(exports, "SelectCity", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectCity;
+  }
+});
 Object.defineProperty(exports, "SelectCountry", {
   enumerable: true,
   get: function get() {

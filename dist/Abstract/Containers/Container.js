@@ -13,7 +13,7 @@ var RowStyles = function RowStyles() {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n"])));
 };
 var ContainerInputStyles = function ContainerInputStyles(styles) {
-  return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  margin: ", ";\n"])), styles.width || '91.66667%', styles.margin || '10px 0px');
+  return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  margin: ", ";\n  ", "\n"])), styles.width || '91.66667%', styles.margin || '10px 0px', (styles === null || styles === void 0 ? void 0 : styles.custom) || '');
 };
 var ContainerInput = function ContainerInput(_ref) {
   var _ref$styles = _ref.styles,

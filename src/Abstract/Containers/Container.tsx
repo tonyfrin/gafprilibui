@@ -8,11 +8,13 @@ const RowStyles = () => css`
 const ContainerInputStyles = (styles: ContainerStyles) => css`
   width: ${styles.width || '91.66667%'};
   margin: ${styles.margin || '10px 0px'};
+  ${styles?.custom || ''}
 `;
 
 export type ContainerStyles = {
   width?: string;
   margin?: string | number;
+  custom?: string;
 };
 
 type ConainerInput = {

@@ -2,6 +2,7 @@
 export type ContainerStyles = {
     width?: string;
     margin?: string | number;
+    custom?: string;
 };
 type ConainerInput = {
     styles?: ContainerStyles | undefined;

@@ -75,6 +75,7 @@ export {
   InputStateCountry,
   SelectCity,
   InputZipCode,
+  InputDescription,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -183,6 +184,7 @@ export type {
   InputStateCountryProps,
   SelectCityProps,
   InputZipCodeProps,
+  InputDescriptionProps,
 } from './Abstract';
 export {
   MainFooter,

@@ -369,6 +369,12 @@ Object.defineProperty(exports, "InputCurrenciesSymbol", {
     return _Abstract.InputCurrenciesSymbol;
   }
 });
+Object.defineProperty(exports, "InputDescription", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputDescription;
+  }
+});
 Object.defineProperty(exports, "InputDocumentiIdDigit", {
   enumerable: true,
   get: function get() {

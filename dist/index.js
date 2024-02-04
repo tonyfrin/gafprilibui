@@ -411,6 +411,12 @@ Object.defineProperty(exports, "InputWebSite", {
     return _Abstract.InputWebSite;
   }
 });
+Object.defineProperty(exports, "InputZipCode", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputZipCode;
+  }
+});
 Object.defineProperty(exports, "LAST_NAME_INPUT", {
   enumerable: true,
   get: function get() {

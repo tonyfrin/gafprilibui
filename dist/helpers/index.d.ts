@@ -37,6 +37,14 @@ export type ChangeMultipleArrayStringSelectProps = {
     setSelectedValue: (value: string) => void;
 };
 export declare const changeMultipleArrayStringSelect: ({ newValue, selectedOptions, validation, setValue, setSelectedValue, }: ChangeMultipleArrayStringSelectProps) => void;
+export type ChangeMultipleArrayStringInputProps = {
+    newValue: string;
+    selectedOptions: string[];
+    validation: (value: string[]) => boolean;
+    setValue: (value: string[]) => void;
+    setSelectedValue: (value: string) => void;
+};
+export declare const changeMultipleArrayStringInput: ({ newValue, selectedOptions, validation, setValue, setSelectedValue, }: ChangeMultipleArrayStringInputProps) => void;
 export type ValidationInputName = {
     name: string;
     inputId: string;

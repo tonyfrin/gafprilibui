@@ -234,6 +234,7 @@ export {
   getBase64,
   changeMultipleArrayStringSelect,
   changeInputNumers,
+  changeMultipleArrayStringInput,
 } from './helpers';
 export type {
   ChangeInputText,
@@ -246,6 +247,7 @@ export type {
   SelectDefault,
   RoleArray,
   ChangeMultipleArrayStringSelectProps,
+  ChangeMultipleArrayStringInputProps,
 } from './helpers';
 export {
   useGafpriCurrencies,

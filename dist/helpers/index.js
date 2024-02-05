@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.changeSelect = exports.changeMultipleArrayStringSelect = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
+exports.changeSelect = exports.changeMultipleArrayStringSelect = exports.changeMultipleArrayStringInput = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
 exports.formatPhoneNumber = formatPhoneNumber;
 exports.gafpriFetch = gafpriFetch;
 exports.getLastEntryDateAndCount = exports.getBase64 = void 0;
@@ -142,60 +142,79 @@ var changeMultipleArrayStringSelect = function changeMultipleArrayStringSelect(_
   }
 };
 exports.changeMultipleArrayStringSelect = changeMultipleArrayStringSelect;
-var validationInputName = function validationInputName(_ref4) {
-  var name = _ref4.name,
-    inputId = _ref4.inputId,
-    setValid = _ref4.setValid,
-    _ref4$required = _ref4.required,
-    required = _ref4$required === void 0 ? true : _ref4$required;
+var changeMultipleArrayStringInput = function changeMultipleArrayStringInput(_ref4) {
+  var newValue = _ref4.newValue,
+    selectedOptions = _ref4.selectedOptions,
+    validation = _ref4.validation,
+    setValue = _ref4.setValue,
+    setSelectedValue = _ref4.setSelectedValue;
+  if (newValue != null) {
+    var selectedOption = newValue;
+    if (!selectedOptions.includes(selectedOption)) {
+      var updatedOptions = [].concat((0, _toConsumableArray2["default"])(selectedOptions), [selectedOption]);
+      var valid = validation(updatedOptions);
+      if (valid) {
+        setValue(updatedOptions);
+        setSelectedValue('');
+      }
+    }
+  }
+};
+exports.changeMultipleArrayStringInput = changeMultipleArrayStringInput;
+var validationInputName = function validationInputName(_ref5) {
+  var name = _ref5.name,
+    inputId = _ref5.inputId,
+    setValid = _ref5.setValid,
+    _ref5$required = _ref5.required,
+    required = _ref5$required === void 0 ? true : _ref5$required;
   var valid = validationInput(name, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&'@-\s]+$/, inputId, required);
   setValid(valid);
   return valid;
 };
 exports.validationInputName = validationInputName;
-var validationInputPostcode = function validationInputPostcode(_ref5) {
-  var value = _ref5.value,
-    inputId = _ref5.inputId,
-    setValid = _ref5.setValid,
-    _ref5$required = _ref5.required,
-    required = _ref5$required === void 0 ? true : _ref5$required;
-  var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, required);
-  setValid(valid);
-  return valid;
-};
-exports.validationInputPostcode = validationInputPostcode;
-var validationInputEmail = function validationInputEmail(_ref6) {
+var validationInputPostcode = function validationInputPostcode(_ref6) {
   var value = _ref6.value,
     inputId = _ref6.inputId,
     setValid = _ref6.setValid,
     _ref6$required = _ref6.required,
     required = _ref6$required === void 0 ? true : _ref6$required;
-  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, required);
+  var valid = validationInput(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, inputId, required);
   setValid(valid);
   return valid;
 };
-exports.validationInputEmail = validationInputEmail;
-var validationInputPhone = function validationInputPhone(_ref7) {
+exports.validationInputPostcode = validationInputPostcode;
+var validationInputEmail = function validationInputEmail(_ref7) {
   var value = _ref7.value,
     inputId = _ref7.inputId,
     setValid = _ref7.setValid,
     _ref7$required = _ref7.required,
     required = _ref7$required === void 0 ? true : _ref7$required;
+  var valid = validationInput(value, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, inputId, required);
+  setValid(valid);
+  return valid;
+};
+exports.validationInputEmail = validationInputEmail;
+var validationInputPhone = function validationInputPhone(_ref8) {
+  var value = _ref8.value,
+    inputId = _ref8.inputId,
+    setValid = _ref8.setValid,
+    _ref8$required = _ref8.required,
+    required = _ref8$required === void 0 ? true : _ref8$required;
   var valid = validationInput(value, /^[0-9]{10,20}/, inputId, required);
   setValid(valid);
   return valid;
 };
 exports.validationInputPhone = validationInputPhone;
-function gafpriFetch(_ref8) {
-  var initMethod = _ref8.initMethod,
-    _ref8$initApi = _ref8.initApi,
-    initApi = _ref8$initApi === void 0 ? _Constans.API_URL : _ref8$initApi,
-    initRoute = _ref8.initRoute,
-    initToken = _ref8.initToken,
-    initCredentials = _ref8.initCredentials,
-    functionFetching = _ref8.functionFetching,
-    functionSuccess = _ref8.functionSuccess,
-    functionError = _ref8.functionError;
+function gafpriFetch(_ref9) {
+  var initMethod = _ref9.initMethod,
+    _ref9$initApi = _ref9.initApi,
+    initApi = _ref9$initApi === void 0 ? _Constans.API_URL : _ref9$initApi,
+    initRoute = _ref9.initRoute,
+    initToken = _ref9.initToken,
+    initCredentials = _ref9.initCredentials,
+    functionFetching = _ref9.functionFetching,
+    functionSuccess = _ref9.functionSuccess,
+    functionError = _ref9.functionError;
   if (functionFetching !== undefined) {
     functionFetching();
   }
@@ -245,7 +264,7 @@ var isSelectDefaultArray = function isSelectDefaultArray(obj) {
 };
 exports.isSelectDefaultArray = isSelectDefaultArray;
 var getLastEntryDateAndCount = /*#__PURE__*/function () {
-  var _ref9 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(service) {
+  var _ref10 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(service) {
     var response;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
@@ -280,7 +299,7 @@ var getLastEntryDateAndCount = /*#__PURE__*/function () {
     }, _callee, null, [[0, 10]]);
   }));
   return function getLastEntryDateAndCount(_x) {
-    return _ref9.apply(this, arguments);
+    return _ref10.apply(this, arguments);
   };
 }();
 exports.getLastEntryDateAndCount = getLastEntryDateAndCount;

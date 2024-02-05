@@ -921,6 +921,12 @@ Object.defineProperty(exports, "changeInputText", {
     return _helpers.changeInputText;
   }
 });
+Object.defineProperty(exports, "changeMultipleArrayStringInput", {
+  enumerable: true,
+  get: function get() {
+    return _helpers.changeMultipleArrayStringInput;
+  }
+});
 Object.defineProperty(exports, "changeMultipleArrayStringSelect", {
   enumerable: true,
   get: function get() {

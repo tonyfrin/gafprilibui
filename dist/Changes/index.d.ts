@@ -27,6 +27,7 @@ export declare const generalChangeParentId: (options: SingleValue<{
     label: string;
 }>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number) => void) => void;
 export declare const generalChangePhoto: (e: ChangeEvent<HTMLInputElement>, changeError: (valueError: string[]) => void, setSubmitting: (valueSubmitting: boolean) => void, setPhoto: (valuePhoto: string) => void, validation: (valueValid: string) => boolean) => Promise<void>;
+export declare const generalChangeGalleryPhoto: (e: ChangeEvent<HTMLInputElement>, changeError: (valueError: string[]) => void, setSubmitting: (valueSubmitting: boolean) => void, setPhoto: (valuePhoto: string[]) => void, validation: (valueValid: string[]) => boolean, selectedOptions: string[], setSelectedValue: (value: string) => void) => Promise<void>;
 export declare const generalChangeStatus: (options: SingleValue<{
     value: string;
     label: string;

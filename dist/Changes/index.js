@@ -4,8 +4,9 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.generalChangeWebSite = exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeTaxes = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangeRoles = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCurrenciesId = exports.generalChangeCurrenciesDecimalNumbers = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAreaCode = exports.generalChangeAddressType = exports.generalChangeAddress = exports.generalChanceIsActive = void 0;
+exports.generalChangeWebSite = exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeTaxes = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangeRoles = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeGalleryPhoto = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCurrenciesId = exports.generalChangeCurrenciesDecimalNumbers = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAreaCode = exports.generalChangeAddressType = exports.generalChangeAddress = exports.generalChanceIsActive = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _axios = _interopRequireDefault(require("axios"));
 var _dompurify = _interopRequireDefault(require("dompurify"));
@@ -179,7 +180,7 @@ var generalChangeParentId = function generalChangeParentId(options, validation, 
 exports.generalChangeParentId = generalChangeParentId;
 var generalChangePhoto = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e, changeError, setSubmitting, setPhoto, validation) {
-    var newFile, mimeType, formData, config, response;
+    var newFile, mimeType, formData, config, response, valid;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -214,30 +215,98 @@ var generalChangePhoto = /*#__PURE__*/function () {
         case 15:
           response = _context.sent;
           if (response.status === 200) {
-            setPhoto(response.data.imageUrl);
-            validation(response.data.imageUrl);
-          } else {
-            setSubmitting(false);
+            valid = validation(response.data.imageUrl);
+            if (valid) {
+              setPhoto(response.data.imageUrl);
+            }
           }
+          setSubmitting(false);
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          _context.next = 23;
+          _context.next = 24;
           break;
-        case 19:
-          _context.prev = 19;
+        case 20:
+          _context.prev = 20;
           _context.t0 = _context["catch"](12);
           changeError(["".concat(_context.t0.message)]);
           setSubmitting(false);
-        case 23:
+        case 24:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[12, 19]]);
+    }, _callee, null, [[12, 20]]);
   }));
   return function generalChangePhoto(_x, _x2, _x3, _x4, _x5) {
     return _ref.apply(this, arguments);
   };
 }();
 exports.generalChangePhoto = generalChangePhoto;
+var generalChangeGalleryPhoto = /*#__PURE__*/function () {
+  var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(e, changeError, setSubmitting, setPhoto, validation, selectedOptions, setSelectedValue) {
+    var newFile, mimeType, formData, config, response, selectedOption, updatedOptions, valid;
+    return _regenerator["default"].wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          newFile = e.target.files && e.target.files[0];
+          if (newFile) {
+            _context2.next = 3;
+            break;
+          }
+          return _context2.abrupt("return");
+        case 3:
+          // Obtén el tipo MIME en función de la extensión del archivo
+          mimeType = (0, _helpers.getMimeTypeByExtension)(newFile.name);
+          if (mimeType) {
+            _context2.next = 7;
+            break;
+          }
+          changeError(['El archivo no es una imagen válida. Asegúrate de subir un archivo JPG, JPEG o PNG.']);
+          return _context2.abrupt("return");
+        case 7:
+          formData = new FormData();
+          formData.append('file', newFile);
+          formData.append('fileName', newFile.name);
+          setSubmitting(true);
+          config = {
+            headers: {
+              'content-type': 'multipart/form-data'
+            }
+          };
+          _context2.prev = 12;
+          _context2.next = 15;
+          return _axios["default"].post(_Constans.UPLOAD_PHOTO_ROUTE, formData, config);
+        case 15:
+          response = _context2.sent;
+          if (response.status === 200) {
+            selectedOption = response.data.imageUrl;
+            if (!selectedOptions.includes(selectedOption)) {
+              updatedOptions = [].concat((0, _toConsumableArray2["default"])(selectedOptions), [selectedOption]);
+              valid = validation(updatedOptions);
+              if (valid) {
+                setPhoto(updatedOptions);
+                setSelectedValue('');
+              }
+            }
+          }
+          setSubmitting(false);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          _context2.next = 24;
+          break;
+        case 20:
+          _context2.prev = 20;
+          _context2.t0 = _context2["catch"](12);
+          changeError(["".concat(_context2.t0.message)]);
+          setSubmitting(false);
+        case 24:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2, null, [[12, 20]]);
+  }));
+  return function generalChangeGalleryPhoto(_x6, _x7, _x8, _x9, _x10, _x11, _x12) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+exports.generalChangeGalleryPhoto = generalChangeGalleryPhoto;
 var generalChangeStatus = function generalChangeStatus(options, validation, setDefault, setValue) {
   (0, _helpers.changeSelect)({
     newValue: options,

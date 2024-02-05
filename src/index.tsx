@@ -428,4 +428,5 @@ export {
   generalChangeAreaCode,
   generalChangeRoles,
   generalChanceIsActive,
+  generalChangeGalleryPhoto,
 } from './Changes';

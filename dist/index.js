@@ -1029,6 +1029,12 @@ Object.defineProperty(exports, "generalChangeEmail", {
     return _Changes.generalChangeEmail;
   }
 });
+Object.defineProperty(exports, "generalChangeGalleryPhoto", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeGalleryPhoto;
+  }
+});
 Object.defineProperty(exports, "generalChangeLastName", {
   enumerable: true,
   get: function get() {

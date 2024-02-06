@@ -19,6 +19,7 @@ type Media = {
 };
 export type InputStyle = {
     width?: string | number;
+    height?: string;
     border?: string;
     padding?: string | number;
     textAlign?: string;

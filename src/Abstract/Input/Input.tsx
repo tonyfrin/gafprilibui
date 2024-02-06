@@ -18,6 +18,7 @@ export type SpanStyle = {
 
 const InputStyles = (styles: InputStyle) => css`
   width: ${styles.width || '100%'};
+  ${styles.height ? `height: ${styles.height};` : ''};
   border: ${styles.border || '2px solid #eaeaea'};
   padding: ${styles.padding || '8px 19px'};
   text-align: ${styles.textAlign || 'left'};
@@ -60,6 +61,7 @@ type Media = {
 
 export type InputStyle = {
   width?: string | number;
+  height?: string;
   border?: string;
   padding?: string | number;
   textAlign?: string;

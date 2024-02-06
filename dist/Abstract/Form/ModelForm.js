@@ -28,6 +28,8 @@ var ModelForm = function ModelForm(_ref) {
     title1Props = _ref.title1Props,
     title2Props = _ref.title2Props,
     handleActions = _ref.handleActions,
+    _ref$buttonConditiona = _ref.buttonConditional,
+    buttonConditional = _ref$buttonConditiona === void 0 ? true : _ref$buttonConditiona,
     buttonTitles = _ref.buttonTitles,
     mainButtonProps = _ref.mainButtonProps,
     _ref$buttonNextId = _ref.buttonNextId,
@@ -52,7 +54,7 @@ var ModelForm = function ModelForm(_ref) {
     title: titles.title2
   }, title2Props))), /*#__PURE__*/_react["default"].createElement(_Error.Error, (0, _extends2["default"])({
     error: error
-  }, errorProps)), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerForm, childrenContainerProps, children), (buttonTitles === null || buttonTitles === void 0 ? void 0 : buttonTitles.mainButton) && /*#__PURE__*/_react["default"].createElement("div", {
+  }, errorProps)), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerForm, childrenContainerProps, children), buttonConditional && (buttonTitles === null || buttonTitles === void 0 ? void 0 : buttonTitles.mainButton) && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(actionButtonContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, (0, _extends2["default"])({
     title: buttonTitles.mainButton,
@@ -62,7 +64,7 @@ var ModelForm = function ModelForm(_ref) {
       },
       id: "".concat(_Constans.BUTTON_NEXT_INPUT).concat(buttonNextId)
     }
-  }, mainButtonProps))), (buttonTitles === null || buttonTitles === void 0 ? void 0 : buttonTitles.returnButton) !== '' && /*#__PURE__*/_react["default"].createElement("div", {
+  }, mainButtonProps))), buttonConditional && (buttonTitles === null || buttonTitles === void 0 ? void 0 : buttonTitles.returnButton) !== '' && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(returnButtonConatinerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, (0, _extends2["default"])({
     title: buttonTitles.returnButton,

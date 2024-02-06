@@ -53,6 +53,7 @@ export type ModelFormProps = {
   title1Props?: Title1Props;
   title2Props?: Title2Props;
   handleActions: (action: string, value: any) => void;
+  buttonConditional?: boolean;
   buttonTitles: {
     mainButton?: string;
     returnButton: string;
@@ -79,6 +80,7 @@ export type ModelFormPropsExtended = {
   title1Props?: Title1Props;
   title2Props?: Title2Props;
   handleActions?: (action: string, value: any) => void;
+  buttonConditional?: boolean;
   buttonTitles: {
     mainButton?: string;
     returnButton: string;
@@ -101,6 +103,7 @@ export const ModelForm = ({
   title1Props,
   title2Props,
   handleActions,
+  buttonConditional = true,
   buttonTitles,
   mainButtonProps,
   buttonNextId = '',
@@ -123,7 +126,7 @@ export const ModelForm = ({
         </div>
         <Error error={error} {...errorProps} />
         <ContainerForm {...childrenContainerProps}>{children}</ContainerForm>
-        {buttonTitles?.mainButton && (
+        {buttonConditional && buttonTitles?.mainButton && (
           <div className={css(actionButtonContainerStyle)}>
             <Button
               title={buttonTitles.mainButton}
@@ -135,7 +138,7 @@ export const ModelForm = ({
             />
           </div>
         )}
-        {buttonTitles?.returnButton !== '' && (
+        {buttonConditional && buttonTitles?.returnButton !== '' && (
           <div className={css(returnButtonConatinerStyle)}>
             <Button
               title={buttonTitles.returnButton}

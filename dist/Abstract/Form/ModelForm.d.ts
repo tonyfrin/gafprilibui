@@ -17,6 +17,7 @@ export type ModelFormProps = {
     title1Props?: Title1Props;
     title2Props?: Title2Props;
     handleActions: (action: string, value: any) => void;
+    buttonConditional?: boolean;
     buttonTitles: {
         mainButton?: string;
         returnButton: string;
@@ -42,6 +43,7 @@ export type ModelFormPropsExtended = {
     title1Props?: Title1Props;
     title2Props?: Title2Props;
     handleActions?: (action: string, value: any) => void;
+    buttonConditional?: boolean;
     buttonTitles: {
         mainButton?: string;
         returnButton: string;
@@ -57,5 +59,5 @@ export type ModelFormPropsExtended = {
     actionButtonContainerStyle?: string;
     returnButtonConatinerStyle?: string;
 };
-export declare const ModelForm: ({ boxProps, titles, title1Props, title2Props, handleActions, buttonTitles, mainButtonProps, buttonNextId, returnButtonStyle, returnButtonProps, children, error, errorProps, childrenContainerProps, titleContainerStyle, actionButtonContainerStyle, returnButtonConatinerStyle, }: ModelFormProps) => JSX.Element;
+export declare const ModelForm: ({ boxProps, titles, title1Props, title2Props, handleActions, buttonConditional, buttonTitles, mainButtonProps, buttonNextId, returnButtonStyle, returnButtonProps, children, error, errorProps, childrenContainerProps, titleContainerStyle, actionButtonContainerStyle, returnButtonConatinerStyle, }: ModelFormProps) => JSX.Element;
 export {};

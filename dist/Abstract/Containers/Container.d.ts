@@ -15,6 +15,10 @@ export type ContainerFormProps = {
     containerClass?: string;
     children: JSX.Element;
 };
+export type ContainerFormPropsExtended = {
+    styles?: ContainerStyles | undefined;
+    containerClass?: string;
+};
 export declare const ContainerForm: ({ styles, containerClass, children, }: ContainerFormProps) => JSX.Element;
 export type ContainerGloboStyle = {
     width?: string;

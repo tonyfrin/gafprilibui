@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ContainerFormProps } from '../Containers';
+import type { ContainerFormPropsExtended } from '../Containers';
 import type { Title1Props, Title2Props } from '../Title';
 import type { ButtonProps } from '../Button';
 import type { ErrorProps } from '../Error';
@@ -29,7 +29,7 @@ export type ModelFormProps = {
     children: React.ReactElement;
     error: string[] | null;
     errorProps?: ErrorProps;
-    childrenContainerProps?: ContainerFormProps;
+    childrenContainerProps?: ContainerFormPropsExtended;
     titleContainerStyle?: string;
     actionButtonContainerStyle?: string;
     returnButtonConatinerStyle?: string;
@@ -54,7 +54,7 @@ export type ModelFormPropsExtended = {
     returnButtonProps?: ButtonProps;
     error?: string[] | null;
     errorProps?: ErrorProps;
-    childrenContainerProps?: ContainerFormProps;
+    childrenContainerProps?: ContainerFormPropsExtended;
     titleContainerStyle?: string;
     actionButtonContainerStyle?: string;
     returnButtonConatinerStyle?: string;

@@ -46,6 +46,11 @@ export type ContainerFormProps = {
   children: JSX.Element;
 };
 
+export type ContainerFormPropsExtended = {
+  styles?: ContainerStyles | undefined;
+  containerClass?: string;
+};
+
 export const ContainerForm = ({
   styles = {},
   containerClass = '',

@@ -512,33 +512,39 @@ function useGafpriCategory(_ref) {
     return null;
   };
   var convertResponseToCategories = function convertResponseToCategories() {
-    var categoryMap = {};
     var rootCategories = [];
     if (!category.data.items) return [];
     category.data.items.forEach(function (response) {
       var categoryList = {
-        id: Number(response.id),
+        id: response.id,
         name: response.name,
         children: []
       };
       if (!response.parentId) {
-        // Si es una categoría principal, agrega al mapa y a la lista de categorías principales
-        categoryMap[response.id] = categoryList;
         rootCategories.push(categoryList);
-      } else {
-        // Si es una subcategoría, añádela a la categoría principal correspondiente si existe
-        var parentCategory = categoryMap[response.parentId];
+      }
+    });
+
+    // Segundo paso: Mapear hijos y agregar a las categorías principales
+    category.data.items.forEach(function (response) {
+      var categoryList = {
+        id: response.id,
+        name: response.name,
+        children: []
+      };
+      if (response.parentId) {
+        var parentCategory = rootCategories.find(function (rootCategory) {
+          return rootCategory.id === response.parentId;
+        });
         if (parentCategory && parentCategory.children) {
           parentCategory.children.push(categoryList);
-        } else {
-          // Si no existe la categoría principal, crea una temporal hasta que esté disponible
-          var temporaryParent = {
-            id: Number(parentId),
-            name: '',
-            children: [categoryList]
-          };
-          categoryMap[response.parentId] = temporaryParent;
-          rootCategories.push(temporaryParent);
+          // Actualizar la referencia de parentCategory en rootCategories
+          var rootIndex = rootCategories.findIndex(function (rootCategory) {
+            return rootCategory.id === parentCategory.id;
+          });
+          if (rootIndex !== -1) {
+            rootCategories[rootIndex] = parentCategory;
+          }
         }
       }
     });

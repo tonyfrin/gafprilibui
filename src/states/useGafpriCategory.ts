@@ -679,36 +679,44 @@ export function useGafpriCategory({
   };
 
   const convertResponseToCategories = (): Category[] => {
-    const categoryMap: Record<string, Category> = {};
     const rootCategories: Category[] = [];
 
     if (!category.data.items) return [];
 
     category.data.items.forEach((response) => {
       const categoryList: Category = {
-        id: Number(response.id),
+        id: response.id,
         name: response.name,
         children: [],
       };
 
       if (!response.parentId) {
-        // Si es una categoría principal, agrega al mapa y a la lista de categorías principales
-        categoryMap[response.id] = categoryList;
         rootCategories.push(categoryList);
-      } else {
-        // Si es una subcategoría, añádela a la categoría principal correspondiente si existe
-        const parentCategory = categoryMap[response.parentId];
+      }
+    });
+
+    // Segundo paso: Mapear hijos y agregar a las categorías principales
+    category.data.items.forEach((response) => {
+      const categoryList: Category = {
+        id: response.id,
+        name: response.name,
+        children: [],
+      };
+
+      if (response.parentId) {
+        const parentCategory = rootCategories.find(
+          (rootCategory) => rootCategory.id === response.parentId
+        );
+
         if (parentCategory && parentCategory.children) {
           parentCategory.children.push(categoryList);
-        } else {
-          // Si no existe la categoría principal, crea una temporal hasta que esté disponible
-          const temporaryParent: Category = {
-            id: Number(parentId),
-            name: '',
-            children: [categoryList],
-          };
-          categoryMap[response.parentId] = temporaryParent;
-          rootCategories.push(temporaryParent);
+          // Actualizar la referencia de parentCategory en rootCategories
+          const rootIndex = rootCategories.findIndex(
+            (rootCategory) => rootCategory.id === parentCategory.id
+          );
+          if (rootIndex !== -1) {
+            rootCategories[rootIndex] = parentCategory;
+          }
         }
       }
     });

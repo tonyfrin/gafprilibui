@@ -281,6 +281,7 @@ export type {
   UseUserProps,
   UseErrorReturn,
   newErrorProps,
+  Category,
 } from './states';
 export {
   Countries,

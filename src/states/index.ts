@@ -12,6 +12,7 @@ export { useGafpriCategory } from './useGafpriCategory';
 export type {
   CategoryAttributes,
   UseCategoryReturn,
+  Category,
 } from './useGafpriCategory';
 export { useGafpriRoles } from './useGafpriRoles';
 export type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';

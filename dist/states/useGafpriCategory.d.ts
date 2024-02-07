@@ -21,6 +21,11 @@ interface CategoryData {
         items: CategoryAttributes[] | [] | null;
     };
 }
+export interface Category {
+    id: number;
+    name: string;
+    children?: Category[];
+}
 type State = {
     isReady: boolean;
     isFetching: boolean;
@@ -96,6 +101,7 @@ type Actions = {
     handleNewCategory: (newCurrency: CategoryAttributes) => void;
     handleUpdatedCategory: (updatedCurrency: CategoryAttributes) => void;
     handleDeletedCategory: ({ itemId }: DeletedCategory) => void;
+    convertResponseToCategories: () => Category[];
 };
 export type UseCategoryReturn = {
     states: State;

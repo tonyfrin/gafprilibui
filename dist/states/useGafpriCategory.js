@@ -511,6 +511,39 @@ function useGafpriCategory(_ref) {
     }
     return null;
   };
+  var convertResponseToCategories = function convertResponseToCategories() {
+    var categoryMap = {};
+    var rootCategories = [];
+    if (!category.data.items) return [];
+    category.data.items.forEach(function (response) {
+      var categoryList = {
+        id: Number(response.id),
+        name: name,
+        children: []
+      };
+      if (!parentId) {
+        // Si es una categoría principal, agrega al mapa y a la lista de categorías principales
+        categoryMap[response.id] = categoryList;
+        rootCategories.push(categoryList);
+      } else {
+        // Si es una subcategoría, añádela a la categoría principal correspondiente si existe
+        var parentCategory = categoryMap[parentId];
+        if (parentCategory && parentCategory.children) {
+          parentCategory.children.push(categoryList);
+        } else {
+          // Si no existe la categoría principal, crea una temporal hasta que esté disponible
+          var temporaryParent = {
+            id: Number(parentId),
+            name: '',
+            children: [categoryList]
+          };
+          categoryMap[parentId] = temporaryParent;
+          rootCategories.push(temporaryParent);
+        }
+      }
+    });
+    return rootCategories;
+  };
 
   /**
    * Effects
@@ -623,7 +656,8 @@ function useGafpriCategory(_ref) {
     deleteCategory: deleteCategory,
     handleNewCategory: handleNewCategory,
     handleUpdatedCategory: handleUpdatedCategory,
-    handleDeletedCategory: handleDeletedCategory
+    handleDeletedCategory: handleDeletedCategory,
+    convertResponseToCategories: convertResponseToCategories
   };
   return {
     states: states,

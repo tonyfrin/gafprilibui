@@ -47,6 +47,12 @@ interface CategoryData {
   };
 }
 
+export interface Category {
+  id: number;
+  name: string;
+  children?: Category[];
+}
+
 type State = {
   isReady: boolean;
   isFetching: boolean;
@@ -172,6 +178,8 @@ type Actions = {
   handleUpdatedCategory: (updatedCurrency: CategoryAttributes) => void;
 
   handleDeletedCategory: ({ itemId }: DeletedCategory) => void;
+
+  convertResponseToCategories: () => Category[];
 };
 
 export type UseCategoryReturn = {
@@ -670,6 +678,44 @@ export function useGafpriCategory({
     return null;
   };
 
+  const convertResponseToCategories = (): Category[] => {
+    const categoryMap: Record<string, Category> = {};
+    const rootCategories: Category[] = [];
+
+    if (!category.data.items) return [];
+
+    category.data.items.forEach((response) => {
+      const categoryList: Category = {
+        id: Number(response.id),
+        name,
+        children: [],
+      };
+
+      if (!parentId) {
+        // Si es una categoría principal, agrega al mapa y a la lista de categorías principales
+        categoryMap[response.id] = categoryList;
+        rootCategories.push(categoryList);
+      } else {
+        // Si es una subcategoría, añádela a la categoría principal correspondiente si existe
+        const parentCategory = categoryMap[parentId];
+        if (parentCategory && parentCategory.children) {
+          parentCategory.children.push(categoryList);
+        } else {
+          // Si no existe la categoría principal, crea una temporal hasta que esté disponible
+          const temporaryParent: Category = {
+            id: Number(parentId),
+            name: '',
+            children: [categoryList],
+          };
+          categoryMap[parentId] = temporaryParent;
+          rootCategories.push(temporaryParent);
+        }
+      }
+    });
+
+    return rootCategories;
+  };
+
   /**
    * Effects
    *
@@ -798,6 +844,7 @@ export function useGafpriCategory({
     handleNewCategory,
     handleUpdatedCategory,
     handleDeletedCategory,
+    convertResponseToCategories,
   };
 
   return {

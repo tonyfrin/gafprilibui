@@ -518,16 +518,16 @@ function useGafpriCategory(_ref) {
     category.data.items.forEach(function (response) {
       var categoryList = {
         id: Number(response.id),
-        name: name,
+        name: response.name,
         children: []
       };
-      if (!parentId) {
+      if (!response.parentId) {
         // Si es una categoría principal, agrega al mapa y a la lista de categorías principales
         categoryMap[response.id] = categoryList;
         rootCategories.push(categoryList);
       } else {
         // Si es una subcategoría, añádela a la categoría principal correspondiente si existe
-        var parentCategory = categoryMap[parentId];
+        var parentCategory = categoryMap[response.parentId];
         if (parentCategory && parentCategory.children) {
           parentCategory.children.push(categoryList);
         } else {
@@ -537,7 +537,7 @@ function useGafpriCategory(_ref) {
             name: '',
             children: [categoryList]
           };
-          categoryMap[parentId] = temporaryParent;
+          categoryMap[response.parentId] = temporaryParent;
           rootCategories.push(temporaryParent);
         }
       }

@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
 import { SelectDefault } from '../helpers';
 export declare const generalChangeUserName: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeName: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
+export declare const generalChangeName: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => string;
 export declare const generalChangeLastName: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
 export declare const generalChangePassword: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
 export declare const generalChangeDescription: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;

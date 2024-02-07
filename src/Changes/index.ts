@@ -35,7 +35,7 @@ export const generalChangeName = (
   value: string,
   validation: (valueValid: string) => boolean,
   setValue: (transformedValue: string) => void
-): void => {
+): string => {
   const valueClean = DOMPurify.sanitize(value);
   const name = toTitleCase(valueClean);
   changeInputText({
@@ -43,6 +43,7 @@ export const generalChangeName = (
     validation,
     setValue,
   });
+  return name;
 };
 
 export const generalChangeLastName = (

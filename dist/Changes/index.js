@@ -30,6 +30,7 @@ var generalChangeName = function generalChangeName(value, validation, setValue) 
     validation: validation,
     setValue: setValue
   });
+  return name;
 };
 exports.generalChangeName = generalChangeName;
 var generalChangeLastName = function generalChangeLastName(value, validation, setValue) {

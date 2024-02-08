@@ -94,6 +94,8 @@ const ContainerButtonStyles = (styles: ContainerButtonStyle) => css`
   width: ${styles.width || '50%'};
   display: ${styles.display || 'flex'};
   justify-content: ${styles.justifyContent || 'space-around'};
+  ${styles.flexDirection ? `flex-direction: ${styles.flexDirection};` : ''}
+  ${styles.custom || ''}
 `;
 
 export type ContainerButtonStyle = {
@@ -101,6 +103,8 @@ export type ContainerButtonStyle = {
   display?: string;
   justifyContent?: string;
   transition?: string;
+  flexDirection?: string;
+  custom?: string;
 };
 
 export type ContainerButtonProps = {

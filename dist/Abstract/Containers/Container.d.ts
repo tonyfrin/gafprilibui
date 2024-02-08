@@ -34,6 +34,8 @@ export type ContainerButtonStyle = {
     display?: string;
     justifyContent?: string;
     transition?: string;
+    flexDirection?: string;
+    custom?: string;
 };
 export type ContainerButtonProps = {
     styles?: ContainerButtonStyle | undefined;

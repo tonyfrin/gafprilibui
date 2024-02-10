@@ -183,8 +183,6 @@ export function useGafpriLogin({
     }
   };
 
-  
-
   /**
    * Effects
    *

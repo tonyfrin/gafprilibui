@@ -1,9 +1,10 @@
-export { Button, ButtonLarge } from './Button';
+export { Button, ButtonLarge, ButtonNext } from './Button';
 export type {
   ButtonStyle,
   ButtonProps,
   ButtonLargeProps,
   ButtonPropsExtended,
+  ButtonNextProps,
 } from './Button';
 export { Box1 } from './Box';
 export type { Box1Style, Box1Props } from './Box';

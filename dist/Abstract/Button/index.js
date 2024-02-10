@@ -15,5 +15,12 @@ Object.defineProperty(exports, "ButtonLarge", {
     return _ButtonLarge.ButtonLarge;
   }
 });
+Object.defineProperty(exports, "ButtonNext", {
+  enumerable: true,
+  get: function get() {
+    return _ButtonNext.ButtonNext;
+  }
+});
 var _Button = require("./Button");
 var _ButtonLarge = require("./ButtonLarge");
+var _ButtonNext = require("./ButtonNext");

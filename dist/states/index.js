@@ -27,6 +27,12 @@ Object.defineProperty(exports, "useGafpriError", {
     return _useGafpriError.useGafpriError;
   }
 });
+Object.defineProperty(exports, "useGafpriLogin", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriLogin.useGafpriLogin;
+  }
+});
 Object.defineProperty(exports, "useGafpriRoles", {
   enumerable: true,
   get: function get() {
@@ -59,3 +65,4 @@ var _useGafpriEntity = require("./useGafpriEntity");
 var _useGafpriSites = require("./useGafpriSites");
 var _useGafpriUser = require("./useGafpriUser");
 var _useGafpriError = require("./useGafpriError");
+var _useGafpriLogin = require("./useGafpriLogin");

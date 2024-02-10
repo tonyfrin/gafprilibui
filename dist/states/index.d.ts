@@ -14,3 +14,5 @@ export { useGafpriUsers } from './useGafpriUser';
 export type { UserAttributes, UseUserReturn, UseUserProps, } from './useGafpriUser';
 export { useGafpriError } from './useGafpriError';
 export type { UseErrorReturn, newErrorProps } from './useGafpriError';
+export { useGafpriLogin } from './useGafpriLogin';
+export type { UseLoginReturn, LoginAttributes } from './useGafpriLogin';

@@ -135,6 +135,12 @@ Object.defineProperty(exports, "CURRENCIES_SYMBOL_INPUT", {
     return _Inputs.CURRENCIES_SYMBOL_INPUT;
   }
 });
+Object.defineProperty(exports, "CURRENT_USER_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.CURRENT_USER_STORAGE;
+  }
+});
 Object.defineProperty(exports, "Cities", {
   enumerable: true,
   get: function get() {
@@ -319,6 +325,12 @@ Object.defineProperty(exports, "TAXES_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.TAXES_INPUT;
+  }
+});
+Object.defineProperty(exports, "TOKEN_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.TOKEN_STORAGE;
   }
 });
 Object.defineProperty(exports, "TYPE_DOCUMENT_ID_DIGIT_INPUT", {

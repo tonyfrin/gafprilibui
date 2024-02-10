@@ -165,6 +165,12 @@ Object.defineProperty(exports, "CURRENCIES_SYMBOL_INPUT", {
     return _Constans.CURRENCIES_SYMBOL_INPUT;
   }
 });
+Object.defineProperty(exports, "CURRENT_USER_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.CURRENT_USER_STORAGE;
+  }
+});
 Object.defineProperty(exports, "CategoryForm", {
   enumerable: true,
   get: function get() {
@@ -793,6 +799,12 @@ Object.defineProperty(exports, "TAXES_INPUT", {
   enumerable: true,
   get: function get() {
     return _Constans.TAXES_INPUT;
+  }
+});
+Object.defineProperty(exports, "TOKEN_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.TOKEN_STORAGE;
   }
 });
 Object.defineProperty(exports, "TYPE_DOCUMENT_ID_DIGIT_INPUT", {
@@ -1435,6 +1447,12 @@ Object.defineProperty(exports, "useGafpriError", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriError;
+  }
+});
+Object.defineProperty(exports, "useGafpriLogin", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriLogin;
   }
 });
 Object.defineProperty(exports, "useGafpriRoles", {

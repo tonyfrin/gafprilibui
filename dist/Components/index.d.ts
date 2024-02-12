@@ -16,3 +16,5 @@ export { MainUser } from './Users';
 export type { MainUserProps, MainUserPropsExtended } from './Users';
 export { LoginForm } from './Login';
 export type { LoginFormProps } from './Login';
+export { InitMainMenu } from './Main';
+export type { InitMainMenuProps, InitMainMenuStylesContainerProps, } from './Main';

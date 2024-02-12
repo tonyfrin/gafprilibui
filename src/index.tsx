@@ -77,6 +77,8 @@ export {
   InputZipCode,
   InputDescription,
   ButtonNext,
+  CircleButton,
+  MainMenu,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -187,6 +189,13 @@ export type {
   InputZipCodeProps,
   InputDescriptionProps,
   ButtonNextProps,
+  CircleButtonProps,
+  MainMenuProps,
+  MainMenuPropsExtended,
+  MainMenuStylesContainerProps,
+  MainMenuStylesContentProps,
+  MainMenuItems,
+  MainMenuItem,
 } from './Abstract';
 export {
   MainFooter,
@@ -199,6 +208,7 @@ export {
   MainSites,
   MainUser,
   LoginForm,
+  InitMainMenu,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -215,6 +225,8 @@ export type {
   MainUserProps,
   MainUserPropsExtended,
   LoginFormProps,
+  InitMainMenuProps,
+  InitMainMenuStylesContainerProps,
 } from './Components';
 export {
   addClass,

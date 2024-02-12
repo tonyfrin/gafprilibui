@@ -21,6 +21,13 @@ Object.defineProperty(exports, "ButtonNext", {
     return _ButtonNext.ButtonNext;
   }
 });
+Object.defineProperty(exports, "CircleButton", {
+  enumerable: true,
+  get: function get() {
+    return _CircleButton.CircleButton;
+  }
+});
 var _Button = require("./Button");
 var _ButtonLarge = require("./ButtonLarge");
 var _ButtonNext = require("./ButtonNext");
+var _CircleButton = require("./CircleButton");

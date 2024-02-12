@@ -183,6 +183,12 @@ Object.defineProperty(exports, "CategoryForm", {
     return _Abstract.CategoryForm;
   }
 });
+Object.defineProperty(exports, "CircleButton", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CircleButton;
+  }
+});
 Object.defineProperty(exports, "Cities", {
   enumerable: true,
   get: function get() {
@@ -339,6 +345,12 @@ Object.defineProperty(exports, "InitEntity", {
     return _Abstract.InitEntity;
   }
 });
+Object.defineProperty(exports, "InitMainMenu", {
+  enumerable: true,
+  get: function get() {
+    return _Components.InitMainMenu;
+  }
+});
 Object.defineProperty(exports, "InitRoles", {
   enumerable: true,
   get: function get() {
@@ -493,6 +505,12 @@ Object.defineProperty(exports, "MainFooter", {
   enumerable: true,
   get: function get() {
     return _Components.MainFooter;
+  }
+});
+Object.defineProperty(exports, "MainMenu", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.MainMenu;
   }
 });
 Object.defineProperty(exports, "MainRoles", {

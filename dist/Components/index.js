@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "InitMainMenu", {
+  enumerable: true,
+  get: function get() {
+    return _Main.InitMainMenu;
+  }
+});
 Object.defineProperty(exports, "Loading", {
   enumerable: true,
   get: function get() {
@@ -73,3 +79,4 @@ var _Roles = require("./Roles");
 var _Sites = require("./Sites");
 var _Users = require("./Users");
 var _Login = require("./Login");
+var _Main = require("./Main");

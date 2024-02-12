@@ -6,6 +6,7 @@ export type InitMainMenuStylesContainerProps = {
     backgroundImage?: string;
     height?: string;
     backgroundRepeat?: string;
+    backgroundSize?: string;
 };
 export type InitMainMenuProps = {
     stylesContainer?: InitMainMenuStylesContainerProps;

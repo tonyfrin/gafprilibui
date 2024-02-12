@@ -9,6 +9,7 @@ export type InitMainMenuStylesContainerProps = {
   backgroundImage?: string;
   height?: string;
   backgroundRepeat?: string;
+  backgroundSize?: string;
 };
 
 export type InitMainMenuProps = {
@@ -25,6 +26,7 @@ const initMainMenuStylesContainer = (
   'url(https://tiendasgafpri.com/wp-content/themes/gafpristore/assets/img/fondo-admin.png)'};
   background-repeat: ${styles.backgroundRepeat || 'no-repeat'};
   height: ${styles.height || '100vh'};
+  background-size: ${styles.backgroundSize || '177vh'};
   ${styles.custom ? styles.custom : ''}
 `;
 

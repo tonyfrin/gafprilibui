@@ -14,7 +14,7 @@ var _Abstract = require("../../Abstract");
 var _excluded = ["className"];
 var _templateObject;
 var initMainMenuStylesContainer = function initMainMenuStylesContainer(styles) {
-  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  padding: ", ";\n  background-image: ", ";\n  background-repeat: ", ";\n  height: ", ";\n  ", "\n"])), styles.padding || '28px 0', styles.backgroundImage || 'url(https://tiendasgafpri.com/wp-content/themes/gafpristore/assets/img/fondo-admin.png)', styles.backgroundRepeat || 'no-repeat', styles.height || '100vh', styles.custom ? styles.custom : '');
+  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  padding: ", ";\n  background-image: ", ";\n  background-repeat: ", ";\n  height: ", ";\n  background-size: ", ";\n  ", "\n"])), styles.padding || '28px 0', styles.backgroundImage || 'url(https://tiendasgafpri.com/wp-content/themes/gafpristore/assets/img/fondo-admin.png)', styles.backgroundRepeat || 'no-repeat', styles.height || '100vh', styles.backgroundSize || '177vh', styles.custom ? styles.custom : '');
 };
 var InitMainMenu = function InitMainMenu(_ref) {
   var _ref$stylesContainer = _ref.stylesContainer,

@@ -37,3 +37,4 @@ export { useGafpriError } from './useGafpriError';
 export type { UseErrorReturn, newErrorProps } from './useGafpriError';
 export { useGafpriLogin } from './useGafpriLogin';
 export type { UseLoginReturn, LoginAttributes } from './useGafpriLogin';
+export type { PostsAttributes } from './useGafpriPosts';

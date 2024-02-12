@@ -317,6 +317,7 @@ export type {
   Category,
   UseLoginReturn,
   LoginAttributes,
+  PostsAttributes,
 } from './states';
 export {
   Countries,

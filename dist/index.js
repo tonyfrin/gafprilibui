@@ -273,6 +273,12 @@ Object.defineProperty(exports, "ENTITY_ROUTE", {
     return _Constans.ENTITY_ROUTE;
   }
 });
+Object.defineProperty(exports, "ENTITY_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.ENTITY_STORAGE;
+  }
+});
 Object.defineProperty(exports, "EntityAddForm", {
   enumerable: true,
   get: function get() {

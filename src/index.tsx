@@ -370,6 +370,7 @@ export {
   PHOTO_USERS_INPUT,
   TOKEN_STORAGE,
   CURRENT_USER_STORAGE,
+  ENTITY_STORAGE,
 } from './Constans';
 export { getItem, saveItem } from './Context';
 export {

@@ -554,3 +554,4 @@ export const generalChanceIsActive = (
 };
 
 export { generalChangeNote } from './generalChangeNote';
+export type { GeneralChangeNoteProps } from './generalChangeNote';

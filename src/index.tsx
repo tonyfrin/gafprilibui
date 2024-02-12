@@ -453,3 +453,4 @@ export {
   generalChangeGalleryPhoto,
   generalChangeNote,
 } from './Changes';
+export type { GeneralChangeNoteProps } from './Changes';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import type { UseEntityReturn } from '../../states';
+import type { UseGafpriEntityReturn } from '../../states';
 import {
   InputName,
   InputLastName,
@@ -25,7 +25,7 @@ import { ModelForm, PhotoEntity } from '../Form';
 import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
 
 export type EntityAddFormProps = {
-  use: UseEntityReturn;
+  use: UseGafpriEntityReturn;
   formType: 'personal' | 'legal';
   photoMainContainerStyle?: string;
   photoContainerStyle?: string;
@@ -136,76 +136,81 @@ export const EntityAddForm = ({
   const isPersonalForm = formType === 'personal';
 
   React.useEffect(() => {
-    use.actions.validationPhoto(use.states.photo);
-    use.actions.validationName(use.states.name);
-    use.actions.validationLastName(use.states.lastName);
+    use.attributes.actions.validationPhoto(use.attributes.states.photo);
+    use.attributes.actions.validationName(use.attributes.states.name);
+    use.attributes.actions.validationLastName(use.attributes.states.lastName);
     const typeDocumentIdId =
-      use.states.typeDocumentIdId === null
+      use.attributes.states.typeDocumentIdId === null
         ? ''
-        : `${use.states.typeDocumentIdId}`;
-    use.actions.validationTypeDocumentIdId(typeDocumentIdId);
-    use.actions.validationIndex(use.states.index);
-    use.actions.validationDigit(use.states.digit);
-    use.actions.validationAddressType(use.states.addressType);
-    use.actions.validationAddress1(use.states.address1);
-    use.actions.validationAddress2(use.states.address2);
-    use.actions.validationCity(use.states.city);
-    use.actions.validationStateCountry(use.states.state);
-    use.actions.validationCountry(use.states.country);
-    use.actions.validationPostCode(use.states.postCode);
-    use.actions.validationEmail(use.states.email);
-    use.actions.validationPhone(use.states.phone);
-    use.actions.validationStatus(use.states.status);
-    use.actions.validationType(use.states.type);
+        : `${use.attributes.states.typeDocumentIdId}`;
+    use.attributes.actions.validationTypeDocumentIdId(typeDocumentIdId);
+    use.attributes.actions.validationIndex(use.attributes.states.index);
+    use.attributes.actions.validationDigit(use.attributes.states.digit);
+    use.attributes.actions.validationAddressType(
+      use.attributes.states.addressType
+    );
+    use.attributes.actions.validationAddress1(use.attributes.states.address1);
+    use.attributes.actions.validationAddress2(use.attributes.states.address2);
+    use.attributes.actions.validationCity(use.attributes.states.city);
+    use.attributes.actions.validationStateCountry(use.attributes.states.state);
+    use.attributes.actions.validationCountry(use.attributes.states.country);
+    use.attributes.actions.validationPostCode(use.attributes.states.postCode);
+    use.attributes.actions.validationEmail(use.attributes.states.email);
+    use.attributes.actions.validationPhone(use.attributes.states.phone);
+    use.attributes.actions.validationStatus(use.attributes.states.status);
+    use.attributes.actions.validationType(use.attributes.states.type);
   }, [
-    use.states.photo,
-    use.states.name,
-    use.states.lastName,
-    use.states.typeDocumentIdId,
+    use.attributes.states.photo,
+    use.attributes.states.name,
+    use.attributes.states.lastName,
+    use.attributes.states.typeDocumentIdId,
     InputTypeDocumentIdId,
-    use.states.index,
+    use.attributes.states.index,
     InputIndex,
-    use.states.digit,
-    use.states.address1,
-    use.states.address2,
-    use.states.city,
+    use.attributes.states.digit,
+    use.attributes.states.address1,
+    use.attributes.states.address2,
+    use.attributes.states.city,
     InputCity,
-    use.states.state,
+    use.attributes.states.state,
     InputState,
-    use.states.country,
+    use.attributes.states.country,
     InputCountry,
-    use.states.postCode,
-    use.states.email,
-    use.states.phone,
-    use.states.status,
-    use.states.type,
-    use.states.addressType,
+    use.attributes.states.postCode,
+    use.attributes.states.email,
+    use.attributes.states.phone,
+    use.attributes.states.status,
+    use.attributes.states.type,
+    use.attributes.states.addressType,
   ]);
 
   React.useEffect(() => {
-    use.actions.validationButtonNext();
+    use.attributes.actions.validationButtonNext();
   }, [
-    use.states.photoValid,
-    use.states.nameValid,
-    use.states.lastNameValid,
-    use.states.typeDocumentIdIdValid,
-    use.states.indexValid,
-    use.states.digitValid,
-    use.states.address1Valid,
-    use.states.address2Valid,
-    use.states.cityValid,
-    use.states.stateCountryValid,
-    use.states.countryValid,
-    use.states.postCodeValid,
-    use.states.emailValid,
-    use.states.phoneValid,
-    use.states.statusValid,
-    use.states.addressTypeValid,
+    use.attributes.states.photoValid,
+    use.attributes.states.nameValid,
+    use.attributes.states.lastNameValid,
+    use.attributes.states.typeDocumentIdIdValid,
+    use.attributes.states.indexValid,
+    use.attributes.states.digitValid,
+    use.attributes.states.address1Valid,
+    use.attributes.states.address2Valid,
+    use.attributes.states.cityValid,
+    use.attributes.states.stateCountryValid,
+    use.attributes.states.countryValid,
+    use.attributes.states.postCodeValid,
+    use.attributes.states.emailValid,
+    use.attributes.states.phoneValid,
+    use.attributes.states.statusValid,
+    use.attributes.states.addressTypeValid,
   ]);
 
   React.useEffect(() => {
-    use.actions.changeStatus({ value: 'active', label: 'Activo' });
-    use.actions.changeAddressType({ value: 'bill', label: 'Facturación' });
+    use.attributes.actions.changeStatus({ value: 'active', label: 'Activo' });
+    use.attributes.actions.changeAddressType({
+      value: 'bill',
+      label: 'Facturación',
+    });
   }, []);
 
   const title1Text = isPersonalForm
@@ -221,13 +226,13 @@ export const EntityAddForm = ({
   const returnInit = () => {
     setInputState(<></>);
     setInputCountry(<></>);
-    use.actions.returnInit();
+    use.pages.actions.returnInit();
   };
 
   const handleActions = (action: string, value: any) => {
     switch (action) {
       case 'submit':
-        use.actions.add();
+        use.api.actions.add();
         break;
       case 'return':
         returnInit();
@@ -241,10 +246,12 @@ export const EntityAddForm = ({
     setInputTypeDocumentIdId((): JSX.Element => {
       return (
         <SelectTypeDocumentIdId
-          changeTypeDocumentIdId={(e) => use.actions.changeTypeDocumentIdId(e)}
+          changeTypeDocumentIdId={(e) =>
+            use.attributes.actions.changeTypeDocumentIdId(e)
+          }
           props={{
-            options: use.states.typeDocumentIdIdOptions,
-            defaultValue: use.states.typeDocumentIdIdDefault,
+            options: use.attributes.states.typeDocumentIdIdOptions,
+            defaultValue: use.attributes.states.typeDocumentIdIdDefault,
             styles: {
               width: '100%',
             },
@@ -257,10 +264,10 @@ export const EntityAddForm = ({
     setInputIndex((): JSX.Element => {
       return (
         <SelectDocumentIdIndex
-          changeIndex={(e) => use.actions.changeIndex(e)}
+          changeIndex={(e) => use.attributes.actions.changeIndex(e)}
           props={{
-            options: use.states.indexOptions,
-            defaultValue: use.states.indexDefault,
+            options: use.attributes.states.indexOptions,
+            defaultValue: use.attributes.states.indexDefault,
             styles: {
               width: '92%',
             },
@@ -273,10 +280,10 @@ export const EntityAddForm = ({
     setInputCountry((): JSX.Element => {
       return (
         <SelectCountry
-          changeCountry={(e) => use.actions.changeCountry(e)}
+          changeCountry={(e) => use.attributes.actions.changeCountry(e)}
           props={{
-            options: use.states.countryOptions,
-            defaultValue: use.states.countryDefault,
+            options: use.attributes.states.countryOptions,
+            defaultValue: use.attributes.states.countryDefault,
             styles: {
               width: '92%',
             },
@@ -288,14 +295,16 @@ export const EntityAddForm = ({
   }, []);
 
   React.useEffect(() => {
-    if (use.states.stateCountryOptions.length > 0) {
+    if (use.attributes.states.stateCountryOptions.length > 0) {
       setInputState((): JSX.Element => {
         return (
           <SelectStateCountry
-            changeStateCountry={(e) => use.actions.changeStateCountry(e)}
+            changeStateCountry={(e) =>
+              use.attributes.actions.changeStateCountry(e)
+            }
             props={{
-              options: use.states.stateCountryOptions,
-              defaultValue: use.states.stateCountryDefault,
+              options: use.attributes.states.stateCountryOptions,
+              defaultValue: use.attributes.states.stateCountryDefault,
               styles: {
                 width: '90%',
               },
@@ -308,10 +317,12 @@ export const EntityAddForm = ({
       setInputState((): JSX.Element => {
         return (
           <InputStateCountry
-            changeStateCountry={(e) => use.actions.changeStateCountry(e)}
+            changeStateCountry={(e) =>
+              use.attributes.actions.changeStateCountry(e)
+            }
             props={{
               inputProps: {
-                defaultValue: use.states.state,
+                defaultValue: use.attributes.states.state,
               },
               styles: {
                 padding: '10px 19px',
@@ -324,14 +335,14 @@ export const EntityAddForm = ({
       });
     }
 
-    if (use.states.cityOptions.length > 0) {
+    if (use.attributes.states.cityOptions.length > 0) {
       setInputCity((): JSX.Element => {
         return (
           <SelectCity
-            changeCity={(e) => use.actions.changeCity(e)}
+            changeCity={(e) => use.attributes.actions.changeCity(e)}
             props={{
-              options: use.states.cityOptions,
-              defaultValue: use.states.cityDefault,
+              options: use.attributes.states.cityOptions,
+              defaultValue: use.attributes.states.cityDefault,
               styles: {
                 width: '90%',
               },
@@ -345,10 +356,10 @@ export const EntityAddForm = ({
         return (
           <>
             <InputCityGeneral
-              changeCity={use.actions.changeCity}
+              changeCity={use.attributes.actions.changeCity}
               props={{
                 inputProps: {
-                  defaultValue: use.states.city,
+                  defaultValue: use.attributes.states.city,
                 },
                 styles: {
                   padding: '10px 19px',
@@ -362,18 +373,18 @@ export const EntityAddForm = ({
       });
     }
   }, [
-    use.states.country,
-    use.states.stateCountryOptions,
-    use.states.cityOptions,
+    use.attributes.states.country,
+    use.attributes.states.stateCountryOptions,
+    use.attributes.states.cityOptions,
   ]);
 
   React.useEffect(() => {
-    use.actions.changeCityOptions();
-  }, [use.actions.changeCityOptions]);
+    use.attributes.actions.changeCityOptions();
+  }, [use.attributes.actions.changeCityOptions]);
 
   React.useEffect(() => {
-    use.actions.changeStateCountryOptions();
-  }, [use.actions.changeStateCountryOptions]);
+    use.attributes.actions.changeStateCountryOptions();
+  }, [use.attributes.actions.changeStateCountryOptions]);
 
   return (
     <ModelForm
@@ -386,28 +397,28 @@ export const EntityAddForm = ({
         returnButton: 'Volver',
       }}
       handleActions={handleActions}
-      error={use.states.error}
+      error={use.error.states.error}
       {...modelFormProps}
     >
       <>
         <div className={css(photoMainContainerStyle)}>
           <div className={css(photoContainerStyle)}>
             <PhotoEntity
-              photo={use.states.photo}
-              changePhoto={use.actions.changePhoto}
-              submitting={use.states.submitting}
-              changeError={use.actions.changeError}
-              setSubmitting={use.actions.setSubmitting}
+              photo={use.attributes.states.photo}
+              changePhoto={use.attributes.actions.changePhoto}
+              submitting={use.attributes.states.submitting}
+              changeError={use.error.actions.changeError}
+              setSubmitting={use.attributes.actions.setSubmitting}
               props={propsPhoto}
             />
           </div>
           <div className={css(nameContainerStyle)}>
             <>
               <InputName
-                changeName={use.actions.changeName}
+                changeName={use.attributes.actions.changeName}
                 props={{
                   inputProps: {
-                    defaultValue: use.states.name,
+                    defaultValue: use.attributes.states.name,
                   },
                   styles: {
                     width: '100%',
@@ -417,10 +428,10 @@ export const EntityAddForm = ({
               />
               {isPersonalForm && (
                 <InputLastName
-                  changeLastName={use.actions.changeLastName}
+                  changeLastName={use.attributes.actions.changeLastName}
                   props={{
                     inputProps: {
-                      defaultValue: use.states.lastName,
+                      defaultValue: use.attributes.states.lastName,
                     },
                     styles: {
                       width: '100%',
@@ -443,10 +454,10 @@ export const EntityAddForm = ({
           <>
             {InputIndex}
             <InputDocumentiIdDigit
-              changeDocumentiIdDigit={use.actions.changeDigit}
+              changeDocumentiIdDigit={use.attributes.actions.changeDigit}
               props={{
                 inputProps: {
-                  defaultValue: use.states.digit,
+                  defaultValue: use.attributes.states.digit,
                 },
                 styles: {
                   width: '92%',
@@ -466,10 +477,10 @@ export const EntityAddForm = ({
         >
           <>
             <InputAddress1
-              changeAddress1={use.actions.changeAddress1}
+              changeAddress1={use.attributes.actions.changeAddress1}
               props={{
                 inputProps: {
-                  defaultValue: use.states.address1,
+                  defaultValue: use.attributes.states.address1,
                 },
                 styles: {
                   width: '92%',
@@ -479,10 +490,10 @@ export const EntityAddForm = ({
               }}
             />
             <InputAddress2
-              changeAddress2={use.actions.changeAddress2}
+              changeAddress2={use.attributes.actions.changeAddress2}
               props={{
                 inputProps: {
-                  defaultValue: use.states.address2,
+                  defaultValue: use.attributes.states.address2,
                 },
                 styles: {
                   width: '92%',
@@ -515,10 +526,10 @@ export const EntityAddForm = ({
           <>
             {InputCountry}
             <InputZipCode
-              changeZipCode={use.actions.changePostCode}
+              changeZipCode={use.attributes.actions.changePostCode}
               props={{
                 inputProps: {
-                  defaultValue: use.states.postCode,
+                  defaultValue: use.attributes.states.postCode,
                 },
                 styles: {
                   width: '92%',
@@ -538,10 +549,10 @@ export const EntityAddForm = ({
         >
           <>
             <InputEmail
-              changeEmail={use.actions.changeEmail}
+              changeEmail={use.attributes.actions.changeEmail}
               props={{
                 inputProps: {
-                  defaultValue: use.states.email,
+                  defaultValue: use.attributes.states.email,
                 },
                 styles: {
                   width: '92%',
@@ -551,10 +562,10 @@ export const EntityAddForm = ({
               }}
             />
             <InputPhone
-              changePhone={use.actions.changePhone}
+              changePhone={use.attributes.actions.changePhone}
               props={{
                 inputProps: {
-                  defaultValue: use.states.phone,
+                  defaultValue: use.attributes.states.phone,
                 },
                 styles: {
                   width: '92%',

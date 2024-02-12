@@ -17,14 +17,11 @@ import { List } from '../List';
 import type { ListPropsExtended } from '../List';
 import { ModelForm, PhotoEntity } from '../Form';
 import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
-import type {
-  AddressAttributes,
-  DocumentIdAttributes,
-  UseEntityReturn,
-} from '../../states';
+import type { AddressAttributes, DocumentIdAttributes } from '../states';
+import type { UseGafpriEntityReturn } from '../../states';
 
 export type EntityUpdateFormProps = {
-  use: UseEntityReturn;
+  use: UseGafpriEntityReturn;
   optionsButtonStatusContainerStyle?: string;
   optionsButtonTypeContainerStyle?: string;
   optionsButtonUpdateContainerStyle?: string;
@@ -132,9 +129,9 @@ export const EntityUpdateForm = ({
   documentListProps,
   propsPhoto,
 }: EntityUpdateFormProps): JSX.Element => {
-  const fileInputRef = React.useRef<HTMLInputElement>(null);
-
-  const currentEntity = use.actions.getById(use.states.entityId);
+  const currentEntity = use.data.actions.getById(
+    use.attributes.states.currentId
+  );
 
   const isPersonalForm = currentEntity?.type === 'personal';
 
@@ -201,7 +198,7 @@ export const EntityUpdateForm = ({
         <Button
           title="Fact..."
           buttonProps={{
-            onClick: () => use.actions.changeAddress(id),
+            onClick: () => use.api.actions.changeAddress(id),
           }}
           styles={{
             fontSize: '10px',
@@ -212,7 +209,7 @@ export const EntityUpdateForm = ({
         <Button
           title="Borrar"
           buttonProps={{
-            onClick: () => use.actions.deleteAddress(id),
+            onClick: () => use.api.actions.deleteAddress(id),
           }}
           styles={{
             fontSize: '10px',
@@ -234,10 +231,10 @@ export const EntityUpdateForm = ({
     }
   });
 
-  const paginated = use.actions.getPaginated(
+  const paginated = use.paginations.actions.getPaginated(
     address,
-    use.states.currentPage,
-    use.states.itemsPerPage
+    use.paginations.states.currentPage,
+    use.paginations.states.itemsPerPage
   );
 
   const items =
@@ -275,7 +272,9 @@ export const EntityUpdateForm = ({
     }) ?? [];
   const headers = ['Tipo', 'Dirección 1', 'Ciudad', 'Estado', 'Pais', 'Acción'];
 
-  const totalPages = Math.ceil(address.length / use.states.itemsPerPage);
+  const totalPages = Math.ceil(
+    address.length / use.paginations.states.itemsPerPage
+  );
 
   //DocumentId
 
@@ -285,7 +284,7 @@ export const EntityUpdateForm = ({
         <Button
           title="Borrar"
           buttonProps={{
-            onClick: () => use.actions.deleteDocument(id),
+            onClick: () => use.api.actions.deleteDocument(id),
           }}
           styles={{
             fontSize: '10px',
@@ -306,10 +305,10 @@ export const EntityUpdateForm = ({
     }
   });
 
-  const documentPaginated = use.actions.getPaginated(
+  const documentPaginated = use.paginations.actions.getPaginated(
     documents,
-    use.states.currentPage,
-    use.states.itemsPerPage
+    use.paginations.states.currentPage,
+    use.paginations.states.itemsPerPage
   );
 
   const documentItems =
@@ -330,39 +329,42 @@ export const EntityUpdateForm = ({
   const documentHeaders = ['Tipo', 'Pais', 'Numero', 'Acción'];
 
   const documentTotalPages = Math.ceil(
-    documents.length / use.states.itemsPerPage
+    documents.length / use.paginations.states.itemsPerPage
   );
 
   React.useEffect(() => {
     if (currentEntity) {
       if (currentEntity.photo) {
-        use.actions.setPhoto(currentEntity.photo);
-        use.actions.validationPhoto(currentEntity.photo);
+        use.attributes.actions.setPhoto(currentEntity.photo);
+        use.attributes.actions.validationPhoto(currentEntity.photo);
       }
-      if (currentEntity.name) use.actions.changeName(currentEntity.name);
+      if (currentEntity.name)
+        use.attributes.actions.changeName(currentEntity.name);
       if (currentEntity.lastName)
-        use.actions.changeLastName(currentEntity.lastName);
-      if (currentEntity.email) use.actions.changeEmail(currentEntity.email);
-      if (currentEntity.phone) use.actions.changePhone(currentEntity.phone);
+        use.attributes.actions.changeLastName(currentEntity.lastName);
+      if (currentEntity.email)
+        use.attributes.actions.changeEmail(currentEntity.email);
+      if (currentEntity.phone)
+        use.attributes.actions.changePhone(currentEntity.phone);
     }
   }, [currentEntity]);
 
   React.useEffect(() => {
-    use.actions.validationButtonNextUpdate();
+    use.attributes.actions.validationButtonNextUpdate();
   }, [
-    use.states.nameValid,
-    use.states.lastNameValid,
-    use.states.statusValid,
-    use.states.typeValid,
-    use.states.emailValid,
-    use.states.phoneValid,
+    use.attributes.states.nameValid,
+    use.attributes.states.lastNameValid,
+    use.attributes.states.statusValid,
+    use.attributes.states.typeValid,
+    use.attributes.states.emailValid,
+    use.attributes.states.phoneValid,
   ]);
 
   React.useEffect(() => {
-    use.actions.setAddress(address);
-    use.actions.setDocumentId(documents);
-    use.actions.changeStatus({ label: titleStatus, value: status });
-    use.actions.changeType({ label: titleType, value: type });
+    use.attributes.actions.setAddress(address);
+    use.attributes.actions.setDocumentId(documents);
+    use.attributes.actions.changeStatus({ label: titleStatus, value: status });
+    use.attributes.actions.changeType({ label: titleType, value: type });
   }, []);
 
   const title1Text = isPersonalForm
@@ -377,10 +379,10 @@ export const EntityUpdateForm = ({
   const handleActions = (action: string, value: any) => {
     switch (action) {
       case 'submit':
-        use.actions.update();
+        use.api.actions.update();
         break;
       case 'return':
-        use.actions.returnInit();
+        use.pages.actions.returnInit();
         break;
       default:
         console.log('Acción desconocida:', action);
@@ -399,7 +401,7 @@ export const EntityUpdateForm = ({
           returnButton: 'Volver',
         }}
         handleActions={handleActions}
-        error={use.states.error}
+        error={use.error.states.error}
         boxProps={{
           styles: {
             width: '100%',
@@ -411,21 +413,21 @@ export const EntityUpdateForm = ({
           <div className={css(photoMainContainerStyle)}>
             <div className={css(photoContainerStyle)}>
               <PhotoEntity
-                photo={use.states.photo}
-                changePhoto={use.actions.changePhoto}
-                submitting={use.states.submitting}
-                changeError={use.actions.changeError}
-                setSubmitting={use.actions.setSubmitting}
+                photo={use.attributes.states.photo}
+                changePhoto={use.attributes.actions.changePhoto}
+                submitting={use.attributes.states.submitting}
+                changeError={use.error.actions.changeError}
+                setSubmitting={use.attributes.actions.setSubmitting}
                 props={propsPhoto}
               />
             </div>
             <div className={css(nameContainerStyle)}>
               <>
                 <InputName
-                  changeName={use.actions.changeName}
+                  changeName={use.attributes.actions.changeName}
                   props={{
                     inputProps: {
-                      defaultValue: use.states.name,
+                      defaultValue: use.attributes.states.name,
                     },
                     styles: {
                       width: '100%',
@@ -435,10 +437,10 @@ export const EntityUpdateForm = ({
                 />
                 {isPersonalForm && (
                   <InputLastName
-                    changeLastName={use.actions.changeLastName}
+                    changeLastName={use.attributes.actions.changeLastName}
                     props={{
                       inputProps: {
-                        defaultValue: use.states.lastName,
+                        defaultValue: use.attributes.states.lastName,
                       },
                       styles: {
                         width: '100%',
@@ -461,10 +463,10 @@ export const EntityUpdateForm = ({
           >
             <>
               <InputEmail
-                changeEmail={use.actions.changeEmail}
+                changeEmail={use.attributes.actions.changeEmail}
                 props={{
                   inputProps: {
-                    defaultValue: use.states.email,
+                    defaultValue: use.attributes.states.email,
                   },
                   styles: {
                     width: '92%',
@@ -474,10 +476,10 @@ export const EntityUpdateForm = ({
                 }}
               />
               <InputPhone
-                changePhone={use.actions.changePhone}
+                changePhone={use.attributes.actions.changePhone}
                 props={{
                   inputProps: {
-                    defaultValue: use.states.phone,
+                    defaultValue: use.attributes.states.phone,
                   },
                   styles: {
                     width: '92%',
@@ -495,14 +497,14 @@ export const EntityUpdateForm = ({
               headers={headers}
               columns={6}
               propsPagination={{
-                currentPage: use.states.currentPage,
-                setCurrentPage: use.actions.setCurrentPage,
+                currentPage: use.paginations.states.currentPage,
+                setCurrentPage: use.paginations.actions.setCurrentPage,
                 totalPages: totalPages,
               }}
               actionButton={{
                 title: 'Agregar',
                 buttonProps: {
-                  onClick: () => use.actions.onAddAddress(),
+                  onClick: () => use.pages.actions.onAddAddress(),
                 },
               }}
               {...addressListProps}
@@ -515,14 +517,14 @@ export const EntityUpdateForm = ({
               headers={documentHeaders}
               columns={4}
               propsPagination={{
-                currentPage: use.states.documentCurrentPage,
-                setCurrentPage: use.actions.setDocumentCurrentPage,
+                currentPage: use.paginations.states.documentCurrentPage,
+                setCurrentPage: use.paginations.actions.setDocumentCurrentPage,
                 totalPages: documentTotalPages,
               }}
               actionButton={{
                 title: 'Agregar',
                 buttonProps: {
-                  onClick: () => use.actions.onAddDocument(),
+                  onClick: () => use.pages.actions.onAddDocument(),
                 },
               }}
               {...documentListProps}

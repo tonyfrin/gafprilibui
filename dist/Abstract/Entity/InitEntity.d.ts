@@ -3,9 +3,9 @@ import type { ButtonPropsExtended } from '../Button';
 import type { ListProps } from '../List';
 import type { ErrorProps } from '../Error';
 import { HeaderPropsExtended } from '../Header';
-import type { UseEntityReturn } from '../../states';
+import type { UseGafpriEntityReturn } from '../../states';
 export type InitEntityProps = {
-    use: UseEntityReturn;
+    use: UseGafpriEntityReturn;
     optionButtonContainerStyle?: string;
     updateButtonProps?: ButtonPropsExtended;
     viewButtonProps?: ButtonPropsExtended;
@@ -14,7 +14,7 @@ export type InitEntityProps = {
     listProps?: ListProps;
 };
 export type InitEntityPropsExtended = {
-    use: UseEntityReturn;
+    use: UseGafpriEntityReturn;
     optionButtonContainerStyle?: string;
     updateButtonProps?: ButtonPropsExtended;
     viewButtonProps?: ButtonPropsExtended;

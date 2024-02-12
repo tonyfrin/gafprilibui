@@ -26,7 +26,7 @@ var InitEntity = function InitEntity(_ref) {
     headerProps = _ref.headerProps,
     _ref$errorProps = _ref.errorProps,
     errorProps = _ref$errorProps === void 0 ? {
-      error: use.states.error
+      error: use.error.states.error
     } : _ref$errorProps,
     listProps = _ref.listProps;
   var ButtonUpdate = function ButtonUpdate(_ref2) {
@@ -37,7 +37,7 @@ var InitEntity = function InitEntity(_ref) {
       title: "Actualizar",
       buttonProps: {
         onClick: function onClick() {
-          return use.actions.goUpdate(id);
+          return use.pages.actions.goUpdate(id);
         }
       },
       styles: {
@@ -47,7 +47,7 @@ var InitEntity = function InitEntity(_ref) {
       title: "Ver",
       buttonProps: {
         onClick: function onClick() {
-          return use.actions.goView(id);
+          return use.pages.actions.goView(id);
         }
       },
       styles: {
@@ -56,10 +56,10 @@ var InitEntity = function InitEntity(_ref) {
     }, viewButtonProps)));
   };
   var allowedValues = ['name', 'lastName', 'email', 'phone', 'digit'];
-  var searchBy = allowedValues.includes(use.states.searchBy) ? use.states.searchBy : 'name';
-  var filtered = use.actions.filterBySearch(use.states.searchTerm, searchBy);
-  var entities = use.actions.sortByProperty(filtered, searchBy, use.states.orderList) || [];
-  var paginated = use.actions.getPaginated(entities, use.states.currentPage, use.states.itemsPerPage);
+  var searchBy = allowedValues.includes(use.paginations.states.searchBy) ? use.paginations.states.searchBy : 'name';
+  var filtered = use.paginations.actions.filterBySearch(use.paginations.states.searchTerm, searchBy);
+  var entities = use.paginations.actions.sortByProperty(filtered, searchBy, use.paginations.states.orderList) || [];
+  var paginated = use.paginations.actions.getPaginated(entities, use.paginations.states.currentPage, use.paginations.states.itemsPerPage);
   var items = (_paginated$map = paginated === null || paginated === void 0 ? void 0 : paginated.map(function (item) {
     var entityItem = item;
     var lastName = (entityItem === null || entityItem === void 0 ? void 0 : entityItem.lastName) || '';
@@ -78,26 +78,26 @@ var InitEntity = function InitEntity(_ref) {
     value: 'desc',
     label: 'Descendente'
   }];
-  var valueDefaul = use.states.orderList === 'asc' ? {
+  var valueDefaul = use.paginations.states.orderList === 'asc' ? {
     value: 'asc',
     label: 'Ascendente'
   } : {
     value: 'desc',
     label: 'Descendente'
   };
-  var totalPages = Math.ceil(entities.length / use.states.itemsPerPage);
+  var totalPages = Math.ceil(entities.length / use.paginations.states.itemsPerPage);
   var itemsButton = [{
     id: 'button-tdi-1',
     label: 'Agregar persona natural',
     onClick: function onClick() {
-      return use.actions.goAddPersonal();
+      return use.pages.actions.goAddPersonal();
     },
     icon: _fa.FaUser
   }, {
     id: 'button-tdi-2',
     label: 'Agregar persona jurídica',
     onClick: function onClick() {
-      return use.actions.goAddLegal();
+      return use.pages.actions.goAddLegal();
     },
     icon: _fa.FaBuilding
   }];
@@ -115,7 +115,7 @@ var InitEntity = function InitEntity(_ref) {
       options: options,
       onChange: function onChange(event) {
         if (event !== null && event !== void 0 && event.value) {
-          use.actions.setOrderList(event.value);
+          use.paginations.actions.setOrderList(event.value);
         }
       },
       defaultValue: valueDefaul,
@@ -124,25 +124,25 @@ var InitEntity = function InitEntity(_ref) {
       }
     },
     selectByProps: {
-      options: use.states.searchByOptions,
+      options: use.paginations.states.searchByOptions,
       onChange: function onChange(event) {
-        use.actions.changeSearchBy(event);
+        use.paginations.actions.changeSearchBy(event);
       },
-      defaultValue: use.states.searchByDefault,
+      defaultValue: use.paginations.states.searchByDefault,
       styles: {
         width: '100%'
       }
     },
     inputProps: {
-      value: use.states.searchTerm,
+      value: use.paginations.states.searchTerm,
       onChange: function onChange(e) {
-        return use.actions.setSearchTerm(e.target.value);
+        return use.paginations.actions.setSearchTerm(e.target.value);
       },
       placeholder: 'Buscar...'
     },
     propsPagination: {
-      currentPage: use.states.currentPage,
-      setCurrentPage: use.actions.setCurrentPage,
+      currentPage: use.paginations.states.currentPage,
+      setCurrentPage: use.paginations.actions.setCurrentPage,
       totalPages: totalPages
     }
   }, listProps)));

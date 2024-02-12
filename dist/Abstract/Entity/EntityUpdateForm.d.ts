@@ -4,9 +4,9 @@ import { ContainerButtonPropsExtended } from '../Containers';
 import type { ButtonPropsExtended } from '../Button';
 import type { ListPropsExtended } from '../List';
 import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
-import type { UseEntityReturn } from '../../states';
+import type { UseGafpriEntityReturn } from '../../states';
 export type EntityUpdateFormProps = {
-    use: UseEntityReturn;
+    use: UseGafpriEntityReturn;
     optionsButtonStatusContainerStyle?: string;
     optionsButtonTypeContainerStyle?: string;
     optionsButtonUpdateContainerStyle?: string;

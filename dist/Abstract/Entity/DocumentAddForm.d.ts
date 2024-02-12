@@ -1,9 +1,9 @@
 /// <reference types="react" />
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ModelFormPropsExtended, PhotoDocumentIdProps } from '../Form';
-import type { UseEntityReturn } from '../../states';
+import type { UseGafpriEntityReturn } from '../../states';
 export type DocumentAddFormProps = {
-    use: UseEntityReturn;
+    use: UseGafpriEntityReturn;
     photoMainContainerStyle?: string;
     photoInfoContainerStyle?: string;
     nameLastNameContainerStyle?: string;
@@ -16,7 +16,7 @@ export type DocumentAddFormProps = {
     propsPhoto?: PhotoDocumentIdProps['props'];
 };
 export type DocumentAddFormPropsExtended = {
-    use: UseEntityReturn;
+    use: UseGafpriEntityReturn;
     photoMainContainerStyle?: string;
     photoInfoContainerStyle?: string;
     nameLastNameContainerStyle?: string;

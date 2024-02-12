@@ -7,7 +7,7 @@ export type { CategoryAttributes, UseCategoryReturn, Category, } from './useGafp
 export { useGafpriRoles } from './useGafpriRoles';
 export type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
 export { useGafpriEntity } from './useGafpriEntity';
-export type { UseEntityReturn, DocumentIdAttributes, AddressAttributes, EntityAttributes, UseEntityProps, } from './useGafpriEntity';
+export type { UseGafpriEntityReturn, UseGafpriEntityProps, } from './useGafpriEntity';
 export { useGafpriSites } from './useGafpriSites';
 export type { UseSitesReturn, SitesAttributes, UseSitesProps, } from './useGafpriSites';
 export { useGafpriUsers } from './useGafpriUser';

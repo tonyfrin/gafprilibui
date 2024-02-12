@@ -2,9 +2,9 @@
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseEntityReturn } from 'src/states';
+import type { UseGafpriEntityReturn } from '../../states';
 export type AddressFormProps = {
-    use: UseEntityReturn;
+    use: UseGafpriEntityReturn;
     inputCityProps?: InputProps;
     selectCityProps?: GsSelectPropsExtended;
     inputStateProps?: InputProps;

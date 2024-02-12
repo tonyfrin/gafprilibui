@@ -525,6 +525,36 @@ Object.defineProperty(exports, "UserView", {
     return _Users.UserView;
   }
 });
+Object.defineProperty(exports, "useGafpriApiEntity", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriApiEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesEntity", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataEntity", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriDataEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesEntity", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPagesEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsEntity", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPaginationsEntity;
+  }
+});
 var _Button = require("./Button");
 var _Box = require("./Box");
 var _Containers = require("./Containers");
@@ -550,3 +580,4 @@ var _Roles = require("./Roles");
 var _Sites = require("./Sites");
 var _Users = require("./Users");
 var _Entity = require("./Entity");
+var _states = require("./states");

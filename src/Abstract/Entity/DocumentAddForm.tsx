@@ -8,10 +8,10 @@ import {
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import { ModelForm, PhotoDocumentId } from '../Form';
 import type { ModelFormPropsExtended, PhotoDocumentIdProps } from '../Form';
-import type { UseEntityReturn } from '../../states';
+import type { UseGafpriEntityReturn } from '../../states';
 
 export type DocumentAddFormProps = {
-  use: UseEntityReturn;
+  use: UseGafpriEntityReturn;
   photoMainContainerStyle?: string;
   photoInfoContainerStyle?: string;
   nameLastNameContainerStyle?: string;
@@ -25,7 +25,7 @@ export type DocumentAddFormProps = {
 };
 
 export type DocumentAddFormPropsExtended = {
-  use: UseEntityReturn;
+  use: UseGafpriEntityReturn;
   photoMainContainerStyle?: string;
   photoInfoContainerStyle?: string;
   nameLastNameContainerStyle?: string;
@@ -71,30 +71,32 @@ export const DocumentAddForm = ({
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
-    use.actions.validationDocumentPhoto(use.states.documentPhoto);
+    use.attributes.actions.validationDocumentPhoto(
+      use.attributes.states.documentPhoto
+    );
     const typeDocumentIdId =
-      use.states.typeDocumentIdId === null
+      use.attributes.states.typeDocumentIdId === null
         ? ''
-        : `${use.states.typeDocumentIdId}`;
-    use.actions.validationTypeDocumentIdId(typeDocumentIdId);
-    use.actions.validationIndex(use.states.index);
-    use.actions.validationDigit(use.states.digit);
+        : `${use.attributes.states.typeDocumentIdId}`;
+    use.attributes.actions.validationTypeDocumentIdId(typeDocumentIdId);
+    use.attributes.actions.validationIndex(use.attributes.states.index);
+    use.attributes.actions.validationDigit(use.attributes.states.digit);
   }, [
-    use.states.documentPhoto,
-    use.states.typeDocumentIdId,
+    use.attributes.states.documentPhoto,
+    use.attributes.states.typeDocumentIdId,
     InputTypeDocumentIdId,
-    use.states.index,
+    use.attributes.states.index,
     InputIndex,
-    use.states.digit,
+    use.attributes.states.digit,
   ]);
 
   React.useEffect(() => {
-    use.actions.validationButtonNextDocument();
+    use.attributes.actions.validationButtonNextDocument();
   }, [
-    use.states.documentPhotoValid,
-    use.states.typeDocumentIdIdValid,
-    use.states.indexValid,
-    use.states.digitValid,
+    use.attributes.states.documentPhotoValid,
+    use.attributes.states.typeDocumentIdIdValid,
+    use.attributes.states.indexValid,
+    use.attributes.states.digitValid,
   ]);
 
   const buttonTitle = 'Agregar';
@@ -102,10 +104,10 @@ export const DocumentAddForm = ({
   const handleActions = (action: string, value: any) => {
     switch (action) {
       case 'submit':
-        use.actions.addDocument();
+        use.api.actions.addDocument();
         break;
       case 'return':
-        use.actions.goUpdate(use.states.entityId);
+        use.pages.actions.goUpdate(use.attributes.states.currentId);
         break;
       default:
         console.log('Acción desconocida:', action);
@@ -113,29 +115,13 @@ export const DocumentAddForm = ({
   };
 
   React.useEffect(() => {
-    if (use.states.documentPhoto) {
-      const img = new Image();
-      img.src = use.states.documentPhoto;
-      img.onload = () => {
-        use.actions.setDocumentSubmitting(false);
-      };
-      img.onerror = () => {
-        use.actions.changeError([
-          `Error al cargar la imagen: ${use.states.photo}`,
-        ]);
-        use.actions.setDocumentSubmitting(true);
-      };
-    }
-  }, [use.states.documentPhoto]);
-
-  React.useEffect(() => {
     setInputTypeDocumentIdId((): JSX.Element => {
       return (
         <SelectTypeDocumentIdId
-          changeTypeDocumentIdId={use.actions.changeTypeDocumentIdId}
+          changeTypeDocumentIdId={use.attributes.actions.changeTypeDocumentIdId}
           props={{
-            options: use.states.typeDocumentIdIdOptions,
-            defaultValue: use.states.typeDocumentIdIdDefault,
+            options: use.attributes.states.typeDocumentIdIdOptions,
+            defaultValue: use.attributes.states.typeDocumentIdIdDefault,
             styles: {
               width: '92%',
             },
@@ -148,10 +134,10 @@ export const DocumentAddForm = ({
     setInputIndex((): JSX.Element => {
       return (
         <SelectDocumentIdIndex
-          changeIndex={use.actions.changeIndex}
+          changeIndex={use.attributes.actions.changeIndex}
           props={{
-            options: use.states.indexOptions,
-            defaultValue: use.states.indexDefault,
+            options: use.attributes.states.indexOptions,
+            defaultValue: use.attributes.states.indexDefault,
             styles: {
               width: '92%',
             },
@@ -173,18 +159,18 @@ export const DocumentAddForm = ({
         returnButton: 'Volver',
       }}
       handleActions={handleActions}
-      error={use.states.error}
+      error={use.error.states.error}
       {...modelFormProps}
     >
       <>
         <div className={css(photoMainContainerStyle)}>
           <div className={css(photoInfoContainerStyle)}>
             <PhotoDocumentId
-              photo={use.states.documentPhoto}
-              changePhoto={use.actions.changeDocumentPhoto}
-              submitting={use.states.submitting}
-              changeError={use.actions.changeError}
-              setSubmitting={use.actions.setSubmitting}
+              photo={use.attributes.states.documentPhoto}
+              changePhoto={use.attributes.actions.changeDocumentPhoto}
+              submitting={use.attributes.states.submitting}
+              changeError={use.error.actions.changeError}
+              setSubmitting={use.attributes.actions.setSubmitting}
               props={propsPhoto}
             />
           </div>
@@ -194,11 +180,11 @@ export const DocumentAddForm = ({
               {InputIndex}
               <InputDocumentiIdDigit
                 changeDocumentiIdDigit={(event) =>
-                  use.actions.changeDigit(event)
+                  use.attributes.actions.changeDigit(event)
                 }
                 props={{
                   inputProps: {
-                    defaultValue: use.states.digit,
+                    defaultValue: use.attributes.states.digit,
                   },
                   styles: {
                     width: '92%',

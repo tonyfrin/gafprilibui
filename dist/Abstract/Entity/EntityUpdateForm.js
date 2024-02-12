@@ -59,8 +59,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     addressListProps = _ref.addressListProps,
     documentListProps = _ref.documentListProps,
     propsPhoto = _ref.propsPhoto;
-  var fileInputRef = _react["default"].useRef(null);
-  var currentEntity = use.actions.getById(use.states.entityId);
+  var currentEntity = use.data.actions.getById(use.attributes.states.currentId);
   var isPersonalForm = (currentEntity === null || currentEntity === void 0 ? void 0 : currentEntity.type) === 'personal';
   var status = (currentEntity === null || currentEntity === void 0 ? void 0 : currentEntity.status) || 'inactive';
   var titleStatus = status === 'active' ? 'Activo' : status === 'inactive' ? 'Inactivo' : '';
@@ -112,7 +111,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
       title: "Fact...",
       buttonProps: {
         onClick: function onClick() {
-          return use.actions.changeAddress(id);
+          return use.api.actions.changeAddress(id);
         }
       },
       styles: {
@@ -122,7 +121,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
       title: "Borrar",
       buttonProps: {
         onClick: function onClick() {
-          return use.actions.deleteAddress(id);
+          return use.api.actions.deleteAddress(id);
         }
       },
       styles: {
@@ -139,7 +138,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
       return 0;
     }
   });
-  var paginated = use.actions.getPaginated(address, use.states.currentPage, use.states.itemsPerPage);
+  var paginated = use.paginations.actions.getPaginated(address, use.paginations.states.currentPage, use.paginations.states.itemsPerPage);
   var items = (_paginated$map = paginated === null || paginated === void 0 ? void 0 : paginated.map(function (item) {
     var itemAddress = item;
     var id = itemAddress.id || 0;
@@ -155,7 +154,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     }
   })) !== null && _paginated$map !== void 0 ? _paginated$map : [];
   var headers = ['Tipo', 'Dirección 1', 'Ciudad', 'Estado', 'Pais', 'Acción'];
-  var totalPages = Math.ceil(address.length / use.states.itemsPerPage);
+  var totalPages = Math.ceil(address.length / use.paginations.states.itemsPerPage);
 
   //DocumentId
 
@@ -167,7 +166,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
       title: "Borrar",
       buttonProps: {
         onClick: function onClick() {
-          return use.actions.deleteDocument(id);
+          return use.api.actions.deleteDocument(id);
         }
       },
       styles: {
@@ -184,7 +183,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
       return 0;
     }
   });
-  var documentPaginated = use.actions.getPaginated(documents, use.states.currentPage, use.states.itemsPerPage);
+  var documentPaginated = use.paginations.actions.getPaginated(documents, use.paginations.states.currentPage, use.paginations.states.itemsPerPage);
   var documentItems = (_documentPaginated$ma = documentPaginated === null || documentPaginated === void 0 ? void 0 : documentPaginated.map(function (item) {
     var _itemDocument$typeDoc, _itemDocument$typeDoc2;
     var itemDocument = item;
@@ -197,30 +196,30 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     })];
   })) !== null && _documentPaginated$ma !== void 0 ? _documentPaginated$ma : [];
   var documentHeaders = ['Tipo', 'Pais', 'Numero', 'Acción'];
-  var documentTotalPages = Math.ceil(documents.length / use.states.itemsPerPage);
+  var documentTotalPages = Math.ceil(documents.length / use.paginations.states.itemsPerPage);
   _react["default"].useEffect(function () {
     if (currentEntity) {
       if (currentEntity.photo) {
-        use.actions.setPhoto(currentEntity.photo);
-        use.actions.validationPhoto(currentEntity.photo);
+        use.attributes.actions.setPhoto(currentEntity.photo);
+        use.attributes.actions.validationPhoto(currentEntity.photo);
       }
-      if (currentEntity.name) use.actions.changeName(currentEntity.name);
-      if (currentEntity.lastName) use.actions.changeLastName(currentEntity.lastName);
-      if (currentEntity.email) use.actions.changeEmail(currentEntity.email);
-      if (currentEntity.phone) use.actions.changePhone(currentEntity.phone);
+      if (currentEntity.name) use.attributes.actions.changeName(currentEntity.name);
+      if (currentEntity.lastName) use.attributes.actions.changeLastName(currentEntity.lastName);
+      if (currentEntity.email) use.attributes.actions.changeEmail(currentEntity.email);
+      if (currentEntity.phone) use.attributes.actions.changePhone(currentEntity.phone);
     }
   }, [currentEntity]);
   _react["default"].useEffect(function () {
-    use.actions.validationButtonNextUpdate();
-  }, [use.states.nameValid, use.states.lastNameValid, use.states.statusValid, use.states.typeValid, use.states.emailValid, use.states.phoneValid]);
+    use.attributes.actions.validationButtonNextUpdate();
+  }, [use.attributes.states.nameValid, use.attributes.states.lastNameValid, use.attributes.states.statusValid, use.attributes.states.typeValid, use.attributes.states.emailValid, use.attributes.states.phoneValid]);
   _react["default"].useEffect(function () {
-    use.actions.setAddress(address);
-    use.actions.setDocumentId(documents);
-    use.actions.changeStatus({
+    use.attributes.actions.setAddress(address);
+    use.attributes.actions.setDocumentId(documents);
+    use.attributes.actions.changeStatus({
       label: titleStatus,
       value: status
     });
-    use.actions.changeType({
+    use.attributes.actions.changeType({
       label: titleType,
       value: type
     });
@@ -231,10 +230,10 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':
-        use.actions.update();
+        use.api.actions.update();
         break;
       case 'return':
-        use.actions.returnInit();
+        use.pages.actions.returnInit();
         break;
       default:
         console.log('Acción desconocida:', action);
@@ -250,7 +249,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
       returnButton: 'Volver'
     },
     handleActions: handleActions,
-    error: use.states.error,
+    error: use.error.states.error,
     boxProps: {
       styles: {
         width: '100%'
@@ -261,29 +260,29 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_Form.PhotoEntity, {
-    photo: use.states.photo,
-    changePhoto: use.actions.changePhoto,
-    submitting: use.states.submitting,
-    changeError: use.actions.changeError,
-    setSubmitting: use.actions.setSubmitting,
+    photo: use.attributes.states.photo,
+    changePhoto: use.attributes.actions.changePhoto,
+    submitting: use.attributes.states.submitting,
+    changeError: use.error.actions.changeError,
+    setSubmitting: use.attributes.actions.setSubmitting,
     props: propsPhoto
   })), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(nameContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
-    changeName: use.actions.changeName,
+    changeName: use.attributes.actions.changeName,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.name
+        defaultValue: use.attributes.states.name
       },
       styles: {
         width: '100%'
       }
     }, nameInputProps)
   }), isPersonalForm && /*#__PURE__*/_react["default"].createElement(_Input.InputLastName, {
-    changeLastName: use.actions.changeLastName,
+    changeLastName: use.attributes.actions.changeLastName,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.lastName
+        defaultValue: use.attributes.states.lastName
       },
       styles: {
         width: '100%'
@@ -295,10 +294,10 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
       justifyContent: 'start'
     }
   }, emailPhoneConatinerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputEmail, {
-    changeEmail: use.actions.changeEmail,
+    changeEmail: use.attributes.actions.changeEmail,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.email
+        defaultValue: use.attributes.states.email
       },
       styles: {
         width: '92%',
@@ -306,10 +305,10 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
       }
     }, emailInputProps)
   }), /*#__PURE__*/_react["default"].createElement(_Input.InputPhone, {
-    changePhone: use.actions.changePhone,
+    changePhone: use.attributes.actions.changePhone,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.phone
+        defaultValue: use.attributes.states.phone
       },
       styles: {
         width: '92%',
@@ -324,15 +323,15 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     headers: headers,
     columns: 6,
     propsPagination: {
-      currentPage: use.states.currentPage,
-      setCurrentPage: use.actions.setCurrentPage,
+      currentPage: use.paginations.states.currentPage,
+      setCurrentPage: use.paginations.actions.setCurrentPage,
       totalPages: totalPages
     },
     actionButton: {
       title: 'Agregar',
       buttonProps: {
         onClick: function onClick() {
-          return use.actions.onAddAddress();
+          return use.pages.actions.onAddAddress();
         }
       }
     }
@@ -344,15 +343,15 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     headers: documentHeaders,
     columns: 4,
     propsPagination: {
-      currentPage: use.states.documentCurrentPage,
-      setCurrentPage: use.actions.setDocumentCurrentPage,
+      currentPage: use.paginations.states.documentCurrentPage,
+      setCurrentPage: use.paginations.actions.setDocumentCurrentPage,
       totalPages: documentTotalPages
     },
     actionButton: {
       title: 'Agregar',
       buttonProps: {
         onClick: function onClick() {
-          return use.actions.onAddDocument();
+          return use.pages.actions.onAddDocument();
         }
       }
     }

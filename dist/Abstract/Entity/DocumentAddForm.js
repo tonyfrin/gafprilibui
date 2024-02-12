@@ -46,48 +46,35 @@ var DocumentAddForm = function DocumentAddForm(_ref) {
     setInputIndex = _React$useState4[1];
   var fileInputRef = _react["default"].useRef(null);
   _react["default"].useEffect(function () {
-    use.actions.validationDocumentPhoto(use.states.documentPhoto);
-    var typeDocumentIdId = use.states.typeDocumentIdId === null ? '' : "".concat(use.states.typeDocumentIdId);
-    use.actions.validationTypeDocumentIdId(typeDocumentIdId);
-    use.actions.validationIndex(use.states.index);
-    use.actions.validationDigit(use.states.digit);
-  }, [use.states.documentPhoto, use.states.typeDocumentIdId, InputTypeDocumentIdId, use.states.index, InputIndex, use.states.digit]);
+    use.attributes.actions.validationDocumentPhoto(use.attributes.states.documentPhoto);
+    var typeDocumentIdId = use.attributes.states.typeDocumentIdId === null ? '' : "".concat(use.attributes.states.typeDocumentIdId);
+    use.attributes.actions.validationTypeDocumentIdId(typeDocumentIdId);
+    use.attributes.actions.validationIndex(use.attributes.states.index);
+    use.attributes.actions.validationDigit(use.attributes.states.digit);
+  }, [use.attributes.states.documentPhoto, use.attributes.states.typeDocumentIdId, InputTypeDocumentIdId, use.attributes.states.index, InputIndex, use.attributes.states.digit]);
   _react["default"].useEffect(function () {
-    use.actions.validationButtonNextDocument();
-  }, [use.states.documentPhotoValid, use.states.typeDocumentIdIdValid, use.states.indexValid, use.states.digitValid]);
+    use.attributes.actions.validationButtonNextDocument();
+  }, [use.attributes.states.documentPhotoValid, use.attributes.states.typeDocumentIdIdValid, use.attributes.states.indexValid, use.attributes.states.digitValid]);
   var buttonTitle = 'Agregar';
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':
-        use.actions.addDocument();
+        use.api.actions.addDocument();
         break;
       case 'return':
-        use.actions.goUpdate(use.states.entityId);
+        use.pages.actions.goUpdate(use.attributes.states.currentId);
         break;
       default:
         console.log('Acción desconocida:', action);
     }
   };
   _react["default"].useEffect(function () {
-    if (use.states.documentPhoto) {
-      var img = new Image();
-      img.src = use.states.documentPhoto;
-      img.onload = function () {
-        use.actions.setDocumentSubmitting(false);
-      };
-      img.onerror = function () {
-        use.actions.changeError(["Error al cargar la imagen: ".concat(use.states.photo)]);
-        use.actions.setDocumentSubmitting(true);
-      };
-    }
-  }, [use.states.documentPhoto]);
-  _react["default"].useEffect(function () {
     setInputTypeDocumentIdId(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectTypeDocumentIdId, {
-        changeTypeDocumentIdId: use.actions.changeTypeDocumentIdId,
+        changeTypeDocumentIdId: use.attributes.actions.changeTypeDocumentIdId,
         props: _objectSpread({
-          options: use.states.typeDocumentIdIdOptions,
-          defaultValue: use.states.typeDocumentIdIdDefault,
+          options: use.attributes.states.typeDocumentIdIdOptions,
+          defaultValue: use.attributes.states.typeDocumentIdIdDefault,
           styles: {
             width: '92%'
           }
@@ -96,10 +83,10 @@ var DocumentAddForm = function DocumentAddForm(_ref) {
     });
     setInputIndex(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectDocumentIdIndex, {
-        changeIndex: use.actions.changeIndex,
+        changeIndex: use.attributes.actions.changeIndex,
         props: _objectSpread({
-          options: use.states.indexOptions,
-          defaultValue: use.states.indexDefault,
+          options: use.attributes.states.indexOptions,
+          defaultValue: use.attributes.states.indexDefault,
           styles: {
             width: '92%'
           }
@@ -117,27 +104,27 @@ var DocumentAddForm = function DocumentAddForm(_ref) {
       returnButton: 'Volver'
     },
     handleActions: handleActions,
-    error: use.states.error
+    error: use.error.states.error
   }, modelFormProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoMainContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoInfoContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_Form.PhotoDocumentId, {
-    photo: use.states.documentPhoto,
-    changePhoto: use.actions.changeDocumentPhoto,
-    submitting: use.states.submitting,
-    changeError: use.actions.changeError,
-    setSubmitting: use.actions.setSubmitting,
+    photo: use.attributes.states.documentPhoto,
+    changePhoto: use.attributes.actions.changeDocumentPhoto,
+    submitting: use.attributes.states.submitting,
+    changeError: use.error.actions.changeError,
+    setSubmitting: use.attributes.actions.setSubmitting,
     props: propsPhoto
   })), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(nameLastNameContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputTypeDocumentIdId, InputIndex, /*#__PURE__*/_react["default"].createElement(_Input.InputDocumentiIdDigit, {
     changeDocumentiIdDigit: function changeDocumentiIdDigit(event) {
-      return use.actions.changeDigit(event);
+      return use.attributes.actions.changeDigit(event);
     },
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.digit
+        defaultValue: use.attributes.states.digit
       },
       styles: {
         width: '92%',

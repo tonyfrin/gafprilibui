@@ -9,10 +9,11 @@ import { Error } from '../Error';
 import type { ErrorProps } from '../Error';
 import { Header } from '../Header';
 import { HeaderPropsExtended } from '../Header';
-import type { EntityAttributes, UseEntityReturn } from '../../states';
+import type { UseGafpriEntityReturn } from '../../states';
+import type { EntityAttributes } from '../states';
 
 export type InitEntityProps = {
-  use: UseEntityReturn;
+  use: UseGafpriEntityReturn;
   optionButtonContainerStyle?: string;
   updateButtonProps?: ButtonPropsExtended;
   viewButtonProps?: ButtonPropsExtended;
@@ -22,7 +23,7 @@ export type InitEntityProps = {
 };
 
 export type InitEntityPropsExtended = {
-  use: UseEntityReturn;
+  use: UseGafpriEntityReturn;
   optionButtonContainerStyle?: string;
   updateButtonProps?: ButtonPropsExtended;
   viewButtonProps?: ButtonPropsExtended;
@@ -43,7 +44,7 @@ export const InitEntity = ({
   viewButtonProps,
   headerProps,
   errorProps = {
-    error: use.states.error,
+    error: use.error.states.error,
   },
   listProps,
 }: InitEntityProps): JSX.Element => {
@@ -53,7 +54,7 @@ export const InitEntity = ({
         <Button
           title="Actualizar"
           buttonProps={{
-            onClick: () => use.actions.goUpdate(id),
+            onClick: () => use.pages.actions.goUpdate(id),
           }}
           styles={{
             fontSize: '10px',
@@ -63,7 +64,7 @@ export const InitEntity = ({
         <Button
           title="Ver"
           buttonProps={{
-            onClick: () => use.actions.goView(id),
+            onClick: () => use.pages.actions.goView(id),
           }}
           styles={{
             fontSize: '10px',
@@ -80,9 +81,14 @@ export const InitEntity = ({
 
   const searchBy: 'name' | 'lastName' | 'email' | 'phone' | 'digit' =
     allowedValues.includes(
-      use.states.searchBy as 'name' | 'lastName' | 'email' | 'phone' | 'digit'
+      use.paginations.states.searchBy as
+        | 'name'
+        | 'lastName'
+        | 'email'
+        | 'phone'
+        | 'digit'
     )
-      ? (use.states.searchBy as
+      ? (use.paginations.states.searchBy as
           | 'name'
           | 'lastName'
           | 'email'
@@ -90,15 +96,22 @@ export const InitEntity = ({
           | 'digit')
       : 'name';
 
-  const filtered = use.actions.filterBySearch(use.states.searchTerm, searchBy);
+  const filtered = use.paginations.actions.filterBySearch(
+    use.paginations.states.searchTerm,
+    searchBy
+  );
 
   const entities =
-    use.actions.sortByProperty(filtered, searchBy, use.states.orderList) || [];
+    use.paginations.actions.sortByProperty(
+      filtered,
+      searchBy,
+      use.paginations.states.orderList
+    ) || [];
 
-  const paginated = use.actions.getPaginated(
+  const paginated = use.paginations.actions.getPaginated(
     entities,
-    use.states.currentPage,
-    use.states.itemsPerPage
+    use.paginations.states.currentPage,
+    use.paginations.states.itemsPerPage
   );
 
   const items =
@@ -140,23 +153,25 @@ export const InitEntity = ({
   ];
 
   const valueDefaul =
-    use.states.orderList === 'asc'
+    use.paginations.states.orderList === 'asc'
       ? { value: 'asc', label: 'Ascendente' }
       : { value: 'desc', label: 'Descendente' };
 
-  const totalPages = Math.ceil(entities.length / use.states.itemsPerPage);
+  const totalPages = Math.ceil(
+    entities.length / use.paginations.states.itemsPerPage
+  );
 
   const itemsButton = [
     {
       id: 'button-tdi-1',
       label: 'Agregar persona natural',
-      onClick: () => use.actions.goAddPersonal(),
+      onClick: () => use.pages.actions.goAddPersonal(),
       icon: FaUser,
     },
     {
       id: 'button-tdi-2',
       label: 'Agregar persona jurídica',
-      onClick: () => use.actions.goAddLegal(),
+      onClick: () => use.pages.actions.goAddLegal(),
       icon: FaBuilding,
     },
   ];
@@ -180,7 +195,9 @@ export const InitEntity = ({
           options: options,
           onChange: (event) => {
             if (event?.value) {
-              use.actions.setOrderList(event.value as 'asc' | 'desc');
+              use.paginations.actions.setOrderList(
+                event.value as 'asc' | 'desc'
+              );
             }
           },
           defaultValue: valueDefaul,
@@ -189,23 +206,24 @@ export const InitEntity = ({
           },
         }}
         selectByProps={{
-          options: use.states.searchByOptions,
+          options: use.paginations.states.searchByOptions,
           onChange: (event) => {
-            use.actions.changeSearchBy(event);
+            use.paginations.actions.changeSearchBy(event);
           },
-          defaultValue: use.states.searchByDefault,
+          defaultValue: use.paginations.states.searchByDefault,
           styles: {
             width: '100%',
           },
         }}
         inputProps={{
-          value: use.states.searchTerm,
-          onChange: (e) => use.actions.setSearchTerm(e.target.value),
+          value: use.paginations.states.searchTerm,
+          onChange: (e) =>
+            use.paginations.actions.setSearchTerm(e.target.value),
           placeholder: 'Buscar...',
         }}
         propsPagination={{
-          currentPage: use.states.currentPage,
-          setCurrentPage: use.actions.setCurrentPage,
+          currentPage: use.paginations.states.currentPage,
+          setCurrentPage: use.paginations.actions.setCurrentPage,
           totalPages: totalPages,
         }}
         {...listProps}

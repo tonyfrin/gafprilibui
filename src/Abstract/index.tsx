@@ -216,3 +216,26 @@ export type {
   DocumentAddFormProps,
   DocumentAddFormPropsExtended,
 } from './Entity';
+export {
+  useGafpriApiEntity,
+  useGafpriAttributesEntity,
+  useGafpriDataEntity,
+  useGafpriPaginationsEntity,
+  useGafpriPagesEntity,
+} from './states';
+export type {
+  UseGafpriApiEntityReturn,
+  UseGafpriApiEntityProps,
+  UseGafpriAttributesEntityReturn,
+  typeDocumentId,
+  DocumentIdAttributes,
+  AddressAttributes,
+  EntityAttributes,
+  UseGafpriAttributesEntityProps,
+  UseGafpriDataEntityReturn,
+  UseGafpriDataEntityProps,
+  UseGafpriPaginationsEntityReturn,
+  UseGafpriPaginationsEntityProps,
+  UseGafpriPagesEntityReturn,
+  UseGafpriPagesEntityProps,
+} from './states';

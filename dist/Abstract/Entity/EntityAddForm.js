@@ -73,34 +73,34 @@ var EntityAddForm = function EntityAddForm(_ref) {
     setInputCountry = _React$useState10[1];
   var isPersonalForm = formType === 'personal';
   _react["default"].useEffect(function () {
-    use.actions.validationPhoto(use.states.photo);
-    use.actions.validationName(use.states.name);
-    use.actions.validationLastName(use.states.lastName);
-    var typeDocumentIdId = use.states.typeDocumentIdId === null ? '' : "".concat(use.states.typeDocumentIdId);
-    use.actions.validationTypeDocumentIdId(typeDocumentIdId);
-    use.actions.validationIndex(use.states.index);
-    use.actions.validationDigit(use.states.digit);
-    use.actions.validationAddressType(use.states.addressType);
-    use.actions.validationAddress1(use.states.address1);
-    use.actions.validationAddress2(use.states.address2);
-    use.actions.validationCity(use.states.city);
-    use.actions.validationStateCountry(use.states.state);
-    use.actions.validationCountry(use.states.country);
-    use.actions.validationPostCode(use.states.postCode);
-    use.actions.validationEmail(use.states.email);
-    use.actions.validationPhone(use.states.phone);
-    use.actions.validationStatus(use.states.status);
-    use.actions.validationType(use.states.type);
-  }, [use.states.photo, use.states.name, use.states.lastName, use.states.typeDocumentIdId, InputTypeDocumentIdId, use.states.index, InputIndex, use.states.digit, use.states.address1, use.states.address2, use.states.city, InputCity, use.states.state, InputState, use.states.country, InputCountry, use.states.postCode, use.states.email, use.states.phone, use.states.status, use.states.type, use.states.addressType]);
+    use.attributes.actions.validationPhoto(use.attributes.states.photo);
+    use.attributes.actions.validationName(use.attributes.states.name);
+    use.attributes.actions.validationLastName(use.attributes.states.lastName);
+    var typeDocumentIdId = use.attributes.states.typeDocumentIdId === null ? '' : "".concat(use.attributes.states.typeDocumentIdId);
+    use.attributes.actions.validationTypeDocumentIdId(typeDocumentIdId);
+    use.attributes.actions.validationIndex(use.attributes.states.index);
+    use.attributes.actions.validationDigit(use.attributes.states.digit);
+    use.attributes.actions.validationAddressType(use.attributes.states.addressType);
+    use.attributes.actions.validationAddress1(use.attributes.states.address1);
+    use.attributes.actions.validationAddress2(use.attributes.states.address2);
+    use.attributes.actions.validationCity(use.attributes.states.city);
+    use.attributes.actions.validationStateCountry(use.attributes.states.state);
+    use.attributes.actions.validationCountry(use.attributes.states.country);
+    use.attributes.actions.validationPostCode(use.attributes.states.postCode);
+    use.attributes.actions.validationEmail(use.attributes.states.email);
+    use.attributes.actions.validationPhone(use.attributes.states.phone);
+    use.attributes.actions.validationStatus(use.attributes.states.status);
+    use.attributes.actions.validationType(use.attributes.states.type);
+  }, [use.attributes.states.photo, use.attributes.states.name, use.attributes.states.lastName, use.attributes.states.typeDocumentIdId, InputTypeDocumentIdId, use.attributes.states.index, InputIndex, use.attributes.states.digit, use.attributes.states.address1, use.attributes.states.address2, use.attributes.states.city, InputCity, use.attributes.states.state, InputState, use.attributes.states.country, InputCountry, use.attributes.states.postCode, use.attributes.states.email, use.attributes.states.phone, use.attributes.states.status, use.attributes.states.type, use.attributes.states.addressType]);
   _react["default"].useEffect(function () {
-    use.actions.validationButtonNext();
-  }, [use.states.photoValid, use.states.nameValid, use.states.lastNameValid, use.states.typeDocumentIdIdValid, use.states.indexValid, use.states.digitValid, use.states.address1Valid, use.states.address2Valid, use.states.cityValid, use.states.stateCountryValid, use.states.countryValid, use.states.postCodeValid, use.states.emailValid, use.states.phoneValid, use.states.statusValid, use.states.addressTypeValid]);
+    use.attributes.actions.validationButtonNext();
+  }, [use.attributes.states.photoValid, use.attributes.states.nameValid, use.attributes.states.lastNameValid, use.attributes.states.typeDocumentIdIdValid, use.attributes.states.indexValid, use.attributes.states.digitValid, use.attributes.states.address1Valid, use.attributes.states.address2Valid, use.attributes.states.cityValid, use.attributes.states.stateCountryValid, use.attributes.states.countryValid, use.attributes.states.postCodeValid, use.attributes.states.emailValid, use.attributes.states.phoneValid, use.attributes.states.statusValid, use.attributes.states.addressTypeValid]);
   _react["default"].useEffect(function () {
-    use.actions.changeStatus({
+    use.attributes.actions.changeStatus({
       value: 'active',
       label: 'Activo'
     });
-    use.actions.changeAddressType({
+    use.attributes.actions.changeAddressType({
       value: 'bill',
       label: 'Facturación'
     });
@@ -111,12 +111,12 @@ var EntityAddForm = function EntityAddForm(_ref) {
   var returnInit = function returnInit() {
     setInputState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
     setInputCountry( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
-    use.actions.returnInit();
+    use.pages.actions.returnInit();
   };
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':
-        use.actions.add();
+        use.api.actions.add();
         break;
       case 'return':
         returnInit();
@@ -129,11 +129,11 @@ var EntityAddForm = function EntityAddForm(_ref) {
     setInputTypeDocumentIdId(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectTypeDocumentIdId, {
         changeTypeDocumentIdId: function changeTypeDocumentIdId(e) {
-          return use.actions.changeTypeDocumentIdId(e);
+          return use.attributes.actions.changeTypeDocumentIdId(e);
         },
         props: _objectSpread({
-          options: use.states.typeDocumentIdIdOptions,
-          defaultValue: use.states.typeDocumentIdIdDefault,
+          options: use.attributes.states.typeDocumentIdIdOptions,
+          defaultValue: use.attributes.states.typeDocumentIdIdDefault,
           styles: {
             width: '100%'
           }
@@ -143,11 +143,11 @@ var EntityAddForm = function EntityAddForm(_ref) {
     setInputIndex(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectDocumentIdIndex, {
         changeIndex: function changeIndex(e) {
-          return use.actions.changeIndex(e);
+          return use.attributes.actions.changeIndex(e);
         },
         props: _objectSpread({
-          options: use.states.indexOptions,
-          defaultValue: use.states.indexDefault,
+          options: use.attributes.states.indexOptions,
+          defaultValue: use.attributes.states.indexDefault,
           styles: {
             width: '92%'
           }
@@ -157,11 +157,11 @@ var EntityAddForm = function EntityAddForm(_ref) {
     setInputCountry(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectCountry, {
         changeCountry: function changeCountry(e) {
-          return use.actions.changeCountry(e);
+          return use.attributes.actions.changeCountry(e);
         },
         props: _objectSpread({
-          options: use.states.countryOptions,
-          defaultValue: use.states.countryDefault,
+          options: use.attributes.states.countryOptions,
+          defaultValue: use.attributes.states.countryDefault,
           styles: {
             width: '92%'
           }
@@ -170,15 +170,15 @@ var EntityAddForm = function EntityAddForm(_ref) {
     });
   }, []);
   _react["default"].useEffect(function () {
-    if (use.states.stateCountryOptions.length > 0) {
+    if (use.attributes.states.stateCountryOptions.length > 0) {
       setInputState(function () {
         return /*#__PURE__*/_react["default"].createElement(_Input.SelectStateCountry, {
           changeStateCountry: function changeStateCountry(e) {
-            return use.actions.changeStateCountry(e);
+            return use.attributes.actions.changeStateCountry(e);
           },
           props: _objectSpread({
-            options: use.states.stateCountryOptions,
-            defaultValue: use.states.stateCountryDefault,
+            options: use.attributes.states.stateCountryOptions,
+            defaultValue: use.attributes.states.stateCountryDefault,
             styles: {
               width: '90%'
             }
@@ -189,11 +189,11 @@ var EntityAddForm = function EntityAddForm(_ref) {
       setInputState(function () {
         return /*#__PURE__*/_react["default"].createElement(_Input.InputStateCountry, {
           changeStateCountry: function changeStateCountry(e) {
-            return use.actions.changeStateCountry(e);
+            return use.attributes.actions.changeStateCountry(e);
           },
           props: _objectSpread({
             inputProps: {
-              defaultValue: use.states.state
+              defaultValue: use.attributes.states.state
             },
             styles: {
               padding: '10px 19px',
@@ -203,15 +203,15 @@ var EntityAddForm = function EntityAddForm(_ref) {
         });
       });
     }
-    if (use.states.cityOptions.length > 0) {
+    if (use.attributes.states.cityOptions.length > 0) {
       setInputCity(function () {
         return /*#__PURE__*/_react["default"].createElement(_Input.SelectCity, {
           changeCity: function changeCity(e) {
-            return use.actions.changeCity(e);
+            return use.attributes.actions.changeCity(e);
           },
           props: _objectSpread({
-            options: use.states.cityOptions,
-            defaultValue: use.states.cityDefault,
+            options: use.attributes.states.cityOptions,
+            defaultValue: use.attributes.states.cityDefault,
             styles: {
               width: '90%'
             }
@@ -221,10 +221,10 @@ var EntityAddForm = function EntityAddForm(_ref) {
     } else {
       setInputCity(function () {
         return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputCity, {
-          changeCity: use.actions.changeCity,
+          changeCity: use.attributes.actions.changeCity,
           props: _objectSpread({
             inputProps: {
-              defaultValue: use.states.city
+              defaultValue: use.attributes.states.city
             },
             styles: {
               padding: '10px 19px',
@@ -234,13 +234,13 @@ var EntityAddForm = function EntityAddForm(_ref) {
         }));
       });
     }
-  }, [use.states.country, use.states.stateCountryOptions, use.states.cityOptions]);
+  }, [use.attributes.states.country, use.attributes.states.stateCountryOptions, use.attributes.states.cityOptions]);
   _react["default"].useEffect(function () {
-    use.actions.changeCityOptions();
-  }, [use.actions.changeCityOptions]);
+    use.attributes.actions.changeCityOptions();
+  }, [use.attributes.actions.changeCityOptions]);
   _react["default"].useEffect(function () {
-    use.actions.changeStateCountryOptions();
-  }, [use.actions.changeStateCountryOptions]);
+    use.attributes.actions.changeStateCountryOptions();
+  }, [use.attributes.actions.changeStateCountryOptions]);
   return /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, (0, _extends2["default"])({
     titles: {
       title1: title1Text,
@@ -251,35 +251,35 @@ var EntityAddForm = function EntityAddForm(_ref) {
       returnButton: 'Volver'
     },
     handleActions: handleActions,
-    error: use.states.error
+    error: use.error.states.error
   }, modelFormProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoMainContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_Form.PhotoEntity, {
-    photo: use.states.photo,
-    changePhoto: use.actions.changePhoto,
-    submitting: use.states.submitting,
-    changeError: use.actions.changeError,
-    setSubmitting: use.actions.setSubmitting,
+    photo: use.attributes.states.photo,
+    changePhoto: use.attributes.actions.changePhoto,
+    submitting: use.attributes.states.submitting,
+    changeError: use.error.actions.changeError,
+    setSubmitting: use.attributes.actions.setSubmitting,
     props: propsPhoto
   })), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(nameContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
-    changeName: use.actions.changeName,
+    changeName: use.attributes.actions.changeName,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.name
+        defaultValue: use.attributes.states.name
       },
       styles: {
         width: '100%'
       }
     }, nameProps)
   }), isPersonalForm && /*#__PURE__*/_react["default"].createElement(_Input.InputLastName, {
-    changeLastName: use.actions.changeLastName,
+    changeLastName: use.attributes.actions.changeLastName,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.lastName
+        defaultValue: use.attributes.states.lastName
       },
       styles: {
         width: '100%'
@@ -291,10 +291,10 @@ var EntityAddForm = function EntityAddForm(_ref) {
       justifyContent: 'start'
     }
   }, containerDocumentProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputIndex, /*#__PURE__*/_react["default"].createElement(_Input.InputDocumentiIdDigit, {
-    changeDocumentiIdDigit: use.actions.changeDigit,
+    changeDocumentiIdDigit: use.attributes.actions.changeDigit,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.digit
+        defaultValue: use.attributes.states.digit
       },
       styles: {
         width: '92%',
@@ -307,10 +307,10 @@ var EntityAddForm = function EntityAddForm(_ref) {
       justifyContent: 'start'
     }
   }, containerAddressProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputAddress1, {
-    changeAddress1: use.actions.changeAddress1,
+    changeAddress1: use.attributes.actions.changeAddress1,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.address1
+        defaultValue: use.attributes.states.address1
       },
       styles: {
         width: '92%',
@@ -318,10 +318,10 @@ var EntityAddForm = function EntityAddForm(_ref) {
       }
     }, address1Props)
   }), /*#__PURE__*/_react["default"].createElement(_Input.InputAddress2, {
-    changeAddress2: use.actions.changeAddress2,
+    changeAddress2: use.attributes.actions.changeAddress2,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.address2
+        defaultValue: use.attributes.states.address2
       },
       styles: {
         width: '92%',
@@ -339,10 +339,10 @@ var EntityAddForm = function EntityAddForm(_ref) {
       justifyContent: 'start'
     }
   }, containerCountryProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputCountry, /*#__PURE__*/_react["default"].createElement(_Input.InputZipCode, {
-    changeZipCode: use.actions.changePostCode,
+    changeZipCode: use.attributes.actions.changePostCode,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.postCode
+        defaultValue: use.attributes.states.postCode
       },
       styles: {
         width: '92%',
@@ -355,10 +355,10 @@ var EntityAddForm = function EntityAddForm(_ref) {
       justifyContent: 'start'
     }
   }, containerEmailPhoneProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputEmail, {
-    changeEmail: use.actions.changeEmail,
+    changeEmail: use.attributes.actions.changeEmail,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.email
+        defaultValue: use.attributes.states.email
       },
       styles: {
         width: '92%',
@@ -366,10 +366,10 @@ var EntityAddForm = function EntityAddForm(_ref) {
       }
     }, emailProps)
   }), /*#__PURE__*/_react["default"].createElement(_Input.InputPhone, {
-    changePhone: use.actions.changePhone,
+    changePhone: use.attributes.actions.changePhone,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.phone
+        defaultValue: use.attributes.states.phone
       },
       styles: {
         width: '92%',

@@ -15,10 +15,10 @@ import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';
-import type { UseEntityReturn } from 'src/states';
+import type { UseGafpriEntityReturn } from '../../states';
 
 export type AddressFormProps = {
-  use: UseEntityReturn;
+  use: UseGafpriEntityReturn;
   inputCityProps?: InputProps;
   selectCityProps?: GsSelectPropsExtended;
   inputStateProps?: InputProps;
@@ -78,36 +78,38 @@ export const AddressAddForm = ({
   const [InputType, setInputType] = React.useState(<></>);
 
   React.useEffect(() => {
-    use.actions.validationAddressType(use.states.addressType);
-    use.actions.validationAddress1(use.states.address1);
-    use.actions.validationAddress2(use.states.address2);
-    use.actions.validationCity(use.states.city);
-    use.actions.validationStateCountry(use.states.state);
-    use.actions.validationCountry(use.states.country);
-    use.actions.validationPostCode(use.states.postCode);
+    use.attributes.actions.validationAddressType(
+      use.attributes.states.addressType
+    );
+    use.attributes.actions.validationAddress1(use.attributes.states.address1);
+    use.attributes.actions.validationAddress2(use.attributes.states.address2);
+    use.attributes.actions.validationCity(use.attributes.states.city);
+    use.attributes.actions.validationStateCountry(use.attributes.states.state);
+    use.attributes.actions.validationCountry(use.attributes.states.country);
+    use.attributes.actions.validationPostCode(use.attributes.states.postCode);
   }, [
-    use.states.address1,
-    use.states.address2,
-    use.states.city,
+    use.attributes.states.address1,
+    use.attributes.states.address2,
+    use.attributes.states.city,
     InputCity,
-    use.states.state,
+    use.attributes.states.state,
     InputState,
-    use.states.country,
+    use.attributes.states.country,
     InputCountry,
-    use.states.postCode,
-    use.states.addressType,
+    use.attributes.states.postCode,
+    use.attributes.states.addressType,
   ]);
 
   React.useEffect(() => {
-    use.actions.validationButtonNextAddress();
+    use.attributes.actions.validationButtonNextAddress();
   }, [
-    use.states.address1Valid,
-    use.states.address2Valid,
-    use.states.cityValid,
-    use.states.stateCountryValid,
-    use.states.countryValid,
-    use.states.postCodeValid,
-    use.states.addressTypeValid,
+    use.attributes.states.address1Valid,
+    use.attributes.states.address2Valid,
+    use.attributes.states.cityValid,
+    use.attributes.states.stateCountryValid,
+    use.attributes.states.countryValid,
+    use.attributes.states.postCodeValid,
+    use.attributes.states.addressTypeValid,
   ]);
 
   const buttonTitle = 'Agregar';
@@ -115,10 +117,10 @@ export const AddressAddForm = ({
   const handleActions = (action: string, value: any) => {
     switch (action) {
       case 'submit':
-        use.actions.addAddress();
+        use.api.actions.addAddress();
         break;
       case 'return':
-        use.actions.goUpdate(use.states.entityId);
+        use.pages.actions.goUpdate(use.attributes.states.currentId);
         break;
       default:
         console.log('Acción desconocida:', action);
@@ -129,10 +131,10 @@ export const AddressAddForm = ({
     setInputCountry((): JSX.Element => {
       return (
         <SelectCountry
-          changeCountry={(event) => use.actions.changeCountry(event)}
+          changeCountry={(event) => use.attributes.actions.changeCountry(event)}
           props={{
-            options: use.states.countryOptions,
-            defaultValue: use.states.countryDefault,
+            options: use.attributes.states.countryOptions,
+            defaultValue: use.attributes.states.countryDefault,
             styles: {
               width: '89%',
             },
@@ -145,10 +147,12 @@ export const AddressAddForm = ({
     setInputType((): JSX.Element => {
       return (
         <SelectAddressType
-          changeAddressType={(event) => use.actions.changeAddressType(event)}
+          changeAddressType={(event) =>
+            use.attributes.actions.changeAddressType(event)
+          }
           props={{
-            options: use.states.addressTypeOptions,
-            defaultValue: use.states.addressTypeDefault,
+            options: use.attributes.states.addressTypeOptions,
+            defaultValue: use.attributes.states.addressTypeDefault,
             styles: {
               width: '92%',
             },
@@ -160,16 +164,16 @@ export const AddressAddForm = ({
   }, []);
 
   React.useEffect(() => {
-    if (use.states.stateCountryOptions.length > 0) {
+    if (use.attributes.states.stateCountryOptions.length > 0) {
       setInputState((): JSX.Element => {
         return (
           <SelectStateCountry
             changeStateCountry={(event) =>
-              use.actions.changeStateCountry(event)
+              use.attributes.actions.changeStateCountry(event)
             }
             props={{
-              options: use.states.stateCountryOptions,
-              defaultValue: use.states.stateCountryDefault,
+              options: use.attributes.states.stateCountryOptions,
+              defaultValue: use.attributes.states.stateCountryDefault,
               styles: {
                 width: '89%',
               },
@@ -183,11 +187,11 @@ export const AddressAddForm = ({
         return (
           <InputStateCountry
             changeStateCountry={(event) =>
-              use.actions.changeStateCountry(event)
+              use.attributes.actions.changeStateCountry(event)
             }
             props={{
               inputProps: {
-                defaultValue: use.states.state,
+                defaultValue: use.attributes.states.state,
               },
               styles: {
                 padding: '10px 19px',
@@ -200,14 +204,14 @@ export const AddressAddForm = ({
       });
     }
 
-    if (use.states.cityOptions.length > 0) {
+    if (use.attributes.states.cityOptions.length > 0) {
       setInputCity((): JSX.Element => {
         return (
           <SelectCity
-            changeCity={(event) => use.actions.changeCity(event)}
+            changeCity={(event) => use.attributes.actions.changeCity(event)}
             props={{
-              options: use.states.cityOptions,
-              defaultValue: use.states.cityDefault,
+              options: use.attributes.states.cityOptions,
+              defaultValue: use.attributes.states.cityDefault,
               styles: {
                 width: '89%',
               },
@@ -220,10 +224,10 @@ export const AddressAddForm = ({
       setInputCity((): JSX.Element => {
         return (
           <InputCityGeneral
-            changeCity={(event) => use.actions.changeCity(event)}
+            changeCity={(event) => use.attributes.actions.changeCity(event)}
             props={{
               inputProps: {
-                defaultValue: use.states.city,
+                defaultValue: use.attributes.states.city,
               },
               styles: {
                 padding: '10px 19px',
@@ -236,18 +240,18 @@ export const AddressAddForm = ({
       });
     }
   }, [
-    use.states.country,
-    use.states.stateCountryOptions,
-    use.states.cityOptions,
+    use.attributes.states.country,
+    use.attributes.states.stateCountryOptions,
+    use.attributes.states.cityOptions,
   ]);
 
   React.useEffect(() => {
-    use.actions.changeCityOptions();
-  }, [use.actions.changeCityOptions]);
+    use.attributes.actions.changeCityOptions();
+  }, [use.attributes.actions.changeCityOptions]);
 
   React.useEffect(() => {
-    use.actions.changeStateCountryOptions();
-  }, [use.actions.changeStateCountryOptions]);
+    use.attributes.actions.changeStateCountryOptions();
+  }, [use.attributes.actions.changeStateCountryOptions]);
 
   return (
     <ModelForm
@@ -260,7 +264,7 @@ export const AddressAddForm = ({
         returnButton: 'Volver',
       }}
       handleActions={handleActions}
-      error={use.states.error}
+      error={use.error.states.error}
       {...modelFormProps}
     >
       <>
@@ -273,10 +277,12 @@ export const AddressAddForm = ({
         >
           <>
             <InputAddress1
-              changeAddress1={(event) => use.actions.changeAddress1(event)}
+              changeAddress1={(event) =>
+                use.attributes.actions.changeAddress1(event)
+              }
               props={{
                 inputProps: {
-                  defaultValue: use.states.address1,
+                  defaultValue: use.attributes.states.address1,
                 },
                 styles: {
                   width: '92%',
@@ -286,10 +292,12 @@ export const AddressAddForm = ({
               }}
             />
             <InputAddress2
-              changeAddress2={(event) => use.actions.changeAddress2(event)}
+              changeAddress2={(event) =>
+                use.attributes.actions.changeAddress2(event)
+              }
               props={{
                 inputProps: {
-                  defaultValue: use.states.address2,
+                  defaultValue: use.attributes.states.address2,
                 },
                 styles: {
                   width: '92%',
@@ -322,10 +330,12 @@ export const AddressAddForm = ({
         >
           <>
             <InputZipCode
-              changeZipCode={(event) => use.actions.changePostCode(event)}
+              changeZipCode={(event) =>
+                use.attributes.actions.changePostCode(event)
+              }
               props={{
                 inputProps: {
-                  defaultValue: use.states.postCode,
+                  defaultValue: use.attributes.states.postCode,
                 },
                 styles: {
                   width: '92%',

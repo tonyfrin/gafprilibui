@@ -50,25 +50,25 @@ var AddressAddForm = function AddressAddForm(_ref) {
     InputType = _React$useState8[0],
     setInputType = _React$useState8[1];
   _react["default"].useEffect(function () {
-    use.actions.validationAddressType(use.states.addressType);
-    use.actions.validationAddress1(use.states.address1);
-    use.actions.validationAddress2(use.states.address2);
-    use.actions.validationCity(use.states.city);
-    use.actions.validationStateCountry(use.states.state);
-    use.actions.validationCountry(use.states.country);
-    use.actions.validationPostCode(use.states.postCode);
-  }, [use.states.address1, use.states.address2, use.states.city, InputCity, use.states.state, InputState, use.states.country, InputCountry, use.states.postCode, use.states.addressType]);
+    use.attributes.actions.validationAddressType(use.attributes.states.addressType);
+    use.attributes.actions.validationAddress1(use.attributes.states.address1);
+    use.attributes.actions.validationAddress2(use.attributes.states.address2);
+    use.attributes.actions.validationCity(use.attributes.states.city);
+    use.attributes.actions.validationStateCountry(use.attributes.states.state);
+    use.attributes.actions.validationCountry(use.attributes.states.country);
+    use.attributes.actions.validationPostCode(use.attributes.states.postCode);
+  }, [use.attributes.states.address1, use.attributes.states.address2, use.attributes.states.city, InputCity, use.attributes.states.state, InputState, use.attributes.states.country, InputCountry, use.attributes.states.postCode, use.attributes.states.addressType]);
   _react["default"].useEffect(function () {
-    use.actions.validationButtonNextAddress();
-  }, [use.states.address1Valid, use.states.address2Valid, use.states.cityValid, use.states.stateCountryValid, use.states.countryValid, use.states.postCodeValid, use.states.addressTypeValid]);
+    use.attributes.actions.validationButtonNextAddress();
+  }, [use.attributes.states.address1Valid, use.attributes.states.address2Valid, use.attributes.states.cityValid, use.attributes.states.stateCountryValid, use.attributes.states.countryValid, use.attributes.states.postCodeValid, use.attributes.states.addressTypeValid]);
   var buttonTitle = 'Agregar';
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':
-        use.actions.addAddress();
+        use.api.actions.addAddress();
         break;
       case 'return':
-        use.actions.goUpdate(use.states.entityId);
+        use.pages.actions.goUpdate(use.attributes.states.currentId);
         break;
       default:
         console.log('Acción desconocida:', action);
@@ -78,11 +78,11 @@ var AddressAddForm = function AddressAddForm(_ref) {
     setInputCountry(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectCountry, {
         changeCountry: function changeCountry(event) {
-          return use.actions.changeCountry(event);
+          return use.attributes.actions.changeCountry(event);
         },
         props: _objectSpread({
-          options: use.states.countryOptions,
-          defaultValue: use.states.countryDefault,
+          options: use.attributes.states.countryOptions,
+          defaultValue: use.attributes.states.countryDefault,
           styles: {
             width: '89%'
           }
@@ -92,11 +92,11 @@ var AddressAddForm = function AddressAddForm(_ref) {
     setInputType(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectAddressType, {
         changeAddressType: function changeAddressType(event) {
-          return use.actions.changeAddressType(event);
+          return use.attributes.actions.changeAddressType(event);
         },
         props: _objectSpread({
-          options: use.states.addressTypeOptions,
-          defaultValue: use.states.addressTypeDefault,
+          options: use.attributes.states.addressTypeOptions,
+          defaultValue: use.attributes.states.addressTypeDefault,
           styles: {
             width: '92%'
           }
@@ -105,15 +105,15 @@ var AddressAddForm = function AddressAddForm(_ref) {
     });
   }, []);
   _react["default"].useEffect(function () {
-    if (use.states.stateCountryOptions.length > 0) {
+    if (use.attributes.states.stateCountryOptions.length > 0) {
       setInputState(function () {
         return /*#__PURE__*/_react["default"].createElement(_Input.SelectStateCountry, {
           changeStateCountry: function changeStateCountry(event) {
-            return use.actions.changeStateCountry(event);
+            return use.attributes.actions.changeStateCountry(event);
           },
           props: _objectSpread({
-            options: use.states.stateCountryOptions,
-            defaultValue: use.states.stateCountryDefault,
+            options: use.attributes.states.stateCountryOptions,
+            defaultValue: use.attributes.states.stateCountryDefault,
             styles: {
               width: '89%'
             }
@@ -124,11 +124,11 @@ var AddressAddForm = function AddressAddForm(_ref) {
       setInputState(function () {
         return /*#__PURE__*/_react["default"].createElement(_Input.InputStateCountry, {
           changeStateCountry: function changeStateCountry(event) {
-            return use.actions.changeStateCountry(event);
+            return use.attributes.actions.changeStateCountry(event);
           },
           props: _objectSpread({
             inputProps: {
-              defaultValue: use.states.state
+              defaultValue: use.attributes.states.state
             },
             styles: {
               padding: '10px 19px',
@@ -138,15 +138,15 @@ var AddressAddForm = function AddressAddForm(_ref) {
         });
       });
     }
-    if (use.states.cityOptions.length > 0) {
+    if (use.attributes.states.cityOptions.length > 0) {
       setInputCity(function () {
         return /*#__PURE__*/_react["default"].createElement(_Input.SelectCity, {
           changeCity: function changeCity(event) {
-            return use.actions.changeCity(event);
+            return use.attributes.actions.changeCity(event);
           },
           props: _objectSpread({
-            options: use.states.cityOptions,
-            defaultValue: use.states.cityDefault,
+            options: use.attributes.states.cityOptions,
+            defaultValue: use.attributes.states.cityDefault,
             styles: {
               width: '89%'
             }
@@ -157,11 +157,11 @@ var AddressAddForm = function AddressAddForm(_ref) {
       setInputCity(function () {
         return /*#__PURE__*/_react["default"].createElement(_Input.InputCity, {
           changeCity: function changeCity(event) {
-            return use.actions.changeCity(event);
+            return use.attributes.actions.changeCity(event);
           },
           props: _objectSpread({
             inputProps: {
-              defaultValue: use.states.city
+              defaultValue: use.attributes.states.city
             },
             styles: {
               padding: '10px 19px',
@@ -171,13 +171,13 @@ var AddressAddForm = function AddressAddForm(_ref) {
         });
       });
     }
-  }, [use.states.country, use.states.stateCountryOptions, use.states.cityOptions]);
+  }, [use.attributes.states.country, use.attributes.states.stateCountryOptions, use.attributes.states.cityOptions]);
   _react["default"].useEffect(function () {
-    use.actions.changeCityOptions();
-  }, [use.actions.changeCityOptions]);
+    use.attributes.actions.changeCityOptions();
+  }, [use.attributes.actions.changeCityOptions]);
   _react["default"].useEffect(function () {
-    use.actions.changeStateCountryOptions();
-  }, [use.actions.changeStateCountryOptions]);
+    use.attributes.actions.changeStateCountryOptions();
+  }, [use.attributes.actions.changeStateCountryOptions]);
   return /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, (0, _extends2["default"])({
     titles: {
       title1: mainTitle,
@@ -188,7 +188,7 @@ var AddressAddForm = function AddressAddForm(_ref) {
       returnButton: 'Volver'
     },
     handleActions: handleActions,
-    error: use.states.error
+    error: use.error.states.error
   }, modelFormProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
@@ -196,11 +196,11 @@ var AddressAddForm = function AddressAddForm(_ref) {
     }
   }, containerAddressProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputAddress1, {
     changeAddress1: function changeAddress1(event) {
-      return use.actions.changeAddress1(event);
+      return use.attributes.actions.changeAddress1(event);
     },
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.address1
+        defaultValue: use.attributes.states.address1
       },
       styles: {
         width: '92%',
@@ -209,11 +209,11 @@ var AddressAddForm = function AddressAddForm(_ref) {
     }, inputAddress1Props)
   }), /*#__PURE__*/_react["default"].createElement(_Input.InputAddress2, {
     changeAddress2: function changeAddress2(event) {
-      return use.actions.changeAddress2(event);
+      return use.attributes.actions.changeAddress2(event);
     },
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.address2
+        defaultValue: use.attributes.states.address2
       },
       styles: {
         width: '92%',
@@ -232,11 +232,11 @@ var AddressAddForm = function AddressAddForm(_ref) {
     }
   }, containerPostCodeProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputZipCode, {
     changeZipCode: function changeZipCode(event) {
-      return use.actions.changePostCode(event);
+      return use.attributes.actions.changePostCode(event);
     },
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.postCode
+        defaultValue: use.attributes.states.postCode
       },
       styles: {
         width: '92%',

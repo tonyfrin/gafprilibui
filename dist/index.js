@@ -1467,6 +1467,18 @@ Object.defineProperty(exports, "toTitleCase", {
     return _helpers.toTitleCase;
   }
 });
+Object.defineProperty(exports, "useGafpriApiEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesEntity;
+  }
+});
 Object.defineProperty(exports, "useGafpriCategory", {
   enumerable: true,
   get: function get() {
@@ -1477,6 +1489,12 @@ Object.defineProperty(exports, "useGafpriCurrencies", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriCurrencies;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataEntity;
   }
 });
 Object.defineProperty(exports, "useGafpriEntity", {
@@ -1495,6 +1513,18 @@ Object.defineProperty(exports, "useGafpriLogin", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriLogin;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsEntity", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsEntity;
   }
 });
 Object.defineProperty(exports, "useGafpriRoles", {

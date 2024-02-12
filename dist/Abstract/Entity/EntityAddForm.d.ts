@@ -1,10 +1,10 @@
 /// <reference types="react" />
-import type { UseEntityReturn } from '../../states';
+import type { UseGafpriEntityReturn } from '../../states';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
 export type EntityAddFormProps = {
-    use: UseEntityReturn;
+    use: UseGafpriEntityReturn;
     formType: 'personal' | 'legal';
     photoMainContainerStyle?: string;
     photoContainerStyle?: string;

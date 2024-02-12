@@ -451,4 +451,5 @@ export {
   generalChangeRoles,
   generalChanceIsActive,
   generalChangeGalleryPhoto,
+  generalChangeNote,
 } from './Changes';

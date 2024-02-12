@@ -4,7 +4,14 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.generalChangeWebSite = exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeTaxes = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangeRoles = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeGalleryPhoto = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCurrenciesId = exports.generalChangeCurrenciesDecimalNumbers = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAreaCode = exports.generalChangeAddressType = exports.generalChangeAddress = exports.generalChanceIsActive = void 0;
+exports.generalChangeName = exports.generalChangeLastName = exports.generalChangeGalleryPhoto = exports.generalChangeEmail = exports.generalChangeDocumentIdIndex = exports.generalChangeDocumentIdDigit = exports.generalChangeDescription = exports.generalChangeCurrenciesSymbol = exports.generalChangeCurrenciesId = exports.generalChangeCurrenciesDecimalNumbers = exports.generalChangeCityStateCountry = exports.generalChangeCityOptions = exports.generalChangeAreaCode = exports.generalChangeAddressType = exports.generalChangeAddress = exports.generalChanceIsActive = void 0;
+Object.defineProperty(exports, "generalChangeNote", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeNote.generalChangeNote;
+  }
+});
+exports.generalChangeWebSite = exports.generalChangeUserName = exports.generalChangeTypeDocumentIdId = exports.generalChangeType = exports.generalChangeTaxes = exports.generalChangeStatus = exports.generalChangeStateCountryOptions = exports.generalChangeSite = exports.generalChangeRoles = exports.generalChangePostCode = exports.generalChangePhoto = exports.generalChangePhone = exports.generalChangePassword = exports.generalChangeParentId = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
@@ -12,6 +19,7 @@ var _axios = _interopRequireDefault(require("axios"));
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
 var _Constans = require("../Constans");
+var _generalChangeNote = require("./generalChangeNote");
 var generalChangeUserName = function generalChangeUserName(value, validation, setValue) {
   var valueClean = _dompurify["default"].sanitize(value);
   var userName = valueClean.toLowerCase();

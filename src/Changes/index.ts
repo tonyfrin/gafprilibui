@@ -552,3 +552,5 @@ export const generalChanceIsActive = (
     setValue,
   });
 };
+
+export { generalChangeNote } from './generalChangeNote';

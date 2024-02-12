@@ -1089,6 +1089,12 @@ Object.defineProperty(exports, "generalChangeName", {
     return _Changes.generalChangeName;
   }
 });
+Object.defineProperty(exports, "generalChangeNote", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeNote;
+  }
+});
 Object.defineProperty(exports, "generalChangeParentId", {
   enumerable: true,
   get: function get() {

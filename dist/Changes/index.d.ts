@@ -73,3 +73,4 @@ export declare const generalChanceIsActive: (options: SingleValue<{
     value: string;
     label: string;
 }>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: boolean) => void) => void;
+export { generalChangeNote } from './generalChangeNote';

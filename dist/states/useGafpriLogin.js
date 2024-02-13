@@ -52,13 +52,23 @@ function useGafpriLogin(_ref) {
 
   // Funciones de Validacion
   var validationUserName = function validationUserName(value) {
-    return (0, _Validations.generalValidationUserName)(value, setUserNameValid, userNameValid);
+    return (0, _Validations.generalValidationUserName)({
+      value: value,
+      setValid: setUserNameValid,
+      currentValid: userNameValid
+    });
   };
   var validationPassword = function validationPassword(value) {
-    return (0, _Validations.generalValidationSinglePassword)(value, setPasswordValid, passwordValid);
+    return (0, _Validations.generalValidationSinglePassword)({
+      value: value,
+      setValid: setPasswordValid,
+      currentValid: passwordValid
+    });
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)([userNameValid, passwordValid]);
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [userNameValid, passwordValid]
+    });
   };
 
   // Funciones de cambios

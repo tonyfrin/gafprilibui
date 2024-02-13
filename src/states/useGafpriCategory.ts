@@ -322,37 +322,55 @@ export function useGafpriCategory({
 
   // Funciones de Validacion
   const validationName = (value: string): boolean => {
-    return generalValidationName(value, setNameValid, nameValid);
+    return generalValidationName({
+      value,
+      setValid: setNameValid,
+      currentValid: nameValid,
+    });
   };
 
   const validationParentId = (newValue: string): boolean => {
-    return generalValidationParentId(newValue, setParentIdValid, parentIdValid);
+    return generalValidationParentId({
+      value: newValue,
+      setValid: setParentIdValid,
+      currentValid: parentIdValid,
+    });
   };
 
   const validationDescription = (newValue: string): boolean => {
-    return generalValidationDescription(
-      newValue,
-      setDescriptionValid,
-      descriptionValid
-    );
+    return generalValidationDescription({
+      value: newValue,
+      setValid: setDescriptionValid,
+      currentValid: descriptionValid,
+    });
   };
 
   const validationStatus = (newValue: string): boolean => {
-    return generalValidationStatus(newValue, setStatusValid, statusValid);
+    return generalValidationStatus({
+      value: newValue,
+      setValid: setStatusValid,
+      currentValid: statusValid,
+    });
   };
 
   const validationPhoto = (value: string): boolean => {
-    return generalValidationPhotoCategory(value, setPhotoValid, photoValid);
+    return generalValidationPhotoCategory({
+      value,
+      setValid: setPhotoValid,
+      currentValid: photoValid,
+    });
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext([
-      nameValid,
-      parentIdValid,
-      descriptionValid,
-      photoValid,
-      statusValid,
-    ]);
+    generalValidationButtonNext({
+      validations: [
+        nameValid,
+        parentIdValid,
+        descriptionValid,
+        photoValid,
+        statusValid,
+      ],
+    });
   };
 
   // Funciones de cambios

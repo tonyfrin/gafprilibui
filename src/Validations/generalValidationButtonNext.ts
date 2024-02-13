@@ -1,0 +1,20 @@
+import { addClass, removeClass } from '../helpers';
+import { DISABLED, BUTTON_NEXT_INPUT } from '../Constans';
+
+export type GeneralValidationButtonNextProps = {
+  validations: boolean[];
+  inputId?: string;
+};
+
+export const generalValidationButtonNext = ({
+  validations,
+  inputId,
+}: GeneralValidationButtonNextProps): void => {
+  const isAllValid = validations.every((validation) => validation);
+
+  if (isAllValid) {
+    removeClass(`${BUTTON_NEXT_INPUT}${inputId}`, DISABLED);
+  } else {
+    addClass(`${BUTTON_NEXT_INPUT}${inputId}`, DISABLED);
+  }
+};

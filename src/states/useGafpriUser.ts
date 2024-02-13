@@ -397,53 +397,84 @@ export const useGafpriUsers = ({
 
   // Funciones de Validacion
   const validationButtonNext = (): void => {
-    generalValidationButtonNext([
-      nameValid,
-      lastNameValid,
-      emailValid,
-      areaCodeValid,
-      phoneNumberValid,
-      roleValid,
-      photoValid,
-      isActiveValid,
-    ]);
+    generalValidationButtonNext({
+      validations: [
+        nameValid,
+        lastNameValid,
+        emailValid,
+        areaCodeValid,
+        phoneNumberValid,
+        roleValid,
+        photoValid,
+        isActiveValid,
+      ],
+    });
   };
 
   const validationName = (value: string): boolean => {
-    return generalValidationName(value, setNameValid, nameValid);
+    return generalValidationName({
+      value,
+      setValid: setNameValid,
+      currentValid: nameValid,
+    });
   };
 
   const validationLastName = (value: string): boolean => {
-    return generalValidationLastName(value, setLastNameValid, lastNameValid);
+    return generalValidationLastName({
+      value,
+      setValid: setLastNameValid,
+      currentValid: lastNameValid,
+    });
   };
 
   const validationEmail = (value: string): boolean => {
-    return generalValidationEmail(value, setEmailValid, emailValid, true);
+    return generalValidationEmail({
+      value,
+      setValid: setEmailValid,
+      currentValid: emailValid,
+      required: true,
+    });
   };
 
   const validationPhoneNumber = (value: string): boolean => {
-    return generalValidationPhone(
+    return generalValidationPhone({
       value,
-      setPhoneNumberValid,
-      phoneNumberValid,
-      true
-    );
+      setValid: setPhoneNumberValid,
+      currentValid: phoneNumberValid,
+      required: true,
+    });
   };
 
   const validationAreaCode = (value: string): boolean => {
-    return generalValidationAreaCode(value, setAreaCodeValid, areaCodeValid);
+    return generalValidationAreaCode({
+      newValue: value,
+      setValid: setAreaCodeValid,
+      currentValid: areaCodeValid,
+    });
   };
 
   const validationRole = (value: string): boolean => {
-    return generalValidationRoles(value, setRoleValid, roleValid);
+    return generalValidationRoles({
+      newValue: value,
+      setValid: setRoleValid,
+      currentValid: roleValid,
+    });
   };
 
   const validationPhoto = (value: string): boolean => {
-    return generalValidationPhotoUsers(value, setPhotoValid, photoValid);
+    return generalValidationPhotoUsers({
+      value,
+      setValid: setPhotoValid,
+      currentValid: photoValid,
+    });
   };
 
   const validationIsActive = (value: string): boolean => {
-    return generalValidationStatus(value, setIsActiveValid, isActiveValid);
+    return generalValidationStatus({
+      value,
+      setValid: setIsActiveValid,
+      currentValid: isActiveValid,
+    });
   };
 
   // Funciones de cambios

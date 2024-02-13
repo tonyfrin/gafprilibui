@@ -143,13 +143,23 @@ function useGafpriTypeDocumentId(_ref) {
 
   // Funciones de Validacion
   var validationName = function validationName(value) {
-    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
+    return (0, _Validations.generalValidationName)({
+      value: value,
+      setValid: setNameValid,
+      currentValid: nameValid
+    });
   };
   var validationCountry = function validationCountry(newValue) {
-    return (0, _Validations.generalValidationSelectCountry)(newValue, setCountryValid, countryValid);
+    return (0, _Validations.generalValidationSelectCountry)({
+      value: newValue,
+      setValid: setCountryValid,
+      currentValid: countryValid
+    });
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)([nameValid, countryValid]);
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [nameValid, countryValid]
+    });
   };
 
   // Funciones de cambios

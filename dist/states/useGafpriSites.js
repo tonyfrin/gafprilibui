@@ -454,58 +454,128 @@ var useGafpriSites = function useGafpriSites(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)([nameValid, documentIndexValid, documentNumberValid, address1Valid, address2Valid, cityValid, stateCountryValid, postCodeValid, countryValid, emailValid, phoneValid, currenciesIdValid, currencyLocationValid, separatorValid, decimalNumbersValid, taxesValid, hostValid]);
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [nameValid, documentIndexValid, documentNumberValid, address1Valid, address2Valid, cityValid, stateCountryValid, postCodeValid, countryValid, emailValid, phoneValid, currenciesIdValid, currencyLocationValid, separatorValid, decimalNumbersValid, taxesValid, hostValid]
+    });
   };
   var validationName = function validationName(value) {
-    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
+    return (0, _Validations.generalValidationName)({
+      value: value,
+      setValid: setNameValid,
+      currentValid: nameValid
+    });
   };
   var validationDocumentIndex = function validationDocumentIndex(value) {
-    return (0, _Validations.generalValidationTypeDocumentIdIndex)(value, setDocumentIndexValid, documentIndexValid);
+    return (0, _Validations.generalValidationTypeDocumentIdIndex)({
+      value: value,
+      setValid: setDocumentIndexValid,
+      currentValid: documentIndexValid
+    });
   };
   var validationDocumentNumber = function validationDocumentNumber(value) {
-    return (0, _Validations.generalValidationTypeDocumentIdDigit)(value, setDocumentNumberValid, documentNumberValid);
+    return (0, _Validations.generalValidationTypeDocumentIdDigit)({
+      value: value,
+      setValid: setDocumentNumberValid,
+      currentValid: documentNumberValid
+    });
   };
   var validationAddress1 = function validationAddress1(value) {
-    return (0, _Validations.generalValidationAddress1)(value, setAddress1Valid, address1Valid);
+    return (0, _Validations.generalValidationAddress1)({
+      value: value,
+      setValid: setAddress1Valid,
+      currentValid: address1Valid
+    });
   };
   var validationAddress2 = function validationAddress2(value) {
-    return (0, _Validations.generalValidationAddress2)(value, setAddress2Valid, address2Valid);
+    return (0, _Validations.generalValidationAddress2)({
+      value: value,
+      setValid: setAddress2Valid,
+      currentValid: address2Valid
+    });
   };
   var validationCity = function validationCity(value) {
-    return (0, _Validations.generalValidationSelectCity)(value, setCityValid, cityValid);
+    return (0, _Validations.generalValidationSelectCity)({
+      value: value,
+      setValid: setCityValid,
+      currentValid: cityValid
+    });
   };
   var validationStateCountry = function validationStateCountry(value) {
-    return (0, _Validations.generalValidationSelectStateCountry)(value, setStateCountryValid, stateCountryValid);
+    return (0, _Validations.generalValidationSelectStateCountry)({
+      value: value,
+      setValid: setStateCountryValid,
+      currentValid: stateCountryValid
+    });
   };
   var validationCountry = function validationCountry(value) {
-    return (0, _Validations.generalValidationSelectCountry)(value, setCountryValid, countryValid);
+    return (0, _Validations.generalValidationSelectCountry)({
+      value: value,
+      setValid: setCountryValid,
+      currentValid: countryValid
+    });
   };
   var validationPostCode = function validationPostCode(value) {
-    return (0, _Validations.generalValidationPostCode)(value, setPostCodeValid, postCodeValid);
+    return (0, _Validations.generalValidationPostCode)({
+      value: value,
+      setValid: setPostCodeValid,
+      currentValid: postCodeValid
+    });
   };
   var validationEmail = function validationEmail(value) {
-    return (0, _Validations.generalValidationEmail)(value, setEmailValid, emailValid);
+    return (0, _Validations.generalValidationEmail)({
+      value: value,
+      setValid: setEmailValid,
+      currentValid: emailValid
+    });
   };
   var validationPhone = function validationPhone(value) {
-    return (0, _Validations.generalValidationPhone)(value, setPhoneValid, phoneValid);
+    return (0, _Validations.generalValidationPhone)({
+      value: value,
+      setValid: setPhoneValid,
+      currentValid: phoneValid
+    });
   };
   var validationCurrenciesId = function validationCurrenciesId(value) {
-    return (0, _Validations.generalValidationSelectCurrencies)(value, setCurrenciesIdValid, currenciesIdValid);
+    return (0, _Validations.generalValidationSelectCurrencies)({
+      value: value,
+      setValid: setCurrenciesIdValid,
+      currentValid: currenciesIdValid
+    });
   };
   var validationCurrencyLocation = function validationCurrencyLocation(value) {
-    return (0, _Validations.generalValidationSelectCurrenciesLocations)(value, setCurrencyLocationValid, currencyLocationValid);
+    return (0, _Validations.generalValidationSelectCurrenciesLocations)({
+      value: value,
+      setValid: setCurrencyLocationValid,
+      currentValid: currencyLocationValid
+    });
   };
   var validationSeparator = function validationSeparator(value) {
-    return (0, _Validations.generalValidationSelectCurrenciesSeparator)(value, setSeparatorValid, separatorValid);
+    return (0, _Validations.generalValidationSelectCurrenciesSeparator)({
+      value: value,
+      setValid: setSeparatorValid,
+      currentValid: separatorValid
+    });
   };
   var validationDecimalNumbers = function validationDecimalNumbers(value) {
-    return (0, _Validations.generalValidationSelectCurrenciesDecimalNumbers)(value, setDecimalNumbersValid, decimalNumbersValid);
+    return (0, _Validations.generalValidationSelectCurrenciesDecimalNumbers)({
+      value: value,
+      setValid: setDecimalNumbersValid,
+      currentValid: decimalNumbersValid
+    });
   };
   var validationTaxes = function validationTaxes(value) {
-    return (0, _Validations.generalValidationSelectTaxes)(value, setTaxesValid, taxesValid);
+    return (0, _Validations.generalValidationSelectTaxes)({
+      value: value,
+      setValid: setTaxesValid,
+      currentValid: taxesValid
+    });
   };
   var validationHost = function validationHost(value) {
-    return (0, _Validations.generalValidationWebSite)(value, setHostValid, hostValid);
+    return (0, _Validations.generalValidationWebSite)({
+      newValue: value,
+      setValid: setHostValid,
+      currentValid: hostValid
+    });
   };
 
   // Funciones de cambios

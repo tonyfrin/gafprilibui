@@ -207,22 +207,44 @@ function useGafpriCategory(_ref) {
 
   // Funciones de Validacion
   var validationName = function validationName(value) {
-    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
+    return (0, _Validations.generalValidationName)({
+      value: value,
+      setValid: setNameValid,
+      currentValid: nameValid
+    });
   };
   var validationParentId = function validationParentId(newValue) {
-    return (0, _Validations.generalValidationParentId)(newValue, setParentIdValid, parentIdValid);
+    return (0, _Validations.generalValidationParentId)({
+      value: newValue,
+      setValid: setParentIdValid,
+      currentValid: parentIdValid
+    });
   };
   var validationDescription = function validationDescription(newValue) {
-    return (0, _Validations.generalValidationDescription)(newValue, setDescriptionValid, descriptionValid);
+    return (0, _Validations.generalValidationDescription)({
+      value: newValue,
+      setValid: setDescriptionValid,
+      currentValid: descriptionValid
+    });
   };
   var validationStatus = function validationStatus(newValue) {
-    return (0, _Validations.generalValidationStatus)(newValue, setStatusValid, statusValid);
+    return (0, _Validations.generalValidationStatus)({
+      value: newValue,
+      setValid: setStatusValid,
+      currentValid: statusValid
+    });
   };
   var validationPhoto = function validationPhoto(value) {
-    return (0, _Validations.generalValidationPhotoCategory)(value, setPhotoValid, photoValid);
+    return (0, _Validations.generalValidationPhotoCategory)({
+      value: value,
+      setValid: setPhotoValid,
+      currentValid: photoValid
+    });
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)([nameValid, parentIdValid, descriptionValid, photoValid, statusValid]);
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [nameValid, parentIdValid, descriptionValid, photoValid, statusValid]
+    });
   };
 
   // Funciones de cambios

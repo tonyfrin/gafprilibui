@@ -209,11 +209,17 @@ export function useGafpriRoles({
 
   // Funciones de Validacion
   const validationName = (value: string): boolean => {
-    return generalValidationName(value, setNameValid, nameValid);
+    return generalValidationName({
+      value,
+      setValid: setNameValid,
+      currentValid: nameValid,
+    });
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext([nameValid]);
+    generalValidationButtonNext({
+      validations: [nameValid],
+    });
   };
 
   // Funciones de cambios

@@ -128,10 +128,16 @@ function useGafpriRoles(_ref) {
 
   // Funciones de Validacion
   var validationName = function validationName(value) {
-    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
+    return (0, _Validations.generalValidationName)({
+      value: value,
+      setValid: setNameValid,
+      currentValid: nameValid
+    });
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)([nameValid]);
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [nameValid]
+    });
   };
 
   // Funciones de cambios

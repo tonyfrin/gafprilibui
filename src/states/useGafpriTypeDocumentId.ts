@@ -231,19 +231,25 @@ export function useGafpriTypeDocumentId({
 
   // Funciones de Validacion
   const validationName = (value: string): boolean => {
-    return generalValidationName(value, setNameValid, nameValid);
+    return generalValidationName({
+      value,
+      setValid: setNameValid,
+      currentValid: nameValid,
+    });
   };
 
   const validationCountry = (newValue: string): boolean => {
-    return generalValidationSelectCountry(
-      newValue,
-      setCountryValid,
-      countryValid
-    );
+    return generalValidationSelectCountry({
+      value: newValue,
+      setValid: setCountryValid,
+      currentValid: countryValid,
+    });
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext([nameValid, countryValid]);
+    generalValidationButtonNext({
+      validations: [nameValid, countryValid],
+    });
   };
 
   // Funciones de cambios

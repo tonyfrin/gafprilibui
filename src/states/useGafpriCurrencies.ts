@@ -214,19 +214,25 @@ export function useGafpriCurrencies({
 
   // Funciones de Validacion
   const validationName = (value: string): boolean => {
-    return generalValidationName(value, setNameValid, nameValid);
+    return generalValidationName({
+      value,
+      setValid: setNameValid,
+      currentValid: nameValid,
+    });
   };
 
   const validationSymbol = (newValue: string): boolean => {
-    return generalValidationCurrenciesSymbol(
-      newValue,
-      setSymbolValid,
-      symbolValid
-    );
+    return generalValidationCurrenciesSymbol({
+      value: newValue,
+      setValid: setSymbolValid,
+      currentValid: symbolValid,
+    });
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext([nameValid, symbolValid]);
+    generalValidationButtonNext({
+      validations: [nameValid, symbolValid],
+    });
   };
 
   // Funciones de cambios

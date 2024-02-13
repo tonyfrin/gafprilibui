@@ -84,19 +84,25 @@ export function useGafpriLogin({
 
   // Funciones de Validacion
   const validationUserName = (value: string): boolean => {
-    return generalValidationUserName(value, setUserNameValid, userNameValid);
+    return generalValidationUserName({
+      value,
+      setValid: setUserNameValid,
+      currentValid: userNameValid,
+    });
   };
 
   const validationPassword = (value: string): boolean => {
-    return generalValidationSinglePassword(
+    return generalValidationSinglePassword({
       value,
-      setPasswordValid,
-      passwordValid
-    );
+      setValid: setPasswordValid,
+      currentValid: passwordValid,
+    });
   };
 
   const validationButtonNext = (): void => {
-    generalValidationButtonNext([userNameValid, passwordValid]);
+    generalValidationButtonNext({
+      validations: [userNameValid, passwordValid],
+    });
   };
 
   // Funciones de cambios

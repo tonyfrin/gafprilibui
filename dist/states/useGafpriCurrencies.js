@@ -133,13 +133,23 @@ function useGafpriCurrencies(_ref) {
 
   // Funciones de Validacion
   var validationName = function validationName(value) {
-    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
+    return (0, _Validations.generalValidationName)({
+      value: value,
+      setValid: setNameValid,
+      currentValid: nameValid
+    });
   };
   var validationSymbol = function validationSymbol(newValue) {
-    return (0, _Validations.generalValidationCurrenciesSymbol)(newValue, setSymbolValid, symbolValid);
+    return (0, _Validations.generalValidationCurrenciesSymbol)({
+      value: newValue,
+      setValid: setSymbolValid,
+      currentValid: symbolValid
+    });
   };
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)([nameValid, symbolValid]);
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [nameValid, symbolValid]
+    });
   };
 
   // Funciones de cambios

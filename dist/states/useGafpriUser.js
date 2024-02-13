@@ -306,31 +306,67 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
 
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
-    (0, _Validations.generalValidationButtonNext)([nameValid, lastNameValid, emailValid, areaCodeValid, phoneNumberValid, roleValid, photoValid, isActiveValid]);
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [nameValid, lastNameValid, emailValid, areaCodeValid, phoneNumberValid, roleValid, photoValid, isActiveValid]
+    });
   };
   var validationName = function validationName(value) {
-    return (0, _Validations.generalValidationName)(value, setNameValid, nameValid);
+    return (0, _Validations.generalValidationName)({
+      value: value,
+      setValid: setNameValid,
+      currentValid: nameValid
+    });
   };
   var validationLastName = function validationLastName(value) {
-    return (0, _Validations.generalValidationLastName)(value, setLastNameValid, lastNameValid);
+    return (0, _Validations.generalValidationLastName)({
+      value: value,
+      setValid: setLastNameValid,
+      currentValid: lastNameValid
+    });
   };
   var validationEmail = function validationEmail(value) {
-    return (0, _Validations.generalValidationEmail)(value, setEmailValid, emailValid, true);
+    return (0, _Validations.generalValidationEmail)({
+      value: value,
+      setValid: setEmailValid,
+      currentValid: emailValid,
+      required: true
+    });
   };
   var validationPhoneNumber = function validationPhoneNumber(value) {
-    return (0, _Validations.generalValidationPhone)(value, setPhoneNumberValid, phoneNumberValid, true);
+    return (0, _Validations.generalValidationPhone)({
+      value: value,
+      setValid: setPhoneNumberValid,
+      currentValid: phoneNumberValid,
+      required: true
+    });
   };
   var validationAreaCode = function validationAreaCode(value) {
-    return (0, _Validations.generalValidationAreaCode)(value, setAreaCodeValid, areaCodeValid);
+    return (0, _Validations.generalValidationAreaCode)({
+      newValue: value,
+      setValid: setAreaCodeValid,
+      currentValid: areaCodeValid
+    });
   };
   var validationRole = function validationRole(value) {
-    return (0, _Validations.generalValidationRoles)(value, setRoleValid, roleValid);
+    return (0, _Validations.generalValidationRoles)({
+      newValue: value,
+      setValid: setRoleValid,
+      currentValid: roleValid
+    });
   };
   var validationPhoto = function validationPhoto(value) {
-    return (0, _Validations.generalValidationPhotoUsers)(value, setPhotoValid, photoValid);
+    return (0, _Validations.generalValidationPhotoUsers)({
+      value: value,
+      setValid: setPhotoValid,
+      currentValid: photoValid
+    });
   };
   var validationIsActive = function validationIsActive(value) {
-    return (0, _Validations.generalValidationStatus)(value, setIsActiveValid, isActiveValid);
+    return (0, _Validations.generalValidationStatus)({
+      value: value,
+      setValid: setIsActiveValid,
+      currentValid: isActiveValid
+    });
   };
 
   // Funciones de cambios

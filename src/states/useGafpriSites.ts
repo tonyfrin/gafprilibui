@@ -564,121 +564,163 @@ export const useGafpriSites = ({
 
   // Funciones de Validacion
   const validationButtonNext = (): void => {
-    generalValidationButtonNext([
-      nameValid,
-      documentIndexValid,
-      documentNumberValid,
-      address1Valid,
-      address2Valid,
-      cityValid,
-      stateCountryValid,
-      postCodeValid,
-      countryValid,
-      emailValid,
-      phoneValid,
-      currenciesIdValid,
-      currencyLocationValid,
-      separatorValid,
-      decimalNumbersValid,
-      taxesValid,
-      hostValid,
-    ]);
+    generalValidationButtonNext({
+      validations: [
+        nameValid,
+        documentIndexValid,
+        documentNumberValid,
+        address1Valid,
+        address2Valid,
+        cityValid,
+        stateCountryValid,
+        postCodeValid,
+        countryValid,
+        emailValid,
+        phoneValid,
+        currenciesIdValid,
+        currencyLocationValid,
+        separatorValid,
+        decimalNumbersValid,
+        taxesValid,
+        hostValid,
+      ],
+    });
   };
 
   const validationName = (value: string): boolean => {
-    return generalValidationName(value, setNameValid, nameValid);
+    return generalValidationName({
+      value,
+      setValid: setNameValid,
+      currentValid: nameValid,
+    });
   };
 
   const validationDocumentIndex = (value: string): boolean => {
-    return generalValidationTypeDocumentIdIndex(
+    return generalValidationTypeDocumentIdIndex({
       value,
-      setDocumentIndexValid,
-      documentIndexValid
-    );
+      setValid: setDocumentIndexValid,
+      currentValid: documentIndexValid,
+    });
   };
 
   const validationDocumentNumber = (value: string): boolean => {
-    return generalValidationTypeDocumentIdDigit(
+    return generalValidationTypeDocumentIdDigit({
       value,
-      setDocumentNumberValid,
-      documentNumberValid
-    );
+      setValid: setDocumentNumberValid,
+      currentValid: documentNumberValid,
+    });
   };
 
   const validationAddress1 = (value: string): boolean => {
-    return generalValidationAddress1(value, setAddress1Valid, address1Valid);
+    return generalValidationAddress1({
+      value,
+      setValid: setAddress1Valid,
+      currentValid: address1Valid,
+    });
   };
 
   const validationAddress2 = (value: string): boolean => {
-    return generalValidationAddress2(value, setAddress2Valid, address2Valid);
+    return generalValidationAddress2({
+      value,
+      setValid: setAddress2Valid,
+      currentValid: address2Valid,
+    });
   };
 
   const validationCity = (value: string): boolean => {
-    return generalValidationSelectCity(value, setCityValid, cityValid);
+    return generalValidationSelectCity({
+      value,
+      setValid: setCityValid,
+      currentValid: cityValid,
+    });
   };
 
   const validationStateCountry = (value: string): boolean => {
-    return generalValidationSelectStateCountry(
+    return generalValidationSelectStateCountry({
       value,
-      setStateCountryValid,
-      stateCountryValid
-    );
+      setValid: setStateCountryValid,
+      currentValid: stateCountryValid,
+    });
   };
 
   const validationCountry = (value: string): boolean => {
-    return generalValidationSelectCountry(value, setCountryValid, countryValid);
+    return generalValidationSelectCountry({
+      value,
+      setValid: setCountryValid,
+      currentValid: countryValid,
+    });
   };
 
   const validationPostCode = (value: string): boolean => {
-    return generalValidationPostCode(value, setPostCodeValid, postCodeValid);
+    return generalValidationPostCode({
+      value,
+      setValid: setPostCodeValid,
+      currentValid: postCodeValid,
+    });
   };
 
   const validationEmail = (value: string): boolean => {
-    return generalValidationEmail(value, setEmailValid, emailValid);
+    return generalValidationEmail({
+      value,
+      setValid: setEmailValid,
+      currentValid: emailValid,
+    });
   };
 
   const validationPhone = (value: string): boolean => {
-    return generalValidationPhone(value, setPhoneValid, phoneValid);
+    return generalValidationPhone({
+      value,
+      setValid: setPhoneValid,
+      currentValid: phoneValid,
+    });
   };
 
   const validationCurrenciesId = (value: string): boolean => {
-    return generalValidationSelectCurrencies(
+    return generalValidationSelectCurrencies({
       value,
-      setCurrenciesIdValid,
-      currenciesIdValid
-    );
+      setValid: setCurrenciesIdValid,
+      currentValid: currenciesIdValid,
+    });
   };
 
   const validationCurrencyLocation = (value: string): boolean => {
-    return generalValidationSelectCurrenciesLocations(
+    return generalValidationSelectCurrenciesLocations({
       value,
-      setCurrencyLocationValid,
-      currencyLocationValid
-    );
+      setValid: setCurrencyLocationValid,
+      currentValid: currencyLocationValid,
+    });
   };
 
   const validationSeparator = (value: string): boolean => {
-    return generalValidationSelectCurrenciesSeparator(
+    return generalValidationSelectCurrenciesSeparator({
       value,
-      setSeparatorValid,
-      separatorValid
-    );
+      setValid: setSeparatorValid,
+      currentValid: separatorValid,
+    });
   };
 
   const validationDecimalNumbers = (value: string): boolean => {
-    return generalValidationSelectCurrenciesDecimalNumbers(
+    return generalValidationSelectCurrenciesDecimalNumbers({
       value,
-      setDecimalNumbersValid,
-      decimalNumbersValid
-    );
+      setValid: setDecimalNumbersValid,
+      currentValid: decimalNumbersValid,
+    });
   };
 
   const validationTaxes = (value: string): boolean => {
-    return generalValidationSelectTaxes(value, setTaxesValid, taxesValid);
+    return generalValidationSelectTaxes({
+      value,
+      setValid: setTaxesValid,
+      currentValid: taxesValid,
+    });
   };
 
   const validationHost = (value: string): boolean => {
-    return generalValidationWebSite(value, setHostValid, hostValid);
+    return generalValidationWebSite({
+      newValue: value,
+      setValid: setHostValid,
+      currentValid: hostValid,
+    });
   };
 
   // Funciones de cambios

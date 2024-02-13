@@ -3,9 +3,276 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.generalValidationWebSite = exports.generalValidationUserName = exports.generalValidationTypeDocumentIdIndex = exports.generalValidationTypeDocumentIdId = exports.generalValidationTypeDocumentIdDigit = exports.generalValidationType = exports.generalValidationStatus = exports.generalValidationSku = exports.generalValidationSinglePassword = exports.generalValidationSelectTaxes = exports.generalValidationSelectStateCountry = exports.generalValidationSelectSite = exports.generalValidationSelectCurrenciesSeparator = exports.generalValidationSelectCurrenciesLocations = exports.generalValidationSelectCurrenciesDecimalNumbers = exports.generalValidationSelectCurrencies = exports.generalValidationSelectCountry = exports.generalValidationSelectCity = exports.generalValidationRoles = exports.generalValidationPostCode = exports.generalValidationPhotoUsers = exports.generalValidationPhotoEntity = exports.generalValidationPhotoDocumentId = exports.generalValidationPhotoCategory = exports.generalValidationPhoto = exports.generalValidationPhone = exports.generalValidationPassword = exports.generalValidationParentId = exports.generalValidationName = exports.generalValidationLastName = exports.generalValidationGalleryImage = exports.generalValidationEmail = exports.generalValidationDescription = exports.generalValidationCurrenciesSymbol = exports.generalValidationButtonNext = exports.generalValidationAreaCode = exports.generalValidationAddressType = exports.generalValidationAddress2 = exports.generalValidationAddress1 = void 0;
+Object.defineProperty(exports, "generalValidationAddress1", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationAddress.generalValidationAddress1;
+  }
+});
+Object.defineProperty(exports, "generalValidationAddress2", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationAddress2.generalValidationAddress2;
+  }
+});
+Object.defineProperty(exports, "generalValidationAddressType", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationAddressType.generalValidationAddressType;
+  }
+});
+Object.defineProperty(exports, "generalValidationAreaCode", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationAreaCode.generalValidationAreaCode;
+  }
+});
+Object.defineProperty(exports, "generalValidationButtonNext", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationButtonNext.generalValidationButtonNext;
+  }
+});
+Object.defineProperty(exports, "generalValidationCurrenciesSymbol", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationCurrenciesSymbol.generalValidationCurrenciesSymbol;
+  }
+});
+Object.defineProperty(exports, "generalValidationDescription", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationDescription.generalValidationDescription;
+  }
+});
+Object.defineProperty(exports, "generalValidationEmail", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationEmail.generalValidationEmail;
+  }
+});
+Object.defineProperty(exports, "generalValidationGalleryImage", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationGalleryImage.generalValidationGalleryImage;
+  }
+});
+Object.defineProperty(exports, "generalValidationLastName", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationLastName.generalValidationLastName;
+  }
+});
+Object.defineProperty(exports, "generalValidationName", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationName.generalValidationName;
+  }
+});
+Object.defineProperty(exports, "generalValidationParentId", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationParentId.generalValidationParentId;
+  }
+});
+Object.defineProperty(exports, "generalValidationPassword", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPassword.generalValidationPassword;
+  }
+});
+Object.defineProperty(exports, "generalValidationPhone", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPhone.generalValidationPhone;
+  }
+});
+exports.generalValidationPhoto = void 0;
+Object.defineProperty(exports, "generalValidationPhotoCategory", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPhotoCategory.generalValidationPhotoCategory;
+  }
+});
+Object.defineProperty(exports, "generalValidationPhotoDocumentId", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPhotoDocumentId.generalValidationPhotoDocumentId;
+  }
+});
+Object.defineProperty(exports, "generalValidationPhotoEntity", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPhotoEntity.generalValidationPhotoEntity;
+  }
+});
+Object.defineProperty(exports, "generalValidationPhotoUsers", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPhotoUsers.generalValidationPhotoUsers;
+  }
+});
+Object.defineProperty(exports, "generalValidationPostCode", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPostCode.generalValidationPostCode;
+  }
+});
+Object.defineProperty(exports, "generalValidationRoles", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationRoles.generalValidationRoles;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCity", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectCity.generalValidationSelectCity;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCountry", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectCountry.generalValidationSelectCountry;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCurrencies", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectCurrencies.generalValidationSelectCurrencies;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCurrenciesDecimalNumbers", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectCurrenciesDecimalNumbers.generalValidationSelectCurrenciesDecimalNumbers;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCurrenciesLocations", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectCurrenciesLocations.generalValidationSelectCurrenciesLocations;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectCurrenciesSeparator", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectCurrenciesSeparator.generalValidationSelectCurrenciesSeparator;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectSite", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectSite.generalValidationSelectSite;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectStateCountry", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectStateCountry.generalValidationSelectStateCountry;
+  }
+});
+Object.defineProperty(exports, "generalValidationSelectTaxes", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSelectTaxes.generalValidationSelectTaxes;
+  }
+});
+Object.defineProperty(exports, "generalValidationSinglePassword", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSinglePassword.generalValidationSinglePassword;
+  }
+});
+Object.defineProperty(exports, "generalValidationSku", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSku.generalValidationSku;
+  }
+});
+Object.defineProperty(exports, "generalValidationStatus", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationStatus.generalValidationStatus;
+  }
+});
+Object.defineProperty(exports, "generalValidationType", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationType.generalValidationType;
+  }
+});
+Object.defineProperty(exports, "generalValidationTypeDocumentIdDigit", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationTypeDocumentIdDigit.generalValidationTypeDocumentIdDigit;
+  }
+});
+Object.defineProperty(exports, "generalValidationTypeDocumentIdId", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationTypeDocumentIdId.generalValidationTypeDocumentIdId;
+  }
+});
+Object.defineProperty(exports, "generalValidationTypeDocumentIdIndex", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationTypeDocumentIdIndex.generalValidationTypeDocumentIdIndex;
+  }
+});
+Object.defineProperty(exports, "generalValidationUserName", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationUserName.generalValidationUserName;
+  }
+});
+Object.defineProperty(exports, "generalValidationWebSite", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationWebSite.generalValidationWebSite;
+  }
+});
+exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = void 0;
 var _helpers = require("../helpers");
 var _Constans = require("../Constans");
+var _generalValidationDescription = require("./generalValidationDescription");
+var _generalValidationName = require("./generalValidationName");
+var _generalValidationLastName = require("./generalValidationLastName");
+var _generalValidationUserName = require("./generalValidationUserName");
+var _generalValidationPassword = require("./generalValidationPassword");
+var _generalValidationSinglePassword = require("./generalValidationSinglePassword");
+var _generalValidationButtonNext = require("./generalValidationButtonNext");
+var _generalValidationAddress = require("./generalValidationAddress1");
+var _generalValidationAddress2 = require("./generalValidationAddress2");
+var _generalValidationAddressType = require("./generalValidationAddressType");
+var _generalValidationSelectCity = require("./generalValidationSelectCity");
+var _generalValidationSelectStateCountry = require("./generalValidationSelectStateCountry");
+var _generalValidationSelectCountry = require("./generalValidationSelectCountry");
+var _generalValidationPostCode = require("./generalValidationPostCode");
+var _generalValidationSelectSite = require("./generalValidationSelectSite");
+var _generalValidationSku = require("./generalValidationSku");
+var _generalValidationPhotoCategory = require("./generalValidationPhotoCategory");
+var _generalValidationPhotoEntity = require("./generalValidationPhotoEntity");
+var _generalValidationPhotoDocumentId = require("./generalValidationPhotoDocumentId");
+var _generalValidationGalleryImage = require("./generalValidationGalleryImage");
+var _generalValidationParentId = require("./generalValidationParentId");
+var _generalValidationStatus = require("./generalValidationStatus");
+var _generalValidationCurrenciesSymbol = require("./generalValidationCurrenciesSymbol");
+var _generalValidationTypeDocumentIdId = require("./generalValidationTypeDocumentIdId");
+var _generalValidationTypeDocumentIdIndex = require("./generalValidationTypeDocumentIdIndex");
+var _generalValidationTypeDocumentIdDigit = require("./generalValidationTypeDocumentIdDigit");
+var _generalValidationEmail = require("./generalValidationEmail");
+var _generalValidationPhone = require("./generalValidationPhone");
+var _generalValidationType = require("./generalValidationType");
+var _generalValidationSelectCurrencies = require("./generalValidationSelectCurrencies");
+var _generalValidationSelectCurrenciesLocations = require("./generalValidationSelectCurrenciesLocations");
+var _generalValidationSelectCurrenciesSeparator = require("./generalValidationSelectCurrenciesSeparator");
+var _generalValidationSelectCurrenciesDecimalNumbers = require("./generalValidationSelectCurrenciesDecimalNumbers");
+var _generalValidationSelectTaxes = require("./generalValidationSelectTaxes");
+var _generalValidationWebSite = require("./generalValidationWebSite");
+var _generalValidationAreaCode = require("./generalValidationAreaCode");
+var _generalValidationRoles = require("./generalValidationRoles");
+var _generalValidationPhotoUsers = require("./generalValidationPhotoUsers");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,
@@ -20,42 +287,6 @@ var validationInputNameLastNameUserName = function validationInputNameLastNameUs
   return valid;
 };
 exports.validationInputNameLastNameUserName = validationInputNameLastNameUserName;
-var generalValidationName = function generalValidationName(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputNameLastNameUserName({
-    value: value,
-    inputId: "".concat(_Constans.NAME_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationName = generalValidationName;
-var generalValidationLastName = function generalValidationLastName(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputNameLastNameUserName({
-    value: value,
-    inputId: "".concat(_Constans.LAST_NAME_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationLastName = generalValidationLastName;
-var generalValidationUserName = function generalValidationUserName(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputNameLastNameUserName({
-    value: value,
-    inputId: "".concat(_Constans.USER_NAME_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationUserName = generalValidationUserName;
 var validationInputPassword = function validationInputPassword(_ref2) {
   var value = _ref2.value,
     inputId = _ref2.inputId,
@@ -81,41 +312,6 @@ var validationInputSinglePassword = function validationInputSinglePassword(_ref3
   return valid;
 };
 exports.validationInputSinglePassword = validationInputSinglePassword;
-var generalValidationPassword = function generalValidationPassword(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputPassword({
-    value: value,
-    inputId: "".concat(_Constans.PASSWORD_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationPassword = generalValidationPassword;
-var generalValidationSinglePassword = function generalValidationSinglePassword(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputSinglePassword({
-    value: value,
-    inputId: "".concat(_Constans.PASSWORD_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationSinglePassword = generalValidationSinglePassword;
-var generalValidationButtonNext = function generalValidationButtonNext(validations, inputId) {
-  var isAllValid = validations.every(function (validation) {
-    return validation;
-  });
-  if (isAllValid) {
-    (0, _helpers.removeClass)("".concat(_Constans.BUTTON_NEXT_INPUT).concat(inputId), _Constans.DISABLED);
-  } else {
-    (0, _helpers.addClass)("".concat(_Constans.BUTTON_NEXT_INPUT).concat(inputId), _Constans.DISABLED);
-  }
-};
-exports.generalValidationButtonNext = generalValidationButtonNext;
 var validationInputDescription = function validationInputDescription(_ref4) {
   var value = _ref4.value,
     inputId = _ref4.inputId,
@@ -130,18 +326,6 @@ var validationInputDescription = function validationInputDescription(_ref4) {
   return valid;
 };
 exports.validationInputDescription = validationInputDescription;
-var generalValidationDescription = function generalValidationDescription(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputDescription({
-    value: value,
-    inputId: "".concat(_Constans.DESCRIPTION_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationDescription = generalValidationDescription;
 var validationInputAddress = function validationInputAddress(_ref5) {
   var value = _ref5.value,
     currentValid = _ref5.currentValid,
@@ -156,85 +340,6 @@ var validationInputAddress = function validationInputAddress(_ref5) {
   return valid;
 };
 exports.validationInputAddress = validationInputAddress;
-var generalValidationAddress1 = function generalValidationAddress1(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputAddress({
-    value: value,
-    inputId: "".concat(_Constans.ADDRESS1_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationAddress1 = generalValidationAddress1;
-var generalValidationAddress2 = function generalValidationAddress2(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputAddress({
-    value: value,
-    inputId: "".concat(_Constans.ADDRESS2_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationAddress2 = generalValidationAddress2;
-var generalValidationAddressType = function generalValidationAddressType(newValue, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.ADDRESS_TYPE_INPUT).concat(inputId));
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationAddressType = generalValidationAddressType;
-var generalValidationSelectCity = function generalValidationSelectCity(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CITY_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectCity = generalValidationSelectCity;
-var generalValidationSelectStateCountry = function generalValidationSelectStateCountry(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.STATE_COUNTRY_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectStateCountry = generalValidationSelectStateCountry;
-var generalValidationSelectCountry = function generalValidationSelectCountry(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.COUNTRY_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectCountry = generalValidationSelectCountry;
-var generalValidationPostCode = function generalValidationPostCode(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  var valid = (0, _helpers.validationInput)(value, /^[a-zA-Z0-9]+[a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_#()\-.\s]+$/, "".concat(_Constans.ZIP_CODE_INPUT).concat(inputId), required);
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationPostCode = generalValidationPostCode;
-var generalValidationSelectSite = function generalValidationSelectSite(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.SITE_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectSite = generalValidationSelectSite;
 var validationInputSku = function validationInputSku(_ref6) {
   var value = _ref6.value,
     inputId = _ref6.inputId,
@@ -249,18 +354,6 @@ var validationInputSku = function validationInputSku(_ref6) {
   return valid;
 };
 exports.validationInputSku = validationInputSku;
-var generalValidationSku = function generalValidationSku(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationInputSku({
-    value: value,
-    inputId: "".concat(_Constans.SKU_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationSku = generalValidationSku;
 var validationPhoto = function validationPhoto(_ref7) {
   var value = _ref7.value,
     inputId = _ref7.inputId,
@@ -285,42 +378,6 @@ var generalValidationPhoto = function generalValidationPhoto(value, setValid, cu
   });
 };
 exports.generalValidationPhoto = generalValidationPhoto;
-var generalValidationPhotoCategory = function generalValidationPhotoCategory(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationPhoto({
-    value: value,
-    inputId: "".concat(_Constans.PHOTO_CATEGORY_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationPhotoCategory = generalValidationPhotoCategory;
-var generalValidationPhotoEntity = function generalValidationPhotoEntity(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationPhoto({
-    value: value,
-    inputId: "".concat(_Constans.PHOTO_ENTITY_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationPhotoEntity = generalValidationPhotoEntity;
-var generalValidationPhotoDocumentId = function generalValidationPhotoDocumentId(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationPhoto({
-    value: value,
-    inputId: "".concat(_Constans.PHOTO_DOCUMENT_ID_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationPhotoDocumentId = generalValidationPhotoDocumentId;
 var validationInputArray = function validationInputArray(values, match, componentId) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   var allValid = true;
@@ -341,183 +398,3 @@ var validationInputArray = function validationInputArray(values, match, componen
   return allValid;
 };
 exports.validationInputArray = validationInputArray;
-var generalValidationGalleryImage = function generalValidationGalleryImage(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  var valid = validationInputArray(value, /^(?:(?:[a-z][a-z0-9+-.]*):\/\/)?(?:[a-z0-9_-]+(?::[a-z0-9_-]+)*@)?(?:[a-z0-9.-]+|(?:\[[a-f0-9:.]+\]))(?::\d+)?(?:\/[^\s#?]*(?:\?[^\s#?]*)?(?:#[^\s#?]*)?)?$/i, "".concat(_Constans.GALLERY_IMAGE_INPUT).concat(inputId), required);
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationGalleryImage = generalValidationGalleryImage;
-var generalValidationParentId = function generalValidationParentId(newValue, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.PARENT_ID_INPUT).concat(inputId));
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationParentId = generalValidationParentId;
-var generalValidationStatus = function generalValidationStatus(newValue, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.STATUS_INPUT).concat(inputId));
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationStatus = generalValidationStatus;
-var generalValidationCurrenciesSymbol = function generalValidationCurrenciesSymbol(newValue, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  var valid = (0, _helpers.validationInput)(newValue, /\$|Bs|€/, "".concat(_Constans.CURRENCIES_SYMBOL_INPUT).concat(inputId), required);
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationCurrenciesSymbol = generalValidationCurrenciesSymbol;
-var generalValidationTypeDocumentIdId = function generalValidationTypeDocumentIdId(newValue, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.TYPE_DOCUMENT_ID_ID_INPUT).concat(inputId));
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationTypeDocumentIdId = generalValidationTypeDocumentIdId;
-var generalValidationTypeDocumentIdIndex = function generalValidationTypeDocumentIdIndex(newValue, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.TYPE_DOCUMENT_ID_INDEX_INPUT).concat(inputId));
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationTypeDocumentIdIndex = generalValidationTypeDocumentIdIndex;
-var generalValidationTypeDocumentIdDigit = function generalValidationTypeDocumentIdDigit(newValue, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  var valid = (0, _helpers.validationInput)(newValue, /^\d{1,12}(-\d{1,12})?$/, "".concat(_Constans.TYPE_DOCUMENT_ID_DIGIT_INPUT).concat(inputId), required);
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationTypeDocumentIdDigit = generalValidationTypeDocumentIdDigit;
-var generalValidationEmail = function generalValidationEmail(newValue, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  var valid = (0, _helpers.validationInput)(newValue, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "".concat(_Constans.EMAIL_INPUT).concat(inputId), required);
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationEmail = generalValidationEmail;
-var generalValidationPhone = function generalValidationPhone(newValue, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  var valid = (0, _helpers.validationInput)(newValue, /^[0-9]{10,20}/, "".concat(_Constans.PHONE_INPUT).concat(inputId), required);
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationPhone = generalValidationPhone;
-var generalValidationType = function generalValidationType(newValue, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.TYPE_INPUT).concat(inputId));
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationType = generalValidationType;
-var generalValidationSelectCurrencies = function generalValidationSelectCurrencies(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CURRENCIES_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectCurrencies = generalValidationSelectCurrencies;
-var generalValidationSelectCurrenciesLocations = function generalValidationSelectCurrenciesLocations(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CURRENCIES_LOCATIONS_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectCurrenciesLocations = generalValidationSelectCurrenciesLocations;
-var generalValidationSelectCurrenciesSeparator = function generalValidationSelectCurrenciesSeparator(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CURRENCIES_SEPARATOR_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectCurrenciesSeparator = generalValidationSelectCurrenciesSeparator;
-var generalValidationSelectCurrenciesDecimalNumbers = function generalValidationSelectCurrenciesDecimalNumbers(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.CURRENCIES_DECIMAL_NUMBERS_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectCurrenciesDecimalNumbers = generalValidationSelectCurrenciesDecimalNumbers;
-var generalValidationSelectTaxes = function generalValidationSelectTaxes(value, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.TAXES_INPUT).concat(inputId));
-  if (validation !== currentValid) {
-    setValid(validation);
-  }
-  return validation;
-};
-exports.generalValidationSelectTaxes = generalValidationSelectTaxes;
-var generalValidationWebSite = function generalValidationWebSite(newValue, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  var valid = (0, _helpers.validationInput)(newValue, /^[-a-zA-Z0-9áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_,.&:/'\-\s]+$/, "".concat(_Constans.WEB_SITE_INPUT).concat(inputId), required);
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationWebSite = generalValidationWebSite;
-var generalValidationAreaCode = function generalValidationAreaCode(newValue, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.AREA_CODE_INPUT).concat(inputId));
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationAreaCode = generalValidationAreaCode;
-var generalValidationRoles = function generalValidationRoles(newValue, setValid, currentValid) {
-  var inputId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.ROLES_INPUT).concat(inputId));
-  if (valid !== currentValid) {
-    setValid(valid);
-  }
-  return valid;
-};
-exports.generalValidationRoles = generalValidationRoles;
-var generalValidationPhotoUsers = function generalValidationPhotoUsers(value, setValid, currentValid) {
-  var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  var inputId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  return validationPhoto({
-    value: value,
-    inputId: "".concat(_Constans.PHOTO_USERS_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationPhotoUsers = generalValidationPhotoUsers;

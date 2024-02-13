@@ -573,6 +573,18 @@ Object.defineProperty(exports, "NAME_INPUT", {
     return _Constans.NAME_INPUT;
   }
 });
+Object.defineProperty(exports, "ORDER_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.ORDER_ROUTE;
+  }
+});
+Object.defineProperty(exports, "ORDER_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.ORDER_STORAGE;
+  }
+});
 Object.defineProperty(exports, "PARENT_ID_INPUT", {
   enumerable: true,
   get: function get() {

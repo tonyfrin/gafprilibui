@@ -388,6 +388,8 @@ export {
   TOKEN_STORAGE,
   CURRENT_USER_STORAGE,
   ENTITY_STORAGE,
+  ORDER_STORAGE,
+  ORDER_ROUTE,
 } from './Constans';
 export { getItem, saveItem } from './Context';
 export {

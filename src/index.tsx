@@ -543,6 +543,7 @@ export type {
   GeneralValidationLengthProps,
   GeneralValidationCatalogOrderProps,
   GeneralValidationTagsProps,
+  GeneralValidationPhotoProps,
 } from './Validations';
 export {
   generalChangeUserName,

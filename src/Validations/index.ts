@@ -166,22 +166,6 @@ export const validationPhoto = ({
   return valid;
 };
 
-export const generalValidationPhoto = (
-  value: string,
-  setValid: (valueValid: boolean) => void,
-  currentValid: boolean,
-  required: boolean,
-  inputId: string
-): boolean => {
-  return validationPhoto({
-    value,
-    inputId,
-    setValid,
-    currentValid,
-    required,
-  });
-};
-
 export const validationInputArray = (
   values: string[],
   match: RegExp,
@@ -539,3 +523,5 @@ export { generalValidationCatalogOrder } from './generalValidationCatalogOrder';
 export type { GeneralValidationCatalogOrderProps } from './generalValidationCatalogOrder';
 export { generalValidationTags } from './generalValidationTags';
 export type { GeneralValidationTagsProps } from './generalValidationTags';
+export { generalValidationPhoto } from './generalValidationPhoto';
+export type { GeneralValidationPhotoProps } from './generalValidationPhoto';

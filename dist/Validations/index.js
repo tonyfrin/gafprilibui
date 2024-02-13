@@ -142,7 +142,12 @@ Object.defineProperty(exports, "generalValidationPhone", {
     return _generalValidationPhone.generalValidationPhone;
   }
 });
-exports.generalValidationPhoto = void 0;
+Object.defineProperty(exports, "generalValidationPhoto", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPhoto.generalValidationPhoto;
+  }
+});
 Object.defineProperty(exports, "generalValidationPhotoCategory", {
   enumerable: true,
   get: function get() {
@@ -419,6 +424,7 @@ var _generalValidationWidth = require("./generalValidationWidth");
 var _generalValidationLength = require("./generalValidationLength");
 var _generalValidationCatalogOrder = require("./generalValidationCatalogOrder");
 var _generalValidationTags = require("./generalValidationTags");
+var _generalValidationPhoto = require("./generalValidationPhoto");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,
@@ -514,16 +520,6 @@ var validationPhoto = function validationPhoto(_ref7) {
   return valid;
 };
 exports.validationPhoto = validationPhoto;
-var generalValidationPhoto = function generalValidationPhoto(value, setValid, currentValid, required, inputId) {
-  return validationPhoto({
-    value: value,
-    inputId: inputId,
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
-};
-exports.generalValidationPhoto = generalValidationPhoto;
 var validationInputArray = function validationInputArray(values, match, componentId) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   var allValid = true;

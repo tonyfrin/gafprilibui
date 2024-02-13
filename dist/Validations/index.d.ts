@@ -44,7 +44,6 @@ export declare const validationInputDescription: ({ value, inputId, setValid, cu
 export declare const validationInputAddress: ({ value, currentValid, inputId, setValid, required, }: ValidationInput) => boolean;
 export declare const validationInputSku: ({ value, inputId, currentValid, setValid, required, }: ValidationInput) => boolean;
 export declare const validationPhoto: ({ value, inputId, currentValid, setValid, required, }: ValidationInput) => boolean;
-export declare const generalValidationPhoto: (value: string, setValid: (valueValid: boolean) => void, currentValid: boolean, required: boolean, inputId: string) => boolean;
 export declare const validationInputArray: (values: string[], match: RegExp, componentId: string, required?: boolean) => boolean;
 export declare const validatePositiveNumber: (value: string | number, inputId: string, required?: boolean) => boolean;
 export declare const validationInputNumbers: ({ value, currentValid, inputId, setValid, required, }: ValidationInputNumbersProps) => boolean;
@@ -172,3 +171,5 @@ export { generalValidationCatalogOrder } from './generalValidationCatalogOrder';
 export type { GeneralValidationCatalogOrderProps } from './generalValidationCatalogOrder';
 export { generalValidationTags } from './generalValidationTags';
 export type { GeneralValidationTagsProps } from './generalValidationTags';
+export { generalValidationPhoto } from './generalValidationPhoto';
+export type { GeneralValidationPhotoProps } from './generalValidationPhoto';

@@ -1,5 +1,5 @@
 import { validationInput } from '../helpers';
-import { WEB_SITE_INPUT } from '../Constans';
+import { WEB_SITE_INPUT } from '../constants';
 
 export type GeneralValidationWebSiteProps = {
   newValue: string;

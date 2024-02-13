@@ -1,5 +1,5 @@
 import { validationInput } from '../helpers';
-import { ZIP_CODE_INPUT } from '../Constans';
+import { ZIP_CODE_INPUT } from '../constants';
 
 export type GeneralValidationPostCodeProps = {
   value: string;

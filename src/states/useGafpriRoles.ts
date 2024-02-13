@@ -3,7 +3,7 @@ import { gafpriFetch, getLastEntryDateAndCount } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
 import type { UseErrorReturn } from './useGafpriError';
-import { ROLES_ROUTE, ROLES_STORAGE, AllRoles } from '../Constans';
+import { ROLES_ROUTE, ROLES_STORAGE, AllRoles } from '../constants';
 import {
   generalValidationButtonNext,
   generalValidationName,

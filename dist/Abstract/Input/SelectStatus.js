@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SelectStatus = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _Input = require("./Input");
 var SelectStatus = function SelectStatus(_ref) {
   var changeStatus = _ref.changeStatus,
@@ -17,7 +17,7 @@ var SelectStatus = function SelectStatus(_ref) {
     styles: props === null || props === void 0 ? void 0 : props.styles,
     Class: props === null || props === void 0 ? void 0 : props.Class,
     options: props.options,
-    id: "".concat(_Constans.STATUS_INPUT).concat(inputId),
+    id: "".concat(_constants.STATUS_INPUT).concat(inputId),
     onChange: changeStatus,
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,

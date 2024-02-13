@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SelectCurrenciesDecimalNumbers = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _Input = require("./Input");
 var SelectCurrenciesDecimalNumbers = function SelectCurrenciesDecimalNumbers(_ref) {
   var changeCurrenciesDecimalNumbers = _ref.changeCurrenciesDecimalNumbers,
@@ -17,7 +17,7 @@ var SelectCurrenciesDecimalNumbers = function SelectCurrenciesDecimalNumbers(_re
     styles: props === null || props === void 0 ? void 0 : props.styles,
     Class: props === null || props === void 0 ? void 0 : props.Class,
     options: props.options,
-    id: "".concat(_Constans.CURRENCIES_DECIMAL_NUMBERS_INPUT).concat(inputId),
+    id: "".concat(_constants.CURRENCIES_DECIMAL_NUMBERS_INPUT).concat(inputId),
     onChange: changeCurrenciesDecimalNumbers,
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,

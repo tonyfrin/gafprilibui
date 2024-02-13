@@ -1,4 +1,4 @@
-import { PHOTO_ENTITY_INPUT } from '../Constans';
+import { PHOTO_ENTITY_INPUT } from '../constants';
 import { validationPhoto } from './index';
 
 export type GeneralValidationPhotoEntityProps = {

@@ -10,7 +10,7 @@ import type {
 import { getItem, saveItem } from '../Context';
 import type { UseRolesReturn, RolesAttributes } from './useGafpriRoles';
 import { UseErrorReturn } from './useGafpriError';
-import { USERS_STORAGE, USERS_ROUTE } from '../Constans';
+import { USERS_STORAGE, USERS_ROUTE } from '../constants';
 import {
   generalValidationAreaCode,
   generalValidationButtonNext,

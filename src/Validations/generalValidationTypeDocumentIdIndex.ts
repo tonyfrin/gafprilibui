@@ -1,5 +1,5 @@
 import { validationSelect } from '../helpers';
-import { TYPE_DOCUMENT_ID_INDEX_INPUT } from '../Constans';
+import { TYPE_DOCUMENT_ID_INDEX_INPUT } from '../constants';
 
 export type GeneralValidationTypeDocumentIdIndexProps = {
   value: string;

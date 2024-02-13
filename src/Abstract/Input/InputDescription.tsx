@@ -1,5 +1,5 @@
 import React from 'react';
-import { DESCRIPTION_INPUT } from '../../Constans';
+import { DESCRIPTION_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputDescriptionProps = {

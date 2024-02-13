@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.generalValidationUserName = void 0;
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _index = require("./index");
 var generalValidationUserName = function generalValidationUserName(_ref) {
   var value = _ref.value,
@@ -16,7 +16,7 @@ var generalValidationUserName = function generalValidationUserName(_ref) {
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return (0, _index.validationInputNameLastNameUserName)({
     value: value,
-    inputId: "".concat(_Constans.USER_NAME_INPUT).concat(inputId),
+    inputId: "".concat(_constants.USER_NAME_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required

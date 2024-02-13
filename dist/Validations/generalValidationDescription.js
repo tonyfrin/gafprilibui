@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.generalValidationDescription = void 0;
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _index = require("./index");
 var generalValidationDescription = function generalValidationDescription(_ref) {
   var value = _ref.value,
@@ -16,7 +16,7 @@ var generalValidationDescription = function generalValidationDescription(_ref) {
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return (0, _index.validationInputDescription)({
     value: value,
-    inputId: "".concat(_Constans.DESCRIPTION_INPUT).concat(inputId),
+    inputId: "".concat(_constants.DESCRIPTION_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required

@@ -1,5 +1,5 @@
 import { validationSelect } from '../helpers';
-import { COUNTRY_INPUT } from '../Constans';
+import { COUNTRY_INPUT } from '../constants';
 
 export type GeneralValidationSelectCountryProps = {
   value: string;

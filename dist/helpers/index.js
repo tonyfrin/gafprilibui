@@ -19,7 +19,7 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; } /* eslint-disable object-shorthand */
 var addClass = function addClass(element, className) {
@@ -38,10 +38,10 @@ var removeClass = function removeClass(element, className) {
 exports.removeClass = removeClass;
 var validationSelect = function validationSelect(value, componentId) {
   if (value === '') {
-    addClass(componentId, _Constans.ALERT);
+    addClass(componentId, _constants.ALERT);
     return false;
   }
-  removeClass(componentId, _Constans.ALERT);
+  removeClass(componentId, _constants.ALERT);
   return true;
 };
 exports.validationSelect = validationSelect;
@@ -52,18 +52,18 @@ var validationInput = function validationInput(value, match, componentId) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   var valid = validationHidden(value, match);
   if (required && (!valid || !value)) {
-    addClass(componentId, _Constans.ALERT);
+    addClass(componentId, _constants.ALERT);
     return false;
   }
   if (value && valid) {
-    removeClass(componentId, _Constans.ALERT);
+    removeClass(componentId, _constants.ALERT);
     return true;
   }
   if (!required && !value) {
-    removeClass(componentId, _Constans.ALERT);
+    removeClass(componentId, _constants.ALERT);
     return true;
   }
-  addClass(componentId, _Constans.ALERT);
+  addClass(componentId, _constants.ALERT);
   return false;
 };
 exports.validationInput = validationInput;
@@ -208,7 +208,7 @@ exports.validationInputPhone = validationInputPhone;
 function gafpriFetch(_ref9) {
   var initMethod = _ref9.initMethod,
     _ref9$initApi = _ref9.initApi,
-    initApi = _ref9$initApi === void 0 ? _Constans.API_URL : _ref9$initApi,
+    initApi = _ref9$initApi === void 0 ? _constants.API_URL : _ref9$initApi,
     initRoute = _ref9.initRoute,
     initToken = _ref9.initToken,
     initCredentials = _ref9.initCredentials,

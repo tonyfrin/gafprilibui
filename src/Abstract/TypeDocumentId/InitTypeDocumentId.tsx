@@ -4,7 +4,7 @@ import { css } from '@emotion/css';
 import { GiEarthAmerica } from 'react-icons/gi';
 import { Button } from '../Button';
 import type { ButtonProps } from '../Button';
-import { Countries } from '../../Constans';
+import { Countries } from '../../constants';
 import { List } from '../List';
 import type { ListPropsExtended } from '../List';
 import { Error } from '../Error';

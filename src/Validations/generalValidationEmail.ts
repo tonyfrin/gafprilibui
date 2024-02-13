@@ -1,5 +1,5 @@
 import { validationInput } from '../helpers';
-import { EMAIL_INPUT } from '../Constans';
+import { EMAIL_INPUT } from '../constants';
 
 export type GeneralValidationEmailProps = {
   value: string;

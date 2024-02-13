@@ -1,5 +1,5 @@
 import React from 'react';
-import { PHONE_INPUT } from '../../Constans';
+import { PHONE_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputPhoneProps = {

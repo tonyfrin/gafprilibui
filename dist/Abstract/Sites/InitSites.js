@@ -11,7 +11,7 @@ var _react = _interopRequireDefault(require("react"));
 var _fa = require("react-icons/fa");
 var _css = require("@emotion/css");
 var _Button = require("../Button");
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _List = require("../List");
 var _Error = require("../Error");
 var _Header = require("../Header");
@@ -75,8 +75,8 @@ var InitSites = function InitSites(_ref) {
   var sites = use.actions.sortByName(filteredSites, use.states.orderList) || [];
   var paginatedSites = use.actions.getPaginated(sites, use.states.currentPage, use.states.itemsPerPage);
   var items = (_paginatedSites$map = paginatedSites === null || paginatedSites === void 0 ? void 0 : paginatedSites.map(function (item) {
-    var stateCountry = _Constans.StatesCountries[0][item === null || item === void 0 ? void 0 : item.country][0][item === null || item === void 0 ? void 0 : item.state] || '';
-    var country = _Constans.Countries[0][item === null || item === void 0 ? void 0 : item.country] || '';
+    var stateCountry = _constants.StatesCountries[0][item === null || item === void 0 ? void 0 : item.country][0][item === null || item === void 0 ? void 0 : item.state] || '';
+    var country = _constants.Countries[0][item === null || item === void 0 ? void 0 : item.country] || '';
     return [item.name, item.city, stateCountry, country, /*#__PURE__*/_react["default"].createElement(ButtonUpdate, {
       id: item.id
     })];

@@ -5,14 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalValidationSelectTaxes = void 0;
 var _helpers = require("../helpers");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var generalValidationSelectTaxes = function generalValidationSelectTaxes(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
     _ref$inputId = _ref.inputId,
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
-  var validation = (0, _helpers.validationSelect)(value, "".concat(_Constans.TAXES_INPUT).concat(inputId));
+  var validation = (0, _helpers.validationSelect)(value, "".concat(_constants.TAXES_INPUT).concat(inputId));
   if (validation !== currentValid) {
     setValid(validation);
   }

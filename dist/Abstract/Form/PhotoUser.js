@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.PhotoUser = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _PhotoForm = require("./PhotoForm");
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var PhotoUser = function PhotoUser(_ref) {
   var photo = _ref.photo,
     changePhoto = _ref.changePhoto,
@@ -18,7 +18,7 @@ var PhotoUser = function PhotoUser(_ref) {
     _ref$inputId = _ref.inputId,
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_PhotoForm.PhotoForm, {
-    formId: "".concat(_Constans.PHOTO_USERS_INPUT).concat(inputId),
+    formId: "".concat(_constants.PHOTO_USERS_INPUT).concat(inputId),
     photo: photo,
     imageFormConatinerStyle: props === null || props === void 0 ? void 0 : props.imageFormConatinerStyle,
     changePhoto: changePhoto,

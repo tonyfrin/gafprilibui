@@ -1,5 +1,5 @@
 import { validationInputArray } from './index';
-import { GALLERY_IMAGE_INPUT } from '../Constans';
+import { GALLERY_IMAGE_INPUT } from '../constants';
 
 export type GeneralValidationGalleryImageProps = {
   value: string[];

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { StatesCountries, Countries } from '../../Constans';
+import { StatesCountries, Countries } from '../../constants';
 import {
   Input,
   InputName,

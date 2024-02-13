@@ -1,4 +1,4 @@
-import { DESCRIPTION_INPUT } from '../Constans';
+import { DESCRIPTION_INPUT } from '../constants';
 import { validationInputDescription } from './index';
 
 export type GeneralValidationDescriptionProps = {

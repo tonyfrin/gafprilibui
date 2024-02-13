@@ -1,5 +1,5 @@
 import { validationInput } from '../helpers';
-import { TYPE_DOCUMENT_ID_DIGIT_INPUT } from '../Constans';
+import { TYPE_DOCUMENT_ID_DIGIT_INPUT } from '../constants';
 
 export type GeneralValidationTypeDocumentIdDigitProps = {
   value: string;

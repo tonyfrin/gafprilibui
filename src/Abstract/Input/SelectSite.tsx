@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SingleValue } from 'react-select';
-import { SITE_INPUT } from '../../Constans';
+import { SITE_INPUT } from '../../constants';
 import { GsSelect, GsSelectProps } from './Input';
 
 export type SelectSiteProps = {

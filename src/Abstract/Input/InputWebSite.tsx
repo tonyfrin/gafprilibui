@@ -1,5 +1,5 @@
 import React from 'react';
-import { WEB_SITE_INPUT } from '../../Constans';
+import { WEB_SITE_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputWebSiteProps = {

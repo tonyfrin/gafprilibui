@@ -1,5 +1,5 @@
 import React from 'react';
-import { CURRENCIES_SYMBOL_INPUT } from '../../Constans';
+import { CURRENCIES_SYMBOL_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputCurrenciesSymbolProps = {

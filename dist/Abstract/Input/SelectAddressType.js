@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SelectAddressType = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _Input = require("./Input");
 var SelectAddressType = function SelectAddressType(_ref) {
   var changeAddressType = _ref.changeAddressType,
@@ -17,7 +17,7 @@ var SelectAddressType = function SelectAddressType(_ref) {
     styles: props === null || props === void 0 ? void 0 : props.styles,
     Class: props === null || props === void 0 ? void 0 : props.Class,
     options: props.options,
-    id: "".concat(_Constans.ADDRESS_TYPE_INPUT).concat(inputId),
+    id: "".concat(_constants.ADDRESS_TYPE_INPUT).concat(inputId),
     onChange: changeAddressType,
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,

@@ -1,5 +1,5 @@
 import { addClass, removeClass } from '../helpers';
-import { DISABLED, BUTTON_NEXT_INPUT } from '../Constans';
+import { DISABLED, BUTTON_NEXT_INPUT } from '../constants';
 
 export type GeneralValidationButtonNextProps = {
   validations: boolean[];

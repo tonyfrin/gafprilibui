@@ -7,7 +7,7 @@ import {
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
 import { UseErrorReturn } from './useGafpriError';
-import { TYPE_DOCUMENT_ID_ROUTE, TYPE_DOCUMENT_ID_STORAGE } from '../Constans';
+import { TYPE_DOCUMENT_ID_ROUTE, TYPE_DOCUMENT_ID_STORAGE } from '../constants';
 import {
   generalValidationButtonNext,
   generalValidationName,

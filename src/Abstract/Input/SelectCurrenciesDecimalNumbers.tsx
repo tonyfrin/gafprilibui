@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SingleValue } from 'react-select';
-import { CURRENCIES_DECIMAL_NUMBERS_INPUT } from '../../Constans';
+import { CURRENCIES_DECIMAL_NUMBERS_INPUT } from '../../constants';
 import { GsSelect, GsSelectProps } from './Input';
 
 export type SelectCurrenciesDecimalNumbersProps = {

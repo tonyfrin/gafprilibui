@@ -1,4 +1,4 @@
-import { PHOTO_DOCUMENT_ID_INPUT } from '../Constans';
+import { PHOTO_DOCUMENT_ID_INPUT } from '../constants';
 import { validationPhoto } from './index';
 
 export type GeneralValidationPhotoDocumentIdProps = {

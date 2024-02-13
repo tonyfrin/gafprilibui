@@ -1,5 +1,5 @@
 import { validationSelect } from '../helpers';
-import { ROLES_INPUT } from '../Constans';
+import { ROLES_INPUT } from '../constants';
 
 export type GeneralValidationRolesProps = {
   newValue: string;

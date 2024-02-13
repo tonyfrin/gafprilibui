@@ -1,5 +1,5 @@
 import React from 'react';
-import { ADDRESS2_INPUT } from '../../Constans';
+import { ADDRESS2_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputAddress2Props = {

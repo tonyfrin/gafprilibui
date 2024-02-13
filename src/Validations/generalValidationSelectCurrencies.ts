@@ -1,4 +1,4 @@
-import { CURRENCIES_INPUT } from '../Constans';
+import { CURRENCIES_INPUT } from '../constants';
 import { validationSelect } from '../helpers';
 
 export type GeneralValidationSelectCurrenciesProps = {

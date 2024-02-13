@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SelectRoles = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _Input = require("./Input");
 var SelectRoles = function SelectRoles(_ref) {
   var changeRoles = _ref.changeRoles,
@@ -17,7 +17,7 @@ var SelectRoles = function SelectRoles(_ref) {
     styles: props === null || props === void 0 ? void 0 : props.styles,
     Class: props === null || props === void 0 ? void 0 : props.Class,
     options: props.options,
-    id: "".concat(_Constans.ROLES_INPUT).concat(inputId),
+    id: "".concat(_constants.ROLES_INPUT).concat(inputId),
     onChange: changeRoles,
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,

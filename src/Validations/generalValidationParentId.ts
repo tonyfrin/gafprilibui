@@ -1,4 +1,4 @@
-import { PARENT_ID_INPUT } from '../Constans';
+import { PARENT_ID_INPUT } from '../constants';
 import { validationSelect } from '../helpers';
 
 export type GeneralValidationParentIdProps = {

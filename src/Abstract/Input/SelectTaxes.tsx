@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SingleValue } from 'react-select';
-import { TAXES_INPUT } from '../../Constans';
+import { TAXES_INPUT } from '../../constants';
 import { GsSelect, GsSelectProps } from './Input';
 
 export type SelectTaxesProps = {

@@ -1,4 +1,4 @@
-import { SKU_INPUT } from '../Constans';
+import { SKU_INPUT } from '../constants';
 import { validationInputSku } from './index';
 
 export type GeneralValidationSkuProps = {

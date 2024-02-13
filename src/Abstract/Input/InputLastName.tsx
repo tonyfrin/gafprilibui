@@ -1,5 +1,5 @@
 import React from 'react';
-import { LAST_NAME_INPUT } from '../../Constans';
+import { LAST_NAME_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputLastNameProps = {

@@ -27,7 +27,7 @@ import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';
 import type { UseSitesReturn, UseCurrenciesReturn } from '../../states';
-import { StatesCountries, Countries } from '../../Constans';
+import { StatesCountries, Countries } from '../../constants';
 
 export type SitesFormProps = {
   use: UseSitesReturn;

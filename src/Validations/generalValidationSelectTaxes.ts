@@ -1,5 +1,5 @@
 import { validationSelect } from '../helpers';
-import { TAXES_INPUT } from '../Constans';
+import { TAXES_INPUT } from '../constants';
 
 export type GeneralValidationSelectTaxesProps = {
   value: string;

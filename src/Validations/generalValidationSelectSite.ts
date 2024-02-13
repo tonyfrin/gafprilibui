@@ -1,4 +1,4 @@
-import { SITE_INPUT } from '../Constans';
+import { SITE_INPUT } from '../constants';
 import { validationSelect } from '../helpers';
 
 export type GeneralValidationSelectSiteProps = {

@@ -1,4 +1,4 @@
-import { PHOTO_CATEGORY_INPUT } from '../Constans';
+import { PHOTO_CATEGORY_INPUT } from '../constants';
 import { validationPhoto } from './index';
 
 export type GeneralValidationPhotoCategoryProps = {

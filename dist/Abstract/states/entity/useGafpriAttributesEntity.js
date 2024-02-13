@@ -13,7 +13,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = _interopRequireWildcard(require("react"));
 var _Validations = require("../../../Validations");
 var _Changes = require("../../../Changes");
-var _Constans = require("../../../Constans");
+var _constants = require("../../../constants");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -58,7 +58,7 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     typeDocumentIdIdDefault = _useState16[0],
     setTypeDocumentIdIdDefault = _useState16[1];
   var typeDocumentIdIdOptions = ((_useTypeDocumentId$st = useTypeDocumentId.states.typeDocumentId.data) === null || _useTypeDocumentId$st === void 0 ? void 0 : (_useTypeDocumentId$st2 = _useTypeDocumentId$st.items) === null || _useTypeDocumentId$st2 === void 0 ? void 0 : _useTypeDocumentId$st2.map(function (item) {
-    var countryName = _Constans.Countries[0][item.country];
+    var countryName = _constants.Countries[0][item.country];
     var label = "".concat(item.name, " (").concat(countryName, ")");
     return {
       value: "".concat(item.id),
@@ -139,7 +139,7 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     _useState40 = (0, _slicedToArray2["default"])(_useState39, 2),
     address2Valid = _useState40[0],
     setAddress2Valid = _useState40[1];
-  var _useState41 = (0, _react.useState)(_Constans.CITY_DEFAULT.value),
+  var _useState41 = (0, _react.useState)(_constants.CITY_DEFAULT.value),
     _useState42 = (0, _slicedToArray2["default"])(_useState41, 2),
     city = _useState42[0],
     setCity = _useState42[1];
@@ -147,7 +147,7 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     _useState44 = (0, _slicedToArray2["default"])(_useState43, 2),
     cityValid = _useState44[0],
     setCityValid = _useState44[1];
-  var _useState45 = (0, _react.useState)(_Constans.CITY_DEFAULT),
+  var _useState45 = (0, _react.useState)(_constants.CITY_DEFAULT),
     _useState46 = (0, _slicedToArray2["default"])(_useState45, 2),
     cityDefault = _useState46[0],
     setCityDefault = _useState46[1];
@@ -155,7 +155,7 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     _useState48 = (0, _slicedToArray2["default"])(_useState47, 2),
     cityOptions = _useState48[0],
     setCityOptions = _useState48[1];
-  var _useState49 = (0, _react.useState)(_Constans.STATE_COUNTRY_DEFAULT.value),
+  var _useState49 = (0, _react.useState)(_constants.STATE_COUNTRY_DEFAULT.value),
     _useState50 = (0, _slicedToArray2["default"])(_useState49, 2),
     state = _useState50[0],
     setStateCountry = _useState50[1];
@@ -163,7 +163,7 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     _useState52 = (0, _slicedToArray2["default"])(_useState51, 2),
     stateCountryValid = _useState52[0],
     setStateCountryValid = _useState52[1];
-  var _useState53 = (0, _react.useState)(_Constans.STATE_COUNTRY_DEFAULT),
+  var _useState53 = (0, _react.useState)(_constants.STATE_COUNTRY_DEFAULT),
     _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
     stateCountryDefault = _useState54[0],
     setStateCountryDefault = _useState54[1];
@@ -171,7 +171,7 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     _useState56 = (0, _slicedToArray2["default"])(_useState55, 2),
     stateCountryOptions = _useState56[0],
     setStateCountryOptions = _useState56[1];
-  var _useState57 = (0, _react.useState)(_Constans.COUNTRY_DEFAULT.value),
+  var _useState57 = (0, _react.useState)(_constants.COUNTRY_DEFAULT.value),
     _useState58 = (0, _slicedToArray2["default"])(_useState57, 2),
     country = _useState58[0],
     setCountry = _useState58[1];
@@ -179,12 +179,12 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     _useState60 = (0, _slicedToArray2["default"])(_useState59, 2),
     countryValid = _useState60[0],
     setCountryValid = _useState60[1];
-  var _useState61 = (0, _react.useState)(_Constans.COUNTRY_DEFAULT),
+  var _useState61 = (0, _react.useState)(_constants.COUNTRY_DEFAULT),
     _useState62 = (0, _slicedToArray2["default"])(_useState61, 2),
     countryDefault = _useState62[0],
     setCountryDefault = _useState62[1];
   var countryOptions = [];
-  _Constans.Countries.forEach(function (item) {
+  _constants.Countries.forEach(function (item) {
     Object.keys(item).forEach(function (key) {
       countryOptions.push({
         value: key,
@@ -334,16 +334,16 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     setAddress1Valid(false);
     setAddress2('');
     setAddress2Valid(true);
-    setCity(_Constans.CITY_DEFAULT.value);
+    setCity(_constants.CITY_DEFAULT.value);
     setCityValid(true);
-    setCityDefault(_Constans.CITY_DEFAULT);
-    setStateCountry(_Constans.STATE_COUNTRY_DEFAULT.value);
+    setCityDefault(_constants.CITY_DEFAULT);
+    setStateCountry(_constants.STATE_COUNTRY_DEFAULT.value);
     setStateCountryValid(true);
-    setStateCountryDefault(_Constans.STATE_COUNTRY_DEFAULT);
+    setStateCountryDefault(_constants.STATE_COUNTRY_DEFAULT);
     setStateCountryOptions([]);
-    setCountry(_Constans.COUNTRY_DEFAULT.value);
+    setCountry(_constants.COUNTRY_DEFAULT.value);
     setCountryValid(true);
-    setCountryDefault(_Constans.COUNTRY_DEFAULT);
+    setCountryDefault(_constants.COUNTRY_DEFAULT);
     setPostCode('');
     setPostCodeValid(true);
     setEmail('');

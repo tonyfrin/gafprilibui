@@ -1,5 +1,5 @@
 import { validationSelect } from '../helpers';
-import { TYPE_DOCUMENT_ID_ID_INPUT } from '../Constans';
+import { TYPE_DOCUMENT_ID_ID_INPUT } from '../constants';
 
 export type GeneralValidationTypeDocumentIdIdProps = {
   value: string;

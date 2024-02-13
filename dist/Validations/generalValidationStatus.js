@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.generalValidationStatus = void 0;
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _helpers = require("../helpers");
 var generalValidationStatus = function generalValidationStatus(_ref) {
   var newValue = _ref.value,
@@ -12,7 +12,7 @@ var generalValidationStatus = function generalValidationStatus(_ref) {
     currentValid = _ref.currentValid,
     _ref$inputId = _ref.inputId,
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
-  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_Constans.STATUS_INPUT).concat(inputId));
+  var valid = (0, _helpers.validationSelect)(newValue, "".concat(_constants.STATUS_INPUT).concat(inputId));
   if (valid !== currentValid) {
     setValid(valid);
   }

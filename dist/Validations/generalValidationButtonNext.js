@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalValidationButtonNext = void 0;
 var _helpers = require("../helpers");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var generalValidationButtonNext = function generalValidationButtonNext(_ref) {
   var validations = _ref.validations,
     inputId = _ref.inputId;
@@ -13,9 +13,9 @@ var generalValidationButtonNext = function generalValidationButtonNext(_ref) {
     return validation;
   });
   if (isAllValid) {
-    (0, _helpers.removeClass)("".concat(_Constans.BUTTON_NEXT_INPUT).concat(inputId), _Constans.DISABLED);
+    (0, _helpers.removeClass)("".concat(_constants.BUTTON_NEXT_INPUT).concat(inputId), _constants.DISABLED);
   } else {
-    (0, _helpers.addClass)("".concat(_Constans.BUTTON_NEXT_INPUT).concat(inputId), _Constans.DISABLED);
+    (0, _helpers.addClass)("".concat(_constants.BUTTON_NEXT_INPUT).concat(inputId), _constants.DISABLED);
   }
 };
 exports.generalValidationButtonNext = generalValidationButtonNext;

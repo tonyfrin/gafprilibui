@@ -7,7 +7,7 @@ import {
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { UseErrorReturn } from './useGafpriError';
-import { CURRENCIES_STORAGE, CURRENCIES_ROUTE } from '../Constans';
+import { CURRENCIES_STORAGE, CURRENCIES_ROUTE } from '../constants';
 import {
   generalValidationName,
   generalValidationCurrenciesSymbol,

@@ -10,7 +10,7 @@ import { Error } from '../Error';
 import type { ErrorProps } from '../Error';
 import type { Box1Props } from '../Box';
 import { css } from '@emotion/css';
-import { BUTTON_NEXT_INPUT } from '../../Constans';
+import { BUTTON_NEXT_INPUT } from '../../constants';
 
 const defaultTitleContainerStyle = css`
   margin-top: 22px;

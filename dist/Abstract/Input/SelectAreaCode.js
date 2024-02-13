@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SelectAreaCode = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _Input = require("./Input");
 var SelectAreaCode = function SelectAreaCode(_ref) {
   var changeAreaCode = _ref.changeAreaCode,
@@ -17,7 +17,7 @@ var SelectAreaCode = function SelectAreaCode(_ref) {
     styles: props === null || props === void 0 ? void 0 : props.styles,
     Class: props === null || props === void 0 ? void 0 : props.Class,
     options: props.options,
-    id: "".concat(_Constans.AREA_CODE_INPUT).concat(inputId),
+    id: "".concat(_constants.AREA_CODE_INPUT).concat(inputId),
     onChange: changeAreaCode,
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,

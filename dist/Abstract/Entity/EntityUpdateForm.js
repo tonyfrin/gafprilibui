@@ -10,7 +10,7 @@ var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends")
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
 var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Button = require("../Button");
@@ -143,8 +143,8 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     var itemAddress = item;
     var id = itemAddress.id || 0;
     var type = itemAddress.type === 'bill' ? 'Facturación' : itemAddress.type === 'shipping' ? 'Envío' : '';
-    var stateCountry = _Constans.StatesCountries[0][itemAddress === null || itemAddress === void 0 ? void 0 : itemAddress.country][0][itemAddress === null || itemAddress === void 0 ? void 0 : itemAddress.state] || '';
-    var country = _Constans.Countries[0][itemAddress === null || itemAddress === void 0 ? void 0 : itemAddress.country] || '';
+    var stateCountry = _constants.StatesCountries[0][itemAddress === null || itemAddress === void 0 ? void 0 : itemAddress.country][0][itemAddress === null || itemAddress === void 0 ? void 0 : itemAddress.state] || '';
+    var country = _constants.Countries[0][itemAddress === null || itemAddress === void 0 ? void 0 : itemAddress.country] || '';
     if (itemAddress.type !== 'bill') {
       return [type, itemAddress.address1, itemAddress.city, stateCountry, country, /*#__PURE__*/_react["default"].createElement(ButtonUpdate, {
         id: id
@@ -189,7 +189,7 @@ var EntityUpdateForm = function EntityUpdateForm(_ref) {
     var itemDocument = item;
     var id = itemDocument.id || 0;
     var type = (_itemDocument$typeDoc = itemDocument.typeDocumentId) === null || _itemDocument$typeDoc === void 0 ? void 0 : _itemDocument$typeDoc.name;
-    var country = (_itemDocument$typeDoc2 = itemDocument.typeDocumentId) !== null && _itemDocument$typeDoc2 !== void 0 && _itemDocument$typeDoc2.country ? _Constans.Countries[0][itemDocument.typeDocumentId.country] : '';
+    var country = (_itemDocument$typeDoc2 = itemDocument.typeDocumentId) !== null && _itemDocument$typeDoc2 !== void 0 && _itemDocument$typeDoc2.country ? _constants.Countries[0][itemDocument.typeDocumentId.country] : '';
     var number = itemDocument.index !== null ? "".concat(itemDocument.index, "-").concat(itemDocument.digit) : "".concat(itemDocument.digit);
     return [type, country, number, /*#__PURE__*/_react["default"].createElement(ButtonActionsDocument, {
       id: id

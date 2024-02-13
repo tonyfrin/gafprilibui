@@ -1,5 +1,5 @@
 import React from 'react';
-import { BUTTON_NEXT_INPUT } from '../../Constans';
+import { BUTTON_NEXT_INPUT } from '../../constants';
 import { Button } from './Button';
 import type { ButtonProps } from './Button';
 

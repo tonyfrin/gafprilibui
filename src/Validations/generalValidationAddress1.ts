@@ -1,4 +1,4 @@
-import { ADDRESS1_INPUT } from '../Constans';
+import { ADDRESS1_INPUT } from '../constants';
 import { validationInputAddress } from './index';
 
 export type GeneralValidationAddress1Props = {

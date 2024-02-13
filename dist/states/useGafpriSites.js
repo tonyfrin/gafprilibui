@@ -13,7 +13,7 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _Context = require("../Context");
 var _Validations = require("../Validations");
 var _Changes = require("../Changes");
@@ -111,7 +111,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState34 = (0, _slicedToArray2["default"])(_useState33, 2),
     address2Valid = _useState34[0],
     setAddress2Valid = _useState34[1];
-  var _useState35 = (0, _react.useState)(_Constans.CITY_DEFAULT.value),
+  var _useState35 = (0, _react.useState)(_constants.CITY_DEFAULT.value),
     _useState36 = (0, _slicedToArray2["default"])(_useState35, 2),
     city = _useState36[0],
     setCity = _useState36[1];
@@ -119,7 +119,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState38 = (0, _slicedToArray2["default"])(_useState37, 2),
     cityValid = _useState38[0],
     setCityValid = _useState38[1];
-  var _useState39 = (0, _react.useState)(_Constans.CITY_DEFAULT),
+  var _useState39 = (0, _react.useState)(_constants.CITY_DEFAULT),
     _useState40 = (0, _slicedToArray2["default"])(_useState39, 2),
     cityDefault = _useState40[0],
     setCityDefault = _useState40[1];
@@ -127,7 +127,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState42 = (0, _slicedToArray2["default"])(_useState41, 2),
     cityOptions = _useState42[0],
     setCityOptions = _useState42[1];
-  var _useState43 = (0, _react.useState)(_Constans.STATE_COUNTRY_DEFAULT.value),
+  var _useState43 = (0, _react.useState)(_constants.STATE_COUNTRY_DEFAULT.value),
     _useState44 = (0, _slicedToArray2["default"])(_useState43, 2),
     state = _useState44[0],
     setStateCountry = _useState44[1];
@@ -135,7 +135,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState46 = (0, _slicedToArray2["default"])(_useState45, 2),
     stateCountryValid = _useState46[0],
     setStateCountryValid = _useState46[1];
-  var _useState47 = (0, _react.useState)(_Constans.STATE_COUNTRY_DEFAULT),
+  var _useState47 = (0, _react.useState)(_constants.STATE_COUNTRY_DEFAULT),
     _useState48 = (0, _slicedToArray2["default"])(_useState47, 2),
     stateCountryDefault = _useState48[0],
     setStateCountryDefault = _useState48[1];
@@ -143,7 +143,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState50 = (0, _slicedToArray2["default"])(_useState49, 2),
     stateCountryOptions = _useState50[0],
     setStateCountryOptions = _useState50[1];
-  var _useState51 = (0, _react.useState)(_Constans.COUNTRY_DEFAULT.value),
+  var _useState51 = (0, _react.useState)(_constants.COUNTRY_DEFAULT.value),
     _useState52 = (0, _slicedToArray2["default"])(_useState51, 2),
     country = _useState52[0],
     setCountry = _useState52[1];
@@ -151,12 +151,12 @@ var useGafpriSites = function useGafpriSites(_ref) {
     _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
     countryValid = _useState54[0],
     setCountryValid = _useState54[1];
-  var _useState55 = (0, _react.useState)(_Constans.COUNTRY_DEFAULT),
+  var _useState55 = (0, _react.useState)(_constants.COUNTRY_DEFAULT),
     _useState56 = (0, _slicedToArray2["default"])(_useState55, 2),
     countryDefault = _useState56[0],
     setCountryDefault = _useState56[1];
   var countryOptions = [];
-  _Constans.Countries.forEach(function (item) {
+  _constants.Countries.forEach(function (item) {
     Object.keys(item).forEach(function (key) {
       countryOptions.push({
         value: key,
@@ -320,7 +320,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     setHostValid = _useState104[1];
   var _useState105 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)(_Constans.SITES_STORAGE, null)
+        items: (0, _Context.getItem)(_constants.SITES_STORAGE, null)
       }
     }),
     _useState106 = (0, _slicedToArray2["default"])(_useState105, 2),
@@ -360,15 +360,15 @@ var useGafpriSites = function useGafpriSites(_ref) {
     setAddress1Valid(false);
     setAddress2('');
     setAddress2Valid(true);
-    setCity(_Constans.CITY_DEFAULT.value);
+    setCity(_constants.CITY_DEFAULT.value);
     setCityValid(true);
-    setCityDefault(_Constans.CITY_DEFAULT);
-    setStateCountry(_Constans.STATE_COUNTRY_DEFAULT.value);
+    setCityDefault(_constants.CITY_DEFAULT);
+    setStateCountry(_constants.STATE_COUNTRY_DEFAULT.value);
     setStateCountryValid(false);
-    setStateCountryDefault(_Constans.STATE_COUNTRY_DEFAULT);
-    setCountry(_Constans.COUNTRY_DEFAULT.value);
+    setStateCountryDefault(_constants.STATE_COUNTRY_DEFAULT);
+    setCountry(_constants.COUNTRY_DEFAULT.value);
     setCountryValid(true);
-    setCountryDefault(_Constans.COUNTRY_DEFAULT);
+    setCountryDefault(_constants.COUNTRY_DEFAULT);
     setPostCode('');
     setPostCodeValid(true);
     setEmail('');
@@ -656,7 +656,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)(_Constans.SITES_STORAGE, newData.data.items);
+    (0, _Context.saveItem)(_constants.SITES_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setSites(newData);
@@ -691,7 +691,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
               if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initRoute: _Constans.SITES_ROUTE,
+                  initRoute: _constants.SITES_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -805,7 +805,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initRoute: _Constans.SITES_ROUTE,
+        initRoute: _constants.SITES_ROUTE,
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -855,7 +855,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_Constans.SITES_ROUTE, "/").concat(siteId),
+        initRoute: "".concat(_constants.SITES_ROUTE, "/").concat(siteId),
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -870,7 +870,7 @@ var useGafpriSites = function useGafpriSites(_ref) {
     if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initRoute: "".concat(_Constans.SITES_ROUTE, "/").concat(id),
+        initRoute: "".concat(_constants.SITES_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

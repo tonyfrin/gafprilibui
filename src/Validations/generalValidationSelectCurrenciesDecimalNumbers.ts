@@ -1,4 +1,4 @@
-import { CURRENCIES_DECIMAL_NUMBERS_INPUT } from '../Constans';
+import { CURRENCIES_DECIMAL_NUMBERS_INPUT } from '../constants';
 import { validationSelect } from '../helpers';
 
 export type GeneralValidationSelectCurrenciesDecimalNumbersProps = {

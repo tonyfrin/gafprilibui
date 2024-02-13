@@ -4,10 +4,47 @@ import {
   addClass,
   validationHidden,
 } from '../helpers';
-import { ALERT } from '../Constans';
+import { ALERT } from '../constants';
 
 export type ValidationInput = {
   value: string;
+  currentValid: boolean;
+  inputId: string;
+  setValid: (value: boolean) => void;
+  required?: boolean;
+};
+
+export type ValidationInputNumbersProps = {
+  value: string | number;
+  currentValid: boolean;
+  inputId: string;
+  setValid: (value: boolean) => void;
+  required?: boolean;
+};
+
+export interface GeneralAttribute {
+  name: string;
+  value: string;
+}
+
+export type ValidationGeneralAttributesProps = {
+  value: GeneralAttribute[];
+  currentValid: boolean;
+  inputId: string;
+  setValid: (value: boolean) => void;
+  required?: boolean;
+};
+
+export type ValidationGeneralLinkProps = {
+  value: string;
+  currentValid: boolean;
+  inputId: string;
+  setValid: (value: boolean) => void;
+  required?: boolean;
+};
+
+export type ValidationStringArrayProps = {
+  value: string[];
   currentValid: boolean;
   inputId: string;
   setValid: (value: boolean) => void;
@@ -174,6 +211,218 @@ export const validationInputArray = (
   return allValid;
 };
 
+export const validatePositiveNumber = (
+  value: string | number,
+  inputId: string,
+  required = false
+): boolean => {
+  const numericValue = typeof value === 'string' ? parseFloat(value) : value;
+  const isNumber =
+    typeof numericValue === 'number' && !Number.isNaN(numericValue);
+  const isPositive = isNumber ? numericValue >= 0 : false;
+
+  if (
+    required &&
+    (!isPositive || value === '' || value === null || value === undefined)
+  ) {
+    addClass(inputId, ALERT);
+    return false;
+  }
+
+  if (value !== '' && isPositive) {
+    removeClass(inputId, ALERT);
+    return true;
+  }
+
+  if (!required && (value === '' || value === null || value === undefined)) {
+    removeClass(inputId, ALERT);
+    return true;
+  }
+
+  addClass(inputId, ALERT);
+  return false;
+};
+
+export const validationInputNumbers = ({
+  value,
+  currentValid,
+  inputId,
+  setValid,
+  required = true,
+}: ValidationInputNumbersProps): boolean => {
+  const valid = validatePositiveNumber(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export const validateNumberWithValue = (
+  value: string | number,
+  inputId: string,
+  required = false
+): boolean => {
+  const numericValue = typeof value === 'string' ? parseInt(value, 10) : value;
+  const isNumber =
+    typeof numericValue === 'number' && !Number.isNaN(numericValue);
+  const isPositive = isNumber ? numericValue > 0 : false;
+
+  if (
+    required &&
+    (!isPositive || value === '' || value === null || value === undefined)
+  ) {
+    addClass(inputId, ALERT);
+    return false;
+  }
+
+  if (value !== '' && isPositive) {
+    removeClass(inputId, ALERT);
+    return true;
+  }
+
+  if (!required && (value === '' || value === null || value === undefined)) {
+    removeClass(inputId, ALERT);
+    return true;
+  }
+
+  addClass(inputId, ALERT);
+  return false;
+};
+
+export const validationInputNumbersWithValue = ({
+  value,
+  currentValid,
+  inputId,
+  setValid,
+  required = true,
+}: ValidationInputNumbersProps): boolean => {
+  const valid = validateNumberWithValue(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export function validateGeneralAttributes(
+  obj: GeneralAttribute[],
+  inputId: string,
+  required = false
+): boolean {
+  if (required && (!obj || !Array.isArray(obj))) {
+    addClass(inputId, ALERT);
+    return false;
+  }
+
+  if (obj && obj.length) {
+    /* eslint-disable no-plusplus */
+    for (let i = 0; i < obj.length; i++) {
+      const attribute = obj[i];
+      if (
+        !attribute ||
+        typeof attribute !== 'object' ||
+        !('name' in attribute) ||
+        !('value' in attribute)
+      ) {
+        addClass(inputId, ALERT);
+        return false;
+      }
+    }
+  }
+
+  removeClass(inputId, ALERT);
+  return true;
+}
+
+export const validationGeneralAttributes = ({
+  value,
+  currentValid,
+  inputId,
+  setValid,
+  required = false,
+}: ValidationGeneralAttributesProps): boolean => {
+  const valid = validateGeneralAttributes(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export function incorrectLinkDetector(
+  value: string | undefined,
+  inputId: string,
+  required = false
+): boolean {
+  // Expresión regular que busca caracteres especiales
+  const regexCaracteresEspeciales = /[!#$%^&*()+{}[\]:;<>,?~\\/]/;
+
+  // Expresión regular que busca letras mayúsculas, minúsculas con tildes
+  const regexLetrasConTildes = /[A-ZÁÉÍÓÚÜáéíóúü]/;
+
+  if (
+    (required &&
+      (!value ||
+        regexCaracteresEspeciales.test(value) ||
+        regexLetrasConTildes.test(value))) ||
+    (!required &&
+      value &&
+      (regexCaracteresEspeciales.test(value) ||
+        regexLetrasConTildes.test(value)))
+  ) {
+    addClass(inputId, ALERT);
+    return false;
+  }
+
+  removeClass(inputId, ALERT);
+  return true;
+}
+
+export const validationLink = ({
+  value,
+  currentValid,
+  inputId,
+  setValid,
+  required = false,
+}: ValidationGeneralLinkProps): boolean => {
+  const valid = incorrectLinkDetector(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
+export function validateStringArray(
+  arr: string[],
+  inputId: string,
+  required = false
+): boolean {
+  if ((required && (!arr || !Array.isArray(arr))) || arr.length === 0) {
+    addClass(inputId, ALERT);
+    return false;
+  }
+
+  if (arr && !arr.every((value) => typeof value === 'string')) {
+    addClass(inputId, ALERT);
+    return false;
+  }
+
+  removeClass(inputId, ALERT);
+  return true;
+}
+
+export const validationStringArray = ({
+  value,
+  currentValid,
+  inputId,
+  setValid,
+  required = false,
+}: ValidationStringArrayProps): boolean => {
+  const valid = validateStringArray(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+
 export { generalValidationDescription } from './generalValidationDescription';
 export type { GeneralValidationDescriptionProps } from './generalValidationDescription';
 export { generalValidationName } from './generalValidationName';
@@ -250,3 +499,43 @@ export { generalValidationRoles } from './generalValidationRoles';
 export type { GeneralValidationRolesProps } from './generalValidationRoles';
 export { generalValidationPhotoUsers } from './generalValidationPhotoUsers';
 export type { GeneralValidationPhotoUsersProps } from './generalValidationPhotoUsers';
+export { generalValidationNote } from './generalValidationNote';
+export type { GeneralValidationNoteProps } from './generalValidationNote';
+export { generalValidationPublicName } from './generalValidationPublicName';
+export type { GeneralValidationPublicNameProps } from './generalValidationPublicName';
+export { generalValidationSalesPrice } from './generalValidationSalesPrice';
+export type { GeneralValidationSalesPriceProps } from './generalValidationSalesPrice';
+export { generalValidationOfferPrice } from './generalValidationOfferPrice';
+export type { GeneralValidationOfferPriceProps } from './generalValidationOfferPrice';
+export { generalValidationCost } from './generalValidationCost';
+export type { GeneralValidationCostProps } from './generalValidationCost';
+export { generalValidationTaxStatus } from './generalValidationTaxStatus';
+export type { GeneralValidationTaxStatusProps } from './generalValidationTaxStatus';
+export { generalValidationTaxClass } from './generalValidationTaxClass';
+export type { GeneralValidationTaxClassProps } from './generalValidationTaxClass';
+export { generalValidationCategoryId } from './generalValidationCategoryId';
+export type { GeneralValidationCategoryIdProps } from './generalValidationCategoryId';
+export { generalValidationPackageType } from './generalValidationPackageType';
+export type { GeneralValidationPackageTypeProps } from './generalValidationPackageType';
+export { generalValidationQtyPack } from './generalValidationQtyPack';
+export type { GeneralValidationQtyPackProps } from './generalValidationQtyPack';
+export { generalValidationUndCbm } from './generalValidationUndCbm';
+export type { GeneralValidationUndCbmProps } from './generalValidationUndCbm';
+export { generalValidationProductAttributes } from './generalValidationProductAttributes';
+export type { GeneralValidationProductAttributesProps } from './generalValidationProductAttributes';
+export { generalValidationPermanentLink } from './generalValidationPermanentLink';
+export type { GeneralValidationPermanentLinkProps } from './generalValidationPermanentLink';
+export { generalValidationVisibility } from './generalValidationVisibility';
+export type { GeneralValidationVisibilityProps } from './generalValidationVisibility';
+export { generalValidationHeight } from './generalValidationHeight';
+export type { GeneralValidationHeightProps } from './generalValidationHeight';
+export { generalValidationWeight } from './generalValidationWeight';
+export type { GeneralValidationWeightProps } from './generalValidationWeight';
+export { generalValidationWidth } from './generalValidationWidth';
+export type { GeneralValidationWidthProps } from './generalValidationWidth';
+export { generalValidationLength } from './generalValidationLength';
+export type { GeneralValidationLengthProps } from './generalValidationLength';
+export { generalValidationCatalogOrder } from './generalValidationCatalogOrder';
+export type { GeneralValidationCatalogOrderProps } from './generalValidationCatalogOrder';
+export { generalValidationTags } from './generalValidationTags';
+export type { GeneralValidationTagsProps } from './generalValidationTags';

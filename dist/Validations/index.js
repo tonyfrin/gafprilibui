@@ -1,5 +1,6 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -33,6 +34,24 @@ Object.defineProperty(exports, "generalValidationButtonNext", {
     return _generalValidationButtonNext.generalValidationButtonNext;
   }
 });
+Object.defineProperty(exports, "generalValidationCatalogOrder", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationCatalogOrder.generalValidationCatalogOrder;
+  }
+});
+Object.defineProperty(exports, "generalValidationCategoryId", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationCategoryId.generalValidationCategoryId;
+  }
+});
+Object.defineProperty(exports, "generalValidationCost", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationCost.generalValidationCost;
+  }
+});
 Object.defineProperty(exports, "generalValidationCurrenciesSymbol", {
   enumerable: true,
   get: function get() {
@@ -57,16 +76,46 @@ Object.defineProperty(exports, "generalValidationGalleryImage", {
     return _generalValidationGalleryImage.generalValidationGalleryImage;
   }
 });
+Object.defineProperty(exports, "generalValidationHeight", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationHeight.generalValidationHeight;
+  }
+});
 Object.defineProperty(exports, "generalValidationLastName", {
   enumerable: true,
   get: function get() {
     return _generalValidationLastName.generalValidationLastName;
   }
 });
+Object.defineProperty(exports, "generalValidationLength", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationLength.generalValidationLength;
+  }
+});
 Object.defineProperty(exports, "generalValidationName", {
   enumerable: true,
   get: function get() {
     return _generalValidationName.generalValidationName;
+  }
+});
+Object.defineProperty(exports, "generalValidationNote", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationNote.generalValidationNote;
+  }
+});
+Object.defineProperty(exports, "generalValidationOfferPrice", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationOfferPrice.generalValidationOfferPrice;
+  }
+});
+Object.defineProperty(exports, "generalValidationPackageType", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPackageType.generalValidationPackageType;
   }
 });
 Object.defineProperty(exports, "generalValidationParentId", {
@@ -79,6 +128,12 @@ Object.defineProperty(exports, "generalValidationPassword", {
   enumerable: true,
   get: function get() {
     return _generalValidationPassword.generalValidationPassword;
+  }
+});
+Object.defineProperty(exports, "generalValidationPermanentLink", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPermanentLink.generalValidationPermanentLink;
   }
 });
 Object.defineProperty(exports, "generalValidationPhone", {
@@ -118,10 +173,34 @@ Object.defineProperty(exports, "generalValidationPostCode", {
     return _generalValidationPostCode.generalValidationPostCode;
   }
 });
+Object.defineProperty(exports, "generalValidationProductAttributes", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationProductAttributes.generalValidationProductAttributes;
+  }
+});
+Object.defineProperty(exports, "generalValidationPublicName", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationPublicName.generalValidationPublicName;
+  }
+});
+Object.defineProperty(exports, "generalValidationQtyPack", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationQtyPack.generalValidationQtyPack;
+  }
+});
 Object.defineProperty(exports, "generalValidationRoles", {
   enumerable: true,
   get: function get() {
     return _generalValidationRoles.generalValidationRoles;
+  }
+});
+Object.defineProperty(exports, "generalValidationSalesPrice", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationSalesPrice.generalValidationSalesPrice;
   }
 });
 Object.defineProperty(exports, "generalValidationSelectCity", {
@@ -196,6 +275,24 @@ Object.defineProperty(exports, "generalValidationStatus", {
     return _generalValidationStatus.generalValidationStatus;
   }
 });
+Object.defineProperty(exports, "generalValidationTags", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationTags.generalValidationTags;
+  }
+});
+Object.defineProperty(exports, "generalValidationTaxClass", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationTaxClass.generalValidationTaxClass;
+  }
+});
+Object.defineProperty(exports, "generalValidationTaxStatus", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationTaxStatus.generalValidationTaxStatus;
+  }
+});
 Object.defineProperty(exports, "generalValidationType", {
   enumerable: true,
   get: function get() {
@@ -220,10 +317,22 @@ Object.defineProperty(exports, "generalValidationTypeDocumentIdIndex", {
     return _generalValidationTypeDocumentIdIndex.generalValidationTypeDocumentIdIndex;
   }
 });
+Object.defineProperty(exports, "generalValidationUndCbm", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationUndCbm.generalValidationUndCbm;
+  }
+});
 Object.defineProperty(exports, "generalValidationUserName", {
   enumerable: true,
   get: function get() {
     return _generalValidationUserName.generalValidationUserName;
+  }
+});
+Object.defineProperty(exports, "generalValidationVisibility", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationVisibility.generalValidationVisibility;
   }
 });
 Object.defineProperty(exports, "generalValidationWebSite", {
@@ -232,9 +341,26 @@ Object.defineProperty(exports, "generalValidationWebSite", {
     return _generalValidationWebSite.generalValidationWebSite;
   }
 });
-exports.validationPhoto = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = void 0;
+Object.defineProperty(exports, "generalValidationWeight", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationWeight.generalValidationWeight;
+  }
+});
+Object.defineProperty(exports, "generalValidationWidth", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationWidth.generalValidationWidth;
+  }
+});
+exports.incorrectLinkDetector = incorrectLinkDetector;
+exports.validateGeneralAttributes = validateGeneralAttributes;
+exports.validatePositiveNumber = exports.validateNumberWithValue = void 0;
+exports.validateStringArray = validateStringArray;
+exports.validationStringArray = exports.validationPhoto = exports.validationLink = exports.validationInputSku = exports.validationInputSinglePassword = exports.validationInputPassword = exports.validationInputNumbersWithValue = exports.validationInputNumbers = exports.validationInputNameLastNameUserName = exports.validationInputDescription = exports.validationInputArray = exports.validationInputAddress = exports.validationGeneralAttributes = void 0;
+var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 var _helpers = require("../helpers");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _generalValidationDescription = require("./generalValidationDescription");
 var _generalValidationName = require("./generalValidationName");
 var _generalValidationLastName = require("./generalValidationLastName");
@@ -273,6 +399,26 @@ var _generalValidationWebSite = require("./generalValidationWebSite");
 var _generalValidationAreaCode = require("./generalValidationAreaCode");
 var _generalValidationRoles = require("./generalValidationRoles");
 var _generalValidationPhotoUsers = require("./generalValidationPhotoUsers");
+var _generalValidationNote = require("./generalValidationNote");
+var _generalValidationPublicName = require("./generalValidationPublicName");
+var _generalValidationSalesPrice = require("./generalValidationSalesPrice");
+var _generalValidationOfferPrice = require("./generalValidationOfferPrice");
+var _generalValidationCost = require("./generalValidationCost");
+var _generalValidationTaxStatus = require("./generalValidationTaxStatus");
+var _generalValidationTaxClass = require("./generalValidationTaxClass");
+var _generalValidationCategoryId = require("./generalValidationCategoryId");
+var _generalValidationPackageType = require("./generalValidationPackageType");
+var _generalValidationQtyPack = require("./generalValidationQtyPack");
+var _generalValidationUndCbm = require("./generalValidationUndCbm");
+var _generalValidationProductAttributes = require("./generalValidationProductAttributes");
+var _generalValidationPermanentLink = require("./generalValidationPermanentLink");
+var _generalValidationVisibility = require("./generalValidationVisibility");
+var _generalValidationHeight = require("./generalValidationHeight");
+var _generalValidationWeight = require("./generalValidationWeight");
+var _generalValidationWidth = require("./generalValidationWidth");
+var _generalValidationLength = require("./generalValidationLength");
+var _generalValidationCatalogOrder = require("./generalValidationCatalogOrder");
+var _generalValidationTags = require("./generalValidationTags");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,
@@ -391,10 +537,170 @@ var validationInputArray = function validationInputArray(values, match, componen
     }
   });
   if (allValid) {
-    (0, _helpers.removeClass)(componentId, _Constans.ALERT);
+    (0, _helpers.removeClass)(componentId, _constants.ALERT);
   } else {
-    (0, _helpers.addClass)(componentId, _Constans.ALERT);
+    (0, _helpers.addClass)(componentId, _constants.ALERT);
   }
   return allValid;
 };
 exports.validationInputArray = validationInputArray;
+var validatePositiveNumber = function validatePositiveNumber(value, inputId) {
+  var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  var numericValue = typeof value === 'string' ? parseFloat(value) : value;
+  var isNumber = typeof numericValue === 'number' && !Number.isNaN(numericValue);
+  var isPositive = isNumber ? numericValue >= 0 : false;
+  if (required && (!isPositive || value === '' || value === null || value === undefined)) {
+    (0, _helpers.addClass)(inputId, _constants.ALERT);
+    return false;
+  }
+  if (value !== '' && isPositive) {
+    (0, _helpers.removeClass)(inputId, _constants.ALERT);
+    return true;
+  }
+  if (!required && (value === '' || value === null || value === undefined)) {
+    (0, _helpers.removeClass)(inputId, _constants.ALERT);
+    return true;
+  }
+  (0, _helpers.addClass)(inputId, _constants.ALERT);
+  return false;
+};
+exports.validatePositiveNumber = validatePositiveNumber;
+var validationInputNumbers = function validationInputNumbers(_ref8) {
+  var value = _ref8.value,
+    currentValid = _ref8.currentValid,
+    inputId = _ref8.inputId,
+    setValid = _ref8.setValid,
+    _ref8$required = _ref8.required,
+    required = _ref8$required === void 0 ? true : _ref8$required;
+  var valid = validatePositiveNumber(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.validationInputNumbers = validationInputNumbers;
+var validateNumberWithValue = function validateNumberWithValue(value, inputId) {
+  var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  var numericValue = typeof value === 'string' ? parseInt(value, 10) : value;
+  var isNumber = typeof numericValue === 'number' && !Number.isNaN(numericValue);
+  var isPositive = isNumber ? numericValue > 0 : false;
+  if (required && (!isPositive || value === '' || value === null || value === undefined)) {
+    (0, _helpers.addClass)(inputId, _constants.ALERT);
+    return false;
+  }
+  if (value !== '' && isPositive) {
+    (0, _helpers.removeClass)(inputId, _constants.ALERT);
+    return true;
+  }
+  if (!required && (value === '' || value === null || value === undefined)) {
+    (0, _helpers.removeClass)(inputId, _constants.ALERT);
+    return true;
+  }
+  (0, _helpers.addClass)(inputId, _constants.ALERT);
+  return false;
+};
+exports.validateNumberWithValue = validateNumberWithValue;
+var validationInputNumbersWithValue = function validationInputNumbersWithValue(_ref9) {
+  var value = _ref9.value,
+    currentValid = _ref9.currentValid,
+    inputId = _ref9.inputId,
+    setValid = _ref9.setValid,
+    _ref9$required = _ref9.required,
+    required = _ref9$required === void 0 ? true : _ref9$required;
+  var valid = validateNumberWithValue(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.validationInputNumbersWithValue = validationInputNumbersWithValue;
+function validateGeneralAttributes(obj, inputId) {
+  var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  if (required && (!obj || !Array.isArray(obj))) {
+    (0, _helpers.addClass)(inputId, _constants.ALERT);
+    return false;
+  }
+  if (obj && obj.length) {
+    /* eslint-disable no-plusplus */
+    for (var i = 0; i < obj.length; i++) {
+      var attribute = obj[i];
+      if (!attribute || (0, _typeof2["default"])(attribute) !== 'object' || !('name' in attribute) || !('value' in attribute)) {
+        (0, _helpers.addClass)(inputId, _constants.ALERT);
+        return false;
+      }
+    }
+  }
+  (0, _helpers.removeClass)(inputId, _constants.ALERT);
+  return true;
+}
+var validationGeneralAttributes = function validationGeneralAttributes(_ref10) {
+  var value = _ref10.value,
+    currentValid = _ref10.currentValid,
+    inputId = _ref10.inputId,
+    setValid = _ref10.setValid,
+    _ref10$required = _ref10.required,
+    required = _ref10$required === void 0 ? false : _ref10$required;
+  var valid = validateGeneralAttributes(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.validationGeneralAttributes = validationGeneralAttributes;
+function incorrectLinkDetector(value, inputId) {
+  var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  // Expresión regular que busca caracteres especiales
+  var regexCaracteresEspeciales = /[!#$%^&*()+{}[\]:;<>,?~\\/]/;
+
+  // Expresión regular que busca letras mayúsculas, minúsculas con tildes
+  var regexLetrasConTildes = /[A-ZÁÉÍÓÚÜáéíóúü]/;
+  if (required && (!value || regexCaracteresEspeciales.test(value) || regexLetrasConTildes.test(value)) || !required && value && (regexCaracteresEspeciales.test(value) || regexLetrasConTildes.test(value))) {
+    (0, _helpers.addClass)(inputId, _constants.ALERT);
+    return false;
+  }
+  (0, _helpers.removeClass)(inputId, _constants.ALERT);
+  return true;
+}
+var validationLink = function validationLink(_ref11) {
+  var value = _ref11.value,
+    currentValid = _ref11.currentValid,
+    inputId = _ref11.inputId,
+    setValid = _ref11.setValid,
+    _ref11$required = _ref11.required,
+    required = _ref11$required === void 0 ? false : _ref11$required;
+  var valid = incorrectLinkDetector(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.validationLink = validationLink;
+function validateStringArray(arr, inputId) {
+  var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  if (required && (!arr || !Array.isArray(arr)) || arr.length === 0) {
+    (0, _helpers.addClass)(inputId, _constants.ALERT);
+    return false;
+  }
+  if (arr && !arr.every(function (value) {
+    return typeof value === 'string';
+  })) {
+    (0, _helpers.addClass)(inputId, _constants.ALERT);
+    return false;
+  }
+  (0, _helpers.removeClass)(inputId, _constants.ALERT);
+  return true;
+}
+var validationStringArray = function validationStringArray(_ref12) {
+  var value = _ref12.value,
+    currentValid = _ref12.currentValid,
+    inputId = _ref12.inputId,
+    setValid = _ref12.setValid,
+    _ref12$required = _ref12.required,
+    required = _ref12$required === void 0 ? false : _ref12$required;
+  var valid = validateStringArray(value, inputId, required);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
+};
+exports.validationStringArray = validationStringArray;

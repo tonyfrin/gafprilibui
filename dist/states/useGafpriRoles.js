@@ -13,7 +13,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
 var _Context = require("../Context");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _Validations = require("../Validations");
 var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -56,7 +56,7 @@ function useGafpriRoles(_ref) {
     setIsUpdate = _useState16[1];
   var _useState17 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)(_Constans.ROLES_STORAGE, null)
+        items: (0, _Context.getItem)(_constants.ROLES_STORAGE, null)
       }
     }),
     _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
@@ -158,7 +158,7 @@ function useGafpriRoles(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var selectAllPermissions = function selectAllPermissions() {
-    var allPermissions = _Constans.AllRoles.flatMap(function (role) {
+    var allPermissions = _constants.AllRoles.flatMap(function (role) {
       return role.permissions.map(function (permission) {
         return permission.value;
       });
@@ -169,7 +169,7 @@ function useGafpriRoles(_ref) {
     setPermissions([]);
   };
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)(_Constans.ROLES_STORAGE, newData.data.items);
+    (0, _Context.saveItem)(_constants.ROLES_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setRoles(newData);
@@ -204,7 +204,7 @@ function useGafpriRoles(_ref) {
               if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initRoute: _Constans.ROLES_ROUTE,
+                  initRoute: _constants.ROLES_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -289,7 +289,7 @@ function useGafpriRoles(_ref) {
     if (nameValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initRoute: _Constans.ROLES_ROUTE,
+        initRoute: _constants.ROLES_ROUTE,
         initCredentials: {
           name: name,
           permissions: permissions
@@ -313,7 +313,7 @@ function useGafpriRoles(_ref) {
     if (nameValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_Constans.ROLES_ROUTE, "/").concat(currentId),
+        initRoute: "".concat(_constants.ROLES_ROUTE, "/").concat(currentId),
         initCredentials: {
           name: name,
           permissions: permissions
@@ -331,7 +331,7 @@ function useGafpriRoles(_ref) {
     if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initRoute: "".concat(_Constans.ROLES_ROUTE, "/").concat(id),
+        initRoute: "".concat(_constants.ROLES_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

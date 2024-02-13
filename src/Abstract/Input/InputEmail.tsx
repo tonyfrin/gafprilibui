@@ -1,5 +1,5 @@
 import React from 'react';
-import { EMAIL_INPUT } from '../../Constans';
+import { EMAIL_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputEmailProps = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { PhotoForm } from './PhotoForm';
 import type { PhotoFormPropsExtended } from './PhotoForm';
-import { PHOTO_ENTITY_INPUT } from '../../Constans';
+import { PHOTO_ENTITY_INPUT } from '../../constants';
 
 export type PhotoEntityProps = {
   photo: string | null;

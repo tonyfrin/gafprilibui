@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { gafpriFetch } from '../helpers';
 import { getItem, saveItem } from '../Context';
-import { TOKEN_STORAGE, CURRENT_USER_STORAGE } from '../Constans';
+import { TOKEN_STORAGE, CURRENT_USER_STORAGE } from '../constants';
 import {
   generalValidationUserName,
   generalValidationSinglePassword,

@@ -12,7 +12,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var SitesForm = function SitesForm(_ref) {
@@ -448,8 +448,8 @@ var SitesForm = function SitesForm(_ref) {
 
   _react["default"].useEffect(function () {
     if (isUpdateForm && currentSite) {
-      var labelCountry = _Constans.Countries[0][currentSite.country];
-      var labelStateCountry = _Constans.StatesCountries[0][currentSite.country][0][currentSite.state];
+      var labelCountry = _constants.Countries[0][currentSite.country];
+      var labelStateCountry = _constants.StatesCountries[0][currentSite.country][0][currentSite.state];
       setInputCountry(function () {
         return /*#__PURE__*/_react["default"].createElement(_Input.Input, (0, _extends2["default"])({
           inputProps: {

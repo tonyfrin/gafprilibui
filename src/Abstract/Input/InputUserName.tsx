@@ -1,5 +1,5 @@
 import React from 'react';
-import { USER_NAME_INPUT } from '../../Constans';
+import { USER_NAME_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputUserNameProps = {

@@ -1,5 +1,5 @@
 import { validationSelect } from '../helpers';
-import { TYPE_INPUT } from '../Constans';
+import { TYPE_INPUT } from '../constants';
 
 export type GeneralValidationTypeProps = {
   value: string;

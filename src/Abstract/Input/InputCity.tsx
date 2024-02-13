@@ -1,6 +1,6 @@
 import React from 'react';
 import { SingleValue } from 'react-select';
-import { CITY_INPUT } from '../../Constans';
+import { CITY_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputCityProps = {

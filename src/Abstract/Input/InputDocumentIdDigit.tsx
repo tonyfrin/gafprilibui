@@ -1,5 +1,5 @@
 import React from 'react';
-import { TYPE_DOCUMENT_ID_DIGIT_INPUT } from '../../Constans';
+import { TYPE_DOCUMENT_ID_DIGIT_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputDocumentiIdDigitProps = {

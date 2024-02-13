@@ -12,7 +12,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
 var _Context = require("../Context");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _Validations = require("../Validations");
 var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -41,11 +41,11 @@ function useGafpriLogin(_ref) {
     _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
     passwordValid = _useState10[0],
     setPasswordValid = _useState10[1];
-  var _useState11 = (0, _react.useState)((0, _Context.getItem)(_Constans.TOKEN_STORAGE, null)),
+  var _useState11 = (0, _react.useState)((0, _Context.getItem)(_constants.TOKEN_STORAGE, null)),
     _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
     token = _useState12[0],
     setToken = _useState12[1];
-  var _useState13 = (0, _react.useState)((0, _Context.getItem)(_Constans.CURRENT_USER_STORAGE, null)),
+  var _useState13 = (0, _react.useState)((0, _Context.getItem)(_constants.CURRENT_USER_STORAGE, null)),
     _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
     currentUser = _useState14[0],
     setCurrentUser = _useState14[1];
@@ -80,11 +80,11 @@ function useGafpriLogin(_ref) {
   };
   var changeToken = function changeToken(value) {
     setToken(value);
-    (0, _Context.saveItem)(_Constans.TOKEN_STORAGE, value);
+    (0, _Context.saveItem)(_constants.TOKEN_STORAGE, value);
   };
   var changeCurrentUser = function changeCurrentUser(value) {
     setCurrentUser(value);
-    (0, _Context.saveItem)(_Constans.CURRENT_USER_STORAGE, value);
+    (0, _Context.saveItem)(_constants.CURRENT_USER_STORAGE, value);
   };
   var resetInfo = function resetInfo() {
     changeUserName('');

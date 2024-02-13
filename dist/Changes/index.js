@@ -18,7 +18,7 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 var _axios = _interopRequireDefault(require("axios"));
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _generalChangeNote = require("./generalChangeNote");
 var generalChangeUserName = function generalChangeUserName(value, validation, setValue) {
   var valueClean = _dompurify["default"].sanitize(value);
@@ -100,9 +100,9 @@ var generalChangeCityStateCountry = function generalChangeCityStateCountry(optio
 exports.generalChangeCityStateCountry = generalChangeCityStateCountry;
 var generalChangeCityOptions = function generalChangeCityOptions(country, state, setCityDefault, setCity, setCityOptions, isReset) {
   var newValueCity = [];
-  if (_Constans.Cities[0][country]) {
-    if (Array.isArray(_Constans.Cities[0][country][0][state])) {
-      _Constans.Cities[0][country][0][state].forEach(function (item) {
+  if (_constants.Cities[0][country]) {
+    if (Array.isArray(_constants.Cities[0][country][0][state])) {
+      _constants.Cities[0][country][0][state].forEach(function (item) {
         Object.keys(item).forEach(function (key) {
           newValueCity.push({
             value: item[key],
@@ -113,8 +113,8 @@ var generalChangeCityOptions = function generalChangeCityOptions(country, state,
     }
   }
   if (isReset) {
-    setCityDefault(_Constans.CITY_DEFAULT);
-    setCity(_Constans.CITY_DEFAULT.value);
+    setCityDefault(_constants.CITY_DEFAULT);
+    setCity(_constants.CITY_DEFAULT.value);
   } else {
     setCityDefault({
       label: 'Elija la ciudad',
@@ -128,8 +128,8 @@ exports.generalChangeCityOptions = generalChangeCityOptions;
 var generalChangeStateCountryOptions = function generalChangeStateCountryOptions(country, setStateCountryDefault, setStateCountry, setStateCountryOptions, isReset) {
   var _StatesCountries$0$co;
   var newValueState = [];
-  if (country && ((_StatesCountries$0$co = _Constans.StatesCountries[0][country]) === null || _StatesCountries$0$co === void 0 ? void 0 : _StatesCountries$0$co.length) > 0) {
-    _Constans.StatesCountries[0][country].forEach(function (item) {
+  if (country && ((_StatesCountries$0$co = _constants.StatesCountries[0][country]) === null || _StatesCountries$0$co === void 0 ? void 0 : _StatesCountries$0$co.length) > 0) {
+    _constants.StatesCountries[0][country].forEach(function (item) {
       Object.keys(item).forEach(function (key) {
         newValueState.push({
           value: key,
@@ -139,8 +139,8 @@ var generalChangeStateCountryOptions = function generalChangeStateCountryOptions
     });
   }
   if (isReset) {
-    setStateCountryDefault(_Constans.STATE_COUNTRY_DEFAULT);
-    setStateCountry(_Constans.STATE_COUNTRY_DEFAULT.value);
+    setStateCountryDefault(_constants.STATE_COUNTRY_DEFAULT);
+    setStateCountry(_constants.STATE_COUNTRY_DEFAULT.value);
   } else {
     setStateCountryDefault({
       label: 'Elija el Estado',
@@ -220,7 +220,7 @@ var generalChangePhoto = /*#__PURE__*/function () {
           };
           _context.prev = 12;
           _context.next = 15;
-          return _axios["default"].post(_Constans.UPLOAD_PHOTO_ROUTE, formData, config);
+          return _axios["default"].post(_constants.UPLOAD_PHOTO_ROUTE, formData, config);
         case 15:
           response = _context.sent;
           if (response.status === 200) {
@@ -282,7 +282,7 @@ var generalChangeGalleryPhoto = /*#__PURE__*/function () {
           };
           _context2.prev = 12;
           _context2.next = 15;
-          return _axios["default"].post(_Constans.UPLOAD_PHOTO_ROUTE, formData, config);
+          return _axios["default"].post(_constants.UPLOAD_PHOTO_ROUTE, formData, config);
         case 15:
           response = _context2.sent;
           if (response.status === 200) {

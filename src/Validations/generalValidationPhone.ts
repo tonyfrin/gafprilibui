@@ -1,4 +1,4 @@
-import { PHONE_INPUT } from '../Constans';
+import { PHONE_INPUT } from '../constants';
 import { validationInput } from '../helpers';
 
 export type GeneralValidationPhoneProps = {

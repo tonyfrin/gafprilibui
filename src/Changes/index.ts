@@ -15,7 +15,7 @@ import {
   Cities,
   StatesCountries,
   UPLOAD_PHOTO_ROUTE,
-} from '../Constans';
+} from '../constants';
 
 export const generalChangeUserName = (
   value: string,

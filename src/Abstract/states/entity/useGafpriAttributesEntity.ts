@@ -44,7 +44,7 @@ import {
   COUNTRY_DEFAULT,
   STATE_COUNTRY_DEFAULT,
   CITY_DEFAULT,
-} from '../../../Constans';
+} from '../../../constants';
 import type { SelectDefault } from '../../../helpers';
 import type { UseTypeDocumentIdReturn, UseErrorReturn } from '../../../states';
 

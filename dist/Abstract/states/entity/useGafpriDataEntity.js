@@ -13,7 +13,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../../../helpers");
 var _Context = require("../../../Context");
-var _Constans = require("../../../Constans");
+var _constants = require("../../../constants");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var useGafpriDataEntity = function useGafpriDataEntity(_ref) {
@@ -25,7 +25,7 @@ var useGafpriDataEntity = function useGafpriDataEntity(_ref) {
     setIsReady = _useState2[1];
   var _useState3 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)(_Constans.ENTITY_STORAGE, null)
+        items: (0, _Context.getItem)(_constants.ENTITY_STORAGE, null)
       }
     }),
     _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
@@ -43,7 +43,7 @@ var useGafpriDataEntity = function useGafpriDataEntity(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)(_Constans.ENTITY_STORAGE, newData.data.items);
+    (0, _Context.saveItem)(_constants.ENTITY_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setItems(newData);
@@ -70,7 +70,7 @@ var useGafpriDataEntity = function useGafpriDataEntity(_ref) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _helpers.getLastEntryDateAndCount)(_Constans.ENTITY_ROUTE);
+            return (0, _helpers.getLastEntryDateAndCount)(_constants.ENTITY_ROUTE);
           case 2:
             lastEntryDateAndCount = _context.sent;
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;
@@ -79,7 +79,7 @@ var useGafpriDataEntity = function useGafpriDataEntity(_ref) {
               if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initRoute: _Constans.ENTITY_ROUTE,
+                  initRoute: _constants.ENTITY_ROUTE,
                   initToken: {
                     token: token
                   },

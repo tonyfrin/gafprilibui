@@ -1,4 +1,4 @@
-import { STATUS_INPUT } from '../Constans';
+import { STATUS_INPUT } from '../constants';
 import { validationSelect } from '../helpers';
 
 export type GeneralValidationStatusProps = {

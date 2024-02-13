@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.generalValidationPhotoDocumentId = void 0;
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _index = require("./index");
 var generalValidationPhotoDocumentId = function generalValidationPhotoDocumentId(_ref) {
   var value = _ref.value,
@@ -16,7 +16,7 @@ var generalValidationPhotoDocumentId = function generalValidationPhotoDocumentId
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return (0, _index.validationPhoto)({
     value: value,
-    inputId: "".concat(_Constans.PHOTO_DOCUMENT_ID_INPUT).concat(inputId),
+    inputId: "".concat(_constants.PHOTO_DOCUMENT_ID_INPUT).concat(inputId),
     setValid: setValid,
     currentValid: currentValid,
     required: required

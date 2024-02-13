@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { gafpriFetch, getLastEntryDateAndCount } from '../../../helpers';
 import { saveItem, getItem } from '../../../Context';
-import { ENTITY_STORAGE, ENTITY_ROUTE } from '../../../Constans';
+import { ENTITY_STORAGE, ENTITY_ROUTE } from '../../../constants';
 import type { EntityAttributes } from './useGafpriAttributesEntity';
 
 interface EntityData {

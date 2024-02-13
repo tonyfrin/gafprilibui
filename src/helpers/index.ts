@@ -1,6 +1,6 @@
 /* eslint-disable object-shorthand */
 import { SingleValue } from 'react-select';
-import { ALERT, API_URL } from '../Constans';
+import { ALERT, API_URL } from '../constants';
 
 export type SelectDefault = {
   value: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SingleValue } from 'react-select';
-import { STATE_COUNTRY_INPUT } from '../../Constans';
+import { STATE_COUNTRY_INPUT } from '../../constants';
 import { GsSelect, GsSelectProps } from './Input';
 
 export type SelectStateCountryProps = {

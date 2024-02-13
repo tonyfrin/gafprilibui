@@ -23,7 +23,7 @@ import {
   generalChangePhoto,
   generalChangeStatus,
 } from '../Changes';
-import { CATEGORY_STORAGE, CATEGORY_ROUTE } from '../Constans';
+import { CATEGORY_STORAGE, CATEGORY_ROUTE } from '../constants';
 
 export interface CategoryAttributes {
   id: number;

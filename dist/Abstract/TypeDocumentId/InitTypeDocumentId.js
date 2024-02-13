@@ -12,7 +12,7 @@ var _fa = require("react-icons/fa");
 var _css = require("@emotion/css");
 var _gi = require("react-icons/gi");
 var _Button = require("../Button");
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _List = require("../List");
 var _Error = require("../Error");
 var _Header = require("../Header");
@@ -66,7 +66,7 @@ var InitTypeDocumentId = function InitTypeDocumentId(_ref) {
   var typeDocumentiId = use.actions.sortByName(filtered, use.states.orderList) || [];
   var paginated = use.actions.getPaginated(typeDocumentiId, use.states.currentPage, use.states.itemsPerPage);
   var items = (_paginated$map = paginated === null || paginated === void 0 ? void 0 : paginated.map(function (item) {
-    var country = _Constans.Countries[0][item === null || item === void 0 ? void 0 : item.country] || '';
+    var country = _constants.Countries[0][item === null || item === void 0 ? void 0 : item.country] || '';
     return [item.name, country, /*#__PURE__*/_react["default"].createElement(ButtonUpdate, {
       id: item.id
     })];

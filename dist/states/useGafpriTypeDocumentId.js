@@ -13,7 +13,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
 var _Context = require("../Context");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _Validations = require("../Validations");
 var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -60,7 +60,7 @@ function useGafpriTypeDocumentId(_ref) {
     setIsUpdate = _useState18[1];
   var _useState19 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)(_Constans.TYPE_DOCUMENT_ID_STORAGE, null)
+        items: (0, _Context.getItem)(_constants.TYPE_DOCUMENT_ID_STORAGE, null)
       }
     }),
     _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
@@ -180,7 +180,7 @@ function useGafpriTypeDocumentId(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)(_Constans.TYPE_DOCUMENT_ID_STORAGE, newData.data.items);
+    (0, _Context.saveItem)(_constants.TYPE_DOCUMENT_ID_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setTypeDocumentId(newData);
@@ -215,7 +215,7 @@ function useGafpriTypeDocumentId(_ref) {
               if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initRoute: _Constans.TYPE_DOCUMENT_ID_ROUTE,
+                  initRoute: _constants.TYPE_DOCUMENT_ID_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -300,7 +300,7 @@ function useGafpriTypeDocumentId(_ref) {
     if (nameValid && countryValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initRoute: _Constans.TYPE_DOCUMENT_ID_ROUTE,
+        initRoute: _constants.TYPE_DOCUMENT_ID_ROUTE,
         initToken: {
           token: token
         },
@@ -324,7 +324,7 @@ function useGafpriTypeDocumentId(_ref) {
     if (nameValid && countryValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_Constans.TYPE_DOCUMENT_ID_ROUTE, "/").concat(currentId),
+        initRoute: "".concat(_constants.TYPE_DOCUMENT_ID_ROUTE, "/").concat(currentId),
         initToken: {
           token: token
         },
@@ -342,7 +342,7 @@ function useGafpriTypeDocumentId(_ref) {
     if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initRoute: "".concat(_Constans.TYPE_DOCUMENT_ID_ROUTE, "/").concat(id),
+        initRoute: "".concat(_constants.TYPE_DOCUMENT_ID_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

@@ -1,4 +1,4 @@
-import { PASSWORD_INPUT } from '../Constans';
+import { PASSWORD_INPUT } from '../constants';
 import { validationInputPassword } from './index';
 
 export type GeneralValidationPasswordProps = {

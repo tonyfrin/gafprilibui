@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { ButtonProps } from '../Button';
 import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
-import { AllRoles } from '../../Constans';
+import { AllRoles } from '../../constants';
 import type { UseRolesReturn } from 'src/states';
 import { ModelForm } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';

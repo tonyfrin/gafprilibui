@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SelectDocumentIdIndex = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _Input = require("./Input");
 var SelectDocumentIdIndex = function SelectDocumentIdIndex(_ref) {
   var changeIndex = _ref.changeIndex,
@@ -17,7 +17,7 @@ var SelectDocumentIdIndex = function SelectDocumentIdIndex(_ref) {
     styles: props === null || props === void 0 ? void 0 : props.styles,
     Class: props === null || props === void 0 ? void 0 : props.Class,
     options: props.options,
-    id: "".concat(_Constans.TYPE_DOCUMENT_ID_INDEX_INPUT).concat(inputId),
+    id: "".concat(_constants.TYPE_DOCUMENT_ID_INDEX_INPUT).concat(inputId),
     onChange: changeIndex,
     placeholder: props === null || props === void 0 ? void 0 : props.placeholder,
     containerStyles: props === null || props === void 0 ? void 0 : props.containerStyles,

@@ -13,7 +13,7 @@ var _css = require("@emotion/css");
 var _Input = require("../Input");
 var _Button = require("../Button");
 var _Containers = require("../Containers");
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _Form = require("../Form");
 var _RolePermissions = require("./RolePermissions");
 var _templateObject, _templateObject2;
@@ -115,7 +115,7 @@ var RolesForm = function RolesForm(_ref) {
     className: (0, _css.css)(permissionsContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(optionButtonContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement(_Button.Button, selectAllButtonProps), /*#__PURE__*/_react["default"].createElement(_Button.Button, deselectAllButtonProps)), _Constans.AllRoles.map(function (role) {
+  }, /*#__PURE__*/_react["default"].createElement(_Button.Button, selectAllButtonProps), /*#__PURE__*/_react["default"].createElement(_Button.Button, deselectAllButtonProps)), _constants.AllRoles.map(function (role) {
     return /*#__PURE__*/_react["default"].createElement(_RolePermissions.RolePermissions, (0, _extends2["default"])({
       selectedPermissions: use.states.permissions,
       key: role.name,

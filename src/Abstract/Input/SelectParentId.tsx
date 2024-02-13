@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SingleValue } from 'react-select';
-import { PARENT_ID_INPUT } from '../../Constans';
+import { PARENT_ID_INPUT } from '../../constants';
 import { GsSelect, GsSelectProps } from './Input';
 
 export type SelectParentIdProps = {

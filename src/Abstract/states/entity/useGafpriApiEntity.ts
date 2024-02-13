@@ -3,7 +3,7 @@ import type {
   ErrorResponseProps,
   CustomErrorResponseProps,
 } from '../../../helpers';
-import { ENTITY_ROUTE } from '../../../Constans';
+import { ENTITY_ROUTE } from '../../../constants';
 import type { UseErrorReturn } from '../../../states';
 import type { UseGafpriPagesEntityReturn } from './useGafpriPagesEntity';
 import type {

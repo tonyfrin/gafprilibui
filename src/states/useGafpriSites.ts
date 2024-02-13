@@ -17,7 +17,7 @@ import {
   CITY_DEFAULT,
   STATE_COUNTRY_DEFAULT,
   COUNTRY_DEFAULT,
-} from '../Constans';
+} from '../constants';
 import { getItem, saveItem } from '../Context';
 import type { UseCurrenciesReturn } from './useGafpriCurrencies';
 import type { UseErrorReturn } from './useGafpriError';

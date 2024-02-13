@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SingleValue } from 'react-select';
-import { CURRENCIES_LOCATIONS_INPUT } from '../../Constans';
+import { CURRENCIES_LOCATIONS_INPUT } from '../../constants';
 import { GsSelect, GsSelectProps } from './Input';
 
 export type SelectCurrenciesLocationsProps = {

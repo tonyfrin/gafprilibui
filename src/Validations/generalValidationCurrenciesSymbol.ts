@@ -1,5 +1,5 @@
 import { validationInput } from '../helpers';
-import { CURRENCIES_SYMBOL_INPUT } from '../Constans';
+import { CURRENCIES_SYMBOL_INPUT } from '../constants';
 
 export type GeneralValidationCurrenciesSymbolProps = {
   value: string;

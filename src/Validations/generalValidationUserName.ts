@@ -1,4 +1,4 @@
-import { USER_NAME_INPUT } from '../Constans';
+import { USER_NAME_INPUT } from '../constants';
 import { validationInputNameLastNameUserName } from './index';
 
 export type GeneralValidationUserNameProps = {

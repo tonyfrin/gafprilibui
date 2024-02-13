@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZIP_CODE_INPUT } from '../../Constans';
+import { ZIP_CODE_INPUT } from '../../constants';
 import { Input, InputProps } from './Input';
 
 export type InputZipCodeProps = {

@@ -16,7 +16,7 @@ var _helpers = require("../helpers");
 var _Validations = require("../Validations");
 var _Context = require("../Context");
 var _Changes = require("../Changes");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -35,7 +35,7 @@ function useGafpriCategory(_ref) {
     setNameValid = _useState4[1];
   var _useState5 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)(_Constans.CATEGORY_STORAGE, null)
+        items: (0, _Context.getItem)(_constants.CATEGORY_STORAGE, null)
       }
     }),
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
@@ -283,7 +283,7 @@ function useGafpriCategory(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)(_Constans.CATEGORY_STORAGE, newData.data.items);
+    (0, _Context.saveItem)(_constants.CATEGORY_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setCategory(newData);
@@ -318,7 +318,7 @@ function useGafpriCategory(_ref) {
               if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initRoute: _Constans.CATEGORY_ROUTE,
+                  initRoute: _constants.CATEGORY_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -413,7 +413,7 @@ function useGafpriCategory(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initRoute: _Constans.CATEGORY_ROUTE,
+        initRoute: _constants.CATEGORY_ROUTE,
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -456,7 +456,7 @@ function useGafpriCategory(_ref) {
       });
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_Constans.CATEGORY_ROUTE, "/").concat(id),
+        initRoute: "".concat(_constants.CATEGORY_ROUTE, "/").concat(id),
         initCredentials: data,
         initToken: {
           token: token
@@ -481,7 +481,7 @@ function useGafpriCategory(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_Constans.CATEGORY_ROUTE, "/").concat(currentId),
+        initRoute: "".concat(_constants.CATEGORY_ROUTE, "/").concat(currentId),
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -496,7 +496,7 @@ function useGafpriCategory(_ref) {
     if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initRoute: "".concat(_Constans.CATEGORY_ROUTE, "/").concat(id),
+        initRoute: "".concat(_constants.CATEGORY_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

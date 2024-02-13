@@ -14,7 +14,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
 var _Context = require("../Context");
-var _Constans = require("../Constans");
+var _constants = require("../constants");
 var _Validations = require("../Validations");
 var _Changes = require("../Changes");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -162,7 +162,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
   }];
   var _useState53 = (0, _react.useState)({
       data: {
-        items: (0, _Context.getItem)(_Constans.USERS_STORAGE, null)
+        items: (0, _Context.getItem)(_constants.USERS_STORAGE, null)
       }
     }),
     _useState54 = (0, _slicedToArray2["default"])(_useState53, 2),
@@ -423,7 +423,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   })[0] : null;
   var setDataStorage = function setDataStorage(newData) {
-    (0, _Context.saveItem)(_Constans.USERS_STORAGE, newData.data.items);
+    (0, _Context.saveItem)(_constants.USERS_STORAGE, newData.data.items);
   };
   var setData = function setData(newData) {
     setUsers(newData);
@@ -467,7 +467,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
               if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initRoute: _Constans.USERS_ROUTE,
+                  initRoute: _constants.USERS_ROUTE,
                   initToken: {
                     token: token
                   },
@@ -548,7 +548,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initRoute: _Constans.USERS_ROUTE,
+        initRoute: _constants.USERS_ROUTE,
         initCredentials: updatedPayload,
         initToken: {
           token: token
@@ -581,7 +581,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
       } : {});
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_Constans.USERS_ROUTE, "/").concat(userId),
+        initRoute: "".concat(_constants.USERS_ROUTE, "/").concat(userId),
         initCredentials: updatedPayload,
         initToken: {
           token: token

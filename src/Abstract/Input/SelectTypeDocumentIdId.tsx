@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SingleValue } from 'react-select';
-import { TYPE_DOCUMENT_ID_ID_INPUT } from '../../Constans';
+import { TYPE_DOCUMENT_ID_ID_INPUT } from '../../constants';
 import { GsSelect, GsSelectProps } from './Input';
 
 export type SelectTypeDocumentIdIdProps = {

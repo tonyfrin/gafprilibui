@@ -15,7 +15,7 @@ var _Title = require("../Title");
 var _Button = require("../Button");
 var _Error = require("../Error");
 var _css = require("@emotion/css");
-var _Constans = require("../../Constans");
+var _constants = require("../../constants");
 var _templateObject, _templateObject2, _templateObject3;
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -62,7 +62,7 @@ var ModelForm = function ModelForm(_ref) {
       onClick: function onClick() {
         return handleActions('submit', {});
       },
-      id: "".concat(_Constans.BUTTON_NEXT_INPUT).concat(buttonNextId)
+      id: "".concat(_constants.BUTTON_NEXT_INPUT).concat(buttonNextId)
     }
   }, mainButtonProps))), buttonConditional && (buttonTitles === null || buttonTitles === void 0 ? void 0 : buttonTitles.returnButton) !== '' && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(returnButtonConatinerStyle)

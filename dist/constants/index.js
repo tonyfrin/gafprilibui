@@ -51,10 +51,22 @@ Object.defineProperty(exports, "BUTTON_NEXT_INPUT", {
     return _Inputs.BUTTON_NEXT_INPUT;
   }
 });
+Object.defineProperty(exports, "CATALOG_ORDER_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CATALOG_ORDER_INPUT;
+  }
+});
 Object.defineProperty(exports, "CATEGORIES_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.CATEGORIES_INPUT;
+  }
+});
+Object.defineProperty(exports, "CATEGORY_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CATEGORY_INPUT;
   }
 });
 Object.defineProperty(exports, "CATEGORY_ROUTE", {
@@ -79,6 +91,12 @@ Object.defineProperty(exports, "CITY_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.CITY_INPUT;
+  }
+});
+Object.defineProperty(exports, "COST_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.COST_INPUT;
   }
 });
 Object.defineProperty(exports, "COUNTRY_DEFAULT", {
@@ -195,16 +213,40 @@ Object.defineProperty(exports, "GALLERY_IMAGE_INPUT", {
     return _Inputs.GALLERY_IMAGE_INPUT;
   }
 });
+Object.defineProperty(exports, "HEIGHT_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.HEIGHT_INPUT;
+  }
+});
 Object.defineProperty(exports, "LAST_NAME_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.LAST_NAME_INPUT;
   }
 });
+Object.defineProperty(exports, "LENGTH_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.LENGTH_INPUT;
+  }
+});
 Object.defineProperty(exports, "NAME_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.NAME_INPUT;
+  }
+});
+Object.defineProperty(exports, "NOTE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.NOTE_INPUT;
+  }
+});
+Object.defineProperty(exports, "OFFER_PRICE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.OFFER_PRICE_INPUT;
   }
 });
 Object.defineProperty(exports, "ORDER_ROUTE", {
@@ -219,6 +261,12 @@ Object.defineProperty(exports, "ORDER_STORAGE", {
     return _LocalStorage.ORDER_STORAGE;
   }
 });
+Object.defineProperty(exports, "PACKAGE_TYPE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.PACKAGE_TYPE_INPUT;
+  }
+});
 Object.defineProperty(exports, "PARENT_ID_INPUT", {
   enumerable: true,
   get: function get() {
@@ -229,6 +277,12 @@ Object.defineProperty(exports, "PASSWORD_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.PASSWORD_INPUT;
+  }
+});
+Object.defineProperty(exports, "PERMANENT_LINK_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.PERMANENT_LINK_INPUT;
   }
 });
 Object.defineProperty(exports, "PHONE_INPUT", {
@@ -279,6 +333,24 @@ Object.defineProperty(exports, "PRODUCTS_STORAGE", {
     return _LocalStorage.PRODUCTS_STORAGE;
   }
 });
+Object.defineProperty(exports, "PRODUCT_ATTRIBUTES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.PRODUCT_ATTRIBUTES_INPUT;
+  }
+});
+Object.defineProperty(exports, "PUBLIC_NAME_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.PUBLIC_NAME_INPUT;
+  }
+});
+Object.defineProperty(exports, "QTY_PACK_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.QTY_PACK_INPUT;
+  }
+});
 Object.defineProperty(exports, "ROLES_INPUT", {
   enumerable: true,
   get: function get() {
@@ -295,6 +367,12 @@ Object.defineProperty(exports, "ROLES_STORAGE", {
   enumerable: true,
   get: function get() {
     return _LocalStorage.ROLES_STORAGE;
+  }
+});
+Object.defineProperty(exports, "SALES_PRICE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.SALES_PRICE_INPUT;
   }
 });
 Object.defineProperty(exports, "SITES_ROUTE", {
@@ -345,10 +423,28 @@ Object.defineProperty(exports, "StatesCountries", {
     return _StatesCountries.StatesCountries;
   }
 });
+Object.defineProperty(exports, "TAGS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TAGS_INPUT;
+  }
+});
 Object.defineProperty(exports, "TAXES_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.TAXES_INPUT;
+  }
+});
+Object.defineProperty(exports, "TAX_CLASS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TAX_CLASS_INPUT;
+  }
+});
+Object.defineProperty(exports, "TAX_STATUS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TAX_STATUS_INPUT;
   }
 });
 Object.defineProperty(exports, "TOKEN_STORAGE", {
@@ -393,6 +489,12 @@ Object.defineProperty(exports, "TYPE_INPUT", {
     return _Inputs.TYPE_INPUT;
   }
 });
+Object.defineProperty(exports, "UND_CBM_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.UND_CBM_INPUT;
+  }
+});
 Object.defineProperty(exports, "UPLOAD_PHOTO_ROUTE", {
   enumerable: true,
   get: function get() {
@@ -417,10 +519,28 @@ Object.defineProperty(exports, "USER_NAME_INPUT", {
     return _Inputs.USER_NAME_INPUT;
   }
 });
+Object.defineProperty(exports, "VISIBILITY_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.VISIBILITY_INPUT;
+  }
+});
 Object.defineProperty(exports, "WEB_SITE_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.WEB_SITE_INPUT;
+  }
+});
+Object.defineProperty(exports, "WEIGHT_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.WEIGHT_INPUT;
+  }
+});
+Object.defineProperty(exports, "WIDTH_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.WIDTH_INPUT;
   }
 });
 Object.defineProperty(exports, "ZIP_CODE_INPUT", {

@@ -62,6 +62,7 @@ export {
   TYPE_DOCUMENT_ID_ROUTE,
   USERS_ROUTE,
   ORDER_ROUTE,
+  PRODUCTS_ROUTER,
 } from './Api';
 export {
   CATEGORY_STORAGE,
@@ -74,4 +75,5 @@ export {
   TOKEN_STORAGE,
   CURRENT_USER_STORAGE,
   ORDER_STORAGE,
+  PRODUCTS_STORAGE,
 } from './LocalStorage';

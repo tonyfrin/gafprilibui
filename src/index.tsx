@@ -390,6 +390,8 @@ export {
   ENTITY_STORAGE,
   ORDER_STORAGE,
   ORDER_ROUTE,
+  PRODUCTS_ROUTER,
+  PRODUCTS_STORAGE,
 } from './Constans';
 export { getItem, saveItem } from './Context';
 export {

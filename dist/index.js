@@ -633,6 +633,18 @@ Object.defineProperty(exports, "PHOTO_USERS_INPUT", {
     return _Constans.PHOTO_USERS_INPUT;
   }
 });
+Object.defineProperty(exports, "PRODUCTS_ROUTER", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.PRODUCTS_ROUTER;
+  }
+});
+Object.defineProperty(exports, "PRODUCTS_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _Constans.PRODUCTS_STORAGE;
+  }
+});
 Object.defineProperty(exports, "Pagination", {
   enumerable: true,
   get: function get() {

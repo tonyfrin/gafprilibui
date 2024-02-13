@@ -267,6 +267,18 @@ Object.defineProperty(exports, "PHOTO_USERS_INPUT", {
     return _Inputs.PHOTO_USERS_INPUT;
   }
 });
+Object.defineProperty(exports, "PRODUCTS_ROUTER", {
+  enumerable: true,
+  get: function get() {
+    return _Api.PRODUCTS_ROUTER;
+  }
+});
+Object.defineProperty(exports, "PRODUCTS_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.PRODUCTS_STORAGE;
+  }
+});
 Object.defineProperty(exports, "ROLES_INPUT", {
   enumerable: true,
   get: function get() {

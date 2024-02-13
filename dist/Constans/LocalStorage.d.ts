@@ -8,3 +8,4 @@ export declare const USERS_STORAGE = "GS_USERS_V2";
 export declare const TOKEN_STORAGE = "GS_AUTH_TOKEN_V2";
 export declare const CURRENT_USER_STORAGE = "GS_CURRENT_USER_V2";
 export declare const ORDER_STORAGE = "GS_ORDER_V2";
+export declare const PRODUCTS_STORAGE = "GS_PRODUCTS_V2";

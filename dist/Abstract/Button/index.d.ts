@@ -5,4 +5,4 @@ export type { ButtonLargeProps } from './ButtonLarge';
 export { ButtonNext } from './ButtonNext';
 export type { ButtonNextProps } from './ButtonNext';
 export { CircleButton } from './CircleButton';
-export type { CircleButtonProps } from './CircleButton';
+export type { CircleButtonProps, CircleButtonPropsExtended, } from './CircleButton';

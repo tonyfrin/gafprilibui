@@ -80,6 +80,17 @@ export type CircleButtonProps = {
   titleProps?: HTMLAttributes<HTMLSpanElement>;
 };
 
+export type CircleButtonPropsExtended = {
+  containerStyles?: CircleButtonStylesContainerProps;
+  containerProps?: HTMLAttributes<HTMLDivElement>;
+  contentStyles?: CircleButtonStylesContentProps;
+  contentProps?: ButtonHTMLAttributes<HTMLButtonElement>;
+  imageStyles?: CircleButtonStylesImageProps;
+  imageProps?: HTMLAttributes<HTMLImageElement>;
+  titleStyles?: CircleButtonStylesTitleProps;
+  titleProps?: HTMLAttributes<HTMLSpanElement>;
+};
+
 export const CircleButton = ({
   containerStyles = {},
   containerProps = {},

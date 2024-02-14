@@ -13,3 +13,13 @@ export type {
   MainMenuItems,
   MainMenuItem,
 } from './MainMenu';
+export { HeaderMenu } from './HeaderMenu';
+export type {
+  HeaderMenuItem,
+  HeaderMenuProps,
+  HeaderMenuPropsExtended,
+  HeaderMenuStylesContainerProps,
+  HeaderMenuStylesContentProps,
+  HeaderMenuStylesContentUlProps,
+  HeaderMenuStylesContentLiProps,
+} from './HeaderMenu';

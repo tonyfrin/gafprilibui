@@ -84,6 +84,7 @@ export {
   useGafpriDataEntity,
   useGafpriPaginationsEntity,
   useGafpriPagesEntity,
+  HeaderMenu,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -215,6 +216,13 @@ export type {
   DocumentIdAttributes,
   AddressAttributes,
   EntityAttributes,
+  HeaderMenuItem,
+  HeaderMenuProps,
+  HeaderMenuPropsExtended,
+  HeaderMenuStylesContainerProps,
+  HeaderMenuStylesContentProps,
+  HeaderMenuStylesContentUlProps,
+  HeaderMenuStylesContentLiProps,
 } from './Abstract';
 export {
   MainFooter,

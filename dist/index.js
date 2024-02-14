@@ -357,6 +357,12 @@ Object.defineProperty(exports, "Header", {
     return _Abstract.Header;
   }
 });
+Object.defineProperty(exports, "HeaderMenu", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.HeaderMenu;
+  }
+});
 Object.defineProperty(exports, "InitCategory", {
   enumerable: true,
   get: function get() {

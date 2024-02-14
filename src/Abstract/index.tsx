@@ -6,6 +6,7 @@ export type {
   ButtonPropsExtended,
   ButtonNextProps,
   CircleButtonProps,
+  CircleButtonPropsExtended,
 } from './Button';
 export { Box1 } from './Box';
 export type { Box1Style, Box1Props } from './Box';
@@ -134,7 +135,7 @@ export type {
   PhotoDocumentIdProps,
   PhotoUserProps,
 } from './Form';
-export { Menu1, Menu2, MenuButton, MainMenu } from './Menu';
+export { Menu1, Menu2, MenuButton, MainMenu, HeaderMenu } from './Menu';
 export type {
   Menu1Props,
   Menu2Props,
@@ -146,6 +147,13 @@ export type {
   MainMenuStylesContentProps,
   MainMenuItems,
   MainMenuItem,
+  HeaderMenuItem,
+  HeaderMenuProps,
+  HeaderMenuPropsExtended,
+  HeaderMenuStylesContainerProps,
+  HeaderMenuStylesContentProps,
+  HeaderMenuStylesContentUlProps,
+  HeaderMenuStylesContentLiProps,
 } from './Menu';
 export { Header } from './Header';
 export type { HeaderProps, HeaderPropsExtended } from './Header';

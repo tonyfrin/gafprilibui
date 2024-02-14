@@ -1,5 +1,5 @@
 export { Button, ButtonLarge, ButtonNext, CircleButton } from './Button';
-export type { ButtonStyle, ButtonProps, ButtonLargeProps, ButtonPropsExtended, ButtonNextProps, CircleButtonProps, } from './Button';
+export type { ButtonStyle, ButtonProps, ButtonLargeProps, ButtonPropsExtended, ButtonNextProps, CircleButtonProps, CircleButtonPropsExtended, } from './Button';
 export { Box1 } from './Box';
 export type { Box1Style, Box1Props } from './Box';
 export { ContainerInput, ContainerForm, ContainerGlobo, ContainerButton, } from './Containers';
@@ -27,8 +27,8 @@ export { FadeIn } from './Fade';
 export type { FadeInProps } from './Fade';
 export { ModelForm, PhotoForm, PhotoCategory, PhotoEntity, PhotoDocumentId, PhotoUser, } from './Form';
 export type { ModelFormProps, ModelFormPropsExtended, PhotoFormProps, PhotoFormPropsExtended, PhotoCategoryProps, PhotoEntityProps, PhotoDocumentIdProps, PhotoUserProps, } from './Form';
-export { Menu1, Menu2, MenuButton, MainMenu } from './Menu';
-export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem, MainMenuProps, MainMenuPropsExtended, MainMenuStylesContainerProps, MainMenuStylesContentProps, MainMenuItems, MainMenuItem, } from './Menu';
+export { Menu1, Menu2, MenuButton, MainMenu, HeaderMenu } from './Menu';
+export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem, MainMenuProps, MainMenuPropsExtended, MainMenuStylesContainerProps, MainMenuStylesContentProps, MainMenuItems, MainMenuItem, HeaderMenuItem, HeaderMenuProps, HeaderMenuPropsExtended, HeaderMenuStylesContainerProps, HeaderMenuStylesContentProps, HeaderMenuStylesContentUlProps, HeaderMenuStylesContentLiProps, } from './Menu';
 export { Header } from './Header';
 export type { HeaderProps, HeaderPropsExtended } from './Header';
 export { InitCurrencies, CurrencyForm } from './Currencies';

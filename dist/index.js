@@ -1125,6 +1125,12 @@ Object.defineProperty(exports, "changeMultipleArrayStringSelect", {
     return _helpers.changeMultipleArrayStringSelect;
   }
 });
+Object.defineProperty(exports, "changeMultipleObjectAttributesInput", {
+  enumerable: true,
+  get: function get() {
+    return _helpers.changeMultipleObjectAttributesInput;
+  }
+});
 Object.defineProperty(exports, "changeSelect", {
   enumerable: true,
   get: function get() {
@@ -1167,6 +1173,24 @@ Object.defineProperty(exports, "generalChangeAreaCode", {
     return _Changes.generalChangeAreaCode;
   }
 });
+Object.defineProperty(exports, "generalChangeAttributes", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeAttributes;
+  }
+});
+Object.defineProperty(exports, "generalChangeCatalogOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeCatalogOrder;
+  }
+});
+Object.defineProperty(exports, "generalChangeCategoryId", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeCategoryId;
+  }
+});
 Object.defineProperty(exports, "generalChangeCityOptions", {
   enumerable: true,
   get: function get() {
@@ -1177,6 +1201,12 @@ Object.defineProperty(exports, "generalChangeCityStateCountry", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeCityStateCountry;
+  }
+});
+Object.defineProperty(exports, "generalChangeCost", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeCost;
   }
 });
 Object.defineProperty(exports, "generalChangeCurrenciesDecimalNumbers", {
@@ -1227,10 +1257,28 @@ Object.defineProperty(exports, "generalChangeGalleryPhoto", {
     return _Changes.generalChangeGalleryPhoto;
   }
 });
+Object.defineProperty(exports, "generalChangeHeight", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeHeight;
+  }
+});
 Object.defineProperty(exports, "generalChangeLastName", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeLastName;
+  }
+});
+Object.defineProperty(exports, "generalChangeLength", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeLength;
+  }
+});
+Object.defineProperty(exports, "generalChangeLink", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeLink;
   }
 });
 Object.defineProperty(exports, "generalChangeName", {
@@ -1243,6 +1291,18 @@ Object.defineProperty(exports, "generalChangeNote", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeNote;
+  }
+});
+Object.defineProperty(exports, "generalChangeOfferPrice", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeOfferPrice;
+  }
+});
+Object.defineProperty(exports, "generalChangePackageType", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangePackageType;
   }
 });
 Object.defineProperty(exports, "generalChangeParentId", {
@@ -1275,16 +1335,34 @@ Object.defineProperty(exports, "generalChangePostCode", {
     return _Changes.generalChangePostCode;
   }
 });
+Object.defineProperty(exports, "generalChangeQtyPack", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeQtyPack;
+  }
+});
 Object.defineProperty(exports, "generalChangeRoles", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeRoles;
   }
 });
+Object.defineProperty(exports, "generalChangeSalesPrice", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeSalesPrice;
+  }
+});
 Object.defineProperty(exports, "generalChangeSite", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeSite;
+  }
+});
+Object.defineProperty(exports, "generalChangeSku", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeSku;
   }
 });
 Object.defineProperty(exports, "generalChangeStateCountryOptions", {
@@ -1297,6 +1375,24 @@ Object.defineProperty(exports, "generalChangeStatus", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeStatus;
+  }
+});
+Object.defineProperty(exports, "generalChangeTags", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeTags;
+  }
+});
+Object.defineProperty(exports, "generalChangeTaxClass", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeTaxClass;
+  }
+});
+Object.defineProperty(exports, "generalChangeTaxStatus", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeTaxStatus;
   }
 });
 Object.defineProperty(exports, "generalChangeTaxes", {
@@ -1317,10 +1413,34 @@ Object.defineProperty(exports, "generalChangeTypeDocumentIdId", {
     return _Changes.generalChangeTypeDocumentIdId;
   }
 });
+Object.defineProperty(exports, "generalChangeUndCbm", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeUndCbm;
+  }
+});
 Object.defineProperty(exports, "generalChangeUserName", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeUserName;
+  }
+});
+Object.defineProperty(exports, "generalChangeVisibility", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeVisibility;
+  }
+});
+Object.defineProperty(exports, "generalChangeWeight", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeWeight;
+  }
+});
+Object.defineProperty(exports, "generalChangeWidth", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeWidth;
   }
 });
 Object.defineProperty(exports, "generalValidationAddress1", {
@@ -1671,6 +1791,12 @@ Object.defineProperty(exports, "generalValidationWidth", {
     return _Validations.generalValidationWidth;
   }
 });
+Object.defineProperty(exports, "generatePermanentLink", {
+  enumerable: true,
+  get: function get() {
+    return _helpers.generatePermanentLink;
+  }
+});
 Object.defineProperty(exports, "getApiUrl", {
   enumerable: true,
   get: function get() {
@@ -1711,6 +1837,12 @@ Object.defineProperty(exports, "isErrorResponse", {
   enumerable: true,
   get: function get() {
     return _helpers.isErrorResponse;
+  }
+});
+Object.defineProperty(exports, "removeAccentsAndSpecialChars", {
+  enumerable: true,
+  get: function get() {
+    return _helpers.removeAccentsAndSpecialChars;
   }
 });
 Object.defineProperty(exports, "removeClass", {

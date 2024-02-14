@@ -1,4 +1,5 @@
 import { SingleValue } from 'react-select';
+import { GeneralAttribute } from '../Validations';
 export type SelectDefault = {
     value: string;
     label: string;
@@ -114,4 +115,13 @@ export interface RoleArray {
     role: string;
 }
 export declare const getBase64: (img: File, callback: (result: string | ArrayBuffer | null) => void) => void;
+export type MultipleObjectAttributesInput = {
+    newValue: GeneralAttribute;
+    selectedOptions: GeneralAttribute[];
+    validation: (value: GeneralAttribute[]) => boolean;
+    setValue: (value: GeneralAttribute[]) => void;
+};
+export declare const changeMultipleObjectAttributesInput: ({ newValue, selectedOptions, validation, setValue, }: MultipleObjectAttributesInput) => void;
+export declare const removeAccentsAndSpecialChars: (str: string) => string;
+export declare const generatePermanentLink: (name: string) => string;
 export {};

@@ -1,6 +1,7 @@
 /* eslint-disable object-shorthand */
 import { SingleValue } from 'react-select';
 import { ALERT, API_URL } from '../constants';
+import { GeneralAttribute } from '../Validations';
 
 export type SelectDefault = {
   value: string;
@@ -506,4 +507,77 @@ export const getBase64 = (
   const reader = new FileReader();
   reader.addEventListener('load', () => callback(reader.result));
   reader.readAsDataURL(img);
+};
+
+export type MultipleObjectAttributesInput = {
+  newValue: GeneralAttribute;
+  selectedOptions: GeneralAttribute[];
+  validation: (value: GeneralAttribute[]) => boolean;
+  setValue: (value: GeneralAttribute[]) => void;
+};
+
+export const changeMultipleObjectAttributesInput = ({
+  newValue,
+  selectedOptions,
+  validation,
+  setValue,
+}: MultipleObjectAttributesInput): void => {
+  if (newValue != null) {
+    // Verificar si el nombre del nuevo atributo ya existe en la lista
+    const attributeExists = selectedOptions.some(
+      (attribute) => attribute.name === newValue.name
+    );
+
+    if (!attributeExists) {
+      const valid = validation([newValue]);
+
+      if (valid) {
+        // Agregar el nuevo atributo solo si no existe en la lista
+        const newAttributes: GeneralAttribute[] = [
+          ...selectedOptions,
+          newValue,
+        ];
+        setValue(newAttributes);
+      }
+    }
+  }
+};
+
+export const removeAccentsAndSpecialChars = (str: string): string => {
+  const accentsMap: Record<string, string> = {
+    á: 'a',
+    é: 'e',
+    í: 'i',
+    ó: 'o',
+    ú: 'u',
+    ü: 'u',
+    ñ: 'n',
+    ç: 'c',
+    ' ': '-',
+    Á: 'A',
+    É: 'E',
+    Í: 'I',
+    Ó: 'O',
+    Ú: 'U',
+    Ü: 'U',
+    Ñ: 'N',
+    Ç: 'C',
+    // Puedes agregar más caracteres según tus necesidades
+  };
+
+  const normalizedString = str.replace(/[^\w\s]/gi, (match) => {
+    return accentsMap[match] || match;
+  });
+
+  return normalizedString.toLowerCase();
+};
+
+export const generatePermanentLink = (name: string): string => {
+  // Remueve acentos y caracteres especiales, y convierte a minúsculas
+  const normalizedString = removeAccentsAndSpecialChars(name);
+
+  // Reemplaza espacios con guiones
+  const permanentLink = normalizedString.replace(/\s+/g, '-');
+
+  return permanentLink;
 };

@@ -4,13 +4,13 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.changeSelect = exports.changeMultipleArrayStringSelect = exports.changeMultipleArrayStringInput = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
+exports.changeSelect = exports.changeMultipleObjectAttributesInput = exports.changeMultipleArrayStringSelect = exports.changeMultipleArrayStringInput = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
 exports.formatPhoneNumber = formatPhoneNumber;
 exports.gafpriFetch = gafpriFetch;
-exports.getLastEntryDateAndCount = exports.getBase64 = void 0;
+exports.getLastEntryDateAndCount = exports.getBase64 = exports.generatePermanentLink = void 0;
 exports.getMimeTypeByExtension = getMimeTypeByExtension;
 exports.isCustomErrorResponse = isCustomErrorResponse;
-exports.removeClass = exports.isSelectDefaultArray = exports.isSelectDefault = exports.isErrorResponse = void 0;
+exports.removeClass = exports.removeAccentsAndSpecialChars = exports.isSelectDefaultArray = exports.isSelectDefault = exports.isErrorResponse = void 0;
 exports.toTitleCase = toTitleCase;
 exports.validationHidden = validationHidden;
 exports.validationSelect = exports.validationInputPostcode = exports.validationInputPhone = exports.validationInputName = exports.validationInputEmail = exports.validationInput = void 0;
@@ -341,3 +341,61 @@ var getBase64 = function getBase64(img, callback) {
   reader.readAsDataURL(img);
 };
 exports.getBase64 = getBase64;
+var changeMultipleObjectAttributesInput = function changeMultipleObjectAttributesInput(_ref11) {
+  var newValue = _ref11.newValue,
+    selectedOptions = _ref11.selectedOptions,
+    validation = _ref11.validation,
+    setValue = _ref11.setValue;
+  if (newValue != null) {
+    // Verificar si el nombre del nuevo atributo ya existe en la lista
+    var attributeExists = selectedOptions.some(function (attribute) {
+      return attribute.name === newValue.name;
+    });
+    if (!attributeExists) {
+      var valid = validation([newValue]);
+      if (valid) {
+        // Agregar el nuevo atributo solo si no existe en la lista
+        var newAttributes = [].concat((0, _toConsumableArray2["default"])(selectedOptions), [newValue]);
+        setValue(newAttributes);
+      }
+    }
+  }
+};
+exports.changeMultipleObjectAttributesInput = changeMultipleObjectAttributesInput;
+var removeAccentsAndSpecialChars = function removeAccentsAndSpecialChars(str) {
+  var accentsMap = {
+    á: 'a',
+    é: 'e',
+    í: 'i',
+    ó: 'o',
+    ú: 'u',
+    ü: 'u',
+    ñ: 'n',
+    ç: 'c',
+    ' ': '-',
+    Á: 'A',
+    É: 'E',
+    Í: 'I',
+    Ó: 'O',
+    Ú: 'U',
+    Ü: 'U',
+    Ñ: 'N',
+    Ç: 'C'
+    // Puedes agregar más caracteres según tus necesidades
+  };
+
+  var normalizedString = str.replace(/[^\w\s]/gi, function (match) {
+    return accentsMap[match] || match;
+  });
+  return normalizedString.toLowerCase();
+};
+exports.removeAccentsAndSpecialChars = removeAccentsAndSpecialChars;
+var generatePermanentLink = function generatePermanentLink(name) {
+  // Remueve acentos y caracteres especiales, y convierte a minúsculas
+  var normalizedString = removeAccentsAndSpecialChars(name);
+
+  // Reemplaza espacios con guiones
+  var permanentLink = normalizedString.replace(/\s+/g, '-');
+  return permanentLink;
+};
+exports.generatePermanentLink = generatePermanentLink;

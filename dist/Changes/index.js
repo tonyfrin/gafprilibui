@@ -27,6 +27,24 @@ Object.defineProperty(exports, "generalChangeAreaCode", {
     return _generalChangeAreaCode.generalChangeAreaCode;
   }
 });
+Object.defineProperty(exports, "generalChangeAttributes", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeAttributes.generalChangeAttributes;
+  }
+});
+Object.defineProperty(exports, "generalChangeCatalogOrder", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeCatalogOrder.generalChangeCatalogOrder;
+  }
+});
+Object.defineProperty(exports, "generalChangeCategoryId", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeCategoryId.generalChangeCategoryId;
+  }
+});
 Object.defineProperty(exports, "generalChangeCityOptions", {
   enumerable: true,
   get: function get() {
@@ -37,6 +55,12 @@ Object.defineProperty(exports, "generalChangeCityStateCountry", {
   enumerable: true,
   get: function get() {
     return _generalChangeCityStateCountry.generalChangeCityStateCountry;
+  }
+});
+Object.defineProperty(exports, "generalChangeCost", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeCost.generalChangeCost;
   }
 });
 Object.defineProperty(exports, "generalChangeCurrenciesDecimalNumbers", {
@@ -87,10 +111,28 @@ Object.defineProperty(exports, "generalChangeGalleryPhoto", {
     return _generalChangeGalleryPhoto.generalChangeGalleryPhoto;
   }
 });
+Object.defineProperty(exports, "generalChangeHeight", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeHeight.generalChangeHeight;
+  }
+});
 Object.defineProperty(exports, "generalChangeLastName", {
   enumerable: true,
   get: function get() {
     return _generalChangeLastName.generalChangeLastName;
+  }
+});
+Object.defineProperty(exports, "generalChangeLength", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeLength.generalChangeLength;
+  }
+});
+Object.defineProperty(exports, "generalChangeLink", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeLink.generalChangeLink;
   }
 });
 Object.defineProperty(exports, "generalChangeName", {
@@ -103,6 +145,18 @@ Object.defineProperty(exports, "generalChangeNote", {
   enumerable: true,
   get: function get() {
     return _generalChangeNote.generalChangeNote;
+  }
+});
+Object.defineProperty(exports, "generalChangeOfferPrice", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeOfferPrice.generalChangeOfferPrice;
+  }
+});
+Object.defineProperty(exports, "generalChangePackageType", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangePackageType.generalChangePackageType;
   }
 });
 Object.defineProperty(exports, "generalChangeParentId", {
@@ -135,16 +189,34 @@ Object.defineProperty(exports, "generalChangePostCode", {
     return _generalChangePostCode.generalChangePostCode;
   }
 });
+Object.defineProperty(exports, "generalChangeQtyPack", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeQtyPack.generalChangeQtyPack;
+  }
+});
 Object.defineProperty(exports, "generalChangeRoles", {
   enumerable: true,
   get: function get() {
     return _generalChangeRoles.generalChangeRoles;
   }
 });
+Object.defineProperty(exports, "generalChangeSalesPrice", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeSalesPrice.generalChangeSalesPrice;
+  }
+});
 Object.defineProperty(exports, "generalChangeSite", {
   enumerable: true,
   get: function get() {
     return _generalChangeSite.generalChangeSite;
+  }
+});
+Object.defineProperty(exports, "generalChangeSku", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeSku.generalChangeSku;
   }
 });
 Object.defineProperty(exports, "generalChangeStateCountryOptions", {
@@ -157,6 +229,24 @@ Object.defineProperty(exports, "generalChangeStatus", {
   enumerable: true,
   get: function get() {
     return _generalChangeStatus.generalChangeStatus;
+  }
+});
+Object.defineProperty(exports, "generalChangeTags", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeTags.generalChangeTags;
+  }
+});
+Object.defineProperty(exports, "generalChangeTaxClass", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeTaxClass.generalChangeTaxClass;
+  }
+});
+Object.defineProperty(exports, "generalChangeTaxStatus", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeTaxStatus.generalChangeTaxStatus;
   }
 });
 Object.defineProperty(exports, "generalChangeTaxes", {
@@ -177,16 +267,40 @@ Object.defineProperty(exports, "generalChangeTypeDocumentIdId", {
     return _generalChangeTypeDocumentIdId.generalChangeTypeDocumentIdId;
   }
 });
+Object.defineProperty(exports, "generalChangeUndCbm", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeUndCbm.generalChangeUndCbm;
+  }
+});
 Object.defineProperty(exports, "generalChangeUserName", {
   enumerable: true,
   get: function get() {
     return _generalChangeUserName.generalChangeUserName;
   }
 });
+Object.defineProperty(exports, "generalChangeVisibility", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeVisibility.generalChangeVisibility;
+  }
+});
 Object.defineProperty(exports, "generalChangeWebSite", {
   enumerable: true,
   get: function get() {
     return _generalChangeWebSite.generalChangeWebSite;
+  }
+});
+Object.defineProperty(exports, "generalChangeWeight", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeWeight.generalChangeWeight;
+  }
+});
+Object.defineProperty(exports, "generalChangeWidth", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeWidth.generalChangeWidth;
   }
 });
 var _generalChangeNote = require("./generalChangeNote");
@@ -220,3 +334,22 @@ var _generalChangeWebSite = require("./generalChangeWebSite");
 var _generalChangeAreaCode = require("./generalChangeAreaCode");
 var _generalChangeRoles = require("./generalChangeRoles");
 var _generalChanceIsActive = require("./generalChanceIsActive");
+var _generalChangeCategoryId = require("./generalChangeCategoryId");
+var _generalChangeTags = require("./generalChangeTags");
+var _generalChangeSku = require("./generalChangeSku");
+var _generalChangeSalesPrice = require("./generalChangeSalesPrice");
+var _generalChangeOfferPrice = require("./generalChangeOfferPrice");
+var _generalChangeCost = require("./generalChangeCost");
+var _generalChangeTaxStatus = require("./generalChangeTaxStatus");
+var _generalChangeTaxClass = require("./generalChangeTaxClass");
+var _generalChangePackageType = require("./generalChangePackageType");
+var _generalChangeQtyPack = require("./generalChangeQtyPack");
+var _generalChangeUndCbm = require("./generalChangeUndCbm");
+var _generalChangeAttributes = require("./generalChangeAttributes");
+var _generalChangeLink = require("./generalChangeLink");
+var _generalChangeVisibility = require("./generalChangeVisibility");
+var _generalChangeWeight = require("./generalChangeWeight");
+var _generalChangeHeight = require("./generalChangeHeight");
+var _generalChangeWidth = require("./generalChangeWidth");
+var _generalChangeLength = require("./generalChangeLength");
+var _generalChangeCatalogOrder = require("./generalChangeCatalogOrder");

@@ -74,6 +74,9 @@ export const MainMenu = ({
         {...restContainerProps}
       >
         {item.map((button, i) => {
+
+          console.log('button', button);
+
           return (
             <li
               key={`${button.title}-${i}`}

@@ -261,6 +261,18 @@ Object.defineProperty(exports, "ORDER_STORAGE", {
     return _LocalStorage.ORDER_STORAGE;
   }
 });
+Object.defineProperty(exports, "PACKAGE_TYPE", {
+  enumerable: true,
+  get: function get() {
+    return _products.PACKAGE_TYPE;
+  }
+});
+Object.defineProperty(exports, "PACKAGE_TYPE_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _products.PACKAGE_TYPE_DEFAULT;
+  }
+});
 Object.defineProperty(exports, "PACKAGE_TYPE_INPUT", {
   enumerable: true,
   get: function get() {
@@ -337,6 +349,36 @@ Object.defineProperty(exports, "PRODUCT_ATTRIBUTES_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.PRODUCT_ATTRIBUTES_INPUT;
+  }
+});
+Object.defineProperty(exports, "PRODUCT_IMAGE_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _products.PRODUCT_IMAGE_DEFAULT;
+  }
+});
+Object.defineProperty(exports, "PRODUCT_STATUS", {
+  enumerable: true,
+  get: function get() {
+    return _products.PRODUCT_STATUS;
+  }
+});
+Object.defineProperty(exports, "PRODUCT_STATUS_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _products.PRODUCT_STATUS_DEFAULT;
+  }
+});
+Object.defineProperty(exports, "PRODUCT_TYPES", {
+  enumerable: true,
+  get: function get() {
+    return _products.PRODUCT_TYPES;
+  }
+});
+Object.defineProperty(exports, "PRODUCT_TYPES_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _products.PRODUCT_TYPES_DEFAULT;
   }
 });
 Object.defineProperty(exports, "PUBLIC_NAME_INPUT", {
@@ -441,6 +483,18 @@ Object.defineProperty(exports, "TAX_CLASS_INPUT", {
     return _Inputs.TAX_CLASS_INPUT;
   }
 });
+Object.defineProperty(exports, "TAX_STATUS", {
+  enumerable: true,
+  get: function get() {
+    return _products.TAX_STATUS;
+  }
+});
+Object.defineProperty(exports, "TAX_STATUS_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _products.TAX_STATUS_DEFAULT;
+  }
+});
 Object.defineProperty(exports, "TAX_STATUS_INPUT", {
   enumerable: true,
   get: function get() {
@@ -519,6 +573,18 @@ Object.defineProperty(exports, "USER_NAME_INPUT", {
     return _Inputs.USER_NAME_INPUT;
   }
 });
+Object.defineProperty(exports, "VISIBILITY", {
+  enumerable: true,
+  get: function get() {
+    return _products.VISIBILITY;
+  }
+});
+Object.defineProperty(exports, "VISIBILITY_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _products.VISIBILITY_DEFAULT;
+  }
+});
 Object.defineProperty(exports, "VISIBILITY_INPUT", {
   enumerable: true,
   get: function get() {
@@ -565,3 +631,4 @@ var _Inputs = require("./Inputs");
 var _DefaultValue = require("./DefaultValue");
 var _Api = require("./Api");
 var _LocalStorage = require("./LocalStorage");
+var _products = require("./products");

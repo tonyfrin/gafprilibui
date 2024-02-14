@@ -88,6 +88,8 @@ export const MainMenu = ({
                 image={button.image}
                 contentProps={{
                   onClick: button.onClick,
+                  style: { cursor: 'pointer' },
+                  title: 'prueba',
                 }}
               />
             </li>

@@ -46,7 +46,11 @@ var MainMenu = function MainMenu(_ref) {
         title: button.title,
         image: button.image,
         contentProps: {
-          onClick: button.onClick
+          onClick: button.onClick,
+          style: {
+            cursor: 'pointer'
+          },
+          title: 'prueba'
         }
       }));
     })));

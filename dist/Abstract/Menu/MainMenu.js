@@ -39,7 +39,6 @@ var MainMenu = function MainMenu(_ref) {
       key: item[index].key,
       className: (0, _css.cx)(mainMenuStylesContainer(stylesContainer), containerClassName)
     }, restContainerProps), item.map(function (button, i) {
-      console.log('button', button);
       return /*#__PURE__*/_react["default"].createElement("li", (0, _extends2["default"])({
         key: "".concat(button.title, "-").concat(i),
         className: (0, _css.cx)(mainMenuStylesContent(stylesContent), contentClassName)
@@ -47,11 +46,7 @@ var MainMenu = function MainMenu(_ref) {
         title: button.title,
         image: button.image,
         contentProps: {
-          onClick: button.onClick,
-          style: {
-            cursor: 'pointer'
-          },
-          title: 'prueba'
+          onClick: button.onClick
         }
       }));
     })));

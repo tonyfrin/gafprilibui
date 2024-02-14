@@ -74,9 +74,6 @@ export const MainMenu = ({
         {...restContainerProps}
       >
         {item.map((button, i) => {
-
-          console.log('button', button);
-
           return (
             <li
               key={`${button.title}-${i}`}
@@ -91,8 +88,6 @@ export const MainMenu = ({
                 image={button.image}
                 contentProps={{
                   onClick: button.onClick,
-                  style: { cursor: 'pointer' },
-                  title: 'prueba',
                 }}
               />
             </li>

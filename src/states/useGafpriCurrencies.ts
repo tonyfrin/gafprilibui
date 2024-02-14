@@ -237,11 +237,19 @@ export function useGafpriCurrencies({
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    generalChangeName(value, validationName, setName);
+    generalChangeName({
+      value,
+      validation: validationName,
+      setValue: setName,
+    });
   };
 
   const changeSymbol = (value: string): void => {
-    generalChangeCurrenciesSymbol(value, validationSymbol, setSymbol);
+    generalChangeCurrenciesSymbol({
+      value,
+      validation: validationSymbol,
+      setValue: setSymbol,
+    });
   };
 
   // Manejo de la data de Currencies

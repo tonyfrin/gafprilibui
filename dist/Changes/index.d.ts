@@ -1,77 +1,62 @@
-import { ChangeEvent } from 'react';
-import { SingleValue } from 'react-select';
-import { SelectDefault } from '../helpers';
-export declare const generalChangeUserName: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeName: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => string;
-export declare const generalChangeLastName: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangePassword: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeDescription: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeAddress: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeAddressType: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeCityStateCountry: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void, setIsReset: (valueReset: boolean) => void) => void;
-export declare const generalChangeCityOptions: (country: string, state: string, setCityDefault: (valueDefault: SelectDefault) => void, setCity: (transformedValue: string) => void, setCityOptions: (valueOptions: SelectDefault[]) => void, isReset: boolean) => void;
-export declare const generalChangeStateCountryOptions: (country: string, setStateCountryDefault: (valueDefault: SelectDefault) => void, setStateCountry: (transformedValue: string) => void, setStateCountryOptions: (valueOptions: SelectDefault[]) => void, isReset: boolean) => void;
-export declare const generalChangePostCode: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeSite: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeParentId: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number) => void) => void;
-export declare const generalChangePhoto: (e: ChangeEvent<HTMLInputElement>, changeError: (valueError: string[]) => void, setSubmitting: (valueSubmitting: boolean) => void, setPhoto: (valuePhoto: string) => void, validation: (valueValid: string) => boolean) => Promise<void>;
-export declare const generalChangeGalleryPhoto: (e: ChangeEvent<HTMLInputElement>, changeError: (valueError: string[]) => void, setSubmitting: (valueSubmitting: boolean) => void, setPhoto: (valuePhoto: string[]) => void, validation: (valueValid: string[]) => boolean, selectedOptions: string[], setSelectedValue: (value: string) => void) => Promise<void>;
-export declare const generalChangeStatus: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeCurrenciesSymbol: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeTypeDocumentIdId: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number | null) => void) => void;
-export declare const generalChangeDocumentIdIndex: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeDocumentIdDigit: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeEmail: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangePhone: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeType: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeCurrenciesId: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number) => void) => void;
-export declare const generalChangeCurrenciesDecimalNumbers: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: number) => void) => void;
-export declare const generalChangeTaxes: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: boolean) => void) => void;
-export declare const generalChangeWebSite: (value: string, validation: (valueValid: string) => boolean, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeAreaCode: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
-export declare const generalChangeRoles: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: string) => void) => void;
-export declare const generalChanceIsActive: (options: SingleValue<{
-    value: string;
-    label: string;
-}>, validation: (valueValid: string) => boolean, setDefault: (valueDefault: SelectDefault) => void, setValue: (transformedValue: boolean) => void) => void;
 export { generalChangeNote } from './generalChangeNote';
 export type { GeneralChangeNoteProps } from './generalChangeNote';
+export { generalChangeUserName } from './generalChangeUserName';
+export type { GeneralChangeUserNameProps } from './generalChangeUserName';
+export { generalChangeName } from './generalChangeName';
+export type { GeneralChangeNameProps } from './generalChangeName';
+export { generalChangeLastName } from './generalChangeLastName';
+export type { GeneralChangeLastNameProps } from './generalChangeLastName';
+export { generalChangePassword } from './generalChangePassword';
+export type { GeneralChangePasswordProps } from './generalChangePassword';
+export { generalChangeDescription } from './generalChangeDescription';
+export type { GeneralChangeDescriptionProps } from './generalChangeDescription';
+export { generalChangeAddress } from './generalChangeAddress';
+export type { GeneralChangeAddressProps } from './generalChangeAddress';
+export { generalChangeAddressType } from './generalChangeAddressType';
+export type { GeneralChangeAddressTypeProps } from './generalChangeAddressType';
+export { generalChangeCityStateCountry } from './generalChangeCityStateCountry';
+export type { GeneralChangeCityStateCountryProps } from './generalChangeCityStateCountry';
+export { generalChangeCityOptions } from './generalChangeCityOptions';
+export type { GeneralChangeCityOptionsProps } from './generalChangeCityOptions';
+export { generalChangeStateCountryOptions } from './generalChangeStateCountryOptions';
+export type { GeneralChangeStateCountryOptionsProps } from './generalChangeStateCountryOptions';
+export { generalChangePostCode } from './generalChangePostCode';
+export type { GeneralChangePostCodeProps } from './generalChangePostCode';
+export { generalChangeSite } from './generalChangeSite';
+export type { GeneralChangeSiteProps } from './generalChangeSite';
+export { generalChangeParentId } from './generalChangeParentId';
+export type { GeneralChangeParentIdProps } from './generalChangeParentId';
+export { generalChangePhoto } from './generalChangePhoto';
+export type { GeneralChangePhotoProps } from './generalChangePhoto';
+export { generalChangeGalleryPhoto } from './generalChangeGalleryPhoto';
+export type { GeneralChangeGalleryPhotoProps } from './generalChangeGalleryPhoto';
+export { generalChangeStatus } from './generalChangeStatus';
+export type { GeneralChangeStatusProps } from './generalChangeStatus';
+export { generalChangeCurrenciesSymbol } from './generalChangeCurrenciesSymbol';
+export type { GeneralChangeCurrenciesSymbolProps } from './generalChangeCurrenciesSymbol';
+export { generalChangeTypeDocumentIdId } from './generalChangeTypeDocumentIdId';
+export type { GeneralChangeTypeDocumentIdIdProps } from './generalChangeTypeDocumentIdId';
+export { generalChangeDocumentIdIndex } from './generalChangeDocumentIdIndex';
+export type { GeneralChangeDocumentIdIndexProps } from './generalChangeDocumentIdIndex';
+export { generalChangeDocumentIdDigit } from './generalChangeDocumentIdDigit';
+export type { GeneralChangeDocumentIdDigitProps } from './generalChangeDocumentIdDigit';
+export { generalChangeEmail } from './generalChangeEmail';
+export type { GeneralChangeEmailProps } from './generalChangeEmail';
+export { generalChangePhone } from './generalChangePhone';
+export type { GeneralChangePhoneProps } from './generalChangePhone';
+export { generalChangeType } from './generalChangeType';
+export type { GeneralChangeTypeProps } from './generalChangeType';
+export { generalChangeCurrenciesId } from './generalChangeCurrenciesId';
+export type { GeneralChangeCurrenciesIdProps } from './generalChangeCurrenciesId';
+export { generalChangeCurrenciesDecimalNumbers } from './generalChangeCurrenciesDecimalNumbers';
+export type { GeneralChangeCurrenciesDecimalNumbersProps } from './generalChangeCurrenciesDecimalNumbers';
+export { generalChangeTaxes } from './generalChangeTaxes';
+export type { GeneralChangeTaxesProps } from './generalChangeTaxes';
+export { generalChangeWebSite } from './generalChangeWebSite';
+export type { GeneralChangeWebSiteProps } from './generalChangeWebSite';
+export { generalChangeAreaCode } from './generalChangeAreaCode';
+export type { GeneralChangeAreaCodeProps } from './generalChangeAreaCode';
+export { generalChangeRoles } from './generalChangeRoles';
+export type { GeneralChangeRolesProps } from './generalChangeRoles';
+export { generalChanceIsActive } from './generalChanceIsActive';
+export type { GeneralChanceIsActiveProps } from './generalChanceIsActive';

@@ -580,48 +580,117 @@ var useGafpriSites = function useGafpriSites(_ref) {
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    (0, _Changes.generalChangeName)(value, validationName, setName);
+    (0, _Changes.generalChangeName)({
+      value: value,
+      validation: validationName,
+      setValue: setName
+    });
   };
   var changeDocumentIndex = function changeDocumentIndex(options) {
-    (0, _Changes.generalChangeDocumentIdIndex)(options, validationDocumentIndex, setDocumentIndexDefault, setDocumentIndex);
+    (0, _Changes.generalChangeDocumentIdIndex)({
+      options: options,
+      validation: validationDocumentIndex,
+      setDefault: setDocumentIndexDefault,
+      setValue: setDocumentIndex
+    });
   };
   var changeDocumentNumber = function changeDocumentNumber(newDocument) {
-    (0, _Changes.generalChangeDocumentIdDigit)(newDocument, validationDocumentNumber, setDocumentNumber);
+    (0, _Changes.generalChangeDocumentIdDigit)({
+      value: newDocument,
+      validation: validationDocumentNumber,
+      setValue: setDocumentNumber
+    });
   };
   var changeAddress1 = function changeAddress1(value) {
-    (0, _Changes.generalChangeAddress)(value, validationAddress1, setAddress1);
+    (0, _Changes.generalChangeAddress)({
+      value: value,
+      validation: validationAddress1,
+      setValue: setAddress1
+    });
   };
   var changeAddress2 = function changeAddress2(value) {
-    (0, _Changes.generalChangeAddress)(value, validationAddress2, setAddress2);
+    (0, _Changes.generalChangeAddress)({
+      value: value,
+      validation: validationAddress2,
+      setValue: setAddress2
+    });
   };
   var changeCity = function changeCity(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationCity, setCityDefault, setCity, setIsReset);
+    (0, _Changes.generalChangeCityStateCountry)({
+      options: options,
+      validation: validationCity,
+      setDefault: setCityDefault,
+      setValue: setCity,
+      setIsReset: setIsReset
+    });
   };
   var changeCityOptions = _react["default"].useCallback(function () {
-    (0, _Changes.generalChangeCityOptions)(country, state, setCityDefault, setCity, setCityOptions, isReset);
+    (0, _Changes.generalChangeCityOptions)({
+      country: country,
+      state: state,
+      setCityDefault: setCityDefault,
+      setCity: setCity,
+      setCityOptions: setCityOptions,
+      isReset: isReset
+    });
   }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   var changeStateCountry = function changeStateCountry(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationStateCountry, setStateCountryDefault, setStateCountry, setIsReset);
+    (0, _Changes.generalChangeCityStateCountry)({
+      options: options,
+      validation: validationStateCountry,
+      setDefault: setStateCountryDefault,
+      setValue: setStateCountry,
+      setIsReset: setIsReset
+    });
   };
   var changeStateCountryOptions = _react["default"].useCallback(function () {
-    (0, _Changes.generalChangeStateCountryOptions)(country, setStateCountryDefault, setStateCountry, setStateCountryOptions, isReset);
+    (0, _Changes.generalChangeStateCountryOptions)({
+      country: country,
+      setStateCountryDefault: setStateCountryDefault,
+      setStateCountry: setStateCountry,
+      setStateCountryOptions: setStateCountryOptions,
+      isReset: isReset
+    });
   }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
 
   var changeCountry = function changeCountry(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationCountry, setCountryDefault, setCountry, setIsReset);
+    (0, _Changes.generalChangeCityStateCountry)({
+      options: options,
+      validation: validationCountry,
+      setDefault: setCountryDefault,
+      setValue: setCountry,
+      setIsReset: setIsReset
+    });
   };
   var changePostCode = function changePostCode(newPostCode) {
-    (0, _Changes.generalChangePostCode)(newPostCode, validationPostCode, setPostCode);
+    (0, _Changes.generalChangePostCode)({
+      value: newPostCode,
+      validation: validationPostCode,
+      setValue: setPostCode
+    });
   };
   var changeEmail = function changeEmail(inputValue) {
-    (0, _Changes.generalChangeEmail)(inputValue, validationEmail, setEmail);
+    (0, _Changes.generalChangeEmail)({
+      value: inputValue,
+      validation: validationEmail,
+      setValue: setEmail
+    });
   };
   var changePhone = function changePhone(newPhone) {
-    return (0, _Changes.generalChangePhone)(newPhone, validationPhone, setPhone);
+    return (0, _Changes.generalChangePhone)({
+      value: newPhone,
+      validation: validationPhone,
+      setValue: setPhone
+    });
   };
   var changeCurrenciesId = function changeCurrenciesId(options) {
-    (0, _Changes.generalChangeCurrenciesId)(options, validationCurrenciesId, setCurrenciesIdDefault, setCurrenciesId);
+    (0, _Changes.generalChangeCurrenciesId)({
+      options: options,
+      validation: validationCurrenciesId,
+      setDefault: setCurrenciesIdDefault,
+      setValue: setCurrenciesId
+    });
     var value = options ? parseInt(options.value, 10) : 0;
     var label = (options === null || options === void 0 ? void 0 : options.label) || '';
     var newOptions = {
@@ -636,19 +705,43 @@ var useGafpriSites = function useGafpriSites(_ref) {
     });
   };
   var changeCurrencyLocation = function changeCurrencyLocation(options) {
-    (0, _Changes.generalChangeType)(options, validationCurrencyLocation, setCurrencyLocationDefault, setCurrencyLocation);
+    (0, _Changes.generalChangeType)({
+      options: options,
+      validation: validationCurrencyLocation,
+      setDefault: setCurrencyLocationDefault,
+      setValue: setCurrencyLocation
+    });
   };
   var changeSeparator = function changeSeparator(options) {
-    (0, _Changes.generalChangeType)(options, validationSeparator, setSeparatorDefault, setSeparator);
+    (0, _Changes.generalChangeType)({
+      options: options,
+      validation: validationSeparator,
+      setDefault: setSeparatorDefault,
+      setValue: setSeparator
+    });
   };
   var changeDecimalNumbers = function changeDecimalNumbers(options) {
-    (0, _Changes.generalChangeCurrenciesDecimalNumbers)(options, validationDecimalNumbers, setDecimalNumbersDefault, setDecimalNumbers);
+    (0, _Changes.generalChangeCurrenciesDecimalNumbers)({
+      options: options,
+      validation: validationDecimalNumbers,
+      setDefault: setDecimalNumbersDefault,
+      setValue: setDecimalNumbers
+    });
   };
   var changeTaxes = function changeTaxes(options) {
-    (0, _Changes.generalChangeTaxes)(options, validationTaxes, setTaxesDefault, setTaxes);
+    (0, _Changes.generalChangeTaxes)({
+      options: options,
+      validation: validationTaxes,
+      setDefault: setTaxesDefault,
+      setValue: setTaxes
+    });
   };
   var changeHost = function changeHost(value) {
-    (0, _Changes.generalChangeWebSite)(value, validationHost, setHost);
+    (0, _Changes.generalChangeWebSite)({
+      value: value,
+      validation: validationHost,
+      setValue: setHost
+    });
   };
 
   // Manejo de la data en DB

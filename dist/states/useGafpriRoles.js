@@ -142,7 +142,11 @@ function useGafpriRoles(_ref) {
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    (0, _Changes.generalChangeName)(value, validationName, setName);
+    (0, _Changes.generalChangeName)({
+      value: value,
+      validation: validationName,
+      setValue: setName
+    });
   };
   var changePermissions = function changePermissions(permissionValue, checked) {
     setPermissions(function (prevSelectedPermissions) {

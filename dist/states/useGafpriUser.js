@@ -371,29 +371,61 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    (0, _Changes.generalChangeName)(value, validationName, setName);
+    (0, _Changes.generalChangeName)({
+      value: value,
+      validation: validationName,
+      setValue: setName
+    });
   };
   var changeLastName = function changeLastName(value) {
-    (0, _Changes.generalChangeLastName)(value, validationLastName, setLastName);
+    (0, _Changes.generalChangeLastName)({
+      value: value,
+      validation: validationLastName,
+      setValue: setLastName
+    });
   };
   var changeEmail = function changeEmail(inputValue) {
-    (0, _Changes.generalChangeEmail)(inputValue, validationEmail, setEmail);
+    (0, _Changes.generalChangeEmail)({
+      value: inputValue,
+      validation: validationEmail,
+      setValue: setEmail
+    });
   };
   var changePhoneNumber = function changePhoneNumber(newPhone) {
-    (0, _Changes.generalChangePhone)(newPhone, validationPhoneNumber, setPhoneNumber);
+    (0, _Changes.generalChangePhone)({
+      value: newPhone,
+      validation: validationPhoneNumber,
+      setValue: setPhoneNumber
+    });
   };
   var changeAreaCode = function changeAreaCode(options) {
-    (0, _Changes.generalChangeAreaCode)(options, validationAreaCode, setAreaCodeDefault, setAreaCode);
+    (0, _Changes.generalChangeAreaCode)({
+      options: options,
+      validation: validationAreaCode,
+      setDefault: setAreaCodeDefault,
+      setValue: setAreaCode
+    });
   };
   var changeRole = function changeRole(options) {
-    (0, _Changes.generalChangeRoles)(options, validationRole, setRoleDefault, setRole);
+    (0, _Changes.generalChangeRoles)({
+      options: options,
+      validation: validationRole,
+      setDefault: setRoleDefault,
+      setValue: setRole
+    });
   };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            (0, _Changes.generalChangePhoto)(e, changeError, setSubmitting, setPhoto, validationPhoto);
+            (0, _Changes.generalChangePhoto)({
+              e: e,
+              changeError: changeError,
+              setSubmitting: setSubmitting,
+              setPhoto: setPhoto,
+              validation: validationPhoto
+            });
           case 1:
           case "end":
             return _context.stop();
@@ -405,7 +437,12 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     };
   }();
   var changeIsActive = function changeIsActive(options) {
-    (0, _Changes.generalChanceIsActive)(options, validationIsActive, setIsActiveDefault, setIsActive);
+    (0, _Changes.generalChanceIsActive)({
+      options: options,
+      validation: validationIsActive,
+      setDefault: setIsActiveDefault,
+      setValue: setIsActive
+    });
   };
   var changeSearchBy = function changeSearchBy(options) {
     var label = options !== null && options !== void 0 && options.label ? options.label : 'Nombre';

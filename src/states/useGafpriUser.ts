@@ -479,59 +479,80 @@ export const useGafpriUsers = ({
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    generalChangeName(value, validationName, setName);
+    generalChangeName({
+      value,
+      validation: validationName,
+      setValue: setName,
+    });
   };
 
   const changeLastName = (value: string): void => {
-    generalChangeLastName(value, validationLastName, setLastName);
+    generalChangeLastName({
+      value,
+      validation: validationLastName,
+      setValue: setLastName,
+    });
   };
 
   const changeEmail = (inputValue: string): void => {
-    generalChangeEmail(inputValue, validationEmail, setEmail);
+    generalChangeEmail({
+      value: inputValue,
+      validation: validationEmail,
+      setValue: setEmail,
+    });
   };
 
   const changePhoneNumber = (newPhone: string): void => {
-    generalChangePhone(newPhone, validationPhoneNumber, setPhoneNumber);
+    generalChangePhone({
+      value: newPhone,
+      validation: validationPhoneNumber,
+      setValue: setPhoneNumber,
+    });
   };
 
   const changeAreaCode = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeAreaCode(
+    generalChangeAreaCode({
       options,
-      validationAreaCode,
-      setAreaCodeDefault,
-      setAreaCode
-    );
+      validation: validationAreaCode,
+      setDefault: setAreaCodeDefault,
+      setValue: setAreaCode,
+    });
   };
 
   const changeRole = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeRoles(options, validationRole, setRoleDefault, setRole);
+    generalChangeRoles({
+      options,
+      validation: validationRole,
+      setDefault: setRoleDefault,
+      setValue: setRole,
+    });
   };
 
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    generalChangePhoto(
+    generalChangePhoto({
       e,
       changeError,
       setSubmitting,
       setPhoto,
-      validationPhoto
-    );
+      validation: validationPhoto,
+    });
   };
 
   const changeIsActive = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChanceIsActive(
+    generalChanceIsActive({
       options,
-      validationIsActive,
-      setIsActiveDefault,
-      setIsActive
-    );
+      validation: validationIsActive,
+      setDefault: setIsActiveDefault,
+      setValue: setIsActive,
+    });
   };
 
   const changeSearchBy = (

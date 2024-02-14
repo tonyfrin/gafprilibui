@@ -107,11 +107,19 @@ export function useGafpriLogin({
 
   // Funciones de cambios
   const changeUserName = (value: string): void => {
-    generalChangeUserName(value, validationUserName, setUserName);
+    generalChangeUserName({
+      value,
+      validation: validationUserName,
+      setValue: setUserName,
+    });
   };
 
   const changePassword = (value: string): void => {
-    generalChangePassword(value, validationPassword, setPassword);
+    generalChangePassword({
+      value,
+      validation: validationPassword,
+      setValue: setPassword,
+    });
   };
 
   const changeToken = (value: string | null): void => {

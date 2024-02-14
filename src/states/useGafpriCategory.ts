@@ -375,40 +375,53 @@ export function useGafpriCategory({
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    generalChangeName(value, validationName, setName);
+    generalChangeName({
+      value,
+      validation: validationName,
+      setValue: setName,
+    });
   };
 
   const changeParentId = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeParentId(
+    generalChangeParentId({
       options,
-      validationParentId,
-      setParentIdDefault,
-      setParentId
-    );
+      validation: validationParentId,
+      setDefault: setParentIdDefault,
+      setValue: setParentId,
+    });
   };
 
   const changeDescription = (value: string): void => {
-    generalChangeDescription(value, validationDescription, setDescription);
+    generalChangeDescription({
+      value,
+      validation: validationDescription,
+      setValue: setDescription,
+    });
   };
 
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    generalChangePhoto(
+    generalChangePhoto({
       e,
       changeError,
       setSubmitting,
       setPhoto,
-      validationPhoto
-    );
+      validation: validationPhoto,
+    });
   };
 
   const changeStatus = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeStatus(options, validationStatus, setStatusDefault, setStatus);
+    generalChangeStatus({
+      options,
+      validation: validationStatus,
+      setDefault: setStatusDefault,
+      setValue: setStatus,
+    });
   };
 
   // Manejo de la data de Category

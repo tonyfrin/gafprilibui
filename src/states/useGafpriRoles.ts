@@ -224,7 +224,11 @@ export function useGafpriRoles({
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    generalChangeName(value, validationName, setName);
+    generalChangeName({
+      value,
+      validation: validationName,
+      setValue: setName,
+    });
   };
 
   const changePermissions = (

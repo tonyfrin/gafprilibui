@@ -680,56 +680,76 @@ export const useGafpriAttributesEntity = ({
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    generalChangeName(value, validationName, setName);
+    generalChangeName({
+      value,
+      validation: validationName,
+      setValue: setName,
+    });
   };
 
   const changeLastName = (value: string): void => {
-    generalChangeLastName(value, validationLastName, setLastName);
+    generalChangeLastName({
+      value,
+      validation: validationLastName,
+      setValue: setLastName,
+    });
   };
 
   const changeTypeDocumentIdId = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeTypeDocumentIdId(
+    generalChangeTypeDocumentIdId({
       options,
-      validationTypeDocumentIdId,
-      setTypeDocumentIdIdDefault,
-      setTypeDocumentIdId
-    );
+      validation: validationTypeDocumentIdId,
+      setDefault: setTypeDocumentIdIdDefault,
+      setValue: setTypeDocumentIdId,
+    });
   };
 
   const changeIndex = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeDocumentIdIndex(
+    generalChangeDocumentIdIndex({
       options,
-      validationIndex,
-      setIndexDefault,
-      setIndex
-    );
+      validation: validationIndex,
+      setDefault: setIndexDefault,
+      setValue: setIndex,
+    });
   };
 
   const changeDigit = (newDigit: string): void => {
-    generalChangeDocumentIdDigit(newDigit, validationDigit, setDigit);
+    generalChangeDocumentIdDigit({
+      value: newDigit,
+      validation: validationDigit,
+      setValue: setDigit,
+    });
   };
 
   const changeAddressType = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeAddressType(
+    generalChangeAddressType({
       options,
-      validationAddressType,
-      setAddressTypeDefault,
-      setAddressType
-    );
+      validation: validationAddressType,
+      setDefault: setAddressTypeDefault,
+      setValue: setAddressType,
+    });
   };
 
   const changeAddress1 = (value: string): void => {
-    generalChangeAddress(value, validationAddress1, setAddress1);
+    generalChangeAddress({
+      value,
+      validation: validationAddress1,
+      setValue: setAddress1,
+    });
   };
 
   const changeAddress2 = (value: string): void => {
-    generalChangeAddress(value, validationAddress2, setAddress2);
+    generalChangeAddress({
+      value,
+      validation: validationAddress2,
+      setValue: setAddress2,
+    });
   };
 
   const changeTypeInAllAddresses = (
@@ -761,106 +781,128 @@ export const useGafpriAttributesEntity = ({
   const changeCity = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeCityStateCountry(
+    generalChangeCityStateCountry({
       options,
-      validationCity,
-      setCityDefault,
-      setCity,
-      setIsReset
-    );
+      validation: validationCity,
+      setDefault: setCityDefault,
+      setValue: setCity,
+      setIsReset,
+    });
   };
 
   const changeCityOptions = React.useCallback((): void => {
-    generalChangeCityOptions(
+    generalChangeCityOptions({
       country,
       state,
       setCityDefault,
       setCity,
       setCityOptions,
-      isReset
-    );
+      isReset,
+    });
   }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeStateCountry = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeCityStateCountry(
+    generalChangeCityStateCountry({
       options,
-      validationStateCountry,
-      setStateCountryDefault,
-      setStateCountry,
-      setIsReset
-    );
+      validation: validationStateCountry,
+      setDefault: setStateCountryDefault,
+      setValue: setStateCountry,
+      setIsReset,
+    });
   };
 
   const changeStateCountryOptions = React.useCallback((): void => {
-    generalChangeStateCountryOptions(
+    generalChangeStateCountryOptions({
       country,
       setStateCountryDefault,
       setStateCountry,
       setStateCountryOptions,
-      isReset
-    );
+      isReset,
+    });
   }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeCountry = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeCityStateCountry(
+    generalChangeCityStateCountry({
       options,
-      validationCountry,
-      setCountryDefault,
-      setCountry,
-      setIsReset
-    );
+      validation: validationCountry,
+      setDefault: setCountryDefault,
+      setValue: setCountry,
+      setIsReset,
+    });
   };
 
   const changePostCode = (newPostCode: string): void => {
-    generalChangePostCode(newPostCode, validationPostCode, setPostCode);
+    generalChangePostCode({
+      value: newPostCode,
+      validation: validationPostCode,
+      setValue: setPostCode,
+    });
   };
 
   const changeEmail = (inputValue: string): void => {
-    generalChangeEmail(inputValue, validationEmail, setEmail);
+    generalChangeEmail({
+      value: inputValue,
+      validation: validationEmail,
+      setValue: setEmail,
+    });
   };
 
   const changePhone = (newPhone: string): void => {
-    generalChangePhone(newPhone, validationPhone, setPhone);
+    generalChangePhone({
+      value: newPhone,
+      validation: validationPhone,
+      setValue: setPhone,
+    });
   };
 
   const changeType = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeType(options, validationType, setTypeDefault, setType);
+    generalChangeType({
+      options,
+      validation: validationType,
+      setDefault: setTypeDefault,
+      setValue: setType,
+    });
   };
 
   const changePhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    generalChangePhoto(
+    generalChangePhoto({
       e,
-      useError.actions.changeError,
+      changeError: useError.actions.changeError,
       setSubmitting,
       setPhoto,
-      validationPhoto
-    );
+      validation: validationPhoto,
+    });
   };
 
   const changeDocumentPhoto = async (
     e: ChangeEvent<HTMLInputElement>
   ): Promise<void> => {
-    generalChangePhoto(
+    generalChangePhoto({
       e,
-      useError.actions.changeError,
-      setDocumentSubmitting,
-      setDocumentPhoto,
-      validationDocumentPhoto
-    );
+      changeError: useError.actions.changeError,
+      setSubmitting: setDocumentSubmitting,
+      setPhoto: setDocumentPhoto,
+      validation: validationDocumentPhoto,
+    });
   };
 
   const changeStatus = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeStatus(options, validationStatus, setStatusDefault, setStatus);
+    generalChangeStatus({
+      options,
+      validation: validationStatus,
+      setDefault: setStatusDefault,
+      setValue: setStatus,
+    });
   };
 
   const states = {

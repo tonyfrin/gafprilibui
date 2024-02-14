@@ -725,114 +725,138 @@ export const useGafpriSites = ({
 
   // Funciones de cambios
   const changeName = (value: string): void => {
-    generalChangeName(value, validationName, setName);
+    generalChangeName({
+      value,
+      validation: validationName,
+      setValue: setName,
+    });
   };
 
   const changeDocumentIndex = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeDocumentIdIndex(
+    generalChangeDocumentIdIndex({
       options,
-      validationDocumentIndex,
-      setDocumentIndexDefault,
-      setDocumentIndex
-    );
+      validation: validationDocumentIndex,
+      setDefault: setDocumentIndexDefault,
+      setValue: setDocumentIndex,
+    });
   };
 
   const changeDocumentNumber = (newDocument: string): void => {
-    generalChangeDocumentIdDigit(
-      newDocument,
-      validationDocumentNumber,
-      setDocumentNumber
-    );
+    generalChangeDocumentIdDigit({
+      value: newDocument,
+      validation: validationDocumentNumber,
+      setValue: setDocumentNumber,
+    });
   };
 
   const changeAddress1 = (value: string): void => {
-    generalChangeAddress(value, validationAddress1, setAddress1);
+    generalChangeAddress({
+      value,
+      validation: validationAddress1,
+      setValue: setAddress1,
+    });
   };
 
   const changeAddress2 = (value: string): void => {
-    generalChangeAddress(value, validationAddress2, setAddress2);
+    generalChangeAddress({
+      value,
+      validation: validationAddress2,
+      setValue: setAddress2,
+    });
   };
 
   const changeCity = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeCityStateCountry(
+    generalChangeCityStateCountry({
       options,
-      validationCity,
-      setCityDefault,
-      setCity,
-      setIsReset
-    );
+      validation: validationCity,
+      setDefault: setCityDefault,
+      setValue: setCity,
+      setIsReset,
+    });
   };
 
   const changeCityOptions = React.useCallback((): void => {
-    generalChangeCityOptions(
+    generalChangeCityOptions({
       country,
       state,
       setCityDefault,
       setCity,
       setCityOptions,
-      isReset
-    );
+      isReset,
+    });
   }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeStateCountry = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeCityStateCountry(
+    generalChangeCityStateCountry({
       options,
-      validationStateCountry,
-      setStateCountryDefault,
-      setStateCountry,
-      setIsReset
-    );
+      validation: validationStateCountry,
+      setDefault: setStateCountryDefault,
+      setValue: setStateCountry,
+      setIsReset,
+    });
   };
 
   const changeStateCountryOptions = React.useCallback((): void => {
-    generalChangeStateCountryOptions(
+    generalChangeStateCountryOptions({
       country,
       setStateCountryDefault,
       setStateCountry,
       setStateCountryOptions,
-      isReset
-    );
+      isReset,
+    });
   }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeCountry = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeCityStateCountry(
+    generalChangeCityStateCountry({
       options,
-      validationCountry,
-      setCountryDefault,
-      setCountry,
-      setIsReset
-    );
+      validation: validationCountry,
+      setDefault: setCountryDefault,
+      setValue: setCountry,
+      setIsReset,
+    });
   };
 
   const changePostCode = (newPostCode: string): void => {
-    generalChangePostCode(newPostCode, validationPostCode, setPostCode);
+    generalChangePostCode({
+      value: newPostCode,
+      validation: validationPostCode,
+      setValue: setPostCode,
+    });
   };
 
   const changeEmail = (inputValue: string): void => {
-    generalChangeEmail(inputValue, validationEmail, setEmail);
+    generalChangeEmail({
+      value: inputValue,
+      validation: validationEmail,
+      setValue: setEmail,
+    });
   };
 
   const changePhone = (newPhone: string): void => {
-    return generalChangePhone(newPhone, validationPhone, setPhone);
+    return generalChangePhone({
+      value: newPhone,
+      validation: validationPhone,
+      setValue: setPhone,
+    });
   };
 
   const changeCurrenciesId = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeCurrenciesId(
+    generalChangeCurrenciesId({
       options,
-      validationCurrenciesId,
-      setCurrenciesIdDefault,
-      setCurrenciesId
-    );
+      validation: validationCurrenciesId,
+      setDefault: setCurrenciesIdDefault,
+      setValue: setCurrenciesId,
+    });
     const value = options ? parseInt(options.value, 10) : 0;
     const label = options?.label || '';
     const newOptions = { value, label };
@@ -847,44 +871,53 @@ export const useGafpriSites = ({
   const changeCurrencyLocation = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeType(
+    generalChangeType({
       options,
-      validationCurrencyLocation,
-      setCurrencyLocationDefault,
-      setCurrencyLocation
-    );
+      validation: validationCurrencyLocation,
+      setDefault: setCurrencyLocationDefault,
+      setValue: setCurrencyLocation,
+    });
   };
 
   const changeSeparator = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeType(
+    generalChangeType({
       options,
-      validationSeparator,
-      setSeparatorDefault,
-      setSeparator
-    );
+      validation: validationSeparator,
+      setDefault: setSeparatorDefault,
+      setValue: setSeparator,
+    });
   };
 
   const changeDecimalNumbers = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeCurrenciesDecimalNumbers(
+    generalChangeCurrenciesDecimalNumbers({
       options,
-      validationDecimalNumbers,
-      setDecimalNumbersDefault,
-      setDecimalNumbers
-    );
+      validation: validationDecimalNumbers,
+      setDefault: setDecimalNumbersDefault,
+      setValue: setDecimalNumbers,
+    });
   };
 
   const changeTaxes = (
     options: SingleValue<{ value: string; label: string }>
   ): void => {
-    generalChangeTaxes(options, validationTaxes, setTaxesDefault, setTaxes);
+    generalChangeTaxes({
+      options,
+      validation: validationTaxes,
+      setDefault: setTaxesDefault,
+      setValue: setTaxes,
+    });
   };
 
   const changeHost = (value: string): void => {
-    generalChangeWebSite(value, validationHost, setHost);
+    generalChangeWebSite({
+      value,
+      validation: validationHost,
+      setValue: setHost,
+    });
   };
 
   // Manejo de la data en DB

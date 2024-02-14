@@ -521,28 +521,63 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    (0, _Changes.generalChangeName)(value, validationName, setName);
+    (0, _Changes.generalChangeName)({
+      value: value,
+      validation: validationName,
+      setValue: setName
+    });
   };
   var changeLastName = function changeLastName(value) {
-    (0, _Changes.generalChangeLastName)(value, validationLastName, setLastName);
+    (0, _Changes.generalChangeLastName)({
+      value: value,
+      validation: validationLastName,
+      setValue: setLastName
+    });
   };
   var changeTypeDocumentIdId = function changeTypeDocumentIdId(options) {
-    (0, _Changes.generalChangeTypeDocumentIdId)(options, validationTypeDocumentIdId, setTypeDocumentIdIdDefault, setTypeDocumentIdId);
+    (0, _Changes.generalChangeTypeDocumentIdId)({
+      options: options,
+      validation: validationTypeDocumentIdId,
+      setDefault: setTypeDocumentIdIdDefault,
+      setValue: setTypeDocumentIdId
+    });
   };
   var changeIndex = function changeIndex(options) {
-    (0, _Changes.generalChangeDocumentIdIndex)(options, validationIndex, setIndexDefault, setIndex);
+    (0, _Changes.generalChangeDocumentIdIndex)({
+      options: options,
+      validation: validationIndex,
+      setDefault: setIndexDefault,
+      setValue: setIndex
+    });
   };
   var changeDigit = function changeDigit(newDigit) {
-    (0, _Changes.generalChangeDocumentIdDigit)(newDigit, validationDigit, setDigit);
+    (0, _Changes.generalChangeDocumentIdDigit)({
+      value: newDigit,
+      validation: validationDigit,
+      setValue: setDigit
+    });
   };
   var changeAddressType = function changeAddressType(options) {
-    (0, _Changes.generalChangeAddressType)(options, validationAddressType, setAddressTypeDefault, setAddressType);
+    (0, _Changes.generalChangeAddressType)({
+      options: options,
+      validation: validationAddressType,
+      setDefault: setAddressTypeDefault,
+      setValue: setAddressType
+    });
   };
   var changeAddress1 = function changeAddress1(value) {
-    (0, _Changes.generalChangeAddress)(value, validationAddress1, setAddress1);
+    (0, _Changes.generalChangeAddress)({
+      value: value,
+      validation: validationAddress1,
+      setValue: setAddress1
+    });
   };
   var changeAddress2 = function changeAddress2(value) {
-    (0, _Changes.generalChangeAddress)(value, validationAddress2, setAddress2);
+    (0, _Changes.generalChangeAddress)({
+      value: value,
+      validation: validationAddress2,
+      setValue: setAddress2
+    });
   };
   var changeTypeInAllAddresses = function changeTypeInAllAddresses(addresses, newType) {
     return addresses.map(function (item) {
@@ -562,40 +597,94 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     });
   };
   var changeCity = function changeCity(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationCity, setCityDefault, setCity, setIsReset);
+    (0, _Changes.generalChangeCityStateCountry)({
+      options: options,
+      validation: validationCity,
+      setDefault: setCityDefault,
+      setValue: setCity,
+      setIsReset: setIsReset
+    });
   };
   var changeCityOptions = _react["default"].useCallback(function () {
-    (0, _Changes.generalChangeCityOptions)(country, state, setCityDefault, setCity, setCityOptions, isReset);
+    (0, _Changes.generalChangeCityOptions)({
+      country: country,
+      state: state,
+      setCityDefault: setCityDefault,
+      setCity: setCity,
+      setCityOptions: setCityOptions,
+      isReset: isReset
+    });
   }, [country, state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   var changeStateCountry = function changeStateCountry(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationStateCountry, setStateCountryDefault, setStateCountry, setIsReset);
+    (0, _Changes.generalChangeCityStateCountry)({
+      options: options,
+      validation: validationStateCountry,
+      setDefault: setStateCountryDefault,
+      setValue: setStateCountry,
+      setIsReset: setIsReset
+    });
   };
   var changeStateCountryOptions = _react["default"].useCallback(function () {
-    (0, _Changes.generalChangeStateCountryOptions)(country, setStateCountryDefault, setStateCountry, setStateCountryOptions, isReset);
+    (0, _Changes.generalChangeStateCountryOptions)({
+      country: country,
+      setStateCountryDefault: setStateCountryDefault,
+      setStateCountry: setStateCountry,
+      setStateCountryOptions: setStateCountryOptions,
+      isReset: isReset
+    });
   }, [country]); // eslint-disable-line react-hooks/exhaustive-deps
 
   var changeCountry = function changeCountry(options) {
-    (0, _Changes.generalChangeCityStateCountry)(options, validationCountry, setCountryDefault, setCountry, setIsReset);
+    (0, _Changes.generalChangeCityStateCountry)({
+      options: options,
+      validation: validationCountry,
+      setDefault: setCountryDefault,
+      setValue: setCountry,
+      setIsReset: setIsReset
+    });
   };
   var changePostCode = function changePostCode(newPostCode) {
-    (0, _Changes.generalChangePostCode)(newPostCode, validationPostCode, setPostCode);
+    (0, _Changes.generalChangePostCode)({
+      value: newPostCode,
+      validation: validationPostCode,
+      setValue: setPostCode
+    });
   };
   var changeEmail = function changeEmail(inputValue) {
-    (0, _Changes.generalChangeEmail)(inputValue, validationEmail, setEmail);
+    (0, _Changes.generalChangeEmail)({
+      value: inputValue,
+      validation: validationEmail,
+      setValue: setEmail
+    });
   };
   var changePhone = function changePhone(newPhone) {
-    (0, _Changes.generalChangePhone)(newPhone, validationPhone, setPhone);
+    (0, _Changes.generalChangePhone)({
+      value: newPhone,
+      validation: validationPhone,
+      setValue: setPhone
+    });
   };
   var changeType = function changeType(options) {
-    (0, _Changes.generalChangeType)(options, validationType, setTypeDefault, setType);
+    (0, _Changes.generalChangeType)({
+      options: options,
+      validation: validationType,
+      setDefault: setTypeDefault,
+      setValue: setType
+    });
   };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            (0, _Changes.generalChangePhoto)(e, useError.actions.changeError, setSubmitting, setPhoto, validationPhoto);
+            (0, _Changes.generalChangePhoto)({
+              e: e,
+              changeError: useError.actions.changeError,
+              setSubmitting: setSubmitting,
+              setPhoto: setPhoto,
+              validation: validationPhoto
+            });
           case 1:
           case "end":
             return _context.stop();
@@ -611,7 +700,13 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
       return _regenerator["default"].wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            (0, _Changes.generalChangePhoto)(e, useError.actions.changeError, setDocumentSubmitting, setDocumentPhoto, validationDocumentPhoto);
+            (0, _Changes.generalChangePhoto)({
+              e: e,
+              changeError: useError.actions.changeError,
+              setSubmitting: setDocumentSubmitting,
+              setPhoto: setDocumentPhoto,
+              validation: validationDocumentPhoto
+            });
           case 1:
           case "end":
             return _context2.stop();
@@ -623,7 +718,12 @@ var useGafpriAttributesEntity = function useGafpriAttributesEntity(_ref) {
     };
   }();
   var changeStatus = function changeStatus(options) {
-    (0, _Changes.generalChangeStatus)(options, validationStatus, setStatusDefault, setStatus);
+    (0, _Changes.generalChangeStatus)({
+      options: options,
+      validation: validationStatus,
+      setDefault: setStatusDefault,
+      setValue: setStatus
+    });
   };
   var states = {
     name: name,

@@ -164,7 +164,11 @@ function useGafpriTypeDocumentId(_ref) {
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    (0, _Changes.generalChangeName)(value, validationName, setName);
+    (0, _Changes.generalChangeName)({
+      value: value,
+      validation: validationName,
+      setValue: setName
+    });
   };
   var changeCountry = function changeCountry(newValue) {
     (0, _helpers.changeInputText)({

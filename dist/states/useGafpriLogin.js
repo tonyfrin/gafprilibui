@@ -73,10 +73,18 @@ function useGafpriLogin(_ref) {
 
   // Funciones de cambios
   var changeUserName = function changeUserName(value) {
-    (0, _Changes.generalChangeUserName)(value, validationUserName, setUserName);
+    (0, _Changes.generalChangeUserName)({
+      value: value,
+      validation: validationUserName,
+      setValue: setUserName
+    });
   };
   var changePassword = function changePassword(value) {
-    (0, _Changes.generalChangePassword)(value, validationPassword, setPassword);
+    (0, _Changes.generalChangePassword)({
+      value: value,
+      validation: validationPassword,
+      setValue: setPassword
+    });
   };
   var changeToken = function changeToken(value) {
     setToken(value);

@@ -249,20 +249,39 @@ function useGafpriCategory(_ref) {
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    (0, _Changes.generalChangeName)(value, validationName, setName);
+    (0, _Changes.generalChangeName)({
+      value: value,
+      validation: validationName,
+      setValue: setName
+    });
   };
   var changeParentId = function changeParentId(options) {
-    (0, _Changes.generalChangeParentId)(options, validationParentId, setParentIdDefault, setParentId);
+    (0, _Changes.generalChangeParentId)({
+      options: options,
+      validation: validationParentId,
+      setDefault: setParentIdDefault,
+      setValue: setParentId
+    });
   };
   var changeDescription = function changeDescription(value) {
-    (0, _Changes.generalChangeDescription)(value, validationDescription, setDescription);
+    (0, _Changes.generalChangeDescription)({
+      value: value,
+      validation: validationDescription,
+      setValue: setDescription
+    });
   };
   var changePhoto = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(e) {
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            (0, _Changes.generalChangePhoto)(e, changeError, setSubmitting, setPhoto, validationPhoto);
+            (0, _Changes.generalChangePhoto)({
+              e: e,
+              changeError: changeError,
+              setSubmitting: setSubmitting,
+              setPhoto: setPhoto,
+              validation: validationPhoto
+            });
           case 1:
           case "end":
             return _context.stop();
@@ -274,7 +293,12 @@ function useGafpriCategory(_ref) {
     };
   }();
   var changeStatus = function changeStatus(options) {
-    (0, _Changes.generalChangeStatus)(options, validationStatus, setStatusDefault, setStatus);
+    (0, _Changes.generalChangeStatus)({
+      options: options,
+      validation: validationStatus,
+      setDefault: setStatusDefault,
+      setValue: setStatus
+    });
   };
 
   // Manejo de la data de Category

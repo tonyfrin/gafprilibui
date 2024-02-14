@@ -154,10 +154,18 @@ function useGafpriCurrencies(_ref) {
 
   // Funciones de cambios
   var changeName = function changeName(value) {
-    (0, _Changes.generalChangeName)(value, validationName, setName);
+    (0, _Changes.generalChangeName)({
+      value: value,
+      validation: validationName,
+      setValue: setName
+    });
   };
   var changeSymbol = function changeSymbol(value) {
-    (0, _Changes.generalChangeCurrenciesSymbol)(value, validationSymbol, setSymbol);
+    (0, _Changes.generalChangeCurrenciesSymbol)({
+      value: value,
+      validation: validationSymbol,
+      setValue: setSymbol
+    });
   };
 
   // Manejo de la data de Currencies

@@ -148,6 +148,14 @@ export const HeaderMenu = ({
                   contentProps={{
                     onClick: item.onClick,
                   }}
+                  titleStyles={{
+                    fontSize: '8px',
+                    fontWeight: '500',
+                    textTransform: 'capitalize',
+                  }}
+                  imageStyles={{
+                    width: '50px',
+                  }}
                   {...contentButtonProps}
                 />
               </li>

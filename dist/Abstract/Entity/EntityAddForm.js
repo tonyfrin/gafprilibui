@@ -30,6 +30,7 @@ var EntityAddForm = function EntityAddForm(_ref) {
     _ref$nameContainerSty = _ref.nameContainerStyle,
     nameContainerStyle = _ref$nameContainerSty === void 0 ? defaultNameContainerStyle : _ref$nameContainerSty,
     modelFormProps = _ref.modelFormProps,
+    modelFormContainerProps = _ref.modelFormContainerProps,
     nameProps = _ref.nameProps,
     lastNameProps = _ref.lastNameProps,
     typeDocumentIdIdProps = _ref.typeDocumentIdIdProps,
@@ -251,7 +252,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
       returnButton: 'Volver'
     },
     handleActions: handleActions,
-    error: use.error.states.error
+    error: use.error.states.error,
+    boxProps: modelFormContainerProps
   }, modelFormProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoMainContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {

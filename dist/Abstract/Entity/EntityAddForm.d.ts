@@ -10,6 +10,7 @@ export type EntityAddFormProps = {
     photoContainerStyle?: string;
     nameContainerStyle?: string;
     modelFormProps?: ModelFormPropsExtended;
+    modelFormContainerProps?: ModelFormPropsExtended['boxProps'];
     nameProps?: InputProps;
     lastNameProps?: InputProps;
     typeDocumentIdIdProps?: GsSelectPropsExtended;
@@ -40,6 +41,7 @@ export type EntityAddFormPropsExtended = {
     photoStyle?: string;
     nameContainerStyle?: string;
     modelFormProps?: ModelFormPropsExtended;
+    modelFormContainerProps?: ModelFormPropsExtended['boxProps'];
     nameProps?: InputProps;
     lastNameProps?: InputProps;
     typeDocumentIdIdProps?: GsSelectPropsExtended;
@@ -61,4 +63,4 @@ export type EntityAddFormPropsExtended = {
     emailProps?: InputProps;
     phoneProps?: InputProps;
 };
-export declare const EntityAddForm: ({ use, formType, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, nameProps, lastNameProps, typeDocumentIdIdProps, containerDocumentProps, indexProps, digitProps, containerAddressProps, address1Props, address2Props, containerCityStateProps, cityInputProps, stateInputProps, citySelectProps, stateSelectProps, containerCountryProps, countryProps, codePostProps, containerEmailPhoneProps, emailProps, phoneProps, propsPhoto, }: EntityAddFormProps) => JSX.Element;
+export declare const EntityAddForm: ({ use, formType, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, modelFormContainerProps, nameProps, lastNameProps, typeDocumentIdIdProps, containerDocumentProps, indexProps, digitProps, containerAddressProps, address1Props, address2Props, containerCityStateProps, cityInputProps, stateInputProps, citySelectProps, stateSelectProps, containerCountryProps, countryProps, codePostProps, containerEmailPhoneProps, emailProps, phoneProps, propsPhoto, }: EntityAddFormProps) => JSX.Element;

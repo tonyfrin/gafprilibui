@@ -31,6 +31,7 @@ export type EntityAddFormProps = {
   photoContainerStyle?: string;
   nameContainerStyle?: string;
   modelFormProps?: ModelFormPropsExtended;
+  modelFormContainerProps?: ModelFormPropsExtended['boxProps'];
   nameProps?: InputProps;
   lastNameProps?: InputProps;
   typeDocumentIdIdProps?: GsSelectPropsExtended;
@@ -62,6 +63,7 @@ export type EntityAddFormPropsExtended = {
   photoStyle?: string;
   nameContainerStyle?: string;
   modelFormProps?: ModelFormPropsExtended;
+  modelFormContainerProps?: ModelFormPropsExtended['boxProps'];
   nameProps?: InputProps;
   lastNameProps?: InputProps;
   typeDocumentIdIdProps?: GsSelectPropsExtended;
@@ -104,6 +106,7 @@ export const EntityAddForm = ({
   photoContainerStyle = defaultPhotoContainerStyle,
   nameContainerStyle = defaultNameContainerStyle,
   modelFormProps,
+  modelFormContainerProps,
   nameProps,
   lastNameProps,
   typeDocumentIdIdProps,
@@ -398,6 +401,7 @@ export const EntityAddForm = ({
       }}
       handleActions={handleActions}
       error={use.error.states.error}
+      boxProps={modelFormContainerProps}
       {...modelFormProps}
     >
       <>

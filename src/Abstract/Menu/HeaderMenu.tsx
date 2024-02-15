@@ -31,6 +31,7 @@ export type HeaderMenuStylesContentUlProps = {
 };
 
 export type HeaderMenuStylesContentLiProps = {
+  listStyle?: string;
   custom?: string;
 };
 
@@ -87,6 +88,7 @@ const headerMenuStylesContentUl = (
 const headerMenuStylesContentLi = (
   styles: HeaderMenuStylesContentLiProps
 ) => css`
+  list-style: ${styles.listStyle || 'none'};
   ${styles.custom ? styles.custom : ''}
 `;
 

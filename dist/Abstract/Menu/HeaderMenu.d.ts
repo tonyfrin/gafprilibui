@@ -25,6 +25,7 @@ export type HeaderMenuStylesContentUlProps = {
     custom?: string;
 };
 export type HeaderMenuStylesContentLiProps = {
+    listStyle?: string;
     custom?: string;
 };
 export type HeaderMenuProps = {

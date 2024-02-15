@@ -26,7 +26,7 @@ var headerMenuStylesContentUl = function headerMenuStylesContentUl(styles) {
   return (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  display: ", ";\n  padding: ", ";\n  justify-content: ", ";\n  ", "\n"])), styles.display || 'flex', styles.padding || '0', styles.justifyContent || 'space-between', styles.custom ? styles.custom : '');
 };
 var headerMenuStylesContentLi = function headerMenuStylesContentLi(styles) {
-  return (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), styles.custom ? styles.custom : '');
+  return (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  list-style: ", ";\n  ", "\n"])), styles.listStyle || 'none', styles.custom ? styles.custom : '');
 };
 var HeaderMenu = function HeaderMenu(_ref) {
   var items = _ref.items,

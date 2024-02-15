@@ -73,10 +73,6 @@ export type ModelFormProps = {
 
 export type ModelFormPropsExtended = {
   boxProps?: BoxProps;
-  titles?: {
-    title1: string;
-    title2: string;
-  };
   title1Props?: Title1Props;
   title2Props?: Title2Props;
   handleActions?: (action: string, value: any) => void;

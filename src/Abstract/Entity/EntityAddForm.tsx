@@ -53,6 +53,7 @@ export type EntityAddFormProps = {
   emailProps?: InputProps;
   phoneProps?: InputProps;
   propsPhoto?: PhotoEntityProps['props'];
+  customHandleActions?: (action: string, value: any) => void;
 };
 
 export type EntityAddFormPropsExtended = {
@@ -84,6 +85,7 @@ export type EntityAddFormPropsExtended = {
   containerEmailPhoneProps?: ContainerButtonPropsExtended;
   emailProps?: InputProps;
   phoneProps?: InputProps;
+  customHandleActions?: (action: string, value: any) => void;
 };
 
 const defaultPhotoContainerStyle = css`
@@ -128,6 +130,7 @@ export const EntityAddForm = ({
   emailProps,
   phoneProps,
   propsPhoto,
+  customHandleActions,
 }: EntityAddFormProps): JSX.Element => {
   const [InputTypeDocumentIdId, setInputTypeDocumentIdId] = React.useState(
     <></>
@@ -232,7 +235,7 @@ export const EntityAddForm = ({
     use.pages.actions.returnInit();
   };
 
-  const handleActions = (action: string, value: any) => {
+  const handleActions = (action: string, value: any): void => {
     switch (action) {
       case 'submit':
         use.api.actions.add();
@@ -399,7 +402,7 @@ export const EntityAddForm = ({
         mainButton: buttonTitle,
         returnButton: 'Volver',
       }}
-      handleActions={handleActions}
+      handleActions={customHandleActions || handleActions}
       error={use.error.states.error}
       boxProps={modelFormContainerProps}
       {...modelFormProps}

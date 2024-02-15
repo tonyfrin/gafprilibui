@@ -32,6 +32,7 @@ export type EntityAddFormProps = {
     emailProps?: InputProps;
     phoneProps?: InputProps;
     propsPhoto?: PhotoEntityProps['props'];
+    customHandleActions?: (action: string, value: any) => void;
 };
 export type EntityAddFormPropsExtended = {
     photoMainContainerStyle?: string;
@@ -62,5 +63,6 @@ export type EntityAddFormPropsExtended = {
     containerEmailPhoneProps?: ContainerButtonPropsExtended;
     emailProps?: InputProps;
     phoneProps?: InputProps;
+    customHandleActions?: (action: string, value: any) => void;
 };
-export declare const EntityAddForm: ({ use, formType, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, modelFormContainerProps, nameProps, lastNameProps, typeDocumentIdIdProps, containerDocumentProps, indexProps, digitProps, containerAddressProps, address1Props, address2Props, containerCityStateProps, cityInputProps, stateInputProps, citySelectProps, stateSelectProps, containerCountryProps, countryProps, codePostProps, containerEmailPhoneProps, emailProps, phoneProps, propsPhoto, }: EntityAddFormProps) => JSX.Element;
+export declare const EntityAddForm: ({ use, formType, photoMainContainerStyle, photoContainerStyle, nameContainerStyle, modelFormProps, modelFormContainerProps, nameProps, lastNameProps, typeDocumentIdIdProps, containerDocumentProps, indexProps, digitProps, containerAddressProps, address1Props, address2Props, containerCityStateProps, cityInputProps, stateInputProps, citySelectProps, stateSelectProps, containerCountryProps, countryProps, codePostProps, containerEmailPhoneProps, emailProps, phoneProps, propsPhoto, customHandleActions, }: EntityAddFormProps) => JSX.Element;

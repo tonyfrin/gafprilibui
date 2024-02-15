@@ -51,7 +51,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     containerEmailPhoneProps = _ref.containerEmailPhoneProps,
     emailProps = _ref.emailProps,
     phoneProps = _ref.phoneProps,
-    propsPhoto = _ref.propsPhoto;
+    propsPhoto = _ref.propsPhoto,
+    customHandleActions = _ref.customHandleActions;
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
     _React$useState2 = (0, _slicedToArray2["default"])(_React$useState, 2),
     InputTypeDocumentIdId = _React$useState2[0],
@@ -251,7 +252,7 @@ var EntityAddForm = function EntityAddForm(_ref) {
       mainButton: buttonTitle,
       returnButton: 'Volver'
     },
-    handleActions: handleActions,
+    handleActions: customHandleActions || handleActions,
     error: use.error.states.error,
     boxProps: modelFormContainerProps
   }, modelFormProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {

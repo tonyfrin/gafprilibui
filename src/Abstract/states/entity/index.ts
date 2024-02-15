@@ -6,6 +6,9 @@ export { useGafpriPagesEntity } from './useGafpriPagesEntity';
 export type {
   UseGafpriApiEntityReturn,
   UseGafpriApiEntityProps,
+  UseGafpriApiEntityReturnDataCreate,
+  UseGafpriApiEntityReturnDataUpdate,
+  UseGafpriApiEntityReturnDataDelete,
 } from './useGafpriApiEntity';
 export type {
   UseGafpriAttributesEntityReturn,

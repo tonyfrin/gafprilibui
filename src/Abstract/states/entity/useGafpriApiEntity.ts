@@ -1,4 +1,3 @@
-import React from 'react';
 import { gafpriFetch } from '../../../helpers';
 import type {
   ErrorResponseProps,
@@ -14,7 +13,7 @@ import type {
   EntityAttributes,
 } from './useGafpriAttributesEntity';
 
-export type UseGafpriApiEntityReturnData = {
+export type UseGafpriApiEntityReturnDataCreate = {
   data?: {
     items?: EntityAttributes[] | [] | null;
   };
@@ -67,14 +66,6 @@ export type UseGafpriApiEntityReturnDataDelete = {
 };
 
 export type UseGafpriApiEntityReturn = {
-  states: {
-    addData: UseGafpriApiEntityReturnData | null;
-    updateData:
-      | UseGafpriApiEntityReturnData
-      | UseGafpriApiEntityReturnDataUpdate
-      | UseGafpriApiEntityReturnDataDelete
-      | null;
-  };
   actions: {
     addAddress: () => void;
     changeAddress: (id: number) => void;
@@ -88,19 +79,10 @@ export type UseGafpriApiEntityReturn = {
     ) => void;
 
     add: () => void;
-    setAddData: (data: UseGafpriApiEntityReturnData | null) => void;
     addDocument: () => void;
     deleteAddress: (id: number) => void;
-
     deleteDocument: (id: number) => void;
     update: () => void;
-    setUpdateData: (
-      data:
-        | UseGafpriApiEntityReturnData
-        | UseGafpriApiEntityReturnDataUpdate
-        | UseGafpriApiEntityReturnDataDelete
-        | null
-    ) => void;
   };
 };
 
@@ -109,6 +91,13 @@ export type UseGafpriApiEntityProps = {
   useAttributes: UseGafpriAttributesEntityReturn;
   useError: UseErrorReturn;
   token: string | null;
+  getAddData?: (data: UseGafpriApiEntityReturnDataCreate) => void;
+  getUpdateData?: (
+    data:
+      | UseGafpriApiEntityReturnDataCreate
+      | UseGafpriApiEntityReturnDataUpdate
+      | UseGafpriApiEntityReturnDataDelete
+  ) => void;
 };
 
 export const useGafpriApiEntity = ({
@@ -116,16 +105,9 @@ export const useGafpriApiEntity = ({
   useAttributes,
   useError,
   token,
+  getAddData,
+  getUpdateData,
 }: UseGafpriApiEntityProps): UseGafpriApiEntityReturn => {
-  const [addData, setAddData] =
-    React.useState<UseGafpriApiEntityReturnData | null>(null);
-  const [updateData, setUpdateData] = React.useState<
-    | UseGafpriApiEntityReturnData
-    | UseGafpriApiEntityReturnDataUpdate
-    | UseGafpriApiEntityReturnDataDelete
-    | null
-  >(null);
-
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
@@ -144,9 +126,11 @@ export const useGafpriApiEntity = ({
     });
   };
 
-  const successAdd = (data: UseGafpriApiEntityReturnData): void => {
+  const successAdd = (data: UseGafpriApiEntityReturnDataCreate): void => {
     usePages.actions.returnInit();
-    setAddData(data);
+    if (getAddData) {
+      getAddData(data);
+    }
   };
 
   const add = (): void => {
@@ -208,7 +192,7 @@ export const useGafpriApiEntity = ({
         },
       };
 
-      gafpriFetch<UseGafpriApiEntityReturnData>({
+      gafpriFetch<UseGafpriApiEntityReturnDataCreate>({
         initMethod: 'POST',
         initRoute: ENTITY_ROUTE,
         initCredentials: payload,
@@ -220,9 +204,11 @@ export const useGafpriApiEntity = ({
     }
   };
 
-  const successUpdate = (data: UseGafpriApiEntityReturnData): void => {
+  const successUpdate = (data: UseGafpriApiEntityReturnDataCreate): void => {
     usePages.actions.returnInit();
-    setUpdateData(data);
+    if (getUpdateData) {
+      getUpdateData(data);
+    }
   };
 
   const update = (): void => {
@@ -260,7 +246,7 @@ export const useGafpriApiEntity = ({
           : {}),
       };
 
-      gafpriFetch<UseGafpriApiEntityReturnData>({
+      gafpriFetch<UseGafpriApiEntityReturnDataCreate>({
         initMethod: 'PATCH',
         initRoute: `${ENTITY_ROUTE}/${useAttributes.states.currentId}`,
         initCredentials: payload,
@@ -279,7 +265,9 @@ export const useGafpriApiEntity = ({
   ): void => {
     usePages.actions.goUpdate(useAttributes.states.currentId);
     usePages.actions.returnInit();
-    setUpdateData(data);
+    if (getUpdateData) {
+      getUpdateData(data);
+    }
   };
 
   const updateAddress = (newAddress: AddressAttributes[]): void => {
@@ -441,11 +429,6 @@ export const useGafpriApiEntity = ({
   };
 
   // Define las acciones necesarias para los atributos de Site
-  const states = {
-    addData,
-    updateData,
-  };
-
   const actions = {
     addAddress,
     changeAddress,
@@ -453,16 +436,13 @@ export const useGafpriApiEntity = ({
     newError,
     newErrorUpdate,
     add,
-    setAddData,
     addDocument,
     deleteAddress,
     deleteDocument,
     update,
-    setUpdateData,
   };
 
   return {
-    states,
     actions,
   };
 };

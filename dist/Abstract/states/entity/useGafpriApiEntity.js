@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.useGafpriApiEntity = void 0;
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-var _react = _interopRequireDefault(require("react"));
 var _helpers = require("../../../helpers");
 var _constants = require("../../../constants");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -16,15 +14,9 @@ var useGafpriApiEntity = function useGafpriApiEntity(_ref) {
   var usePages = _ref.usePages,
     useAttributes = _ref.useAttributes,
     useError = _ref.useError,
-    token = _ref.token;
-  var _React$useState = _react["default"].useState(null),
-    _React$useState2 = (0, _slicedToArray2["default"])(_React$useState, 2),
-    addData = _React$useState2[0],
-    setAddData = _React$useState2[1];
-  var _React$useState3 = _react["default"].useState(null),
-    _React$useState4 = (0, _slicedToArray2["default"])(_React$useState3, 2),
-    updateData = _React$useState4[0],
-    setUpdateData = _React$useState4[1];
+    token = _ref.token,
+    getAddData = _ref.getAddData,
+    getUpdateData = _ref.getUpdateData;
   var newError = function newError(newErrorValue) {
     useError.actions.newError({
       newErrorValue: newErrorValue,
@@ -39,7 +31,9 @@ var useGafpriApiEntity = function useGafpriApiEntity(_ref) {
   };
   var successAdd = function successAdd(data) {
     usePages.actions.returnInit();
-    setAddData(data);
+    if (getAddData) {
+      getAddData(data);
+    }
   };
   var add = function add() {
     if (useAttributes.states.nameValid && useAttributes.states.lastNameValid && useAttributes.states.typeDocumentIdIdValid && useAttributes.states.indexValid && useAttributes.states.digitValid && useAttributes.states.addressTypeValid && useAttributes.states.address1Valid && useAttributes.states.address2Valid && useAttributes.states.cityValid && useAttributes.states.stateCountryValid && useAttributes.states.countryValid && useAttributes.states.postCodeValid && useAttributes.states.emailValid && useAttributes.states.phoneValid && useAttributes.states.typeValid && useAttributes.states.photoValid && useAttributes.states.statusValid && token) {
@@ -91,7 +85,9 @@ var useGafpriApiEntity = function useGafpriApiEntity(_ref) {
   };
   var successUpdate = function successUpdate(data) {
     usePages.actions.returnInit();
-    setUpdateData(data);
+    if (getUpdateData) {
+      getUpdateData(data);
+    }
   };
   var update = function update() {
     if (useAttributes.states.nameValid && useAttributes.states.lastNameValid && useAttributes.states.typeValid && useAttributes.states.photoValid && useAttributes.states.statusValid && useAttributes.states.phoneValid && useAttributes.states.emailValid && token) {
@@ -126,7 +122,9 @@ var useGafpriApiEntity = function useGafpriApiEntity(_ref) {
   var successUpdateAddressDocumentId = function successUpdateAddressDocumentId(data) {
     usePages.actions.goUpdate(useAttributes.states.currentId);
     usePages.actions.returnInit();
-    setUpdateData(data);
+    if (getUpdateData) {
+      getUpdateData(data);
+    }
   };
   var updateAddress = function updateAddress(newAddress) {
     if (token) {
@@ -258,25 +256,18 @@ var useGafpriApiEntity = function useGafpriApiEntity(_ref) {
   };
 
   // Define las acciones necesarias para los atributos de Site
-  var states = {
-    addData: addData,
-    updateData: updateData
-  };
   var actions = {
     addAddress: addAddress,
     changeAddress: changeAddress,
     newError: newError,
     newErrorUpdate: newErrorUpdate,
     add: add,
-    setAddData: setAddData,
     addDocument: addDocument,
     deleteAddress: deleteAddress,
     deleteDocument: deleteDocument,
-    update: update,
-    setUpdateData: setUpdateData
+    update: update
   };
   return {
-    states: states,
     actions: actions
   };
 };

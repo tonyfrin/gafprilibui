@@ -223,6 +223,9 @@ export type {
   HeaderMenuStylesContentProps,
   HeaderMenuStylesContentUlProps,
   HeaderMenuStylesContentLiProps,
+  UseGafpriApiEntityReturnDataCreate,
+  UseGafpriApiEntityReturnDataUpdate,
+  UseGafpriApiEntityReturnDataDelete,
 } from './Abstract';
 export {
   MainFooter,

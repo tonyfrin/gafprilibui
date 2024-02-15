@@ -2,7 +2,7 @@ import type { ErrorResponseProps, CustomErrorResponseProps } from '../../../help
 import type { UseErrorReturn } from '../../../states';
 import type { UseGafpriPagesEntityReturn } from './useGafpriPagesEntity';
 import type { UseGafpriAttributesEntityReturn, DocumentIdAttributes, AddressAttributes, EntityAttributes } from './useGafpriAttributesEntity';
-export type UseGafpriApiEntityReturnData = {
+export type UseGafpriApiEntityReturnDataCreate = {
     data?: {
         items?: EntityAttributes[] | [] | null;
     };
@@ -52,22 +52,16 @@ export type UseGafpriApiEntityReturnDataDelete = {
     }[];
 };
 export type UseGafpriApiEntityReturn = {
-    states: {
-        addData: UseGafpriApiEntityReturnData | null;
-        updateData: UseGafpriApiEntityReturnData | UseGafpriApiEntityReturnDataUpdate | UseGafpriApiEntityReturnDataDelete | null;
-    };
     actions: {
         addAddress: () => void;
         changeAddress: (id: number) => void;
         newError: (newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps) => void;
         newErrorUpdate: (newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps) => void;
         add: () => void;
-        setAddData: (data: UseGafpriApiEntityReturnData | null) => void;
         addDocument: () => void;
         deleteAddress: (id: number) => void;
         deleteDocument: (id: number) => void;
         update: () => void;
-        setUpdateData: (data: UseGafpriApiEntityReturnData | UseGafpriApiEntityReturnDataUpdate | UseGafpriApiEntityReturnDataDelete | null) => void;
     };
 };
 export type UseGafpriApiEntityProps = {
@@ -75,5 +69,7 @@ export type UseGafpriApiEntityProps = {
     useAttributes: UseGafpriAttributesEntityReturn;
     useError: UseErrorReturn;
     token: string | null;
+    getAddData?: (data: UseGafpriApiEntityReturnDataCreate) => void;
+    getUpdateData?: (data: UseGafpriApiEntityReturnDataCreate | UseGafpriApiEntityReturnDataUpdate | UseGafpriApiEntityReturnDataDelete) => void;
 };
-export declare const useGafpriApiEntity: ({ usePages, useAttributes, useError, token, }: UseGafpriApiEntityProps) => UseGafpriApiEntityReturn;
+export declare const useGafpriApiEntity: ({ usePages, useAttributes, useError, token, getAddData, getUpdateData, }: UseGafpriApiEntityProps) => UseGafpriApiEntityReturn;

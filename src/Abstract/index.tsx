@@ -246,4 +246,7 @@ export type {
   UseGafpriPaginationsEntityProps,
   UseGafpriPagesEntityReturn,
   UseGafpriPagesEntityProps,
+  UseGafpriApiEntityReturnDataCreate,
+  UseGafpriApiEntityReturnDataUpdate,
+  UseGafpriApiEntityReturnDataDelete,
 } from './states';

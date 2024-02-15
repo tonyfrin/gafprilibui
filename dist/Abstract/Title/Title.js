@@ -8,6 +8,7 @@ exports.Title2 = exports.Title1 = exports.GloboTitle = void 0;
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
 var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
+var _helpers = require("../../helpers");
 var _templateObject, _templateObject2, _templateObject3;
 var Title1Styles = function Title1Styles(styles) {
   var _styles$media750Style, _styles$media400Style, _styles$media300Style;
@@ -19,12 +20,12 @@ var Title1 = function Title1(_ref) {
     title = _ref.title;
   return /*#__PURE__*/_react["default"].createElement("h1", {
     className: Title1Styles(styles)
-  }, title);
+  }, (0, _helpers.toTitleCase)(title));
 };
 exports.Title1 = Title1;
 var Title2Styles = function Title2Styles(styles) {
   var _styles$media750Style2, _styles$media400Style2, _styles$media300Style2;
-  return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  font-family: ", ";\n  font-size: ", ";\n  text-transform: ", ";\n  font-weight: ", ";\n  margin: ", ";\n  color: ", ";\n  line-height: ", ";\n\n  @media (max-width: 750px) {\n    font-size: ", ";\n  }\n\n  @media (max-width: 400px) {\n    font-size: ", ";\n  }\n\n  @media (max-width: 300px) {\n    font-size: ", ";\n  }\n"])), styles.fontFamily || 'Circular, ProximaNova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif', styles.fontSize || '18px', styles.textTransform || 'capitalize', styles.fontWeight || '400', styles.margin || '0px 0px 10px 0px', styles.color || 'rgb(38, 35, 33)', styles.lineHeight || '1.5rem', ((_styles$media750Style2 = styles.media750Style) === null || _styles$media750Style2 === void 0 ? void 0 : _styles$media750Style2.fontSize) || '14px', ((_styles$media400Style2 = styles.media400Style) === null || _styles$media400Style2 === void 0 ? void 0 : _styles$media400Style2.fontSize) || '12px', ((_styles$media300Style2 = styles.media300Style) === null || _styles$media300Style2 === void 0 ? void 0 : _styles$media300Style2.fontSize) || '10px');
+  return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  font-family: ", ";\n  font-size: ", ";\n  ", "\n  font-weight: ", ";\n  margin: ", ";\n  color: ", ";\n  line-height: ", ";\n\n  @media (max-width: 750px) {\n    font-size: ", ";\n  }\n\n  @media (max-width: 400px) {\n    font-size: ", ";\n  }\n\n  @media (max-width: 300px) {\n    font-size: ", ";\n  }\n"])), styles.fontFamily || 'Circular, ProximaNova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif', styles.fontSize || '18px', styles.textTransform ? "text-transform: ".concat(styles.textTransform, ";") : '', styles.fontWeight || '400', styles.margin || '0px 0px 10px 0px', styles.color || 'rgb(38, 35, 33)', styles.lineHeight || '1.5rem', ((_styles$media750Style2 = styles.media750Style) === null || _styles$media750Style2 === void 0 ? void 0 : _styles$media750Style2.fontSize) || '14px', ((_styles$media400Style2 = styles.media400Style) === null || _styles$media400Style2 === void 0 ? void 0 : _styles$media400Style2.fontSize) || '12px', ((_styles$media300Style2 = styles.media300Style) === null || _styles$media300Style2 === void 0 ? void 0 : _styles$media300Style2.fontSize) || '10px');
 };
 var Title2 = function Title2(_ref2) {
   var _ref2$styles = _ref2.styles,
@@ -32,7 +33,7 @@ var Title2 = function Title2(_ref2) {
     title = _ref2.title;
   return /*#__PURE__*/_react["default"].createElement("h1", {
     className: Title2Styles(styles)
-  }, title);
+  }, (0, _helpers.toTitleCase)(title));
 };
 exports.Title2 = Title2;
 var GloboTitleStyles = function GloboTitleStyles(styles) {

@@ -16,6 +16,10 @@ export type UseGafpriDataEntityReturn = {
         handleNewItem: (newItem: EntityAttributes) => void;
         handleUpdatedItem: (itemUpdate: EntityAttributes) => void;
         getById: (id: number) => EntityAttributes | null;
+        findByDocumentIdDigit: (digit: string) => EntityAttributes | null;
+        findByNameAndLastName: (searchTerm: string) => EntityAttributes[];
+        findByEmail: (emailToFind: string) => EntityAttributes | null;
+        findByPhone: (phoneToFind: string) => EntityAttributes | null;
     };
 };
 export type UseGafpriDataEntityProps = {

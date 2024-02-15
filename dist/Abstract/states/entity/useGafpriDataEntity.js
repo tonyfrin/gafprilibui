@@ -134,6 +134,44 @@ var useGafpriDataEntity = function useGafpriDataEntity(_ref) {
       return item.id === id;
     })) || null;
   }
+  function findByDocumentIdDigit(digit) {
+    if (!items.data.items) return null;
+    /* eslint-disable no-plusplus */
+    for (var i = 0; i < items.data.items.length; i++) {
+      var entity = items.data.items[i];
+      /* eslint-disable no-plusplus */
+      for (var j = 0; j < entity.documentId.length; j++) {
+        var documentId = entity.documentId[j];
+        if (documentId.digit === digit) {
+          return entity;
+        }
+      }
+    }
+    return null;
+  }
+  function findByNameAndLastName(searchTerm) {
+    if (!items.data.items) return [];
+    var search = searchTerm.toLowerCase();
+    return items.data.items.filter(function (entity) {
+      var nameMatch = entity.name.toLowerCase().includes(search);
+      var lastNameMatch = entity.lastName ? entity.lastName.toLowerCase().includes(search) : false;
+      return nameMatch || lastNameMatch;
+    });
+  }
+  function findByEmail(emailToFind) {
+    if (!items.data.items) return null;
+    var foundEntity = items.data.items.find(function (entity) {
+      return entity.email === emailToFind;
+    });
+    return foundEntity || null;
+  }
+  function findByPhone(phoneToFind) {
+    if (!items.data.items) return null;
+    var foundEntity = items.data.items.find(function (entity) {
+      return entity.phone === phoneToFind;
+    });
+    return foundEntity || null;
+  }
 
   // Efects
   _react["default"].useEffect(function () {
@@ -150,7 +188,11 @@ var useGafpriDataEntity = function useGafpriDataEntity(_ref) {
     getById: getById,
     handleNewItem: handleNewItem,
     handleUpdatedItem: handleUpdatedItem,
-    offItems: offItems
+    offItems: offItems,
+    findByDocumentIdDigit: findByDocumentIdDigit,
+    findByNameAndLastName: findByNameAndLastName,
+    findByEmail: findByEmail,
+    findByPhone: findByPhone
   };
   return {
     states: states,

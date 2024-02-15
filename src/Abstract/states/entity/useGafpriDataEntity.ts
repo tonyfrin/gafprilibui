@@ -22,6 +22,10 @@ export type UseGafpriDataEntityReturn = {
     handleNewItem: (newItem: EntityAttributes) => void;
     handleUpdatedItem: (itemUpdate: EntityAttributes) => void;
     getById: (id: number) => EntityAttributes | null;
+    findByDocumentIdDigit: (digit: string) => EntityAttributes | null;
+    findByNameAndLastName: (searchTerm: string) => EntityAttributes[];
+    findByEmail: (emailToFind: string) => EntityAttributes | null;
+    findByPhone: (phoneToFind: string) => EntityAttributes | null;
   };
 };
 
@@ -138,6 +142,52 @@ export const useGafpriDataEntity = ({
     return items.data.items?.find((item) => item.id === id) || null;
   }
 
+  function findByDocumentIdDigit(digit: string): EntityAttributes | null {
+    if (!items.data.items) return null;
+    /* eslint-disable no-plusplus */
+    for (let i = 0; i < items.data.items.length; i++) {
+      const entity = items.data.items[i];
+      /* eslint-disable no-plusplus */
+      for (let j = 0; j < entity.documentId.length; j++) {
+        const documentId = entity.documentId[j];
+        if (documentId.digit === digit) {
+          return entity;
+        }
+      }
+    }
+    return null;
+  }
+
+  function findByNameAndLastName(searchTerm: string): EntityAttributes[] {
+    if (!items.data.items) return [];
+    const search = searchTerm.toLowerCase();
+
+    return items.data.items.filter((entity) => {
+      const nameMatch = entity.name.toLowerCase().includes(search);
+      const lastNameMatch = entity.lastName
+        ? entity.lastName.toLowerCase().includes(search)
+        : false;
+
+      return nameMatch || lastNameMatch;
+    });
+  }
+
+  function findByEmail(emailToFind: string): EntityAttributes | null {
+    if (!items.data.items) return null;
+    const foundEntity = items.data.items.find(
+      (entity) => entity.email === emailToFind
+    );
+    return foundEntity || null;
+  }
+
+  function findByPhone(phoneToFind: string): EntityAttributes | null {
+    if (!items.data.items) return null;
+    const foundEntity = items.data.items.find(
+      (entity) => entity.phone === phoneToFind
+    );
+    return foundEntity || null;
+  }
+
   // Efects
   React.useEffect(() => {
     getItems();
@@ -155,6 +205,10 @@ export const useGafpriDataEntity = ({
     handleNewItem,
     handleUpdatedItem,
     offItems,
+    findByDocumentIdDigit,
+    findByNameAndLastName,
+    findByEmail,
+    findByPhone,
   };
 
   return {

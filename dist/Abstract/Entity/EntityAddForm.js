@@ -138,7 +138,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
           defaultValue: use.attributes.states.typeDocumentIdIdDefault,
           styles: {
             width: '100%'
-          }
+          },
+          title: 'Tipo de documento'
         }, typeDocumentIdIdProps)
       });
     });
@@ -150,6 +151,7 @@ var EntityAddForm = function EntityAddForm(_ref) {
         props: _objectSpread({
           options: use.attributes.states.indexOptions,
           defaultValue: use.attributes.states.indexDefault,
+          title: 'Índice de documento',
           styles: {
             width: '92%'
           }
@@ -164,6 +166,7 @@ var EntityAddForm = function EntityAddForm(_ref) {
         props: _objectSpread({
           options: use.attributes.states.countryOptions,
           defaultValue: use.attributes.states.countryDefault,
+          title: 'País',
           styles: {
             width: '92%'
           }
@@ -179,6 +182,7 @@ var EntityAddForm = function EntityAddForm(_ref) {
             return use.attributes.actions.changeStateCountry(e);
           },
           props: _objectSpread({
+            title: 'Estado',
             options: use.attributes.states.stateCountryOptions,
             defaultValue: use.attributes.states.stateCountryDefault,
             styles: {
@@ -195,7 +199,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
           },
           props: _objectSpread({
             inputProps: {
-              defaultValue: use.attributes.states.state
+              defaultValue: use.attributes.states.state,
+              title: 'Estado'
             },
             styles: {
               padding: '10px 19px',
@@ -214,6 +219,7 @@ var EntityAddForm = function EntityAddForm(_ref) {
           props: _objectSpread({
             options: use.attributes.states.cityOptions,
             defaultValue: use.attributes.states.cityDefault,
+            title: 'Ciudad',
             styles: {
               width: '90%'
             }
@@ -226,7 +232,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
           changeCity: use.attributes.actions.changeCity,
           props: _objectSpread({
             inputProps: {
-              defaultValue: use.attributes.states.city
+              defaultValue: use.attributes.states.city,
+              title: 'Ciudad'
             },
             styles: {
               padding: '10px 19px',
@@ -272,7 +279,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     changeName: use.attributes.actions.changeName,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.attributes.states.name
+        defaultValue: use.attributes.states.name,
+        title: 'Nombre'
       },
       styles: {
         width: '100%'
@@ -282,7 +290,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     changeLastName: use.attributes.actions.changeLastName,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.attributes.states.lastName
+        defaultValue: use.attributes.states.lastName,
+        title: 'Apellido'
       },
       styles: {
         width: '100%'
@@ -297,7 +306,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     changeDocumentiIdDigit: use.attributes.actions.changeDigit,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.attributes.states.digit
+        defaultValue: use.attributes.states.digit,
+        title: 'Numero de documento'
       },
       styles: {
         width: '92%',
@@ -313,7 +323,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     changeAddress1: use.attributes.actions.changeAddress1,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.attributes.states.address1
+        defaultValue: use.attributes.states.address1,
+        title: 'Dirección 1'
       },
       styles: {
         width: '92%',
@@ -324,7 +335,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     changeAddress2: use.attributes.actions.changeAddress2,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.attributes.states.address2
+        defaultValue: use.attributes.states.address2,
+        title: 'Dirección 2'
       },
       styles: {
         width: '92%',
@@ -345,7 +357,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     changeZipCode: use.attributes.actions.changePostCode,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.attributes.states.postCode
+        defaultValue: use.attributes.states.postCode,
+        title: 'Código postal'
       },
       styles: {
         width: '92%',
@@ -361,7 +374,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     changeEmail: use.attributes.actions.changeEmail,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.attributes.states.email
+        defaultValue: use.attributes.states.email,
+        title: 'Correo electrónico'
       },
       styles: {
         width: '92%',
@@ -372,7 +386,8 @@ var EntityAddForm = function EntityAddForm(_ref) {
     changePhone: use.attributes.actions.changePhone,
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.attributes.states.phone
+        defaultValue: use.attributes.states.phone,
+        title: 'Teléfono'
       },
       styles: {
         width: '92%',

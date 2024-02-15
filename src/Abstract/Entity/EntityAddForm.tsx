@@ -261,6 +261,7 @@ export const EntityAddForm = ({
             styles: {
               width: '100%',
             },
+            title: 'Tipo de documento',
             ...typeDocumentIdIdProps,
           }}
         />
@@ -274,6 +275,7 @@ export const EntityAddForm = ({
           props={{
             options: use.attributes.states.indexOptions,
             defaultValue: use.attributes.states.indexDefault,
+            title: 'Índice de documento',
             styles: {
               width: '92%',
             },
@@ -290,6 +292,7 @@ export const EntityAddForm = ({
           props={{
             options: use.attributes.states.countryOptions,
             defaultValue: use.attributes.states.countryDefault,
+            title: 'País',
             styles: {
               width: '92%',
             },
@@ -309,6 +312,7 @@ export const EntityAddForm = ({
               use.attributes.actions.changeStateCountry(e)
             }
             props={{
+              title: 'Estado',
               options: use.attributes.states.stateCountryOptions,
               defaultValue: use.attributes.states.stateCountryDefault,
               styles: {
@@ -329,6 +333,7 @@ export const EntityAddForm = ({
             props={{
               inputProps: {
                 defaultValue: use.attributes.states.state,
+                title: 'Estado',
               },
               styles: {
                 padding: '10px 19px',
@@ -349,6 +354,7 @@ export const EntityAddForm = ({
             props={{
               options: use.attributes.states.cityOptions,
               defaultValue: use.attributes.states.cityDefault,
+              title: 'Ciudad',
               styles: {
                 width: '90%',
               },
@@ -366,6 +372,7 @@ export const EntityAddForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.attributes.states.city,
+                  title: 'Ciudad',
                 },
                 styles: {
                   padding: '10px 19px',
@@ -426,6 +433,7 @@ export const EntityAddForm = ({
                 props={{
                   inputProps: {
                     defaultValue: use.attributes.states.name,
+                    title: 'Nombre',
                   },
                   styles: {
                     width: '100%',
@@ -439,6 +447,7 @@ export const EntityAddForm = ({
                   props={{
                     inputProps: {
                       defaultValue: use.attributes.states.lastName,
+                      title: 'Apellido',
                     },
                     styles: {
                       width: '100%',
@@ -465,6 +474,7 @@ export const EntityAddForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.attributes.states.digit,
+                  title: 'Numero de documento',
                 },
                 styles: {
                   width: '92%',
@@ -488,6 +498,7 @@ export const EntityAddForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.attributes.states.address1,
+                  title: 'Dirección 1',
                 },
                 styles: {
                   width: '92%',
@@ -501,6 +512,7 @@ export const EntityAddForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.attributes.states.address2,
+                  title: 'Dirección 2',
                 },
                 styles: {
                   width: '92%',
@@ -537,6 +549,7 @@ export const EntityAddForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.attributes.states.postCode,
+                  title: 'Código postal',
                 },
                 styles: {
                   width: '92%',
@@ -560,6 +573,7 @@ export const EntityAddForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.attributes.states.email,
+                  title: 'Correo electrónico',
                 },
                 styles: {
                   width: '92%',
@@ -573,6 +587,7 @@ export const EntityAddForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.attributes.states.phone,
+                  title: 'Teléfono',
                 },
                 styles: {
                   width: '92%',

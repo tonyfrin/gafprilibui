@@ -1,3 +1,4 @@
+import React from 'react';
 import { gafpriFetch } from '../../../helpers';
 import type {
   ErrorResponseProps,
@@ -10,9 +11,70 @@ import type {
   UseGafpriAttributesEntityReturn,
   DocumentIdAttributes,
   AddressAttributes,
+  EntityAttributes,
 } from './useGafpriAttributesEntity';
 
+export type UseGafpriApiEntityReturnData = {
+  data?: {
+    items?: EntityAttributes[] | [] | null;
+  };
+  success?: boolean;
+  name?: string;
+  type?: string;
+  status?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  photo?: string;
+  documentId?: {
+    id?: number;
+    typeDocumentIdId?: number | null;
+    index?: string | undefined;
+    digit?: string;
+  };
+  address?: {
+    id?: number;
+    type?: string;
+    address1?: string;
+    address2?: string | undefined;
+    city?: string;
+    state?: string;
+    country?: string;
+    postCode?: string | undefined;
+  };
+};
+
+export type UseGafpriApiEntityReturnDataUpdate = {
+  data?: {
+    items?: EntityAttributes[] | [] | null;
+  };
+  success?: boolean;
+  documentId?: DocumentIdAttributes[];
+  address?: AddressAttributes[];
+};
+
+export type UseGafpriApiEntityReturnDataDelete = {
+  data?: {
+    items?: EntityAttributes[] | [] | null;
+  };
+  success?: boolean;
+  documentId?: {
+    id?: number;
+  }[];
+  address?: {
+    id?: number;
+  }[];
+};
+
 export type UseGafpriApiEntityReturn = {
+  states: {
+    addData: UseGafpriApiEntityReturnData | null;
+    updateData:
+      | UseGafpriApiEntityReturnData
+      | UseGafpriApiEntityReturnDataUpdate
+      | UseGafpriApiEntityReturnDataDelete
+      | null;
+  };
   actions: {
     addAddress: () => void;
     changeAddress: (id: number) => void;
@@ -26,11 +88,19 @@ export type UseGafpriApiEntityReturn = {
     ) => void;
 
     add: () => void;
+    setAddData: (data: UseGafpriApiEntityReturnData | null) => void;
     addDocument: () => void;
     deleteAddress: (id: number) => void;
 
     deleteDocument: (id: number) => void;
     update: () => void;
+    setUpdateData: (
+      data:
+        | UseGafpriApiEntityReturnData
+        | UseGafpriApiEntityReturnDataUpdate
+        | UseGafpriApiEntityReturnDataDelete
+        | null
+    ) => void;
   };
 };
 
@@ -47,6 +117,15 @@ export const useGafpriApiEntity = ({
   useError,
   token,
 }: UseGafpriApiEntityProps): UseGafpriApiEntityReturn => {
+  const [addData, setAddData] =
+    React.useState<UseGafpriApiEntityReturnData | null>(null);
+  const [updateData, setUpdateData] = React.useState<
+    | UseGafpriApiEntityReturnData
+    | UseGafpriApiEntityReturnDataUpdate
+    | UseGafpriApiEntityReturnDataDelete
+    | null
+  >(null);
+
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
@@ -63,6 +142,11 @@ export const useGafpriApiEntity = ({
       newErrorValue,
       functionAction: usePages.actions.onUpdate,
     });
+  };
+
+  const successAdd = (data: UseGafpriApiEntityReturnData): void => {
+    usePages.actions.returnInit();
+    setAddData(data);
   };
 
   const add = (): void => {
@@ -124,16 +208,21 @@ export const useGafpriApiEntity = ({
         },
       };
 
-      gafpriFetch({
+      gafpriFetch<UseGafpriApiEntityReturnData>({
         initMethod: 'POST',
         initRoute: ENTITY_ROUTE,
         initCredentials: payload,
         initToken: { token },
         functionFetching: usePages.actions.onFetching,
-        functionSuccess: usePages.actions.returnInit,
+        functionSuccess: successAdd,
         functionError: newError,
       });
     }
+  };
+
+  const successUpdate = (data: UseGafpriApiEntityReturnData): void => {
+    usePages.actions.returnInit();
+    setUpdateData(data);
   };
 
   const update = (): void => {
@@ -171,16 +260,26 @@ export const useGafpriApiEntity = ({
           : {}),
       };
 
-      gafpriFetch({
+      gafpriFetch<UseGafpriApiEntityReturnData>({
         initMethod: 'PATCH',
         initRoute: `${ENTITY_ROUTE}/${useAttributes.states.currentId}`,
         initCredentials: payload,
         initToken: { token },
         functionFetching: usePages.actions.onFetching,
-        functionSuccess: usePages.actions.returnInit,
+        functionSuccess: successUpdate,
         functionError: newErrorUpdate,
       });
     }
+  };
+
+  const successUpdateAddressDocumentId = (
+    data:
+      | UseGafpriApiEntityReturnDataUpdate
+      | UseGafpriApiEntityReturnDataDelete
+  ): void => {
+    usePages.actions.goUpdate(useAttributes.states.currentId);
+    usePages.actions.returnInit();
+    setUpdateData(data);
   };
 
   const updateAddress = (newAddress: AddressAttributes[]): void => {
@@ -189,14 +288,13 @@ export const useGafpriApiEntity = ({
         address: newAddress,
       };
 
-      gafpriFetch({
+      gafpriFetch<UseGafpriApiEntityReturnDataUpdate>({
         initMethod: 'PATCH',
         initRoute: `${ENTITY_ROUTE}/${useAttributes.states.currentId}`,
         initCredentials: payload,
         initToken: { token },
         functionFetching: usePages.actions.onFetching,
-        functionSuccess: () =>
-          usePages.actions.goUpdate(useAttributes.states.currentId),
+        functionSuccess: successUpdateAddressDocumentId,
         functionError: newErrorUpdate,
       });
     }
@@ -208,7 +306,7 @@ export const useGafpriApiEntity = ({
         documentId: newDocument,
       };
 
-      gafpriFetch({
+      gafpriFetch<UseGafpriApiEntityReturnDataUpdate>({
         initMethod: 'PATCH',
         initRoute: `${ENTITY_ROUTE}/${useAttributes.states.currentId}`,
         initCredentials: payload,
@@ -303,7 +401,7 @@ export const useGafpriApiEntity = ({
         ],
       };
 
-      gafpriFetch({
+      gafpriFetch<UseGafpriApiEntityReturnDataDelete>({
         initMethod: 'DELETE',
         initRoute: `${ENTITY_ROUTE}/${useAttributes.states.currentId}`,
         initCredentials: payload,
@@ -326,7 +424,7 @@ export const useGafpriApiEntity = ({
         ],
       };
 
-      gafpriFetch({
+      gafpriFetch<UseGafpriApiEntityReturnDataDelete>({
         initMethod: 'DELETE',
         initRoute: `${ENTITY_ROUTE}/${useAttributes.states.currentId}`,
         initCredentials: payload,
@@ -343,6 +441,11 @@ export const useGafpriApiEntity = ({
   };
 
   // Define las acciones necesarias para los atributos de Site
+  const states = {
+    addData,
+    updateData,
+  };
+
   const actions = {
     addAddress,
     changeAddress,
@@ -350,13 +453,16 @@ export const useGafpriApiEntity = ({
     newError,
     newErrorUpdate,
     add,
+    setAddData,
     addDocument,
     deleteAddress,
     deleteDocument,
     update,
+    setUpdateData,
   };
 
   return {
+    states,
     actions,
   };
 };

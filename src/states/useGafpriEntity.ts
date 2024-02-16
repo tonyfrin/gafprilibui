@@ -14,6 +14,9 @@ import type {
   UseGafpriPagesEntityReturn,
   UseGafpriPaginationsEntityReturn,
   UseGafpriApiEntityReturn,
+  UseGafpriApiEntityReturnDataCreate,
+  UseGafpriApiEntityReturnDataUpdate,
+  UseGafpriApiEntityReturnDataDelete,
 } from '../Abstract';
 
 export interface UseGafpriEntityReturn {
@@ -28,11 +31,20 @@ export interface UseGafpriEntityReturn {
 export type UseGafpriEntityProps = {
   token: string | null;
   useTypeDocumentId: UseTypeDocumentIdReturn;
+  getAddData?: (data: UseGafpriApiEntityReturnDataCreate) => void;
+  getUpdateData?: (
+    data:
+      | UseGafpriApiEntityReturnDataCreate
+      | UseGafpriApiEntityReturnDataUpdate
+      | UseGafpriApiEntityReturnDataDelete
+  ) => void;
 };
 
 export function useGafpriEntity({
   token,
   useTypeDocumentId,
+  getAddData,
+  getUpdateData,
 }: UseGafpriEntityProps): UseGafpriEntityReturn {
   /**
    * States
@@ -53,6 +65,8 @@ export function useGafpriEntity({
     useError: error,
     useAttributes: attributes,
     usePages: pages,
+    getAddData,
+    getUpdateData,
   });
 
   return {

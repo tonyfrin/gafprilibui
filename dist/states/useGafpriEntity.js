@@ -8,7 +8,9 @@ var _useGafpriError = require("./useGafpriError");
 var _Abstract = require("../Abstract");
 function useGafpriEntity(_ref) {
   var token = _ref.token,
-    useTypeDocumentId = _ref.useTypeDocumentId;
+    useTypeDocumentId = _ref.useTypeDocumentId,
+    getAddData = _ref.getAddData,
+    getUpdateData = _ref.getUpdateData;
   /**
    * States
    *
@@ -33,7 +35,9 @@ function useGafpriEntity(_ref) {
     token: token,
     useError: error,
     useAttributes: attributes,
-    usePages: pages
+    usePages: pages,
+    getAddData: getAddData,
+    getUpdateData: getUpdateData
   });
   return {
     attributes: attributes,

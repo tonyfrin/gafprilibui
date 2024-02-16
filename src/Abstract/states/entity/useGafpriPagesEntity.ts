@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { UseGafpriAttributesEntityReturn } from './useGafpriAttributesEntity';
+import { scrollToTop } from '../../../helpers';
 
 export type UseGafpriPagesEntityReturn = {
   states: {
@@ -50,6 +51,7 @@ export const useGafpriPagesEntity = ({
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    scrollToTop();
   };
 
   const onInit = (): void => {
@@ -60,6 +62,7 @@ export const useGafpriPagesEntity = ({
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    scrollToTop();
   };
 
   const onAdd = (): void => {
@@ -70,6 +73,7 @@ export const useGafpriPagesEntity = ({
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    scrollToTop();
   };
 
   const onUpdate = (): void => {
@@ -80,6 +84,7 @@ export const useGafpriPagesEntity = ({
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    scrollToTop();
   };
 
   const onView = (): void => {
@@ -90,6 +95,7 @@ export const useGafpriPagesEntity = ({
     setIsView(true);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    scrollToTop();
   };
 
   const onAddAddress = (): void => {
@@ -100,6 +106,7 @@ export const useGafpriPagesEntity = ({
     setIsView(false);
     setIsAddAddress(true);
     setIsAddDocument(false);
+    scrollToTop();
   };
 
   const onAddDocument = (): void => {
@@ -110,6 +117,7 @@ export const useGafpriPagesEntity = ({
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(true);
+    scrollToTop();
   };
 
   const goUpdate = (id: number): void => {

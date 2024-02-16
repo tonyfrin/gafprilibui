@@ -284,6 +284,7 @@ export {
   generatePermanentLink,
   removeAccentsAndSpecialChars,
   changeMultipleObjectAttributesInput,
+  scrollToTop,
 } from './helpers';
 export type {
   ChangeInputText,

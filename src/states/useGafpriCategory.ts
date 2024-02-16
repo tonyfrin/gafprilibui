@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
 import type { UseErrorReturn } from './useGafpriError';
-import { getLastEntryDateAndCount, gafpriFetch } from '../helpers';
+import { getLastEntryDateAndCount, gafpriFetch, scrollToTop } from '../helpers';
 import {
   generalValidationName,
   generalValidationParentId,
@@ -270,6 +270,7 @@ export function useGafpriCategory({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onInit = (): void => {
@@ -277,6 +278,7 @@ export function useGafpriCategory({
     setIsInit(true);
     setIsAdd(false);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onAdd = (): void => {
@@ -284,6 +286,7 @@ export function useGafpriCategory({
     setIsInit(false);
     setIsAdd(true);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onUpdate = (): void => {
@@ -291,6 +294,7 @@ export function useGafpriCategory({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(true);
+    scrollToTop();
   };
 
   const onIsReady = (): void => {

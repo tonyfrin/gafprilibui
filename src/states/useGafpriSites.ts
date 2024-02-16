@@ -9,6 +9,7 @@ import {
   getLastEntryDateAndCount,
   changeSelect,
   gafpriFetch,
+  scrollToTop,
 } from '../helpers';
 import {
   Countries,
@@ -520,6 +521,7 @@ export const useGafpriSites = ({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onInit = (): void => {
@@ -527,6 +529,7 @@ export const useGafpriSites = ({
     setIsInit(true);
     setIsAdd(false);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onAdd = (): void => {
@@ -534,6 +537,7 @@ export const useGafpriSites = ({
     setIsInit(false);
     setIsAdd(true);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onUpdate = (): void => {
@@ -541,6 +545,7 @@ export const useGafpriSites = ({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(true);
+    scrollToTop();
   };
 
   const onIsReady = (): void => {

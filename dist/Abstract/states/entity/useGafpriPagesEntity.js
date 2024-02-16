@@ -7,6 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.useGafpriPagesEntity = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
+var _helpers = require("../../../helpers");
 var useGafpriPagesEntity = function useGafpriPagesEntity(_ref) {
   var useAttributes = _ref.useAttributes;
   var _useState = (0, _react.useState)(false),
@@ -47,6 +48,7 @@ var useGafpriPagesEntity = function useGafpriPagesEntity(_ref) {
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
     setIsFetching(false);
@@ -56,6 +58,7 @@ var useGafpriPagesEntity = function useGafpriPagesEntity(_ref) {
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    (0, _helpers.scrollToTop)();
   };
   var onAdd = function onAdd() {
     setIsFetching(false);
@@ -65,6 +68,7 @@ var useGafpriPagesEntity = function useGafpriPagesEntity(_ref) {
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    (0, _helpers.scrollToTop)();
   };
   var onUpdate = function onUpdate() {
     setIsFetching(false);
@@ -74,6 +78,7 @@ var useGafpriPagesEntity = function useGafpriPagesEntity(_ref) {
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    (0, _helpers.scrollToTop)();
   };
   var onView = function onView() {
     setIsFetching(false);
@@ -83,6 +88,7 @@ var useGafpriPagesEntity = function useGafpriPagesEntity(_ref) {
     setIsView(true);
     setIsAddAddress(false);
     setIsAddDocument(false);
+    (0, _helpers.scrollToTop)();
   };
   var onAddAddress = function onAddAddress() {
     setIsFetching(false);
@@ -92,6 +98,7 @@ var useGafpriPagesEntity = function useGafpriPagesEntity(_ref) {
     setIsView(false);
     setIsAddAddress(true);
     setIsAddDocument(false);
+    (0, _helpers.scrollToTop)();
   };
   var onAddDocument = function onAddDocument() {
     setIsFetching(false);
@@ -101,6 +108,7 @@ var useGafpriPagesEntity = function useGafpriPagesEntity(_ref) {
     setIsView(false);
     setIsAddAddress(false);
     setIsAddDocument(true);
+    (0, _helpers.scrollToTop)();
   };
   var goUpdate = function goUpdate(id) {
     useAttributes.actions.infoReset();

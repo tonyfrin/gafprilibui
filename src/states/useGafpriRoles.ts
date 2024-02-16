@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { gafpriFetch, getLastEntryDateAndCount } from '../helpers';
+import { gafpriFetch, getLastEntryDateAndCount, scrollToTop } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { ErrorResponseProps, CustomErrorResponseProps } from '../helpers';
 import type { UseErrorReturn } from './useGafpriError';
@@ -165,6 +165,7 @@ export function useGafpriRoles({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onInit = (): void => {
@@ -172,6 +173,7 @@ export function useGafpriRoles({
     setIsInit(true);
     setIsAdd(false);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onAdd = (): void => {
@@ -179,6 +181,7 @@ export function useGafpriRoles({
     setIsInit(false);
     setIsAdd(true);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onUpdate = (): void => {
@@ -186,6 +189,7 @@ export function useGafpriRoles({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(true);
+    scrollToTop();
   };
 
   const onIsReady = (): void => {

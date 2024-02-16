@@ -10,7 +10,7 @@ exports.gafpriFetch = gafpriFetch;
 exports.getLastEntryDateAndCount = exports.getBase64 = exports.generatePermanentLink = void 0;
 exports.getMimeTypeByExtension = getMimeTypeByExtension;
 exports.isCustomErrorResponse = isCustomErrorResponse;
-exports.removeClass = exports.removeAccentsAndSpecialChars = exports.isSelectDefaultArray = exports.isSelectDefault = exports.isErrorResponse = void 0;
+exports.scrollToTop = exports.removeClass = exports.removeAccentsAndSpecialChars = exports.isSelectDefaultArray = exports.isSelectDefault = exports.isErrorResponse = void 0;
 exports.toTitleCase = toTitleCase;
 exports.validationHidden = validationHidden;
 exports.validationSelect = exports.validationInputPostcode = exports.validationInputPhone = exports.validationInputName = exports.validationInputEmail = exports.validationInput = void 0;
@@ -399,3 +399,10 @@ var generatePermanentLink = function generatePermanentLink(name) {
   return permanentLink;
 };
 exports.generatePermanentLink = generatePermanentLink;
+var scrollToTop = function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+exports.scrollToTop = scrollToTop;

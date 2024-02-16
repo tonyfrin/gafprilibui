@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 import { SingleValue } from 'react-select';
-import { gafpriFetch, getLastEntryDateAndCount } from '../helpers';
+import { gafpriFetch, getLastEntryDateAndCount, scrollToTop } from '../helpers';
 import type {
   SelectDefault,
   ErrorResponseProps,
@@ -337,6 +337,7 @@ export const useGafpriUsers = ({
     setIsAdd(false);
     setIsUpdate(false);
     setIsView(false);
+    scrollToTop();
   };
 
   const onInit = (): void => {
@@ -345,6 +346,7 @@ export const useGafpriUsers = ({
     setIsAdd(false);
     setIsUpdate(false);
     setIsView(false);
+    scrollToTop();
   };
 
   const onAdd = (): void => {
@@ -353,6 +355,7 @@ export const useGafpriUsers = ({
     setIsAdd(true);
     setIsUpdate(false);
     setIsView(false);
+    scrollToTop();
   };
 
   const onUpdate = (): void => {
@@ -361,6 +364,7 @@ export const useGafpriUsers = ({
     setIsAdd(false);
     setIsUpdate(true);
     setIsView(false);
+    scrollToTop();
   };
 
   const onView = (): void => {
@@ -369,6 +373,7 @@ export const useGafpriUsers = ({
     setIsAdd(false);
     setIsUpdate(false);
     setIsView(true);
+    scrollToTop();
   };
 
   const onIsReady = (): void => {

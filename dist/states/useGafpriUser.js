@@ -255,6 +255,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     setIsAdd(false);
     setIsUpdate(false);
     setIsView(false);
+    (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
     setIsFetching(false);
@@ -262,6 +263,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     setIsAdd(false);
     setIsUpdate(false);
     setIsView(false);
+    (0, _helpers.scrollToTop)();
   };
   var onAdd = function onAdd() {
     setIsFetching(false);
@@ -269,6 +271,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     setIsAdd(true);
     setIsUpdate(false);
     setIsView(false);
+    (0, _helpers.scrollToTop)();
   };
   var onUpdate = function onUpdate() {
     setIsFetching(false);
@@ -276,6 +279,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     setIsAdd(false);
     setIsUpdate(true);
     setIsView(false);
+    (0, _helpers.scrollToTop)();
   };
   var onView = function onView() {
     setIsFetching(false);
@@ -283,6 +287,7 @@ var useGafpriUsers = function useGafpriUsers(_ref) {
     setIsAdd(false);
     setIsUpdate(false);
     setIsView(true);
+    (0, _helpers.scrollToTop)();
   };
   var onIsReady = function onIsReady() {
     setIsReady(true);

@@ -4,6 +4,7 @@ import {
   ErrorResponseProps,
   CustomErrorResponseProps,
   gafpriFetch,
+  scrollToTop,
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { UseErrorReturn } from './useGafpriError';
@@ -170,6 +171,7 @@ export function useGafpriCurrencies({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onInit = (): void => {
@@ -177,6 +179,7 @@ export function useGafpriCurrencies({
     setIsInit(true);
     setIsAdd(false);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onAdd = (): void => {
@@ -184,6 +187,7 @@ export function useGafpriCurrencies({
     setIsInit(false);
     setIsAdd(true);
     setIsUpdate(false);
+    scrollToTop();
   };
 
   const onUpdate = (): void => {
@@ -191,6 +195,7 @@ export function useGafpriCurrencies({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(true);
+    scrollToTop();
   };
 
   const onIsReady = (): void => {

@@ -96,24 +96,28 @@ function useGafpriCurrencies(_ref) {
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(false);
+    (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
     setIsFetching(false);
     setIsInit(true);
     setIsAdd(false);
     setIsUpdate(false);
+    (0, _helpers.scrollToTop)();
   };
   var onAdd = function onAdd() {
     setIsFetching(false);
     setIsInit(false);
     setIsAdd(true);
     setIsUpdate(false);
+    (0, _helpers.scrollToTop)();
   };
   var onUpdate = function onUpdate() {
     setIsFetching(false);
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(true);
+    (0, _helpers.scrollToTop)();
   };
   var onIsReady = function onIsReady() {
     setIsReady(true);

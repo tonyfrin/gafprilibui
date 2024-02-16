@@ -581,3 +581,10 @@ export const generatePermanentLink = (name: string): string => {
 
   return permanentLink;
 };
+
+export const scrollToTop = (): void => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};

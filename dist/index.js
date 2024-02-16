@@ -1929,6 +1929,12 @@ Object.defineProperty(exports, "saveItem", {
     return _Context.saveItem;
   }
 });
+Object.defineProperty(exports, "scrollToTop", {
+  enumerable: true,
+  get: function get() {
+    return _helpers.scrollToTop;
+  }
+});
 Object.defineProperty(exports, "toTitleCase", {
   enumerable: true,
   get: function get() {

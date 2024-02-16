@@ -124,4 +124,5 @@ export type MultipleObjectAttributesInput = {
 export declare const changeMultipleObjectAttributesInput: ({ newValue, selectedOptions, validation, setValue, }: MultipleObjectAttributesInput) => void;
 export declare const removeAccentsAndSpecialChars: (str: string) => string;
 export declare const generatePermanentLink: (name: string) => string;
+export declare const scrollToTop: () => void;
 export {};

@@ -3,9 +3,7 @@ import type { UseErrorReturn } from '../../../states';
 import type { UseGafpriPagesEntityReturn } from './useGafpriPagesEntity';
 import type { UseGafpriAttributesEntityReturn, DocumentIdAttributes, AddressAttributes, EntityAttributes } from './useGafpriAttributesEntity';
 export type UseGafpriApiEntityReturnDataCreate = {
-    data?: {
-        items?: EntityAttributes[] | [] | null;
-    };
+    item?: EntityAttributes;
     success?: boolean;
     name?: string;
     type?: string;
@@ -32,17 +30,13 @@ export type UseGafpriApiEntityReturnDataCreate = {
     };
 };
 export type UseGafpriApiEntityReturnDataUpdate = {
-    data?: {
-        items?: EntityAttributes[] | [] | null;
-    };
+    items?: EntityAttributes;
     success?: boolean;
     documentId?: DocumentIdAttributes[];
     address?: AddressAttributes[];
 };
 export type UseGafpriApiEntityReturnDataDelete = {
-    data?: {
-        items?: EntityAttributes[] | [] | null;
-    };
+    items?: EntityAttributes;
     success?: boolean;
     documentId?: {
         id?: number;

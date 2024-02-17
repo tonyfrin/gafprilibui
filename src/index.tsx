@@ -310,6 +310,8 @@ export {
   useGafpriUsers,
   useGafpriError,
   useGafpriLogin,
+  useGafpriTaxClasses,
+  useGafpriTaxRates,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -334,6 +336,10 @@ export type {
   UseLoginReturn,
   LoginAttributes,
   PostsAttributes,
+  UseGafpriTaxClassesReturn,
+  UseGafpriTaxRatesReturn,
+  UseGafpriTaxClassesProps,
+  UseGafpriTaxRatesProps,
 } from './states';
 export {
   Countries,

@@ -4,14 +4,17 @@ import { UseGafpriPagesTaxClassesReturn } from '../Abstract/states/taxes/taxClas
 import { UseGafpriDataTaxClassesReturn } from '../Abstract/states/taxes/taxClasses/useGafpriDataTaxClasses';
 import { UseGafpriPaginationsTaxClassesReturn } from '../Abstract/states/taxes/taxClasses/useGafpriPaginationsTaxClasses';
 import { UseGafpriApiTaxClassesReturn } from '../Abstract/states/taxes/taxClasses/useGafpriApiTaxClasses';
-import { UseTaxRatesReturn } from './useGafpriTaxRates';
-export interface UseTaxClassesReturn {
+import { UseGafpriTaxRatesReturn } from './useGafpriTaxRates';
+export interface UseGafpriTaxClassesReturn {
     attributes: UseGafpriAttributesTaxClassesReturn;
     pages: UseGafpriPagesTaxClassesReturn;
     paginations: UseGafpriPaginationsTaxClassesReturn;
     api: UseGafpriApiTaxClassesReturn;
     data: UseGafpriDataTaxClassesReturn;
     error: UseErrorReturn;
-    useTaxRates: UseTaxRatesReturn;
+    useTaxRates: UseGafpriTaxRatesReturn;
 }
-export declare function useGafpriTaxClasses(token: string | null): UseTaxClassesReturn;
+export type UseGafpriTaxClassesProps = {
+    token: string | null;
+};
+export declare function useGafpriTaxClasses({ token, }: UseGafpriTaxClassesProps): UseGafpriTaxClassesReturn;

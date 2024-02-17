@@ -20,7 +20,7 @@ import {
   UseGafpriApiTaxRatesReturn,
 } from '../Abstract/states/taxes/taxRates/useGafpriApiTaxRates';
 
-export interface UseTaxRatesReturn {
+export interface UseGafpriTaxRatesReturn {
   attributes: UseGafpriAttributesTaxRatesReturn;
   pages: UseGafpriPagesTaxRatesReturn;
   paginations: UseGafpriPaginationsTaxRatesReturn;
@@ -29,10 +29,15 @@ export interface UseTaxRatesReturn {
   error: UseErrorReturn;
 }
 
-export function useGafpriTaxRates(
-  token: string | null,
-  closeModalPage: () => void
-): UseTaxRatesReturn {
+export type UseGafpriTaxRatesProps = {
+  token: string | null;
+  closeModalPage: () => void;
+};
+
+export function useGafpriTaxRates({
+  token,
+  closeModalPage,
+}: UseGafpriTaxRatesProps): UseGafpriTaxRatesReturn {
   /**
    * States
    *

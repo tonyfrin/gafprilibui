@@ -2085,6 +2085,18 @@ Object.defineProperty(exports, "useGafpriSites", {
     return _states.useGafpriSites;
   }
 });
+Object.defineProperty(exports, "useGafpriTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriTaxClasses;
+  }
+});
+Object.defineProperty(exports, "useGafpriTaxRates", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriTaxRates;
+  }
+});
 Object.defineProperty(exports, "useGafpriTypeDocumentId", {
   enumerable: true,
   get: function get() {

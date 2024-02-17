@@ -17,3 +17,7 @@ export type { UseErrorReturn, newErrorProps } from './useGafpriError';
 export { useGafpriLogin } from './useGafpriLogin';
 export type { UseLoginReturn, LoginAttributes } from './useGafpriLogin';
 export type { PostsAttributes } from './useGafpriPosts';
+export { useGafpriTaxClasses } from './useGafpriTaxClasses';
+export type { UseGafpriTaxClassesReturn, UseGafpriTaxClassesProps, } from './useGafpriTaxClasses';
+export { useGafpriTaxRates } from './useGafpriTaxRates';
+export type { UseGafpriTaxRatesReturn, UseGafpriTaxRatesProps, } from './useGafpriTaxRates';

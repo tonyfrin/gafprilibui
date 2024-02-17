@@ -10,7 +10,9 @@ var _useGafpriPagesTaxRates = require("../Abstract/states/taxes/taxRates/useGafp
 var _useGafpriDataTaxRates = require("../Abstract/states/taxes/taxRates/useGafpriDataTaxRates");
 var _useGafpriPaginationsTaxRates = require("../Abstract/states/taxes/taxRates/useGafpriPaginationsTaxRates");
 var _useGafpriApiTaxRates = require("../Abstract/states/taxes/taxRates/useGafpriApiTaxRates");
-function useGafpriTaxRates(token, closeModalPage) {
+function useGafpriTaxRates(_ref) {
+  var token = _ref.token,
+    closeModalPage = _ref.closeModalPage;
   /**
    * States
    *

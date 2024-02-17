@@ -4,7 +4,7 @@ import { UseGafpriPagesTaxRatesReturn } from '../Abstract/states/taxes/taxRates/
 import { UseGafpriDataTaxRatesReturn } from '../Abstract/states/taxes/taxRates/useGafpriDataTaxRates';
 import { UseGafpriPaginationsTaxRatesReturn } from '../Abstract/states/taxes/taxRates/useGafpriPaginationsTaxRates';
 import { UseGafpriApiTaxRatesReturn } from '../Abstract/states/taxes/taxRates/useGafpriApiTaxRates';
-export interface UseTaxRatesReturn {
+export interface UseGafpriTaxRatesReturn {
     attributes: UseGafpriAttributesTaxRatesReturn;
     pages: UseGafpriPagesTaxRatesReturn;
     paginations: UseGafpriPaginationsTaxRatesReturn;
@@ -12,4 +12,8 @@ export interface UseTaxRatesReturn {
     data: UseGafpriDataTaxRatesReturn;
     error: UseErrorReturn;
 }
-export declare function useGafpriTaxRates(token: string | null, closeModalPage: () => void): UseTaxRatesReturn;
+export type UseGafpriTaxRatesProps = {
+    token: string | null;
+    closeModalPage: () => void;
+};
+export declare function useGafpriTaxRates({ token, closeModalPage, }: UseGafpriTaxRatesProps): UseGafpriTaxRatesReturn;

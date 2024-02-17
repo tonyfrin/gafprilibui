@@ -19,19 +19,28 @@ import {
   UseGafpriApiTaxClassesReturn,
   useGafpriApiTaxClasses,
 } from '../Abstract/states/taxes/taxClasses/useGafpriApiTaxClasses';
-import { useGafpriTaxRates, UseTaxRatesReturn } from './useGafpriTaxRates';
+import {
+  useGafpriTaxRates,
+  UseGafpriTaxRatesReturn,
+} from './useGafpriTaxRates';
 
-export interface UseTaxClassesReturn {
+export interface UseGafpriTaxClassesReturn {
   attributes: UseGafpriAttributesTaxClassesReturn;
   pages: UseGafpriPagesTaxClassesReturn;
   paginations: UseGafpriPaginationsTaxClassesReturn;
   api: UseGafpriApiTaxClassesReturn;
   data: UseGafpriDataTaxClassesReturn;
   error: UseErrorReturn;
-  useTaxRates: UseTaxRatesReturn;
+  useTaxRates: UseGafpriTaxRatesReturn;
 }
 
-export function useGafpriTaxClasses(token: string | null): UseTaxClassesReturn {
+export type UseGafpriTaxClassesProps = {
+  token: string | null;
+};
+
+export function useGafpriTaxClasses({
+  token,
+}: UseGafpriTaxClassesProps): UseGafpriTaxClassesReturn {
   /**
    * States
    *
@@ -48,7 +57,10 @@ export function useGafpriTaxClasses(token: string | null): UseTaxClassesReturn {
     pages,
     attributes,
   });
-  const useTaxRates = useGafpriTaxRates(token, pages.actions.closeModalPage);
+  const useTaxRates = useGafpriTaxRates({
+    token,
+    closeModalPage: pages.actions.closeModalPage,
+  });
 
   return {
     attributes,

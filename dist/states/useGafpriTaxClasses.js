@@ -11,7 +11,8 @@ var _useGafpriDataTaxClasses = require("../Abstract/states/taxes/taxClasses/useG
 var _useGafpriPaginationsTaxClasses = require("../Abstract/states/taxes/taxClasses/useGafpriPaginationsTaxClasses");
 var _useGafpriApiTaxClasses = require("../Abstract/states/taxes/taxClasses/useGafpriApiTaxClasses");
 var _useGafpriTaxRates = require("./useGafpriTaxRates");
-function useGafpriTaxClasses(token) {
+function useGafpriTaxClasses(_ref) {
+  var token = _ref.token;
   /**
    * States
    *
@@ -34,7 +35,10 @@ function useGafpriTaxClasses(token) {
     pages: pages,
     attributes: attributes
   });
-  var useTaxRates = (0, _useGafpriTaxRates.useGafpriTaxRates)(token, pages.actions.closeModalPage);
+  var useTaxRates = (0, _useGafpriTaxRates.useGafpriTaxRates)({
+    token: token,
+    closeModalPage: pages.actions.closeModalPage
+  });
   return {
     attributes: attributes,
     pages: pages,

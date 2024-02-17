@@ -196,6 +196,18 @@ Object.defineProperty(exports, "generalValidationQtyPack", {
     return _generalValidationQtyPack.generalValidationQtyPack;
   }
 });
+Object.defineProperty(exports, "generalValidationRate", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationRate.generalValidationRate;
+  }
+});
+Object.defineProperty(exports, "generalValidationRegion", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationRegion.generalValidationRegion;
+  }
+});
 Object.defineProperty(exports, "generalValidationRoles", {
   enumerable: true,
   get: function get() {
@@ -290,6 +302,12 @@ Object.defineProperty(exports, "generalValidationTaxClass", {
   enumerable: true,
   get: function get() {
     return _generalValidationTaxClass.generalValidationTaxClass;
+  }
+});
+Object.defineProperty(exports, "generalValidationTaxClassesId", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationTaxClassesId.generalValidationTaxClassesId;
   }
 });
 Object.defineProperty(exports, "generalValidationTaxStatus", {
@@ -425,6 +443,9 @@ var _generalValidationLength = require("./generalValidationLength");
 var _generalValidationCatalogOrder = require("./generalValidationCatalogOrder");
 var _generalValidationTags = require("./generalValidationTags");
 var _generalValidationPhoto = require("./generalValidationPhoto");
+var _generalValidationRegion = require("./generalValidationRegion");
+var _generalValidationTaxClassesId = require("./generalValidationTaxClassesId");
+var _generalValidationRate = require("./generalValidationRate");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,

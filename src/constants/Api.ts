@@ -10,3 +10,5 @@ export const TYPE_DOCUMENT_ID_ROUTE = '/type-document-id';
 export const USERS_ROUTE = '/users';
 export const ORDER_ROUTE = '/order';
 export const PRODUCTS_ROUTER = '/products';
+export const TAX_CLASSES_ROUTER = '/tax-classes';
+export const TAX_RATES_ROUTER = '/tax-rates';

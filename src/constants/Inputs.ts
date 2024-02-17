@@ -58,3 +58,6 @@ export const WIDTH_INPUT = 'width-input-id';
 export const LENGTH_INPUT = 'length-input-id';
 export const CATALOG_ORDER_INPUT = 'catalog-order-input-id';
 export const TAGS_INPUT = 'tags-input-id';
+export const REGION_INPUT = 'region-input-id';
+export const TAX_CLASSES_INPUT = 'tax-classes-input-id';
+export const RATE_INPUT = 'rate-input-id';

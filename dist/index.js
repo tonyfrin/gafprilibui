@@ -795,6 +795,18 @@ Object.defineProperty(exports, "QTY_PACK_INPUT", {
     return _constants.QTY_PACK_INPUT;
   }
 });
+Object.defineProperty(exports, "RATE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.RATE_INPUT;
+  }
+});
+Object.defineProperty(exports, "REGION_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.REGION_INPUT;
+  }
+});
 Object.defineProperty(exports, "ROLES_INPUT", {
   enumerable: true,
   get: function get() {
@@ -993,10 +1005,40 @@ Object.defineProperty(exports, "TAXES_INPUT", {
     return _constants.TAXES_INPUT;
   }
 });
+Object.defineProperty(exports, "TAX_CLASSES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.TAX_CLASSES_INPUT;
+  }
+});
+Object.defineProperty(exports, "TAX_CLASSES_ROUTER", {
+  enumerable: true,
+  get: function get() {
+    return _constants.TAX_CLASSES_ROUTER;
+  }
+});
+Object.defineProperty(exports, "TAX_CLASSES_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.TAX_CLASSES_STORAGE;
+  }
+});
 Object.defineProperty(exports, "TAX_CLASS_INPUT", {
   enumerable: true,
   get: function get() {
     return _constants.TAX_CLASS_INPUT;
+  }
+});
+Object.defineProperty(exports, "TAX_RATES_ROUTER", {
+  enumerable: true,
+  get: function get() {
+    return _constants.TAX_RATES_ROUTER;
+  }
+});
+Object.defineProperty(exports, "TAX_RATES_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.TAX_RATES_STORAGE;
   }
 });
 Object.defineProperty(exports, "TAX_STATUS", {
@@ -1413,6 +1455,12 @@ Object.defineProperty(exports, "generalChangeQtyPack", {
     return _Changes.generalChangeQtyPack;
   }
 });
+Object.defineProperty(exports, "generalChangeRate", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeRate;
+  }
+});
 Object.defineProperty(exports, "generalChangeRoles", {
   enumerable: true,
   get: function get() {
@@ -1459,6 +1507,12 @@ Object.defineProperty(exports, "generalChangeTaxClass", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeTaxClass;
+  }
+});
+Object.defineProperty(exports, "generalChangeTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeTaxClasses;
   }
 });
 Object.defineProperty(exports, "generalChangeTaxStatus", {
@@ -1701,6 +1755,18 @@ Object.defineProperty(exports, "generalValidationQtyPack", {
     return _Validations.generalValidationQtyPack;
   }
 });
+Object.defineProperty(exports, "generalValidationRate", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationRate;
+  }
+});
+Object.defineProperty(exports, "generalValidationRegion", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationRegion;
+  }
+});
 Object.defineProperty(exports, "generalValidationRoles", {
   enumerable: true,
   get: function get() {
@@ -1795,6 +1861,12 @@ Object.defineProperty(exports, "generalValidationTaxClass", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationTaxClass;
+  }
+});
+Object.defineProperty(exports, "generalValidationTaxClassesId", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationTaxClassesId;
   }
 });
 Object.defineProperty(exports, "generalValidationTaxStatus", {

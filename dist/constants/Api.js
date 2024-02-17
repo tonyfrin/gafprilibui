@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getApiUrl = exports.USERS_ROUTE = exports.UPLOAD_PHOTO_ROUTE = exports.TYPE_DOCUMENT_ID_ROUTE = exports.SITES_ROUTE = exports.ROLES_ROUTE = exports.PRODUCTS_ROUTER = exports.ORDER_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.API_URL = void 0;
+exports.getApiUrl = exports.USERS_ROUTE = exports.UPLOAD_PHOTO_ROUTE = exports.TYPE_DOCUMENT_ID_ROUTE = exports.TAX_RATES_ROUTER = exports.TAX_CLASSES_ROUTER = exports.SITES_ROUTE = exports.ROLES_ROUTE = exports.PRODUCTS_ROUTER = exports.ORDER_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.API_URL = void 0;
 var getApiUrl = function getApiUrl() {
   return process.env.API_URL;
 };
@@ -30,3 +30,7 @@ var ORDER_ROUTE = '/order';
 exports.ORDER_ROUTE = ORDER_ROUTE;
 var PRODUCTS_ROUTER = '/products';
 exports.PRODUCTS_ROUTER = PRODUCTS_ROUTER;
+var TAX_CLASSES_ROUTER = '/tax-classes';
+exports.TAX_CLASSES_ROUTER = TAX_CLASSES_ROUTER;
+var TAX_RATES_ROUTER = '/tax-rates';
+exports.TAX_RATES_ROUTER = TAX_RATES_ROUTER;

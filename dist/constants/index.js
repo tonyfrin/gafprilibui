@@ -393,6 +393,18 @@ Object.defineProperty(exports, "QTY_PACK_INPUT", {
     return _Inputs.QTY_PACK_INPUT;
   }
 });
+Object.defineProperty(exports, "RATE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.RATE_INPUT;
+  }
+});
+Object.defineProperty(exports, "REGION_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.REGION_INPUT;
+  }
+});
 Object.defineProperty(exports, "ROLES_INPUT", {
   enumerable: true,
   get: function get() {
@@ -477,10 +489,40 @@ Object.defineProperty(exports, "TAXES_INPUT", {
     return _Inputs.TAXES_INPUT;
   }
 });
+Object.defineProperty(exports, "TAX_CLASSES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.TAX_CLASSES_INPUT;
+  }
+});
+Object.defineProperty(exports, "TAX_CLASSES_ROUTER", {
+  enumerable: true,
+  get: function get() {
+    return _Api.TAX_CLASSES_ROUTER;
+  }
+});
+Object.defineProperty(exports, "TAX_CLASSES_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.TAX_CLASSES_STORAGE;
+  }
+});
 Object.defineProperty(exports, "TAX_CLASS_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.TAX_CLASS_INPUT;
+  }
+});
+Object.defineProperty(exports, "TAX_RATES_ROUTER", {
+  enumerable: true,
+  get: function get() {
+    return _Api.TAX_RATES_ROUTER;
+  }
+});
+Object.defineProperty(exports, "TAX_RATES_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.TAX_RATES_STORAGE;
   }
 });
 Object.defineProperty(exports, "TAX_STATUS", {

@@ -439,6 +439,13 @@ export {
   VISIBILITY,
   VISIBILITY_DEFAULT,
   PRODUCT_IMAGE_DEFAULT,
+  TAX_CLASSES_ROUTER,
+  TAX_CLASSES_STORAGE,
+  REGION_INPUT,
+  TAX_CLASSES_INPUT,
+  RATE_INPUT,
+  TAX_RATES_ROUTER,
+  TAX_RATES_STORAGE,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {
@@ -508,6 +515,9 @@ export {
   generalValidationLength,
   generalValidationCatalogOrder,
   generalValidationTags,
+  generalValidationRegion,
+  generalValidationTaxClassesId,
+  generalValidationRate,
 } from './Validations';
 export type {
   ValidationInput,
@@ -571,6 +581,9 @@ export type {
   GeneralValidationCatalogOrderProps,
   GeneralValidationTagsProps,
   GeneralValidationPhotoProps,
+  GeneralValidationRegionProps,
+  GeneralValidationTaxClassesIdProps,
+  GeneralValidationRateProps,
 } from './Validations';
 export {
   generalChangeUserName,
@@ -622,6 +635,8 @@ export {
   generalChangeWidth,
   generalChangeLength,
   generalChangeCatalogOrder,
+  generalChangeTaxClasses,
+  generalChangeRate,
 } from './Changes';
 export type {
   GeneralChangeNoteProps,
@@ -673,4 +688,6 @@ export type {
   GeneralChangeWidthProps,
   GeneralChangeLengthProps,
   GeneralChangeCatalogOrderProps,
+  GeneralChangeTaxClassesProps,
+  GeneralChangeRateProps,
 } from './Changes';

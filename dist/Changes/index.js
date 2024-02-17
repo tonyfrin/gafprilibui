@@ -195,6 +195,12 @@ Object.defineProperty(exports, "generalChangeQtyPack", {
     return _generalChangeQtyPack.generalChangeQtyPack;
   }
 });
+Object.defineProperty(exports, "generalChangeRate", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeRate.generalChangeRate;
+  }
+});
 Object.defineProperty(exports, "generalChangeRoles", {
   enumerable: true,
   get: function get() {
@@ -241,6 +247,12 @@ Object.defineProperty(exports, "generalChangeTaxClass", {
   enumerable: true,
   get: function get() {
     return _generalChangeTaxClass.generalChangeTaxClass;
+  }
+});
+Object.defineProperty(exports, "generalChangeTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeTaxClasses.generalChangeTaxClasses;
   }
 });
 Object.defineProperty(exports, "generalChangeTaxStatus", {
@@ -353,3 +365,5 @@ var _generalChangeHeight = require("./generalChangeHeight");
 var _generalChangeWidth = require("./generalChangeWidth");
 var _generalChangeLength = require("./generalChangeLength");
 var _generalChangeCatalogOrder = require("./generalChangeCatalogOrder");
+var _generalChangeTaxClasses = require("./generalChangeTaxClasses");
+var _generalChangeRate = require("./generalChangeRate");

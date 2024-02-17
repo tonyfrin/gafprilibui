@@ -98,3 +98,7 @@ export { generalChangeLength } from './generalChangeLength';
 export type { GeneralChangeLengthProps } from './generalChangeLength';
 export { generalChangeCatalogOrder } from './generalChangeCatalogOrder';
 export type { GeneralChangeCatalogOrderProps } from './generalChangeCatalogOrder';
+export { generalChangeTaxClasses } from './generalChangeTaxClasses';
+export type { GeneralChangeTaxClassesProps } from './generalChangeTaxClasses';
+export { generalChangeRate } from './generalChangeRate';
+export type { GeneralChangeRateProps } from './generalChangeRate';

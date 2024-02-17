@@ -57,3 +57,6 @@ export declare const WIDTH_INPUT = "width-input-id";
 export declare const LENGTH_INPUT = "length-input-id";
 export declare const CATALOG_ORDER_INPUT = "catalog-order-input-id";
 export declare const TAGS_INPUT = "tags-input-id";
+export declare const REGION_INPUT = "region-input-id";
+export declare const TAX_CLASSES_INPUT = "tax-classes-input-id";
+export declare const RATE_INPUT = "rate-input-id";

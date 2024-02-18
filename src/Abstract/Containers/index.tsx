@@ -13,3 +13,8 @@ export type {
   ContainerButtonProps,
   ContainerButtonPropsExtended,
 } from './Container';
+export { ContainerHeaderInfo } from './ContainerHeaderInfo';
+export type {
+  ContainerHeaderInfoStylesContainerProps,
+  ContainerHeaderInfoProps,
+} from './ContainerHeaderInfo';

@@ -21,6 +21,12 @@ Object.defineProperty(exports, "ContainerGlobo", {
     return _Container.ContainerGlobo;
   }
 });
+Object.defineProperty(exports, "ContainerHeaderInfo", {
+  enumerable: true,
+  get: function get() {
+    return _ContainerHeaderInfo.ContainerHeaderInfo;
+  }
+});
 Object.defineProperty(exports, "ContainerInput", {
   enumerable: true,
   get: function get() {
@@ -28,3 +34,4 @@ Object.defineProperty(exports, "ContainerInput", {
   }
 });
 var _Container = require("./Container");
+var _ContainerHeaderInfo = require("./ContainerHeaderInfo");

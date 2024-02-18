@@ -75,6 +75,12 @@ Object.defineProperty(exports, "ContainerGlobo", {
     return _Containers.ContainerGlobo;
   }
 });
+Object.defineProperty(exports, "ContainerHeaderInfo", {
+  enumerable: true,
+  get: function get() {
+    return _Containers.ContainerHeaderInfo;
+  }
+});
 Object.defineProperty(exports, "ContainerInput", {
   enumerable: true,
   get: function get() {

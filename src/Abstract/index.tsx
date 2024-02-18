@@ -21,6 +21,7 @@ export {
   ContainerForm,
   ContainerGlobo,
   ContainerButton,
+  ContainerHeaderInfo,
 } from './Containers';
 export type {
   ContainerGloboStyle,
@@ -29,6 +30,8 @@ export type {
   ContainerFormProps,
   ContainerButtonProps,
   ContainerButtonPropsExtended,
+  ContainerHeaderInfoStylesContainerProps,
+  ContainerHeaderInfoProps,
 } from './Containers';
 export { Globo } from './Icons';
 export type { GloboStyle } from './Icons';

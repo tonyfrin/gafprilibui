@@ -108,6 +108,7 @@ export {
   useGafpriDataOrder,
   useGafpriPaginationsOrder,
   SearchBox,
+  ContainerHeaderInfo,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -296,6 +297,8 @@ export type {
   SearchBoxStylesContainerProps,
   SearchBoxProps,
   SearchBoxStylesContentProps,
+  ContainerHeaderInfoStylesContainerProps,
+  ContainerHeaderInfoProps,
 } from './Abstract';
 export {
   MainFooter,

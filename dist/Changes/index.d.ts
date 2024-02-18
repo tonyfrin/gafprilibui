@@ -102,3 +102,7 @@ export { generalChangeTaxClasses } from './generalChangeTaxClasses';
 export type { GeneralChangeTaxClassesProps } from './generalChangeTaxClasses';
 export { generalChangeRate } from './generalChangeRate';
 export type { GeneralChangeRateProps } from './generalChangeRate';
+export { generalChangeCustomerId } from './generalChangeCustomerId';
+export type { GeneralChangeCustomerIdProps } from './generalChangeCustomerId';
+export { generalChangeReferredId } from './generalChangeReferredId';
+export type { GeneralChangeReferredIdProps } from './generalChangeReferredId';

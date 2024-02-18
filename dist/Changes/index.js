@@ -81,6 +81,12 @@ Object.defineProperty(exports, "generalChangeCurrenciesSymbol", {
     return _generalChangeCurrenciesSymbol.generalChangeCurrenciesSymbol;
   }
 });
+Object.defineProperty(exports, "generalChangeCustomerId", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeCustomerId.generalChangeCustomerId;
+  }
+});
 Object.defineProperty(exports, "generalChangeDescription", {
   enumerable: true,
   get: function get() {
@@ -199,6 +205,12 @@ Object.defineProperty(exports, "generalChangeRate", {
   enumerable: true,
   get: function get() {
     return _generalChangeRate.generalChangeRate;
+  }
+});
+Object.defineProperty(exports, "generalChangeReferredId", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeReferredId.generalChangeReferredId;
   }
 });
 Object.defineProperty(exports, "generalChangeRoles", {
@@ -367,3 +379,5 @@ var _generalChangeLength = require("./generalChangeLength");
 var _generalChangeCatalogOrder = require("./generalChangeCatalogOrder");
 var _generalChangeTaxClasses = require("./generalChangeTaxClasses");
 var _generalChangeRate = require("./generalChangeRate");
+var _generalChangeCustomerId = require("./generalChangeCustomerId");
+var _generalChangeReferredId = require("./generalChangeReferredId");

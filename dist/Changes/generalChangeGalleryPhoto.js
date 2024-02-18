@@ -13,11 +13,11 @@ var _helpers = require("../helpers");
 var _constants = require("../constants");
 var generalChangeGalleryPhoto = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(_ref) {
-    var e, changeError, setSubmitting, setPhoto, validation, selectedOptions, setSelectedValue, newFile, mimeType, formData, config, response, selectedOption, updatedOptions, valid;
+    var e, changeError, setSubmitting, setPhoto, validation, selectedOptions, newFile, mimeType, formData, config, response, selectedOption, updatedOptions, valid;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          e = _ref.e, changeError = _ref.changeError, setSubmitting = _ref.setSubmitting, setPhoto = _ref.setPhoto, validation = _ref.validation, selectedOptions = _ref.selectedOptions, setSelectedValue = _ref.setSelectedValue;
+          e = _ref.e, changeError = _ref.changeError, setSubmitting = _ref.setSubmitting, setPhoto = _ref.setPhoto, validation = _ref.validation, selectedOptions = _ref.selectedOptions;
           newFile = e.target.files && e.target.files[0];
           if (newFile) {
             _context.next = 4;
@@ -55,7 +55,6 @@ var generalChangeGalleryPhoto = /*#__PURE__*/function () {
               valid = validation ? validation(updatedOptions) : true;
               if (valid) {
                 setPhoto(updatedOptions);
-                setSelectedValue('');
               }
             }
           }

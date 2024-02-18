@@ -60,3 +60,5 @@ export declare const TAGS_INPUT = "tags-input-id";
 export declare const REGION_INPUT = "region-input-id";
 export declare const TAX_CLASSES_INPUT = "tax-classes-input-id";
 export declare const RATE_INPUT = "rate-input-id";
+export declare const CUSTOMER_ID_INPUT = "customer-id-input-id";
+export declare const REFFERED_ID_INPUT = "reffered-id-input-id";

@@ -179,3 +179,7 @@ export { generalValidationTaxClassesId } from './generalValidationTaxClassesId';
 export type { GeneralValidationTaxClassesIdProps } from './generalValidationTaxClassesId';
 export { generalValidationRate } from './generalValidationRate';
 export type { GeneralValidationRateProps } from './generalValidationRate';
+export { generalValidationCustomerId } from './generalValidationCustomerId';
+export type { GeneralValidationCustomerIdProps } from './generalValidationCustomerId';
+export { generalValidationReferredId } from './generalValidationReferredId';
+export type { GeneralValidationReferredIdProps } from './generalValidationReferredId';

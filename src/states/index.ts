@@ -48,3 +48,14 @@ export type {
   UseGafpriTaxRatesReturn,
   UseGafpriTaxRatesProps,
 } from './useGafpriTaxRates';
+export type { SiteOptions } from './sitesOptions';
+export { useGafpriProducts } from './useGafpriProducts';
+export type {
+  UseGafpriProductsReturn,
+  UseGafpriProductsProps,
+} from './useGafpriProducts';
+export { useGafpriOrder } from './useGafpriOrder';
+export type {
+  UseGafpriOrderReturn,
+  UseGafpriOrderProps,
+} from './useGafpriOrder';

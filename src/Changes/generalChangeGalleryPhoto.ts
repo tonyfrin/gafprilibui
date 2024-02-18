@@ -10,7 +10,6 @@ export type GeneralChangeGalleryPhotoProps = {
   setPhoto: (valuePhoto: string[]) => void;
   validation?: (valueValid: string[]) => boolean;
   selectedOptions: string[];
-  setSelectedValue: (value: string) => void;
 };
 
 export const generalChangeGalleryPhoto = async ({
@@ -20,7 +19,6 @@ export const generalChangeGalleryPhoto = async ({
   setPhoto,
   validation,
   selectedOptions,
-  setSelectedValue,
 }: GeneralChangeGalleryPhotoProps): Promise<void> => {
   const newFile = e.target.files && e.target.files[0];
 
@@ -59,7 +57,6 @@ export const generalChangeGalleryPhoto = async ({
 
         if (valid) {
           setPhoto(updatedOptions);
-          setSelectedValue('');
         }
       }
     }

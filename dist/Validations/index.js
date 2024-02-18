@@ -58,6 +58,12 @@ Object.defineProperty(exports, "generalValidationCurrenciesSymbol", {
     return _generalValidationCurrenciesSymbol.generalValidationCurrenciesSymbol;
   }
 });
+Object.defineProperty(exports, "generalValidationCustomerId", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationCustomerId.generalValidationCustomerId;
+  }
+});
 Object.defineProperty(exports, "generalValidationDescription", {
   enumerable: true,
   get: function get() {
@@ -200,6 +206,12 @@ Object.defineProperty(exports, "generalValidationRate", {
   enumerable: true,
   get: function get() {
     return _generalValidationRate.generalValidationRate;
+  }
+});
+Object.defineProperty(exports, "generalValidationReferredId", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationReferredId.generalValidationReferredId;
   }
 });
 Object.defineProperty(exports, "generalValidationRegion", {
@@ -446,6 +458,8 @@ var _generalValidationPhoto = require("./generalValidationPhoto");
 var _generalValidationRegion = require("./generalValidationRegion");
 var _generalValidationTaxClassesId = require("./generalValidationTaxClassesId");
 var _generalValidationRate = require("./generalValidationRate");
+var _generalValidationCustomerId = require("./generalValidationCustomerId");
+var _generalValidationReferredId = require("./generalValidationReferredId");
 var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,

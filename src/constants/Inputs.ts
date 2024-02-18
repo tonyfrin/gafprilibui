@@ -61,3 +61,5 @@ export const TAGS_INPUT = 'tags-input-id';
 export const REGION_INPUT = 'region-input-id';
 export const TAX_CLASSES_INPUT = 'tax-classes-input-id';
 export const RATE_INPUT = 'rate-input-id';
+export const CUSTOMER_ID_INPUT = 'customer-id-input-id';
+export const REFFERED_ID_INPUT = 'reffered-id-input-id';

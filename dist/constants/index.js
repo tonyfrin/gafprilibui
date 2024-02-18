@@ -159,6 +159,12 @@ Object.defineProperty(exports, "CURRENT_USER_STORAGE", {
     return _LocalStorage.CURRENT_USER_STORAGE;
   }
 });
+Object.defineProperty(exports, "CUSTOMER_ID_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CUSTOMER_ID_INPUT;
+  }
+});
 Object.defineProperty(exports, "Cities", {
   enumerable: true,
   get: function get() {
@@ -397,6 +403,12 @@ Object.defineProperty(exports, "RATE_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.RATE_INPUT;
+  }
+});
+Object.defineProperty(exports, "REFFERED_ID_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.REFFERED_ID_INPUT;
   }
 });
 Object.defineProperty(exports, "REGION_INPUT", {

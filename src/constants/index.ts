@@ -67,6 +67,8 @@ export {
   REGION_INPUT,
   TAX_CLASSES_INPUT,
   RATE_INPUT,
+  CUSTOMER_ID_INPUT,
+  REFFERED_ID_INPUT,
 } from './Inputs';
 export {
   COUNTRY_DEFAULT,

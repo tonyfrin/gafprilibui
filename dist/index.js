@@ -195,6 +195,12 @@ Object.defineProperty(exports, "CURRENT_USER_STORAGE", {
     return _constants.CURRENT_USER_STORAGE;
   }
 });
+Object.defineProperty(exports, "CUSTOMER_ID_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.CUSTOMER_ID_INPUT;
+  }
+});
 Object.defineProperty(exports, "CategoryForm", {
   enumerable: true,
   get: function get() {
@@ -801,6 +807,12 @@ Object.defineProperty(exports, "RATE_INPUT", {
     return _constants.RATE_INPUT;
   }
 });
+Object.defineProperty(exports, "REFFERED_ID_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.REFFERED_ID_INPUT;
+  }
+});
 Object.defineProperty(exports, "REGION_INPUT", {
   enumerable: true,
   get: function get() {
@@ -1341,6 +1353,12 @@ Object.defineProperty(exports, "generalChangeCurrenciesSymbol", {
     return _Changes.generalChangeCurrenciesSymbol;
   }
 });
+Object.defineProperty(exports, "generalChangeCustomerId", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeCustomerId;
+  }
+});
 Object.defineProperty(exports, "generalChangeDescription", {
   enumerable: true,
   get: function get() {
@@ -1459,6 +1477,12 @@ Object.defineProperty(exports, "generalChangeRate", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeRate;
+  }
+});
+Object.defineProperty(exports, "generalChangeReferredId", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeReferredId;
   }
 });
 Object.defineProperty(exports, "generalChangeRoles", {
@@ -1623,6 +1647,12 @@ Object.defineProperty(exports, "generalValidationCurrenciesSymbol", {
     return _Validations.generalValidationCurrenciesSymbol;
   }
 });
+Object.defineProperty(exports, "generalValidationCustomerId", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationCustomerId;
+  }
+});
 Object.defineProperty(exports, "generalValidationDescription", {
   enumerable: true,
   get: function get() {
@@ -1759,6 +1789,12 @@ Object.defineProperty(exports, "generalValidationRate", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationRate;
+  }
+});
+Object.defineProperty(exports, "generalValidationReferredId", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationReferredId;
   }
 });
 Object.defineProperty(exports, "generalValidationRegion", {
@@ -2019,10 +2055,64 @@ Object.defineProperty(exports, "useGafpriApiEntity", {
     return _Abstract.useGafpriApiEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriApiOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiOrder;
+  }
+});
+Object.defineProperty(exports, "useGafpriApiProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiProducts;
+  }
+});
+Object.defineProperty(exports, "useGafpriApiTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiTaxClasses;
+  }
+});
+Object.defineProperty(exports, "useGafpriApiTaxRates", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiTaxRates;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesEntity", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriAttributesEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesOrder;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesOrderItems", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesOrderItems;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesProducts;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesTaxClasses;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesTaxRates", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesTaxRates;
   }
 });
 Object.defineProperty(exports, "useGafpriCategory", {
@@ -2043,6 +2133,30 @@ Object.defineProperty(exports, "useGafpriDataEntity", {
     return _Abstract.useGafpriDataEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriDataOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataOrder;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataProducts;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataTaxClasses;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataTaxRates", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataTaxRates;
+  }
+});
 Object.defineProperty(exports, "useGafpriEntity", {
   enumerable: true,
   get: function get() {
@@ -2061,16 +2175,76 @@ Object.defineProperty(exports, "useGafpriLogin", {
     return _states.useGafpriLogin;
   }
 });
+Object.defineProperty(exports, "useGafpriOrder", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriOrder;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesEntity", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPagesEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesOrder;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesProducts;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesTaxClasses;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesTaxRates", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesTaxRates;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsEntity", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPaginationsEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsOrder;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsProducts;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsTaxClasses;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsTaxRates", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriProducts", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriProducts;
   }
 });
 Object.defineProperty(exports, "useGafpriRoles", {
@@ -2083,6 +2257,12 @@ Object.defineProperty(exports, "useGafpriSites", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriSites;
+  }
+});
+Object.defineProperty(exports, "useGafpriSubPagesProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriSubPagesProducts;
   }
 });
 Object.defineProperty(exports, "useGafpriTaxClasses", {

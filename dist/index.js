@@ -903,6 +903,12 @@ Object.defineProperty(exports, "SearchBar", {
     return _Abstract.SearchBar;
   }
 });
+Object.defineProperty(exports, "SearchBox", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SearchBox;
+  }
+});
 Object.defineProperty(exports, "SelectAddressType", {
   enumerable: true,
   get: function get() {

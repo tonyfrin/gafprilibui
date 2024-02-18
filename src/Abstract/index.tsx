@@ -8,8 +8,14 @@ export type {
   CircleButtonProps,
   CircleButtonPropsExtended,
 } from './Button';
-export { Box1 } from './Box';
-export type { Box1Style, Box1Props } from './Box';
+export { Box1, SearchBox } from './Box';
+export type {
+  Box1Style,
+  Box1Props,
+  SearchBoxStylesContainerProps,
+  SearchBoxProps,
+  SearchBoxStylesContentProps,
+} from './Box';
 export {
   ContainerInput,
   ContainerForm,

@@ -1,7 +1,7 @@
 export { Button, ButtonLarge, ButtonNext, CircleButton } from './Button';
 export type { ButtonStyle, ButtonProps, ButtonLargeProps, ButtonPropsExtended, ButtonNextProps, CircleButtonProps, CircleButtonPropsExtended, } from './Button';
-export { Box1 } from './Box';
-export type { Box1Style, Box1Props } from './Box';
+export { Box1, SearchBox } from './Box';
+export type { Box1Style, Box1Props, SearchBoxStylesContainerProps, SearchBoxProps, SearchBoxStylesContentProps, } from './Box';
 export { ContainerInput, ContainerForm, ContainerGlobo, ContainerButton, } from './Containers';
 export type { ContainerGloboStyle, ContainerButtonStyle, ContainerStyles, ContainerFormProps, ContainerButtonProps, ContainerButtonPropsExtended, } from './Containers';
 export { Globo } from './Icons';

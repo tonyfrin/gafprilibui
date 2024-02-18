@@ -105,7 +105,7 @@ function useGafpriAttributesOrderItems(_ref) {
     setSubTotal("".concat(newSubTotal));
     var newSubTotalTax = calculateSubTotalTax();
     setSubTotalTax("".concat(newSubTotalTax));
-    var newTotal = parseFloat(subTotal) + parseFloat(subTotalTax);
+    var newTotal = newSubTotal + newSubTotalTax;
     setTotal("".concat(newTotal));
     return newTotal;
   };

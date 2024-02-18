@@ -139,7 +139,7 @@ export function useGafpriAttributesOrderItems({
     setSubTotal(`${newSubTotal}`);
     const newSubTotalTax = calculateSubTotalTax();
     setSubTotalTax(`${newSubTotalTax}`);
-    const newTotal = parseFloat(subTotal) + parseFloat(subTotalTax);
+    const newTotal = newSubTotal + newSubTotalTax;
     setTotal(`${newTotal}`);
     return newTotal;
   };

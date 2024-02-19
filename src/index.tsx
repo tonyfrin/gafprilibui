@@ -128,6 +128,7 @@ export {
   EntitySearchForm,
   EntityFormInfoHeader,
   OrderFormInfoHeader,
+  SearchProducts,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -362,6 +363,8 @@ export type {
   EntityFormInfoHeaderProps,
   EntitySearchFormStaylesContainerProps,
   OrderFormInfoHeaderProps,
+  SearchProductsProps,
+  SearchProductsPropsExtended,
 } from './Abstract';
 export {
   MainFooter,

@@ -1011,6 +1011,12 @@ Object.defineProperty(exports, "SearchBox", {
     return _Abstract.SearchBox;
   }
 });
+Object.defineProperty(exports, "SearchProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SearchProducts;
+  }
+});
 Object.defineProperty(exports, "SelectAddressType", {
   enumerable: true,
   get: function get() {

@@ -395,3 +395,8 @@ export type {
   SimpleTableStylesContainerProps,
   SimpleTableStylesContentProps,
 } from './Table';
+export { SearchProducts } from './Products';
+export type {
+  SearchProductsProps,
+  SearchProductsPropsExtended,
+} from './Products';

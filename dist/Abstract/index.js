@@ -495,6 +495,12 @@ Object.defineProperty(exports, "SearchBox", {
     return _Box.SearchBox;
   }
 });
+Object.defineProperty(exports, "SearchProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Products.SearchProducts;
+  }
+});
 Object.defineProperty(exports, "SelectAddressType", {
   enumerable: true,
   get: function get() {
@@ -848,3 +854,4 @@ var _states = require("./states");
 var _Span = require("./Span");
 var _Li = require("./Li");
 var _Table = require("./Table");
+var _Products = require("./Products");

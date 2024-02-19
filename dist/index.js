@@ -339,6 +339,12 @@ Object.defineProperty(exports, "EntityFormInfoHeader", {
     return _Abstract.EntityFormInfoHeader;
   }
 });
+Object.defineProperty(exports, "EntitySearch", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.EntitySearch;
+  }
+});
 Object.defineProperty(exports, "EntitySearchForm", {
   enumerable: true,
   get: function get() {

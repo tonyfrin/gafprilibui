@@ -236,6 +236,8 @@ export {
   EntityUpdateForm,
   AddressAddForm,
   DocumentAddForm,
+  EntityOrderInit,
+  EntitySearch,
 } from './Entity';
 export type {
   InitEntityProps,
@@ -248,6 +250,10 @@ export type {
   AddressFormPropsExtended,
   DocumentAddFormProps,
   DocumentAddFormPropsExtended,
+  EntityOrderInitStylesContainerProps,
+  EntityOrderInitProps,
+  EntitySearchProps,
+  EntitySearchPropsExtended,
 } from './Entity';
 export {
   useGafpriApiEntity,

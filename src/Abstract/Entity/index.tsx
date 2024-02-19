@@ -20,3 +20,13 @@ export type {
   DocumentAddFormProps,
   DocumentAddFormPropsExtended,
 } from './DocumentAddForm';
+export { EntityOrderInit } from './EntityOrderInit';
+export type {
+  EntityOrderInitStylesContainerProps,
+  EntityOrderInitProps,
+} from './EntityOrderInit';
+export { EntitySearch } from './EntitySearch';
+export type {
+  EntitySearchProps,
+  EntitySearchPropsExtended,
+} from './EntitySearch';

@@ -4,4 +4,4 @@ export type LineProductCartProps = {
     useOrder: UseGafpriOrderReturn;
     siteOptions: SiteOptions;
 };
-export declare const LineProductCart: ({ useOrder, siteOptions, }: LineProductCartProps) => React.ReactElement[];
+export declare const LineProductCart: ({ useOrder, siteOptions, }: LineProductCartProps) => React.ReactElement;

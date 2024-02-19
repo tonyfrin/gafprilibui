@@ -58,6 +58,6 @@ var LineProductCart = function LineProductCart(_ref) {
       }
     })));
   });
-  return items;
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, items);
 };
 exports.LineProductCart = LineProductCart;

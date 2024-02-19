@@ -39,6 +39,12 @@ Object.defineProperty(exports, "ButtonNext", {
     return _Button.ButtonNext;
   }
 });
+Object.defineProperty(exports, "CartTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.CartTable;
+  }
+});
 Object.defineProperty(exports, "CategoryForm", {
   enumerable: true,
   get: function get() {
@@ -567,6 +573,12 @@ Object.defineProperty(exports, "SelectTypeDocumentIdId", {
     return _Input.SelectTypeDocumentIdId;
   }
 });
+Object.defineProperty(exports, "SimpleTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.SimpleTable;
+  }
+});
 Object.defineProperty(exports, "SitesForm", {
   enumerable: true,
   get: function get() {
@@ -811,3 +823,4 @@ var _Entity = require("./Entity");
 var _states = require("./states");
 var _Span = require("./Span");
 var _Li = require("./Li");
+var _Table = require("./Table");

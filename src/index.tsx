@@ -122,6 +122,8 @@ export {
   LineInfoThree,
   LineInfoTwo,
   ModuleHeader,
+  CartTable,
+  SimpleTable,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -347,6 +349,10 @@ export type {
   LineInfoTwoProps,
   ModuleHeaderStylesContainerProps,
   ModuleHeaderProps,
+  CartListProps,
+  SimpleTableProps,
+  SimpleTableStylesContainerProps,
+  SimpleTableStylesContentProps,
 } from './Abstract';
 export {
   MainFooter,

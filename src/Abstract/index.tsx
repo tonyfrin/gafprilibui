@@ -379,3 +379,10 @@ export type {
   LineInfoTwoStylesSpanInfo,
   LineInfoTwoProps,
 } from './Li';
+export { CartTable, SimpleTable } from './Table';
+export type {
+  CartListProps,
+  SimpleTableProps,
+  SimpleTableStylesContainerProps,
+  SimpleTableStylesContentProps,
+} from './Table';

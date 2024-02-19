@@ -17,7 +17,7 @@ export type LineProductCartProps = {
 export const LineProductCart = ({
   useOrder,
   siteOptions,
-}: LineProductCartProps): React.ReactElement[] => {
+}: LineProductCartProps): React.ReactElement => {
   const items = useOrder.useProductItems.states.shoppingCart.map(
     (product, index) => (
       <LineTable
@@ -97,5 +97,5 @@ export const LineProductCart = ({
     )
   );
 
-  return items;
+  return <>{items}</>;
 };

@@ -201,6 +201,12 @@ Object.defineProperty(exports, "CUSTOMER_ID_INPUT", {
     return _constants.CUSTOMER_ID_INPUT;
   }
 });
+Object.defineProperty(exports, "CartTable", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CartTable;
+  }
+});
 Object.defineProperty(exports, "CategoryForm", {
   enumerable: true,
   get: function get() {
@@ -1069,6 +1075,12 @@ Object.defineProperty(exports, "SelectTypeDocumentIdId", {
   enumerable: true,
   get: function get() {
     return _Abstract.SelectTypeDocumentIdId;
+  }
+});
+Object.defineProperty(exports, "SimpleTable", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SimpleTable;
   }
 });
 Object.defineProperty(exports, "SitesForm", {

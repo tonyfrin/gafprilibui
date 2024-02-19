@@ -18,3 +18,5 @@ export { LoginForm } from './Login';
 export type { LoginFormProps } from './Login';
 export { InitMainMenu } from './Main';
 export type { InitMainMenuProps, InitMainMenuStylesContainerProps, } from './Main';
+export { EntityOrder } from './Entity';
+export type { EntityOrderStylesContainerProps, EntityOrderProps, } from './Entity';

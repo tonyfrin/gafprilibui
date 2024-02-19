@@ -395,6 +395,7 @@ export {
   LoginForm,
   InitMainMenu,
   ProductOrder,
+  EntityOrder,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -415,6 +416,8 @@ export type {
   InitMainMenuStylesContainerProps,
   ProductOrderProps,
   ProductOrderStylesContainerProps,
+  EntityOrderStylesContainerProps,
+  EntityOrderProps,
 } from './Components';
 export {
   addClass,

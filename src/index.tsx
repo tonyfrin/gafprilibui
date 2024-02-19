@@ -109,6 +109,8 @@ export {
   useGafpriPaginationsOrder,
   SearchBox,
   ContainerHeaderInfo,
+  InputCart,
+  InputSku,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -299,6 +301,8 @@ export type {
   SearchBoxStylesContentProps,
   ContainerHeaderInfoStylesContainerProps,
   ContainerHeaderInfoProps,
+  InputCartProps,
+  InputSkuProps,
 } from './Abstract';
 export {
   MainFooter,

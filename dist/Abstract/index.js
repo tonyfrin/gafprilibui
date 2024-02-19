@@ -213,6 +213,12 @@ Object.defineProperty(exports, "InputAddress2", {
     return _Input.InputAddress2;
   }
 });
+Object.defineProperty(exports, "InputCart", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputCart;
+  }
+});
 Object.defineProperty(exports, "InputCity", {
   enumerable: true,
   get: function get() {
@@ -265,6 +271,12 @@ Object.defineProperty(exports, "InputPhone", {
   enumerable: true,
   get: function get() {
     return _Input.InputPhone;
+  }
+});
+Object.defineProperty(exports, "InputSku", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputSku;
   }
 });
 Object.defineProperty(exports, "InputStateCountry", {

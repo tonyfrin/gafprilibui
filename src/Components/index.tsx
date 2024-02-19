@@ -12,8 +12,13 @@ export type {
   MainTypeDocumentIdProps,
   MainTypeDocumentIdPropsExtend,
 } from './TypeDocumentId';
-export { MainCategory } from './Products';
-export type { MainCategoryProps, MainCategoryPropsExtended } from './Products';
+export { MainCategory, ProductOrder } from './Products';
+export type {
+  MainCategoryProps,
+  MainCategoryPropsExtended,
+  ProductOrderProps,
+  ProductOrderStylesContainerProps,
+} from './Products';
 export { MainRoles } from './Roles';
 export type { MainRolesProps, MainRolesPropsExtended } from './Roles';
 export { MainSites } from './Sites';

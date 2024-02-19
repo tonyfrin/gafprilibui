@@ -69,6 +69,12 @@ Object.defineProperty(exports, "MainUser", {
     return _Users.MainUser;
   }
 });
+Object.defineProperty(exports, "ProductOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Products.ProductOrder;
+  }
+});
 var _Footer = require("./Footer");
 var _Header = require("./Header");
 var _Loading = require("./Loading");

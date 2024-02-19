@@ -921,6 +921,12 @@ Object.defineProperty(exports, "PhotoUser", {
     return _Abstract.PhotoUser;
   }
 });
+Object.defineProperty(exports, "ProductOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Components.ProductOrder;
+  }
+});
 Object.defineProperty(exports, "QTY_PACK_INPUT", {
   enumerable: true,
   get: function get() {

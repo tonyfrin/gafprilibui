@@ -125,6 +125,9 @@ export {
   CartTable,
   SimpleTable,
   useGafpriPagesSalesModule,
+  EntitySearchForm,
+  EntityFormInfoHeader,
+  OrderFormInfoHeader,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -355,6 +358,10 @@ export type {
   SimpleTableStylesContainerProps,
   SimpleTableStylesContentProps,
   UseGafpriPagesSalesModuleReturn,
+  EntitySearchFormProps,
+  EntityFormInfoHeaderProps,
+  EntitySearchFormStaylesContainerProps,
+  OrderFormInfoHeaderProps,
 } from './Abstract';
 export {
   MainFooter,

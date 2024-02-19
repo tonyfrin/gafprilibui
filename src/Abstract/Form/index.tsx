@@ -10,3 +10,12 @@ export { PhotoDocumentId } from './PhotoDocumentId';
 export type { PhotoDocumentIdProps } from './PhotoDocumentId';
 export { PhotoUser } from './PhotoUser';
 export type { PhotoUserProps } from './PhotoUser';
+export { EntityFormInfoHeader } from './EntityFormInfoHeader';
+export type { EntityFormInfoHeaderProps } from './EntityFormInfoHeader';
+export { EntitySearchForm } from './EntitySearchForm';
+export type {
+  EntitySearchFormProps,
+  EntitySearchFormStaylesContainerProps,
+} from './EntitySearchForm';
+export { OrderFormInfoHeader } from './OrderFormInfoHeader';
+export type { OrderFormInfoHeaderProps } from './OrderFormInfoHeader';

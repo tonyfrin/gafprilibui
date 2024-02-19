@@ -137,6 +137,9 @@ export {
   PhotoEntity,
   PhotoDocumentId,
   PhotoUser,
+  EntitySearchForm,
+  EntityFormInfoHeader,
+  OrderFormInfoHeader,
 } from './Form';
 export type {
   ModelFormProps,
@@ -147,6 +150,10 @@ export type {
   PhotoEntityProps,
   PhotoDocumentIdProps,
   PhotoUserProps,
+  EntitySearchFormProps,
+  EntitySearchFormStaylesContainerProps,
+  EntityFormInfoHeaderProps,
+  OrderFormInfoHeaderProps,
 } from './Form';
 export { Menu1, Menu2, MenuButton, MainMenu, HeaderMenu } from './Menu';
 export type {

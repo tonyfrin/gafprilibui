@@ -327,6 +327,18 @@ Object.defineProperty(exports, "EntityAddForm", {
     return _Abstract.EntityAddForm;
   }
 });
+Object.defineProperty(exports, "EntityFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.EntityFormInfoHeader;
+  }
+});
+Object.defineProperty(exports, "EntitySearchForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.EntitySearchForm;
+  }
+});
 Object.defineProperty(exports, "EntityUpdateForm", {
   enumerable: true,
   get: function get() {
@@ -721,6 +733,12 @@ Object.defineProperty(exports, "ORDER_STORAGE", {
   enumerable: true,
   get: function get() {
     return _constants.ORDER_STORAGE;
+  }
+});
+Object.defineProperty(exports, "OrderFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderFormInfoHeader;
   }
 });
 Object.defineProperty(exports, "PACKAGE_TYPE", {

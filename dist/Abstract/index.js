@@ -441,6 +441,12 @@ Object.defineProperty(exports, "OrderFormInfoHeader", {
     return _Form.OrderFormInfoHeader;
   }
 });
+Object.defineProperty(exports, "OrderInit", {
+  enumerable: true,
+  get: function get() {
+    return _Order.OrderInit;
+  }
+});
 Object.defineProperty(exports, "Pagination", {
   enumerable: true,
   get: function get() {
@@ -487,6 +493,12 @@ Object.defineProperty(exports, "RolesForm", {
   enumerable: true,
   get: function get() {
     return _Roles.RolesForm;
+  }
+});
+Object.defineProperty(exports, "Sales", {
+  enumerable: true,
+  get: function get() {
+    return _Order.Sales;
   }
 });
 Object.defineProperty(exports, "SearchBar", {
@@ -862,3 +874,4 @@ var _Li = require("./Li");
 var _Table = require("./Table");
 var _Products = require("./Products");
 var _Sections = require("./Sections");
+var _Order = require("./Order");

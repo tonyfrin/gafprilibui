@@ -130,6 +130,7 @@ export {
   OrderFormInfoHeader,
   SearchProducts,
   CartSections,
+  OrderInit,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -370,6 +371,8 @@ export type {
   CartSectionsStylesContentItemsProps,
   CartSectionsStylesContentOptionsProps,
   CartSectionsProps,
+  OrderInitStylesContainerProps,
+  OrderInitProps,
 } from './Abstract';
 export {
   MainFooter,

@@ -747,6 +747,12 @@ Object.defineProperty(exports, "OrderFormInfoHeader", {
     return _Abstract.OrderFormInfoHeader;
   }
 });
+Object.defineProperty(exports, "OrderInit", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderInit;
+  }
+});
 Object.defineProperty(exports, "PACKAGE_TYPE", {
   enumerable: true,
   get: function get() {

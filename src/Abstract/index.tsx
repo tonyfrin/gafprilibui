@@ -407,3 +407,9 @@ export type {
   CartSectionsStylesContentOptionsProps,
   CartSectionsProps,
 } from './Sections';
+export { OrderInit, Sales } from './Order';
+export type {
+  OrderInitStylesContainerProps,
+  OrderInitProps,
+  SalesProps,
+} from './Order';

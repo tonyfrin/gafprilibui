@@ -57,3 +57,5 @@ export { SearchProducts } from './Products';
 export type { SearchProductsProps, SearchProductsPropsExtended, } from './Products';
 export { CartSections } from './Sections';
 export type { CartSectionsStylesContainerProps, CartSectionsStylesContentItemsProps, CartSectionsStylesContentOptionsProps, CartSectionsProps, } from './Sections';
+export { OrderInit, Sales } from './Order';
+export type { OrderInitStylesContainerProps, OrderInitProps, SalesProps, } from './Order';

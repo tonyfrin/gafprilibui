@@ -759,6 +759,12 @@ Object.defineProperty(exports, "ORDER_STORAGE", {
     return _constants.ORDER_STORAGE;
   }
 });
+Object.defineProperty(exports, "Order", {
+  enumerable: true,
+  get: function get() {
+    return _Components.Order;
+  }
+});
 Object.defineProperty(exports, "OrderFormInfoHeader", {
   enumerable: true,
   get: function get() {

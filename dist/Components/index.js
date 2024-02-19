@@ -75,6 +75,12 @@ Object.defineProperty(exports, "MainUser", {
     return _Users.MainUser;
   }
 });
+Object.defineProperty(exports, "Order", {
+  enumerable: true,
+  get: function get() {
+    return _Order.Order;
+  }
+});
 Object.defineProperty(exports, "ProductOrder", {
   enumerable: true,
   get: function get() {
@@ -93,3 +99,4 @@ var _Users = require("./Users");
 var _Login = require("./Login");
 var _Main = require("./Main");
 var _Entity = require("./Entity");
+var _Order = require("./Order");

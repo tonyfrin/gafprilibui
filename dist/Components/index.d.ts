@@ -20,3 +20,5 @@ export { InitMainMenu } from './Main';
 export type { InitMainMenuProps, InitMainMenuStylesContainerProps, } from './Main';
 export { EntityOrder } from './Entity';
 export type { EntityOrderStylesContainerProps, EntityOrderProps, } from './Entity';
+export { Order } from './Order';
+export type { OrderProps, OrderStylesContainerProps } from './Order';

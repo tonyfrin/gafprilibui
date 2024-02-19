@@ -37,3 +37,5 @@ export type {
   EntityOrderStylesContainerProps,
   EntityOrderProps,
 } from './Entity';
+export { Order } from './Order';
+export type { OrderProps, OrderStylesContainerProps } from './Order';

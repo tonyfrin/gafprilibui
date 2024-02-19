@@ -168,8 +168,13 @@ export type {
   HeaderMenuStylesContentUlProps,
   HeaderMenuStylesContentLiProps,
 } from './Menu';
-export { Header } from './Header';
-export type { HeaderProps, HeaderPropsExtended } from './Header';
+export { Header, ModuleHeader } from './Header';
+export type {
+  HeaderProps,
+  HeaderPropsExtended,
+  ModuleHeaderProps,
+  ModuleHeaderStylesContainerProps,
+} from './Header';
 export { InitCurrencies, CurrencyForm } from './Currencies';
 export type {
   InitCurrenciesProps,

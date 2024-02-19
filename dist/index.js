@@ -681,6 +681,12 @@ Object.defineProperty(exports, "ModelForm", {
     return _Abstract.ModelForm;
   }
 });
+Object.defineProperty(exports, "ModuleHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ModuleHeader;
+  }
+});
 Object.defineProperty(exports, "NAME_INPUT", {
   enumerable: true,
   get: function get() {

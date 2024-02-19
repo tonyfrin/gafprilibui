@@ -121,6 +121,7 @@ export {
   LineHeaderTable,
   LineInfoThree,
   LineInfoTwo,
+  ModuleHeader,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -344,6 +345,8 @@ export type {
   LineInfoTwoStylesContentInfoProps,
   LineInfoTwoStylesSpanInfo,
   LineInfoTwoProps,
+  ModuleHeaderStylesContainerProps,
+  ModuleHeaderProps,
 } from './Abstract';
 export {
   MainFooter,

@@ -405,6 +405,12 @@ Object.defineProperty(exports, "ModelForm", {
     return _Form.ModelForm;
   }
 });
+Object.defineProperty(exports, "ModuleHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Header.ModuleHeader;
+  }
+});
 Object.defineProperty(exports, "Pagination", {
   enumerable: true,
   get: function get() {

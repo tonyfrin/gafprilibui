@@ -29,8 +29,8 @@ export { ModelForm, PhotoForm, PhotoCategory, PhotoEntity, PhotoDocumentId, Phot
 export type { ModelFormProps, ModelFormPropsExtended, PhotoFormProps, PhotoFormPropsExtended, PhotoCategoryProps, PhotoEntityProps, PhotoDocumentIdProps, PhotoUserProps, } from './Form';
 export { Menu1, Menu2, MenuButton, MainMenu, HeaderMenu } from './Menu';
 export type { Menu1Props, Menu2Props, MenuButtonProps, MenuItem, MainMenuProps, MainMenuPropsExtended, MainMenuStylesContainerProps, MainMenuStylesContentProps, MainMenuItems, MainMenuItem, HeaderMenuItem, HeaderMenuProps, HeaderMenuPropsExtended, HeaderMenuStylesContainerProps, HeaderMenuStylesContentProps, HeaderMenuStylesContentUlProps, HeaderMenuStylesContentLiProps, } from './Menu';
-export { Header } from './Header';
-export type { HeaderProps, HeaderPropsExtended } from './Header';
+export { Header, ModuleHeader } from './Header';
+export type { HeaderProps, HeaderPropsExtended, ModuleHeaderProps, ModuleHeaderStylesContainerProps, } from './Header';
 export { InitCurrencies, CurrencyForm } from './Currencies';
 export type { InitCurrenciesProps, InitCurrenciesPropsExtended, CurrencyFormProps, CurrencyFormPropsExtended, } from './Currencies';
 export { InitTypeDocumentId, TypeDocumentIdForm } from './TypeDocumentId';

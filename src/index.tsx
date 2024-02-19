@@ -129,6 +129,7 @@ export {
   EntityFormInfoHeader,
   OrderFormInfoHeader,
   SearchProducts,
+  CartSections,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -365,6 +366,10 @@ export type {
   OrderFormInfoHeaderProps,
   SearchProductsProps,
   SearchProductsPropsExtended,
+  CartSectionsStylesContainerProps,
+  CartSectionsStylesContentItemsProps,
+  CartSectionsStylesContentOptionsProps,
+  CartSectionsProps,
 } from './Abstract';
 export {
   MainFooter,

@@ -55,3 +55,5 @@ export { CartTable, SimpleTable } from './Table';
 export type { CartListProps, SimpleTableProps, SimpleTableStylesContainerProps, SimpleTableStylesContentProps, } from './Table';
 export { SearchProducts } from './Products';
 export type { SearchProductsProps, SearchProductsPropsExtended, } from './Products';
+export { CartSections } from './Sections';
+export type { CartSectionsStylesContainerProps, CartSectionsStylesContentItemsProps, CartSectionsStylesContentOptionsProps, CartSectionsProps, } from './Sections';

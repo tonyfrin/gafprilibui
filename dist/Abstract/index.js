@@ -39,6 +39,12 @@ Object.defineProperty(exports, "ButtonNext", {
     return _Button.ButtonNext;
   }
 });
+Object.defineProperty(exports, "CartSections", {
+  enumerable: true,
+  get: function get() {
+    return _Sections.CartSections;
+  }
+});
 Object.defineProperty(exports, "CartTable", {
   enumerable: true,
   get: function get() {
@@ -855,3 +861,4 @@ var _Span = require("./Span");
 var _Li = require("./Li");
 var _Table = require("./Table");
 var _Products = require("./Products");
+var _Sections = require("./Sections");

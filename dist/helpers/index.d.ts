@@ -125,4 +125,9 @@ export declare const changeMultipleObjectAttributesInput: ({ newValue, selectedO
 export declare const removeAccentsAndSpecialChars: (str: string) => string;
 export declare const generatePermanentLink: (name: string) => string;
 export declare const scrollToTop: () => void;
+export interface FormatOptions {
+    miles: ',' | '.';
+    decimal: ',' | '.';
+}
+export declare const decimalFormatPriceConverter: (str: string | number, dig: number, currencySymbol: string, currencyLocation: 'left' | 'right', formatOptions?: FormatOptions) => string;
 export {};

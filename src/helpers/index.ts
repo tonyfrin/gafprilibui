@@ -588,3 +588,46 @@ export const scrollToTop = (): void => {
     behavior: 'smooth',
   });
 };
+
+export interface FormatOptions {
+  miles: ',' | '.';
+  decimal: ',' | '.';
+}
+
+export const decimalFormatPriceConverter = (
+  str: string | number,
+  dig: number,
+  currencySymbol: string,
+  currencyLocation: 'left' | 'right',
+  formatOptions: FormatOptions = { miles: ',', decimal: '.' }
+): string => {
+  let data = 0;
+
+  if (typeof str === 'number') {
+    data = str;
+  } else if (typeof str === 'string') {
+    const sanitizedStr = str
+      .replace(new RegExp(`\\${formatOptions.miles}`, 'g'), '')
+      .replace(formatOptions.decimal, '.');
+    const check = parseFloat(sanitizedStr);
+
+    if (!Number.isNaN(check)) {
+      data = check;
+    }
+  }
+
+  // Asegurarse de que haya siempre la cantidad deseada de decimales
+  const fixedDecimal = data.toFixed(dig);
+
+  // Formatear con separadores de miles y decimales
+  const parts = fixedDecimal.split('.');
+  const formattedNumber =
+    parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, formatOptions.miles) +
+    (parts[1] ? formatOptions.decimal + parts[1] : ''); // Agregado manejo de casos sin decimales
+
+  if (currencyLocation === 'left') {
+    return `${currencySymbol} ${formattedNumber}`;
+  }
+
+  return `${formattedNumber} ${currencySymbol}`;
+};

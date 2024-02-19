@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { InputProps } from './Input';
 export type InputSkuProps = {
     change: (name: string) => void;

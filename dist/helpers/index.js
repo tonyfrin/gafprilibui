@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.changeSelect = exports.changeMultipleObjectAttributesInput = exports.changeMultipleArrayStringSelect = exports.changeMultipleArrayStringInput = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
+exports.decimalFormatPriceConverter = exports.changeSelect = exports.changeMultipleObjectAttributesInput = exports.changeMultipleArrayStringSelect = exports.changeMultipleArrayStringInput = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
 exports.formatPhoneNumber = formatPhoneNumber;
 exports.gafpriFetch = gafpriFetch;
 exports.getLastEntryDateAndCount = exports.getBase64 = exports.generatePermanentLink = void 0;
@@ -406,3 +406,32 @@ var scrollToTop = function scrollToTop() {
   });
 };
 exports.scrollToTop = scrollToTop;
+var decimalFormatPriceConverter = function decimalFormatPriceConverter(str, dig, currencySymbol, currencyLocation) {
+  var formatOptions = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {
+    miles: ',',
+    decimal: '.'
+  };
+  var data = 0;
+  if (typeof str === 'number') {
+    data = str;
+  } else if (typeof str === 'string') {
+    var sanitizedStr = str.replace(new RegExp("\\".concat(formatOptions.miles), 'g'), '').replace(formatOptions.decimal, '.');
+    var check = parseFloat(sanitizedStr);
+    if (!Number.isNaN(check)) {
+      data = check;
+    }
+  }
+
+  // Asegurarse de que haya siempre la cantidad deseada de decimales
+  var fixedDecimal = data.toFixed(dig);
+
+  // Formatear con separadores de miles y decimales
+  var parts = fixedDecimal.split('.');
+  var formattedNumber = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, formatOptions.miles) + (parts[1] ? formatOptions.decimal + parts[1] : ''); // Agregado manejo de casos sin decimales
+
+  if (currencyLocation === 'left') {
+    return "".concat(currencySymbol, " ").concat(formattedNumber);
+  }
+  return "".concat(formattedNumber, " ").concat(currencySymbol);
+};
+exports.decimalFormatPriceConverter = decimalFormatPriceConverter;

@@ -133,6 +133,7 @@ export {
   OrderInit,
   Sales,
   EntitySearch,
+  EntityOrderInit,
 } from './Abstract';
 export type {
   GloboTitleStyle,

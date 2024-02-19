@@ -270,6 +270,7 @@ export {
   useGafpriApiOrder,
   useGafpriDataOrder,
   useGafpriPaginationsOrder,
+  useGafpriPagesSalesModule,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -334,6 +335,7 @@ export type {
   OrderAttributes,
   UseGafpriPaginationsOrderReturn,
   UseGafpriPaginationsOrderProps,
+  UseGafpriPagesSalesModuleReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';

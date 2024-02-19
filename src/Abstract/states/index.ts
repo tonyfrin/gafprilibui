@@ -105,3 +105,5 @@ export type {
   UseGafpriPaginationsOrderReturn,
   UseGafpriPaginationsOrderProps,
 } from './order';
+export { useGafpriPagesSalesModule } from './salesModule';
+export type { UseGafpriPagesSalesModuleReturn } from './salesModule';

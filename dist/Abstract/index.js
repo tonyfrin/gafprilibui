@@ -747,6 +747,12 @@ Object.defineProperty(exports, "useGafpriPagesProducts", {
     return _states.useGafpriPagesProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesSalesModule", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPagesSalesModule;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesTaxClasses", {
   enumerable: true,
   get: function get() {

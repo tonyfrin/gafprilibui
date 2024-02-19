@@ -124,6 +124,7 @@ export {
   ModuleHeader,
   CartTable,
   SimpleTable,
+  useGafpriPagesSalesModule,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -353,6 +354,7 @@ export type {
   SimpleTableProps,
   SimpleTableStylesContainerProps,
   SimpleTableStylesContentProps,
+  UseGafpriPagesSalesModuleReturn,
 } from './Abstract';
 export {
   MainFooter,

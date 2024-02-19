@@ -1011,6 +1011,12 @@ Object.defineProperty(exports, "STATUS_INPUT", {
     return _constants.STATUS_INPUT;
   }
 });
+Object.defineProperty(exports, "Sales", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.Sales;
+  }
+});
 Object.defineProperty(exports, "SearchBar", {
   enumerable: true,
   get: function get() {

@@ -131,6 +131,7 @@ export {
   SearchProducts,
   CartSections,
   OrderInit,
+  Sales,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -373,6 +374,7 @@ export type {
   CartSectionsProps,
   OrderInitStylesContainerProps,
   OrderInitProps,
+  SalesProps,
 } from './Abstract';
 export {
   MainFooter,

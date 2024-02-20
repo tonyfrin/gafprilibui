@@ -43,7 +43,7 @@ export const LineBudgetPrint = ({
           <LineCol2>
             <SpanValue
               value={decimalFormatPriceConverter(
-                item.total.toFixed(2) || '0',
+                item.total || '0',
                 siteOptions.DECIMAL_NUMBERS,
                 siteOptions.CURRENCY_SYMBOL,
                 siteOptions.CURRENCY_LOCATION

@@ -29,7 +29,7 @@ var LineBudgetPrint = function LineBudgetPrint(_ref) {
     })), /*#__PURE__*/_react["default"].createElement(_LineCol.LineCol4, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
       value: "".concat(item.customer.name, " ").concat((_item$customer = item.customer) === null || _item$customer === void 0 ? void 0 : _item$customer.lastName)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol2.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
-      value: (0, _helpers.decimalFormatPriceConverter)(item.total.toFixed(2) || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
+      value: (0, _helpers.decimalFormatPriceConverter)(item.total || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol2.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       title: "Ver",
       styles: {

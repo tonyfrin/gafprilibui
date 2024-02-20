@@ -59,5 +59,5 @@ export { CartSections, CartBudgetSections } from './Sections';
 export type { CartSectionsStylesContainerProps, CartSectionsStylesContentItemsProps, CartSectionsStylesContentOptionsProps, CartSectionsProps, CartBudgetSectionsProps, CartBudgetSectionsStylesContainerProps, CartBudgetSectionsStylesContentItemsProps, CartBudgetSectionsStylesContentOptionsProps, } from './Sections';
 export { OrderInit, Sales } from './Order';
 export type { OrderInitStylesContainerProps, OrderInitProps, SalesProps, } from './Order';
-export { BudgetInit, BudgetModule, BudgetPrint } from './Budget';
-export type { BudgetInitStylesContainerProps, BudgetInitProps, BudgetModuleProps, BudgetPrintProps, } from './Budget';
+export { BudgetInit, BudgetModule, BudgetPrint, BudgetSearchPrint, } from './Budget';
+export type { BudgetInitStylesContainerProps, BudgetInitProps, BudgetModuleProps, BudgetPrintProps, BudgetSearchPrintProps, BudgetSearchPrintExtended, } from './Budget';

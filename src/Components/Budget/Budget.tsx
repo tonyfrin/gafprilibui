@@ -16,7 +16,7 @@ import {
   BudgetInit,
   EntityBudgetSearch,
   BudgetModule,
-  BudgetPrint,
+  BudgetSearchPrint,
 } from '../../Abstract';
 import { EntityBudget } from '../Entity';
 import { ProductBudget } from '../Products';
@@ -139,7 +139,7 @@ export const Budget = ({
 
         {use.pages.states.isPrint && (
           <FadeIn keyName="print" isVisible={use.pages.states.isPrint}>
-            <BudgetPrint useBudget={use} sitesOptions={sitesOptions} />
+            <BudgetSearchPrint useBudget={use} siteOptions={sitesOptions} />
           </FadeIn>
         )}
       </div>

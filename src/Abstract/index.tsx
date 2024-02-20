@@ -469,10 +469,17 @@ export type {
   OrderInitProps,
   SalesProps,
 } from './Order';
-export { BudgetInit, BudgetModule, BudgetPrint } from './Budget';
+export {
+  BudgetInit,
+  BudgetModule,
+  BudgetPrint,
+  BudgetSearchPrint,
+} from './Budget';
 export type {
   BudgetInitStylesContainerProps,
   BudgetInitProps,
   BudgetModuleProps,
   BudgetPrintProps,
+  BudgetSearchPrintProps,
+  BudgetSearchPrintExtended,
 } from './Budget';

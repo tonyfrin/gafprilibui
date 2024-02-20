@@ -9,10 +9,10 @@ export type UseGafpriPaginationsBudgetReturn = {
         documentCurrentPage: number;
         searchBy: 'postsId' | 'status' | 'total' | 'name';
         searchByDefault: SelectDefault;
-        searchByOptions: SingleValue<{
+        searchByOptions: {
             value: string;
             label: string;
-        }>[];
+        }[];
         itemsPerPage: number;
     };
     actions: {

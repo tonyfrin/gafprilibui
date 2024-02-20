@@ -83,9 +83,9 @@ var Budget = function Budget(_ref) {
   })), use.pages.states.isPrint && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "print",
     isVisible: use.pages.states.isPrint
-  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetPrint, {
+  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetSearchPrint, {
     useBudget: use,
-    sitesOptions: sitesOptions
+    siteOptions: sitesOptions
   }))));
 };
 exports.Budget = Budget;

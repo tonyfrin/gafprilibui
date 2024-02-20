@@ -14,7 +14,7 @@ export type UseGafpriPaginationsBudgetReturn = {
     documentCurrentPage: number;
     searchBy: 'postsId' | 'status' | 'total' | 'name';
     searchByDefault: SelectDefault;
-    searchByOptions: SingleValue<{ value: string; label: string }>[];
+    searchByOptions: { value: string; label: string }[];
     itemsPerPage: number;
   };
   actions: {

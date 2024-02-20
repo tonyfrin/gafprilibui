@@ -631,3 +631,14 @@ export const decimalFormatPriceConverter = (
 
   return `${formattedNumber} ${currencySymbol}`;
 };
+
+export const formatDate = (date: Date): string => {
+  // Formatear la fecha
+  const newDate = new Intl.DateTimeFormat('es-ES', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  });
+
+  return newDate.format(date);
+};

@@ -23,74 +23,116 @@ var useGafpriPagesBudget = function useGafpriPagesBudget(_ref) {
     setIsInit = _useState4[1]; // busqueda del cliente
   var _useState5 = (0, _react.useState)(false),
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
-    isEntitySearch = _useState6[0],
-    setIsEntitySearch = _useState6[1]; // tabla de busqueda del cliente
+    isEntityForm = _useState6[0],
+    setIsEntityForm = _useState6[1]; // formulario de Add Entity
   var _useState7 = (0, _react.useState)(false),
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
-    isAddEntity = _useState8[0],
-    setIsAddEntity = _useState8[1]; // formulario de Add Entity
+    isEntitySearch = _useState8[0],
+    setIsEntitySearch = _useState8[1]; // tabla de busqueda del cliente
   var _useState9 = (0, _react.useState)(false),
     _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
-    isSales = _useState10[0],
-    setIsSales = _useState10[1]; // formulario de ventas
+    isAddEntity = _useState10[0],
+    setIsAddEntity = _useState10[1]; // formulario de Add Entity
   var _useState11 = (0, _react.useState)(false),
     _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
-    isProductSearch = _useState12[0],
-    setIsProductSearch = _useState12[1]; // tabla de busqueda de productos
+    isSales = _useState12[0],
+    setIsSales = _useState12[1]; // formulario de ventas
+  var _useState13 = (0, _react.useState)(false),
+    _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
+    isProductSearch = _useState14[0],
+    setIsProductSearch = _useState14[1]; // tabla de busqueda de productos
+  var _useState15 = (0, _react.useState)(false),
+    _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
+    isPrint = _useState16[0],
+    setIsPrint = _useState16[1]; // tabla de busqueda de productos
 
   // Funciones de paginas
   var onFetching = function onFetching() {
     setIsFetching(true);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
     setIsFetching(false);
     setIsInit(true);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrint(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onEntityForm = function onEntityForm() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntityForm(true);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
   var onEntitySearch = function onEntitySearch() {
     setIsFetching(false);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(true);
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
   var onAddEntity = function onAddEntity() {
     setIsFetching(false);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(true);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
   var onSales = function onSales() {
     setIsFetching(false);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsSales(true);
     setIsProductSearch(false);
+    setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
   var onProductSearch = function onProductSearch() {
     setIsFetching(false);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(true);
+    setIsPrint(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onPrint = function onPrint() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntityForm(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsPrint(true);
     (0, _helpers.scrollToTop)();
   };
   var goSalesEntity = function goSalesEntity(entity) {
@@ -188,20 +230,24 @@ var useGafpriPagesBudget = function useGafpriPagesBudget(_ref) {
   var states = {
     isFetching: isFetching,
     isInit: isInit,
+    isEntityForm: isEntityForm,
     isEntitySearch: isEntitySearch,
     isAddEntity: isAddEntity,
     isSales: isSales,
-    isProductSearch: isProductSearch
+    isProductSearch: isProductSearch,
+    isPrint: isPrint
   };
 
   // Define las acciones necesarias para los atributos de Site
   var actions = {
     onFetching: onFetching,
     onInit: onInit,
+    onEntityForm: onEntityForm,
     onEntitySearch: onEntitySearch,
     onAddEntity: onAddEntity,
     onSales: onSales,
     onProductSearch: onProductSearch,
+    onPrint: onPrint,
     returnInit: returnInit,
     processEntityBydocumentId: processEntityBydocumentId,
     processEntityByName: processEntityByName,

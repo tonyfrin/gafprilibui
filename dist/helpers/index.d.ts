@@ -130,4 +130,5 @@ export interface FormatOptions {
     decimal: ',' | '.';
 }
 export declare const decimalFormatPriceConverter: (str: string | number, dig: number, currencySymbol: string, currencyLocation: 'left' | 'right', formatOptions?: FormatOptions) => string;
+export declare const formatDate: (date: Date) => string;
 export {};

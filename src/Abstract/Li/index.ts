@@ -54,3 +54,5 @@ export type {
 } from './LineTable';
 export { LineProductBudgetCart } from './LineProductBudgetCart';
 export type { LineProductBudgetCartProps } from './LineProductBudgetCart';
+export { LineBudgetPrint } from './LineBudgetPrint';
+export type { LineBudgetPrintProps } from './LineBudgetPrint';

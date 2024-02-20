@@ -396,6 +396,7 @@ export {
   LineInfoThree,
   LineInfoTwo,
   LineProductBudgetCart,
+  LineBudgetPrint,
 } from './Li';
 export type {
   LineProductCartProps,
@@ -428,14 +429,21 @@ export type {
   LineInfoTwoStylesSpanInfo,
   LineInfoTwoProps,
   LineProductBudgetCartProps,
+  LineBudgetPrintProps,
 } from './Li';
-export { CartTable, SimpleTable, CartBudgetTable } from './Table';
+export {
+  CartTable,
+  SimpleTable,
+  CartBudgetTable,
+  BudgetPrintTable,
+} from './Table';
 export type {
   CartListProps,
   SimpleTableProps,
   SimpleTableStylesContainerProps,
   SimpleTableStylesContentProps,
   CartBudgetTableProps,
+  BudgetPrintTableProps,
 } from './Table';
 export { SearchProducts, SearchProductsBudget } from './Products';
 export type {
@@ -461,9 +469,10 @@ export type {
   OrderInitProps,
   SalesProps,
 } from './Order';
-export { BudgetInit, BudgetModule } from './Budget';
+export { BudgetInit, BudgetModule, BudgetPrint } from './Budget';
 export type {
   BudgetInitStylesContainerProps,
   BudgetInitProps,
   BudgetModuleProps,
+  BudgetPrintProps,
 } from './Budget';

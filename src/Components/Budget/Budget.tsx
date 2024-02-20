@@ -16,9 +16,11 @@ import {
   BudgetInit,
   EntityBudgetSearch,
   BudgetModule,
+  BudgetPrint,
 } from '../../Abstract';
 import { EntityBudget } from '../Entity';
 import { ProductBudget } from '../Products';
+import { InitMainMenu } from '../Main';
 
 export type BudgetStylesContainerProps = {
   backgroundImage?: string;
@@ -43,6 +45,7 @@ export type BudgetProps = {
   useEntity: UseGafpriEntityReturn;
   usePagesMain: UseGafpriPagesSalesModuleReturn;
   sitesOptions: SiteOptions;
+  menu: MainMenuItems[];
   containerStyles?: BudgetStylesContainerProps;
   containerProps?: React.HTMLAttributes<HTMLDivElement>;
   itemsMenu: HeaderMenuItem[];
@@ -58,6 +61,7 @@ export const Budget = ({
   itemsMenu,
   usePagesMain,
   sitesOptions,
+  menu,
   useProducts,
   menuEntity,
 }: BudgetProps): JSX.Element => {
@@ -75,8 +79,22 @@ export const Budget = ({
       >
         <HeaderMenu items={itemsMenu} />
         {use.pages.states.isFetching && <Loading />}
+
         {use.pages.states.isInit && (
           <FadeIn keyName="init" isVisible={use.pages.states.isInit}>
+            <InitMainMenu
+              contentProps={{
+                items: menu,
+              }}
+            />
+          </FadeIn>
+        )}
+
+        {use.pages.states.isEntityForm && (
+          <FadeIn
+            keyName="entityForm"
+            isVisible={use.pages.states.isEntityForm}
+          >
             <BudgetInit
               useEntity={useEntity}
               useBudget={use}
@@ -116,6 +134,12 @@ export const Budget = ({
               useBudget={use}
               sitesOptions={sitesOptions}
             />
+          </FadeIn>
+        )}
+
+        {use.pages.states.isPrint && (
+          <FadeIn keyName="print" isVisible={use.pages.states.isPrint}>
+            <BudgetPrint useBudget={use} sitesOptions={sitesOptions} />
           </FadeIn>
         )}
       </div>

@@ -6,18 +6,22 @@ export type UseGafpriPagesBudgetReturn = {
     states: {
         isFetching: boolean;
         isInit: boolean;
+        isEntityForm: boolean;
         isEntitySearch: boolean;
         isAddEntity: boolean;
         isSales: boolean;
         isProductSearch: boolean;
+        isPrint: boolean;
     };
     actions: {
         onFetching: () => void;
         onInit: () => void;
+        onEntityForm: () => void;
         onEntitySearch: () => void;
         onAddEntity: () => void;
         onSales: () => void;
         onProductSearch: () => void;
+        onPrint: () => void;
         returnInit: () => void;
         processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
         processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;

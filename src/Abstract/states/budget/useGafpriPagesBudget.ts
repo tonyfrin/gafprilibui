@@ -13,18 +13,22 @@ export type UseGafpriPagesBudgetReturn = {
   states: {
     isFetching: boolean;
     isInit: boolean;
+    isEntityForm: boolean;
     isEntitySearch: boolean;
     isAddEntity: boolean;
     isSales: boolean;
     isProductSearch: boolean;
+    isPrint: boolean;
   };
   actions: {
     onFetching: () => void;
     onInit: () => void;
+    onEntityForm: () => void;
     onEntitySearch: () => void;
     onAddEntity: () => void;
     onSales: () => void;
     onProductSearch: () => void;
+    onPrint: () => void;
     returnInit: () => void;
     processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
     processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;
@@ -52,69 +56,107 @@ export const useGafpriPagesBudget = ({
 }: UseGafpriPagesBudgetProps): UseGafpriPagesBudgetReturn => {
   const [isFetching, setIsFetching] = useState(false);
   const [isInit, setIsInit] = useState(true); // busqueda del cliente
+  const [isEntityForm, setIsEntityForm] = useState(false); // formulario de Add Entity
   const [isEntitySearch, setIsEntitySearch] = useState(false); // tabla de busqueda del cliente
   const [isAddEntity, setIsAddEntity] = useState(false); // formulario de Add Entity
   const [isSales, setIsSales] = useState(false); // formulario de ventas
   const [isProductSearch, setIsProductSearch] = useState(false); // tabla de busqueda de productos
+  const [isPrint, setIsPrint] = useState(false); // tabla de busqueda de productos
 
   // Funciones de paginas
   const onFetching = (): void => {
     setIsFetching(true);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrint(false);
     scrollToTop();
   };
 
   const onInit = (): void => {
     setIsFetching(false);
     setIsInit(true);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrint(false);
+    scrollToTop();
+  };
+
+  const onEntityForm = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntityForm(true);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsPrint(false);
     scrollToTop();
   };
 
   const onEntitySearch = (): void => {
     setIsFetching(false);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(true);
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrint(false);
     scrollToTop();
   };
 
   const onAddEntity = (): void => {
     setIsFetching(false);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(true);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrint(false);
     scrollToTop();
   };
 
   const onSales = (): void => {
     setIsFetching(false);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsSales(true);
     setIsProductSearch(false);
+    setIsPrint(false);
     scrollToTop();
   };
 
   const onProductSearch = (): void => {
     setIsFetching(false);
     setIsInit(false);
+    setIsEntityForm(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(true);
+    setIsPrint(false);
+    scrollToTop();
+  };
+
+  const onPrint = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntityForm(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsPrint(true);
     scrollToTop();
   };
 
@@ -250,20 +292,24 @@ export const useGafpriPagesBudget = ({
   const states = {
     isFetching,
     isInit,
+    isEntityForm,
     isEntitySearch,
     isAddEntity,
     isSales,
     isProductSearch,
+    isPrint,
   };
 
   // Define las acciones necesarias para los atributos de Site
   const actions = {
     onFetching,
     onInit,
+    onEntityForm,
     onEntitySearch,
     onAddEntity,
     onSales,
     onProductSearch,
+    onPrint,
     returnInit,
     processEntityBydocumentId,
     processEntityByName,

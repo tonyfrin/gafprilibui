@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.decimalFormatPriceConverter = exports.changeSelect = exports.changeMultipleObjectAttributesInput = exports.changeMultipleArrayStringSelect = exports.changeMultipleArrayStringInput = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
+exports.formatDate = exports.decimalFormatPriceConverter = exports.changeSelect = exports.changeMultipleObjectAttributesInput = exports.changeMultipleArrayStringSelect = exports.changeMultipleArrayStringInput = exports.changeInputText = exports.changeInputNumers = exports.addClass = void 0;
 exports.formatPhoneNumber = formatPhoneNumber;
 exports.gafpriFetch = gafpriFetch;
 exports.getLastEntryDateAndCount = exports.getBase64 = exports.generatePermanentLink = void 0;
@@ -435,3 +435,13 @@ var decimalFormatPriceConverter = function decimalFormatPriceConverter(str, dig,
   return "".concat(formattedNumber, " ").concat(currencySymbol);
 };
 exports.decimalFormatPriceConverter = decimalFormatPriceConverter;
+var formatDate = function formatDate(date) {
+  // Formatear la fecha
+  var newDate = new Intl.DateTimeFormat('es-ES', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
+  return newDate.format(date);
+};
+exports.formatDate = formatDate;

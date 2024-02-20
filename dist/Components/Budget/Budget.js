@@ -14,6 +14,7 @@ var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
 var _Entity = require("../Entity");
 var _Products = require("../Products");
+var _Main = require("../Main");
 var _excluded = ["className"];
 var _templateObject;
 var budgetStylesContainer = function budgetStylesContainer(stayles) {
@@ -29,6 +30,7 @@ var Budget = function Budget(_ref) {
     itemsMenu = _ref.itemsMenu,
     usePagesMain = _ref.usePagesMain,
     sitesOptions = _ref.sitesOptions,
+    menu = _ref.menu,
     useProducts = _ref.useProducts,
     menuEntity = _ref.menuEntity;
   var containerClassName = containerProps.className,
@@ -40,6 +42,13 @@ var Budget = function Budget(_ref) {
   }), use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, null), use.pages.states.isInit && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "init",
     isVisible: use.pages.states.isInit
+  }, /*#__PURE__*/_react["default"].createElement(_Main.InitMainMenu, {
+    contentProps: {
+      items: menu
+    }
+  })), use.pages.states.isEntityForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+    keyName: "entityForm",
+    isVisible: use.pages.states.isEntityForm
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetInit, {
     useEntity: useEntity,
     useBudget: use,
@@ -69,6 +78,12 @@ var Budget = function Budget(_ref) {
     isVisible: use.pages.states.isProductSearch
   }, /*#__PURE__*/_react["default"].createElement(_Products.ProductBudget, {
     useProduct: useProducts,
+    useBudget: use,
+    sitesOptions: sitesOptions
+  })), use.pages.states.isPrint && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+    keyName: "print",
+    isVisible: use.pages.states.isPrint
+  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetPrint, {
     useBudget: use,
     sitesOptions: sitesOptions
   }))));

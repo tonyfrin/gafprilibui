@@ -23,7 +23,7 @@ import {
   STATE_COUNTRY_DEFAULT,
   COUNTRY_DEFAULT,
   Countries,
-  TAX_RATES_ROUTER,
+  TAX_RATES_ROUTE,
 } from '../../../../constants';
 
 type State = {
@@ -154,7 +154,7 @@ export function useGafpriAttributesTaxRates(): UseGafpriAttributesTaxRatesReturn
       setValid: setTaxClassIdValid,
       currentValid: taxClassesIdValid,
       required: true,
-      inputId: TAX_RATES_ROUTER,
+      inputId: TAX_RATES_ROUTE,
     });
   };
 
@@ -164,7 +164,7 @@ export function useGafpriAttributesTaxRates(): UseGafpriAttributesTaxRatesReturn
       setValid: setRateValid,
       currentValid: rateValid,
       required: true,
-      inputId: TAX_RATES_ROUTER,
+      inputId: TAX_RATES_ROUTE,
     });
   };
 
@@ -173,7 +173,7 @@ export function useGafpriAttributesTaxRates(): UseGafpriAttributesTaxRatesReturn
       value,
       setValid: setCityValid,
       currentValid: cityValid,
-      inputId: TAX_RATES_ROUTER,
+      inputId: TAX_RATES_ROUTE,
     });
   };
 
@@ -182,7 +182,7 @@ export function useGafpriAttributesTaxRates(): UseGafpriAttributesTaxRatesReturn
       value,
       setValid: setStateCountryValid,
       currentValid: stateCountryValid,
-      inputId: TAX_RATES_ROUTER,
+      inputId: TAX_RATES_ROUTE,
     });
   };
 
@@ -191,7 +191,7 @@ export function useGafpriAttributesTaxRates(): UseGafpriAttributesTaxRatesReturn
       value,
       setValid: setCountryValid,
       currentValid: countryValid,
-      inputId: TAX_RATES_ROUTER,
+      inputId: TAX_RATES_ROUTE,
     });
   };
 
@@ -201,7 +201,7 @@ export function useGafpriAttributesTaxRates(): UseGafpriAttributesTaxRatesReturn
       setValid: setPostCodeValid,
       currentValid: postCodeValid,
       required: false,
-      inputId: TAX_RATES_ROUTER,
+      inputId: TAX_RATES_ROUTE,
     });
   };
 
@@ -215,7 +215,7 @@ export function useGafpriAttributesTaxRates(): UseGafpriAttributesTaxRatesReturn
         countryValid,
         postCodeValid,
       ],
-      inputId: TAX_RATES_ROUTER,
+      inputId: TAX_RATES_ROUTE,
     });
   };
 

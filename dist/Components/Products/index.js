@@ -9,6 +9,12 @@ Object.defineProperty(exports, "MainCategory", {
     return _MainCategory.MainCategory;
   }
 });
+Object.defineProperty(exports, "ProductBudget", {
+  enumerable: true,
+  get: function get() {
+    return _ProductBudget.ProductBudget;
+  }
+});
 Object.defineProperty(exports, "ProductOrder", {
   enumerable: true,
   get: function get() {
@@ -17,3 +23,4 @@ Object.defineProperty(exports, "ProductOrder", {
 });
 var _MainCategory = require("./MainCategory");
 var _ProductOrder = require("./ProductOrder");
+var _ProductBudget = require("./ProductBudget");

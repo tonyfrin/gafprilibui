@@ -21,7 +21,7 @@ function useGafpriApiTaxRates(_ref) {
     if (attributes.states.taxClassesIdValid && attributes.states.rateValid && attributes.states.cityValid && attributes.states.stateCountryValid && attributes.states.countryValid && attributes.states.postCodeValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initRoute: _constants.TAX_RATES_ROUTER,
+        initRoute: _constants.TAX_RATES_ROUTE,
         initCredentials: {
           taxClassesId: attributes.states.taxClassesId,
           rate: attributes.states.rate,
@@ -49,7 +49,7 @@ function useGafpriApiTaxRates(_ref) {
     if (attributes.states.rateValid && attributes.states.cityValid && attributes.states.stateCountryValid && attributes.states.countryValid && attributes.states.postCodeValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_constants.TAX_RATES_ROUTER, "/").concat(attributes.states.currentId),
+        initRoute: "".concat(_constants.TAX_RATES_ROUTE, "/").concat(attributes.states.currentId),
         initCredentials: {
           rate: attributes.states.rate,
           city: attributes.states.city,
@@ -76,7 +76,7 @@ function useGafpriApiTaxRates(_ref) {
     if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initRoute: "".concat(_constants.TAX_RATES_ROUTER, "/").concat(id),
+        initRoute: "".concat(_constants.TAX_RATES_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

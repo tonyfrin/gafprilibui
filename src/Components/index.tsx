@@ -12,12 +12,14 @@ export type {
   MainTypeDocumentIdProps,
   MainTypeDocumentIdPropsExtend,
 } from './TypeDocumentId';
-export { MainCategory, ProductOrder } from './Products';
+export { MainCategory, ProductOrder, ProductBudget } from './Products';
 export type {
   MainCategoryProps,
   MainCategoryPropsExtended,
   ProductOrderProps,
   ProductOrderStylesContainerProps,
+  ProductBudgetProps,
+  ProductBudgetStylesContainerProps,
 } from './Products';
 export { MainRoles } from './Roles';
 export type { MainRolesProps, MainRolesPropsExtended } from './Roles';
@@ -39,3 +41,5 @@ export type {
 } from './Entity';
 export { Order } from './Order';
 export type { OrderProps, OrderStylesContainerProps } from './Order';
+export { Budget } from './Budget';
+export type { BudgetProps, BudgetStylesContainerProps } from './Budget';

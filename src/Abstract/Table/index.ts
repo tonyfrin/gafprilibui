@@ -6,3 +6,5 @@ export type {
   SimpleTableStylesContainerProps,
   SimpleTableStylesContentProps,
 } from './SimpleTable';
+export { CartBudgetTable } from './CartBudgetTable';
+export type { CartBudgetTableProps } from './CartBudgetTable';

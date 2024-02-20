@@ -6,7 +6,7 @@ import type {
 import type { UseErrorReturn } from '../../../../states';
 import { UseGafpriPagesTaxClassesReturn } from './useGafpriPagesTaxClasses';
 import { UseGafpriAttributesTaxClassesReturn } from './useGafpriAttributesTaxClasses';
-import { TAX_CLASSES_ROUTER } from '../../../../constants';
+import { TAX_CLASSES_ROUTE } from '../../../../constants';
 import { TaxClassesAttributes } from './useGafpriDataTaxClasses';
 
 type Items = {
@@ -60,7 +60,7 @@ export function useGafpriApiTaxClasses({
     ) {
       gafpriFetch<Data>({
         initMethod: 'POST',
-        initRoute: TAX_CLASSES_ROUTER,
+        initRoute: TAX_CLASSES_ROUTE,
         initCredentials: {
           name: attributes.states.name,
           description: attributes.states.description,
@@ -90,7 +90,7 @@ export function useGafpriApiTaxClasses({
     ) {
       gafpriFetch({
         initMethod: 'PATCH',
-        initRoute: `${TAX_CLASSES_ROUTER}/${attributes.states.currentId}`,
+        initRoute: `${TAX_CLASSES_ROUTE}/${attributes.states.currentId}`,
         initCredentials: {
           name: attributes.states.name,
           description: attributes.states.description,
@@ -116,7 +116,7 @@ export function useGafpriApiTaxClasses({
     if (token) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initRoute: `${TAX_CLASSES_ROUTER}/${id}`,
+        initRoute: `${TAX_CLASSES_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: pages.actions.onFetching,
         functionSuccess: pages.actions.returnInit,

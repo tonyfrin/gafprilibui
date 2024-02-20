@@ -3,7 +3,7 @@ import {
   ErrorResponseProps,
   CustomErrorResponseProps,
 } from '../../../helpers';
-import { PRODUCTS_ROUTER } from '../../../constants';
+import { PRODUCTS_ROUTE } from '../../../constants';
 import { UseErrorReturn } from '../../../states';
 import { UseGafpriPagesProductsReturn } from './useGafpriPagesProducts';
 import { UseGafpriAttributesProductsReturn } from './useGafpriAttributesProducts';
@@ -91,7 +91,7 @@ export function useGafpriApiProducts({
     ) {
       gafpriFetch<Data>({
         initMethod: 'POST',
-        initRoute: PRODUCTS_ROUTER,
+        initRoute: PRODUCTS_ROUTE,
         initCredentials: {
           categoryId: attributes.states.category,
           tags: attributes.states.tags,
@@ -153,7 +153,7 @@ export function useGafpriApiProducts({
     ) {
       gafpriFetch<Data>({
         initMethod: 'PATCH',
-        initRoute: `${PRODUCTS_ROUTER}/${attributes.states.currentId}`,
+        initRoute: `${PRODUCTS_ROUTE}/${attributes.states.currentId}`,
         initCredentials: {
           categoryId: attributes.states.category,
           tags: attributes.states.tags,
@@ -207,7 +207,7 @@ export function useGafpriApiProducts({
     if (token) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initRoute: `${PRODUCTS_ROUTER}/${id}`,
+        initRoute: `${PRODUCTS_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: pages.actions.onFetching,
         functionSuccess: pages.actions.returnInit,

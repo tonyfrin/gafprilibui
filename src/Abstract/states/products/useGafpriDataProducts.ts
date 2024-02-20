@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { getItem, saveItem } from '../../../Context';
 import { getLastEntryDateAndCount, gafpriFetch } from '../../../helpers';
 import { GeneralAttribute } from '../../../Validations';
-import { PRODUCTS_STORAGE, PRODUCTS_ROUTER } from '../../../constants';
+import { PRODUCTS_STORAGE, PRODUCTS_ROUTE } from '../../../constants';
 import { PostsAttributes, CategoryAttributes } from '../../../states';
 
 export interface ProductsAttributes {
@@ -123,7 +123,7 @@ export function useGafpriDataProducts({
 
   const getItems = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount(
-      PRODUCTS_ROUTER
+      PRODUCTS_ROUTE
     );
     const lastDate = getLastItem?.posts.modifiedAt || null;
     const count = items.data.items?.length || 0;
@@ -136,7 +136,7 @@ export function useGafpriDataProducts({
       if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initRoute: PRODUCTS_ROUTER,
+          initRoute: PRODUCTS_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onItems,

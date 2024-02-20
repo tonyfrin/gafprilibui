@@ -8,3 +8,8 @@ export type {
   ProductOrderProps,
   ProductOrderStylesContainerProps,
 } from './ProductOrder';
+export { ProductBudget } from './ProductBudget';
+export type {
+  ProductBudgetProps,
+  ProductBudgetStylesContainerProps,
+} from './ProductBudget';

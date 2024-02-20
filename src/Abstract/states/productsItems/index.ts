@@ -4,3 +4,9 @@ export type {
   UseGafpriAttributesOrderItemsProps,
   OrderItemsAttributes,
 } from './useGafpriAttributesOrderItems';
+export { useGafpriAttributesBudgetItems } from './useGafpriAttributesBudgetItems';
+export type {
+  UseGafpriAttributesBudgetItemsReturn,
+  UseGafpriAttributesBudgetItemsProps,
+  BudgetItemsAttributes,
+} from './useGafpriAttributesBudgetItems';

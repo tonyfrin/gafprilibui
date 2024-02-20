@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getApiUrl = exports.USERS_ROUTE = exports.UPLOAD_PHOTO_ROUTE = exports.TYPE_DOCUMENT_ID_ROUTE = exports.TAX_RATES_ROUTER = exports.TAX_CLASSES_ROUTER = exports.SITES_ROUTE = exports.ROLES_ROUTE = exports.PRODUCTS_ROUTER = exports.ORDER_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.API_URL = void 0;
+exports.getApiUrl = exports.USERS_ROUTE = exports.UPLOAD_PHOTO_ROUTE = exports.TYPE_DOCUMENT_ID_ROUTE = exports.TAX_RATES_ROUTE = exports.TAX_CLASSES_ROUTE = exports.SITES_ROUTE = exports.ROLES_ROUTE = exports.PRODUCTS_ROUTE = exports.ORDER_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.BUDGET_ROUTE = exports.API_URL = void 0;
 var getApiUrl = function getApiUrl() {
   return process.env.API_URL;
 };
@@ -28,9 +28,11 @@ var USERS_ROUTE = '/users';
 exports.USERS_ROUTE = USERS_ROUTE;
 var ORDER_ROUTE = '/orders';
 exports.ORDER_ROUTE = ORDER_ROUTE;
-var PRODUCTS_ROUTER = '/products';
-exports.PRODUCTS_ROUTER = PRODUCTS_ROUTER;
-var TAX_CLASSES_ROUTER = '/tax-classes';
-exports.TAX_CLASSES_ROUTER = TAX_CLASSES_ROUTER;
-var TAX_RATES_ROUTER = '/tax-rates';
-exports.TAX_RATES_ROUTER = TAX_RATES_ROUTER;
+var PRODUCTS_ROUTE = '/products';
+exports.PRODUCTS_ROUTE = PRODUCTS_ROUTE;
+var TAX_CLASSES_ROUTE = '/tax-classes';
+exports.TAX_CLASSES_ROUTE = TAX_CLASSES_ROUTE;
+var TAX_RATES_ROUTE = '/tax-rates';
+exports.TAX_RATES_ROUTE = TAX_RATES_ROUTE;
+var BUDGET_ROUTE = '/budgets';
+exports.BUDGET_ROUTE = BUDGET_ROUTE;

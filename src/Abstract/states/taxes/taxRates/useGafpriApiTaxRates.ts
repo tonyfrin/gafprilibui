@@ -6,7 +6,7 @@ import {
 import { UseErrorReturn } from '../../../../states';
 import { UseGafpriPagesTaxRatesReturn } from './useGafpriPagesTaxRates';
 import { UseGafpriAttributesTaxRatesReturn } from './useGafpriAttributesTaxRates';
-import { TAX_RATES_ROUTER } from '../../../../constants';
+import { TAX_RATES_ROUTE } from '../../../../constants';
 
 type Actions = {
   add: () => void;
@@ -52,7 +52,7 @@ export function useGafpriApiTaxRates({
     ) {
       gafpriFetch({
         initMethod: 'POST',
-        initRoute: TAX_RATES_ROUTER,
+        initRoute: TAX_RATES_ROUTE,
         initCredentials: {
           taxClassesId: attributes.states.taxClassesId,
           rate: attributes.states.rate,
@@ -89,7 +89,7 @@ export function useGafpriApiTaxRates({
     ) {
       gafpriFetch({
         initMethod: 'PATCH',
-        initRoute: `${TAX_RATES_ROUTER}/${attributes.states.currentId}`,
+        initRoute: `${TAX_RATES_ROUTE}/${attributes.states.currentId}`,
         initCredentials: {
           rate: attributes.states.rate,
           city: attributes.states.city,
@@ -118,7 +118,7 @@ export function useGafpriApiTaxRates({
     if (token) {
       gafpriFetch({
         initMethod: 'DELETE',
-        initRoute: `${TAX_RATES_ROUTER}/${id}`,
+        initRoute: `${TAX_RATES_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: pages.actions.onFetching,
         functionSuccess: pages.actions.returnInit,

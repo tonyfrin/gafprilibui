@@ -45,6 +45,18 @@ Object.defineProperty(exports, "AllRoles", {
     return _AllRoles.AllRoles;
   }
 });
+Object.defineProperty(exports, "BUDGET_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.BUDGET_ROUTE;
+  }
+});
+Object.defineProperty(exports, "BUDGET_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.BUDGET_STORAGE;
+  }
+});
 Object.defineProperty(exports, "BUTTON_NEXT_INPUT", {
   enumerable: true,
   get: function get() {
@@ -339,10 +351,10 @@ Object.defineProperty(exports, "PHOTO_USERS_INPUT", {
     return _Inputs.PHOTO_USERS_INPUT;
   }
 });
-Object.defineProperty(exports, "PRODUCTS_ROUTER", {
+Object.defineProperty(exports, "PRODUCTS_ROUTE", {
   enumerable: true,
   get: function get() {
-    return _Api.PRODUCTS_ROUTER;
+    return _Api.PRODUCTS_ROUTE;
   }
 });
 Object.defineProperty(exports, "PRODUCTS_STORAGE", {
@@ -507,10 +519,10 @@ Object.defineProperty(exports, "TAX_CLASSES_INPUT", {
     return _Inputs.TAX_CLASSES_INPUT;
   }
 });
-Object.defineProperty(exports, "TAX_CLASSES_ROUTER", {
+Object.defineProperty(exports, "TAX_CLASSES_ROUTE", {
   enumerable: true,
   get: function get() {
-    return _Api.TAX_CLASSES_ROUTER;
+    return _Api.TAX_CLASSES_ROUTE;
   }
 });
 Object.defineProperty(exports, "TAX_CLASSES_STORAGE", {
@@ -525,10 +537,10 @@ Object.defineProperty(exports, "TAX_CLASS_INPUT", {
     return _Inputs.TAX_CLASS_INPUT;
   }
 });
-Object.defineProperty(exports, "TAX_RATES_ROUTER", {
+Object.defineProperty(exports, "TAX_RATES_ROUTE", {
   enumerable: true,
   get: function get() {
-    return _Api.TAX_RATES_ROUTER;
+    return _Api.TAX_RATES_ROUTE;
   }
 });
 Object.defineProperty(exports, "TAX_RATES_STORAGE", {

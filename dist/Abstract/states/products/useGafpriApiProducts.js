@@ -21,7 +21,7 @@ function useGafpriApiProducts(_ref) {
     if (attributes.states.skuValid && attributes.states.nameValid && attributes.states.salesPriceValid && attributes.states.typeValid && attributes.states.statusValid && attributes.states.visibilityValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initRoute: _constants.PRODUCTS_ROUTER,
+        initRoute: _constants.PRODUCTS_ROUTE,
         initCredentials: {
           categoryId: attributes.states.category,
           tags: attributes.states.tags,
@@ -73,7 +73,7 @@ function useGafpriApiProducts(_ref) {
     if (attributes.states.skuValid && attributes.states.nameValid && attributes.states.salesPriceValid && attributes.states.typeValid && attributes.states.statusValid && attributes.states.visibilityValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_constants.PRODUCTS_ROUTER, "/").concat(attributes.states.currentId),
+        initRoute: "".concat(_constants.PRODUCTS_ROUTE, "/").concat(attributes.states.currentId),
         initCredentials: {
           categoryId: attributes.states.category,
           tags: attributes.states.tags,
@@ -125,7 +125,7 @@ function useGafpriApiProducts(_ref) {
     if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initRoute: "".concat(_constants.PRODUCTS_ROUTER, "/").concat(id),
+        initRoute: "".concat(_constants.PRODUCTS_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

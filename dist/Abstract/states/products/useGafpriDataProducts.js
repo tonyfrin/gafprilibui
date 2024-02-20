@@ -70,7 +70,7 @@ function useGafpriDataProducts(_ref) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _helpers.getLastEntryDateAndCount)(_constants.PRODUCTS_ROUTER);
+            return (0, _helpers.getLastEntryDateAndCount)(_constants.PRODUCTS_ROUTE);
           case 2:
             lastEntryDateAndCount = _context.sent;
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.posts.modifiedAt) || null;
@@ -79,7 +79,7 @@ function useGafpriDataProducts(_ref) {
               if (token) {
                 (0, _helpers.gafpriFetch)({
                   initMethod: 'GET',
-                  initRoute: _constants.PRODUCTS_ROUTER,
+                  initRoute: _constants.PRODUCTS_ROUTE,
                   initToken: {
                     token: token
                   },

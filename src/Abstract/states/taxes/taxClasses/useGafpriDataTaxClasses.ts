@@ -5,7 +5,7 @@ import {
   gafpriFetch,
   SelectDefault,
 } from '../../../../helpers';
-import { TAX_CLASSES_STORAGE, TAX_CLASSES_ROUTER } from '../../../../constants';
+import { TAX_CLASSES_STORAGE, TAX_CLASSES_ROUTE } from '../../../../constants';
 
 export interface TaxClassesAttributes {
   id: number;
@@ -101,7 +101,7 @@ export function useGafpriDataTaxClasses({
 
   const getItems = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount(
-      TAX_CLASSES_ROUTER
+      TAX_CLASSES_ROUTE
     );
     const lastDate = getLastItem?.modifiedAt || null;
     const count = items.data.items?.length || 0;
@@ -114,7 +114,7 @@ export function useGafpriDataTaxClasses({
       if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initRoute: TAX_CLASSES_ROUTER,
+          initRoute: TAX_CLASSES_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onItems,

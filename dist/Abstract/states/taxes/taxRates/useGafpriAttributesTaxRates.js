@@ -125,7 +125,7 @@ function useGafpriAttributesTaxRates() {
       setValid: setTaxClassIdValid,
       currentValid: taxClassesIdValid,
       required: true,
-      inputId: _constants.TAX_RATES_ROUTER
+      inputId: _constants.TAX_RATES_ROUTE
     });
   };
   var validationRate = function validationRate(value) {
@@ -134,7 +134,7 @@ function useGafpriAttributesTaxRates() {
       setValid: setRateValid,
       currentValid: rateValid,
       required: true,
-      inputId: _constants.TAX_RATES_ROUTER
+      inputId: _constants.TAX_RATES_ROUTE
     });
   };
   var validationCity = function validationCity(value) {
@@ -142,7 +142,7 @@ function useGafpriAttributesTaxRates() {
       value: value,
       setValid: setCityValid,
       currentValid: cityValid,
-      inputId: _constants.TAX_RATES_ROUTER
+      inputId: _constants.TAX_RATES_ROUTE
     });
   };
   var validationStateCountry = function validationStateCountry(value) {
@@ -150,7 +150,7 @@ function useGafpriAttributesTaxRates() {
       value: value,
       setValid: setStateCountryValid,
       currentValid: stateCountryValid,
-      inputId: _constants.TAX_RATES_ROUTER
+      inputId: _constants.TAX_RATES_ROUTE
     });
   };
   var validationCountry = function validationCountry(value) {
@@ -158,7 +158,7 @@ function useGafpriAttributesTaxRates() {
       value: value,
       setValid: setCountryValid,
       currentValid: countryValid,
-      inputId: _constants.TAX_RATES_ROUTER
+      inputId: _constants.TAX_RATES_ROUTE
     });
   };
   var validationPostCode = function validationPostCode(value) {
@@ -167,13 +167,13 @@ function useGafpriAttributesTaxRates() {
       setValid: setPostCodeValid,
       currentValid: postCodeValid,
       required: false,
-      inputId: _constants.TAX_RATES_ROUTER
+      inputId: _constants.TAX_RATES_ROUTE
     });
   };
   var validationButtonNext = function validationButtonNext() {
     (0, _Validations.generalValidationButtonNext)({
       validations: [taxClassesIdValid, rateValid, cityValid, stateCountryValid, countryValid, postCodeValid],
-      inputId: _constants.TAX_RATES_ROUTER
+      inputId: _constants.TAX_RATES_ROUTE
     });
   };
 

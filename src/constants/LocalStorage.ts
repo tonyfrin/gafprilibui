@@ -11,3 +11,4 @@ export const ORDER_STORAGE = 'GS_ORDER_V2';
 export const PRODUCTS_STORAGE = 'GS_PRODUCTS_V2';
 export const TAX_CLASSES_STORAGE = 'GS_TAX_CLASSES_V2';
 export const TAX_RATES_STORAGE = 'GS_TAX_RATES_V2';
+export const BUDGET_STORAGE = 'GS_BUDGET_V2';

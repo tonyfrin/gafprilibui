@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "useGafpriApiBudget", {
+  enumerable: true,
+  get: function get() {
+    return _budget.useGafpriApiBudget;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiEntity", {
   enumerable: true,
   get: function get() {
@@ -31,6 +37,18 @@ Object.defineProperty(exports, "useGafpriApiTaxRates", {
   enumerable: true,
   get: function get() {
     return _taxes.useGafpriApiTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesBudget", {
+  enumerable: true,
+  get: function get() {
+    return _budget.useGafpriAttributesBudget;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesBudgetItems", {
+  enumerable: true,
+  get: function get() {
+    return _productsItems.useGafpriAttributesBudgetItems;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesEntity", {
@@ -69,6 +87,12 @@ Object.defineProperty(exports, "useGafpriAttributesTaxRates", {
     return _taxes.useGafpriAttributesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriDataBudget", {
+  enumerable: true,
+  get: function get() {
+    return _budget.useGafpriDataBudget;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataEntity", {
   enumerable: true,
   get: function get() {
@@ -97,6 +121,12 @@ Object.defineProperty(exports, "useGafpriDataTaxRates", {
   enumerable: true,
   get: function get() {
     return _taxes.useGafpriDataTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesBudget", {
+  enumerable: true,
+  get: function get() {
+    return _budget.useGafpriPagesBudget;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesEntity", {
@@ -133,6 +163,12 @@ Object.defineProperty(exports, "useGafpriPagesTaxRates", {
   enumerable: true,
   get: function get() {
     return _taxes.useGafpriPagesTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsBudget", {
+  enumerable: true,
+  get: function get() {
+    return _budget.useGafpriPaginationsBudget;
   }
 });
 Object.defineProperty(exports, "useGafpriPaginationsEntity", {
@@ -177,3 +213,4 @@ var _productsItems = require("./productsItems");
 var _taxes = require("./taxes");
 var _order = require("./order");
 var _salesModule = require("./salesModule");
+var _budget = require("./budget");

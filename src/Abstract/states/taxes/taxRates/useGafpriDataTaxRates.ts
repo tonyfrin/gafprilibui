@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getItem, saveItem } from '../../../../Context';
 import { getLastEntryDateAndCount, gafpriFetch } from '../../../../helpers';
-import { TAX_RATES_ROUTER, TAX_RATES_STORAGE } from '../../../../constants';
+import { TAX_RATES_ROUTE, TAX_RATES_STORAGE } from '../../../../constants';
 
 export interface TaxRatesAttributes {
   id: number;
@@ -100,7 +100,7 @@ export function useGafpriDataTaxRates({
 
   const getItems = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount(
-      TAX_RATES_ROUTER
+      TAX_RATES_ROUTE
     );
     const lastDate = getLastItem?.modifiedAt || null;
     const count = items.data.items?.length || 0;
@@ -113,7 +113,7 @@ export function useGafpriDataTaxRates({
       if (token) {
         gafpriFetch({
           initMethod: 'GET',
-          initRoute: TAX_RATES_ROUTER,
+          initRoute: TAX_RATES_ROUTE,
           initToken: { token },
           functionFetching: notReady,
           functionSuccess: onItems,

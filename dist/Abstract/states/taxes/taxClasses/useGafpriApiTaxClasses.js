@@ -21,7 +21,7 @@ function useGafpriApiTaxClasses(_ref) {
     if (attributes.states.nameValid && attributes.states.descriptionValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
-        initRoute: _constants.TAX_CLASSES_ROUTER,
+        initRoute: _constants.TAX_CLASSES_ROUTE,
         initCredentials: {
           name: attributes.states.name,
           description: attributes.states.description
@@ -47,7 +47,7 @@ function useGafpriApiTaxClasses(_ref) {
     if (attributes.states.nameValid && attributes.states.descriptionValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
-        initRoute: "".concat(_constants.TAX_CLASSES_ROUTER, "/").concat(attributes.states.currentId),
+        initRoute: "".concat(_constants.TAX_CLASSES_ROUTE, "/").concat(attributes.states.currentId),
         initCredentials: {
           name: attributes.states.name,
           description: attributes.states.description
@@ -71,7 +71,7 @@ function useGafpriApiTaxClasses(_ref) {
     if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'DELETE',
-        initRoute: "".concat(_constants.TAX_CLASSES_ROUTER, "/").concat(id),
+        initRoute: "".concat(_constants.TAX_CLASSES_ROUTE, "/").concat(id),
         initToken: {
           token: token
         },

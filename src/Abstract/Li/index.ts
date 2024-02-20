@@ -52,3 +52,5 @@ export type {
   LineTableStylesContainerProps,
   LineTableProps,
 } from './LineTable';
+export { LineProductBudgetCart } from './LineProductBudgetCart';
+export type { LineProductBudgetCartProps } from './LineProductBudgetCart';

@@ -16,3 +16,5 @@ export { LineProductCart } from './LineProductCart';
 export type { LineProductCartProps } from './LineProductCart';
 export { LineTable } from './LineTable';
 export type { LineTableStylesContainerProps, LineTableProps, } from './LineTable';
+export { LineProductBudgetCart } from './LineProductBudgetCart';
+export type { LineProductBudgetCartProps } from './LineProductBudgetCart';

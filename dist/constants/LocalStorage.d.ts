@@ -11,3 +11,4 @@ export declare const ORDER_STORAGE = "GS_ORDER_V2";
 export declare const PRODUCTS_STORAGE = "GS_PRODUCTS_V2";
 export declare const TAX_CLASSES_STORAGE = "GS_TAX_CLASSES_V2";
 export declare const TAX_RATES_STORAGE = "GS_TAX_RATES_V2";
+export declare const BUDGET_STORAGE = "GS_BUDGET_V2";

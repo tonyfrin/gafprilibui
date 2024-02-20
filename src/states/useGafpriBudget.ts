@@ -31,7 +31,6 @@ export type UseGafpriBudgetProps = {
   token: string | null;
   useEntity: UseGafpriEntityReturn;
   useProducts: UseGafpriProductsReturn;
-  salesChannel: string;
 };
 
 export function useGafpriBudget({

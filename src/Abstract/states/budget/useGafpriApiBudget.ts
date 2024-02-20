@@ -20,7 +20,7 @@ type Data = {
   posts?: {
     visibility?: string;
   };
-  orderItems?: BudgetItemsAttributes[];
+  budgetItems?: BudgetItemsAttributes[];
 };
 
 export type UseGafpriApiBudgetReturn = {
@@ -81,7 +81,7 @@ export const useGafpriApiBudget = ({
       const payload = {
         customerId: useAttributes.states.customerId,
         note: useAttributes.states.note,
-        orderItems: useProductItems.states.shoppingCart,
+        budgetItems: useProductItems.states.shoppingCart,
         posts: {
           visibility: 'public',
         },
@@ -117,7 +117,7 @@ export const useGafpriApiBudget = ({
         customerId: useAttributes.states.customerId,
         referredId: useAttributes.states.referredId,
         note: useAttributes.states.note,
-        orderItems: useProductItems.states.shoppingCart,
+        budgetItems: useProductItems.states.shoppingCart,
       };
 
       gafpriFetch<Data>({

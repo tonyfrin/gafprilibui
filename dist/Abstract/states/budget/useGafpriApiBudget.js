@@ -33,7 +33,7 @@ var useGafpriApiBudget = function useGafpriApiBudget(_ref) {
       var payload = {
         customerId: useAttributes.states.customerId,
         note: useAttributes.states.note,
-        orderItems: useProductItems.states.shoppingCart,
+        budgetItems: useProductItems.states.shoppingCart,
         posts: {
           visibility: 'public'
         }
@@ -62,7 +62,7 @@ var useGafpriApiBudget = function useGafpriApiBudget(_ref) {
         customerId: useAttributes.states.customerId,
         referredId: useAttributes.states.referredId,
         note: useAttributes.states.note,
-        orderItems: useProductItems.states.shoppingCart
+        budgetItems: useProductItems.states.shoppingCart
       };
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',

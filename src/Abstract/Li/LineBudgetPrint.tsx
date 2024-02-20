@@ -1,9 +1,7 @@
 import React from 'react';
 import type { SiteOptions, UseGafpriBudgetReturn } from '../../states';
 import { Button } from '../Button';
-import { InputCart } from '../Input';
 import { decimalFormatPriceConverter, formatDate } from '../../helpers';
-import { LineCol1 } from './LineCol1';
 import { SpanValue } from '../Span';
 import { LineCol4 } from './LineCol4';
 import { LineCol2 } from './LineCol2';
@@ -21,7 +19,7 @@ export const LineBudgetPrint = ({
   const items =
     useBudget.data.states.items.data.items &&
     useBudget.data.states.items.data.items.map((item, index) => {
-      const date = formatDate(item.posts.createdAt);
+      const date = formatDate(`${item.posts.createdAt}`);
       return (
         <LineTable
           containerProps={{

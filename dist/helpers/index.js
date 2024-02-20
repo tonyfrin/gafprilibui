@@ -436,12 +436,13 @@ var decimalFormatPriceConverter = function decimalFormatPriceConverter(str, dig,
 };
 exports.decimalFormatPriceConverter = decimalFormatPriceConverter;
 var formatDate = function formatDate(date) {
+  var newDate = new Date(date);
   // Formatear la fecha
-  var newDate = new Intl.DateTimeFormat('es-ES', {
+  var format = new Intl.DateTimeFormat('es-ES', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric'
   });
-  return newDate.format(date);
+  return format.format(newDate);
 };
 exports.formatDate = formatDate;

@@ -17,7 +17,7 @@ var LineBudgetPrint = function LineBudgetPrint(_ref) {
     siteOptions = _ref.siteOptions;
   var items = useBudget.data.states.items.data.items && useBudget.data.states.items.data.items.map(function (item, index) {
     var _item$customer;
-    var date = (0, _helpers.formatDate)(item.posts.createdAt);
+    var date = (0, _helpers.formatDate)("".concat(item.posts.createdAt));
     return /*#__PURE__*/_react["default"].createElement(_LineTable.LineTable, {
       containerProps: {
         key: "budget-".concat(index)

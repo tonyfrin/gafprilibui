@@ -632,13 +632,14 @@ export const decimalFormatPriceConverter = (
   return `${formattedNumber} ${currencySymbol}`;
 };
 
-export const formatDate = (date: Date): string => {
+export const formatDate = (date: string): string => {
+  const newDate = new Date(date);
   // Formatear la fecha
-  const newDate = new Intl.DateTimeFormat('es-ES', {
+  const format = new Intl.DateTimeFormat('es-ES', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',
   });
 
-  return newDate.format(date);
+  return format.format(newDate);
 };

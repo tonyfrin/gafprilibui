@@ -156,7 +156,7 @@ export const BudgetSearchPrint = ({
           title="Presupuestos"
           items={items}
           headers={headers}
-          columns={6}
+          columns={5}
           selectProps={{
             options: options,
             onChange: (event) => {

@@ -89,7 +89,7 @@ var BudgetSearchPrint = function BudgetSearchPrint(_ref) {
     title: "Presupuestos",
     items: items,
     headers: headers,
-    columns: 6,
+    columns: 5,
     selectProps: {
       options: options,
       onChange: function onChange(event) {

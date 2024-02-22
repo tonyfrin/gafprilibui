@@ -46,12 +46,13 @@ export const PrintButtonBudget = ({
                 return loading ? (
                   <Loading />
                 ) : (
-                  <Button
-                    title="Imprimir"
-                    styles={{
-                      fontSize: '10px',
-                    }}
-                  />
+                  // <Button
+                  //   title="Imprimir"
+                  //   styles={{
+                  //     fontSize: '10px',
+                  //   }}
+                  // />
+                  <Loading />
                 );
               }}
             </PDFDownloadLink>

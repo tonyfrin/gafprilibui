@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { css, cx } from '@emotion/css';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { Button } from '../Button';
@@ -56,36 +56,45 @@ export const BudgetSearchPrint = ({
   listProps,
   logoPdf,
 }: BudgetSearchPrintProps): JSX.Element => {
+  const [shouldRenderButtonUpdate, setShouldRenderButtonUpdate] =
+    useState(true);
+
+  useEffect(() => {
+    setShouldRenderButtonUpdate(false);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const ButtonUpdate: React.FC<{ id: number }> = ({ id }) => {
     const budget = useBudget.data.actions.getById(id);
     return (
-      <div className={css(optionButtonContainerStyle)}>
-        {budget && (
-          <PDFDownloadLink
-            document={
-              <BudgetPdf
-                budget={budget}
-                logo={logoPdf}
-                siteOptions={siteOptions}
-              />
-            }
-            fileName={`presupuesto${budget.postsId}.pdf`}
-          >
-            {({ blob, url, loading, error }) => {
-              return loading ? (
-                <Loading />
-              ) : (
-                <Button
-                  title="Imprimir"
-                  styles={{
-                    fontSize: '10px',
-                  }}
+      { shouldRenderButtonUpdate } && (
+        <div className={css(optionButtonContainerStyle)}>
+          {budget && (
+            <PDFDownloadLink
+              document={
+                <BudgetPdf
+                  budget={budget}
+                  logo={logoPdf}
+                  siteOptions={siteOptions}
                 />
-              );
-            }}
-          </PDFDownloadLink>
-        )}
-      </div>
+              }
+              fileName={`presupuesto${budget.postsId}.pdf`}
+            >
+              {({ blob, url, loading, error }) => {
+                return loading ? (
+                  <Loading />
+                ) : (
+                  <Button
+                    title="Imprimir"
+                    styles={{
+                      fontSize: '10px',
+                    }}
+                  />
+                );
+              }}
+            </PDFDownloadLink>
+          )}
+        </div>
+      )
     );
   };
 

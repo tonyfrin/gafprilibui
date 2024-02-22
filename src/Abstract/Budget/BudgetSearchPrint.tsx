@@ -9,33 +9,22 @@ import type { SiteOptions } from '../../states';
 import { formatDate, decimalFormatPriceConverter } from '../../helpers';
 import { ContainerButton } from '../Containers';
 import { UseGafpriBudgetReturn } from '../../states';
-import type { ButtonPropsExtended } from '../Button';
 import type { ListProps } from '../List';
 import type { ErrorProps } from '../Error';
-import { BudgetPdf } from '../Pdf';
-import { Loading } from '../../Components';
+import { PrintButtonBudget } from '../Pdf';
 
 export type BudgetSearchPrintProps = {
   useBudget: UseGafpriBudgetReturn;
   siteOptions: SiteOptions;
-  optionButtonContainerStyle?: string;
-  updateButtonProps?: ButtonPropsExtended;
   errorProps?: ErrorProps;
   listProps?: ListProps;
   logoPdf: string;
 };
 
 export type BudgetSearchPrintExtended = {
-  optionButtonContainerStyle?: string;
-  updateButtonProps?: ButtonPropsExtended;
   errorProps?: ErrorProps;
   listProps?: ListProps;
 };
-
-const defaultOptionButtonContainerStyle = css`
-  display: flex;
-  justify-content: space-evenly;
-`;
 
 const budgetSearchPrintStylesContainer = () => css`
   max-width: 1150px;
@@ -48,56 +37,12 @@ const budgetSearchPrintStylesContainer = () => css`
 export const BudgetSearchPrint = ({
   useBudget,
   siteOptions,
-  optionButtonContainerStyle = defaultOptionButtonContainerStyle,
-  updateButtonProps,
   errorProps = {
     error: useBudget.error.states.error,
   },
   listProps,
   logoPdf,
 }: BudgetSearchPrintProps): JSX.Element => {
-  const [shouldRenderButtonUpdate, setShouldRenderButtonUpdate] =
-    useState(true);
-
-  useEffect(() => {
-    setShouldRenderButtonUpdate(false);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const ButtonUpdate: React.FC<{ id: number }> = ({ id }) => {
-    const budget = useBudget.data.actions.getById(id);
-    return (
-      { shouldRenderButtonUpdate } && (
-        <div className={css(optionButtonContainerStyle)}>
-          {budget && (
-            <PDFDownloadLink
-              document={
-                <BudgetPdf
-                  budget={budget}
-                  logo={logoPdf}
-                  siteOptions={siteOptions}
-                />
-              }
-              fileName={`presupuesto${budget.postsId}.pdf`}
-            >
-              {({ blob, url, loading, error }) => {
-                return loading ? (
-                  <Loading />
-                ) : (
-                  <Button
-                    title="Imprimir"
-                    styles={{
-                      fontSize: '10px',
-                    }}
-                  />
-                );
-              }}
-            </PDFDownloadLink>
-          )}
-        </div>
-      )
-    );
-  };
-
   const returnInit = () => {
     useBudget.pages.actions.returnInit();
   };
@@ -157,7 +102,12 @@ export const BudgetSearchPrint = ({
         date,
         customer,
         total,
-        <ButtonUpdate id={item.postsId} />,
+        <PrintButtonBudget
+          id={item.postsId}
+          useBudget={useBudget}
+          siteOptions={siteOptions}
+          logoPdf={logoPdf}
+        />,
       ];
     }) ?? [];
 

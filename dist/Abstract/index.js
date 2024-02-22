@@ -585,6 +585,12 @@ Object.defineProperty(exports, "PhotoUser", {
     return _Form.PhotoUser;
   }
 });
+Object.defineProperty(exports, "PrintButtonBudget", {
+  enumerable: true,
+  get: function get() {
+    return _Pdf.PrintButtonBudget;
+  }
+});
 Object.defineProperty(exports, "RolePermissions", {
   enumerable: true,
   get: function get() {

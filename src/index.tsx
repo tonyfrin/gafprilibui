@@ -152,6 +152,7 @@ export {
   BudgetPrint,
   BudgetSearchPrint,
   BudgetPdf,
+  PrintButtonBudget,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -427,6 +428,7 @@ export type {
   BudgetSearchPrintProps,
   BudgetSearchPrintExtended,
   BudgetPdfProps,
+  PrintButtonBudgetProps,
 } from './Abstract';
 export {
   MainFooter,

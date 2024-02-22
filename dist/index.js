@@ -1017,6 +1017,12 @@ Object.defineProperty(exports, "PhotoUser", {
     return _Abstract.PhotoUser;
   }
 });
+Object.defineProperty(exports, "PrintButtonBudget", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.PrintButtonBudget;
+  }
+});
 Object.defineProperty(exports, "ProductBudget", {
   enumerable: true,
   get: function get() {

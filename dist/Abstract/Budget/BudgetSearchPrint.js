@@ -1,17 +1,14 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.BudgetSearchPrint = void 0;
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
-var _renderer = require("@react-pdf/renderer");
 var _Button = require("../Button");
 var _List = require("../List");
 var _Error = require("../Error");
@@ -19,62 +16,20 @@ var _Header = require("../Header");
 var _helpers = require("../../helpers");
 var _Containers = require("../Containers");
 var _Pdf = require("../Pdf");
-var _Components = require("../../Components");
-var _templateObject, _templateObject2;
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
+var _templateObject;
 var budgetSearchPrintStylesContainer = function budgetSearchPrintStylesContainer() {
-  return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: 1150px;\n  margin: auto;\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 10px;\n"])));
+  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: 1150px;\n  margin: auto;\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 10px;\n"])));
 };
 var BudgetSearchPrint = exports.BudgetSearchPrint = function BudgetSearchPrint(_ref) {
   var _paginated$map;
   var useBudget = _ref.useBudget,
     siteOptions = _ref.siteOptions,
-    _ref$optionButtonCont = _ref.optionButtonContainerStyle,
-    optionButtonContainerStyle = _ref$optionButtonCont === void 0 ? defaultOptionButtonContainerStyle : _ref$optionButtonCont,
-    updateButtonProps = _ref.updateButtonProps,
     _ref$errorProps = _ref.errorProps,
     errorProps = _ref$errorProps === void 0 ? {
       error: useBudget.error.states.error
     } : _ref$errorProps,
     listProps = _ref.listProps,
     logoPdf = _ref.logoPdf;
-  var _useState = (0, _react.useState)(true),
-    _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
-    shouldRenderButtonUpdate = _useState2[0],
-    setShouldRenderButtonUpdate = _useState2[1];
-  (0, _react.useEffect)(function () {
-    setShouldRenderButtonUpdate(false);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  var ButtonUpdate = function ButtonUpdate(_ref2) {
-    var id = _ref2.id;
-    var budget = useBudget.data.actions.getById(id);
-    return {
-      shouldRenderButtonUpdate: shouldRenderButtonUpdate
-    } && /*#__PURE__*/_react["default"].createElement("div", {
-      className: (0, _css.css)(optionButtonContainerStyle)
-    }, budget && /*#__PURE__*/_react["default"].createElement(_renderer.PDFDownloadLink, {
-      document: /*#__PURE__*/_react["default"].createElement(_Pdf.BudgetPdf, {
-        budget: budget,
-        logo: logoPdf,
-        siteOptions: siteOptions
-      }),
-      fileName: "presupuesto".concat(budget.postsId, ".pdf")
-    }, function (_ref3) {
-      var blob = _ref3.blob,
-        url = _ref3.url,
-        loading = _ref3.loading,
-        error = _ref3.error;
-      return loading ? /*#__PURE__*/_react["default"].createElement(_Components.Loading, null) : /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-        title: "Imprimir",
-        styles: {
-          fontSize: '10px'
-        }
-      });
-    }));
-  };
   var returnInit = function returnInit() {
     useBudget.pages.actions.returnInit();
   };
@@ -88,8 +43,11 @@ var BudgetSearchPrint = exports.BudgetSearchPrint = function BudgetSearchPrint(_
     var date = (0, _helpers.formatDate)("".concat(item.posts.createdAt));
     var total = (0, _helpers.decimalFormatPriceConverter)(item.total || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION);
     var customer = "".concat(item.customer.name, " ").concat((_item$customer = item.customer) === null || _item$customer === void 0 ? void 0 : _item$customer.lastName);
-    return [item.postsId, date, customer, total, /*#__PURE__*/_react["default"].createElement(ButtonUpdate, {
-      id: item.postsId
+    return [item.postsId, date, customer, total, /*#__PURE__*/_react["default"].createElement(_Pdf.PrintButtonBudget, {
+      id: item.postsId,
+      useBudget: useBudget,
+      siteOptions: siteOptions,
+      logoPdf: logoPdf
     })];
   })) !== null && _paginated$map !== void 0 ? _paginated$map : [];
   var headers = ['Número', 'Fecha', 'Cliente', 'Total', 'Opciones'];

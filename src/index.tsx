@@ -153,6 +153,11 @@ export {
   BudgetSearchPrint,
   BudgetPdf,
   PrintButtonBudget,
+  EntityBudgetViewFormInfoHeader,
+  BudgetViewFormInfoHeader,
+  LineProductBudgetViewCart,
+  CartBudgetViewTable,
+  CartBudgetViewSections,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -429,6 +434,14 @@ export type {
   BudgetSearchPrintExtended,
   BudgetPdfProps,
   PrintButtonBudgetProps,
+  EntityBudgetViewFormInfoHeaderProps,
+  BudgetViewFormInfoHeaderProps,
+  LineProductBudgetViewCartProps,
+  CartBudgetViewTableProps,
+  CartBudgetViewSectionsProps,
+  CartBudgetViewSectionsStylesContainerProps,
+  CartBudgetViewSectionsStylesContentItemsProps,
+  CartBudgetViewSectionsStylesContentOptionsProps,
 } from './Abstract';
 export {
   MainFooter,

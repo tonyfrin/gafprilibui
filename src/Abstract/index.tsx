@@ -143,6 +143,8 @@ export {
   EntityBudgetSearchForm,
   EntityBudgetFormInfoHeader,
   BudgetFormInfoHeader,
+  EntityBudgetViewFormInfoHeader,
+  BudgetViewFormInfoHeader,
 } from './Form';
 export type {
   ModelFormProps,
@@ -161,6 +163,8 @@ export type {
   EntityBudgetSearchFormStaylesContainerProps,
   EntityBudgetFormInfoHeaderProps,
   BudgetFormInfoHeaderProps,
+  EntityBudgetViewFormInfoHeaderProps,
+  BudgetViewFormInfoHeaderProps,
 } from './Form';
 export { Menu1, Menu2, MenuButton, MainMenu, HeaderMenu } from './Menu';
 export type {
@@ -397,6 +401,7 @@ export {
   LineInfoTwo,
   LineProductBudgetCart,
   LineBudgetPrint,
+  LineProductBudgetViewCart,
 } from './Li';
 export type {
   LineProductCartProps,
@@ -430,12 +435,14 @@ export type {
   LineInfoTwoProps,
   LineProductBudgetCartProps,
   LineBudgetPrintProps,
+  LineProductBudgetViewCartProps,
 } from './Li';
 export {
   CartTable,
   SimpleTable,
   CartBudgetTable,
   BudgetPrintTable,
+  CartBudgetViewTable,
 } from './Table';
 export type {
   CartListProps,
@@ -444,6 +451,7 @@ export type {
   SimpleTableStylesContentProps,
   CartBudgetTableProps,
   BudgetPrintTableProps,
+  CartBudgetViewTableProps,
 } from './Table';
 export { SearchProducts, SearchProductsBudget } from './Products';
 export type {
@@ -452,7 +460,11 @@ export type {
   SearchProductsBudgetProps,
   SearchProductsBudgetPropsExtended,
 } from './Products';
-export { CartSections, CartBudgetSections } from './Sections';
+export {
+  CartSections,
+  CartBudgetSections,
+  CartBudgetViewSections,
+} from './Sections';
 export type {
   CartSectionsStylesContainerProps,
   CartSectionsStylesContentItemsProps,
@@ -462,6 +474,10 @@ export type {
   CartBudgetSectionsStylesContainerProps,
   CartBudgetSectionsStylesContentItemsProps,
   CartBudgetSectionsStylesContentOptionsProps,
+  CartBudgetViewSectionsProps,
+  CartBudgetViewSectionsStylesContainerProps,
+  CartBudgetViewSectionsStylesContentItemsProps,
+  CartBudgetViewSectionsStylesContentOptionsProps,
 } from './Sections';
 export { OrderInit, Sales } from './Order';
 export type {
@@ -474,6 +490,7 @@ export {
   BudgetModule,
   BudgetPrint,
   BudgetSearchPrint,
+  BudgetView,
 } from './Budget';
 export type {
   BudgetInitStylesContainerProps,
@@ -482,6 +499,7 @@ export type {
   BudgetPrintProps,
   BudgetSearchPrintProps,
   BudgetSearchPrintExtended,
+  BudgetViewProps,
 } from './Budget';
 export { BudgetPdf, PrintButtonBudget } from './Pdf';
 export type { BudgetPdfProps, PrintButtonBudgetProps } from './Pdf';

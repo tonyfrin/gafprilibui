@@ -1,6 +1,18 @@
-import { EntityAttributes } from '../entity';
 import { PostsAttributes } from '../../../states';
 import type { OrderItemsAttributes } from '../productsItems/useGafpriAttributesOrderItems';
+import type { AddressAttributes } from '../entity';
+export type OrderCustomerAttributes = {
+    orderPostsId: number;
+    customerId: number;
+    email: string;
+    phone: string;
+    name: string;
+    lastName?: string;
+    address: AddressAttributes[];
+    documentIndex?: string;
+    documentDigit: string;
+    documentType: string;
+};
 export interface OrderAttributes {
     postsId: number;
     customerId: number;
@@ -14,7 +26,7 @@ export interface OrderAttributes {
     refundAmount: number;
     posts: PostsAttributes;
     orderItems: OrderItemsAttributes[];
-    customer: EntityAttributes;
+    orderCustomer: OrderCustomerAttributes;
 }
 interface EntityData {
     data: {

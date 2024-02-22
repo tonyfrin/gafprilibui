@@ -1,9 +1,9 @@
 import React from 'react';
-import { UseGafpriBudgetReturn, SiteOptions } from '../../states';
+import { SiteOptions } from '../../states';
+import { BudgetAttributes } from '../states';
 export type PrintButtonBudgetProps = {
-    id: number;
-    useBudget: UseGafpriBudgetReturn;
+    budget: BudgetAttributes;
     siteOptions: SiteOptions;
     logoPdf: string;
 };
-export declare const PrintButtonBudget: ({ id, useBudget, siteOptions, logoPdf, }: PrintButtonBudgetProps) => React.JSX.Element;
+export declare const PrintButtonBudget: ({ budget, siteOptions, logoPdf, }: PrintButtonBudgetProps) => React.JSX.Element;

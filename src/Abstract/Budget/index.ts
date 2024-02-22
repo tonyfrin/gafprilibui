@@ -12,3 +12,5 @@ export type {
   BudgetSearchPrintProps,
   BudgetSearchPrintExtended,
 } from './BudgetSearchPrint';
+export { BudgetView } from './BudgetView';
+export type { BudgetViewProps } from './BudgetView';

@@ -81,12 +81,18 @@ var Budget = exports.Budget = function Budget(_ref) {
     useProduct: useProducts,
     useBudget: use,
     sitesOptions: sitesOptions
+  })), use.pages.states.isPrintTable && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+    keyName: "printTable",
+    isVisible: use.pages.states.isPrintTable
+  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetSearchPrint, {
+    useBudget: use,
+    siteOptions: sitesOptions
   })), use.pages.states.isPrint && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "print",
     isVisible: use.pages.states.isPrint
-  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetSearchPrint, {
+  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetView, {
     useBudget: use,
-    siteOptions: sitesOptions,
-    logoPdf: logoPdf
+    logoPdf: logoPdf,
+    sitesOptions: sitesOptions
   }))));
 };

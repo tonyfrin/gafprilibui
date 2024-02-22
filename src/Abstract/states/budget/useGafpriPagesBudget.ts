@@ -18,6 +18,7 @@ export type UseGafpriPagesBudgetReturn = {
     isAddEntity: boolean;
     isSales: boolean;
     isProductSearch: boolean;
+    isPrintTable: boolean;
     isPrint: boolean;
   };
   actions: {
@@ -28,6 +29,8 @@ export type UseGafpriPagesBudgetReturn = {
     onAddEntity: () => void;
     onSales: () => void;
     onProductSearch: () => void;
+    onPrintTable: () => void;
+    goPrint: (id: number) => void;
     onPrint: () => void;
     returnInit: () => void;
     processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
@@ -61,6 +64,7 @@ export const useGafpriPagesBudget = ({
   const [isAddEntity, setIsAddEntity] = useState(false); // formulario de Add Entity
   const [isSales, setIsSales] = useState(false); // formulario de ventas
   const [isProductSearch, setIsProductSearch] = useState(false); // tabla de busqueda de productos
+  const [isPrintTable, setIsPrintTable] = useState(false); // tabla de busqueda de productos
   const [isPrint, setIsPrint] = useState(false); // tabla de busqueda de productos
 
   // Funciones de paginas
@@ -72,6 +76,7 @@ export const useGafpriPagesBudget = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     scrollToTop();
   };
@@ -84,6 +89,7 @@ export const useGafpriPagesBudget = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     scrollToTop();
   };
@@ -96,6 +102,7 @@ export const useGafpriPagesBudget = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     scrollToTop();
   };
@@ -108,6 +115,7 @@ export const useGafpriPagesBudget = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     scrollToTop();
   };
@@ -120,6 +128,7 @@ export const useGafpriPagesBudget = ({
     setIsAddEntity(true);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     scrollToTop();
   };
@@ -132,6 +141,7 @@ export const useGafpriPagesBudget = ({
     setIsAddEntity(false);
     setIsSales(true);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     scrollToTop();
   };
@@ -144,6 +154,20 @@ export const useGafpriPagesBudget = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(true);
+    setIsPrintTable(false);
+    setIsPrint(false);
+    scrollToTop();
+  };
+
+  const onPrintTable = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntityForm(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsPrintTable(true);
     setIsPrint(false);
     scrollToTop();
   };
@@ -156,6 +180,7 @@ export const useGafpriPagesBudget = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(true);
     scrollToTop();
   };
@@ -169,6 +194,11 @@ export const useGafpriPagesBudget = ({
   const goSalesProduct = (product: ProductsAttributes): void => {
     useProductItems.actions.addItemToCart(product);
     onSales();
+  };
+
+  const goPrint = (id: number): void => {
+    useAttributes.actions.setCurrentId(id);
+    onPrint();
   };
 
   const returnInit = (): void => {
@@ -297,6 +327,7 @@ export const useGafpriPagesBudget = ({
     isAddEntity,
     isSales,
     isProductSearch,
+    isPrintTable,
     isPrint,
   };
 
@@ -309,6 +340,8 @@ export const useGafpriPagesBudget = ({
     onAddEntity,
     onSales,
     onProductSearch,
+    onPrintTable,
+    goPrint,
     onPrint,
     returnInit,
     processEntityBydocumentId,

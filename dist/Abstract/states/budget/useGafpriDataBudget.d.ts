@@ -1,6 +1,18 @@
-import { EntityAttributes } from '../entity';
 import { PostsAttributes } from '../../../states';
 import type { BudgetItemsAttributes } from '../productsItems';
+import type { AddressAttributes } from '../entity';
+export interface BudgetCustomerAttributes {
+    budgetPostsId: number;
+    customerId: number;
+    email: string;
+    phone: string;
+    name: string;
+    lastName: string;
+    address: AddressAttributes[];
+    documentIndex: string;
+    documentDigit: string;
+    documentType: string;
+}
 export interface BudgetAttributes {
     postsId: number;
     customerId: number;
@@ -13,7 +25,7 @@ export interface BudgetAttributes {
     refundAmount: number;
     posts: PostsAttributes;
     budgetItems: BudgetItemsAttributes[];
-    customer: EntityAttributes;
+    budgetCustomer: BudgetCustomerAttributes;
 }
 interface BudgetData {
     data: {

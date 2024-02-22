@@ -15,23 +15,40 @@ var _Error = require("../Error");
 var _Header = require("../Header");
 var _helpers = require("../../helpers");
 var _Containers = require("../Containers");
-var _Pdf = require("../Pdf");
-var _templateObject;
+var _templateObject, _templateObject2;
 var budgetSearchPrintStylesContainer = function budgetSearchPrintStylesContainer() {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: 1150px;\n  margin: auto;\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 10px;\n"])));
 };
+var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
 var BudgetSearchPrint = exports.BudgetSearchPrint = function BudgetSearchPrint(_ref) {
   var _paginated$map;
   var useBudget = _ref.useBudget,
     siteOptions = _ref.siteOptions,
+    _ref$optionButtonCont = _ref.optionButtonContainerStyle,
+    optionButtonContainerStyle = _ref$optionButtonCont === void 0 ? defaultOptionButtonContainerStyle : _ref$optionButtonCont,
     _ref$errorProps = _ref.errorProps,
     errorProps = _ref$errorProps === void 0 ? {
       error: useBudget.error.states.error
     } : _ref$errorProps,
-    listProps = _ref.listProps,
-    logoPdf = _ref.logoPdf;
+    listProps = _ref.listProps;
   var returnInit = function returnInit() {
     useBudget.pages.actions.returnInit();
+  };
+  var ButtonUpdate = function ButtonUpdate(_ref2) {
+    var id = _ref2.id;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      className: (0, _css.css)(optionButtonContainerStyle)
+    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+      title: "ver",
+      buttonProps: {
+        onClick: function onClick() {
+          return useBudget.pages.actions.goPrint(id);
+        }
+      },
+      styles: {
+        fontSize: '10px'
+      }
+    }));
   };
   var allowedValues = ['postsId', 'status', 'total', 'name'];
   var searchBy = allowedValues.includes(useBudget.paginations.states.searchBy) ? useBudget.paginations.states.searchBy : 'name';
@@ -39,15 +56,12 @@ var BudgetSearchPrint = exports.BudgetSearchPrint = function BudgetSearchPrint(_
   var entities = useBudget.paginations.actions.sortByProperty(filtered, searchBy, useBudget.paginations.states.orderList) || [];
   var paginated = useBudget.paginations.actions.getPaginated(entities, useBudget.paginations.states.currentPage, useBudget.paginations.states.itemsPerPage);
   var items = (_paginated$map = paginated === null || paginated === void 0 ? void 0 : paginated.map(function (item) {
-    var _item$customer;
+    var _item$budgetCustomer;
     var date = (0, _helpers.formatDate)("".concat(item.posts.createdAt));
     var total = (0, _helpers.decimalFormatPriceConverter)(item.total || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION);
-    var customer = "".concat(item.customer.name, " ").concat((_item$customer = item.customer) === null || _item$customer === void 0 ? void 0 : _item$customer.lastName);
-    return [item.postsId, date, customer, total, /*#__PURE__*/_react["default"].createElement(_Pdf.PrintButtonBudget, {
-      id: item.postsId,
-      useBudget: useBudget,
-      siteOptions: siteOptions,
-      logoPdf: logoPdf
+    var customer = "".concat(item.budgetCustomer.name, " ").concat((_item$budgetCustomer = item.budgetCustomer) === null || _item$budgetCustomer === void 0 ? void 0 : _item$budgetCustomer.lastName);
+    return [item.postsId, date, customer, total, /*#__PURE__*/_react["default"].createElement(ButtonUpdate, {
+      id: item.postsId
     })];
   })) !== null && _paginated$map !== void 0 ? _paginated$map : [];
   var headers = ['Número', 'Fecha', 'Cliente', 'Total', 'Opciones'];

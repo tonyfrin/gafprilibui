@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { css, cx } from '@emotion/css';
-import { PDFDownloadLink } from '@react-pdf/renderer';
 import { Button } from '../Button';
 import { List } from '../List';
 import { Error } from '../Error';
@@ -11,14 +10,13 @@ import { ContainerButton } from '../Containers';
 import { UseGafpriBudgetReturn } from '../../states';
 import type { ListProps } from '../List';
 import type { ErrorProps } from '../Error';
-import { PrintButtonBudget } from '../Pdf';
 
 export type BudgetSearchPrintProps = {
   useBudget: UseGafpriBudgetReturn;
+  optionButtonContainerStyle?: string;
   siteOptions: SiteOptions;
   errorProps?: ErrorProps;
   listProps?: ListProps;
-  logoPdf: string;
 };
 
 export type BudgetSearchPrintExtended = {
@@ -34,17 +32,38 @@ const budgetSearchPrintStylesContainer = () => css`
   border-radius: 10px;
 `;
 
+const defaultOptionButtonContainerStyle = css`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
 export const BudgetSearchPrint = ({
   useBudget,
   siteOptions,
+  optionButtonContainerStyle = defaultOptionButtonContainerStyle,
   errorProps = {
     error: useBudget.error.states.error,
   },
   listProps,
-  logoPdf,
 }: BudgetSearchPrintProps): JSX.Element => {
   const returnInit = () => {
     useBudget.pages.actions.returnInit();
+  };
+
+  const ButtonUpdate: React.FC<{ id: number }> = ({ id }) => {
+    return (
+      <div className={css(optionButtonContainerStyle)}>
+        <Button
+          title="ver"
+          buttonProps={{
+            onClick: () => useBudget.pages.actions.goPrint(id),
+          }}
+          styles={{
+            fontSize: '10px',
+          }}
+        />
+      </div>
+    );
   };
 
   const allowedValues: Array<'postsId' | 'status' | 'total' | 'name'> = [
@@ -96,18 +115,13 @@ export const BudgetSearchPrint = ({
         siteOptions.CURRENCY_SYMBOL,
         siteOptions.CURRENCY_LOCATION
       );
-      const customer = `${item.customer.name} ${item.customer?.lastName}`;
+      const customer = `${item.budgetCustomer.name} ${item.budgetCustomer?.lastName}`;
       return [
         item.postsId,
         date,
         customer,
         total,
-        <PrintButtonBudget
-          id={item.postsId}
-          useBudget={useBudget}
-          siteOptions={siteOptions}
-          logoPdf={logoPdf}
-        />,
+        <ButtonUpdate id={item.postsId} />,
       ];
     }) ?? [];
 

@@ -43,8 +43,12 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsProductSearch = _useState14[1]; // tabla de busqueda de productos
   var _useState15 = (0, _react.useState)(false),
     _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
-    isPrint = _useState16[0],
-    setIsPrint = _useState16[1]; // tabla de busqueda de productos
+    isPrintTable = _useState16[0],
+    setIsPrintTable = _useState16[1]; // tabla de busqueda de productos
+  var _useState17 = (0, _react.useState)(false),
+    _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
+    isPrint = _useState18[0],
+    setIsPrint = _useState18[1]; // tabla de busqueda de productos
 
   // Funciones de paginas
   var onFetching = function onFetching() {
@@ -55,6 +59,7 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
@@ -66,6 +71,7 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
@@ -77,6 +83,7 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
@@ -88,6 +95,7 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
@@ -99,6 +107,7 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsAddEntity(true);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
@@ -110,6 +119,7 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsAddEntity(false);
     setIsSales(true);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
@@ -121,6 +131,19 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(true);
+    setIsPrintTable(false);
+    setIsPrint(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onPrintTable = function onPrintTable() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntityForm(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsPrintTable(true);
     setIsPrint(false);
     (0, _helpers.scrollToTop)();
   };
@@ -132,6 +155,7 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsPrintTable(false);
     setIsPrint(true);
     (0, _helpers.scrollToTop)();
   };
@@ -143,6 +167,10 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
   var goSalesProduct = function goSalesProduct(product) {
     useProductItems.actions.addItemToCart(product);
     onSales();
+  };
+  var goPrint = function goPrint(id) {
+    useAttributes.actions.setCurrentId(id);
+    onPrint();
   };
   var returnInit = function returnInit() {
     useAttributes.actions.infoReset();
@@ -235,6 +263,7 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     isAddEntity: isAddEntity,
     isSales: isSales,
     isProductSearch: isProductSearch,
+    isPrintTable: isPrintTable,
     isPrint: isPrint
   };
 
@@ -247,6 +276,8 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     onAddEntity: onAddEntity,
     onSales: onSales,
     onProductSearch: onProductSearch,
+    onPrintTable: onPrintTable,
+    goPrint: goPrint,
     onPrint: onPrint,
     returnInit: returnInit,
     processEntityBydocumentId: processEntityBydocumentId,

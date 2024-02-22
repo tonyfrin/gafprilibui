@@ -11,6 +11,7 @@ export type UseGafpriPagesBudgetReturn = {
         isAddEntity: boolean;
         isSales: boolean;
         isProductSearch: boolean;
+        isPrintTable: boolean;
         isPrint: boolean;
     };
     actions: {
@@ -21,6 +22,8 @@ export type UseGafpriPagesBudgetReturn = {
         onAddEntity: () => void;
         onSales: () => void;
         onProductSearch: () => void;
+        onPrintTable: () => void;
+        goPrint: (id: number) => void;
         onPrint: () => void;
         returnInit: () => void;
         processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;

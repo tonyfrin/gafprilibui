@@ -33,16 +33,16 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
   siteOptions,
 }) => {
   const state =
-    (budget.customer.address[0]?.country &&
-      budget.customer.address[0]?.state &&
-      StatesCountries[0][budget.customer.address[0].country]?.[0]?.[
-        budget.customer.address[0].state
+    (budget.budgetCustomer.address[0]?.country &&
+      budget.budgetCustomer.address[0]?.state &&
+      StatesCountries[0][budget.budgetCustomer.address[0].country]?.[0]?.[
+        budget.budgetCustomer.address[0].state
       ]) ||
     '';
 
   const country =
-    (budget.customer.address[0]?.country &&
-      Countries[0][budget.customer.address[0].country]) ||
+    (budget.budgetCustomer.address[0]?.country &&
+      Countries[0][budget.budgetCustomer.address[0].country]) ||
     '';
 
   const stateSite =
@@ -59,8 +59,10 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
   const currencyLocation = siteOptions.CURRENCY_LOCATION;
   const CURRENCY_FORMAT = siteOptions.CURRENCY_FORMAT;
 
-  const customer = budget.customer || {};
-  const documentId = (customer.documentId && customer.documentId[0]) || {};
+  const customer = budget.budgetCustomer || {};
+  const documentIndex = customer.documentIndex
+    ? `${customer.documentIndex}-`
+    : '';
   const address = (customer.address && customer.address[0]) || {};
 
   return (
@@ -97,9 +99,7 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
               </Text>
             </Text>
             <Text style={styles.line}>
-              <Text>{`${documentId.index || ''}-${
-                documentId.digit || ''
-              }`}</Text>
+              <Text>{`${customer.documentType}: ${documentIndex}${customer.documentDigit}`}</Text>
             </Text>
             <Text style={styles.line}>
               <Text>{address.address1 || ''}</Text>

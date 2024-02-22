@@ -6,3 +6,5 @@ export { CartBudgetTable } from './CartBudgetTable';
 export type { CartBudgetTableProps } from './CartBudgetTable';
 export { BudgetPrintTable } from './BudgetPrintTable';
 export type { BudgetPrintTableProps } from './BudgetPrintTable';
+export { CartBudgetViewTable } from './CartBudgetViewTable';
+export type { CartBudgetViewTableProps } from './CartBudgetViewTable';

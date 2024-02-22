@@ -28,3 +28,7 @@ export { EntityBudgetFormInfoHeader } from './EntityBudgetFormInfoHeader';
 export type { EntityBudgetFormInfoHeaderProps } from './EntityBudgetFormInfoHeader';
 export { BudgetFormInfoHeader } from './BudgetFormInfoHeader';
 export type { BudgetFormInfoHeaderProps } from './BudgetFormInfoHeader';
+export { EntityBudgetViewFormInfoHeader } from './EntityBudgetViewFormInfoHeader';
+export type { EntityBudgetViewFormInfoHeaderProps } from './EntityBudgetViewFormInfoHeader';
+export { BudgetViewFormInfoHeader } from './BudgetViewFormInfoHeader';
+export type { BudgetViewFormInfoHeaderProps } from './BudgetViewFormInfoHeader';

@@ -9,6 +9,12 @@ Object.defineProperty(exports, "BudgetFormInfoHeader", {
     return _BudgetFormInfoHeader.BudgetFormInfoHeader;
   }
 });
+Object.defineProperty(exports, "BudgetViewFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _BudgetViewFormInfoHeader.BudgetViewFormInfoHeader;
+  }
+});
 Object.defineProperty(exports, "EntityBudgetFormInfoHeader", {
   enumerable: true,
   get: function get() {
@@ -19,6 +25,12 @@ Object.defineProperty(exports, "EntityBudgetSearchForm", {
   enumerable: true,
   get: function get() {
     return _EntityBudgetSearchForm.EntityBudgetSearchForm;
+  }
+});
+Object.defineProperty(exports, "EntityBudgetViewFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _EntityBudgetViewFormInfoHeader.EntityBudgetViewFormInfoHeader;
   }
 });
 Object.defineProperty(exports, "EntityFormInfoHeader", {
@@ -87,3 +99,5 @@ var _OrderFormInfoHeader = require("./OrderFormInfoHeader");
 var _EntityBudgetSearchForm = require("./EntityBudgetSearchForm");
 var _EntityBudgetFormInfoHeader = require("./EntityBudgetFormInfoHeader");
 var _BudgetFormInfoHeader = require("./BudgetFormInfoHeader");
+var _EntityBudgetViewFormInfoHeader = require("./EntityBudgetViewFormInfoHeader");
+var _BudgetViewFormInfoHeader = require("./BudgetViewFormInfoHeader");

@@ -17,6 +17,7 @@ import {
   EntityBudgetSearch,
   BudgetModule,
   BudgetSearchPrint,
+  BudgetView,
 } from '../../Abstract';
 import { EntityBudget } from '../Entity';
 import { ProductBudget } from '../Products';
@@ -139,12 +140,21 @@ export const Budget = ({
           </FadeIn>
         )}
 
+        {use.pages.states.isPrintTable && (
+          <FadeIn
+            keyName="printTable"
+            isVisible={use.pages.states.isPrintTable}
+          >
+            <BudgetSearchPrint useBudget={use} siteOptions={sitesOptions} />
+          </FadeIn>
+        )}
+
         {use.pages.states.isPrint && (
           <FadeIn keyName="print" isVisible={use.pages.states.isPrint}>
-            <BudgetSearchPrint
+            <BudgetView
               useBudget={use}
-              siteOptions={sitesOptions}
               logoPdf={logoPdf}
+              sitesOptions={sitesOptions}
             />
           </FadeIn>
         )}

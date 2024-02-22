@@ -12,3 +12,10 @@ export type {
   CartBudgetSectionsStylesContentItemsProps,
   CartBudgetSectionsStylesContentOptionsProps,
 } from './CartBudgetSections';
+export { CartBudgetViewSections } from './CartBudgetViewSections';
+export type {
+  CartBudgetViewSectionsProps,
+  CartBudgetViewSectionsStylesContainerProps,
+  CartBudgetViewSectionsStylesContentItemsProps,
+  CartBudgetViewSectionsStylesContentOptionsProps,
+} from './CartBudgetViewSections';

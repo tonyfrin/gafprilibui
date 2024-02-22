@@ -139,7 +139,8 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
             </Text>
             <Text style={styles.line}>
               <Text>
-                <Text style={styles.bold}>Valido por:</Text> Pendiente de pago
+                <Text style={styles.bold}>Valido por:</Text>{' '}
+                {siteOptions.budgetValidation}
               </Text>
             </Text>
           </View>

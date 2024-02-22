@@ -21,4 +21,5 @@ export type SiteOptions = {
   taxes: boolean;
   host: string;
   footerBudget: string[];
+  budgetValidation: string;
 };

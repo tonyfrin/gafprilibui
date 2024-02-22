@@ -83,7 +83,7 @@ var BudgetPdf = exports.BudgetPdf = function BudgetPdf(_ref) {
     style: styles.line
   }, /*#__PURE__*/_react["default"].createElement(_renderer.Text, null, /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
     style: styles.bold
-  }, "Valido por:"), " Pendiente de pago")))), /*#__PURE__*/_react["default"].createElement(_renderer.View, {
+  }, "Valido por:"), ' ', siteOptions.budgetValidation)))), /*#__PURE__*/_react["default"].createElement(_renderer.View, {
     style: styles.itemTable
   }, /*#__PURE__*/_react["default"].createElement(_renderer.View, {
     style: styles.tableHeader

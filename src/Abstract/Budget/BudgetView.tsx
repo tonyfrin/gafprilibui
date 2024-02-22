@@ -47,7 +47,10 @@ export const BudgetView = ({
           >
             <>
               <ModuleHeader>
-                <EntityBudgetViewFormInfoHeader budget={budget} />
+                <EntityBudgetViewFormInfoHeader
+                  budget={budget}
+                  useBudget={useBudget}
+                />
                 <BudgetViewFormInfoHeader
                   budget={budget}
                   siteOptions={sitesOptions}

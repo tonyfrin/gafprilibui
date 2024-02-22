@@ -25,6 +25,13 @@ export const BudgetViewFormInfoHeader = ({
         }}
       >
         <LineInfoTwo
+          title="PRESUPUESTO: "
+          info={`${budget.postsId}`}
+          contentInfoStyles={{
+            custom: 'text-align: center;',
+          }}
+        />
+        <LineInfoTwo
           title="Sub-Total: "
           info={decimalFormatPriceConverter(
             budget.subTotal || '0',

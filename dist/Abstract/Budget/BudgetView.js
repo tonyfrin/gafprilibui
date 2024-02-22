@@ -34,7 +34,8 @@ var BudgetView = exports.BudgetView = function BudgetView(_ref) {
       }
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Header.ModuleHeader, null, /*#__PURE__*/_react["default"].createElement(_Form.EntityBudgetViewFormInfoHeader, {
-    budget: budget
+    budget: budget,
+    useBudget: useBudget
   }), /*#__PURE__*/_react["default"].createElement(_Form.BudgetViewFormInfoHeader, {
     budget: budget,
     siteOptions: sitesOptions,

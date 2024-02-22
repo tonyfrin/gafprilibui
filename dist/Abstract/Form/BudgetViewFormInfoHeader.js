@@ -19,6 +19,12 @@ var BudgetViewFormInfoHeader = exports.BudgetViewFormInfoHeader = function Budge
       borderRight: 'none'
     }
   }, /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
+    title: "PRESUPUESTO: ",
+    info: "".concat(budget.postsId),
+    contentInfoStyles: {
+      custom: 'text-align: center;'
+    }
+  }), /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
     title: "Sub-Total: ",
     info: (0, _helpers.decimalFormatPriceConverter)(budget.subTotal || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION),
     contentInfoStyles: {

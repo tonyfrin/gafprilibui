@@ -32,21 +32,25 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
   logo,
   siteOptions,
 }) => {
-  const state =
-    (budget.customer.address[0].country &&
-      budget.customer.address[0].state &&
-      StatesCountries[0][budget.customer.address[0].country][0][
-        budget.customer.address[0].state
-      ]) ||
-    '';
-  const country =
-    (budget.customer.address[0].country &&
-      Countries[0][budget.customer.address[0].country]) ||
-    '';
+  // const state =
+  //   (budget.customer.address[0].country &&
+  //     budget.customer.address[0].state &&
+  //     StatesCountries[0][budget.customer.address[0].country][0][
+  //       budget.customer.address[0].state
+  //     ]) ||
+  //   '';
+  // const country =
+  //   (budget.customer.address[0].country &&
+  //     Countries[0][budget.customer.address[0].country]) ||
+  //   '';
 
-  const stateSite =
-    StatesCountries[0][siteOptions.country][0][siteOptions.state] || '';
-  const countrySite = Countries[0][siteOptions.country] || '';
+  // const stateSite =
+  //   StatesCountries[0][siteOptions.country][0][siteOptions.state] || '';
+  // const countrySite = Countries[0][siteOptions.country] || '';
+  const state = 'Zulia';
+  const country = 'Venezuela';
+  const stateSite = 'Zulia';
+  const countrySite = 'Venezuela';
 
   const dig = siteOptions.DECIMAL_NUMBERS;
   const currencySymbol = siteOptions.CURRENCY_SYMBOL;

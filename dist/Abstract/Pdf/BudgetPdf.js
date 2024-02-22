@@ -8,7 +8,6 @@ exports.BudgetPdf = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _renderer = require("@react-pdf/renderer");
 var _helpers = require("../../helpers");
-var _constants = require("../../constants");
 function truncarTexto(texto) {
   var longitudMaxima = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 65;
   if (texto.length <= longitudMaxima) {
@@ -21,10 +20,25 @@ var BudgetPdf = exports.BudgetPdf = function BudgetPdf(_ref) {
   var budget = _ref.budget,
     logo = _ref.logo,
     siteOptions = _ref.siteOptions;
-  var state = budget.customer.address[0].country && budget.customer.address[0].state && _constants.StatesCountries[0][budget.customer.address[0].country][0][budget.customer.address[0].state] || '';
-  var country = budget.customer.address[0].country && _constants.Countries[0][budget.customer.address[0].country] || '';
-  var stateSite = _constants.StatesCountries[0][siteOptions.country][0][siteOptions.state] || '';
-  var countrySite = _constants.Countries[0][siteOptions.country] || '';
+  // const state =
+  //   (budget.customer.address[0].country &&
+  //     budget.customer.address[0].state &&
+  //     StatesCountries[0][budget.customer.address[0].country][0][
+  //       budget.customer.address[0].state
+  //     ]) ||
+  //   '';
+  // const country =
+  //   (budget.customer.address[0].country &&
+  //     Countries[0][budget.customer.address[0].country]) ||
+  //   '';
+
+  // const stateSite =
+  //   StatesCountries[0][siteOptions.country][0][siteOptions.state] || '';
+  // const countrySite = Countries[0][siteOptions.country] || '';
+  var state = 'Zulia';
+  var country = 'Venezuela';
+  var stateSite = 'Zulia';
+  var countrySite = 'Venezuela';
   var dig = siteOptions.DECIMAL_NUMBERS;
   var currencySymbol = siteOptions.CURRENCY_SYMBOL;
   var currencyLocation = siteOptions.CURRENCY_LOCATION;

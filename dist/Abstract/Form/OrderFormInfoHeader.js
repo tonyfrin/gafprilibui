@@ -10,7 +10,7 @@ var _Containers = require("../Containers");
 var _Button = require("../Button");
 var _Li = require("../Li");
 var _helpers = require("../../helpers");
-var OrderFormInfoHeader = function OrderFormInfoHeader(_ref) {
+var OrderFormInfoHeader = exports.OrderFormInfoHeader = function OrderFormInfoHeader(_ref) {
   var useOrder = _ref.useOrder,
     siteOptions = _ref.siteOptions;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerHeaderInfo, {
@@ -52,4 +52,3 @@ var OrderFormInfoHeader = function OrderFormInfoHeader(_ref) {
     }
   }), parseFloat(useOrder.useProductItems.states.total) > 0 && console.log(useOrder.attributes.states)))));
 };
-exports.OrderFormInfoHeader = OrderFormInfoHeader;

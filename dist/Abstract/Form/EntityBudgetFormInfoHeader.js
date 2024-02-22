@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Containers = require("../Containers");
 var _Button = require("../Button");
 var _Li = require("../Li");
-var EntityBudgetFormInfoHeader = function EntityBudgetFormInfoHeader(_ref) {
+var EntityBudgetFormInfoHeader = exports.EntityBudgetFormInfoHeader = function EntityBudgetFormInfoHeader(_ref) {
   var _useBudget$attributes, _useBudget$attributes2, _useBudget$attributes3, _useBudget$attributes4, _useBudget$attributes5;
   var useBudget = _ref.useBudget;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerHeaderInfo, null, /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
@@ -39,4 +39,3 @@ var EntityBudgetFormInfoHeader = function EntityBudgetFormInfoHeader(_ref) {
     }
   }))));
 };
-exports.EntityBudgetFormInfoHeader = EntityBudgetFormInfoHeader;

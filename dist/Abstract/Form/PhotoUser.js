@@ -8,7 +8,7 @@ exports.PhotoUser = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _PhotoForm = require("./PhotoForm");
 var _constants = require("../../constants");
-var PhotoUser = function PhotoUser(_ref) {
+var PhotoUser = exports.PhotoUser = function PhotoUser(_ref) {
   var photo = _ref.photo,
     changePhoto = _ref.changePhoto,
     submitting = _ref.submitting,
@@ -31,4 +31,3 @@ var PhotoUser = function PhotoUser(_ref) {
     setSubmitting: setSubmitting
   }));
 };
-exports.PhotoUser = PhotoUser;

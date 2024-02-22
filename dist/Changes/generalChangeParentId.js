@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeParentId = void 0;
 var _helpers = require("../helpers");
-var generalChangeParentId = function generalChangeParentId(_ref) {
+var generalChangeParentId = exports.generalChangeParentId = function generalChangeParentId(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -29,4 +29,3 @@ var generalChangeParentId = function generalChangeParentId(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeParentId = generalChangeParentId;

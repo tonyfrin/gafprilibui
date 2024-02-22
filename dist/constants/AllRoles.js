@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.AllRoles = void 0;
-var AllRoles = [{
+var AllRoles = exports.AllRoles = [{
   name: 'Usuarios',
   permissions: [{
     name: 'Obtener',
@@ -437,4 +437,3 @@ var AllRoles = [{
     value: 'order-return-paymentsGet'
   }]
 }];
-exports.AllRoles = AllRoles;

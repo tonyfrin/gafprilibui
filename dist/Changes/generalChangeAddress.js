@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangeAddress = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangeAddress = function generalChangeAddress(_ref) {
+var generalChangeAddress = exports.generalChangeAddress = function generalChangeAddress(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -22,4 +22,3 @@ var generalChangeAddress = function generalChangeAddress(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeAddress = generalChangeAddress;

@@ -17,7 +17,7 @@ var _templateObject;
 var entityBudgetStylesContainer = function entityBudgetStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), stayles.custom || '');
 };
-var EntityBudget = function EntityBudget(_ref) {
+var EntityBudget = exports.EntityBudget = function EntityBudget(_ref) {
   var use = _ref.use,
     useBudget = _ref.useBudget,
     _ref$containerStyles = _ref.containerStyles,
@@ -53,4 +53,3 @@ var EntityBudget = function EntityBudget(_ref) {
     }
   }))));
 };
-exports.EntityBudget = EntityBudget;

@@ -16,7 +16,7 @@ var _Error = require("../Error");
 var _Header = require("../Header");
 var _templateObject;
 var defaultOptionsButtonMainContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
-var InitCategory = function InitCategory(_ref) {
+var InitCategory = exports.InitCategory = function InitCategory(_ref) {
   var _paginated$map;
   var use = _ref.use,
     _ref$optionsButtonMai = _ref.optionsButtonMainContainerStyle,
@@ -124,4 +124,3 @@ var InitCategory = function InitCategory(_ref) {
     }
   }, listProps)));
 };
-exports.InitCategory = InitCategory;

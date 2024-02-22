@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeLength = void 0;
 var _helpers = require("../helpers");
-var generalChangeLength = function generalChangeLength(_ref) {
+var generalChangeLength = exports.generalChangeLength = function generalChangeLength(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -14,4 +14,3 @@ var generalChangeLength = function generalChangeLength(_ref) {
   };
   (0, _helpers.changeInputNumers)(value, validation || defaultValidation, setValue);
 };
-exports.generalChangeLength = generalChangeLength;

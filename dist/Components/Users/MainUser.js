@@ -9,7 +9,7 @@ var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends")
 var _react = _interopRequireDefault(require("react"));
 var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
-var MainUser = function MainUser(_ref) {
+var MainUser = exports.MainUser = function MainUser(_ref) {
   var use = _ref.use,
     initProps = _ref.initProps,
     addFormProps = _ref.addFormProps,
@@ -38,4 +38,3 @@ var MainUser = function MainUser(_ref) {
     use: use
   }, viewFormProps))));
 };
-exports.MainUser = MainUser;

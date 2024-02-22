@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Form = require("../Form");
 var _Header = require("../Header");
 var _Sections = require("../Sections");
-var Sales = function Sales(_ref) {
+var Sales = exports.Sales = function Sales(_ref) {
   var useOrder = _ref.useOrder,
     sitesOptions = _ref.sitesOptions,
     useProducts = _ref.useProducts;
@@ -43,4 +43,3 @@ var Sales = function Sales(_ref) {
     useProducts: useProducts
   }));
 };
-exports.Sales = Sales;

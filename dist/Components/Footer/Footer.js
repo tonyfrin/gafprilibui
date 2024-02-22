@@ -24,7 +24,7 @@ var footerSeparatorStyles = function footerSeparatorStyles() {
 var footerOutStyles = function footerOutStyles() {
   return (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  cursor: pointer;\n  font-weight: 400;\n  font-size: 12px;\n  color: #fff;\n\n  @media (max-width: 600px) {\n    font-size: 10px;\n  }\n\n  @media (max-width: 500px) {\n    font-size: 6px;\n  }\n"])));
 };
-var MainFooter = function MainFooter(_ref) {
+var MainFooter = exports.MainFooter = function MainFooter(_ref) {
   var _ref$footerClass = _ref.footerClass,
     footerClass = _ref$footerClass === void 0 ? '' : _ref$footerClass,
     _ref$footerDivClass = _ref.footerDivClass,
@@ -51,4 +51,3 @@ var MainFooter = function MainFooter(_ref) {
     className: footerOutStyles()
   }, "Salir")) : ''));
 };
-exports.MainFooter = MainFooter;

@@ -8,7 +8,7 @@ exports.SelectCurrenciesDecimalNumbers = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectCurrenciesDecimalNumbers = function SelectCurrenciesDecimalNumbers(_ref) {
+var SelectCurrenciesDecimalNumbers = exports.SelectCurrenciesDecimalNumbers = function SelectCurrenciesDecimalNumbers(_ref) {
   var changeCurrenciesDecimalNumbers = _ref.changeCurrenciesDecimalNumbers,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectCurrenciesDecimalNumbers = function SelectCurrenciesDecimalNumbers(_re
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectCurrenciesDecimalNumbers = SelectCurrenciesDecimalNumbers;

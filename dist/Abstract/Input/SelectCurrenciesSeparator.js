@@ -8,7 +8,7 @@ exports.SelectCurrenciesSeparator = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectCurrenciesSeparator = function SelectCurrenciesSeparator(_ref) {
+var SelectCurrenciesSeparator = exports.SelectCurrenciesSeparator = function SelectCurrenciesSeparator(_ref) {
   var changeCurrenciesSeparator = _ref.changeCurrenciesSeparator,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectCurrenciesSeparator = function SelectCurrenciesSeparator(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectCurrenciesSeparator = SelectCurrenciesSeparator;

@@ -8,4 +8,4 @@ export type SpanValueProps = {
     containerProps?: React.HTMLAttributes<HTMLSpanElement>;
     containerStyles?: SpanValueStylesContentProps;
 };
-export declare const SpanValue: ({ value, containerProps, containerStyles, }: SpanValueProps) => JSX.Element;
+export declare const SpanValue: ({ value, containerProps, containerStyles, }: SpanValueProps) => React.JSX.Element;

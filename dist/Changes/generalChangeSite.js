@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeSite = void 0;
 var _helpers = require("../helpers");
-var generalChangeSite = function generalChangeSite(_ref) {
+var generalChangeSite = exports.generalChangeSite = function generalChangeSite(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeSite = function generalChangeSite(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeSite = generalChangeSite;

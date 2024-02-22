@@ -10,4 +10,4 @@ export type ContainerHeaderInfoProps = {
     containerProps?: React.HTMLAttributes<HTMLDivElement>;
     children: React.ReactNode;
 };
-export declare const ContainerHeaderInfo: ({ containerStyles, containerProps, children, }: ContainerHeaderInfoProps) => JSX.Element;
+export declare const ContainerHeaderInfo: ({ containerStyles, containerProps, children, }: ContainerHeaderInfoProps) => React.JSX.Element;

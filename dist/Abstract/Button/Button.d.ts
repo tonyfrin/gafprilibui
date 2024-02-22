@@ -35,5 +35,5 @@ export type ButtonPropsExtended = {
     Class?: string;
     buttonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
 };
-export declare const Button: ({ styles, buttonProps, Class, title, }: ButtonProps) => JSX.Element;
+export declare const Button: ({ styles, buttonProps, Class, title, }: ButtonProps) => React.JSX.Element;
 export {};

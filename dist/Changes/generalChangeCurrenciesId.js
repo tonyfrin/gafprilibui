@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeCurrenciesId = void 0;
 var _helpers = require("../helpers");
-var generalChangeCurrenciesId = function generalChangeCurrenciesId(_ref) {
+var generalChangeCurrenciesId = exports.generalChangeCurrenciesId = function generalChangeCurrenciesId(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -26,4 +26,3 @@ var generalChangeCurrenciesId = function generalChangeCurrenciesId(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeCurrenciesId = generalChangeCurrenciesId;

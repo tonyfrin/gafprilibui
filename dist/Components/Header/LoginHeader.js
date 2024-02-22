@@ -16,7 +16,7 @@ var _templateObject;
 var headerStyles = function headerStyles(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  background: ", ";\n  width: ", ";\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styles.background || 'linear-gradient(to left, #324375, #07b2e7)', styles.width || '100%', styles.position && "position: ".concat(styles.position, ";"), styles.zIndex && "z-index: ".concat(styles.zIndex, ";"), styles.height && "height: ".concat(styles.height, ";"), styles.top && "top: ".concat(styles.top, ";"));
 };
-var LoginHeader = function LoginHeader(_ref) {
+var LoginHeader = exports.LoginHeader = function LoginHeader(_ref) {
   var props = _ref.props,
     _ref$styles = _ref.styles,
     styles = _ref$styles === void 0 ? {} : _ref$styles;
@@ -30,4 +30,3 @@ var LoginHeader = function LoginHeader(_ref) {
     image: image
   }, imgProps)));
 };
-exports.LoginHeader = LoginHeader;

@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangeLastName = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangeLastName = function generalChangeLastName(_ref) {
+var generalChangeLastName = exports.generalChangeLastName = function generalChangeLastName(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -22,4 +22,3 @@ var generalChangeLastName = function generalChangeLastName(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeLastName = generalChangeLastName;

@@ -31,7 +31,7 @@ var lineInfoTwoStylesContentInfo = function lineInfoTwoStylesContentInfo(styles)
 var lineInfoTwoStylesSpanInfo = function lineInfoTwoStylesSpanInfo(styles) {
   return (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  font-size: ", ";\n  margin: ", ";\n  ", "\n"])), styles.fontSize || '15px', styles.margin || 'auto', styles.custom || '');
 };
-var LineInfoTwo = function LineInfoTwo(_ref) {
+var LineInfoTwo = exports.LineInfoTwo = function LineInfoTwo(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -76,4 +76,3 @@ var LineInfoTwo = function LineInfoTwo(_ref) {
     className: (0, _css.cx)(lineInfoTwoStylesSpanInfo(spanInfoStyles), spanInfoClassName)
   }, restSpanInfoProps), info)));
 };
-exports.LineInfoTwo = LineInfoTwo;

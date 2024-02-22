@@ -19,7 +19,7 @@ var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject || (_templ
 var entitySearchStylesContainer = function entitySearchStylesContainer() {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: 1150px;\n  margin: auto;\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 10px;\n"])));
 };
-var EntitySearch = function EntitySearch(_ref) {
+var EntitySearch = exports.EntitySearch = function EntitySearch(_ref) {
   var _paginated$map;
   var use = _ref.use,
     useOrder = _ref.useOrder,
@@ -151,4 +151,3 @@ var EntitySearch = function EntitySearch(_ref) {
     }
   })))));
 };
-exports.EntitySearch = EntitySearch;

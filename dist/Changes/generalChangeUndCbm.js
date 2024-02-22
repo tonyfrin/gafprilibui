@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeUndCbm = void 0;
 var _helpers = require("../helpers");
-var generalChangeUndCbm = function generalChangeUndCbm(_ref) {
+var generalChangeUndCbm = exports.generalChangeUndCbm = function generalChangeUndCbm(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -14,4 +14,3 @@ var generalChangeUndCbm = function generalChangeUndCbm(_ref) {
   };
   (0, _helpers.changeInputNumers)(value, validation || defaultValidation, setValue);
 };
-exports.generalChangeUndCbm = generalChangeUndCbm;

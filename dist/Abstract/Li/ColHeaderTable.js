@@ -15,7 +15,7 @@ var _templateObject;
 var colHeaderTableStylesContainer = function colHeaderTableStylesContainer(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), styles.custom || '');
 };
-var ColHeaderTable = function ColHeaderTable(_ref) {
+var ColHeaderTable = exports.ColHeaderTable = function ColHeaderTable(_ref) {
   var _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     _ref$containerStyles = _ref.containerStyles,
@@ -27,4 +27,3 @@ var ColHeaderTable = function ColHeaderTable(_ref) {
     className: (0, _css.cx)(colHeaderTableStylesContainer(containerStyles))
   }, restContainerProps), children);
 };
-exports.ColHeaderTable = ColHeaderTable;

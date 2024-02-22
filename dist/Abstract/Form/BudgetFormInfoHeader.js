@@ -10,7 +10,7 @@ var _Containers = require("../Containers");
 var _Button = require("../Button");
 var _Li = require("../Li");
 var _helpers = require("../../helpers");
-var BudgetFormInfoHeader = function BudgetFormInfoHeader(_ref) {
+var BudgetFormInfoHeader = exports.BudgetFormInfoHeader = function BudgetFormInfoHeader(_ref) {
   var useBudget = _ref.useBudget,
     siteOptions = _ref.siteOptions;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerHeaderInfo, {
@@ -52,4 +52,3 @@ var BudgetFormInfoHeader = function BudgetFormInfoHeader(_ref) {
     }
   })))));
 };
-exports.BudgetFormInfoHeader = BudgetFormInfoHeader;

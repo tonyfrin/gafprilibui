@@ -22,7 +22,7 @@ var defaultHiddenInputContainerStyle = (0, _css.css)(_templateObject7 || (_templ
 var defaultInputMiddleContainerStyle = (0, _css.css)(_templateObject8 || (_templateObject8 = (0, _taggedTemplateLiteral2["default"])(["\n  background: transparent;\n  font-family: Circular, ProximaNova, -apple-system, BlinkMacSystemFont,\n    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', sans-serif;\n  font-weight: 400;\n  font-size: 0.875rem;\n  color: rgb(38, 35, 33);\n  line-height: 1.25rem;\n  border-radius: 0.5rem;\n  background-color: rgb(255, 255, 255);\n  box-sizing: border-box;\n  border-color: rgb(178, 171, 165);\n  border-width: 2px;\n  border-style: solid;\n  cursor: text;\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin: 0;\n  padding: 0;\n  vertical-align: top;\n"])));
 var defaultInputContainerStyle = (0, _css.css)(_templateObject9 || (_templateObject9 = (0, _taggedTemplateLiteral2["default"])(["\n  position: relative;\n  flex-grow: 1;\n  max-width: 100%;\n  overflow: hidden;\n  margin: 0px;\n  padding: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n  background: transparent;\n"])));
 var defaultInputStyle = (0, _css.css)(_templateObject10 || (_templateObject10 = (0, _taggedTemplateLiteral2["default"])(["\n  font-family: Circular, ProximaNova, -apple-system, BlinkMacSystemFont,\n    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', sans-serif;\n  font-weight: 300;\n  font-size: 1rem;\n  color: rgb(114, 108, 102);\n  line-height: 1.25rem;\n  outline: none;\n  border: none;\n  box-sizing: border-box;\n  box-shadow: none;\n  background-color: transparent;\n  margin: 0px;\n  padding: 0.5rem;\n  height: 100%;\n  width: 100%;\n  border-radius: 0.5rem;\n"])));
-var SearchBar = function SearchBar(_ref) {
+var SearchBar = exports.SearchBar = function SearchBar(_ref) {
   var _selectProps$options, _selectByProps$option;
   var label = _ref.label,
     inputProps = _ref.inputProps,
@@ -81,4 +81,3 @@ var SearchBar = function SearchBar(_ref) {
     className: (0, _css.css)(inputStyle)
   }, inputProps))))))));
 };
-exports.SearchBar = SearchBar;

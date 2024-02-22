@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationTaxClassesId = void 0;
 var _index = require("./index");
 var _constants = require("../constants");
-var generalValidationTaxClassesId = function generalValidationTaxClassesId(_ref) {
+var generalValidationTaxClassesId = exports.generalValidationTaxClassesId = function generalValidationTaxClassesId(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationTaxClassesId = function generalValidationTaxClassesId(_ref)
     required: required
   });
 };
-exports.generalValidationTaxClassesId = generalValidationTaxClassesId;

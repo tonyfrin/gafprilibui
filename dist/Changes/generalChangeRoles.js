@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeRoles = void 0;
 var _helpers = require("../helpers");
-var generalChangeRoles = function generalChangeRoles(_ref) {
+var generalChangeRoles = exports.generalChangeRoles = function generalChangeRoles(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeRoles = function generalChangeRoles(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeRoles = generalChangeRoles;

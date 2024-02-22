@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.generalChangeCategoryId = void 0;
-var generalChangeCategoryId = function generalChangeCategoryId(_ref) {
+var generalChangeCategoryId = exports.generalChangeCategoryId = function generalChangeCategoryId(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -21,4 +21,3 @@ var generalChangeCategoryId = function generalChangeCategoryId(_ref) {
     setValue(value);
   }
 };
-exports.generalChangeCategoryId = generalChangeCategoryId;

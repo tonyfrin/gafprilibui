@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import type { SingleValue } from 'react-select';
 import { GsSelectProps } from './Input';
 export type SelectCurrenciesDecimalNumbersProps = {
@@ -9,4 +9,4 @@ export type SelectCurrenciesDecimalNumbersProps = {
     props: GsSelectProps;
     inputId?: string;
 };
-export declare const SelectCurrenciesDecimalNumbers: ({ changeCurrenciesDecimalNumbers, props, inputId, }: SelectCurrenciesDecimalNumbersProps) => JSX.Element;
+export declare const SelectCurrenciesDecimalNumbers: ({ changeCurrenciesDecimalNumbers, props, inputId, }: SelectCurrenciesDecimalNumbersProps) => React.JSX.Element;

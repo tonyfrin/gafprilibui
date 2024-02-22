@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeVisibility = void 0;
 var _helpers = require("../helpers");
-var generalChangeVisibility = function generalChangeVisibility(_ref) {
+var generalChangeVisibility = exports.generalChangeVisibility = function generalChangeVisibility(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeVisibility = function generalChangeVisibility(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeVisibility = generalChangeVisibility;

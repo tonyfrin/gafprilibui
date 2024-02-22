@@ -15,7 +15,7 @@ var _templateObject, _templateObject2, _templateObject3;
 var defaultImageFormConatinerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  flex-direction: column-reverse;\n  width: 100%;\n"])));
 var defaultLoadingContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  width: 300px;\n  height: 300px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 10px;\n  margin: auto;\n"])));
 var defaultImageStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  width: 100%;\n  max-width: 300px;\n  max-height: 300px;\n  object-fit: cover;\n  border: 1px solid #ebebeb;\n  margin: auto;\n  border-radius: 10px;\n"])));
-var PhotoForm = function PhotoForm(_ref) {
+var PhotoForm = exports.PhotoForm = function PhotoForm(_ref) {
   var formId = _ref.formId,
     photo = _ref.photo,
     _ref$imageFormConatin = _ref.imageFormConatinerStyle,
@@ -83,4 +83,3 @@ var PhotoForm = function PhotoForm(_ref) {
     alt: "Category"
   })));
 };
-exports.PhotoForm = PhotoForm;

@@ -15,7 +15,7 @@ var defaultCheckBoxContainerStyle = (0, _css.css)(_templateObject3 || (_template
 var defaultNameStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  margin-left: 0.25rem;\n"])));
 var defaultInfoContainerStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-around;\n  margin-bottom: 45px;\n"])));
 var defaultCheckBoxStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])([""])));
-var RolePermissions = function RolePermissions(_ref) {
+var RolePermissions = exports.RolePermissions = function RolePermissions(_ref) {
   var role = _ref.role,
     onPermissionChange = _ref.onPermissionChange,
     selectedPermissions = _ref.selectedPermissions,
@@ -55,4 +55,3 @@ var RolePermissions = function RolePermissions(_ref) {
     }, permission.name));
   }))));
 };
-exports.RolePermissions = RolePermissions;

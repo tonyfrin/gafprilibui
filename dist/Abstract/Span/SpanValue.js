@@ -15,7 +15,7 @@ var _templateObject;
 var spanValueStylesContent = function spanValueStylesContent(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  margin: ", ";\n  ", "\n"])), styles.margin || 'auto', styles.custom || '');
 };
-var SpanValue = function SpanValue(_ref) {
+var SpanValue = exports.SpanValue = function SpanValue(_ref) {
   var value = _ref.value,
     _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
@@ -27,4 +27,3 @@ var SpanValue = function SpanValue(_ref) {
     className: (0, _css.cx)(spanValueStylesContent(containerStyles), containerClassName)
   }, restContainerProps), value);
 };
-exports.SpanValue = SpanValue;

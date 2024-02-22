@@ -14,4 +14,4 @@ export type EntityBudgetSearchFormProps = {
     useEntity: UseGafpriEntityReturn;
     usePagesSalesModule: UseGafpriPagesSalesModuleReturn;
 };
-export declare const EntityBudgetSearchForm: ({ containerStyles, containerProps, useBudget, useEntity, usePagesSalesModule, }: EntityBudgetSearchFormProps) => JSX.Element;
+export declare const EntityBudgetSearchForm: ({ containerStyles, containerProps, useBudget, useEntity, usePagesSalesModule, }: EntityBudgetSearchFormProps) => React.JSX.Element;

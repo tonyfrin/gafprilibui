@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeCatalogOrder = void 0;
 var _helpers = require("../helpers");
-var generalChangeCatalogOrder = function generalChangeCatalogOrder(_ref) {
+var generalChangeCatalogOrder = exports.generalChangeCatalogOrder = function generalChangeCatalogOrder(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -13,4 +13,3 @@ var generalChangeCatalogOrder = function generalChangeCatalogOrder(_ref) {
     return true;
   }, setValue);
 };
-exports.generalChangeCatalogOrder = generalChangeCatalogOrder;

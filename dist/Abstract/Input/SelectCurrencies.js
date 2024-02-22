@@ -8,7 +8,7 @@ exports.SelectCurrencies = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectCurrencies = function SelectCurrencies(_ref) {
+var SelectCurrencies = exports.SelectCurrencies = function SelectCurrencies(_ref) {
   var changeCurrencies = _ref.changeCurrencies,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectCurrencies = function SelectCurrencies(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectCurrencies = SelectCurrencies;

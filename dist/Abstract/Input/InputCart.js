@@ -15,7 +15,7 @@ var _templateObject;
 var inputCartStylesContent = function inputCartStylesContent(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  font-size: ", ";\n  padding: ", ";\n  width: ", ";\n  border: ", ";\n  text-align: ", ";\n  outline: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  font-weight: ", ";\n  color: ", ";\n  ", "\n"])), styles.fontSize || '12px', styles.padding || '5px 5px 5px 10px', styles.width || '50px', styles.border || '2px solid #eaeaea', styles.textAlign || 'left', styles.outline || '0', styles.borderRadius || '6px', styles.backgroundColor || '#fff', styles.fontWeight || '300', styles.color || '#8D8D8D', styles.custom || '');
 };
-var InputCart = function InputCart(_ref) {
+var InputCart = exports.InputCart = function InputCart(_ref) {
   var _ref$contentStyles = _ref.contentStyles,
     contentStyles = _ref$contentStyles === void 0 ? {} : _ref$contentStyles,
     _ref$contentProps = _ref.contentProps,
@@ -32,4 +32,3 @@ var InputCart = function InputCart(_ref) {
     step: contentStep || '0.1'
   }, restContentProps)));
 };
-exports.InputCart = InputCart;

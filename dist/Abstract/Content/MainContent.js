@@ -12,7 +12,7 @@ var _templateObject;
 var defaultMainContainerStyle = function defaultMainContainerStyle(isOpen) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  margin-left: ", ";\n  transition: margin-left 0.3s ease;\n  margin-top: 59px;\n"])), isOpen ? '250px' : '50px');
 };
-var MainContent = function MainContent(_ref) {
+var MainContent = exports.MainContent = function MainContent(_ref) {
   var isOpen = _ref.isOpen,
     children = _ref.children,
     _ref$mainContainerSty = _ref.mainContainerStyle,
@@ -21,4 +21,3 @@ var MainContent = function MainContent(_ref) {
     className: (0, _css.css)(mainContainerStyle)
   }, children);
 };
-exports.MainContent = MainContent;

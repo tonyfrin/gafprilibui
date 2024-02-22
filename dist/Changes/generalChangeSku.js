@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangeSku = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangeSku = function generalChangeSku(_ref) {
+var generalChangeSku = exports.generalChangeSku = function generalChangeSku(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -21,4 +21,3 @@ var generalChangeSku = function generalChangeSku(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeSku = generalChangeSku;

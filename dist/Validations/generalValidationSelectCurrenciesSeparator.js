@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationSelectCurrenciesSeparator = void 0;
 var _constants = require("../constants");
 var _helpers = require("../helpers");
-var generalValidationSelectCurrenciesSeparator = function generalValidationSelectCurrenciesSeparator(_ref) {
+var generalValidationSelectCurrenciesSeparator = exports.generalValidationSelectCurrenciesSeparator = function generalValidationSelectCurrenciesSeparator(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -18,4 +18,3 @@ var generalValidationSelectCurrenciesSeparator = function generalValidationSelec
   }
   return validation;
 };
-exports.generalValidationSelectCurrenciesSeparator = generalValidationSelectCurrenciesSeparator;

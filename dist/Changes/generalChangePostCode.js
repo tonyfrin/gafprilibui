@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangePostCode = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangePostCode = function generalChangePostCode(_ref) {
+var generalChangePostCode = exports.generalChangePostCode = function generalChangePostCode(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -21,4 +21,3 @@ var generalChangePostCode = function generalChangePostCode(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangePostCode = generalChangePostCode;

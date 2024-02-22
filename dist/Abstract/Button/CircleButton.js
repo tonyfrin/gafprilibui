@@ -27,7 +27,7 @@ var circleButtonStylesImage = function circleButtonStylesImage(styles) {
 var circleButtonStylesTitle = function circleButtonStylesTitle(styles) {
   return (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  text-transform: ", ";\n  font-size: ", ";\n  color: ", ";\n  font-weight: ", ";\n  ", "\n"])), styles.textTransform || 'uppercase', styles.fontSize || '18px', styles.color || '#666666', styles.fontWeight || '700', styles.custom ? styles.custom : '');
 };
-var CircleButton = function CircleButton(_ref) {
+var CircleButton = exports.CircleButton = function CircleButton(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -66,4 +66,3 @@ var CircleButton = function CircleButton(_ref) {
     className: (0, _css.cx)(circleButtonStylesTitle(titleStyles), titleClassName)
   }, restTitleProps), title))));
 };
-exports.CircleButton = CircleButton;

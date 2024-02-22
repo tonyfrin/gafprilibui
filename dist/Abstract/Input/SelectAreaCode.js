@@ -8,7 +8,7 @@ exports.SelectAreaCode = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectAreaCode = function SelectAreaCode(_ref) {
+var SelectAreaCode = exports.SelectAreaCode = function SelectAreaCode(_ref) {
   var changeAreaCode = _ref.changeAreaCode,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectAreaCode = function SelectAreaCode(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectAreaCode = SelectAreaCode;

@@ -15,12 +15,14 @@ var _Error = require("../Error");
 var _Header = require("../Header");
 var _helpers = require("../../helpers");
 var _Containers = require("../Containers");
+var _renderer = require("@react-pdf/renderer");
+var _Pdf = require("../Pdf");
 var _templateObject, _templateObject2;
 var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
 var budgetSearchPrintStylesContainer = function budgetSearchPrintStylesContainer() {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: 1150px;\n  margin: auto;\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 10px;\n"])));
 };
-var BudgetSearchPrint = function BudgetSearchPrint(_ref) {
+var BudgetSearchPrint = exports.BudgetSearchPrint = function BudgetSearchPrint(_ref) {
   var _paginated$map;
   var useBudget = _ref.useBudget,
     siteOptions = _ref.siteOptions,
@@ -31,22 +33,32 @@ var BudgetSearchPrint = function BudgetSearchPrint(_ref) {
     errorProps = _ref$errorProps === void 0 ? {
       error: useBudget.error.states.error
     } : _ref$errorProps,
-    listProps = _ref.listProps;
+    listProps = _ref.listProps,
+    logoPdf = _ref.logoPdf;
   var ButtonUpdate = function ButtonUpdate(_ref2) {
     var id = _ref2.id;
+    var budget = useBudget.data.actions.getById(id);
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: (0, _css.css)(optionButtonContainerStyle)
-    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, (0, _extends2["default"])({
-      title: "Imprimir",
-      buttonProps: {
-        onClick: function onClick() {
-          return console.log('print budget', id);
+    }, budget && /*#__PURE__*/_react["default"].createElement(_renderer.PDFDownloadLink, {
+      document: /*#__PURE__*/_react["default"].createElement(_Pdf.BudgetPdf, {
+        budget: budget,
+        logo: logoPdf,
+        siteOptions: siteOptions
+      }),
+      fileName: "presupuesto".concat(budget.postsId, ".pdf")
+    }, function (_ref3) {
+      var blob = _ref3.blob,
+        url = _ref3.url,
+        loading = _ref3.loading,
+        error = _ref3.error;
+      return loading ? 'Loading document...' : /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+        title: "Imprimir",
+        styles: {
+          fontSize: '10px'
         }
-      },
-      styles: {
-        fontSize: '10px'
-      }
-    }, updateButtonProps)));
+      });
+    }));
   };
   var returnInit = function returnInit() {
     useBudget.pages.actions.returnInit();
@@ -150,4 +162,3 @@ var BudgetSearchPrint = function BudgetSearchPrint(_ref) {
     }
   })))));
 };
-exports.BudgetSearchPrint = BudgetSearchPrint;

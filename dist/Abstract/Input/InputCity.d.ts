@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import { SingleValue } from 'react-select';
 import { InputProps } from './Input';
 export type InputCityProps = {
@@ -9,4 +9,4 @@ export type InputCityProps = {
     props?: InputProps;
     inputId?: string;
 };
-export declare const InputCity: ({ changeCity, props, inputId, }: InputCityProps) => JSX.Element;
+export declare const InputCity: ({ changeCity, props, inputId, }: InputCityProps) => React.JSX.Element;

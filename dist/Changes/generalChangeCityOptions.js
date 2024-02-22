@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeCityOptions = void 0;
 var _constants = require("../constants");
-var generalChangeCityOptions = function generalChangeCityOptions(_ref) {
+var generalChangeCityOptions = exports.generalChangeCityOptions = function generalChangeCityOptions(_ref) {
   var country = _ref.country,
     state = _ref.state,
     setCityDefault = _ref.setCityDefault,
@@ -37,4 +37,3 @@ var generalChangeCityOptions = function generalChangeCityOptions(_ref) {
   }
   setCityOptions(newValueCity);
 };
-exports.generalChangeCityOptions = generalChangeCityOptions;

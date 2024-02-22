@@ -8,7 +8,7 @@ exports.SelectDocumentIdIndex = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectDocumentIdIndex = function SelectDocumentIdIndex(_ref) {
+var SelectDocumentIdIndex = exports.SelectDocumentIdIndex = function SelectDocumentIdIndex(_ref) {
   var changeIndex = _ref.changeIndex,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectDocumentIdIndex = function SelectDocumentIdIndex(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectDocumentIdIndex = SelectDocumentIdIndex;

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeAddressType = void 0;
 var _helpers = require("../helpers");
-var generalChangeAddressType = function generalChangeAddressType(_ref) {
+var generalChangeAddressType = exports.generalChangeAddressType = function generalChangeAddressType(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeAddressType = function generalChangeAddressType(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeAddressType = generalChangeAddressType;

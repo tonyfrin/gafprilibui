@@ -20,7 +20,7 @@ var SearchBoxStylesContainer = function SearchBoxStylesContainer(styles) {
 var SearchBoxStylesContent = function SearchBoxStylesContent(styles) {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), styles.custom || '');
 };
-var SearchBox = function SearchBox(_ref) {
+var SearchBox = exports.SearchBox = function SearchBox(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -42,4 +42,3 @@ var SearchBox = function SearchBox(_ref) {
     className: (0, _css.cx)(SearchBoxStylesContent(contentStyles), contentClassName)
   }, restContentProps), /*#__PURE__*/_react["default"].createElement(_Title.Title1, title1Props), /*#__PURE__*/_react["default"].createElement(_Title.Title2, title2Props)), children));
 };
-exports.SearchBox = SearchBox;

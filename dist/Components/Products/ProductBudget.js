@@ -17,7 +17,7 @@ var _templateObject;
 var productBudgetStylesContainer = function productBudgetStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), stayles.custom || '');
 };
-var ProductBudget = function ProductBudget(_ref) {
+var ProductBudget = exports.ProductBudget = function ProductBudget(_ref) {
   var useProduct = _ref.useProduct,
     useBudget = _ref.useBudget,
     sitesOptions = _ref.sitesOptions,
@@ -38,4 +38,3 @@ var ProductBudget = function ProductBudget(_ref) {
     useBudget: useBudget
   }))));
 };
-exports.ProductBudget = ProductBudget;

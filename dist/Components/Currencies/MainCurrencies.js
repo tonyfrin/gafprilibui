@@ -9,7 +9,7 @@ var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends")
 var _react = _interopRequireDefault(require("react"));
 var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
-var MainCurrencies = function MainCurrencies(_ref) {
+var MainCurrencies = exports.MainCurrencies = function MainCurrencies(_ref) {
   var useCurrencies = _ref.useCurrencies,
     initCurrenciesProps = _ref.initCurrenciesProps,
     addFormProps = _ref.addFormProps,
@@ -33,4 +33,3 @@ var MainCurrencies = function MainCurrencies(_ref) {
     use: useCurrencies
   }, updateFormProps))));
 };
-exports.MainCurrencies = MainCurrencies;

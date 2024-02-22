@@ -19,7 +19,7 @@ var _templateObject;
 var entityBudgetSearchFormStaylesContainer = function entityBudgetSearchFormStaylesContainer(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  color: ", ";\n  font-size: ", ";\n  padding-bottom: ", ";\n  ", "\n"])), styles.color || '#616e7d', styles.fontSize || '12px', styles.paddingBottom || '40px', styles.custom || '');
 };
-var EntityBudgetSearchForm = function EntityBudgetSearchForm(_ref) {
+var EntityBudgetSearchForm = exports.EntityBudgetSearchForm = function EntityBudgetSearchForm(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -124,4 +124,3 @@ var EntityBudgetSearchForm = function EntityBudgetSearchForm(_ref) {
     }
   }))))));
 };
-exports.EntityBudgetSearchForm = EntityBudgetSearchForm;

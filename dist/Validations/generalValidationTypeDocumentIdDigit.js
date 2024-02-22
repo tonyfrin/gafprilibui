@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationTypeDocumentIdDigit = void 0;
 var _helpers = require("../helpers");
 var _constants = require("../constants");
-var generalValidationTypeDocumentIdDigit = function generalValidationTypeDocumentIdDigit(_ref) {
+var generalValidationTypeDocumentIdDigit = exports.generalValidationTypeDocumentIdDigit = function generalValidationTypeDocumentIdDigit(_ref) {
   var newValue = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -20,4 +20,3 @@ var generalValidationTypeDocumentIdDigit = function generalValidationTypeDocumen
   }
   return valid;
 };
-exports.generalValidationTypeDocumentIdDigit = generalValidationTypeDocumentIdDigit;

@@ -18,7 +18,7 @@ var defaultItemsContainerStyle = function defaultItemsContainerStyle(columns) {
 };
 var defaultItemStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  font-family: Circular, ProximaNova, -apple-system, BlinkMacSystemFont,\n    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', sans-serif;\n  font-weight: 400;\n  font-size: 1rem;\n  color: rgb(38, 35, 33);\n  width: auto;\n  padding: 1rem;\n  vertical-align: middle;\n  border-top: 1px solid rgb(227, 223, 218);\n  line-height: 1.25rem;\n  display: inline-block;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  width: 75%;\n"])));
 var defaultHeaderStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  font-family: Circular, ProximaNova, -apple-system, BlinkMacSystemFont,\n    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', sans-serif;\n  font-weight: 300;\n  font-size: 0.875rem;\n  color: rgb(38, 35, 33);\n  display: table-cell;\n  width: auto;\n  padding: 1rem;\n  vertical-align: middle;\n  border-top: none;\n"])));
-var ColumnList = function ColumnList(_ref) {
+var ColumnList = exports.ColumnList = function ColumnList(_ref) {
   var items = _ref.items,
     columns = _ref.columns,
     headers = _ref.headers,
@@ -52,4 +52,3 @@ var ColumnList = function ColumnList(_ref) {
     });
   })));
 };
-exports.ColumnList = ColumnList;

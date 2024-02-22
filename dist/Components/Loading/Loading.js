@@ -17,7 +17,7 @@ var spin = (0, _css.keyframes)(_templateObject2 || (_templateObject2 = (0, _tagg
 var divStyles = function divStyles(styles) {
   return (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  animation: ", " ", ";\n  border: ", ";\n  border-top: ", ";\n  border-radius: ", ";\n  width: ", ";\n  height: ", ";\n"])), spin, styles.animation || '2s linear infinite', styles.border || '6px solid #eee', styles.borderTop || '6px solid #077bb4', styles.borderRadius || '50%', styles.width || '80px', styles.height || '80px');
 };
-var Loading = function Loading(_ref) {
+var Loading = exports.Loading = function Loading(_ref) {
   var _ref$mainStyles = _ref.mainStyles,
     mainStyles = _ref$mainStyles === void 0 ? {} : _ref$mainStyles,
     _ref$classMain = _ref.classMain,
@@ -32,4 +32,3 @@ var Loading = function Loading(_ref) {
     className: (0, _css.cx)(divStyles(divStyle), classDiv)
   })));
 };
-exports.Loading = Loading;

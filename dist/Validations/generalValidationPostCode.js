@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationPostCode = void 0;
 var _helpers = require("../helpers");
 var _constants = require("../constants");
-var generalValidationPostCode = function generalValidationPostCode(_ref) {
+var generalValidationPostCode = exports.generalValidationPostCode = function generalValidationPostCode(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -20,4 +20,3 @@ var generalValidationPostCode = function generalValidationPostCode(_ref) {
   }
   return valid;
 };
-exports.generalValidationPostCode = generalValidationPostCode;

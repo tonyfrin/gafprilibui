@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationGalleryImage = void 0;
 var _index = require("./index");
 var _constants = require("../constants");
-var generalValidationGalleryImage = function generalValidationGalleryImage(_ref) {
+var generalValidationGalleryImage = exports.generalValidationGalleryImage = function generalValidationGalleryImage(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -20,4 +20,3 @@ var generalValidationGalleryImage = function generalValidationGalleryImage(_ref)
   }
   return valid;
 };
-exports.generalValidationGalleryImage = generalValidationGalleryImage;

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationCost = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationCost = function generalValidationCost(_ref) {
+var generalValidationCost = exports.generalValidationCost = function generalValidationCost(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationCost = function generalValidationCost(_ref) {
     required: required
   });
 };
-exports.generalValidationCost = generalValidationCost;

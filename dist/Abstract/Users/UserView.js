@@ -20,7 +20,7 @@ var defaultPhotoStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0
 var defaultPhotoMainContainerStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n"])));
 var defaultNameContainerStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
 var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n  width: 91.66667%;\n  margin: 10px 0px;\n"])));
-var UserView = function UserView(_ref) {
+var UserView = exports.UserView = function UserView(_ref) {
   var use = _ref.use,
     _ref$photoMainContain = _ref.photoMainContainerStyle,
     photoMainContainerStyle = _ref$photoMainContain === void 0 ? defaultPhotoMainContainerStyle : _ref$photoMainContain,
@@ -134,4 +134,3 @@ var UserView = function UserView(_ref) {
     }
   }, nameInputProps)))))));
 };
-exports.UserView = UserView;

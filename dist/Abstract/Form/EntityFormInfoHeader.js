@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Containers = require("../Containers");
 var _Button = require("../Button");
 var _Li = require("../Li");
-var EntityFormInfoHeader = function EntityFormInfoHeader(_ref) {
+var EntityFormInfoHeader = exports.EntityFormInfoHeader = function EntityFormInfoHeader(_ref) {
   var _useOrder$attributes$, _useOrder$attributes$2, _useOrder$attributes$3, _useOrder$attributes$4, _useOrder$attributes$5;
   var useOrder = _ref.useOrder;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerHeaderInfo, null, /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
@@ -39,4 +39,3 @@ var EntityFormInfoHeader = function EntityFormInfoHeader(_ref) {
     }
   }))));
 };
-exports.EntityFormInfoHeader = EntityFormInfoHeader;

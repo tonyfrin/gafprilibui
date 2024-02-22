@@ -12,7 +12,7 @@ var _templateObject;
 var Background1Styles = function Background1Styles(image, customStyles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  background-image: url(", ");\n  background-size: 190vh;\n  background-repeat: no-repeat;\n  min-height: 100vh;\n  ", "\n"])), image, customStyles);
 };
-var Background1 = function Background1(_ref) {
+var Background1 = exports.Background1 = function Background1(_ref) {
   var children = _ref.children,
     image = _ref.image,
     _ref$customStyles = _ref.customStyles,
@@ -21,4 +21,3 @@ var Background1 = function Background1(_ref) {
     className: (0, _css.cx)(Background1Styles(image, customStyles))
   }, children);
 };
-exports.Background1 = Background1;

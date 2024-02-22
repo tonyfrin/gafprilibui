@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangeDocumentIdDigit = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangeDocumentIdDigit = function generalChangeDocumentIdDigit(_ref) {
+var generalChangeDocumentIdDigit = exports.generalChangeDocumentIdDigit = function generalChangeDocumentIdDigit(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -21,4 +21,3 @@ var generalChangeDocumentIdDigit = function generalChangeDocumentIdDigit(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeDocumentIdDigit = generalChangeDocumentIdDigit;

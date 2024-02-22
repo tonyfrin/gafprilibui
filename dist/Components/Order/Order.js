@@ -19,7 +19,7 @@ var _templateObject;
 var orderStylesContainer = function orderStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  padding-top: 60px;\n  padding-bottom: 50px;\n  ", "\n  background-repeat: ", ";\n  background-size: ", ";\n  ", "\n"])), stayles.backgroundImage && "background-image: url(".concat(stayles.backgroundImage, ");"), stayles.backgroundRepeat || 'no-repeat', stayles.backgroundSize || '345vh', stayles.custom || '');
 };
-var Order = function Order(_ref) {
+var Order = exports.Order = function Order(_ref) {
   var use = _ref.use,
     useEntity = _ref.useEntity,
     _ref$containerStyles = _ref.containerStyles,
@@ -73,4 +73,3 @@ var Order = function Order(_ref) {
     sitesOptions: sitesOptions
   }))));
 };
-exports.Order = Order;

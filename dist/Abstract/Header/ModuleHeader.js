@@ -15,7 +15,7 @@ var _templateObject;
 var ModuleHeaderStylesContainer = function ModuleHeaderStylesContainer(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: ", ";\n  border-top: ", ";\n  margin-top: ", ";\n  ", "\n"])), styles.display || 'flex', styles.borderTop || '1px solid #dee2e6', styles.marginTop || '20px', styles.custom || '');
 };
-var ModuleHeader = function ModuleHeader(_ref) {
+var ModuleHeader = exports.ModuleHeader = function ModuleHeader(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -27,4 +27,3 @@ var ModuleHeader = function ModuleHeader(_ref) {
     className: (0, _css.cx)(ModuleHeaderStylesContainer(containerStyles), containerClassName)
   }, restContainerProps), children));
 };
-exports.ModuleHeader = ModuleHeader;

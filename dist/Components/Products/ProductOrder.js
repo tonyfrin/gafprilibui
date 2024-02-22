@@ -17,7 +17,7 @@ var _templateObject;
 var productOrderStylesContainer = function productOrderStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), stayles.custom || '');
 };
-var ProductOrder = function ProductOrder(_ref) {
+var ProductOrder = exports.ProductOrder = function ProductOrder(_ref) {
   var useProduct = _ref.useProduct,
     useOrder = _ref.useOrder,
     sitesOptions = _ref.sitesOptions,
@@ -38,4 +38,3 @@ var ProductOrder = function ProductOrder(_ref) {
     useOrder: useOrder
   }))));
 };
-exports.ProductOrder = ProductOrder;

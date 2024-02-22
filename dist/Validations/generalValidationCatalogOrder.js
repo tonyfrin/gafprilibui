@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationCatalogOrder = void 0;
 var _index = require("./index");
 var _constants = require("../constants");
-var generalValidationCatalogOrder = function generalValidationCatalogOrder(_ref) {
+var generalValidationCatalogOrder = exports.generalValidationCatalogOrder = function generalValidationCatalogOrder(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationCatalogOrder = function generalValidationCatalogOrder(_ref)
     required: required
   });
 };
-exports.generalValidationCatalogOrder = generalValidationCatalogOrder;

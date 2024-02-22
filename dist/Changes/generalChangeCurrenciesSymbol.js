@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangeCurrenciesSymbol = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangeCurrenciesSymbol = function generalChangeCurrenciesSymbol(_ref) {
+var generalChangeCurrenciesSymbol = exports.generalChangeCurrenciesSymbol = function generalChangeCurrenciesSymbol(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -21,4 +21,3 @@ var generalChangeCurrenciesSymbol = function generalChangeCurrenciesSymbol(_ref)
     setValue: setValue
   });
 };
-exports.generalChangeCurrenciesSymbol = generalChangeCurrenciesSymbol;

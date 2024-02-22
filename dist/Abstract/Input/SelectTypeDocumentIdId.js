@@ -8,7 +8,7 @@ exports.SelectTypeDocumentIdId = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectTypeDocumentIdId = function SelectTypeDocumentIdId(_ref) {
+var SelectTypeDocumentIdId = exports.SelectTypeDocumentIdId = function SelectTypeDocumentIdId(_ref) {
   var changeTypeDocumentIdId = _ref.changeTypeDocumentIdId,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectTypeDocumentIdId = function SelectTypeDocumentIdId(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectTypeDocumentIdId = SelectTypeDocumentIdId;

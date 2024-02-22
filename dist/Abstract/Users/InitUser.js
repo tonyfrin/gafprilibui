@@ -17,7 +17,7 @@ var _Header = require("../Header");
 var _helpers = require("../../helpers");
 var _templateObject;
 var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
-var InitUser = function InitUser(_ref) {
+var InitUser = exports.InitUser = function InitUser(_ref) {
   var _paginated$map;
   var use = _ref.use,
     _ref$optionButtonCont = _ref.optionButtonContainerStyle,
@@ -199,4 +199,3 @@ var InitUser = function InitUser(_ref) {
     }
   }, listProps)));
 };
-exports.InitUser = InitUser;

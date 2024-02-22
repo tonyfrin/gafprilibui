@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 export type GloboStyle = {
     width?: string;
     height?: string;
@@ -15,5 +15,5 @@ type Globo = {
     step: string;
     globoClass?: string | undefined;
 };
-export declare const Globo: ({ styles, step, globoClass }: Globo) => JSX.Element;
+export declare const Globo: ({ styles, step, globoClass }: Globo) => React.JSX.Element;
 export {};

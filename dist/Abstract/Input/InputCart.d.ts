@@ -16,4 +16,4 @@ export type InputCartProps = {
     contentStyles?: InputCartStylesContentProps;
     contentProps?: React.InputHTMLAttributes<HTMLInputElement>;
 };
-export declare const InputCart: ({ contentStyles, contentProps, }: InputCartProps) => JSX.Element;
+export declare const InputCart: ({ contentStyles, contentProps, }: InputCartProps) => React.JSX.Element;

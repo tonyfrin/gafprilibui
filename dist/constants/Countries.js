@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Countries = void 0;
-var Countries = [{
+var Countries = exports.Countries = [{
   AF: 'Afghanistan',
   AX: 'Åland Islands',
   AL: 'Albania',
@@ -255,4 +255,3 @@ var Countries = [{
   ZM: 'Zambia',
   ZW: 'Zimbabwe'
 }];
-exports.Countries = Countries;

@@ -16,7 +16,7 @@ var _templateObject;
 var StepStyles = function StepStyles(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: ", ";\n  padding: ", ";\n  margin: ", ";\n"])), styles.display || 'flex', styles.padding || '15px 0px', styles.margin || '10px 0px');
 };
-var Step = function Step(_ref) {
+var Step = exports.Step = function Step(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerClass = _ref.containerClass,
@@ -81,4 +81,3 @@ var Step = function Step(_ref) {
     title: buttonNextTitle
   }) : '')));
 };
-exports.Step = Step;

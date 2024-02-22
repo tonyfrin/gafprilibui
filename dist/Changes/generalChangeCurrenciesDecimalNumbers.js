@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeCurrenciesDecimalNumbers = void 0;
 var _helpers = require("../helpers");
-var generalChangeCurrenciesDecimalNumbers = function generalChangeCurrenciesDecimalNumbers(_ref) {
+var generalChangeCurrenciesDecimalNumbers = exports.generalChangeCurrenciesDecimalNumbers = function generalChangeCurrenciesDecimalNumbers(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -26,4 +26,3 @@ var generalChangeCurrenciesDecimalNumbers = function generalChangeCurrenciesDeci
     setValue: setValue
   });
 };
-exports.generalChangeCurrenciesDecimalNumbers = generalChangeCurrenciesDecimalNumbers;

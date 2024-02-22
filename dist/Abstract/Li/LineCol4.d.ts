@@ -12,4 +12,4 @@ export type LineCol4Props = {
     containerStyles?: LineCol4StylesContainerProps;
     children: React.ReactNode;
 };
-export declare const LineCol4: ({ containerProps, containerStyles, children, }: LineCol4Props) => JSX.Element;
+export declare const LineCol4: ({ containerProps, containerStyles, children, }: LineCol4Props) => React.JSX.Element;

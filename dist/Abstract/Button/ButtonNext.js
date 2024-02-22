@@ -9,7 +9,7 @@ var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends")
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Button = require("./Button");
-var ButtonNext = function ButtonNext(_ref) {
+var ButtonNext = exports.ButtonNext = function ButtonNext(_ref) {
   var title = _ref.title,
     props = _ref.props;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Button.Button, (0, _extends2["default"])({
@@ -20,4 +20,3 @@ var ButtonNext = function ButtonNext(_ref) {
     }
   }, props)));
 };
-exports.ButtonNext = ButtonNext;

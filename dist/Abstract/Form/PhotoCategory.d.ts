@@ -9,4 +9,4 @@ export type PhotoCategoryProps = {
     props?: PhotoFormPropsExtended;
     inputId?: string;
 };
-export declare const PhotoCategory: ({ photo, changePhoto, submitting, changeError, setSubmitting, props, inputId, }: PhotoCategoryProps) => JSX.Element;
+export declare const PhotoCategory: ({ photo, changePhoto, submitting, changeError, setSubmitting, props, inputId, }: PhotoCategoryProps) => React.JSX.Element;

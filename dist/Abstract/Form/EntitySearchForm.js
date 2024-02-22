@@ -19,7 +19,7 @@ var _templateObject;
 var EntitySearchFormStaylesContainer = function EntitySearchFormStaylesContainer(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  color: ", ";\n  font-size: ", ";\n  padding-bottom: ", ";\n  ", "\n"])), styles.color || '#616e7d', styles.fontSize || '12px', styles.paddingBottom || '40px', styles.custom || '');
 };
-var EntitySearchForm = function EntitySearchForm(_ref) {
+var EntitySearchForm = exports.EntitySearchForm = function EntitySearchForm(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -124,4 +124,3 @@ var EntitySearchForm = function EntitySearchForm(_ref) {
     }
   }))))));
 };
-exports.EntitySearchForm = EntitySearchForm;

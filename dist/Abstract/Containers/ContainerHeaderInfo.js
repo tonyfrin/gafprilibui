@@ -15,7 +15,7 @@ var _templateObject;
 var ContainerHeaderInfoStylesContainer = function ContainerHeaderInfoStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  border-right: ", ";\n  margin: ", ";\n  ", "\n"])), stayles.width || '50%', stayles.borderRight || '1px solid #dee2e6', stayles.margin || '1em', stayles.custom || '');
 };
-var ContainerHeaderInfo = function ContainerHeaderInfo(_ref) {
+var ContainerHeaderInfo = exports.ContainerHeaderInfo = function ContainerHeaderInfo(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -27,4 +27,3 @@ var ContainerHeaderInfo = function ContainerHeaderInfo(_ref) {
     className: (0, _css.cx)(ContainerHeaderInfoStylesContainer(containerStyles), containerClassName)
   }, restContainerProps), children));
 };
-exports.ContainerHeaderInfo = ContainerHeaderInfo;

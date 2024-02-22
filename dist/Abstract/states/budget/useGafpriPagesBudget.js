@@ -8,7 +8,7 @@ exports.useGafpriPagesBudget = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 var _helpers = require("../../../helpers");
-var useGafpriPagesBudget = function useGafpriPagesBudget(_ref) {
+var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPagesBudget(_ref) {
   var useAttributes = _ref.useAttributes,
     useEntity = _ref.useEntity,
     useProducts = _ref.useProducts,
@@ -263,4 +263,3 @@ var useGafpriPagesBudget = function useGafpriPagesBudget(_ref) {
     actions: actions
   };
 };
-exports.useGafpriPagesBudget = useGafpriPagesBudget;

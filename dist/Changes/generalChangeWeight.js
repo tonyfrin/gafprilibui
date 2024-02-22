@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeWeight = void 0;
 var _helpers = require("../helpers");
-var generalChangeWeight = function generalChangeWeight(_ref) {
+var generalChangeWeight = exports.generalChangeWeight = function generalChangeWeight(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -14,4 +14,3 @@ var generalChangeWeight = function generalChangeWeight(_ref) {
   };
   (0, _helpers.changeInputNumers)(value, validation || defaultValidation, setValue);
 };
-exports.generalChangeWeight = generalChangeWeight;

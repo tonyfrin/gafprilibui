@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import type { ContainerGloboStyle, ContainerButtonStyle } from '../Containers';
 import type { GloboStyle } from '../Icons';
 import type { GloboTitleStyle } from '../Title';
@@ -30,5 +30,5 @@ type Step = {
     containerButtonStyles?: ContainerButtonStyle | undefined;
     containerButtonClass?: string;
 };
-export declare const Step: ({ containerStyles, containerClass, globoStyles, step, globoClass, titleStyles, title, globoTitleClass, styles, Class, buttonReturnStyles, buttonReturnProps, buttonReturnClass, buttonReturnTitle, buttonNextStyles, buttonNextProps, buttonNextClass, buttonNextTitle, containerButtonStyles, containerButtonClass, }: Step) => JSX.Element;
+export declare const Step: ({ containerStyles, containerClass, globoStyles, step, globoClass, titleStyles, title, globoTitleClass, styles, Class, buttonReturnStyles, buttonReturnProps, buttonReturnClass, buttonReturnTitle, buttonNextStyles, buttonNextProps, buttonNextClass, buttonNextTitle, containerButtonStyles, containerButtonClass, }: Step) => React.JSX.Element;
 export {};

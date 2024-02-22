@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 import { CircleButtonPropsExtended } from '../Button';
 export type HeaderMenuItem = {
     key: string;
@@ -51,4 +51,4 @@ export type HeaderMenuPropsExtended = {
     contentLiProps?: HTMLAttributes<HTMLLIElement>;
     contentButtonProps?: CircleButtonPropsExtended;
 };
-export declare const HeaderMenu: ({ items, stylesContainer, containerProps, stylesContent, contentProps, contentUlProps, stylesContentUl, stylesContentLi, contentLiProps, contentButtonProps, }: HeaderMenuProps) => JSX.Element;
+export declare const HeaderMenu: ({ items, stylesContainer, containerProps, stylesContent, contentProps, contentUlProps, stylesContentUl, stylesContentLi, contentLiProps, contentButtonProps, }: HeaderMenuProps) => React.JSX.Element;

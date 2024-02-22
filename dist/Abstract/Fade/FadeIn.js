@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.FadeIn = void 0;
 var _react = _interopRequireDefault(require("react"));
-var FadeIn = function FadeIn(_ref) {
+var FadeIn = exports.FadeIn = function FadeIn(_ref) {
   var keyName = _ref.keyName,
     children = _ref.children,
     isVisible = _ref.isVisible;
@@ -26,4 +26,3 @@ var FadeIn = function FadeIn(_ref) {
     }
   }, children));
 };
-exports.FadeIn = FadeIn;

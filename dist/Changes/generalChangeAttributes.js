@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeAttributes = void 0;
 var _helpers = require("../helpers");
-var generalChangeAttributes = function generalChangeAttributes(_ref) {
+var generalChangeAttributes = exports.generalChangeAttributes = function generalChangeAttributes(_ref) {
   var newValue = _ref.newValue,
     selectedOptions = _ref.selectedOptions,
     validation = _ref.validation,
@@ -20,4 +20,3 @@ var generalChangeAttributes = function generalChangeAttributes(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeAttributes = generalChangeAttributes;

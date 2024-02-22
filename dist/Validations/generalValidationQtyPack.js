@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationQtyPack = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationQtyPack = function generalValidationQtyPack(_ref) {
+var generalValidationQtyPack = exports.generalValidationQtyPack = function generalValidationQtyPack(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationQtyPack = function generalValidationQtyPack(_ref) {
     required: required
   });
 };
-exports.generalValidationQtyPack = generalValidationQtyPack;

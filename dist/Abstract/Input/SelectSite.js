@@ -8,7 +8,7 @@ exports.SelectSite = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectSite = function SelectSite(_ref) {
+var SelectSite = exports.SelectSite = function SelectSite(_ref) {
   var changeSite = _ref.changeSite,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectSite = function SelectSite(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectSite = SelectSite;

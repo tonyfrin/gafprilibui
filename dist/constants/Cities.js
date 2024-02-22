@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Cities = void 0;
-var Cities = [{
+var Cities = exports.Cities = [{
   VE: [{
     'VE-A': [{
       'VE-A-1': 'Caracas',
@@ -556,4 +556,3 @@ var Cities = [{
     }]
   }]
 }];
-exports.Cities = Cities;

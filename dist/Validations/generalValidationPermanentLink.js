@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationPermanentLink = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationPermanentLink = function generalValidationPermanentLink(_ref) {
+var generalValidationPermanentLink = exports.generalValidationPermanentLink = function generalValidationPermanentLink(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationPermanentLink = function generalValidationPermanentLink(_re
     required: required
   });
 };
-exports.generalValidationPermanentLink = generalValidationPermanentLink;

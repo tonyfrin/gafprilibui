@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationSku = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationSku = function generalValidationSku(_ref) {
+var generalValidationSku = exports.generalValidationSku = function generalValidationSku(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationSku = function generalValidationSku(_ref) {
     required: required
   });
 };
-exports.generalValidationSku = generalValidationSku;

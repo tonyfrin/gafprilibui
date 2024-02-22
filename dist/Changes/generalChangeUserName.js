@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangeUserName = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangeUserName = function generalChangeUserName(_ref) {
+var generalChangeUserName = exports.generalChangeUserName = function generalChangeUserName(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -22,4 +22,3 @@ var generalChangeUserName = function generalChangeUserName(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeUserName = generalChangeUserName;

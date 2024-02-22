@@ -8,7 +8,7 @@ exports.useGafpriPagesOrder = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 var _helpers = require("../../../helpers");
-var useGafpriPagesOrder = function useGafpriPagesOrder(_ref) {
+var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesOrder(_ref) {
   var useAttributes = _ref.useAttributes,
     useEntity = _ref.useEntity,
     useProducts = _ref.useProducts,
@@ -217,4 +217,3 @@ var useGafpriPagesOrder = function useGafpriPagesOrder(_ref) {
     actions: actions
   };
 };
-exports.useGafpriPagesOrder = useGafpriPagesOrder;

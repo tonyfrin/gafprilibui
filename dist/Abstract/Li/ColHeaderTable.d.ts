@@ -7,4 +7,4 @@ export type ColHeaderTableProps = {
     containerStyles?: ColHeaderTableStylesContainerProps;
     children: React.ReactNode;
 };
-export declare const ColHeaderTable: ({ containerProps, containerStyles, children, }: ColHeaderTableProps) => JSX.Element;
+export declare const ColHeaderTable: ({ containerProps, containerStyles, children, }: ColHeaderTableProps) => React.JSX.Element;

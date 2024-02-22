@@ -8,7 +8,7 @@ exports.SelectParentId = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectParentId = function SelectParentId(_ref) {
+var SelectParentId = exports.SelectParentId = function SelectParentId(_ref) {
   var changeParentId = _ref.changeParentId,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectParentId = function SelectParentId(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectParentId = SelectParentId;

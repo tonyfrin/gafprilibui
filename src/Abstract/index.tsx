@@ -483,3 +483,5 @@ export type {
   BudgetSearchPrintProps,
   BudgetSearchPrintExtended,
 } from './Budget';
+export { BudgetPdf } from './Pdf';
+export type { BudgetPdfProps } from './Pdf';

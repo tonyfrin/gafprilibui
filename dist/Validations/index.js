@@ -460,7 +460,7 @@ var _generalValidationTaxClassesId = require("./generalValidationTaxClassesId");
 var _generalValidationRate = require("./generalValidationRate");
 var _generalValidationCustomerId = require("./generalValidationCustomerId");
 var _generalValidationReferredId = require("./generalValidationReferredId");
-var validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
+var validationInputNameLastNameUserName = exports.validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,
     inputId = _ref.inputId,
@@ -473,8 +473,7 @@ var validationInputNameLastNameUserName = function validationInputNameLastNameUs
   }
   return valid;
 };
-exports.validationInputNameLastNameUserName = validationInputNameLastNameUserName;
-var validationInputPassword = function validationInputPassword(_ref2) {
+var validationInputPassword = exports.validationInputPassword = function validationInputPassword(_ref2) {
   var value = _ref2.value,
     inputId = _ref2.inputId,
     setValid = _ref2.setValid,
@@ -487,8 +486,7 @@ var validationInputPassword = function validationInputPassword(_ref2) {
   }
   return valid;
 };
-exports.validationInputPassword = validationInputPassword;
-var validationInputSinglePassword = function validationInputSinglePassword(_ref3) {
+var validationInputSinglePassword = exports.validationInputSinglePassword = function validationInputSinglePassword(_ref3) {
   var value = _ref3.value,
     inputId = _ref3.inputId,
     setValid = _ref3.setValid,
@@ -498,8 +496,7 @@ var validationInputSinglePassword = function validationInputSinglePassword(_ref3
   setValid(valid);
   return valid;
 };
-exports.validationInputSinglePassword = validationInputSinglePassword;
-var validationInputDescription = function validationInputDescription(_ref4) {
+var validationInputDescription = exports.validationInputDescription = function validationInputDescription(_ref4) {
   var value = _ref4.value,
     inputId = _ref4.inputId,
     setValid = _ref4.setValid,
@@ -512,8 +509,7 @@ var validationInputDescription = function validationInputDescription(_ref4) {
   }
   return valid;
 };
-exports.validationInputDescription = validationInputDescription;
-var validationInputAddress = function validationInputAddress(_ref5) {
+var validationInputAddress = exports.validationInputAddress = function validationInputAddress(_ref5) {
   var value = _ref5.value,
     currentValid = _ref5.currentValid,
     inputId = _ref5.inputId,
@@ -526,8 +522,7 @@ var validationInputAddress = function validationInputAddress(_ref5) {
   }
   return valid;
 };
-exports.validationInputAddress = validationInputAddress;
-var validationInputSku = function validationInputSku(_ref6) {
+var validationInputSku = exports.validationInputSku = function validationInputSku(_ref6) {
   var value = _ref6.value,
     inputId = _ref6.inputId,
     currentValid = _ref6.currentValid,
@@ -540,8 +535,7 @@ var validationInputSku = function validationInputSku(_ref6) {
   }
   return valid;
 };
-exports.validationInputSku = validationInputSku;
-var validationPhoto = function validationPhoto(_ref7) {
+var validationPhoto = exports.validationPhoto = function validationPhoto(_ref7) {
   var value = _ref7.value,
     inputId = _ref7.inputId,
     currentValid = _ref7.currentValid,
@@ -554,8 +548,7 @@ var validationPhoto = function validationPhoto(_ref7) {
   }
   return valid;
 };
-exports.validationPhoto = validationPhoto;
-var validationInputArray = function validationInputArray(values, match, componentId) {
+var validationInputArray = exports.validationInputArray = function validationInputArray(values, match, componentId) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   var allValid = true;
   values.forEach(function (value) {
@@ -574,8 +567,7 @@ var validationInputArray = function validationInputArray(values, match, componen
   }
   return allValid;
 };
-exports.validationInputArray = validationInputArray;
-var validatePositiveNumber = function validatePositiveNumber(value, inputId) {
+var validatePositiveNumber = exports.validatePositiveNumber = function validatePositiveNumber(value, inputId) {
   var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   var numericValue = typeof value === 'string' ? parseFloat(value) : value;
   var isNumber = typeof numericValue === 'number' && !Number.isNaN(numericValue);
@@ -595,8 +587,7 @@ var validatePositiveNumber = function validatePositiveNumber(value, inputId) {
   (0, _helpers.addClass)(inputId, _constants.ALERT);
   return false;
 };
-exports.validatePositiveNumber = validatePositiveNumber;
-var validationInputNumbers = function validationInputNumbers(_ref8) {
+var validationInputNumbers = exports.validationInputNumbers = function validationInputNumbers(_ref8) {
   var value = _ref8.value,
     currentValid = _ref8.currentValid,
     inputId = _ref8.inputId,
@@ -609,8 +600,7 @@ var validationInputNumbers = function validationInputNumbers(_ref8) {
   }
   return valid;
 };
-exports.validationInputNumbers = validationInputNumbers;
-var validateNumberWithValue = function validateNumberWithValue(value, inputId) {
+var validateNumberWithValue = exports.validateNumberWithValue = function validateNumberWithValue(value, inputId) {
   var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   var numericValue = typeof value === 'string' ? parseInt(value, 10) : value;
   var isNumber = typeof numericValue === 'number' && !Number.isNaN(numericValue);
@@ -630,8 +620,7 @@ var validateNumberWithValue = function validateNumberWithValue(value, inputId) {
   (0, _helpers.addClass)(inputId, _constants.ALERT);
   return false;
 };
-exports.validateNumberWithValue = validateNumberWithValue;
-var validationInputNumbersWithValue = function validationInputNumbersWithValue(_ref9) {
+var validationInputNumbersWithValue = exports.validationInputNumbersWithValue = function validationInputNumbersWithValue(_ref9) {
   var value = _ref9.value,
     currentValid = _ref9.currentValid,
     inputId = _ref9.inputId,
@@ -644,7 +633,6 @@ var validationInputNumbersWithValue = function validationInputNumbersWithValue(_
   }
   return valid;
 };
-exports.validationInputNumbersWithValue = validationInputNumbersWithValue;
 function validateGeneralAttributes(obj, inputId) {
   var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   if (required && (!obj || !Array.isArray(obj))) {
@@ -664,7 +652,7 @@ function validateGeneralAttributes(obj, inputId) {
   (0, _helpers.removeClass)(inputId, _constants.ALERT);
   return true;
 }
-var validationGeneralAttributes = function validationGeneralAttributes(_ref10) {
+var validationGeneralAttributes = exports.validationGeneralAttributes = function validationGeneralAttributes(_ref10) {
   var value = _ref10.value,
     currentValid = _ref10.currentValid,
     inputId = _ref10.inputId,
@@ -677,7 +665,6 @@ var validationGeneralAttributes = function validationGeneralAttributes(_ref10) {
   }
   return valid;
 };
-exports.validationGeneralAttributes = validationGeneralAttributes;
 function incorrectLinkDetector(value, inputId) {
   var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   // Expresión regular que busca caracteres especiales
@@ -692,7 +679,7 @@ function incorrectLinkDetector(value, inputId) {
   (0, _helpers.removeClass)(inputId, _constants.ALERT);
   return true;
 }
-var validationLink = function validationLink(_ref11) {
+var validationLink = exports.validationLink = function validationLink(_ref11) {
   var value = _ref11.value,
     currentValid = _ref11.currentValid,
     inputId = _ref11.inputId,
@@ -705,7 +692,6 @@ var validationLink = function validationLink(_ref11) {
   }
   return valid;
 };
-exports.validationLink = validationLink;
 function validateStringArray(arr, inputId) {
   var required = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   if (required && (!arr || !Array.isArray(arr)) || arr.length === 0) {
@@ -721,7 +707,7 @@ function validateStringArray(arr, inputId) {
   (0, _helpers.removeClass)(inputId, _constants.ALERT);
   return true;
 }
-var validationStringArray = function validationStringArray(_ref12) {
+var validationStringArray = exports.validationStringArray = function validationStringArray(_ref12) {
   var value = _ref12.value,
     currentValid = _ref12.currentValid,
     inputId = _ref12.inputId,
@@ -734,4 +720,3 @@ var validationStringArray = function validationStringArray(_ref12) {
   }
   return valid;
 };
-exports.validationStringArray = validationStringArray;

@@ -16,7 +16,7 @@ var defaultIconContainerStyle = (0, _css.css)(_templateObject4 || (_templateObje
 var defaultIconStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  vertical-align: middle;\n  display: inline-block;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: normal;\n"])));
 var defaultTitleContainer = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  vertical-align: middle;\n  margin-left: 0.5rem;\n  margin-right: 0.5rem;\n  display: block;\n  background: transparent;\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  border: 0;\n  border-spacing: 0;\n  border-collapse: collapse;\n"])));
 var defaultTitleStyle = (0, _css.css)(_templateObject7 || (_templateObject7 = (0, _taggedTemplateLiteral2["default"])(["\n  font-family: Circular, ProximaNova, -apple-system, BlinkMacSystemFont,\n    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', sans-serif;\n  font-weight: 800;\n  font-size: 1rem;\n  color: rgb(38, 35, 33);\n  margin: 0;\n  padding: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n  background: transparent;\n"])));
-var MenuButton = function MenuButton(_ref) {
+var MenuButton = exports.MenuButton = function MenuButton(_ref) {
   var items = _ref.items,
     _ref$mainContainerSty = _ref.mainContainerStyle,
     mainContainerStyle = _ref$mainContainerSty === void 0 ? defaultMainContainerStyle : _ref$mainContainerSty,
@@ -52,4 +52,3 @@ var MenuButton = function MenuButton(_ref) {
     }, item.label)));
   })));
 };
-exports.MenuButton = MenuButton;

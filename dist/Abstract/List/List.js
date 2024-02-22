@@ -14,13 +14,13 @@ var _Bar = require("../Bar");
 var _ColumnList = require("./ColumnList");
 var _Pagination = require("../Pagination");
 var _templateObject, _templateObject2, _templateObject3, _templateObject4;
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 var defaultMainContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  display: grid;\n  transition: all 1s ease 0s;\n  grid-template: 'main' 1fr / 1fr;\n  box-sizing: border-box;\n  height: 100%;\n  background-color: rgb(247, 246, 244);\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n"])));
 var defaultGridContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n    transition: all 1s ease 0s;\n    display: grid\n    transition: all 1s ease 0s;\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;\n    justify-self: center;\n    padding: 0px 1rem 8rem;\n    width: 100%;\n    max-width: calc(1272px + 2rem);\n    grid-area: 2 / 1 / auto / auto;\n    align-content: start;\n    box-sizing: border-box;\n    background: transparent;\n    font-size: 100%;\n    margin: 0;\n    border: 0;\n    vertical-align: top;\n    border-spacing: 0;\n    border-collapse: collapse;\n"])));
 var defaultInfoContainerStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  display: inline-block;\n  box-sizing: border-box;\n  align-self: stretch;\n  grid-area: 2 / 1 / span 1 / span 12;\n  padding-top: 3rem;\n  background: transparent;\n  font-size: 100%;\n  margin: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n  width: 100%;\n"])));
 var defaultBreakContainerStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  background: transparent;\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n"])));
-var List = function List(_ref) {
+var List = exports.List = function List(_ref) {
   var items = _ref.items,
     headers = _ref.headers,
     columns = _ref.columns,
@@ -60,4 +60,3 @@ var List = function List(_ref) {
     headers: headers
   }, propsColumnList)), /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, propsPagination)))));
 };
-exports.List = List;

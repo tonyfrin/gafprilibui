@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Form = require("../Form");
 var _Header = require("../Header");
 var _Sections = require("../Sections");
-var BudgetModule = function BudgetModule(_ref) {
+var BudgetModule = exports.BudgetModule = function BudgetModule(_ref) {
   var useBudget = _ref.useBudget,
     sitesOptions = _ref.sitesOptions,
     useProducts = _ref.useProducts;
@@ -43,4 +43,3 @@ var BudgetModule = function BudgetModule(_ref) {
     useProducts: useProducts
   }));
 };
-exports.BudgetModule = BudgetModule;

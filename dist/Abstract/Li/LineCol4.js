@@ -15,7 +15,7 @@ var _templateObject;
 var lineCol4StylesContainer = function lineCol4StylesContainer(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  ", "\n"])), styles.width || '33.33333333%', styles.custom || '');
 };
-var LineCol4 = function LineCol4(_ref) {
+var LineCol4 = exports.LineCol4 = function LineCol4(_ref) {
   var _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     _ref$containerStyles = _ref.containerStyles,
@@ -27,4 +27,3 @@ var LineCol4 = function LineCol4(_ref) {
     className: (0, _css.cx)(lineCol4StylesContainer(containerStyles))
   }, restContainerProps), children);
 };
-exports.LineCol4 = LineCol4;

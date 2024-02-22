@@ -10,5 +10,5 @@ export type LineTableProps = {
     containerStyles?: LineTableStylesContainerProps;
     children: React.ReactNode;
 };
-export declare const LineTable: ({ containerProps, containerStyles, children, }: LineTableProps) => JSX.Element;
+export declare const LineTable: ({ containerProps, containerStyles, children, }: LineTableProps) => React.JSX.Element;
 export {};

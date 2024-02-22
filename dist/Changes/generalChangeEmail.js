@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangeEmail = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangeEmail = function generalChangeEmail(_ref) {
+var generalChangeEmail = exports.generalChangeEmail = function generalChangeEmail(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -22,4 +22,3 @@ var generalChangeEmail = function generalChangeEmail(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeEmail = generalChangeEmail;

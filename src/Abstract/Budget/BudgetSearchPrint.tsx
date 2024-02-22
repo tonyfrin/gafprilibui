@@ -11,6 +11,8 @@ import { UseGafpriBudgetReturn } from '../../states';
 import type { ButtonPropsExtended } from '../Button';
 import type { ListProps } from '../List';
 import type { ErrorProps } from '../Error';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { BudgetPdf } from '../Pdf';
 
 export type BudgetSearchPrintProps = {
   useBudget: UseGafpriBudgetReturn;
@@ -19,6 +21,7 @@ export type BudgetSearchPrintProps = {
   updateButtonProps?: ButtonPropsExtended;
   errorProps?: ErrorProps;
   listProps?: ListProps;
+  logoPdf: string;
 };
 
 export type BudgetSearchPrintExtended = {
@@ -50,20 +53,37 @@ export const BudgetSearchPrint = ({
     error: useBudget.error.states.error,
   },
   listProps,
+  logoPdf,
 }: BudgetSearchPrintProps): JSX.Element => {
   const ButtonUpdate: React.FC<{ id: number }> = ({ id }) => {
+    const budget = useBudget.data.actions.getById(id);
     return (
       <div className={css(optionButtonContainerStyle)}>
-        <Button
-          title="Imprimir"
-          buttonProps={{
-            onClick: () => console.log('print budget', id),
-          }}
-          styles={{
-            fontSize: '10px',
-          }}
-          {...updateButtonProps}
-        />
+        {budget && (
+          <PDFDownloadLink
+            document={
+              <BudgetPdf
+                budget={budget}
+                logo={logoPdf}
+                siteOptions={siteOptions}
+              />
+            }
+            fileName={`presupuesto${budget.postsId}.pdf`}
+          >
+            {({ blob, url, loading, error }) => {
+              return loading ? (
+                'Loading document...'
+              ) : (
+                <Button
+                  title="Imprimir"
+                  styles={{
+                    fontSize: '10px',
+                  }}
+                />
+              );
+            }}
+          </PDFDownloadLink>
+        )}
       </div>
     );
   };

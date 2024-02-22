@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 type Media = {
     padding: string | number | undefined;
 };
@@ -23,5 +23,5 @@ export type LoadingProps = {
     classDiv?: string;
     divStyle?: DivStyle;
 };
-export declare const Loading: ({ mainStyles, classMain, classDiv, divStyle, }: LoadingProps) => JSX.Element;
+export declare const Loading: ({ mainStyles, classMain, classDiv, divStyle, }: LoadingProps) => React.JSX.Element;
 export {};

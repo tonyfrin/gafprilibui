@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangeName = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangeName = function generalChangeName(_ref) {
+var generalChangeName = exports.generalChangeName = function generalChangeName(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -23,4 +23,3 @@ var generalChangeName = function generalChangeName(_ref) {
   });
   return name;
 };
-exports.generalChangeName = generalChangeName;

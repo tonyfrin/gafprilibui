@@ -16,7 +16,7 @@ var _Error = require("../Error");
 var _Header = require("../Header");
 var _templateObject;
 var defaultOptionsButtonMainContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
-var InitCurrencies = function InitCurrencies(_ref) {
+var InitCurrencies = exports.InitCurrencies = function InitCurrencies(_ref) {
   var _paginatedCurrencies$;
   var use = _ref.use,
     _ref$optionsButtonMai = _ref.optionsButtonMainContainerStyle,
@@ -125,4 +125,3 @@ var InitCurrencies = function InitCurrencies(_ref) {
     }
   }, listProps)));
 };
-exports.InitCurrencies = InitCurrencies;

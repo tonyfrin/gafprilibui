@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeAreaCode = void 0;
 var _helpers = require("../helpers");
-var generalChangeAreaCode = function generalChangeAreaCode(_ref) {
+var generalChangeAreaCode = exports.generalChangeAreaCode = function generalChangeAreaCode(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeAreaCode = function generalChangeAreaCode(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeAreaCode = generalChangeAreaCode;

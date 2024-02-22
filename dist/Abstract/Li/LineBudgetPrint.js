@@ -12,7 +12,7 @@ var _Span = require("../Span");
 var _LineCol = require("./LineCol4");
 var _LineCol2 = require("./LineCol2");
 var _LineTable = require("./LineTable");
-var LineBudgetPrint = function LineBudgetPrint(_ref) {
+var LineBudgetPrint = exports.LineBudgetPrint = function LineBudgetPrint(_ref) {
   var useBudget = _ref.useBudget,
     siteOptions = _ref.siteOptions;
   var items = useBudget.data.states.items.data.items && useBudget.data.states.items.data.items.map(function (item, index) {
@@ -46,4 +46,3 @@ var LineBudgetPrint = function LineBudgetPrint(_ref) {
   });
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, items);
 };
-exports.LineBudgetPrint = LineBudgetPrint;

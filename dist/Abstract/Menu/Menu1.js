@@ -16,7 +16,7 @@ var defaultItemContainerStyle = (0, _css.css)(_templateObject3 || (_templateObje
 var defaultTextStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  margin: 0px 0px 0px 5px;\n  transition: all 0.5s ease 0s;\n  flexgrow: 1;\n  flexshrink: 1;\n  order: 0;\n"])));
 var defaultHamburgerButtonStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  position: absolute;\n  top: 10px;\n  background: transparent;\n  border: none;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  font-size: 24px;\n  color: rgb(186, 209, 245);\n  padding: 5px 5px 0px 5px;\n  &:hover {\n    background-color: rgb(32, 51, 125);\n    color: #ffff;\n  }\n"])));
 var defaultIconStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  flexgrow: 0;\n  flexshrink: 0;\n  marginright: '8px';\n  order: 1;\n"])));
-var Menu1 = function Menu1(_ref) {
+var Menu1 = exports.Menu1 = function Menu1(_ref) {
   var items = _ref.items,
     isOpen = _ref.isOpen,
     setIsOpen = _ref.setIsOpen,
@@ -73,4 +73,3 @@ var Menu1 = function Menu1(_ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_gi.GiHamburgerMenu, null)));
 };
-exports.Menu1 = Menu1;

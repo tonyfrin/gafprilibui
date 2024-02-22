@@ -14,7 +14,7 @@ var _Span = require("../Span");
 var _LineCol2 = require("./LineCol4");
 var _LineCol3 = require("./LineCol2");
 var _LineTable = require("./LineTable");
-var LineProductBudgetCart = function LineProductBudgetCart(_ref) {
+var LineProductBudgetCart = exports.LineProductBudgetCart = function LineProductBudgetCart(_ref) {
   var useBudget = _ref.useBudget,
     siteOptions = _ref.siteOptions;
   var items = useBudget.useProductItems.states.shoppingCart.map(function (product, index) {
@@ -60,4 +60,3 @@ var LineProductBudgetCart = function LineProductBudgetCart(_ref) {
   });
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, items);
 };
-exports.LineProductBudgetCart = LineProductBudgetCart;

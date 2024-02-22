@@ -48,4 +48,4 @@ export type LineInfoThreeProps = {
     contentButtonProps?: React.HTMLAttributes<HTMLDivElement>;
     buttonProps: ButtonProps;
 };
-export declare const LineInfoThree: ({ containerStyles, containerProps, contentTitleStyles, contentTitleProps, spanTitleStyles, spanTitleProps, title, contentInfoStyles, contentInfoProps, spanInfoStyles, spanInfoProps, info, contentButtonStyles, contentButtonProps, buttonProps, }: LineInfoThreeProps) => JSX.Element;
+export declare const LineInfoThree: ({ containerStyles, containerProps, contentTitleStyles, contentTitleProps, spanTitleStyles, spanTitleProps, title, contentInfoStyles, contentInfoProps, spanInfoStyles, spanInfoProps, info, contentButtonStyles, contentButtonProps, buttonProps, }: LineInfoThreeProps) => React.JSX.Element;

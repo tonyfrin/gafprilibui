@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationButtonNext = void 0;
 var _helpers = require("../helpers");
 var _constants = require("../constants");
-var generalValidationButtonNext = function generalValidationButtonNext(_ref) {
+var generalValidationButtonNext = exports.generalValidationButtonNext = function generalValidationButtonNext(_ref) {
   var validations = _ref.validations,
     inputId = _ref.inputId;
   var isAllValid = validations.every(function (validation) {
@@ -18,4 +18,3 @@ var generalValidationButtonNext = function generalValidationButtonNext(_ref) {
     (0, _helpers.addClass)("".concat(_constants.BUTTON_NEXT_INPUT).concat(inputId), _constants.DISABLED);
   }
 };
-exports.generalValidationButtonNext = generalValidationButtonNext;

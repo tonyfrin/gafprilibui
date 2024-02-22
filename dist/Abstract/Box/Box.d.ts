@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 type Box1Media500Style = {
     padding: string | number | undefined;
     width: string | number;
@@ -28,5 +28,5 @@ export type Box1Props = {
     children: JSX.Element;
     Class?: string;
 };
-export declare const Box1: ({ styles, children, Class }: Box1Props) => JSX.Element;
+export declare const Box1: ({ styles, children, Class }: Box1Props) => React.JSX.Element;
 export {};

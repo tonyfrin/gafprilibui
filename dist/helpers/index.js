@@ -20,23 +20,21 @@ var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/de
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 var _constants = require("../constants");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; } /* eslint-disable object-shorthand */
-var addClass = function addClass(element, className) {
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; } /* eslint-disable object-shorthand */
+var addClass = exports.addClass = function addClass(element, className) {
   var input = document.getElementById(element);
   if (input && input.classList && !input.classList.contains(className)) {
     input.classList.add(className);
   }
 };
-exports.addClass = addClass;
-var removeClass = function removeClass(element, className) {
+var removeClass = exports.removeClass = function removeClass(element, className) {
   var input = document.getElementById(element);
   if (input && input.classList && input.classList.contains(className)) {
     input.classList.remove(className);
   }
 };
-exports.removeClass = removeClass;
-var validationSelect = function validationSelect(value, componentId) {
+var validationSelect = exports.validationSelect = function validationSelect(value, componentId) {
   if (value === '') {
     addClass(componentId, _constants.ALERT);
     return false;
@@ -44,11 +42,10 @@ var validationSelect = function validationSelect(value, componentId) {
   removeClass(componentId, _constants.ALERT);
   return true;
 };
-exports.validationSelect = validationSelect;
 function validationHidden(value, validate) {
   return validate.test(value);
 }
-var validationInput = function validationInput(value, match, componentId) {
+var validationInput = exports.validationInput = function validationInput(value, match, componentId) {
   var required = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   var valid = validationHidden(value, match);
   if (required && (!valid || !value)) {
@@ -66,8 +63,7 @@ var validationInput = function validationInput(value, match, componentId) {
   addClass(componentId, _constants.ALERT);
   return false;
 };
-exports.validationInput = validationInput;
-var changeInputText = function changeInputText(_ref) {
+var changeInputText = exports.changeInputText = function changeInputText(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -78,15 +74,13 @@ var changeInputText = function changeInputText(_ref) {
   }
   setValue(newValue);
 };
-exports.changeInputText = changeInputText;
-var changeInputNumers = function changeInputNumers(value, validation, setValue) {
+var changeInputNumers = exports.changeInputNumers = function changeInputNumers(value, validation, setValue) {
   var numericValue = typeof value === 'string' ? parseFloat(value) : value;
   var valid = validation(numericValue);
   if (valid) {
     setValue(value);
   }
 };
-exports.changeInputNumers = changeInputNumers;
 function toTitleCase(str) {
   var exceptions = ['de', 'del', 'la'];
   return str.replace(/(^|\s|\.|,|&)([a-z\u00E0-\u00FF]+)/g, function (match, separator, word) {
@@ -97,7 +91,7 @@ function toTitleCase(str) {
     return separator + lowerWord.charAt(0).toUpperCase() + lowerWord.slice(1);
   });
 }
-var changeSelect = function changeSelect(_ref2) {
+var changeSelect = exports.changeSelect = function changeSelect(_ref2) {
   var newValue = _ref2.newValue,
     validation = _ref2.validation,
     setDefault = _ref2.setDefault,
@@ -122,8 +116,7 @@ var changeSelect = function changeSelect(_ref2) {
     }
   }
 };
-exports.changeSelect = changeSelect;
-var changeMultipleArrayStringSelect = function changeMultipleArrayStringSelect(_ref3) {
+var changeMultipleArrayStringSelect = exports.changeMultipleArrayStringSelect = function changeMultipleArrayStringSelect(_ref3) {
   var newValue = _ref3.newValue,
     selectedOptions = _ref3.selectedOptions,
     validation = _ref3.validation,
@@ -141,8 +134,7 @@ var changeMultipleArrayStringSelect = function changeMultipleArrayStringSelect(_
     }
   }
 };
-exports.changeMultipleArrayStringSelect = changeMultipleArrayStringSelect;
-var changeMultipleArrayStringInput = function changeMultipleArrayStringInput(_ref4) {
+var changeMultipleArrayStringInput = exports.changeMultipleArrayStringInput = function changeMultipleArrayStringInput(_ref4) {
   var newValue = _ref4.newValue,
     selectedOptions = _ref4.selectedOptions,
     validation = _ref4.validation,
@@ -160,8 +152,7 @@ var changeMultipleArrayStringInput = function changeMultipleArrayStringInput(_re
     }
   }
 };
-exports.changeMultipleArrayStringInput = changeMultipleArrayStringInput;
-var validationInputName = function validationInputName(_ref5) {
+var validationInputName = exports.validationInputName = function validationInputName(_ref5) {
   var name = _ref5.name,
     inputId = _ref5.inputId,
     setValid = _ref5.setValid,
@@ -171,8 +162,7 @@ var validationInputName = function validationInputName(_ref5) {
   setValid(valid);
   return valid;
 };
-exports.validationInputName = validationInputName;
-var validationInputPostcode = function validationInputPostcode(_ref6) {
+var validationInputPostcode = exports.validationInputPostcode = function validationInputPostcode(_ref6) {
   var value = _ref6.value,
     inputId = _ref6.inputId,
     setValid = _ref6.setValid,
@@ -182,8 +172,7 @@ var validationInputPostcode = function validationInputPostcode(_ref6) {
   setValid(valid);
   return valid;
 };
-exports.validationInputPostcode = validationInputPostcode;
-var validationInputEmail = function validationInputEmail(_ref7) {
+var validationInputEmail = exports.validationInputEmail = function validationInputEmail(_ref7) {
   var value = _ref7.value,
     inputId = _ref7.inputId,
     setValid = _ref7.setValid,
@@ -193,8 +182,7 @@ var validationInputEmail = function validationInputEmail(_ref7) {
   setValid(valid);
   return valid;
 };
-exports.validationInputEmail = validationInputEmail;
-var validationInputPhone = function validationInputPhone(_ref8) {
+var validationInputPhone = exports.validationInputPhone = function validationInputPhone(_ref8) {
   var value = _ref8.value,
     inputId = _ref8.inputId,
     setValid = _ref8.setValid,
@@ -204,7 +192,6 @@ var validationInputPhone = function validationInputPhone(_ref8) {
   setValid(valid);
   return valid;
 };
-exports.validationInputPhone = validationInputPhone;
 function gafpriFetch(_ref9) {
   var initMethod = _ref9.initMethod,
     _ref9$initApi = _ref9.initApi,
@@ -248,22 +235,20 @@ function gafpriFetch(_ref9) {
     }
   });
 }
-var isSelectDefault = function isSelectDefault(obj) {
+var isSelectDefault = exports.isSelectDefault = function isSelectDefault(obj) {
   if ((0, _typeof2["default"])(obj) !== 'object' || obj === null) {
     return false;
   }
   var selectDefaultCandidate = obj;
   return typeof selectDefaultCandidate.value === 'string' && typeof selectDefaultCandidate.label === 'string';
 };
-exports.isSelectDefault = isSelectDefault;
-var isSelectDefaultArray = function isSelectDefaultArray(obj) {
+var isSelectDefaultArray = exports.isSelectDefaultArray = function isSelectDefaultArray(obj) {
   if (!Array.isArray(obj)) {
     return false;
   }
   return obj.every(isSelectDefault);
 };
-exports.isSelectDefaultArray = isSelectDefaultArray;
-var getLastEntryDateAndCount = /*#__PURE__*/function () {
+var getLastEntryDateAndCount = exports.getLastEntryDateAndCount = /*#__PURE__*/function () {
   var _ref10 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(service) {
     var response;
     return _regenerator["default"].wrap(function _callee$(_context) {
@@ -302,11 +287,9 @@ var getLastEntryDateAndCount = /*#__PURE__*/function () {
     return _ref10.apply(this, arguments);
   };
 }();
-exports.getLastEntryDateAndCount = getLastEntryDateAndCount;
-var isErrorResponse = function isErrorResponse(obj) {
+var isErrorResponse = exports.isErrorResponse = function isErrorResponse(obj) {
   return (0, _typeof2["default"])(obj) === 'object' && obj !== null && 'error' in obj && 'message' in obj && 'statusCode' in obj && 'success' in obj;
 };
-exports.isErrorResponse = isErrorResponse;
 function isCustomErrorResponse(obj) {
   var customErrorObj = obj;
   return typeof (customErrorObj === null || customErrorObj === void 0 ? void 0 : customErrorObj.statusCode) === 'number' && typeof (customErrorObj === null || customErrorObj === void 0 ? void 0 : customErrorObj.success) === 'boolean' && typeof (customErrorObj === null || customErrorObj === void 0 ? void 0 : customErrorObj.message) === 'string' && Array.isArray(customErrorObj === null || customErrorObj === void 0 ? void 0 : customErrorObj.errors) && customErrorObj.errors.every(function (error) {
@@ -333,15 +316,14 @@ function formatPhoneNumber(phoneNumber) {
   var secondPart = phoneNumber.slice(phoneNumber.length - 4);
   return "+".concat(countryCode, " (").concat(areaCode, ") ").concat(firstPart, "-").concat(secondPart);
 }
-var getBase64 = function getBase64(img, callback) {
+var getBase64 = exports.getBase64 = function getBase64(img, callback) {
   var reader = new FileReader();
   reader.addEventListener('load', function () {
     return callback(reader.result);
   });
   reader.readAsDataURL(img);
 };
-exports.getBase64 = getBase64;
-var changeMultipleObjectAttributesInput = function changeMultipleObjectAttributesInput(_ref11) {
+var changeMultipleObjectAttributesInput = exports.changeMultipleObjectAttributesInput = function changeMultipleObjectAttributesInput(_ref11) {
   var newValue = _ref11.newValue,
     selectedOptions = _ref11.selectedOptions,
     validation = _ref11.validation,
@@ -361,8 +343,7 @@ var changeMultipleObjectAttributesInput = function changeMultipleObjectAttribute
     }
   }
 };
-exports.changeMultipleObjectAttributesInput = changeMultipleObjectAttributesInput;
-var removeAccentsAndSpecialChars = function removeAccentsAndSpecialChars(str) {
+var removeAccentsAndSpecialChars = exports.removeAccentsAndSpecialChars = function removeAccentsAndSpecialChars(str) {
   var accentsMap = {
     á: 'a',
     é: 'e',
@@ -383,14 +364,12 @@ var removeAccentsAndSpecialChars = function removeAccentsAndSpecialChars(str) {
     Ç: 'C'
     // Puedes agregar más caracteres según tus necesidades
   };
-
   var normalizedString = str.replace(/[^\w\s]/gi, function (match) {
     return accentsMap[match] || match;
   });
   return normalizedString.toLowerCase();
 };
-exports.removeAccentsAndSpecialChars = removeAccentsAndSpecialChars;
-var generatePermanentLink = function generatePermanentLink(name) {
+var generatePermanentLink = exports.generatePermanentLink = function generatePermanentLink(name) {
   // Remueve acentos y caracteres especiales, y convierte a minúsculas
   var normalizedString = removeAccentsAndSpecialChars(name);
 
@@ -398,15 +377,13 @@ var generatePermanentLink = function generatePermanentLink(name) {
   var permanentLink = normalizedString.replace(/\s+/g, '-');
   return permanentLink;
 };
-exports.generatePermanentLink = generatePermanentLink;
-var scrollToTop = function scrollToTop() {
+var scrollToTop = exports.scrollToTop = function scrollToTop() {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
   });
 };
-exports.scrollToTop = scrollToTop;
-var decimalFormatPriceConverter = function decimalFormatPriceConverter(str, dig, currencySymbol, currencyLocation) {
+var decimalFormatPriceConverter = exports.decimalFormatPriceConverter = function decimalFormatPriceConverter(str, dig, currencySymbol, currencyLocation) {
   var formatOptions = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {
     miles: ',',
     decimal: '.'
@@ -434,8 +411,7 @@ var decimalFormatPriceConverter = function decimalFormatPriceConverter(str, dig,
   }
   return "".concat(formattedNumber, " ").concat(currencySymbol);
 };
-exports.decimalFormatPriceConverter = decimalFormatPriceConverter;
-var formatDate = function formatDate(date) {
+var formatDate = exports.formatDate = function formatDate(date) {
   var newDate = new Date(date);
   // Formatear la fecha
   var format = new Intl.DateTimeFormat('es-ES', {
@@ -445,4 +421,3 @@ var formatDate = function formatDate(date) {
   });
   return format.format(newDate);
 };
-exports.formatDate = formatDate;

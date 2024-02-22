@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeSalesPrice = void 0;
 var _helpers = require("../helpers");
-var generalChangeSalesPrice = function generalChangeSalesPrice(_ref) {
+var generalChangeSalesPrice = exports.generalChangeSalesPrice = function generalChangeSalesPrice(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -14,4 +14,3 @@ var generalChangeSalesPrice = function generalChangeSalesPrice(_ref) {
   };
   (0, _helpers.changeInputNumers)(value, validation || defaultValidation, setValue);
 };
-exports.generalChangeSalesPrice = generalChangeSalesPrice;

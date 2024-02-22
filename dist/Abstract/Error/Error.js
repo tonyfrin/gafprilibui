@@ -11,7 +11,7 @@ var _css = require("@emotion/css");
 var _templateObject, _templateObject2;
 var defaultMainContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: 70%;\n  margin: auto;\n"])));
 var defaultTextStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  background-color: #c12429;\n  border-radius: 20px;\n  text-align: center;\n  padding: 5px;\n  color: white;\n  font-weight: 400;\n  margin: 1px;\n"])));
-var Error = function Error(_ref) {
+var Error = exports.Error = function Error(_ref) {
   var error = _ref.error,
     _ref$mainContainerSty = _ref.mainContainerStyle,
     mainContainerStyle = _ref$mainContainerSty === void 0 ? defaultMainContainerStyle : _ref$mainContainerSty,
@@ -26,4 +26,3 @@ var Error = function Error(_ref) {
     }, item);
   })));
 };
-exports.Error = Error;

@@ -8,7 +8,7 @@ exports.SelectAddressType = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectAddressType = function SelectAddressType(_ref) {
+var SelectAddressType = exports.SelectAddressType = function SelectAddressType(_ref) {
   var changeAddressType = _ref.changeAddressType,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectAddressType = function SelectAddressType(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectAddressType = SelectAddressType;

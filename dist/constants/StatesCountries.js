@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.StatesCountries = void 0;
-var StatesCountries = [{
+var StatesCountries = exports.StatesCountries = [{
   AD: [],
   AF: [],
   AG: [],
@@ -2107,4 +2107,3 @@ var StatesCountries = [{
     'ZM-10': 'Muchinga'
   }]
 }];
-exports.StatesCountries = StatesCountries;

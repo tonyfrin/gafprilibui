@@ -8,7 +8,7 @@ exports.SelectStateCountry = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectStateCountry = function SelectStateCountry(_ref) {
+var SelectStateCountry = exports.SelectStateCountry = function SelectStateCountry(_ref) {
   var changeStateCountry = _ref.changeStateCountry,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectStateCountry = function SelectStateCountry(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectStateCountry = SelectStateCountry;

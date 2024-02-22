@@ -8,7 +8,7 @@ exports.PhotoCategory = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _PhotoForm = require("./PhotoForm");
 var _constants = require("../../constants");
-var PhotoCategory = function PhotoCategory(_ref) {
+var PhotoCategory = exports.PhotoCategory = function PhotoCategory(_ref) {
   var photo = _ref.photo,
     changePhoto = _ref.changePhoto,
     submitting = _ref.submitting,
@@ -31,4 +31,3 @@ var PhotoCategory = function PhotoCategory(_ref) {
     setSubmitting: setSubmitting
   }));
 };
-exports.PhotoCategory = PhotoCategory;

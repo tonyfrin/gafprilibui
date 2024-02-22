@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import { ActionMeta, SingleValue } from 'react-select';
 import type { ContainerStyles } from '../Containers';
 export type OnChange = (newValue: SingleValue<{
@@ -41,7 +41,7 @@ export type InputProps = {
     containerStyles?: ContainerStyles | undefined;
     containerClass?: string | undefined;
 };
-export declare const Input: ({ styles, stylesSpan, inputClass, inputProps, containerStyles, containerClass, }: InputProps) => JSX.Element;
+export declare const Input: ({ styles, stylesSpan, inputClass, inputProps, containerStyles, containerClass, }: InputProps) => React.JSX.Element;
 type media = {
     width?: string;
     fontSize?: string;
@@ -93,5 +93,5 @@ export type GsSelectPropsExtended = {
     title?: string;
     stylesSpan?: SpanStyle | undefined;
 };
-export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerClass, defaultValue, title, stylesSpan, }: GsSelectProps) => JSX.Element;
+export declare const GsSelect: ({ styles, Class, options, id, onChange, placeholder, containerStyles, containerClass, defaultValue, title, stylesSpan, }: GsSelectProps) => React.JSX.Element;
 export {};

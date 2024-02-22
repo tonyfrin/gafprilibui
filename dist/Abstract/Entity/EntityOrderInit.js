@@ -17,7 +17,7 @@ var _templateObject;
 var entityOrderInitStylesContainer = function entityOrderInitStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: ", ";\n  margin: ", ";\n  ", "\n"])), stayles.maxWidht || '900px', stayles.margin || 'auto', stayles.custom || '');
 };
-var EntityOrderInit = function EntityOrderInit(_ref) {
+var EntityOrderInit = exports.EntityOrderInit = function EntityOrderInit(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -61,4 +61,3 @@ var EntityOrderInit = function EntityOrderInit(_ref) {
     items: menu
   }))));
 };
-exports.EntityOrderInit = EntityOrderInit;

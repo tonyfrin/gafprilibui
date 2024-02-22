@@ -36,7 +36,7 @@ var lineInfoThreeStylesSpanInfo = function lineInfoThreeStylesSpanInfo(styles) {
 var lineInfoThreeStylesContentButton = function lineInfoThreeStylesContentButton(styles) {
   return (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  margin: ", ";\n  ", "\n"])), styles.width || '16.6666667%', styles.margin || 'auto', styles.custom || '');
 };
-var LineInfoThree = function LineInfoThree(_ref) {
+var LineInfoThree = exports.LineInfoThree = function LineInfoThree(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -90,4 +90,3 @@ var LineInfoThree = function LineInfoThree(_ref) {
     className: (0, _css.cx)(lineInfoThreeStylesContentButton(contentButtonStyles), contentButtonClassName)
   }, restContentButtonProps), /*#__PURE__*/_react["default"].createElement(_Button.Button, buttonProps)));
 };
-exports.LineInfoThree = LineInfoThree;

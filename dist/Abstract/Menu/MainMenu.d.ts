@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 export type MainMenuItem = {
     key: string;
     image: string;
@@ -30,4 +30,4 @@ export type MainMenuPropsExtended = {
     stylesContent?: MainMenuStylesContentProps;
     contentProps?: HTMLAttributes<HTMLLIElement>;
 };
-export declare const MainMenu: ({ items, stylesContainer, containerProps, stylesContent, contentProps, }: MainMenuProps) => JSX.Element;
+export declare const MainMenu: ({ items, stylesContainer, containerProps, stylesContent, contentProps, }: MainMenuProps) => React.JSX.Element;

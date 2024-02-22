@@ -13,6 +13,7 @@ export type BudgetProps = {
     useEntity: UseGafpriEntityReturn;
     usePagesMain: UseGafpriPagesSalesModuleReturn;
     sitesOptions: SiteOptions;
+    logoPdf: string;
     menu: MainMenuItems[];
     containerStyles?: BudgetStylesContainerProps;
     containerProps?: React.HTMLAttributes<HTMLDivElement>;
@@ -20,4 +21,4 @@ export type BudgetProps = {
     useProducts: UseGafpriProductsReturn;
     menuEntity: MainMenuItems[];
 };
-export declare const Budget: ({ use, useEntity, containerStyles, containerProps, itemsMenu, usePagesMain, sitesOptions, menu, useProducts, menuEntity, }: BudgetProps) => JSX.Element;
+export declare const Budget: ({ use, useEntity, containerStyles, containerProps, itemsMenu, logoPdf, usePagesMain, sitesOptions, menu, useProducts, menuEntity, }: BudgetProps) => JSX.Element;

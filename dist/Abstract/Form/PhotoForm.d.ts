@@ -21,4 +21,4 @@ export type PhotoFormPropsExtended = {
     loadingProps?: LoadingProps;
     imageStyle?: string;
 };
-export declare const PhotoForm: ({ formId, photo, imageFormConatinerStyle, changePhoto, changePhotoButtonProps, submitting, loadingContainerStyle, loadingProps, imageStyle, changeError, setSubmitting, }: PhotoFormProps) => JSX.Element;
+export declare const PhotoForm: ({ formId, photo, imageFormConatinerStyle, changePhoto, changePhotoButtonProps, submitting, loadingContainerStyle, loadingProps, imageStyle, changeError, setSubmitting, }: PhotoFormProps) => React.JSX.Element;

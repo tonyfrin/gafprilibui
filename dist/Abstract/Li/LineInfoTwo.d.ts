@@ -39,4 +39,4 @@ export type LineInfoTwoProps = {
     spanInfoProps?: React.HTMLAttributes<HTMLSpanElement>;
     info: string;
 };
-export declare const LineInfoTwo: ({ containerStyles, containerProps, contentTitleStyles, contentTitleProps, spanTitleStyles, spanTitleProps, title, contentInfoStyles, contentInfoProps, spanInfoStyles, spanInfoProps, info, }: LineInfoTwoProps) => JSX.Element;
+export declare const LineInfoTwo: ({ containerStyles, containerProps, contentTitleStyles, contentTitleProps, spanTitleStyles, spanTitleProps, title, contentInfoStyles, contentInfoProps, spanInfoStyles, spanInfoProps, info, }: LineInfoTwoProps) => React.JSX.Element;

@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 import type { MainMenuProps } from '../../Abstract';
 export type InitMainMenuStylesContainerProps = {
     padding?: string;
@@ -13,4 +13,4 @@ export type InitMainMenuProps = {
     containerProps?: HTMLAttributes<HTMLDivElement>;
     contentProps: MainMenuProps;
 };
-export declare const InitMainMenu: ({ stylesContainer, containerProps, contentProps, }: InitMainMenuProps) => JSX.Element;
+export declare const InitMainMenu: ({ stylesContainer, containerProps, contentProps, }: InitMainMenuProps) => React.JSX.Element;

@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import type { SingleValue } from 'react-select';
 import { GsSelectProps } from './Input';
 export type SelectCountryProps = {
@@ -9,4 +9,4 @@ export type SelectCountryProps = {
     props: GsSelectProps;
     inputId?: string;
 };
-export declare const SelectCountry: ({ changeCountry, props, inputId, }: SelectCountryProps) => JSX.Element;
+export declare const SelectCountry: ({ changeCountry, props, inputId, }: SelectCountryProps) => React.JSX.Element;

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationSelectTaxes = void 0;
 var _helpers = require("../helpers");
 var _constants = require("../constants");
-var generalValidationSelectTaxes = function generalValidationSelectTaxes(_ref) {
+var generalValidationSelectTaxes = exports.generalValidationSelectTaxes = function generalValidationSelectTaxes(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -18,4 +18,3 @@ var generalValidationSelectTaxes = function generalValidationSelectTaxes(_ref) {
   }
   return validation;
 };
-exports.generalValidationSelectTaxes = generalValidationSelectTaxes;

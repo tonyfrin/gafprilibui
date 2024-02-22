@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationType = void 0;
 var _helpers = require("../helpers");
 var _constants = require("../constants");
-var generalValidationType = function generalValidationType(_ref) {
+var generalValidationType = exports.generalValidationType = function generalValidationType(_ref) {
   var newValue = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -18,4 +18,3 @@ var generalValidationType = function generalValidationType(_ref) {
   }
   return valid;
 };
-exports.generalValidationType = generalValidationType;

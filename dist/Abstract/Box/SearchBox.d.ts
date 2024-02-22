@@ -20,4 +20,4 @@ export type SearchBoxProps = {
     title2Props: Title2Props;
     children: React.ReactNode;
 };
-export declare const SearchBox: ({ containerStyles, containerProps, contentStyles, contentProps, title1Props, title2Props, children, }: SearchBoxProps) => JSX.Element;
+export declare const SearchBox: ({ containerStyles, containerProps, contentStyles, contentProps, title1Props, title2Props, children, }: SearchBoxProps) => React.JSX.Element;

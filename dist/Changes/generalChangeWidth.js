@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeWidth = void 0;
 var _helpers = require("../helpers");
-var generalChangeWidth = function generalChangeWidth(_ref) {
+var generalChangeWidth = exports.generalChangeWidth = function generalChangeWidth(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -14,4 +14,3 @@ var generalChangeWidth = function generalChangeWidth(_ref) {
   };
   (0, _helpers.changeInputNumers)(value, validation || defaultValidation, setValue);
 };
-exports.generalChangeWidth = generalChangeWidth;

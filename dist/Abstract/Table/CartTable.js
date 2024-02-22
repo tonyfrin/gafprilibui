@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Li = require("../Li");
 var _Span = require("../Span");
 var _SimpleTable = require("./SimpleTable");
-var CartTable = function CartTable(_ref) {
+var CartTable = exports.CartTable = function CartTable(_ref) {
   var siteOptions = _ref.siteOptions,
     useOrder = _ref.useOrder;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_SimpleTable.SimpleTable, {
@@ -34,4 +34,3 @@ var CartTable = function CartTable(_ref) {
     }))
   }));
 };
-exports.CartTable = CartTable;

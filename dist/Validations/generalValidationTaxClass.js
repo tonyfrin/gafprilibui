@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationTaxClass = void 0;
 var _constants = require("../constants");
 var _helpers = require("../helpers");
-var generalValidationTaxClass = function generalValidationTaxClass(_ref) {
+var generalValidationTaxClass = exports.generalValidationTaxClass = function generalValidationTaxClass(_ref) {
   var newValue = _ref.newValue,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -18,4 +18,3 @@ var generalValidationTaxClass = function generalValidationTaxClass(_ref) {
   }
   return valid;
 };
-exports.generalValidationTaxClass = generalValidationTaxClass;

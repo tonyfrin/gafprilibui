@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeType = void 0;
 var _helpers = require("../helpers");
-var generalChangeType = function generalChangeType(_ref) {
+var generalChangeType = exports.generalChangeType = function generalChangeType(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeType = function generalChangeType(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeType = generalChangeType;

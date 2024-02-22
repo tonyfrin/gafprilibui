@@ -16,7 +16,7 @@ var _templateObject;
 var budgetInitStylesContainer = function budgetInitStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: ", ";\n  margin: ", ";\n  ", "\n"])), stayles.maxWidht || '900px', stayles.margin || 'auto', stayles.custom || '');
 };
-var BudgetInit = function BudgetInit(_ref) {
+var BudgetInit = exports.BudgetInit = function BudgetInit(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -34,4 +34,3 @@ var BudgetInit = function BudgetInit(_ref) {
     usePagesSalesModule: usePagesMain
   })));
 };
-exports.BudgetInit = BudgetInit;

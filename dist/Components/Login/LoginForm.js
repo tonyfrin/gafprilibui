@@ -13,7 +13,7 @@ var _templateObject, _templateObject2, _templateObject3;
 var defaultTitleContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  margin-top: 22px;\n  margin-bottom: 30px;\n"])));
 var defaultNameContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 95%;\n  margin: 0 auto;\n"])));
 var defaultActionButtonContainerStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  flex-direction: row;\n  width: 95%;\n  margin-bottom: 0px;\n  justify-content: flex-end;\n  margin-top: 22px;\n  width: 85%;\n"])));
-var LoginForm = function LoginForm(_ref) {
+var LoginForm = exports.LoginForm = function LoginForm(_ref) {
   var use = _ref.use,
     _ref$titleContainerSt = _ref.titleContainerStyle,
     titleContainerStyle = _ref$titleContainerSt === void 0 ? defaultTitleContainerStyle : _ref$titleContainerSt,
@@ -74,4 +74,3 @@ var LoginForm = function LoginForm(_ref) {
     title: "Ingresar"
   }))))));
 };
-exports.LoginForm = LoginForm;

@@ -28,7 +28,7 @@ var headerMenuStylesContentUl = function headerMenuStylesContentUl(styles) {
 var headerMenuStylesContentLi = function headerMenuStylesContentLi(styles) {
   return (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  list-style: ", ";\n  ", "\n"])), styles.listStyle || 'none', styles.custom ? styles.custom : '');
 };
-var HeaderMenu = function HeaderMenu(_ref) {
+var HeaderMenu = exports.HeaderMenu = function HeaderMenu(_ref) {
   var items = _ref.items,
     _ref$stylesContainer = _ref.stylesContainer,
     stylesContainer = _ref$stylesContainer === void 0 ? {} : _ref$stylesContainer,
@@ -82,4 +82,3 @@ var HeaderMenu = function HeaderMenu(_ref) {
     }, contentButtonProps)));
   })))));
 };
-exports.HeaderMenu = HeaderMenu;

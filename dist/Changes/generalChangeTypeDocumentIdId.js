@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeTypeDocumentIdId = void 0;
 var _helpers = require("../helpers");
-var generalChangeTypeDocumentIdId = function generalChangeTypeDocumentIdId(_ref) {
+var generalChangeTypeDocumentIdId = exports.generalChangeTypeDocumentIdId = function generalChangeTypeDocumentIdId(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeTypeDocumentIdId = function generalChangeTypeDocumentIdId(_ref)
     setValue: setValue
   });
 };
-exports.generalChangeTypeDocumentIdId = generalChangeTypeDocumentIdId;

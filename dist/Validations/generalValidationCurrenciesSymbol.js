@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationCurrenciesSymbol = void 0;
 var _helpers = require("../helpers");
 var _constants = require("../constants");
-var generalValidationCurrenciesSymbol = function generalValidationCurrenciesSymbol(_ref) {
+var generalValidationCurrenciesSymbol = exports.generalValidationCurrenciesSymbol = function generalValidationCurrenciesSymbol(_ref) {
   var newValue = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -20,4 +20,3 @@ var generalValidationCurrenciesSymbol = function generalValidationCurrenciesSymb
   }
   return valid;
 };
-exports.generalValidationCurrenciesSymbol = generalValidationCurrenciesSymbol;

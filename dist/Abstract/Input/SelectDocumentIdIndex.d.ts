@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import type { SingleValue } from 'react-select';
 import { GsSelectProps } from './Input';
 export type SelectDocumentIdIndexProps = {
@@ -9,4 +9,4 @@ export type SelectDocumentIdIndexProps = {
     props: GsSelectProps;
     inputId?: string;
 };
-export declare const SelectDocumentIdIndex: ({ changeIndex, props, inputId, }: SelectDocumentIdIndexProps) => JSX.Element;
+export declare const SelectDocumentIdIndex: ({ changeIndex, props, inputId, }: SelectDocumentIdIndexProps) => React.JSX.Element;

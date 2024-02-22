@@ -15,7 +15,7 @@ var _templateObject;
 var lineTableStylesContainer = function lineTableStylesContainer(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), styles.custom || '');
 };
-var LineTable = function LineTable(_ref) {
+var LineTable = exports.LineTable = function LineTable(_ref) {
   var _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     _ref$containerStyles = _ref.containerStyles,
@@ -27,4 +27,3 @@ var LineTable = function LineTable(_ref) {
     className: (0, _css.cx)(lineTableStylesContainer(containerStyles))
   }, restContainerProps), children);
 };
-exports.LineTable = LineTable;

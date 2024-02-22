@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationDescription = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationDescription = function generalValidationDescription(_ref) {
+var generalValidationDescription = exports.generalValidationDescription = function generalValidationDescription(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationDescription = function generalValidationDescription(_ref) {
     required: required
   });
 };
-exports.generalValidationDescription = generalValidationDescription;

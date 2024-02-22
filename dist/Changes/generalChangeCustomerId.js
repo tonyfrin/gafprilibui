@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.generalChangeCustomerId = void 0;
-var generalChangeCustomerId = function generalChangeCustomerId(_ref) {
+var generalChangeCustomerId = exports.generalChangeCustomerId = function generalChangeCustomerId(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -17,4 +17,3 @@ var generalChangeCustomerId = function generalChangeCustomerId(_ref) {
     setValue(value);
   }
 };
-exports.generalChangeCustomerId = generalChangeCustomerId;

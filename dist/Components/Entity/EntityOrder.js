@@ -17,7 +17,7 @@ var _templateObject;
 var entityOrderStylesContainer = function entityOrderStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), stayles.custom || '');
 };
-var EntityOrder = function EntityOrder(_ref) {
+var EntityOrder = exports.EntityOrder = function EntityOrder(_ref) {
   var use = _ref.use,
     useOrder = _ref.useOrder,
     _ref$containerStyles = _ref.containerStyles,
@@ -53,4 +53,3 @@ var EntityOrder = function EntityOrder(_ref) {
     }
   }))));
 };
-exports.EntityOrder = EntityOrder;

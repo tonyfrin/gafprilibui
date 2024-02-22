@@ -8,7 +8,7 @@ exports.PhotoEntity = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _PhotoForm = require("./PhotoForm");
 var _constants = require("../../constants");
-var PhotoEntity = function PhotoEntity(_ref) {
+var PhotoEntity = exports.PhotoEntity = function PhotoEntity(_ref) {
   var photo = _ref.photo,
     changePhoto = _ref.changePhoto,
     submitting = _ref.submitting,
@@ -31,4 +31,3 @@ var PhotoEntity = function PhotoEntity(_ref) {
     setSubmitting: setSubmitting
   }));
 };
-exports.PhotoEntity = PhotoEntity;

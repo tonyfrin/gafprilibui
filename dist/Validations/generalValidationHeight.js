@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationHeight = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationHeight = function generalValidationHeight(_ref) {
+var generalValidationHeight = exports.generalValidationHeight = function generalValidationHeight(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationHeight = function generalValidationHeight(_ref) {
     required: required
   });
 };
-exports.generalValidationHeight = generalValidationHeight;

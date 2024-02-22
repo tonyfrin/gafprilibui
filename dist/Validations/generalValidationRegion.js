@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationRegion = void 0;
 var _index = require("./index");
 var _constants = require("../constants");
-var generalValidationRegion = function generalValidationRegion(_ref) {
+var generalValidationRegion = exports.generalValidationRegion = function generalValidationRegion(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationRegion = function generalValidationRegion(_ref) {
     required: required
   });
 };
-exports.generalValidationRegion = generalValidationRegion;

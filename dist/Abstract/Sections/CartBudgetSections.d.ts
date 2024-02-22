@@ -30,4 +30,4 @@ export type CartBudgetSectionsProps = {
     contentOptionsStyles?: CartBudgetSectionsStylesContentOptionsProps;
     contentOptionsProps?: React.HTMLAttributes<HTMLDivElement>;
 };
-export declare const CartBudgetSections: ({ containerStyles, containerProps, contentItemsStyles, contentItemsProps, contentOptionsStyles, contentOptionsProps, sitesOptions, useBudget, useProducts, }: CartBudgetSectionsProps) => JSX.Element;
+export declare const CartBudgetSections: ({ containerStyles, containerProps, contentItemsStyles, contentItemsProps, contentOptionsStyles, contentOptionsProps, sitesOptions, useBudget, useProducts, }: CartBudgetSectionsProps) => React.JSX.Element;

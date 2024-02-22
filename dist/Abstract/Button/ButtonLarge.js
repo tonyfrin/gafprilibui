@@ -20,7 +20,7 @@ var defaultDescriptionStyle = (0, _css.css)(_templateObject8 || (_templateObject
 var defaultButtonContainerStyle = (0, _css.css)(_templateObject9 || (_templateObject9 = (0, _taggedTemplateLiteral2["default"])(["\n  align-self: center;\n  background: transparent;\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n"])));
 var defaultButtonStyle = (0, _css.css)(_templateObject10 || (_templateObject10 = (0, _taggedTemplateLiteral2["default"])(["\n  font-family: Circular, ProximaNova, -apple-system, BlinkMacSystemFont,\n    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  font-style: normal;\n  text-align: center;\n  box-sizing: border-box;\n  min-width: 130px;\n  max-width: 396px;\n  min-height: 3rem;\n  line-height: 20px;\n  height: auto;\n  width: auto;\n  position: relative;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  border-radius: 0.5rem;\n  border-width: 2px;\n  border-color: rgb(124, 161, 230);\n  border-style: solid;\n  background-color: rgb(255, 255, 255);\n  background-image: none;\n  color: rgb(50, 79, 165);\n  transition: all 0.2s ease 0s;\n  display: inline-block;\n  margin: 0.25rem;\n  text-transform: none;\n  padding: 0px 1rem;\n  cursor: pointer;\n  &:hover {\n    background-color: #06b0e433;\n  }\n"])));
 var defaultButtonTitleStyle = (0, _css.css)(_templateObject11 || (_templateObject11 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  align-items: baseline;\n  justify-content: center;\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n  background: transparent;\n"])));
-var ButtonLarge = function ButtonLarge(_ref) {
+var ButtonLarge = exports.ButtonLarge = function ButtonLarge(_ref) {
   var label = _ref.label,
     onClick = _ref.onClick,
     Icon = _ref.Icon,
@@ -73,4 +73,3 @@ var ButtonLarge = function ButtonLarge(_ref) {
     className: (0, _css.css)(buttonTitleStyle)
   }, titleButton)))))));
 };
-exports.ButtonLarge = ButtonLarge;

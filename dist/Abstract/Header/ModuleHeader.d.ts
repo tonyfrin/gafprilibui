@@ -10,4 +10,4 @@ export type ModuleHeaderProps = {
     containerProps?: React.HTMLAttributes<HTMLDivElement>;
     children: React.ReactNode;
 };
-export declare const ModuleHeader: ({ containerStyles, containerProps, children, }: ModuleHeaderProps) => JSX.Element;
+export declare const ModuleHeader: ({ containerStyles, containerProps, children, }: ModuleHeaderProps) => React.JSX.Element;

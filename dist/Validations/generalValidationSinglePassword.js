@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationSinglePassword = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationSinglePassword = function generalValidationSinglePassword(_ref) {
+var generalValidationSinglePassword = exports.generalValidationSinglePassword = function generalValidationSinglePassword(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationSinglePassword = function generalValidationSinglePassword(_
     required: required
   });
 };
-exports.generalValidationSinglePassword = generalValidationSinglePassword;

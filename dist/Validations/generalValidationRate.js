@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationRate = void 0;
 var _index = require("./index");
 var _constants = require("../constants");
-var generalValidationRate = function generalValidationRate(_ref) {
+var generalValidationRate = exports.generalValidationRate = function generalValidationRate(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationRate = function generalValidationRate(_ref) {
     required: required
   });
 };
-exports.generalValidationRate = generalValidationRate;

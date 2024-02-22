@@ -10,7 +10,7 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 var _axios = _interopRequireDefault(require("axios"));
 var _helpers = require("../helpers");
 var _constants = require("../constants");
-var generalChangePhoto = /*#__PURE__*/function () {
+var generalChangePhoto = exports.generalChangePhoto = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(_ref) {
     var e, changeError, setSubmitting, setPhoto, validation, newFile, mimeType, formData, config, response, valid;
     return _regenerator["default"].wrap(function _callee$(_context) {
@@ -72,4 +72,3 @@ var generalChangePhoto = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
-exports.generalChangePhoto = generalChangePhoto;

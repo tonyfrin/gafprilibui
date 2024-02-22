@@ -16,7 +16,7 @@ var _templateObject;
 var orderInitStylesContainer = function orderInitStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: ", ";\n  margin: ", ";\n  ", "\n"])), stayles.maxWidht || '900px', stayles.margin || 'auto', stayles.custom || '');
 };
-var OrderInit = function OrderInit(_ref) {
+var OrderInit = exports.OrderInit = function OrderInit(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -34,4 +34,3 @@ var OrderInit = function OrderInit(_ref) {
     usePagesSalesModule: usePagesMain
   })));
 };
-exports.OrderInit = OrderInit;

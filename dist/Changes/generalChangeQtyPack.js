@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeQtyPack = void 0;
 var _helpers = require("../helpers");
-var generalChangeQtyPack = function generalChangeQtyPack(_ref) {
+var generalChangeQtyPack = exports.generalChangeQtyPack = function generalChangeQtyPack(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -14,4 +14,3 @@ var generalChangeQtyPack = function generalChangeQtyPack(_ref) {
   };
   (0, _helpers.changeInputNumers)(value, validation || defaultValidation, setValue);
 };
-exports.generalChangeQtyPack = generalChangeQtyPack;

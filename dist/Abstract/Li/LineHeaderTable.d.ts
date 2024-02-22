@@ -16,4 +16,4 @@ export type LineHeaderTableProps = {
     contentProps?: React.HTMLAttributes<HTMLTableRowElement>;
     children: React.ReactNode;
 };
-export declare const LineHeaderTable: ({ containerProps, containerStyles, children, contentProps, contentStyles, }: LineHeaderTableProps) => JSX.Element;
+export declare const LineHeaderTable: ({ containerProps, containerStyles, children, contentProps, contentStyles, }: LineHeaderTableProps) => React.JSX.Element;

@@ -28,7 +28,7 @@ var cartBudgetSectionsStylesContentItems = function cartBudgetSectionsStylesCont
 var cartBudgetSectionsStylesContentOptions = function cartBudgetSectionsStylesContentOptions(styles) {
   return (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  display: ", ";\n  flex-direction: ", ";\n  ", "\n"])), styles.display || 'flex', styles.flexDirection || 'space-around', styles.custom || '');
 };
-var CartBudgetSections = function CartBudgetSections(_ref) {
+var CartBudgetSections = exports.CartBudgetSections = function CartBudgetSections(_ref) {
   var _ref$containerStyles = _ref.containerStyles,
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
@@ -132,4 +132,3 @@ var CartBudgetSections = function CartBudgetSections(_ref) {
     }
   }))));
 };
-exports.CartBudgetSections = CartBudgetSections;

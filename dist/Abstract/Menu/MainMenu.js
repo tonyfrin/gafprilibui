@@ -20,7 +20,7 @@ var mainMenuStylesContainer = function mainMenuStylesContainer(styles) {
 var mainMenuStylesContent = function mainMenuStylesContent(styles) {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  text-align: ", ";\n  list-style: ", ";\n  ", "\n"])), styles.textAling || 'center', styles.listStyle || 'none', styles.custom ? styles.custom : '');
 };
-var MainMenu = function MainMenu(_ref) {
+var MainMenu = exports.MainMenu = function MainMenu(_ref) {
   var items = _ref.items,
     _ref$stylesContainer = _ref.stylesContainer,
     stylesContainer = _ref$stylesContainer === void 0 ? {} : _ref$stylesContainer,
@@ -53,4 +53,3 @@ var MainMenu = function MainMenu(_ref) {
   });
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, itemsMenu);
 };
-exports.MainMenu = MainMenu;

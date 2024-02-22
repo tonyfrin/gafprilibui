@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeRate = void 0;
 var _helpers = require("../helpers");
-var generalChangeRate = function generalChangeRate(_ref) {
+var generalChangeRate = exports.generalChangeRate = function generalChangeRate(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -13,4 +13,3 @@ var generalChangeRate = function generalChangeRate(_ref) {
     return true;
   }, setValue);
 };
-exports.generalChangeRate = generalChangeRate;

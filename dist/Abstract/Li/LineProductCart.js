@@ -14,7 +14,7 @@ var _Span = require("../Span");
 var _LineCol2 = require("./LineCol4");
 var _LineCol3 = require("./LineCol2");
 var _LineTable = require("./LineTable");
-var LineProductCart = function LineProductCart(_ref) {
+var LineProductCart = exports.LineProductCart = function LineProductCart(_ref) {
   var useOrder = _ref.useOrder,
     siteOptions = _ref.siteOptions;
   var items = useOrder.useProductItems.states.shoppingCart.map(function (product, index) {
@@ -60,4 +60,3 @@ var LineProductCart = function LineProductCart(_ref) {
   });
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, items);
 };
-exports.LineProductCart = LineProductCart;

@@ -8,7 +8,7 @@ exports.SelectCurrenciesLocations = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectCurrenciesLocations = function SelectCurrenciesLocations(_ref) {
+var SelectCurrenciesLocations = exports.SelectCurrenciesLocations = function SelectCurrenciesLocations(_ref) {
   var changeCurrenciesLocations = _ref.changeCurrenciesLocations,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectCurrenciesLocations = function SelectCurrenciesLocations(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectCurrenciesLocations = SelectCurrenciesLocations;

@@ -8,7 +8,7 @@ exports.SelectRoles = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _constants = require("../../constants");
 var _Input = require("./Input");
-var SelectRoles = function SelectRoles(_ref) {
+var SelectRoles = exports.SelectRoles = function SelectRoles(_ref) {
   var changeRoles = _ref.changeRoles,
     props = _ref.props,
     _ref$inputId = _ref.inputId,
@@ -26,4 +26,3 @@ var SelectRoles = function SelectRoles(_ref) {
     title: props === null || props === void 0 ? void 0 : props.title
   }));
 };
-exports.SelectRoles = SelectRoles;

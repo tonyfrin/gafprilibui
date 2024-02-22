@@ -17,7 +17,7 @@ var _Error = require("../Error");
 var _Header = require("../Header");
 var _templateObject;
 var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
-var InitSites = function InitSites(_ref) {
+var InitSites = exports.InitSites = function InitSites(_ref) {
   var _paginatedSites$map;
   var use = _ref.use,
     _ref$optionButtonCont = _ref.optionButtonContainerStyle,
@@ -128,4 +128,3 @@ var InitSites = function InitSites(_ref) {
     }
   }, listProps)));
 };
-exports.InitSites = InitSites;

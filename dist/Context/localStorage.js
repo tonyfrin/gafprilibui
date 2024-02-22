@@ -22,10 +22,9 @@ function getItem(itemName, initialValue) {
   }
   return parsedItem;
 }
-var saveItem = function saveItem(itemName, newItem) {
+var saveItem = exports.saveItem = function saveItem(itemName, newItem) {
   if (hasWindow()) {
     var stringifiedItem = JSON.stringify(newItem);
     window.localStorage.setItem(itemName, stringifiedItem);
   }
 };
-exports.saveItem = saveItem;

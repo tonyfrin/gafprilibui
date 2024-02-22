@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeCost = void 0;
 var _helpers = require("../helpers");
-var generalChangeCost = function generalChangeCost(_ref) {
+var generalChangeCost = exports.generalChangeCost = function generalChangeCost(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -14,4 +14,3 @@ var generalChangeCost = function generalChangeCost(_ref) {
   };
   (0, _helpers.changeInputNumers)(value, validation || defaultValidation, setValue);
 };
-exports.generalChangeCost = generalChangeCost;

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationOfferPrice = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationOfferPrice = function generalValidationOfferPrice(_ref) {
+var generalValidationOfferPrice = exports.generalValidationOfferPrice = function generalValidationOfferPrice(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationOfferPrice = function generalValidationOfferPrice(_ref) {
     required: required
   });
 };
-exports.generalValidationOfferPrice = generalValidationOfferPrice;

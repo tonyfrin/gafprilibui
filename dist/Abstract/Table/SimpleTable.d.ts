@@ -23,4 +23,4 @@ export interface SimpleTableProps {
     contentStyles?: SimpleTableStylesContentProps;
     contentProps?: React.HTMLAttributes<HTMLTableElement>;
 }
-export declare const SimpleTable: ({ header, body, containerProps, containerStyles, contentStyles, contentProps, }: SimpleTableProps) => JSX.Element;
+export declare const SimpleTable: ({ header, body, containerProps, containerStyles, contentStyles, contentProps, }: SimpleTableProps) => React.JSX.Element;

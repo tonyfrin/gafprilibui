@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, HTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, HTMLAttributes } from 'react';
 export type CircleButtonStylesContainerProps = {
     custom?: string;
 };
@@ -48,4 +48,4 @@ export type CircleButtonPropsExtended = {
     titleStyles?: CircleButtonStylesTitleProps;
     titleProps?: HTMLAttributes<HTMLSpanElement>;
 };
-export declare const CircleButton: ({ containerStyles, containerProps, contentStyles, contentProps, imageProps, imageStyles, image, title, titleStyles, titleProps, }: CircleButtonProps) => JSX.Element;
+export declare const CircleButton: ({ containerStyles, containerProps, contentStyles, contentProps, imageProps, imageStyles, image, title, titleStyles, titleProps, }: CircleButtonProps) => React.JSX.Element;

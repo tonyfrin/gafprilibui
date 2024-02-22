@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeStatus = void 0;
 var _helpers = require("../helpers");
-var generalChangeStatus = function generalChangeStatus(_ref) {
+var generalChangeStatus = exports.generalChangeStatus = function generalChangeStatus(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeStatus = function generalChangeStatus(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeStatus = generalChangeStatus;

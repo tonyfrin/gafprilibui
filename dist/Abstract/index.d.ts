@@ -61,3 +61,5 @@ export { OrderInit, Sales } from './Order';
 export type { OrderInitStylesContainerProps, OrderInitProps, SalesProps, } from './Order';
 export { BudgetInit, BudgetModule, BudgetPrint, BudgetSearchPrint, } from './Budget';
 export type { BudgetInitStylesContainerProps, BudgetInitProps, BudgetModuleProps, BudgetPrintProps, BudgetSearchPrintProps, BudgetSearchPrintExtended, } from './Budget';
+export { BudgetPdf } from './Pdf';
+export type { BudgetPdfProps } from './Pdf';

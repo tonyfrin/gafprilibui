@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationWidth = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationWidth = function generalValidationWidth(_ref) {
+var generalValidationWidth = exports.generalValidationWidth = function generalValidationWidth(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationWidth = function generalValidationWidth(_ref) {
     required: required
   });
 };
-exports.generalValidationWidth = generalValidationWidth;

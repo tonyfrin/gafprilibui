@@ -19,7 +19,7 @@ var lineHeaderTableStylesContainer = function lineHeaderTableStylesContainer(sty
 var lineHeaderTableStylesContent = function lineHeaderTableStylesContent(styles) {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  ", "\n"])), styles.custom || '');
 };
-var LineHeaderTable = function LineHeaderTable(_ref) {
+var LineHeaderTable = exports.LineHeaderTable = function LineHeaderTable(_ref) {
   var _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     _ref$containerStyles = _ref.containerStyles,
@@ -39,4 +39,3 @@ var LineHeaderTable = function LineHeaderTable(_ref) {
     className: (0, _css.cx)(lineHeaderTableStylesContent(contentStyles), contentClassName)
   }, restContentProps), children));
 };
-exports.LineHeaderTable = LineHeaderTable;

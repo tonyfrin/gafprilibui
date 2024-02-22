@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.DocumentsIndex = void 0;
-var DocumentsIndex = {
+var DocumentsIndex = exports.DocumentsIndex = {
   VE: [{
     label: 'J',
     value: 'J'
@@ -23,4 +23,3 @@ var DocumentsIndex = {
     value: 'null'
   }]
 };
-exports.DocumentsIndex = DocumentsIndex;

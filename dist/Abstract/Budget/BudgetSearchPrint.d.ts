@@ -11,6 +11,7 @@ export type BudgetSearchPrintProps = {
     updateButtonProps?: ButtonPropsExtended;
     errorProps?: ErrorProps;
     listProps?: ListProps;
+    logoPdf: string;
 };
 export type BudgetSearchPrintExtended = {
     optionButtonContainerStyle?: string;
@@ -18,4 +19,4 @@ export type BudgetSearchPrintExtended = {
     errorProps?: ErrorProps;
     listProps?: ListProps;
 };
-export declare const BudgetSearchPrint: ({ useBudget, siteOptions, optionButtonContainerStyle, updateButtonProps, errorProps, listProps, }: BudgetSearchPrintProps) => JSX.Element;
+export declare const BudgetSearchPrint: ({ useBudget, siteOptions, optionButtonContainerStyle, updateButtonProps, errorProps, listProps, logoPdf, }: BudgetSearchPrintProps) => JSX.Element;

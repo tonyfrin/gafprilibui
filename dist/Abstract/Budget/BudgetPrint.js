@@ -8,7 +8,7 @@ exports.BudgetPrint = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _Form = require("../Form");
 var _BudgetPrintTable = require("../Table/BudgetPrintTable");
-var BudgetPrint = function BudgetPrint(_ref) {
+var BudgetPrint = exports.BudgetPrint = function BudgetPrint(_ref) {
   var useBudget = _ref.useBudget,
     sitesOptions = _ref.sitesOptions;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, {
@@ -35,4 +35,3 @@ var BudgetPrint = function BudgetPrint(_ref) {
     useBudget: useBudget
   }))));
 };
-exports.BudgetPrint = BudgetPrint;

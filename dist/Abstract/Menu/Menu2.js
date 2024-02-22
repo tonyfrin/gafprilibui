@@ -15,7 +15,7 @@ var defaultButtonStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (
 var defaultButtonContentContainerStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  align-items: baseline;\n  justify-content: center;\n  background: transparent;\n  border: 0 none;\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n"])));
 var defaultIconStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  font-size: 1rem;\n  vertical-align: middle;\n  display: flex;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: normal;\n  padding-right: 0.2rem;\n  height: 20px;\n  width: 20px;\n  line-height: 0.9;\n  align-items: center;\n  justify-content: center;\n  align-self: end;\n  order: 0;\n"])));
 var defaultTextStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])([""])));
-var Menu2 = function Menu2(_ref) {
+var Menu2 = exports.Menu2 = function Menu2(_ref) {
   var items = _ref.items,
     _ref$mainContainerSty = _ref.mainContainerStyle,
     mainContainerStyle = _ref$mainContainerSty === void 0 ? defaultMainContainerStyle : _ref$mainContainerSty,
@@ -47,4 +47,3 @@ var Menu2 = function Menu2(_ref) {
     }, item.label))));
   })));
 };
-exports.Menu2 = Menu2;

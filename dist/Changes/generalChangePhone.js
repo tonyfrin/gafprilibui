@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalChangePhone = void 0;
 var _dompurify = _interopRequireDefault(require("dompurify"));
 var _helpers = require("../helpers");
-var generalChangePhone = function generalChangePhone(_ref) {
+var generalChangePhone = exports.generalChangePhone = function generalChangePhone(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     setValue = _ref.setValue;
@@ -21,4 +21,3 @@ var generalChangePhone = function generalChangePhone(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangePhone = generalChangePhone;

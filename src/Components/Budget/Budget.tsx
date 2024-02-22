@@ -45,6 +45,7 @@ export type BudgetProps = {
   useEntity: UseGafpriEntityReturn;
   usePagesMain: UseGafpriPagesSalesModuleReturn;
   sitesOptions: SiteOptions;
+  logoPdf: string;
   menu: MainMenuItems[];
   containerStyles?: BudgetStylesContainerProps;
   containerProps?: React.HTMLAttributes<HTMLDivElement>;
@@ -59,6 +60,7 @@ export const Budget = ({
   containerStyles = {},
   containerProps = {},
   itemsMenu,
+  logoPdf,
   usePagesMain,
   sitesOptions,
   menu,
@@ -139,7 +141,11 @@ export const Budget = ({
 
         {use.pages.states.isPrint && (
           <FadeIn keyName="print" isVisible={use.pages.states.isPrint}>
-            <BudgetSearchPrint useBudget={use} siteOptions={sitesOptions} />
+            <BudgetSearchPrint
+              useBudget={use}
+              siteOptions={sitesOptions}
+              logoPdf={logoPdf}
+            />
           </FadeIn>
         )}
       </div>

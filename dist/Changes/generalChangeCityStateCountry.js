@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeCityStateCountry = void 0;
 var _helpers = require("../helpers");
-var generalChangeCityStateCountry = function generalChangeCityStateCountry(_ref) {
+var generalChangeCityStateCountry = exports.generalChangeCityStateCountry = function generalChangeCityStateCountry(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -22,4 +22,3 @@ var generalChangeCityStateCountry = function generalChangeCityStateCountry(_ref)
     setValue: setValue
   });
 };
-exports.generalChangeCityStateCountry = generalChangeCityStateCountry;

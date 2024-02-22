@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 export type ContainerStyles = {
     width?: string;
     margin?: string | number;
@@ -9,7 +9,7 @@ type ConainerInput = {
     containerClass?: string;
     children: JSX.Element;
 };
-export declare const ContainerInput: ({ styles, containerClass, children, }: ConainerInput) => JSX.Element;
+export declare const ContainerInput: ({ styles, containerClass, children, }: ConainerInput) => React.JSX.Element;
 export type ContainerFormProps = {
     styles?: ContainerStyles | undefined;
     containerClass?: string;
@@ -19,7 +19,7 @@ export type ContainerFormPropsExtended = {
     styles?: ContainerStyles | undefined;
     containerClass?: string;
 };
-export declare const ContainerForm: ({ styles, containerClass, children, }: ContainerFormProps) => JSX.Element;
+export declare const ContainerForm: ({ styles, containerClass, children, }: ContainerFormProps) => React.JSX.Element;
 export type ContainerGloboStyle = {
     width?: string;
 };
@@ -28,7 +28,7 @@ type ContainerGlobo = {
     containerClass?: string;
     children: JSX.Element;
 };
-export declare const ContainerGlobo: ({ styles, containerClass, children, }: ContainerGlobo) => JSX.Element;
+export declare const ContainerGlobo: ({ styles, containerClass, children, }: ContainerGlobo) => React.JSX.Element;
 export type ContainerButtonStyle = {
     width?: string;
     display?: string;
@@ -46,5 +46,5 @@ export type ContainerButtonPropsExtended = {
     styles?: ContainerButtonStyle | undefined;
     Class?: string;
 };
-export declare const ContainerButton: ({ styles, Class, children, }: ContainerButtonProps) => JSX.Element;
+export declare const ContainerButton: ({ styles, Class, children, }: ContainerButtonProps) => React.JSX.Element;
 export {};

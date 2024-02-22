@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationWeight = void 0;
 var _constants = require("../constants");
 var _index = require("./index");
-var generalValidationWeight = function generalValidationWeight(_ref) {
+var generalValidationWeight = exports.generalValidationWeight = function generalValidationWeight(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -22,4 +22,3 @@ var generalValidationWeight = function generalValidationWeight(_ref) {
     required: required
   });
 };
-exports.generalValidationWeight = generalValidationWeight;

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeTags = void 0;
 var _helpers = require("../helpers");
-var generalChangeTags = function generalChangeTags(_ref) {
+var generalChangeTags = exports.generalChangeTags = function generalChangeTags(_ref) {
   var value = _ref.value,
     validation = _ref.validation,
     tags = _ref.tags,
@@ -22,4 +22,3 @@ var generalChangeTags = function generalChangeTags(_ref) {
     setSelectedValue: setSelectedValue
   });
 };
-exports.generalChangeTags = generalChangeTags;

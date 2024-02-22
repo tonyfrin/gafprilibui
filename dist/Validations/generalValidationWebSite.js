@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generalValidationWebSite = void 0;
 var _helpers = require("../helpers");
 var _constants = require("../constants");
-var generalValidationWebSite = function generalValidationWebSite(_ref) {
+var generalValidationWebSite = exports.generalValidationWebSite = function generalValidationWebSite(_ref) {
   var newValue = _ref.newValue,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
@@ -20,4 +20,3 @@ var generalValidationWebSite = function generalValidationWebSite(_ref) {
   }
   return valid;
 };
-exports.generalValidationWebSite = generalValidationWebSite;

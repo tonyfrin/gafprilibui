@@ -20,7 +20,7 @@ var _templateObject;
 var budgetStylesContainer = function budgetStylesContainer(stayles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  padding-top: 60px;\n  padding-bottom: 50px;\n  ", "\n  background-repeat: ", ";\n  background-size: ", ";\n  ", "\n"])), stayles.backgroundImage && "background-image: url(".concat(stayles.backgroundImage, ");"), stayles.backgroundRepeat || 'no-repeat', stayles.backgroundSize || '345vh', stayles.custom || '');
 };
-var Budget = function Budget(_ref) {
+var Budget = exports.Budget = function Budget(_ref) {
   var use = _ref.use,
     useEntity = _ref.useEntity,
     _ref$containerStyles = _ref.containerStyles,
@@ -28,6 +28,7 @@ var Budget = function Budget(_ref) {
     _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     itemsMenu = _ref.itemsMenu,
+    logoPdf = _ref.logoPdf,
     usePagesMain = _ref.usePagesMain,
     sitesOptions = _ref.sitesOptions,
     menu = _ref.menu,
@@ -85,7 +86,7 @@ var Budget = function Budget(_ref) {
     isVisible: use.pages.states.isPrint
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetSearchPrint, {
     useBudget: use,
-    siteOptions: sitesOptions
+    siteOptions: sitesOptions,
+    logoPdf: logoPdf
   }))));
 };
-exports.Budget = Budget;

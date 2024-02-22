@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChanceIsActive = void 0;
 var _helpers = require("../helpers");
-var generalChanceIsActive = function generalChanceIsActive(_ref) {
+var generalChanceIsActive = exports.generalChanceIsActive = function generalChanceIsActive(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChanceIsActive = function generalChanceIsActive(_ref) {
     setValue: setValue
   });
 };
-exports.generalChanceIsActive = generalChanceIsActive;

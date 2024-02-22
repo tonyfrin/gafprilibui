@@ -12,4 +12,4 @@ export type LineCol1Props = {
     containerStyles?: LineCol1StylesContainerProps;
     children: React.ReactNode;
 };
-export declare const LineCol1: ({ containerProps, containerStyles, children, }: LineCol1Props) => JSX.Element;
+export declare const LineCol1: ({ containerProps, containerStyles, children, }: LineCol1Props) => React.JSX.Element;

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeDocumentIdIndex = void 0;
 var _helpers = require("../helpers");
-var generalChangeDocumentIdIndex = function generalChangeDocumentIdIndex(_ref) {
+var generalChangeDocumentIdIndex = exports.generalChangeDocumentIdIndex = function generalChangeDocumentIdIndex(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeDocumentIdIndex = function generalChangeDocumentIdIndex(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeDocumentIdIndex = generalChangeDocumentIdIndex;

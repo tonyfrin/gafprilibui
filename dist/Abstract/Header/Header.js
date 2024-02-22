@@ -17,7 +17,7 @@ var defaultHeadContainerStyle = (0, _css.css)(_templateObject3 || (_templateObje
 var defaultTitleContainerStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  display: flex;\n  align-items: center;\n  margin: 2rem 0px;\n  min-height: 3rem;\n  background: transparent;\n  border: 0 none;\n  font-size: 100%;\n  padding: 0;\n  border: 0;\n  vertical-align: top;\n  border-spacing: 0;\n  border-collapse: collapse;\n"])));
 var defaultTitleStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  font-weight: 800;\n  font-size: 1.75rem;\n  color: rgb(38, 35, 33);\n  line-height: 2.5rem;\n"])));
 var defaultHiddenContainerStyle = (0, _css.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n"])));
-var Header = function Header(_ref) {
+var Header = exports.Header = function Header(_ref) {
   var title = _ref.title,
     menuTitleProps = _ref.menuTitleProps,
     menuButtonProps = _ref.menuButtonProps,
@@ -52,4 +52,3 @@ var Header = function Header(_ref) {
     className: (0, _css.css)(titleStyle)
   }, title), (menuTitleProps === null || menuTitleProps === void 0 ? void 0 : menuTitleProps.items) && /*#__PURE__*/_react["default"].createElement(_Menu.Menu2, menuTitleProps)), (menuButtonProps === null || menuButtonProps === void 0 ? void 0 : menuButtonProps.items) && /*#__PURE__*/_react["default"].createElement(_Menu.MenuButton, menuButtonProps), buttonLargeProps && /*#__PURE__*/_react["default"].createElement(_Button.ButtonLarge, buttonLargeProps)))));
 };
-exports.Header = Header;

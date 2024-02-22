@@ -434,7 +434,6 @@ function useGafpriAttributesProducts(_ref) {
       required: false
     }); //
   };
-
   var validationSalesPrice = function validationSalesPrice(value) {
     return (0, _Validations.generalValidationSalesPrice)({
       value: value,
@@ -442,7 +441,6 @@ function useGafpriAttributesProducts(_ref) {
       currentValid: salesPriceValid
     }); //
   };
-
   var validationOfferPrice = function validationOfferPrice(value) {
     return (0, _Validations.generalValidationOfferPrice)({
       value: value,
@@ -466,7 +464,6 @@ function useGafpriAttributesProducts(_ref) {
       currentValid: typeValid
     }); //
   };
-
   var validationTaxStatus = function validationTaxStatus(value) {
     return (0, _Validations.generalValidationTaxStatus)({
       newValue: value,

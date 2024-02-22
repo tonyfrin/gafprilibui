@@ -20,7 +20,7 @@ var defaultOptionsButtonMainContainerStyle = (0, _css.css)(_templateObject || (_
 var searchProductsStylesContainer = function searchProductsStylesContainer() {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: 1150px;\n  margin: auto;\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 10px;\n"])));
 };
-var SearchProducts = function SearchProducts(_ref) {
+var SearchProducts = exports.SearchProducts = function SearchProducts(_ref) {
   var _paginated$map;
   var use = _ref.use,
     useOrder = _ref.useOrder,
@@ -139,4 +139,3 @@ var SearchProducts = function SearchProducts(_ref) {
     }
   })))));
 };
-exports.SearchProducts = SearchProducts;

@@ -9,7 +9,7 @@ var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends")
 var _react = _interopRequireDefault(require("react"));
 var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
-var MainTypeDocumentId = function MainTypeDocumentId(_ref) {
+var MainTypeDocumentId = exports.MainTypeDocumentId = function MainTypeDocumentId(_ref) {
   var use = _ref.use,
     initProps = _ref.initProps,
     addFormProps = _ref.addFormProps,
@@ -33,4 +33,3 @@ var MainTypeDocumentId = function MainTypeDocumentId(_ref) {
     use: use
   }, updateFormProps))));
 };
-exports.MainTypeDocumentId = MainTypeDocumentId;

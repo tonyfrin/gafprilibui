@@ -19,7 +19,7 @@ var simpleTableStylesContainer = function simpleTableStylesContainer(styles) {
 var simpleTableStylesContent = function simpleTableStylesContent(styles) {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  margin-bottom: ", ";\n  border-color: ", ";\n  text-align: ", ";\n  font-size: ", ";\n  border-top: ", ";\n  border-bottom: ", ";\n  ", "\n"])), styles.width || '100%', styles.marginBotton || '1rem', styles.borderColor || '#dee2e6', styles.textAlign || 'center', styles.fontSize || '12px', styles.borderTop || '1px solid #dee2e6', styles.borderBottom || '1px solid #dee2e6', styles.custom || '');
 };
-var SimpleTable = function SimpleTable(_ref) {
+var SimpleTable = exports.SimpleTable = function SimpleTable(_ref) {
   var header = _ref.header,
     body = _ref.body,
     _ref$containerProps = _ref.containerProps,
@@ -40,4 +40,3 @@ var SimpleTable = function SimpleTable(_ref) {
     className: (0, _css.cx)(simpleTableStylesContent(contentStyles), contentClassName)
   }, restContentProps), header, body)));
 };
-exports.SimpleTable = SimpleTable;

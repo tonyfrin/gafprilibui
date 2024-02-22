@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangePackageType = void 0;
 var _helpers = require("../helpers");
-var generalChangePackageType = function generalChangePackageType(_ref) {
+var generalChangePackageType = exports.generalChangePackageType = function generalChangePackageType(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangePackageType = function generalChangePackageType(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangePackageType = generalChangePackageType;

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeTaxClass = void 0;
 var _helpers = require("../helpers");
-var generalChangeTaxClass = function generalChangeTaxClass(_ref) {
+var generalChangeTaxClass = exports.generalChangeTaxClass = function generalChangeTaxClass(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeTaxClass = function generalChangeTaxClass(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeTaxClass = generalChangeTaxClass;

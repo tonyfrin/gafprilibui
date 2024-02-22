@@ -9,4 +9,4 @@ export type PhotoDocumentIdProps = {
     props?: PhotoFormPropsExtended;
     inputId?: string;
 };
-export declare const PhotoDocumentId: ({ photo, changePhoto, submitting, changeError, setSubmitting, props, inputId, }: PhotoDocumentIdProps) => JSX.Element;
+export declare const PhotoDocumentId: ({ photo, changePhoto, submitting, changeError, setSubmitting, props, inputId, }: PhotoDocumentIdProps) => React.JSX.Element;

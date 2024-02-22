@@ -19,7 +19,7 @@ var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject || (_templ
 var entityBudgetSearchStylesContainer = function entityBudgetSearchStylesContainer() {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  max-width: 1150px;\n  margin: auto;\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 10px;\n"])));
 };
-var EntityBudgetSearch = function EntityBudgetSearch(_ref) {
+var EntityBudgetSearch = exports.EntityBudgetSearch = function EntityBudgetSearch(_ref) {
   var _paginated$map;
   var use = _ref.use,
     useBudget = _ref.useBudget,
@@ -151,4 +151,3 @@ var EntityBudgetSearch = function EntityBudgetSearch(_ref) {
     }
   })))));
 };
-exports.EntityBudgetSearch = EntityBudgetSearch;

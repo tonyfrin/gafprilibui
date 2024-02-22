@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalChangeTaxStatus = void 0;
 var _helpers = require("../helpers");
-var generalChangeTaxStatus = function generalChangeTaxStatus(_ref) {
+var generalChangeTaxStatus = exports.generalChangeTaxStatus = function generalChangeTaxStatus(_ref) {
   var options = _ref.options,
     validation = _ref.validation,
     setDefault = _ref.setDefault,
@@ -20,4 +20,3 @@ var generalChangeTaxStatus = function generalChangeTaxStatus(_ref) {
     setValue: setValue
   });
 };
-exports.generalChangeTaxStatus = generalChangeTaxStatus;

@@ -44,15 +44,24 @@ export const PrintButtonBudget = ({
             >
               {({ blob, url, loading, error }) => {
                 return loading ? (
-                  <Loading />
+                  <Loading
+                    mainStyles={{
+                      padding: '0px',
+                    }}
+                    divStyle={{
+                      border: '3px solid #eee',
+                      borderTop: '3px solid #077bb4',
+                      width: '20px',
+                      height: '20px',
+                    }}
+                  />
                 ) : (
-                  // <Button
-                  //   title="Imprimir"
-                  //   styles={{
-                  //     fontSize: '10px',
-                  //   }}
-                  // />
-                  <Loading />
+                  <Button
+                    title="Imprimir"
+                    styles={{
+                      fontSize: '10px',
+                    }}
+                  />
                 );
               }}
             </PDFDownloadLink>

@@ -11,6 +11,7 @@ var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/hel
 var _react = _interopRequireWildcard(require("react"));
 var _css = require("@emotion/css");
 var _renderer = require("@react-pdf/renderer");
+var _Button = require("../Button");
 var _Pdf = require("../Pdf");
 var _Components = require("../../Components");
 var _templateObject;
@@ -43,15 +44,22 @@ var PrintButtonBudget = exports.PrintButtonBudget = function PrintButtonBudget(_
           url = _ref2.url,
           loading = _ref2.loading,
           error = _ref2.error;
-        return loading ? /*#__PURE__*/_react["default"].createElement(_Components.Loading, null) :
-        /*#__PURE__*/
-        // <Button
-        //   title="Imprimir"
-        //   styles={{
-        //     fontSize: '10px',
-        //   }}
-        // />
-        _react["default"].createElement(_Components.Loading, null);
+        return loading ? /*#__PURE__*/_react["default"].createElement(_Components.Loading, {
+          mainStyles: {
+            padding: '0px'
+          },
+          divStyle: {
+            border: '3px solid #eee',
+            borderTop: '3px solid #077bb4',
+            width: '20px',
+            height: '20px'
+          }
+        }) : /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+          title: "Imprimir",
+          styles: {
+            fontSize: '10px'
+          }
+        });
       }));
     });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

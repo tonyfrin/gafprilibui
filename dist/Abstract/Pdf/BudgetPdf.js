@@ -9,10 +9,6 @@ var _react = _interopRequireDefault(require("react"));
 var _renderer = require("@react-pdf/renderer");
 var _helpers = require("../../helpers");
 var _constants = require("../../constants");
-_renderer.Font.register({
-  family: 'Poppins',
-  src: 'http://fonts.gstatic.com/s/poppins/v1/TDTjCH39JjVycIF24TlO-Q.ttf'
-});
 function truncarTexto(texto) {
   var longitudMaxima = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 65;
   if (texto.length <= longitudMaxima) {
@@ -25,8 +21,8 @@ var BudgetPdf = exports.BudgetPdf = function BudgetPdf(_ref) {
   var budget = _ref.budget,
     logo = _ref.logo,
     siteOptions = _ref.siteOptions;
-  var state = _constants.StatesCountries[0][budget.customer.address[0].country][0][budget.customer.address[0].state] || '';
-  var country = _constants.Countries[0][budget.customer.address[0].country] || '';
+  var state = budget.customer.address[0].country && budget.customer.address[0].state && _constants.StatesCountries[0][budget.customer.address[0].country][0][budget.customer.address[0].state] || '';
+  var country = budget.customer.address[0].country && _constants.Countries[0][budget.customer.address[0].country] || '';
   var stateSite = _constants.StatesCountries[0][siteOptions.country][0][siteOptions.state] || '';
   var countrySite = _constants.Countries[0][siteOptions.country] || '';
   var dig = siteOptions.DECIMAL_NUMBERS;

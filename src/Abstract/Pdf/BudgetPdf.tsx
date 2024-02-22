@@ -13,11 +13,6 @@ import { BudgetAttributes } from '../states';
 import { Countries, StatesCountries } from '../../constants';
 import { SiteOptions } from '../../states';
 
-Font.register({
-  family: 'Poppins',
-  src: 'http://fonts.gstatic.com/s/poppins/v1/TDTjCH39JjVycIF24TlO-Q.ttf',
-});
-
 function truncarTexto(texto: string, longitudMaxima: number = 65): string {
   if (texto.length <= longitudMaxima) {
     return texto;
@@ -38,10 +33,16 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
   siteOptions,
 }) => {
   const state =
-    StatesCountries[0][budget.customer.address[0].country][0][
-      budget.customer.address[0].state
-    ] || '';
-  const country = Countries[0][budget.customer.address[0].country] || '';
+    (budget.customer.address[0].country &&
+      budget.customer.address[0].state &&
+      StatesCountries[0][budget.customer.address[0].country][0][
+        budget.customer.address[0].state
+      ]) ||
+    '';
+  const country =
+    (budget.customer.address[0].country &&
+      Countries[0][budget.customer.address[0].country]) ||
+    '';
 
   const stateSite =
     StatesCountries[0][siteOptions.country][0][siteOptions.state] || '';

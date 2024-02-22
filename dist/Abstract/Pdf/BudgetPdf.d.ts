@@ -1,6 +1,6 @@
 import React from 'react';
 import { BudgetAttributes } from '../states';
-import { SiteOptions } from 'src/states';
+import { SiteOptions } from '../../states';
 export interface BudgetPdfProps {
     budget: BudgetAttributes;
     logo: string;

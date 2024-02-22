@@ -10,8 +10,8 @@ import {
 } from '@react-pdf/renderer';
 import { formatDate, decimalFormatPriceConverter } from '../../helpers';
 import { BudgetAttributes } from '../states';
-import { Countries, StatesCountries } from 'src/constants';
-import { SiteOptions } from 'src/states';
+import { Countries, StatesCountries } from '../../constants';
+import { SiteOptions } from '../../states';
 
 Font.register({
   family: 'Poppins',

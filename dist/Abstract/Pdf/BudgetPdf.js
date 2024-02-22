@@ -8,7 +8,7 @@ exports.BudgetPdf = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _renderer = require("@react-pdf/renderer");
 var _helpers = require("../../helpers");
-var _constants = require("src/constants");
+var _constants = require("../../constants");
 _renderer.Font.register({
   family: 'Poppins',
   src: 'http://fonts.gstatic.com/s/poppins/v1/TDTjCH39JjVycIF24TlO-Q.ttf'

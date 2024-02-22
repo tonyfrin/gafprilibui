@@ -36,7 +36,7 @@ export const LineBudgetPrint = ({
 
           <LineCol4>
             <SpanValue
-              value={`${item.budgetCustomer.name} ${item.budgetCustomer?.lastName}`}
+              value={`${item.budgetCustomer[0].name} ${item.budgetCustomer[0]?.lastName}`}
             />
           </LineCol4>
 

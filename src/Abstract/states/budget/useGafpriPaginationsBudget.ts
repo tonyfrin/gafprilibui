@@ -79,8 +79,8 @@ export const useGafpriPaginationsBudget = ({
   ): BudgetAttributes[] | null {
     if (items) {
       return items.slice().sort((a, b) => {
-        const comparison = a.budgetCustomer.name.localeCompare(
-          b.budgetCustomer.name,
+        const comparison = a.budgetCustomer[0].name.localeCompare(
+          b.budgetCustomer[0].name,
           undefined,
           {
             sensitivity: 'base',
@@ -95,7 +95,7 @@ export const useGafpriPaginationsBudget = ({
   const filterByName = (search: string): BudgetAttributes[] | null => {
     if (useData.states.items && useData.states.items.data.items) {
       return useData.states.items.data.items.filter((item) =>
-        item.budgetCustomer.name.toLowerCase().includes(search.toLowerCase())
+        item.budgetCustomer[0].name.toLowerCase().includes(search.toLowerCase())
       );
     }
     return null;
@@ -140,8 +140,8 @@ export const useGafpriPaginationsBudget = ({
             bValue = b.total;
             break;
           case 'name':
-            aValue = a.budgetCustomer.name;
-            bValue = b.budgetCustomer.name;
+            aValue = a.budgetCustomer[0].name;
+            bValue = b.budgetCustomer[0].name;
             break;
           default:
             // Esto no debería ocurrir si se usa un enum o unión exhaustiva
@@ -174,7 +174,7 @@ export const useGafpriPaginationsBudget = ({
           case 'postsId':
           case 'total':
           case 'name':
-            valueToCheck = item.budgetCustomer.name;
+            valueToCheck = item.budgetCustomer[0].name;
             break;
           case 'status':
             valueToCheck = item.posts.status;

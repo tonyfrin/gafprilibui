@@ -56,7 +56,7 @@ var useGafpriPaginationsOrder = exports.useGafpriPaginationsOrder = function use
   function sortByName(items, order) {
     if (items) {
       return items.slice().sort(function (a, b) {
-        var comparison = a.orderCustomer.name.localeCompare(b.orderCustomer.name, undefined, {
+        var comparison = a.orderCustomer[0].name.localeCompare(b.orderCustomer[0].name, undefined, {
           sensitivity: 'base'
         });
         return order === 'asc' ? comparison : -comparison;
@@ -67,7 +67,7 @@ var useGafpriPaginationsOrder = exports.useGafpriPaginationsOrder = function use
   var filterByName = function filterByName(search) {
     if (useData.states.items && useData.states.items.data.items) {
       return useData.states.items.data.items.filter(function (item) {
-        return item.orderCustomer.name.toLowerCase().includes(search.toLowerCase());
+        return item.orderCustomer[0].name.toLowerCase().includes(search.toLowerCase());
       });
     }
     return null;
@@ -99,8 +99,8 @@ var useGafpriPaginationsOrder = exports.useGafpriPaginationsOrder = function use
             bValue = b.total;
             break;
           case 'name':
-            aValue = a.orderCustomer.name;
-            bValue = b.orderCustomer.name;
+            aValue = a.orderCustomer[0].name;
+            bValue = b.orderCustomer[0].name;
             break;
           default:
             // Esto no debería ocurrir si se usa un enum o unión exhaustiva
@@ -124,7 +124,7 @@ var useGafpriPaginationsOrder = exports.useGafpriPaginationsOrder = function use
           case 'postsId':
           case 'total':
           case 'name':
-            valueToCheck = item.orderCustomer.name;
+            valueToCheck = item.orderCustomer[0].name;
             break;
           case 'status':
             valueToCheck = item.posts.status;

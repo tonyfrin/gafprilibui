@@ -194,7 +194,7 @@ export const SearchProductsBudget = ({
             <Button
               title="regresar"
               buttonProps={{
-                onClick: () => console.log('regresar'),
+                onClick: () => useBudget.pages.actions.onSales(),
               }}
               styles={{
                 backgroundColor: '#c12429',

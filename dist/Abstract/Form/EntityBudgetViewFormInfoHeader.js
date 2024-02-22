@@ -13,12 +13,12 @@ var EntityBudgetViewFormInfoHeader = exports.EntityBudgetViewFormInfoHeader = fu
   var budget = _ref.budget;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerHeaderInfo, null, /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
     title: "Nombre: ",
-    info: "".concat(budget.budgetCustomer.name, " ").concat(((_budget$budgetCustome = budget.budgetCustomer) === null || _budget$budgetCustome === void 0 ? void 0 : _budget$budgetCustome.lastName) || '')
+    info: "".concat(budget.budgetCustomer[0].name, " ").concat(((_budget$budgetCustome = budget.budgetCustomer[0]) === null || _budget$budgetCustome === void 0 ? void 0 : _budget$budgetCustome.lastName) || '')
   }), /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
     title: "Direcci\xF3n: ",
-    info: budget.budgetCustomer.address[0].address1 || ''
+    info: budget.budgetCustomer[0].address[0].address1 || ''
   }), /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
     title: "Tel\xE9fono: ",
-    info: budget.budgetCustomer.phone || ''
+    info: budget.budgetCustomer[0].phone || ''
   })));
 };

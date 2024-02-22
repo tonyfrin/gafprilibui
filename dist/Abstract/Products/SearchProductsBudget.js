@@ -130,7 +130,7 @@ var SearchProductsBudget = exports.SearchProductsBudget = function SearchProduct
     title: "regresar",
     buttonProps: {
       onClick: function onClick() {
-        return console.log('regresar');
+        return useBudget.pages.actions.onSales();
       }
     },
     styles: {

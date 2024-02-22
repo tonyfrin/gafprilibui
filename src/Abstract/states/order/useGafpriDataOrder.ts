@@ -32,7 +32,7 @@ export interface OrderAttributes {
   refundAmount: number;
   posts: PostsAttributes;
   orderItems: OrderItemsAttributes[];
-  orderCustomer: OrderCustomerAttributes;
+  orderCustomer: OrderCustomerAttributes[];
 }
 
 interface EntityData {

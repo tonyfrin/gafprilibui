@@ -15,17 +15,17 @@ export const EntityBudgetViewFormInfoHeader = ({
       <ContainerHeaderInfo>
         <LineInfoTwo
           title="Nombre: "
-          info={`${budget.budgetCustomer.name} ${
-            budget.budgetCustomer?.lastName || ''
+          info={`${budget.budgetCustomer[0].name} ${
+            budget.budgetCustomer[0]?.lastName || ''
           }`}
         />
         <LineInfoTwo
           title="Dirección: "
-          info={budget.budgetCustomer.address[0].address1 || ''}
+          info={budget.budgetCustomer[0].address[0].address1 || ''}
         />
         <LineInfoTwo
           title="Teléfono: "
-          info={budget.budgetCustomer.phone || ''}
+          info={budget.budgetCustomer[0].phone || ''}
         />
       </ContainerHeaderInfo>
     </>

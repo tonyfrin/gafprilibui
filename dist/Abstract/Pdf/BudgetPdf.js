@@ -22,15 +22,15 @@ var BudgetPdf = exports.BudgetPdf = function BudgetPdf(_ref) {
   var budget = _ref.budget,
     logo = _ref.logo,
     siteOptions = _ref.siteOptions;
-  var state = ((_budget$budgetCustome = budget.budgetCustomer.address[0]) === null || _budget$budgetCustome === void 0 ? void 0 : _budget$budgetCustome.country) && ((_budget$budgetCustome2 = budget.budgetCustomer.address[0]) === null || _budget$budgetCustome2 === void 0 ? void 0 : _budget$budgetCustome2.state) && ((_StatesCountries$0$bu = _constants.StatesCountries[0][budget.budgetCustomer.address[0].country]) === null || _StatesCountries$0$bu === void 0 || (_StatesCountries$0$bu = _StatesCountries$0$bu[0]) === null || _StatesCountries$0$bu === void 0 ? void 0 : _StatesCountries$0$bu[budget.budgetCustomer.address[0].state]) || '';
-  var country = ((_budget$budgetCustome3 = budget.budgetCustomer.address[0]) === null || _budget$budgetCustome3 === void 0 ? void 0 : _budget$budgetCustome3.country) && _constants.Countries[0][budget.budgetCustomer.address[0].country] || '';
+  var state = ((_budget$budgetCustome = budget.budgetCustomer[0].address[0]) === null || _budget$budgetCustome === void 0 ? void 0 : _budget$budgetCustome.country) && ((_budget$budgetCustome2 = budget.budgetCustomer[0].address[0]) === null || _budget$budgetCustome2 === void 0 ? void 0 : _budget$budgetCustome2.state) && ((_StatesCountries$0$bu = _constants.StatesCountries[0][budget.budgetCustomer[0].address[0].country]) === null || _StatesCountries$0$bu === void 0 || (_StatesCountries$0$bu = _StatesCountries$0$bu[0]) === null || _StatesCountries$0$bu === void 0 ? void 0 : _StatesCountries$0$bu[budget.budgetCustomer[0].address[0].state]) || '';
+  var country = ((_budget$budgetCustome3 = budget.budgetCustomer[0].address[0]) === null || _budget$budgetCustome3 === void 0 ? void 0 : _budget$budgetCustome3.country) && _constants.Countries[0][budget.budgetCustomer[0].address[0].country] || '';
   var stateSite = siteOptions.country && siteOptions.state && ((_StatesCountries$0$si = _constants.StatesCountries[0][siteOptions.country]) === null || _StatesCountries$0$si === void 0 || (_StatesCountries$0$si = _StatesCountries$0$si[0]) === null || _StatesCountries$0$si === void 0 ? void 0 : _StatesCountries$0$si[siteOptions.state]) || '';
   var countrySite = siteOptions.country && _constants.Countries[0][siteOptions.country] || '';
   var dig = siteOptions.DECIMAL_NUMBERS;
   var currencySymbol = siteOptions.CURRENCY_SYMBOL;
   var currencyLocation = siteOptions.CURRENCY_LOCATION;
   var CURRENCY_FORMAT = siteOptions.CURRENCY_FORMAT;
-  var customer = budget.budgetCustomer || {};
+  var customer = budget.budgetCustomer[0] || {};
   var documentIndex = customer.documentIndex ? "".concat(customer.documentIndex, "-") : '';
   var address = customer.address && customer.address[0] || {};
   return /*#__PURE__*/_react["default"].createElement(_renderer.Document, null, /*#__PURE__*/_react["default"].createElement(_renderer.Page, {

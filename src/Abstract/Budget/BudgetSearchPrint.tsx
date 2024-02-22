@@ -115,7 +115,7 @@ export const BudgetSearchPrint = ({
         siteOptions.CURRENCY_SYMBOL,
         siteOptions.CURRENCY_LOCATION
       );
-      const customer = `${item.budgetCustomer.name} ${item.budgetCustomer?.lastName}`;
+      const customer = `${item.budgetCustomer[0].name} ${item.budgetCustomer[0]?.lastName}`;
       return [
         item.postsId,
         date,

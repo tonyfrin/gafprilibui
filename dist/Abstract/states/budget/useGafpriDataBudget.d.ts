@@ -25,7 +25,7 @@ export interface BudgetAttributes {
     refundAmount: number;
     posts: PostsAttributes;
     budgetItems: BudgetItemsAttributes[];
-    budgetCustomer: BudgetCustomerAttributes;
+    budgetCustomer: BudgetCustomerAttributes[];
 }
 interface BudgetData {
     data: {

@@ -194,7 +194,7 @@ export const SearchProducts = ({
             <Button
               title="regresar"
               buttonProps={{
-                onClick: () => console.log('regresar'),
+                onClick: () => useOrder.pages.actions.onSales(),
               }}
               styles={{
                 backgroundColor: '#c12429',

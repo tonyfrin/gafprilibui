@@ -130,7 +130,7 @@ var SearchProducts = exports.SearchProducts = function SearchProducts(_ref) {
     title: "regresar",
     buttonProps: {
       onClick: function onClick() {
-        return console.log('regresar');
+        return useOrder.pages.actions.onSales();
       }
     },
     styles: {

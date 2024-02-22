@@ -56,10 +56,10 @@ var BudgetSearchPrint = exports.BudgetSearchPrint = function BudgetSearchPrint(_
   var entities = useBudget.paginations.actions.sortByProperty(filtered, searchBy, useBudget.paginations.states.orderList) || [];
   var paginated = useBudget.paginations.actions.getPaginated(entities, useBudget.paginations.states.currentPage, useBudget.paginations.states.itemsPerPage);
   var items = (_paginated$map = paginated === null || paginated === void 0 ? void 0 : paginated.map(function (item) {
-    var _item$budgetCustomer;
+    var _item$budgetCustomer$;
     var date = (0, _helpers.formatDate)("".concat(item.posts.createdAt));
     var total = (0, _helpers.decimalFormatPriceConverter)(item.total || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION);
-    var customer = "".concat(item.budgetCustomer.name, " ").concat((_item$budgetCustomer = item.budgetCustomer) === null || _item$budgetCustomer === void 0 ? void 0 : _item$budgetCustomer.lastName);
+    var customer = "".concat(item.budgetCustomer[0].name, " ").concat((_item$budgetCustomer$ = item.budgetCustomer[0]) === null || _item$budgetCustomer$ === void 0 ? void 0 : _item$budgetCustomer$.lastName);
     return [item.postsId, date, customer, total, /*#__PURE__*/_react["default"].createElement(ButtonUpdate, {
       id: item.postsId
     })];

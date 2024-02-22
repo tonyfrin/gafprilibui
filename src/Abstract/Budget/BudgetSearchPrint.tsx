@@ -13,6 +13,7 @@ import type { ButtonPropsExtended } from '../Button';
 import type { ListProps } from '../List';
 import type { ErrorProps } from '../Error';
 import { BudgetPdf } from '../Pdf';
+import { Loading } from '../../Components';
 
 export type BudgetSearchPrintProps = {
   useBudget: UseGafpriBudgetReturn;
@@ -72,7 +73,7 @@ export const BudgetSearchPrint = ({
           >
             {({ blob, url, loading, error }) => {
               return loading ? (
-                'Loading document...'
+                <Loading />
               ) : (
                 <Button
                   title="Imprimir"

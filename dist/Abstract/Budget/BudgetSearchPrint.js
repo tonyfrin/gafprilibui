@@ -17,6 +17,7 @@ var _Header = require("../Header");
 var _helpers = require("../../helpers");
 var _Containers = require("../Containers");
 var _Pdf = require("../Pdf");
+var _Components = require("../../Components");
 var _templateObject, _templateObject2;
 var defaultOptionButtonContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
 var budgetSearchPrintStylesContainer = function budgetSearchPrintStylesContainer() {
@@ -52,7 +53,7 @@ var BudgetSearchPrint = exports.BudgetSearchPrint = function BudgetSearchPrint(_
         url = _ref3.url,
         loading = _ref3.loading,
         error = _ref3.error;
-      return loading ? 'Loading document...' : /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+      return loading ? /*#__PURE__*/_react["default"].createElement(_Components.Loading, null) : /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         title: "Imprimir",
         styles: {
           fontSize: '10px'

@@ -140,12 +140,5 @@ var BudgetSearchPrint = exports.BudgetSearchPrint = function BudgetSearchPrint(_
       backgroundColor: '#c12429',
       margin: '0 20px 0 0'
     }
-  }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    title: "Agregar",
-    buttonProps: {
-      onClick: function onClick() {
-        return useBudget.pages.actions.onAddEntity();
-      }
-    }
   })))));
 };

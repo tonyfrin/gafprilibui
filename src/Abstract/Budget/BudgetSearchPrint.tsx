@@ -207,12 +207,6 @@ export const BudgetSearchPrint = ({
                 margin: '0 20px 0 0',
               }}
             />
-            <Button
-              title="Agregar"
-              buttonProps={{
-                onClick: () => useBudget.pages.actions.onAddEntity(),
-              }}
-            />
           </>
         </ContainerButton>
       </div>

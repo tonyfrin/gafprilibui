@@ -32,30 +32,36 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
   logo,
   siteOptions,
 }) => {
-  // const state =
-  //   (budget.customer.address[0].country &&
-  //     budget.customer.address[0].state &&
-  //     StatesCountries[0][budget.customer.address[0].country][0][
-  //       budget.customer.address[0].state
-  //     ]) ||
-  //   '';
-  // const country =
-  //   (budget.customer.address[0].country &&
-  //     Countries[0][budget.customer.address[0].country]) ||
-  //   '';
+  const state =
+    (budget.customer.address[0]?.country &&
+      budget.customer.address[0]?.state &&
+      StatesCountries[0][budget.customer.address[0].country]?.[0]?.[
+        budget.customer.address[0].state
+      ]) ||
+    '';
 
-  // const stateSite =
-  //   StatesCountries[0][siteOptions.country][0][siteOptions.state] || '';
-  // const countrySite = Countries[0][siteOptions.country] || '';
-  const state = 'Zulia';
-  const country = 'Venezuela';
-  const stateSite = 'Zulia';
-  const countrySite = 'Venezuela';
+  const country =
+    (budget.customer.address[0]?.country &&
+      Countries[0][budget.customer.address[0].country]) ||
+    '';
+
+  const stateSite =
+    (siteOptions.country &&
+      siteOptions.state &&
+      StatesCountries[0][siteOptions.country]?.[0]?.[siteOptions.state]) ||
+    '';
+
+  const countrySite =
+    (siteOptions.country && Countries[0][siteOptions.country]) || '';
 
   const dig = siteOptions.DECIMAL_NUMBERS;
   const currencySymbol = siteOptions.CURRENCY_SYMBOL;
   const currencyLocation = siteOptions.CURRENCY_LOCATION;
   const CURRENCY_FORMAT = siteOptions.CURRENCY_FORMAT;
+
+  const customer = budget.customer || {};
+  const documentId = (customer.documentId && customer.documentId[0]) || {};
+  const address = (customer.address && customer.address[0]) || {};
 
   return (
     <Document>
@@ -87,32 +93,35 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
           <View style={styles.customerData}>
             <Text style={styles.line}>
               <Text style={styles.bold}>
-                {budget.customer.name}{' '}
-                {budget.customer.lastName && budget.customer.lastName}
+                {customer.name} {customer.lastName && customer.lastName}
               </Text>
             </Text>
             <Text style={styles.line}>
-              <Text>{`${budget.customer.documentId[0].index}-${budget.customer.documentId[0].digit}`}</Text>
+              <Text>{`${documentId.index || ''}-${
+                documentId.digit || ''
+              }`}</Text>
             </Text>
             <Text style={styles.line}>
-              <Text>{budget.customer.address[0].address1}</Text>
+              <Text>{address.address1 || ''}</Text>
             </Text>
-            {budget.customer.address[0].address2 && (
+            {address.address2 && (
               <Text style={styles.line}>
-                <Text>{budget.customer.address[0].address2}</Text>
-              </Text>
-            )}
-            <Text style={styles.line}>
-              <Text>{`${budget.customer.address[0].city}, ${state}, ${country}`}</Text>
-            </Text>
-            {budget.customer.phone && (
-              <Text style={styles.line}>
-                <Text>{budget.customer.phone}</Text>
+                <Text>{address.address2}</Text>
               </Text>
             )}
-            {budget.customer.email && (
+            <Text style={styles.line}>
+              <Text>{`${address.city || ''}, ${state || ''}, ${
+                country || ''
+              }`}</Text>
+            </Text>
+            {customer.phone && (
               <Text style={styles.line}>
-                <Text>{budget.customer.email}</Text>
+                <Text>{customer.phone}</Text>
+              </Text>
+            )}
+            {customer.email && (
+              <Text style={styles.line}>
+                <Text>{customer.email}</Text>
               </Text>
             )}
           </View>

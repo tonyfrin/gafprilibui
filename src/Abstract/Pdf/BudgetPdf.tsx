@@ -174,7 +174,9 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
                 <Text style={styles.col8}>
                   <Text style={styles.tableCol}>{truncarTexto(item.name)}</Text>
                 </Text>
-                <Text style={styles.col1}>{item.qty.toFixed(2)}</Text>
+                <Text style={styles.col1}>
+                  {parseFloat(`${item.qty}`).toFixed(2)}
+                </Text>
                 <Text style={styles.col2}>
                   {decimalFormatPriceConverter(
                     item.price,

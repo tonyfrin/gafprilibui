@@ -121,7 +121,7 @@ var BudgetPdf = exports.BudgetPdf = function BudgetPdf(_ref) {
       style: styles.tableCol
     }, truncarTexto(item.name))), /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
       style: styles.col1
-    }, item.qty.toFixed(2)), /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
+    }, parseFloat("".concat(item.qty)).toFixed(2)), /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
       style: styles.col2
     }, (0, _helpers.decimalFormatPriceConverter)(item.price, dig, currencySymbol, currencyLocation, CURRENCY_FORMAT)), /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
       style: styles.col2

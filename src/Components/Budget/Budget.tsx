@@ -89,6 +89,9 @@ export const Budget = ({
               contentProps={{
                 items: menu,
               }}
+              stylesContainer={{
+                backgroundImage: 'none',
+              }}
             />
           </FadeIn>
         )}

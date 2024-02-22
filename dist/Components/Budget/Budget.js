@@ -46,6 +46,9 @@ var Budget = exports.Budget = function Budget(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Main.InitMainMenu, {
     contentProps: {
       items: menu
+    },
+    stylesContainer: {
+      backgroundImage: 'none'
     }
   })), use.pages.states.isEntityForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entityForm",

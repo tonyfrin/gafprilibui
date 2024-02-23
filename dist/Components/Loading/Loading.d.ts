@@ -8,6 +8,7 @@ type MainStyle = {
     padding?: string;
     media600Style?: Media | undefined;
     media300Style?: Media | undefined;
+    custom?: string;
 };
 type DivStyle = {
     animation?: string | undefined;

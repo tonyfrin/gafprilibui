@@ -5,6 +5,7 @@ const mainStyle = (styles: MainStyle) => css`
   display: ${styles.display || 'flex'};
   justify-content: ${styles.justifyContent || 'center'};
   padding: ${styles.padding || '170px'};
+  ${styles.custom || ''}
 
   @media (max-width: 600px) {
     padding: ${styles.media600Style?.padding || '130px'};
@@ -25,6 +26,7 @@ type MainStyle = {
   padding?: string;
   media600Style?: Media | undefined;
   media300Style?: Media | undefined;
+  custom?: string;
 };
 
 type DivStyle = {

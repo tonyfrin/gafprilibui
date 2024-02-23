@@ -39,7 +39,11 @@ var Order = exports.Order = function Order(_ref) {
     className: (0, _css.cx)(orderStylesContainer(containerStyles), containerClassName)
   }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Abstract.HeaderMenu, {
     items: itemsMenu
-  }), use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, null), use.pages.states.isInit && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+  }), use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, {
+    mainStyles: {
+      custom: 'height: 100vh;'
+    }
+  }), use.pages.states.isInit && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "init",
     isVisible: use.pages.states.isInit
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.OrderInit, {

@@ -78,7 +78,13 @@ export const Order = ({
         {...restContainerProps}
       >
         <HeaderMenu items={itemsMenu} />
-        {use.pages.states.isFetching && <Loading />}
+        {use.pages.states.isFetching && (
+          <Loading
+            mainStyles={{
+              custom: 'height: 100vh;',
+            }}
+          />
+        )}
         {use.pages.states.isInit && (
           <FadeIn keyName="init" isVisible={use.pages.states.isInit}>
             <OrderInit

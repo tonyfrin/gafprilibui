@@ -27,7 +27,7 @@ var InitMainMenu = exports.InitMainMenu = function InitMainMenu(_ref) {
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _css.cx)(initMainMenuStylesContainer(stylesContainer), containerClassName)
-  }, restContainerProps), useError && useError.states.error && /*#__PURE__*/_react["default"].createElement(_Abstract.Error, {
+  }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Abstract.MainMenu, contentProps), useError && useError.states.error && /*#__PURE__*/_react["default"].createElement(_Abstract.Error, {
     error: useError.states.error
-  }), /*#__PURE__*/_react["default"].createElement(_Abstract.MainMenu, contentProps)));
+  })));
 };

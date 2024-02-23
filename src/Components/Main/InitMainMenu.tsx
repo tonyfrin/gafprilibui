@@ -50,10 +50,10 @@ export const InitMainMenu = ({
         )}
         {...restContainerProps}
       >
+        <MainMenu {...contentProps} />
         {useError && useError.states.error && (
           <Error error={useError.states.error} />
         )}
-        <MainMenu {...contentProps} />
       </div>
     </>
   );

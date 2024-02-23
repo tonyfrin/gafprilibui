@@ -287,7 +287,8 @@ var useGafpriPagesBudget = exports.useGafpriPagesBudget = function useGafpriPage
     processEntityByEmail: processEntityByEmail,
     processProductBySku: processProductBySku,
     selectproduct: selectproduct,
-    processProductByName: processProductByName
+    processProductByName: processProductByName,
+    goSalesEntity: goSalesEntity
   };
   return {
     states: states,

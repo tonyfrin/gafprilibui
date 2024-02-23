@@ -210,7 +210,8 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     processEntityByEmail: processEntityByEmail,
     processProductBySku: processProductBySku,
     selectproduct: selectproduct,
-    processProductByName: processProductByName
+    processProductByName: processProductByName,
+    goSalesEntity: goSalesEntity
   };
   return {
     states: states,

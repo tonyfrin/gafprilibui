@@ -34,6 +34,7 @@ export type UseGafpriPagesOrderReturn = {
     processProductBySku: (event: KeyboardEvent<HTMLInputElement>) => void;
     selectproduct: (id: number) => void;
     processProductByName: (event: KeyboardEvent<HTMLInputElement>) => void;
+    goSalesEntity: (entity: EntityAttributes) => void;
   };
 };
 
@@ -273,6 +274,7 @@ export const useGafpriPagesOrder = ({
     processProductBySku,
     selectproduct,
     processProductByName,
+    goSalesEntity,
   };
 
   return {

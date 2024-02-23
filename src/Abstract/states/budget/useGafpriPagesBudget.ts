@@ -41,6 +41,7 @@ export type UseGafpriPagesBudgetReturn = {
     processProductBySku: (event: KeyboardEvent<HTMLInputElement>) => void;
     selectproduct: (id: number) => void;
     processProductByName: (event: KeyboardEvent<HTMLInputElement>) => void;
+    goSalesEntity: (entity: EntityAttributes) => void;
   };
 };
 
@@ -352,6 +353,7 @@ export const useGafpriPagesBudget = ({
     processProductBySku,
     selectproduct,
     processProductByName,
+    goSalesEntity,
   };
 
   return {

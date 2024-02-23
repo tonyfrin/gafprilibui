@@ -1,4 +1,5 @@
 import { KeyboardEvent } from 'react';
+import { EntityAttributes } from '../entity';
 import { UseGafpriEntityReturn, UseGafpriProductsReturn } from '../../../states';
 import { UseGafpriAttributesBudgetReturn } from './useGafpriAttributesBudget';
 import { UseGafpriAttributesBudgetItemsReturn } from '../productsItems';
@@ -34,6 +35,7 @@ export type UseGafpriPagesBudgetReturn = {
         processProductBySku: (event: KeyboardEvent<HTMLInputElement>) => void;
         selectproduct: (id: number) => void;
         processProductByName: (event: KeyboardEvent<HTMLInputElement>) => void;
+        goSalesEntity: (entity: EntityAttributes) => void;
     };
 };
 export type UseGafpriPagesBudgetProps = {

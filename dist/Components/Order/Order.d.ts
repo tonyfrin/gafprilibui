@@ -19,5 +19,6 @@ export type OrderProps = {
     useProducts: UseGafpriProductsReturn;
     menuEntity: MainMenuItems[];
     uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
+    uploadOrderOnlyProducts: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
-export declare const Order: ({ use, useEntity, containerStyles, containerProps, itemsMenu, usePagesMain, sitesOptions, useProducts, menuEntity, uploadOrder, }: OrderProps) => JSX.Element;
+export declare const Order: ({ use, useEntity, containerStyles, containerProps, itemsMenu, usePagesMain, sitesOptions, useProducts, menuEntity, uploadOrder, uploadOrderOnlyProducts, }: OrderProps) => JSX.Element;

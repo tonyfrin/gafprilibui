@@ -34,7 +34,8 @@ var Budget = exports.Budget = function Budget(_ref) {
     menu = _ref.menu,
     useProducts = _ref.useProducts,
     menuEntity = _ref.menuEntity,
-    uploadBudget = _ref.uploadBudget;
+    uploadBudget = _ref.uploadBudget,
+    uploadBudgetOnlyProducts = _ref.uploadBudgetOnlyProducts;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -74,7 +75,7 @@ var Budget = exports.Budget = function Budget(_ref) {
     useBudget: use,
     sitesOptions: sitesOptions,
     useProducts: useProducts,
-    uploadBudget: uploadBudget
+    uploadBudget: uploadBudgetOnlyProducts
   })), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entitySearch",
     isVisible: use.pages.states.isEntitySearch

@@ -21,5 +21,6 @@ export type BudgetProps = {
     useProducts: UseGafpriProductsReturn;
     menuEntity: MainMenuItems[];
     uploadBudget: (event: KeyboardEvent<HTMLInputElement>) => void;
+    uploadBudgetOnlyProducts: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
-export declare const Budget: ({ use, useEntity, containerStyles, containerProps, itemsMenu, logoPdf, usePagesMain, sitesOptions, menu, useProducts, menuEntity, uploadBudget, }: BudgetProps) => JSX.Element;
+export declare const Budget: ({ use, useEntity, containerStyles, containerProps, itemsMenu, logoPdf, usePagesMain, sitesOptions, menu, useProducts, menuEntity, uploadBudget, uploadBudgetOnlyProducts, }: BudgetProps) => JSX.Element;

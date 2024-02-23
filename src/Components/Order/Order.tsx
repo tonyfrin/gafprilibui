@@ -49,6 +49,7 @@ export type OrderProps = {
   useProducts: UseGafpriProductsReturn;
   menuEntity: MainMenuItems[];
   uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
+  uploadOrderOnlyProducts: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const Order = ({
@@ -62,6 +63,7 @@ export const Order = ({
   useProducts,
   menuEntity,
   uploadOrder,
+  uploadOrderOnlyProducts,
 }: OrderProps): JSX.Element => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -98,7 +100,7 @@ export const Order = ({
               useOrder={use}
               sitesOptions={sitesOptions}
               useProducts={useProducts}
-              uploadOrder={uploadOrder}
+              uploadOrder={uploadOrderOnlyProducts}
             />
           </FadeIn>
         )}

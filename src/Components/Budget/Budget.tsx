@@ -54,6 +54,7 @@ export type BudgetProps = {
   useProducts: UseGafpriProductsReturn;
   menuEntity: MainMenuItems[];
   uploadBudget: (event: KeyboardEvent<HTMLInputElement>) => void;
+  uploadBudgetOnlyProducts: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const Budget = ({
@@ -69,6 +70,7 @@ export const Budget = ({
   useProducts,
   menuEntity,
   uploadBudget,
+  uploadBudgetOnlyProducts,
 }: BudgetProps): JSX.Element => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -123,7 +125,7 @@ export const Budget = ({
               useBudget={use}
               sitesOptions={sitesOptions}
               useProducts={useProducts}
-              uploadBudget={uploadBudget}
+              uploadBudget={uploadBudgetOnlyProducts}
             />
           </FadeIn>
         )}

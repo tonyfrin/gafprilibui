@@ -31,7 +31,8 @@ var Order = exports.Order = function Order(_ref) {
     sitesOptions = _ref.sitesOptions,
     useProducts = _ref.useProducts,
     menuEntity = _ref.menuEntity,
-    uploadOrder = _ref.uploadOrder;
+    uploadOrder = _ref.uploadOrder,
+    uploadOrderOnlyProducts = _ref.uploadOrderOnlyProducts;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -60,7 +61,7 @@ var Order = exports.Order = function Order(_ref) {
     useOrder: use,
     sitesOptions: sitesOptions,
     useProducts: useProducts,
-    uploadOrder: uploadOrder
+    uploadOrder: uploadOrderOnlyProducts
   })), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entitySearch",
     isVisible: use.pages.states.isEntitySearch

@@ -12,7 +12,8 @@ var _Sections = require("../Sections");
 var Sales = exports.Sales = function Sales(_ref) {
   var useOrder = _ref.useOrder,
     sitesOptions = _ref.sitesOptions,
-    useProducts = _ref.useProducts;
+    useProducts = _ref.useProducts,
+    uploadOrder = _ref.uploadOrder;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, {
     titles: {
       title1: 'Modulo de ventas',
@@ -40,6 +41,7 @@ var Sales = exports.Sales = function Sales(_ref) {
   })))), /*#__PURE__*/_react["default"].createElement(_Sections.CartSections, {
     useOrder: useOrder,
     sitesOptions: sitesOptions,
-    useProducts: useProducts
+    useProducts: useProducts,
+    uploadOrder: uploadOrder
   }));
 };

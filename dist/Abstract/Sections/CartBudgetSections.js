@@ -43,7 +43,8 @@ var CartBudgetSections = exports.CartBudgetSections = function CartBudgetSection
     contentOptionsProps = _ref$contentOptionsPr === void 0 ? {} : _ref$contentOptionsPr,
     sitesOptions = _ref.sitesOptions,
     useBudget = _ref.useBudget,
-    useProducts = _ref.useProducts;
+    useProducts = _ref.useProducts,
+    uploadBudget = _ref.uploadBudget;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   var contentItemsClassName = contentItemsProps.className,
@@ -128,6 +129,22 @@ var CartBudgetSections = exports.CartBudgetSections = function CartBudgetSection
       },
       containerStyles: {
         custom: 'display: grid;'
+      }
+    }
+  })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      justifyContent: 'flex-end'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Input.Input, {
+    styles: {
+      width: '100%'
+    },
+    inputProps: {
+      title: 'Cargar Pedido/Presupuesto',
+      placeholder: 'Ingrese el numero de pedido o presupuesto',
+      onKeyPress: uploadBudget,
+      onChange: function onChange(e) {
+        return useBudget.attributes.actions.setCurrentId(parseInt(e.target.value, 10));
       }
     }
   }))));

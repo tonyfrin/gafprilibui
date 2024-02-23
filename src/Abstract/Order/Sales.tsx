@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { ModelForm, EntityFormInfoHeader, OrderFormInfoHeader } from '../Form';
 import {
   UseGafpriOrderReturn,
@@ -12,9 +12,15 @@ export type SalesProps = {
   useOrder: UseGafpriOrderReturn;
   sitesOptions: SiteOptions;
   useProducts: UseGafpriProductsReturn;
+  uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
-export const Sales = ({ useOrder, sitesOptions, useProducts }: SalesProps) => {
+export const Sales = ({
+  useOrder,
+  sitesOptions,
+  useProducts,
+  uploadOrder,
+}: SalesProps) => {
   return (
     <>
       <ModelForm
@@ -49,6 +55,7 @@ export const Sales = ({ useOrder, sitesOptions, useProducts }: SalesProps) => {
         useOrder={useOrder}
         sitesOptions={sitesOptions}
         useProducts={useProducts}
+        uploadOrder={uploadOrder}
       />
     </>
   );

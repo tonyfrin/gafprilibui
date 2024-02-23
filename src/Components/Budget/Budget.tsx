@@ -123,6 +123,7 @@ export const Budget = ({
               useBudget={use}
               sitesOptions={sitesOptions}
               useProducts={useProducts}
+              uploadBudget={uploadBudget}
             />
           </FadeIn>
         )}

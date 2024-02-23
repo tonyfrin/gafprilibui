@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { css, cx } from '@emotion/css';
 import { Button } from '../Button';
 import { ContainerButton } from '../Containers';
 import { Title2 } from '../Title';
-import { InputName, InputSku } from '../Input';
+import { InputName, InputSku, Input } from '../Input';
 import {
   SiteOptions,
   UseGafpriOrderReturn,
@@ -71,6 +71,7 @@ export type CartSectionsProps = {
   useProducts: UseGafpriProductsReturn;
   contentOptionsStyles?: CartSectionsStylesContentOptionsProps;
   contentOptionsProps?: React.HTMLAttributes<HTMLDivElement>;
+  uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const CartSections = ({
@@ -83,6 +84,7 @@ export const CartSections = ({
   sitesOptions,
   useOrder,
   useProducts,
+  uploadOrder,
 }: CartSectionsProps) => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -188,6 +190,26 @@ export const CartSections = ({
               containerStyles: {
                 custom: 'display: grid;',
               },
+            }}
+          />
+        </ContainerButton>
+        <ContainerButton
+          styles={{
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Input
+            styles={{
+              width: '100%',
+            }}
+            inputProps={{
+              title: 'Cargar Pedido/Presupuesto',
+              placeholder: 'Ingrese el numero de pedido o presupuesto',
+              onKeyPress: uploadOrder,
+              onChange: (e) =>
+                useOrder.attributes.actions.setCurrentId(
+                  parseInt(e.target.value, 10)
+                ),
             }}
           />
         </ContainerButton>

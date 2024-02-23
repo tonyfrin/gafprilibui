@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import {
   ModelForm,
   EntityBudgetFormInfoHeader,
@@ -16,12 +16,14 @@ export type BudgetModuleProps = {
   useBudget: UseGafpriBudgetReturn;
   sitesOptions: SiteOptions;
   useProducts: UseGafpriProductsReturn;
+  uploadBudget: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const BudgetModule = ({
   useBudget,
   sitesOptions,
   useProducts,
+  uploadBudget,
 }: BudgetModuleProps) => {
   return (
     <>
@@ -57,6 +59,7 @@ export const BudgetModule = ({
         useBudget={useBudget}
         sitesOptions={sitesOptions}
         useProducts={useProducts}
+        uploadBudget={uploadBudget}
       />
     </>
   );

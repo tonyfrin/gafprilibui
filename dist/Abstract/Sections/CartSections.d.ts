@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { SiteOptions, UseGafpriOrderReturn, UseGafpriProductsReturn } from '../../states';
 export type CartSectionsStylesContainerProps = {
     width?: string;
@@ -29,5 +29,6 @@ export type CartSectionsProps = {
     useProducts: UseGafpriProductsReturn;
     contentOptionsStyles?: CartSectionsStylesContentOptionsProps;
     contentOptionsProps?: React.HTMLAttributes<HTMLDivElement>;
+    uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
-export declare const CartSections: ({ containerStyles, containerProps, contentItemsStyles, contentItemsProps, contentOptionsStyles, contentOptionsProps, sitesOptions, useOrder, useProducts, }: CartSectionsProps) => React.JSX.Element;
+export declare const CartSections: ({ containerStyles, containerProps, contentItemsStyles, contentItemsProps, contentOptionsStyles, contentOptionsProps, sitesOptions, useOrder, useProducts, uploadOrder, }: CartSectionsProps) => React.JSX.Element;

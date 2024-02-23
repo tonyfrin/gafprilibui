@@ -12,7 +12,8 @@ var _Sections = require("../Sections");
 var BudgetModule = exports.BudgetModule = function BudgetModule(_ref) {
   var useBudget = _ref.useBudget,
     sitesOptions = _ref.sitesOptions,
-    useProducts = _ref.useProducts;
+    useProducts = _ref.useProducts,
+    uploadBudget = _ref.uploadBudget;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, {
     titles: {
       title1: 'Modulo de presupuestos',
@@ -40,6 +41,7 @@ var BudgetModule = exports.BudgetModule = function BudgetModule(_ref) {
   })))), /*#__PURE__*/_react["default"].createElement(_Sections.CartBudgetSections, {
     useBudget: useBudget,
     sitesOptions: sitesOptions,
-    useProducts: useProducts
+    useProducts: useProducts,
+    uploadBudget: uploadBudget
   }));
 };

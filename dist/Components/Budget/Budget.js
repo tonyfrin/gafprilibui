@@ -73,7 +73,8 @@ var Budget = exports.Budget = function Budget(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetModule, {
     useBudget: use,
     sitesOptions: sitesOptions,
-    useProducts: useProducts
+    useProducts: useProducts,
+    uploadBudget: uploadBudget
   })), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entitySearch",
     isVisible: use.pages.states.isEntitySearch

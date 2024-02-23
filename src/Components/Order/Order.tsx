@@ -98,6 +98,7 @@ export const Order = ({
               useOrder={use}
               sitesOptions={sitesOptions}
               useProducts={useProducts}
+              uploadOrder={uploadOrder}
             />
           </FadeIn>
         )}

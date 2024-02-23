@@ -59,7 +59,8 @@ var Order = exports.Order = function Order(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.Sales, {
     useOrder: use,
     sitesOptions: sitesOptions,
-    useProducts: useProducts
+    useProducts: useProducts,
+    uploadOrder: uploadOrder
   })), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entitySearch",
     isVisible: use.pages.states.isEntitySearch

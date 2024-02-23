@@ -374,7 +374,8 @@ var useGafpriAttributesEntity = exports.useGafpriAttributesEntity = function use
   // Funciones de Validacion
   var validationButtonNext = function validationButtonNext() {
     (0, _Validations.generalValidationButtonNext)({
-      validations: [nameValid, lastNameValid, typeDocumentIdIdValid, indexValid, digitValid, addressTypeValid, address1Valid, address2Valid, cityValid, stateCountryValid, countryValid, postCodeValid, emailValid, phoneValid, typeValid, photoValid, statusValid]
+      validations: [nameValid, lastNameValid, typeDocumentIdIdValid, indexValid, digitValid, addressTypeValid, address1Valid, address2Valid, cityValid, stateCountryValid, countryValid, postCodeValid, emailValid, phoneValid, typeValid, photoValid, statusValid],
+      inputId: _constants.ENTITY_ROUTE
     });
   };
   var validationButtonNextAddress = function validationButtonNextAddress() {

@@ -44,6 +44,7 @@ import {
   COUNTRY_DEFAULT,
   STATE_COUNTRY_DEFAULT,
   CITY_DEFAULT,
+  ENTITY_ROUTE,
 } from '../../../constants';
 import type { SelectDefault } from '../../../helpers';
 import type { UseTypeDocumentIdReturn, UseErrorReturn } from '../../../states';
@@ -492,6 +493,7 @@ export const useGafpriAttributesEntity = ({
         photoValid,
         statusValid,
       ],
+      inputId: ENTITY_ROUTE,
     });
   };
 

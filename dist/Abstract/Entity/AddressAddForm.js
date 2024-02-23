@@ -12,6 +12,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
+var _constants = require("src/constants");
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 var AddressAddForm = exports.AddressAddForm = function AddressAddForm(_ref) {
@@ -188,7 +189,8 @@ var AddressAddForm = exports.AddressAddForm = function AddressAddForm(_ref) {
       returnButton: 'Volver'
     },
     handleActions: handleActions,
-    error: use.error.states.error
+    error: use.error.states.error,
+    buttonNextId: _constants.ENTITY_ROUTE
   }, modelFormProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',

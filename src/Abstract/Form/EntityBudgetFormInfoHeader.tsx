@@ -16,11 +16,9 @@ export const EntityBudgetFormInfoHeader = ({
       <ContainerHeaderInfo>
         <LineInfoTwo
           title="Nombre: "
-          info={
-            useBudget.attributes.states.entity?.name
-              ? `${useBudget.attributes.states.entity?.name} ${useBudget.attributes.states.entity?.lastName}`
-              : ''
-          }
+          info={`${useBudget.attributes.states.entity?.name} ${
+            useBudget.attributes.states.entity?.lastName || ''
+          }`}
         />
         <LineInfoTwo
           title="Dirección: "

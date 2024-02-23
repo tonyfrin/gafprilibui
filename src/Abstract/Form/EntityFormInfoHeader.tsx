@@ -16,11 +16,9 @@ export const EntityFormInfoHeader = ({
       <ContainerHeaderInfo>
         <LineInfoTwo
           title="Nombre: "
-          info={
-            useOrder.attributes.states.entity?.name
-              ? `${useOrder.attributes.states.entity?.name} ${useOrder.attributes.states.entity?.lastName}`
-              : ''
-          }
+          info={`${useOrder.attributes.states.entity?.name} ${
+            useOrder.attributes.states.entity?.lastName || ''
+          }`}
         />
         <LineInfoTwo
           title="Dirección: "

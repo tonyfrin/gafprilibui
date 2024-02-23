@@ -131,7 +131,7 @@ var useGafpriDataEntity = exports.useGafpriDataEntity = function useGafpriDataEn
   function getById(id) {
     var _items$data$items2;
     return ((_items$data$items2 = items.data.items) === null || _items$data$items2 === void 0 ? void 0 : _items$data$items2.find(function (item) {
-      return item.id === id;
+      return "".concat(item.id) === "".concat(id);
     })) || null;
   }
   function findByDocumentIdDigit(digit) {

@@ -139,7 +139,7 @@ export const useGafpriDataEntity = ({
   };
 
   function getById(id: number): EntityAttributes | null {
-    return items.data.items?.find((item) => item.id === id) || null;
+    return items.data.items?.find((item) => `${item.id}` === `${id}`) || null;
   }
 
   function findByDocumentIdDigit(digit: string): EntityAttributes | null {

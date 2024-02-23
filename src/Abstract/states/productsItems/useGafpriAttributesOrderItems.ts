@@ -213,7 +213,7 @@ export function useGafpriAttributesOrderItems({
       sku: orderItem.sku,
       name: orderItem.name,
       cost: parseFloat(`${orderItem.cost}`) ?? 0,
-      qty: 1,
+      qty: orderItem.qty,
       price: parseFloat(`${orderItem.price}`),
       type: orderItem.type,
       taxClass: orderItem.taxClass || '',
@@ -228,17 +228,17 @@ export function useGafpriAttributesOrderItems({
     }
   };
 
-  const addBudgetItemToCart = (orderItem: BudgetItemsAttributes): void => {
+  const addBudgetItemToCart = (budgetItem: BudgetItemsAttributes): void => {
     const item: OrderItemsAttributes = {
-      productsPostsId: orderItem.productsPostsId,
+      productsPostsId: budgetItem.productsPostsId,
       storagePostsId: siteOptions.MAIN_STORAGE,
-      sku: orderItem.sku,
-      name: orderItem.name,
-      cost: parseFloat(`${orderItem.cost}`) ?? 0,
-      qty: 1,
-      price: parseFloat(`${orderItem.price}`),
-      type: orderItem.type,
-      taxClass: orderItem.taxClass || '',
+      sku: budgetItem.sku,
+      name: budgetItem.name,
+      cost: parseFloat(`${budgetItem.cost}`) ?? 0,
+      qty: budgetItem.qty,
+      price: parseFloat(`${budgetItem.price}`),
+      type: budgetItem.type,
+      taxClass: budgetItem.taxClass || '',
     };
     const valid = validationShoppingCart([...shoppingCart, item]);
     if (valid) {

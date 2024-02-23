@@ -172,7 +172,7 @@ function useGafpriAttributesOrderItems(_ref) {
       sku: orderItem.sku,
       name: orderItem.name,
       cost: (_parseFloat2 = parseFloat("".concat(orderItem.cost))) !== null && _parseFloat2 !== void 0 ? _parseFloat2 : 0,
-      qty: 1,
+      qty: orderItem.qty,
       price: parseFloat("".concat(orderItem.price)),
       type: orderItem.type,
       taxClass: orderItem.taxClass || ''
@@ -186,18 +186,18 @@ function useGafpriAttributesOrderItems(_ref) {
       useError.actions.changeError(['No se pueden agregar más de 20 productos al carrito']);
     }
   };
-  var addBudgetItemToCart = function addBudgetItemToCart(orderItem) {
+  var addBudgetItemToCart = function addBudgetItemToCart(budgetItem) {
     var _parseFloat3;
     var item = {
-      productsPostsId: orderItem.productsPostsId,
+      productsPostsId: budgetItem.productsPostsId,
       storagePostsId: siteOptions.MAIN_STORAGE,
-      sku: orderItem.sku,
-      name: orderItem.name,
-      cost: (_parseFloat3 = parseFloat("".concat(orderItem.cost))) !== null && _parseFloat3 !== void 0 ? _parseFloat3 : 0,
-      qty: 1,
-      price: parseFloat("".concat(orderItem.price)),
-      type: orderItem.type,
-      taxClass: orderItem.taxClass || ''
+      sku: budgetItem.sku,
+      name: budgetItem.name,
+      cost: (_parseFloat3 = parseFloat("".concat(budgetItem.cost))) !== null && _parseFloat3 !== void 0 ? _parseFloat3 : 0,
+      qty: budgetItem.qty,
+      price: parseFloat("".concat(budgetItem.price)),
+      type: budgetItem.type,
+      taxClass: budgetItem.taxClass || ''
     };
     var valid = validationShoppingCart([].concat((0, _toConsumableArray2["default"])(shoppingCart), [item]));
     if (valid) {

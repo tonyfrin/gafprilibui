@@ -42,7 +42,7 @@ var Budget = exports.Budget = function Budget(_ref) {
     className: (0, _css.cx)(budgetStylesContainer(containerStyles), containerClassName)
   }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Abstract.HeaderMenu, {
     items: itemsMenu
-  }), true && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, {
+  }), use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, {
     mainStyles: {
       custom: 'height: 100vh;'
     }

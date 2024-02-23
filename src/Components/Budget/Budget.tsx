@@ -85,7 +85,7 @@ export const Budget = ({
         {...restContainerProps}
       >
         <HeaderMenu items={itemsMenu} />
-        {true && (
+        {use.pages.states.isFetching && (
           <Loading
             mainStyles={{
               custom: 'height: 100vh;',
@@ -120,11 +120,13 @@ export const Budget = ({
             />
           </FadeIn>
         )}
+
         {use.pages.states.isAddEntity && (
           <FadeIn keyName="addEntity" isVisible={use.pages.states.isAddEntity}>
             <EntityBudget use={useEntity} useBudget={use} menu={menuEntity} />
           </FadeIn>
         )}
+
         {use.pages.states.isSales && (
           <FadeIn keyName="sales" isVisible={use.pages.states.isSales}>
             <BudgetModule
@@ -135,6 +137,7 @@ export const Budget = ({
             />
           </FadeIn>
         )}
+
         {use.pages.states.isEntitySearch && (
           <FadeIn
             keyName="entitySearch"
@@ -143,6 +146,7 @@ export const Budget = ({
             <EntityBudgetSearch use={useEntity} useBudget={use} />
           </FadeIn>
         )}
+
         {use.pages.states.isProductSearch && (
           <FadeIn
             keyName="productySearch"

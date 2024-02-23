@@ -33,7 +33,8 @@ var Budget = exports.Budget = function Budget(_ref) {
     sitesOptions = _ref.sitesOptions,
     menu = _ref.menu,
     useProducts = _ref.useProducts,
-    menuEntity = _ref.menuEntity;
+    menuEntity = _ref.menuEntity,
+    uploadBudget = _ref.uploadBudget;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -56,7 +57,8 @@ var Budget = exports.Budget = function Budget(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetInit, {
     useEntity: useEntity,
     useBudget: use,
-    usePagesMain: usePagesMain
+    usePagesMain: usePagesMain,
+    uploadBudget: uploadBudget
   })), use.pages.states.isAddEntity && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "addEntity",
     isVisible: use.pages.states.isAddEntity

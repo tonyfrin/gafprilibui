@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { css, cx } from '@emotion/css';
 import { EntitySearchForm } from '../Form';
 import { UseGafpriOrderReturn, UseGafpriEntityReturn } from '../../states';
@@ -16,6 +16,7 @@ export type OrderInitProps = {
   useOrder: UseGafpriOrderReturn;
   useEntity: UseGafpriEntityReturn;
   usePagesMain: UseGafpriPagesSalesModuleReturn;
+  uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 const orderInitStylesContainer = (
@@ -32,6 +33,7 @@ export const OrderInit = ({
   useOrder,
   useEntity,
   usePagesMain,
+  uploadOrder,
 }: OrderInitProps): JSX.Element => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -49,6 +51,7 @@ export const OrderInit = ({
           useOrder={useOrder}
           useEntity={useEntity}
           usePagesSalesModule={usePagesMain}
+          uploadOrder={uploadOrder}
         />
       </div>
     </>

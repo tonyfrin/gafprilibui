@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import type { UseGafpriEntityReturn, UseGafpriOrderReturn } from '../../states';
 import type { UseGafpriPagesSalesModuleReturn } from '../states';
 export type EntitySearchFormStaylesContainerProps = {
@@ -13,5 +13,6 @@ export type EntitySearchFormProps = {
     useOrder: UseGafpriOrderReturn;
     useEntity: UseGafpriEntityReturn;
     usePagesSalesModule: UseGafpriPagesSalesModuleReturn;
+    uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
-export declare const EntitySearchForm: ({ containerStyles, containerProps, useOrder, useEntity, usePagesSalesModule, }: EntitySearchFormProps) => React.JSX.Element;
+export declare const EntitySearchForm: ({ containerStyles, containerProps, useOrder, useEntity, usePagesSalesModule, uploadOrder, }: EntitySearchFormProps) => React.JSX.Element;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { UseGafpriBudgetReturn, UseGafpriEntityReturn } from '../../states';
 import { UseGafpriPagesSalesModuleReturn } from '../states';
 export type BudgetInitStylesContainerProps = {
@@ -12,5 +12,6 @@ export type BudgetInitProps = {
     useBudget: UseGafpriBudgetReturn;
     useEntity: UseGafpriEntityReturn;
     usePagesMain: UseGafpriPagesSalesModuleReturn;
+    uploadBudget: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
-export declare const BudgetInit: ({ containerStyles, containerProps, useBudget, useEntity, usePagesMain, }: BudgetInitProps) => JSX.Element;
+export declare const BudgetInit: ({ containerStyles, containerProps, useBudget, useEntity, usePagesMain, uploadBudget, }: BudgetInitProps) => JSX.Element;

@@ -82,7 +82,7 @@ var changeInputNumers = exports.changeInputNumers = function changeInputNumers(v
   }
 };
 function toTitleCase(str) {
-  var exceptions = ['de', 'del', 'la'];
+  var exceptions = ['de', 'del', 'la', 'los'];
   return str.replace(/(^|\s|\.|,|&)([a-z\u00E0-\u00FF]+)/g, function (match, separator, word) {
     var lowerWord = word.toLowerCase();
     if (exceptions.includes(lowerWord)) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { css, cx } from '@emotion/css';
 import { Loading } from '../Loading';
 import {
@@ -53,6 +53,7 @@ export type BudgetProps = {
   itemsMenu: HeaderMenuItem[];
   useProducts: UseGafpriProductsReturn;
   menuEntity: MainMenuItems[];
+  uploadBudget: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const Budget = ({
@@ -67,6 +68,7 @@ export const Budget = ({
   menu,
   useProducts,
   menuEntity,
+  uploadBudget,
 }: BudgetProps): JSX.Element => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -105,6 +107,7 @@ export const Budget = ({
               useEntity={useEntity}
               useBudget={use}
               usePagesMain={usePagesMain}
+              uploadBudget={uploadBudget}
             />
           </FadeIn>
         )}

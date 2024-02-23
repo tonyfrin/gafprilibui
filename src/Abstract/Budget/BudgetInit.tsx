@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { css, cx } from '@emotion/css';
 import { EntityBudgetSearchForm } from '../Form';
 import { UseGafpriBudgetReturn, UseGafpriEntityReturn } from '../../states';
@@ -16,6 +16,7 @@ export type BudgetInitProps = {
   useBudget: UseGafpriBudgetReturn;
   useEntity: UseGafpriEntityReturn;
   usePagesMain: UseGafpriPagesSalesModuleReturn;
+  uploadBudget: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 const budgetInitStylesContainer = (
@@ -32,6 +33,7 @@ export const BudgetInit = ({
   useBudget,
   useEntity,
   usePagesMain,
+  uploadBudget,
 }: BudgetInitProps): JSX.Element => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -49,6 +51,7 @@ export const BudgetInit = ({
           useBudget={useBudget}
           useEntity={useEntity}
           usePagesSalesModule={usePagesMain}
+          uploadBudget={uploadBudget}
         />
       </div>
     </>

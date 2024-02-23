@@ -161,6 +161,33 @@ function useGafpriAttributesBudgetItems(_ref) {
       });
     });
   };
+  var addBudgetItemToCart = function addBudgetItemToCart(orderItem) {
+    var _parseFloat2;
+    var item = {
+      productsPostsId: orderItem.productsPostsId,
+      sku: orderItem.sku,
+      name: orderItem.name,
+      cost: (_parseFloat2 = parseFloat("".concat(orderItem.cost))) !== null && _parseFloat2 !== void 0 ? _parseFloat2 : 0,
+      qty: 1,
+      price: parseFloat("".concat(orderItem.price)),
+      type: orderItem.type,
+      taxClass: orderItem.taxClass || ''
+    };
+    var valid = validationShoppingCart([].concat((0, _toConsumableArray2["default"])(shoppingCart), [item]));
+    if (valid) {
+      setShoppingCart(function (prevCart) {
+        return [].concat((0, _toConsumableArray2["default"])(prevCart), [item]);
+      });
+    } else {
+      useError.actions.changeError(['No se pueden agregar más de 20 productos al carrito']);
+    }
+  };
+  var uploadBudgetItems = function uploadBudgetItems(orderItems) {
+    orderItems.forEach(function (orderItem) {
+      addBudgetItemToCart(orderItem);
+      return null;
+    });
+  };
   _react["default"].useEffect(function () {
     calculateTotal();
   }, [shoppingCart]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -190,7 +217,8 @@ function useGafpriAttributesBudgetItems(_ref) {
     calculateTotal: calculateTotal,
     addItemToCart: addItemToCart,
     updateQtyItemCart: updateQtyItemCart,
-    updatePriceItemCart: updatePriceItemCart
+    updatePriceItemCart: updatePriceItemCart,
+    uploadBudgetItems: uploadBudgetItems
   };
   return {
     states: states,

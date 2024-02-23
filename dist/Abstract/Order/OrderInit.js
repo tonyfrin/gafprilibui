@@ -23,7 +23,8 @@ var OrderInit = exports.OrderInit = function OrderInit(_ref) {
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     useOrder = _ref.useOrder,
     useEntity = _ref.useEntity,
-    usePagesMain = _ref.usePagesMain;
+    usePagesMain = _ref.usePagesMain,
+    uploadOrder = _ref.uploadOrder;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -31,6 +32,7 @@ var OrderInit = exports.OrderInit = function OrderInit(_ref) {
   }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Form.EntitySearchForm, {
     useOrder: useOrder,
     useEntity: useEntity,
-    usePagesSalesModule: usePagesMain
+    usePagesSalesModule: usePagesMain,
+    uploadOrder: uploadOrder
   })));
 };

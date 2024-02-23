@@ -30,7 +30,8 @@ var Order = exports.Order = function Order(_ref) {
     usePagesMain = _ref.usePagesMain,
     sitesOptions = _ref.sitesOptions,
     useProducts = _ref.useProducts,
-    menuEntity = _ref.menuEntity;
+    menuEntity = _ref.menuEntity,
+    uploadOrder = _ref.uploadOrder;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -43,7 +44,8 @@ var Order = exports.Order = function Order(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.OrderInit, {
     useEntity: useEntity,
     useOrder: use,
-    usePagesMain: usePagesMain
+    usePagesMain: usePagesMain,
+    uploadOrder: uploadOrder
   })), use.pages.states.isAddEntity && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "addEntity",
     isVisible: use.pages.states.isAddEntity

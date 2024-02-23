@@ -101,7 +101,7 @@ export const changeInputNumers = (
 };
 
 export function toTitleCase(str: string): string {
-  const exceptions = ['de', 'del', 'la'];
+  const exceptions = ['de', 'del', 'la', 'los'];
 
   return str.replace(
     /(^|\s|\.|,|&)([a-z\u00E0-\u00FF]+)/g,

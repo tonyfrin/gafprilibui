@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { css, cx } from '@emotion/css';
 import { SearchBox } from '../Box';
 import { Button } from '../Button';
@@ -8,6 +8,7 @@ import {
   InputEmail,
   InputName,
   InputPhone,
+  Input,
 } from '../Input';
 import type {
   UseGafpriEntityReturn,
@@ -37,6 +38,7 @@ export type EntityBudgetSearchFormProps = {
   useBudget: UseGafpriBudgetReturn;
   useEntity: UseGafpriEntityReturn;
   usePagesSalesModule: UseGafpriPagesSalesModuleReturn;
+  uploadBudget: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const EntityBudgetSearchForm = ({
@@ -45,6 +47,7 @@ export const EntityBudgetSearchForm = ({
   useBudget,
   useEntity,
   usePagesSalesModule,
+  uploadBudget,
 }: EntityBudgetSearchFormProps) => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -145,6 +148,26 @@ export const EntityBudgetSearchForm = ({
                     title: 'Email',
                     onKeyPress: useBudget.pages.actions.processEntityByEmail,
                   },
+                }}
+              />
+            </ContainerButton>
+            <ContainerButton
+              styles={{
+                width: '100%',
+              }}
+            >
+              <Input
+                styles={{
+                  width: '100%',
+                }}
+                inputProps={{
+                  title: 'Cargar Pedido/Presupuesto',
+                  placeholder: 'Ingrese el numero de pedido o presupuesto',
+                  onKeyPress: uploadBudget,
+                  onChange: (e) =>
+                    useBudget.attributes.actions.setCurrentId(
+                      parseInt(e.target.value, 10)
+                    ),
                 }}
               />
             </ContainerButton>

@@ -26,7 +26,8 @@ var EntitySearchForm = exports.EntitySearchForm = function EntitySearchForm(_ref
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     useOrder = _ref.useOrder,
     useEntity = _ref.useEntity,
-    usePagesSalesModule = _ref.usePagesSalesModule;
+    usePagesSalesModule = _ref.usePagesSalesModule,
+    uploadOrder = _ref.uploadOrder;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -104,6 +105,22 @@ var EntitySearchForm = exports.EntitySearchForm = function EntitySearchForm(_ref
       inputProps: {
         title: 'Email',
         onKeyPress: useOrder.pages.actions.processEntityByEmail
+      }
+    }
+  })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      width: '100%'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Input.Input, {
+    styles: {
+      width: '100%'
+    },
+    inputProps: {
+      title: 'Cargar Pedido/Presupuesto',
+      placeholder: 'Ingrese el numero de pedido o presupuesto',
+      onKeyPress: uploadOrder,
+      onChange: function onChange(e) {
+        return useOrder.attributes.actions.setCurrentId(parseInt(e.target.value, 10));
       }
     }
   })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {

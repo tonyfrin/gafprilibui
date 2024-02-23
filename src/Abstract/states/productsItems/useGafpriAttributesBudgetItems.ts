@@ -41,6 +41,7 @@ type Actions = {
   addItemToCart: (product: ProductsAttributes) => void;
   updateQtyItemCart: (index: number, value: string) => void;
   updatePriceItemCart: (index: number, value: string) => void;
+  uploadBudgetItems: (orderItems: BudgetItemsAttributes[]) => void;
 };
 
 export type UseGafpriAttributesBudgetItemsReturn = {
@@ -198,6 +199,34 @@ export function useGafpriAttributesBudgetItems({
     });
   };
 
+  const addBudgetItemToCart = (orderItem: BudgetItemsAttributes): void => {
+    const item: BudgetItemsAttributes = {
+      productsPostsId: orderItem.productsPostsId,
+      sku: orderItem.sku,
+      name: orderItem.name,
+      cost: parseFloat(`${orderItem.cost}`) ?? 0,
+      qty: 1,
+      price: parseFloat(`${orderItem.price}`),
+      type: orderItem.type,
+      taxClass: orderItem.taxClass || '',
+    };
+    const valid = validationShoppingCart([...shoppingCart, item]);
+    if (valid) {
+      setShoppingCart((prevCart) => [...prevCart, item]);
+    } else {
+      useError.actions.changeError([
+        'No se pueden agregar más de 20 productos al carrito',
+      ]);
+    }
+  };
+
+  const uploadBudgetItems = (orderItems: BudgetItemsAttributes[]): void => {
+    orderItems.forEach((orderItem) => {
+      addBudgetItemToCart(orderItem);
+      return null;
+    });
+  };
+
   React.useEffect(() => {
     calculateTotal();
   }, [shoppingCart]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -229,6 +258,7 @@ export function useGafpriAttributesBudgetItems({
     addItemToCart,
     updateQtyItemCart,
     updatePriceItemCart,
+    uploadBudgetItems,
   };
 
   return {

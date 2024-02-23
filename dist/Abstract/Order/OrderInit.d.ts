@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { UseGafpriOrderReturn, UseGafpriEntityReturn } from '../../states';
 import { UseGafpriPagesSalesModuleReturn } from '../states';
 export type OrderInitStylesContainerProps = {
@@ -12,5 +12,6 @@ export type OrderInitProps = {
     useOrder: UseGafpriOrderReturn;
     useEntity: UseGafpriEntityReturn;
     usePagesMain: UseGafpriPagesSalesModuleReturn;
+    uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
-export declare const OrderInit: ({ containerStyles, containerProps, useOrder, useEntity, usePagesMain, }: OrderInitProps) => JSX.Element;
+export declare const OrderInit: ({ containerStyles, containerProps, useOrder, useEntity, usePagesMain, uploadOrder, }: OrderInitProps) => JSX.Element;

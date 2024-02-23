@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { css, cx } from '@emotion/css';
 import { Loading } from '../Loading';
 import {
@@ -48,6 +48,7 @@ export type OrderProps = {
   itemsMenu: HeaderMenuItem[];
   useProducts: UseGafpriProductsReturn;
   menuEntity: MainMenuItems[];
+  uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const Order = ({
@@ -60,6 +61,7 @@ export const Order = ({
   sitesOptions,
   useProducts,
   menuEntity,
+  uploadOrder,
 }: OrderProps): JSX.Element => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -81,6 +83,7 @@ export const Order = ({
               useEntity={useEntity}
               useOrder={use}
               usePagesMain={usePagesMain}
+              uploadOrder={uploadOrder}
             />
           </FadeIn>
         )}

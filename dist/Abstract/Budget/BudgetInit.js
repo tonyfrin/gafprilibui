@@ -23,7 +23,8 @@ var BudgetInit = exports.BudgetInit = function BudgetInit(_ref) {
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     useBudget = _ref.useBudget,
     useEntity = _ref.useEntity,
-    usePagesMain = _ref.usePagesMain;
+    usePagesMain = _ref.usePagesMain,
+    uploadBudget = _ref.uploadBudget;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -31,6 +32,7 @@ var BudgetInit = exports.BudgetInit = function BudgetInit(_ref) {
   }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Form.EntityBudgetSearchForm, {
     useBudget: useBudget,
     useEntity: useEntity,
-    usePagesSalesModule: usePagesMain
+    usePagesSalesModule: usePagesMain,
+    uploadBudget: uploadBudget
   })));
 };

@@ -34,6 +34,7 @@ type Actions = {
     addItemToCart: (product: ProductsAttributes) => void;
     updateQtyItemCart: (index: number, value: string) => void;
     updatePriceItemCart: (index: number, value: string) => void;
+    uploadBudgetItems: (orderItems: BudgetItemsAttributes[]) => void;
 };
 export type UseGafpriAttributesBudgetItemsReturn = {
     states: State;

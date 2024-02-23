@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { css, cx } from '@emotion/css';
 import { SearchBox } from '../Box';
 import { Button } from '../Button';
@@ -8,6 +8,7 @@ import {
   InputEmail,
   InputName,
   InputPhone,
+  Input,
 } from '../Input';
 import type { UseGafpriEntityReturn, UseGafpriOrderReturn } from '../../states';
 import type { UseGafpriPagesSalesModuleReturn } from '../states';
@@ -34,6 +35,7 @@ export type EntitySearchFormProps = {
   useOrder: UseGafpriOrderReturn;
   useEntity: UseGafpriEntityReturn;
   usePagesSalesModule: UseGafpriPagesSalesModuleReturn;
+  uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const EntitySearchForm = ({
@@ -42,6 +44,7 @@ export const EntitySearchForm = ({
   useOrder,
   useEntity,
   usePagesSalesModule,
+  uploadOrder,
 }: EntitySearchFormProps) => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -142,6 +145,26 @@ export const EntitySearchForm = ({
                     title: 'Email',
                     onKeyPress: useOrder.pages.actions.processEntityByEmail,
                   },
+                }}
+              />
+            </ContainerButton>
+            <ContainerButton
+              styles={{
+                width: '100%',
+              }}
+            >
+              <Input
+                styles={{
+                  width: '100%',
+                }}
+                inputProps={{
+                  title: 'Cargar Pedido/Presupuesto',
+                  placeholder: 'Ingrese el numero de pedido o presupuesto',
+                  onKeyPress: uploadOrder,
+                  onChange: (e) =>
+                    useOrder.attributes.actions.setCurrentId(
+                      parseInt(e.target.value, 10)
+                    ),
                 }}
               />
             </ContainerButton>

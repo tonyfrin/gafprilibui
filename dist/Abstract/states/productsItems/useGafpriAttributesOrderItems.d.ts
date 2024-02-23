@@ -35,6 +35,7 @@ type Actions = {
     addItemToCart: (product: ProductsAttributes) => void;
     updateQtyItemCart: (index: number, value: string) => void;
     updatePriceItemCart: (index: number, value: string) => void;
+    uploadOrderItems: (orderItems: OrderItemsAttributes[]) => void;
 };
 export type UseGafpriAttributesOrderItemsReturn = {
     states: State;

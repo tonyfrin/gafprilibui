@@ -200,7 +200,7 @@ export const CartSections = ({
         >
           <Input
             styles={{
-              width: '100%',
+              width: '70%',
             }}
             inputProps={{
               title: 'Cargar Pedido/Presupuesto',

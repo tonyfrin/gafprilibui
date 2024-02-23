@@ -137,7 +137,7 @@ var CartSections = exports.CartSections = function CartSections(_ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_Input.Input, {
     styles: {
-      width: '100%'
+      width: '70%'
     },
     inputProps: {
       title: 'Cargar Pedido/Presupuesto',

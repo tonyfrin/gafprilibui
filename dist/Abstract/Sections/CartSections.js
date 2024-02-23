@@ -51,6 +51,7 @@ var CartSections = exports.CartSections = function CartSections(_ref) {
     restContentItemsProps = (0, _objectWithoutProperties2["default"])(contentItemsProps, _excluded2);
   var contentOptionsClassName = contentOptionsProps.className,
     restContentOptionsProps = (0, _objectWithoutProperties2["default"])(contentOptionsProps, _excluded3);
+  var currentId = useOrder.attributes.states.currentId.toString() === '0' ? '' : useOrder.attributes.states.currentId.toString();
   return /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _css.cx)(cartSectionsStylesContainer(containerStyles), containerClassName)
   }, restContainerProps), /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -142,7 +143,7 @@ var CartSections = exports.CartSections = function CartSections(_ref) {
     inputProps: {
       title: 'Cargar Pedido/Presupuesto',
       placeholder: 'Ingrese el numero de pedido o presupuesto',
-      defaultValue: useOrder.attributes.states.currentId,
+      defaultValue: currentId,
       onKeyPress: uploadOrder,
       onChange: function onChange(e) {
         return useOrder.attributes.actions.setCurrentId(parseInt(e.target.value, 10));

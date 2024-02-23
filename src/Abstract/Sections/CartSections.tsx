@@ -93,6 +93,11 @@ export const CartSections = ({
   const { className: contentOptionsClassName, ...restContentOptionsProps } =
     contentOptionsProps;
 
+  const currentId =
+    useOrder.attributes.states.currentId.toString() === '0'
+      ? ''
+      : useOrder.attributes.states.currentId.toString();
+
   return (
     <div
       className={cx(
@@ -205,7 +210,7 @@ export const CartSections = ({
             inputProps={{
               title: 'Cargar Pedido/Presupuesto',
               placeholder: 'Ingrese el numero de pedido o presupuesto',
-              defaultValue: useOrder.attributes.states.currentId,
+              defaultValue: currentId,
               onKeyPress: uploadOrder,
               onChange: (e) =>
                 useOrder.attributes.actions.setCurrentId(

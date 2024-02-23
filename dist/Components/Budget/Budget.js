@@ -50,7 +50,8 @@ var Budget = exports.Budget = function Budget(_ref) {
     },
     stylesContainer: {
       backgroundImage: 'none'
-    }
+    },
+    useError: use.error
   })), use.pages.states.isEntityForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entityForm",
     isVisible: use.pages.states.isEntityForm

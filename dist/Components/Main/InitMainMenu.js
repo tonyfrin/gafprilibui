@@ -21,10 +21,13 @@ var InitMainMenu = exports.InitMainMenu = function InitMainMenu(_ref) {
     stylesContainer = _ref$stylesContainer === void 0 ? {} : _ref$stylesContainer,
     _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
-    contentProps = _ref.contentProps;
+    contentProps = _ref.contentProps,
+    useError = _ref.useError;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _css.cx)(initMainMenuStylesContainer(stylesContainer), containerClassName)
-  }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Abstract.MainMenu, contentProps)));
+  }, restContainerProps), useError && useError.states.error && /*#__PURE__*/_react["default"].createElement(_Abstract.Error, {
+    error: useError.states.error
+  }), /*#__PURE__*/_react["default"].createElement(_Abstract.MainMenu, contentProps)));
 };

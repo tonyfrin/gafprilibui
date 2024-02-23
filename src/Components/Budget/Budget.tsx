@@ -94,6 +94,7 @@ export const Budget = ({
               stylesContainer={{
                 backgroundImage: 'none',
               }}
+              useError={use.error}
             />
           </FadeIn>
         )}

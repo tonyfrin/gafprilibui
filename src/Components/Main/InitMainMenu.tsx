@@ -1,7 +1,8 @@
 import React, { HTMLAttributes } from 'react';
 import { css, cx } from '@emotion/css';
-import { MainMenu } from '../../Abstract';
+import { Error, MainMenu } from '../../Abstract';
 import type { MainMenuProps } from '../../Abstract';
+import type { UseErrorReturn } from '../../states';
 
 export type InitMainMenuStylesContainerProps = {
   padding?: string;
@@ -16,6 +17,7 @@ export type InitMainMenuProps = {
   stylesContainer?: InitMainMenuStylesContainerProps;
   containerProps?: HTMLAttributes<HTMLDivElement>;
   contentProps: MainMenuProps;
+  useError?: UseErrorReturn;
 };
 
 const initMainMenuStylesContainer = (
@@ -34,6 +36,7 @@ export const InitMainMenu = ({
   stylesContainer = {},
   containerProps = {},
   contentProps,
+  useError,
 }: InitMainMenuProps) => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -47,6 +50,9 @@ export const InitMainMenu = ({
         )}
         {...restContainerProps}
       >
+        {useError && useError.states.error && (
+          <Error error={useError.states.error} />
+        )}
         <MainMenu {...contentProps} />
       </div>
     </>

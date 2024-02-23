@@ -549,6 +549,7 @@ export const useGafpriAttributesEntity = ({
       value,
       setValid: setLastNameValid,
       currentValid: lastNameValid,
+      required: false,
     });
   };
 
@@ -597,6 +598,7 @@ export const useGafpriAttributesEntity = ({
       value,
       setValid: setAddress2Valid,
       currentValid: address2Valid,
+      required: false,
     });
   };
 
@@ -629,6 +631,7 @@ export const useGafpriAttributesEntity = ({
       value,
       setValid: setPostCodeValid,
       currentValid: postCodeValid,
+      required: false,
     });
   };
 

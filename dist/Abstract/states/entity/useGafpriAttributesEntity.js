@@ -404,7 +404,8 @@ var useGafpriAttributesEntity = exports.useGafpriAttributesEntity = function use
     return (0, _Validations.generalValidationLastName)({
       value: value,
       setValid: setLastNameValid,
-      currentValid: lastNameValid
+      currentValid: lastNameValid,
+      required: false
     });
   };
   var validationTypeDocumentIdId = function validationTypeDocumentIdId(value) {
@@ -446,7 +447,8 @@ var useGafpriAttributesEntity = exports.useGafpriAttributesEntity = function use
     return (0, _Validations.generalValidationAddress2)({
       value: value,
       setValid: setAddress2Valid,
-      currentValid: address2Valid
+      currentValid: address2Valid,
+      required: false
     });
   };
   var validationCity = function validationCity(value) {
@@ -474,7 +476,8 @@ var useGafpriAttributesEntity = exports.useGafpriAttributesEntity = function use
     return (0, _Validations.generalValidationPostCode)({
       value: value,
       setValid: setPostCodeValid,
-      currentValid: postCodeValid
+      currentValid: postCodeValid,
+      required: false
     });
   };
   var validationEmail = function validationEmail(value) {

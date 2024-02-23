@@ -13,7 +13,7 @@ export const generalValidationLastName = ({
   value,
   setValid,
   currentValid,
-  required = true,
+  required = false,
   inputId = '',
 }: GeneralValidationLastNameProps): boolean => {
   return validationInputNameLastNameUserName({

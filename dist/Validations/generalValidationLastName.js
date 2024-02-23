@@ -11,7 +11,7 @@ var generalValidationLastName = exports.generalValidationLastName = function gen
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
     _ref$required = _ref.required,
-    required = _ref$required === void 0 ? true : _ref$required,
+    required = _ref$required === void 0 ? false : _ref$required,
     _ref$inputId = _ref.inputId,
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return (0, _index.validationInputNameLastNameUserName)({

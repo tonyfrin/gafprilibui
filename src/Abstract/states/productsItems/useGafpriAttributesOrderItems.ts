@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UseErrorReturn, SiteOptions } from '../../../states';
 import { ProductsAttributes } from '../products/useGafpriDataProducts';
+import { BudgetItemsAttributes } from './useGafpriAttributesBudgetItems';
 
 export type OrderItemsAttributes = {
   id?: number;
@@ -43,6 +44,7 @@ type Actions = {
   updateQtyItemCart: (index: number, value: string) => void;
   updatePriceItemCart: (index: number, value: string) => void;
   uploadOrderItems: (orderItems: OrderItemsAttributes[]) => void;
+  uploadBudgetItems: (budgetItems: BudgetItemsAttributes[]) => void;
 };
 
 export type UseGafpriAttributesOrderItemsReturn = {
@@ -226,9 +228,38 @@ export function useGafpriAttributesOrderItems({
     }
   };
 
+  const addBudgetItemToCart = (orderItem: BudgetItemsAttributes): void => {
+    const item: OrderItemsAttributes = {
+      productsPostsId: orderItem.productsPostsId,
+      storagePostsId: siteOptions.MAIN_STORAGE,
+      sku: orderItem.sku,
+      name: orderItem.name,
+      cost: parseFloat(`${orderItem.cost}`) ?? 0,
+      qty: 1,
+      price: parseFloat(`${orderItem.price}`),
+      type: orderItem.type,
+      taxClass: orderItem.taxClass || '',
+    };
+    const valid = validationShoppingCart([...shoppingCart, item]);
+    if (valid) {
+      setShoppingCart((prevCart) => [...prevCart, item]);
+    } else {
+      useError.actions.changeError([
+        'No se pueden agregar más de 20 productos al carrito',
+      ]);
+    }
+  };
+
   const uploadOrderItems = (orderItems: OrderItemsAttributes[]): void => {
     orderItems.forEach((orderItem) => {
       addOrderItemToCart(orderItem);
+      return null;
+    });
+  };
+
+  const uploadBudgetItems = (budgetItems: BudgetItemsAttributes[]): void => {
+    budgetItems.forEach((orderItem) => {
+      addBudgetItemToCart(orderItem);
       return null;
     });
   };
@@ -265,6 +296,7 @@ export function useGafpriAttributesOrderItems({
     updateQtyItemCart,
     updatePriceItemCart,
     uploadOrderItems,
+    uploadBudgetItems,
   };
 
   return {

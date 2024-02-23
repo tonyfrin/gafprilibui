@@ -182,9 +182,36 @@ function useGafpriAttributesBudgetItems(_ref) {
       useError.actions.changeError(['No se pueden agregar más de 20 productos al carrito']);
     }
   };
+  var addOrderItemToCart = function addOrderItemToCart(orderItem) {
+    var _parseFloat3;
+    var item = {
+      productsPostsId: orderItem.productsPostsId,
+      sku: orderItem.sku,
+      name: orderItem.name,
+      cost: (_parseFloat3 = parseFloat("".concat(orderItem.cost))) !== null && _parseFloat3 !== void 0 ? _parseFloat3 : 0,
+      qty: 1,
+      price: parseFloat("".concat(orderItem.price)),
+      type: orderItem.type,
+      taxClass: orderItem.taxClass || ''
+    };
+    var valid = validationShoppingCart([].concat((0, _toConsumableArray2["default"])(shoppingCart), [item]));
+    if (valid) {
+      setShoppingCart(function (prevCart) {
+        return [].concat((0, _toConsumableArray2["default"])(prevCart), [item]);
+      });
+    } else {
+      useError.actions.changeError(['No se pueden agregar más de 20 productos al carrito']);
+    }
+  };
   var uploadBudgetItems = function uploadBudgetItems(orderItems) {
     orderItems.forEach(function (orderItem) {
       addBudgetItemToCart(orderItem);
+      return null;
+    });
+  };
+  var uploadOrderItems = function uploadOrderItems(orderItems) {
+    orderItems.forEach(function (orderItem) {
+      addOrderItemToCart(orderItem);
       return null;
     });
   };
@@ -218,7 +245,8 @@ function useGafpriAttributesBudgetItems(_ref) {
     addItemToCart: addItemToCart,
     updateQtyItemCart: updateQtyItemCart,
     updatePriceItemCart: updatePriceItemCart,
-    uploadBudgetItems: uploadBudgetItems
+    uploadBudgetItems: uploadBudgetItems,
+    uploadOrderItems: uploadOrderItems
   };
   return {
     states: states,

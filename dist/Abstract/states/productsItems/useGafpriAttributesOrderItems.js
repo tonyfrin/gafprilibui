@@ -186,9 +186,37 @@ function useGafpriAttributesOrderItems(_ref) {
       useError.actions.changeError(['No se pueden agregar más de 20 productos al carrito']);
     }
   };
+  var addBudgetItemToCart = function addBudgetItemToCart(orderItem) {
+    var _parseFloat3;
+    var item = {
+      productsPostsId: orderItem.productsPostsId,
+      storagePostsId: siteOptions.MAIN_STORAGE,
+      sku: orderItem.sku,
+      name: orderItem.name,
+      cost: (_parseFloat3 = parseFloat("".concat(orderItem.cost))) !== null && _parseFloat3 !== void 0 ? _parseFloat3 : 0,
+      qty: 1,
+      price: parseFloat("".concat(orderItem.price)),
+      type: orderItem.type,
+      taxClass: orderItem.taxClass || ''
+    };
+    var valid = validationShoppingCart([].concat((0, _toConsumableArray2["default"])(shoppingCart), [item]));
+    if (valid) {
+      setShoppingCart(function (prevCart) {
+        return [].concat((0, _toConsumableArray2["default"])(prevCart), [item]);
+      });
+    } else {
+      useError.actions.changeError(['No se pueden agregar más de 20 productos al carrito']);
+    }
+  };
   var uploadOrderItems = function uploadOrderItems(orderItems) {
     orderItems.forEach(function (orderItem) {
       addOrderItemToCart(orderItem);
+      return null;
+    });
+  };
+  var uploadBudgetItems = function uploadBudgetItems(budgetItems) {
+    budgetItems.forEach(function (orderItem) {
+      addBudgetItemToCart(orderItem);
       return null;
     });
   };
@@ -222,7 +250,8 @@ function useGafpriAttributesOrderItems(_ref) {
     addItemToCart: addItemToCart,
     updateQtyItemCart: updateQtyItemCart,
     updatePriceItemCart: updatePriceItemCart,
-    uploadOrderItems: uploadOrderItems
+    uploadOrderItems: uploadOrderItems,
+    uploadBudgetItems: uploadBudgetItems
   };
   return {
     states: states,

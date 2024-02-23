@@ -1,5 +1,6 @@
 import { UseErrorReturn, SiteOptions } from '../../../states';
 import { ProductsAttributes } from '../products/useGafpriDataProducts';
+import { BudgetItemsAttributes } from './useGafpriAttributesBudgetItems';
 export type OrderItemsAttributes = {
     id?: number;
     orderPostsId?: number;
@@ -36,6 +37,7 @@ type Actions = {
     updateQtyItemCart: (index: number, value: string) => void;
     updatePriceItemCart: (index: number, value: string) => void;
     uploadOrderItems: (orderItems: OrderItemsAttributes[]) => void;
+    uploadBudgetItems: (budgetItems: BudgetItemsAttributes[]) => void;
 };
 export type UseGafpriAttributesOrderItemsReturn = {
     states: State;

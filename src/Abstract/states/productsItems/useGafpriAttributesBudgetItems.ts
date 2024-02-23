@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UseErrorReturn } from '../../../states';
 import { ProductsAttributes } from '../products/useGafpriDataProducts';
+import { OrderItemsAttributes } from './useGafpriAttributesOrderItems';
 
 export type BudgetItemsAttributes = {
   id?: number;
@@ -42,6 +43,7 @@ type Actions = {
   updateQtyItemCart: (index: number, value: string) => void;
   updatePriceItemCart: (index: number, value: string) => void;
   uploadBudgetItems: (orderItems: BudgetItemsAttributes[]) => void;
+  uploadOrderItems: (orderItems: OrderItemsAttributes[]) => void;
 };
 
 export type UseGafpriAttributesBudgetItemsReturn = {
@@ -220,9 +222,37 @@ export function useGafpriAttributesBudgetItems({
     }
   };
 
+  const addOrderItemToCart = (orderItem: OrderItemsAttributes): void => {
+    const item: BudgetItemsAttributes = {
+      productsPostsId: orderItem.productsPostsId,
+      sku: orderItem.sku,
+      name: orderItem.name,
+      cost: parseFloat(`${orderItem.cost}`) ?? 0,
+      qty: 1,
+      price: parseFloat(`${orderItem.price}`),
+      type: orderItem.type,
+      taxClass: orderItem.taxClass || '',
+    };
+    const valid = validationShoppingCart([...shoppingCart, item]);
+    if (valid) {
+      setShoppingCart((prevCart) => [...prevCart, item]);
+    } else {
+      useError.actions.changeError([
+        'No se pueden agregar más de 20 productos al carrito',
+      ]);
+    }
+  };
+
   const uploadBudgetItems = (orderItems: BudgetItemsAttributes[]): void => {
     orderItems.forEach((orderItem) => {
       addBudgetItemToCart(orderItem);
+      return null;
+    });
+  };
+
+  const uploadOrderItems = (orderItems: OrderItemsAttributes[]): void => {
+    orderItems.forEach((orderItem) => {
+      addOrderItemToCart(orderItem);
       return null;
     });
   };
@@ -259,6 +289,7 @@ export function useGafpriAttributesBudgetItems({
     updateQtyItemCart,
     updatePriceItemCart,
     uploadBudgetItems,
+    uploadOrderItems,
   };
 
   return {

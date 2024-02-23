@@ -85,9 +85,9 @@ export const Budget = ({
         {...restContainerProps}
       >
         <HeaderMenu items={itemsMenu} />
-        {use.pages.states.isFetching && <Loading />}
+        {true && <Loading />}
 
-        {use.pages.states.isInit && (
+        {/* {use.pages.states.isInit && (
           <FadeIn keyName="init" isVisible={use.pages.states.isInit}>
             <InitMainMenu
               contentProps={{
@@ -167,7 +167,7 @@ export const Budget = ({
               sitesOptions={sitesOptions}
             />
           </FadeIn>
-        )}
+        )} */}
       </div>
     </>
   );

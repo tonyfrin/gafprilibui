@@ -12,9 +12,6 @@ var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
 var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
-var _Entity = require("../Entity");
-var _Products = require("../Products");
-var _Main = require("../Main");
 var _excluded = ["className"];
 var _templateObject;
 var budgetStylesContainer = function budgetStylesContainer(stayles) {
@@ -42,65 +39,5 @@ var Budget = exports.Budget = function Budget(_ref) {
     className: (0, _css.cx)(budgetStylesContainer(containerStyles), containerClassName)
   }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Abstract.HeaderMenu, {
     items: itemsMenu
-  }), use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, null), use.pages.states.isInit && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "init",
-    isVisible: use.pages.states.isInit
-  }, /*#__PURE__*/_react["default"].createElement(_Main.InitMainMenu, {
-    contentProps: {
-      items: menu
-    },
-    stylesContainer: {
-      backgroundImage: 'none'
-    },
-    useError: use.error
-  })), use.pages.states.isEntityForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "entityForm",
-    isVisible: use.pages.states.isEntityForm
-  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetInit, {
-    useEntity: useEntity,
-    useBudget: use,
-    usePagesMain: usePagesMain,
-    uploadBudget: uploadBudget
-  })), use.pages.states.isAddEntity && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "addEntity",
-    isVisible: use.pages.states.isAddEntity
-  }, /*#__PURE__*/_react["default"].createElement(_Entity.EntityBudget, {
-    use: useEntity,
-    useBudget: use,
-    menu: menuEntity
-  })), use.pages.states.isSales && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "sales",
-    isVisible: use.pages.states.isSales
-  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetModule, {
-    useBudget: use,
-    sitesOptions: sitesOptions,
-    useProducts: useProducts,
-    uploadBudget: uploadBudgetOnlyProducts
-  })), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "entitySearch",
-    isVisible: use.pages.states.isEntitySearch
-  }, /*#__PURE__*/_react["default"].createElement(_Abstract.EntityBudgetSearch, {
-    use: useEntity,
-    useBudget: use
-  })), use.pages.states.isProductSearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "productySearch",
-    isVisible: use.pages.states.isProductSearch
-  }, /*#__PURE__*/_react["default"].createElement(_Products.ProductBudget, {
-    useProduct: useProducts,
-    useBudget: use,
-    sitesOptions: sitesOptions
-  })), use.pages.states.isPrintTable && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "printTable",
-    isVisible: use.pages.states.isPrintTable
-  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetSearchPrint, {
-    useBudget: use,
-    siteOptions: sitesOptions
-  })), use.pages.states.isPrint && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "print",
-    isVisible: use.pages.states.isPrint
-  }, /*#__PURE__*/_react["default"].createElement(_Abstract.BudgetView, {
-    useBudget: use,
-    logoPdf: logoPdf,
-    sitesOptions: sitesOptions
-  }))));
+  }), true && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, null)));
 };

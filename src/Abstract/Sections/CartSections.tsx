@@ -205,6 +205,7 @@ export const CartSections = ({
             inputProps={{
               title: 'Cargar Pedido/Presupuesto',
               placeholder: 'Ingrese el numero de pedido o presupuesto',
+              defaultValue: useOrder.attributes.states.currentId,
               onKeyPress: uploadOrder,
               onChange: (e) =>
                 useOrder.attributes.actions.setCurrentId(

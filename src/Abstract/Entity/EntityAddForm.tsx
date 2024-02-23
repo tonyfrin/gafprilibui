@@ -23,6 +23,7 @@ import { ContainerButton } from '../Containers';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm, PhotoEntity } from '../Form';
 import type { ModelFormPropsExtended, PhotoEntityProps } from '../Form';
+import { ENTITY_ROUTE } from '../../constants';
 
 export type EntityAddFormProps = {
   use: UseGafpriEntityReturn;
@@ -412,6 +413,7 @@ export const EntityAddForm = ({
       handleActions={customHandleActions || handleActions}
       error={use.error.states.error}
       boxProps={modelFormContainerProps}
+      buttonNextId={ENTITY_ROUTE}
       {...modelFormProps}
     >
       <>

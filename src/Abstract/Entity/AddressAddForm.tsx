@@ -16,7 +16,6 @@ import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';
 import type { UseGafpriEntityReturn } from '../../states';
-import { ENTITY_ROUTE } from 'src/constants';
 
 export type AddressFormProps = {
   use: UseGafpriEntityReturn;
@@ -266,7 +265,6 @@ export const AddressAddForm = ({
       }}
       handleActions={handleActions}
       error={use.error.states.error}
-      buttonNextId={ENTITY_ROUTE}
       {...modelFormProps}
     >
       <>

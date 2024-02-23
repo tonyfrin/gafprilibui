@@ -93,6 +93,11 @@ export const CartBudgetSections = ({
   const { className: contentOptionsClassName, ...restContentOptionsProps } =
     contentOptionsProps;
 
+  const currentId =
+    useBudget.attributes.states.currentId.toString() === '0'
+      ? ''
+      : useBudget.attributes.states.currentId.toString();
+
   return (
     <div
       className={cx(
@@ -200,11 +205,12 @@ export const CartBudgetSections = ({
         >
           <Input
             styles={{
-              width: '100%',
+              width: '70%',
             }}
             inputProps={{
               title: 'Cargar Pedido/Presupuesto',
-              placeholder: 'Ingrese el numero de pedido o presupuesto',
+              placeholder: 'Ingrese el numero',
+              value: currentId,
               onKeyPress: uploadBudget,
               onChange: (e) =>
                 useBudget.attributes.actions.setCurrentId(

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { UseErrorReturn } from '../../../states';
 import { ProductsAttributes } from '../products/useGafpriDataProducts';
 import { OrderItemsAttributes } from './useGafpriAttributesOrderItems';
+import { scrollToTop } from '../../../helpers';
 
 export type BudgetItemsAttributes = {
   id?: number;
@@ -240,6 +241,7 @@ export function useGafpriAttributesBudgetItems({
       useError.actions.changeError([
         'No se pueden agregar más de 20 productos al carrito',
       ]);
+      scrollToTop();
     }
   };
 

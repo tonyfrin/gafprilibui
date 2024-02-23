@@ -51,6 +51,7 @@ var CartBudgetSections = exports.CartBudgetSections = function CartBudgetSection
     restContentItemsProps = (0, _objectWithoutProperties2["default"])(contentItemsProps, _excluded2);
   var contentOptionsClassName = contentOptionsProps.className,
     restContentOptionsProps = (0, _objectWithoutProperties2["default"])(contentOptionsProps, _excluded3);
+  var currentId = useBudget.attributes.states.currentId.toString() === '0' ? '' : useBudget.attributes.states.currentId.toString();
   return /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _css.cx)(cartBudgetSectionsStylesContainer(containerStyles), containerClassName)
   }, restContainerProps), /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -137,11 +138,12 @@ var CartBudgetSections = exports.CartBudgetSections = function CartBudgetSection
     }
   }, /*#__PURE__*/_react["default"].createElement(_Input.Input, {
     styles: {
-      width: '100%'
+      width: '70%'
     },
     inputProps: {
       title: 'Cargar Pedido/Presupuesto',
-      placeholder: 'Ingrese el numero de pedido o presupuesto',
+      placeholder: 'Ingrese el numero',
+      value: currentId,
       onKeyPress: uploadBudget,
       onChange: function onChange(e) {
         return useBudget.attributes.actions.setCurrentId(parseInt(e.target.value, 10));

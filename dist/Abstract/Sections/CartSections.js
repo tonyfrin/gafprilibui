@@ -142,7 +142,7 @@ var CartSections = exports.CartSections = function CartSections(_ref) {
     },
     inputProps: {
       title: 'Cargar Pedido/Presupuesto',
-      placeholder: 'Ingrese el numero de pedido o presupuesto',
+      placeholder: 'Ingrese el numero',
       value: currentId,
       onKeyPress: uploadOrder,
       onChange: function onChange(e) {

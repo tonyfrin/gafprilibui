@@ -28,7 +28,7 @@ var LineProductBudgetViewCart = exports.LineProductBudgetViewCart = function Lin
     })), /*#__PURE__*/_react["default"].createElement(_LineCol2.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
       value: (0, _helpers.decimalFormatPriceConverter)(product.price || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol2.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
-      value: (0, _helpers.decimalFormatPriceConverter)((product.qty * product.price).toFixed(2) || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
+      value: (0, _helpers.decimalFormatPriceConverter)((parseFloat("".concat(product.qty)) * parseFloat("".concat(product.price))).toFixed(2) || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })));
   });
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, items);

@@ -47,7 +47,7 @@ export const LineProductCart = ({
         <LineCol1>
           <InputCart
             contentProps={{
-              defaultValue: product.qty.toFixed(2),
+              defaultValue: parseFloat(`${product.qty}`).toFixed(2),
               onChange: (event) =>
                 useOrder.useProductItems.actions.updateQtyItemCart(
                   index,
@@ -59,7 +59,7 @@ export const LineProductCart = ({
         <LineCol2>
           <InputCart
             contentProps={{
-              defaultValue: product.price.toFixed(2),
+              defaultValue: parseFloat(`${product.price}`).toFixed(2),
               onChange: (event) =>
                 useOrder.useProductItems.actions.updatePriceItemCart(
                   index,
@@ -72,7 +72,9 @@ export const LineProductCart = ({
         <LineCol2>
           <SpanValue
             value={decimalFormatPriceConverter(
-              (product.qty * product.price).toFixed(2) || '0',
+              (
+                parseFloat(`${product.qty}`) * parseFloat(`${product.price}`)
+              ).toFixed(2) || '0',
               siteOptions.DECIMAL_NUMBERS,
               siteOptions.CURRENCY_SYMBOL,
               siteOptions.CURRENCY_LOCATION

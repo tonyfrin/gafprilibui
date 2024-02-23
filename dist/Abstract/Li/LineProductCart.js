@@ -30,20 +30,20 @@ var LineProductCart = exports.LineProductCart = function LineProductCart(_ref) {
       value: (0, _helpers.decimalFormatPriceConverter)(product.cost || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol.LineCol1, null, /*#__PURE__*/_react["default"].createElement(_Input.InputCart, {
       contentProps: {
-        defaultValue: product.qty.toFixed(2),
+        defaultValue: parseFloat("".concat(product.qty)).toFixed(2),
         onChange: function onChange(event) {
           return useOrder.useProductItems.actions.updateQtyItemCart(index, event.target.value);
         }
       }
     })), /*#__PURE__*/_react["default"].createElement(_LineCol3.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Input.InputCart, {
       contentProps: {
-        defaultValue: product.price.toFixed(2),
+        defaultValue: parseFloat("".concat(product.price)).toFixed(2),
         onChange: function onChange(event) {
           return useOrder.useProductItems.actions.updatePriceItemCart(index, event.target.value);
         }
       }
     })), /*#__PURE__*/_react["default"].createElement(_LineCol3.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
-      value: (0, _helpers.decimalFormatPriceConverter)((product.qty * product.price).toFixed(2) || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
+      value: (0, _helpers.decimalFormatPriceConverter)((parseFloat("".concat(product.qty)) * parseFloat("".concat(product.price))).toFixed(2) || '0', siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol.LineCol1, null, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       title: "X",
       styles: {

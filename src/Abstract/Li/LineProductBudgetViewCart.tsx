@@ -57,7 +57,9 @@ export const LineProductBudgetViewCart = ({
       <LineCol2>
         <SpanValue
           value={decimalFormatPriceConverter(
-            (product.qty * product.price).toFixed(2) || '0',
+            (
+              parseFloat(`${product.qty}`) * parseFloat(`${product.price}`)
+            ).toFixed(2) || '0',
             siteOptions.DECIMAL_NUMBERS,
             siteOptions.CURRENCY_SYMBOL,
             siteOptions.CURRENCY_LOCATION

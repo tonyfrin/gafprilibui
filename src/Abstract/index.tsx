@@ -610,3 +610,10 @@ export type {
   ProjectsFormProps,
   ProjectsFormPropsExtended,
 } from './Projects';
+export { InitStorage, StorageForm } from './Storage';
+export type {
+  InitStorageProps,
+  InitStoragePropsExtended,
+  StorageFormProps,
+  StorageFormPropsExtended,
+} from './Storage';

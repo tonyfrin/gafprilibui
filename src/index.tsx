@@ -193,6 +193,8 @@ export {
   useGafpriDataStorage,
   useGafpriApiStorage,
   useGafpriPaginationsStorage,
+  InitStorage,
+  StorageForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -535,6 +537,10 @@ export type {
   UseGafpriApiStorageReturn,
   UseGafpriPaginationsStorageProps,
   UseGafpriPaginationsStorageReturn,
+  InitStorageProps,
+  InitStoragePropsExtended,
+  StorageFormProps,
+  StorageFormPropsExtended,
 } from './Abstract';
 export {
   MainFooter,
@@ -556,6 +562,7 @@ export {
   ShippingMethods,
   ShippingAreas,
   MainProjects,
+  MainStorage,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -587,6 +594,8 @@ export type {
   ShippingMethodsProps,
   ShippingAreasProps,
   MainProjectsProps,
+  MainStorageProps,
+  MainStoragePropsExtended,
 } from './Components';
 export {
   addClass,

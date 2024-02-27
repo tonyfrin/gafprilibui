@@ -25,7 +25,7 @@ function useGafpriPaginationsStorage(_ref) {
     currentPage = _useState6[0],
     setCurrentPage = _useState6[1];
   var itemsPerPage = 6;
-  function sortStoragesByName(itemStorages, order) {
+  function sortByName(itemStorages, order) {
     if (itemStorages) {
       return itemStorages.slice().sort(function (a, b) {
         var comparison = a.name.localeCompare(b.name, undefined, {
@@ -36,7 +36,7 @@ function useGafpriPaginationsStorage(_ref) {
     }
     return null;
   }
-  var filterStoragesByName = function filterStoragesByName(search) {
+  var filterByName = function filterByName(search) {
     if (data.states.items.data.items) {
       return data.states.items.data.items.filter(function (storage) {
         return storage.name.toLowerCase().includes(search.toLowerCase());
@@ -44,7 +44,7 @@ function useGafpriPaginationsStorage(_ref) {
     }
     return null;
   };
-  var getPaginatedStorages = function getPaginatedStorages(itemStorages, page, itemPerPage) {
+  var getPaginated = function getPaginated(itemStorages, page, itemPerPage) {
     var startIndex = (page - 1) * itemPerPage;
     var endIndex = startIndex + itemPerPage;
     if (itemStorages) {
@@ -75,12 +75,12 @@ function useGafpriPaginationsStorage(_ref) {
     itemsPerPage: itemsPerPage
   };
   var actions = {
-    sortStoragesByName: sortStoragesByName,
+    sortByName: sortByName,
     setOrderList: setOrderList,
     setSearchTerm: setSearchTerm,
-    filterStoragesByName: filterStoragesByName,
+    filterByName: filterByName,
     setCurrentPage: setCurrentPage,
-    getPaginatedStorages: getPaginatedStorages
+    getPaginated: getPaginated
   };
   return {
     states: states,

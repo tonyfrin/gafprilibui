@@ -15,7 +15,7 @@ type State = {
 };
 
 type Actions = {
-  sortStoragesByName: (
+  sortByName: (
     storages: StorageAttributes[] | null,
     order: 'asc' | 'desc'
   ) => StorageAttributes[] | null;
@@ -24,11 +24,11 @@ type Actions = {
 
   setSearchTerm: (value: string) => void;
 
-  filterStoragesByName: (search: string) => StorageAttributes[] | null;
+  filterByName: (search: string) => StorageAttributes[] | null;
 
   setCurrentPage: (value: number) => void;
 
-  getPaginatedStorages: (
+  getPaginated: (
     itemStorages: StorageAttributes[] | null,
     page: number,
     itemsPerPage: number
@@ -52,7 +52,7 @@ export function useGafpriPaginationsStorage({
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  function sortStoragesByName(
+  function sortByName(
     itemStorages: StorageAttributes[] | null,
     order: 'asc' | 'desc'
   ): StorageAttributes[] | null {
@@ -67,7 +67,7 @@ export function useGafpriPaginationsStorage({
     return null;
   }
 
-  const filterStoragesByName = (search: string): StorageAttributes[] | null => {
+  const filterByName = (search: string): StorageAttributes[] | null => {
     if (data.states.items.data.items) {
       return data.states.items.data.items.filter((storage) =>
         storage.name.toLowerCase().includes(search.toLowerCase())
@@ -76,7 +76,7 @@ export function useGafpriPaginationsStorage({
     return null;
   };
 
-  const getPaginatedStorages = (
+  const getPaginated = (
     itemStorages: StorageAttributes[] | null,
     page: number,
     itemPerPage: number
@@ -117,17 +117,17 @@ export function useGafpriPaginationsStorage({
   };
 
   const actions = {
-    sortStoragesByName,
+    sortByName,
 
     setOrderList,
 
     setSearchTerm,
 
-    filterStoragesByName,
+    filterByName,
 
     setCurrentPage,
 
-    getPaginatedStorages,
+    getPaginated,
   };
 
   return {

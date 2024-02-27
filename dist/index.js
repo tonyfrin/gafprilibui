@@ -579,6 +579,12 @@ Object.defineProperty(exports, "InitSites", {
     return _Abstract.InitSites;
   }
 });
+Object.defineProperty(exports, "InitStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitStorage;
+  }
+});
 Object.defineProperty(exports, "InitTypeDocumentId", {
   enumerable: true,
   get: function get() {
@@ -847,6 +853,12 @@ Object.defineProperty(exports, "MainSites", {
   enumerable: true,
   get: function get() {
     return _Components.MainSites;
+  }
+});
+Object.defineProperty(exports, "MainStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Components.MainStorage;
   }
 });
 Object.defineProperty(exports, "MainTypeDocumentId", {
@@ -1525,6 +1537,12 @@ Object.defineProperty(exports, "Step", {
   enumerable: true,
   get: function get() {
     return _Abstract.Step;
+  }
+});
+Object.defineProperty(exports, "StorageForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.StorageForm;
   }
 });
 Object.defineProperty(exports, "TAGS_INPUT", {

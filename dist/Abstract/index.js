@@ -351,6 +351,12 @@ Object.defineProperty(exports, "InitSites", {
     return _Sites.InitSites;
   }
 });
+Object.defineProperty(exports, "InitStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Storage.InitStorage;
+  }
+});
 Object.defineProperty(exports, "InitTypeDocumentId", {
   enumerable: true,
   get: function get() {
@@ -879,6 +885,12 @@ Object.defineProperty(exports, "Step", {
     return _Step.Step;
   }
 });
+Object.defineProperty(exports, "StorageForm", {
+  enumerable: true,
+  get: function get() {
+    return _Storage.StorageForm;
+  }
+});
 Object.defineProperty(exports, "Title1", {
   enumerable: true,
   get: function get() {
@@ -1276,3 +1288,4 @@ var _Pdf = require("./Pdf");
 var _Shipping = require("./Shipping");
 var _Modal = require("./Modal");
 var _Projects = require("./Projects");
+var _Storage = require("./Storage");

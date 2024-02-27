@@ -28,3 +28,5 @@ export { ShippingMethods, ShippingAreas } from './Shipping';
 export type { ShippingMethodsProps, ShippingAreasProps } from './Shipping';
 export { MainProjects } from './Projects';
 export type { MainProjectsProps } from './Projects';
+export { MainStorage } from './Storage';
+export type { MainStorageProps, MainStoragePropsExtended } from './Storage';

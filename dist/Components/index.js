@@ -75,6 +75,12 @@ Object.defineProperty(exports, "MainSites", {
     return _Sites.MainSites;
   }
 });
+Object.defineProperty(exports, "MainStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Storage.MainStorage;
+  }
+});
 Object.defineProperty(exports, "MainTypeDocumentId", {
   enumerable: true,
   get: function get() {
@@ -133,3 +139,4 @@ var _Order = require("./Order");
 var _Budget = require("./Budget");
 var _Shipping = require("./Shipping");
 var _Projects = require("./Projects");
+var _Storage = require("./Storage");

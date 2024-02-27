@@ -6,12 +6,12 @@ type State = {
     itemsPerPage: number;
 };
 type Actions = {
-    sortStoragesByName: (storages: StorageAttributes[] | null, order: 'asc' | 'desc') => StorageAttributes[] | null;
+    sortByName: (storages: StorageAttributes[] | null, order: 'asc' | 'desc') => StorageAttributes[] | null;
     setOrderList: (order: 'asc' | 'desc') => void;
     setSearchTerm: (value: string) => void;
-    filterStoragesByName: (search: string) => StorageAttributes[] | null;
+    filterByName: (search: string) => StorageAttributes[] | null;
     setCurrentPage: (value: number) => void;
-    getPaginatedStorages: (itemStorages: StorageAttributes[] | null, page: number, itemsPerPage: number) => StorageAttributes[] | null;
+    getPaginated: (itemStorages: StorageAttributes[] | null, page: number, itemsPerPage: number) => StorageAttributes[] | null;
 };
 export type UseGafpriPaginationsStorageReturn = {
     states: State;

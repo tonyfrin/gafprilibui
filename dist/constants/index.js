@@ -591,6 +591,18 @@ Object.defineProperty(exports, "STATUS_INPUT", {
     return _Inputs.STATUS_INPUT;
   }
 });
+Object.defineProperty(exports, "STORAGE_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.STORAGE_ROUTE;
+  }
+});
+Object.defineProperty(exports, "STOTAGE_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.STOTAGE_STORAGE;
+  }
+});
 Object.defineProperty(exports, "StatesCountries", {
   enumerable: true,
   get: function get() {

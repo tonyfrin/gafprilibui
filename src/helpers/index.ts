@@ -384,9 +384,7 @@ export const getLastEntryDateAndCount = async (
   service: string
 ): Promise<{ date: Date | null; count: number } | null> => {
   try {
-    const response = await fetch(
-      `http://localhost:4000/api/v1/${service}/date-and-count`
-    );
+    const response = await fetch(`${API_URL}${service}/date-and-count`);
     if (response.ok) {
       return await response.json();
     }

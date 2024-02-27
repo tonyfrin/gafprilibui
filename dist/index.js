@@ -1317,6 +1317,18 @@ Object.defineProperty(exports, "STATUS_INPUT", {
     return _constants.STATUS_INPUT;
   }
 });
+Object.defineProperty(exports, "STORAGE_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.STORAGE_ROUTE;
+  }
+});
+Object.defineProperty(exports, "STOTAGE_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.STOTAGE_STORAGE;
+  }
+});
 Object.defineProperty(exports, "Sales", {
   enumerable: true,
   get: function get() {
@@ -2655,6 +2667,12 @@ Object.defineProperty(exports, "useGafpriApiShippingMethods", {
     return _Abstract.useGafpriApiShippingMethods;
   }
 });
+Object.defineProperty(exports, "useGafpriApiStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiStorage;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -2719,6 +2737,12 @@ Object.defineProperty(exports, "useGafpriAttributesShippingMethods", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriAttributesShippingMethods;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesStorage;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesTaxClasses", {
@@ -2791,6 +2815,12 @@ Object.defineProperty(exports, "useGafpriDataShippingMethods", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriDataShippingMethods;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataStorage;
   }
 });
 Object.defineProperty(exports, "useGafpriDataTaxClasses", {
@@ -2877,6 +2907,12 @@ Object.defineProperty(exports, "useGafpriPagesShippingMethods", {
     return _Abstract.useGafpriPagesShippingMethods;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesStorage;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -2931,6 +2967,12 @@ Object.defineProperty(exports, "useGafpriPaginationsShippingMethods", {
     return _Abstract.useGafpriPaginationsShippingMethods;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsStorage", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsStorage;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -2977,6 +3019,12 @@ Object.defineProperty(exports, "useGafpriSites", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriSites;
+  }
+});
+Object.defineProperty(exports, "useGafpriStorage", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriStorage;
   }
 });
 Object.defineProperty(exports, "useGafpriSubPagesProducts", {

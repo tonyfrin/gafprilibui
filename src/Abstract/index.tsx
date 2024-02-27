@@ -349,6 +349,11 @@ export {
   useGafpriAttributesProjects,
   useGafpriDataProjects,
   useGafpriPaginationsProjects,
+  useGafpriAttributesStorage,
+  useGafpriPagesStorage,
+  useGafpriDataStorage,
+  useGafpriApiStorage,
+  useGafpriPaginationsStorage,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -456,6 +461,17 @@ export type {
   ProjectsAttributes,
   UseGafpriPaginationsProjectsProps,
   UseGafpriPaginationsProjectsReturn,
+  UseGafpriAttributesStorageProps,
+  UseGafpriAttributesStorageReturn,
+  UseGafpriPagesStorageProps,
+  UseGafpriPagesStorageReturn,
+  UseGafpriDataStorageProps,
+  UseGafpriDataStorageReturn,
+  StorageAttributes,
+  UseGafpriApiStorageProps,
+  UseGafpriApiStorageReturn,
+  UseGafpriPaginationsStorageProps,
+  UseGafpriPaginationsStorageReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';

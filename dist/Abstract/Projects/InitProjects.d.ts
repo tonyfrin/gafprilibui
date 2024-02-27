@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ButtonProps } from '../Button';
 import { HeaderProps } from '../Header';
 import { ErrorProps } from '../Error';

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';
 import type { ModelFormPropsExtended } from '../Form';

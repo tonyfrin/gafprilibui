@@ -34,3 +34,5 @@ export { useGafpriShippingAreas } from './useGafpriShippingAreas';
 export type { UseGafpriShippingAreasReturn, UseGafpriShippingAreasProps, } from './useGafpriShippingAreas';
 export { useGafpriProjects } from './useGafpriProjects';
 export type { UseGafpriProjectsReturn, UseGafpriProjectsProps, } from './useGafpriProjects';
+export { useGafpriStorage } from './useGafpriStorage';
+export type { UseGafpriStorageReturn, UseGafpriStorageProps, } from './useGafpriStorage';

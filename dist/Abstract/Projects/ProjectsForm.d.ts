@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ModelFormPropsExtended } from '../Form';
 import { ContainerButtonPropsExtended } from '../Containers';
 import type { UseGafpriProjectsReturn } from '../../states';

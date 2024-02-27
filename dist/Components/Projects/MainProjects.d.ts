@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { InitProjectsPropsExtended, ProjectsFormPropsExtended } from '../../Abstract';
 import type { UseGafpriProjectsReturn } from '../../states';
 export type MainProjectsProps = {

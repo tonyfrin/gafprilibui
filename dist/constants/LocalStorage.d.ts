@@ -15,3 +15,4 @@ export declare const BUDGET_STORAGE = "GS_BUDGET_V2";
 export declare const SHIPPING_METHODS_STORAGE = "GS_SHIPPING_METHODS_V2";
 export declare const SHIPPING_AREAS_STORAGE = "GS_SHIPPING_AREAS_V2";
 export declare const PROJECTS_STORAGE = "GS_PROJECTS_V2";
+export declare const STOTAGE_STORAGE = "GS_STORAGE_V2";

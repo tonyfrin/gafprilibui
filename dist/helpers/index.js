@@ -256,7 +256,7 @@ var getLastEntryDateAndCount = exports.getLastEntryDateAndCount = /*#__PURE__*/f
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return fetch("http://localhost:4000/api/v1/".concat(service, "/date-and-count"));
+          return fetch("".concat(_constants.API_URL).concat(service, "/date-and-count"));
         case 3:
           response = _context.sent;
           if (!response.ok) {

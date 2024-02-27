@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { InitCurrenciesPropsExtended, CurrencyFormPropsExtended } from '../../Abstract';
 import type { UseCurrenciesReturn } from '../../states';
 export type MainCurrenciesProps = {

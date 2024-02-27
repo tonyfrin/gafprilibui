@@ -188,6 +188,11 @@ export {
   useGafpriPaginationsProjects,
   InitProjects,
   ProjectsForm,
+  useGafpriAttributesStorage,
+  useGafpriPagesStorage,
+  useGafpriDataStorage,
+  useGafpriApiStorage,
+  useGafpriPaginationsStorage,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -519,6 +524,17 @@ export type {
   InitProjectsPropsExtended,
   ProjectsFormProps,
   ProjectsFormPropsExtended,
+  UseGafpriAttributesStorageProps,
+  UseGafpriAttributesStorageReturn,
+  UseGafpriPagesStorageProps,
+  UseGafpriPagesStorageReturn,
+  UseGafpriDataStorageProps,
+  UseGafpriDataStorageReturn,
+  StorageAttributes,
+  UseGafpriApiStorageProps,
+  UseGafpriApiStorageReturn,
+  UseGafpriPaginationsStorageProps,
+  UseGafpriPaginationsStorageReturn,
 } from './Abstract';
 export {
   MainFooter,
@@ -635,6 +651,7 @@ export {
   useGafpriShippingMethods,
   useGafpriShippingAreas,
   useGafpriProjects,
+  useGafpriStorage,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -675,6 +692,8 @@ export type {
   UseGafpriShippingAreasProps,
   UseGafpriProjectsProps,
   UseGafpriProjectsReturn,
+  UseGafpriStorageProps,
+  UseGafpriStorageReturn,
 } from './states';
 export {
   Countries,
@@ -807,6 +826,8 @@ export {
   SHIPPING_AREAS_ROUTE,
   PROJECTS_STORAGE,
   PROJECTS_ROUTE,
+  STOTAGE_STORAGE,
+  STORAGE_ROUTE,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {

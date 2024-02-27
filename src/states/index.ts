@@ -79,3 +79,8 @@ export type {
   UseGafpriProjectsReturn,
   UseGafpriProjectsProps,
 } from './useGafpriProjects';
+export { useGafpriStorage } from './useGafpriStorage';
+export type {
+  UseGafpriStorageReturn,
+  UseGafpriStorageProps,
+} from './useGafpriStorage';

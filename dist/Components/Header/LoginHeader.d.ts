@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { LogoProps } from '../../Abstract/Logo/LogoContainer';
 type style = {
     headerClass?: string;

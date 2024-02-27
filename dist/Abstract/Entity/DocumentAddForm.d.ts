@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ModelFormPropsExtended, PhotoDocumentIdProps } from '../Form';
 import type { UseGafpriEntityReturn } from '../../states';

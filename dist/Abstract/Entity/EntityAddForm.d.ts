@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { UseGafpriEntityReturn } from '../../states';
 import type { InputProps, GsSelectPropsExtended } from '../Input';
 import type { ContainerButtonPropsExtended } from '../Containers';

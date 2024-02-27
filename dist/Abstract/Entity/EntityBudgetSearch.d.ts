@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { UseGafpriEntityReturn, UseGafpriBudgetReturn } from '../../states';
 import type { ButtonPropsExtended } from '../Button';
 import type { ListProps } from '../List';

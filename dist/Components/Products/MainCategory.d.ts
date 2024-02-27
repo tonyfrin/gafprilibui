@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { UseCategoryReturn } from 'src/states';
 import type { InitCategoryPropsExtended, CategoryFormPropsExtended } from '../../Abstract';
 export type MainCategoryProps = {

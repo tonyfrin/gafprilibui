@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { UseGafpriShippingAreasReturn } from '../../../states';
 export type ShippingAreasProps = {
     use: UseGafpriShippingAreasReturn;

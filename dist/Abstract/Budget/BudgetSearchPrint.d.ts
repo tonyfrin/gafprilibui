@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { SiteOptions } from '../../states';
 import { UseGafpriBudgetReturn } from '../../states';
 import type { ListProps } from '../List';

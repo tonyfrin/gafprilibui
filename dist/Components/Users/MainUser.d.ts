@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { UseUserReturn } from '../../states';
 import type { InitUserPropsExtended, UserFormPropsExtended, UserFormUpdatePropsExtended, UserViewPropsExtended } from '../../Abstract';
 export type MainUserProps = {

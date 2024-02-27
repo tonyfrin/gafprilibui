@@ -1,4 +1,3 @@
-/// <reference types="react" />
 type FooterStyle = {
     backgroundColor?: string;
     color?: string;

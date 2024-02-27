@@ -45,6 +45,12 @@ Object.defineProperty(exports, "useGafpriApiShippingMethods", {
     return _shipping.useGafpriApiShippingMethods;
   }
 });
+Object.defineProperty(exports, "useGafpriApiStorage", {
+  enumerable: true,
+  get: function get() {
+    return _storage.useGafpriApiStorage;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -111,6 +117,12 @@ Object.defineProperty(exports, "useGafpriAttributesShippingMethods", {
     return _shipping.useGafpriAttributesShippingMethods;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesStorage", {
+  enumerable: true,
+  get: function get() {
+    return _storage.useGafpriAttributesStorage;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -163,6 +175,12 @@ Object.defineProperty(exports, "useGafpriDataShippingMethods", {
   enumerable: true,
   get: function get() {
     return _shipping.useGafpriDataShippingMethods;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataStorage", {
+  enumerable: true,
+  get: function get() {
+    return _storage.useGafpriDataStorage;
   }
 });
 Object.defineProperty(exports, "useGafpriDataTaxClasses", {
@@ -225,6 +243,12 @@ Object.defineProperty(exports, "useGafpriPagesShippingMethods", {
     return _shipping.useGafpriPagesShippingMethods;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesStorage", {
+  enumerable: true,
+  get: function get() {
+    return _storage.useGafpriPagesStorage;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -279,6 +303,12 @@ Object.defineProperty(exports, "useGafpriPaginationsShippingMethods", {
     return _shipping.useGafpriPaginationsShippingMethods;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsStorage", {
+  enumerable: true,
+  get: function get() {
+    return _storage.useGafpriPaginationsStorage;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -306,3 +336,4 @@ var _salesModule = require("./salesModule");
 var _budget = require("./budget");
 var _shipping = require("./shipping");
 var _projects = require("./projects");
+var _storage = require("./storage");

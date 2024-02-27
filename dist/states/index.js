@@ -81,6 +81,12 @@ Object.defineProperty(exports, "useGafpriSites", {
     return _useGafpriSites.useGafpriSites;
   }
 });
+Object.defineProperty(exports, "useGafpriStorage", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriStorage.useGafpriStorage;
+  }
+});
 Object.defineProperty(exports, "useGafpriTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -122,3 +128,4 @@ var _useGafpriBudget = require("./useGafpriBudget");
 var _useGafpriShippingMethods = require("./useGafpriShippingMethods");
 var _useGafpriShippingAreas = require("./useGafpriShippingAreas");
 var _useGafpriProjects = require("./useGafpriProjects");
+var _useGafpriStorage = require("./useGafpriStorage");

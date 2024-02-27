@@ -184,3 +184,23 @@ export type {
   UseGafpriPaginationsProjectsProps,
   UseGafpriPaginationsProjectsReturn,
 } from './projects';
+export {
+  useGafpriAttributesStorage,
+  useGafpriPagesStorage,
+  useGafpriDataStorage,
+  useGafpriApiStorage,
+  useGafpriPaginationsStorage,
+} from './storage';
+export type {
+  UseGafpriAttributesStorageProps,
+  UseGafpriAttributesStorageReturn,
+  UseGafpriPagesStorageProps,
+  UseGafpriPagesStorageReturn,
+  UseGafpriDataStorageProps,
+  UseGafpriDataStorageReturn,
+  StorageAttributes,
+  UseGafpriApiStorageProps,
+  UseGafpriApiStorageReturn,
+  UseGafpriPaginationsStorageProps,
+  UseGafpriPaginationsStorageReturn,
+} from './storage';

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { UseLoginReturn } from 'src/states';
 export type LoginFormProps = {
     use: UseLoginReturn;

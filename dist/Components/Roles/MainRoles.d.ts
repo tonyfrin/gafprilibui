@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { InitRolesPropsExtended, RolesFormPropsExtended } from '../../Abstract';
 import type { UseRolesReturn } from '../../states';
 export type MainRolesProps = {

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { UseTypeDocumentIdReturn } from '../../states';
 import type { InitTypeDocumentIdPropsExtended, TypeDocumentIdFormPropsExtended } from '../../Abstract';
 export type MainTypeDocumentIdProps = {

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { InputProps } from '../Input';
 import { ContainerButtonPropsExtended } from '../Containers';
 import type { ButtonPropsExtended } from '../Button';

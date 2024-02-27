@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ContainerButtonPropsExtended } from '../../Containers';
 import { ModelFormPropsExtended } from '../../Form';
 import { InputProps } from '../../Input';

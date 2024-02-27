@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { LoadingProps } from '../Loading';
 import type { UseCurrenciesReturn, UseSitesReturn } from '../../states';
 import type { InitSitesPropsExtended, SitesFormPropsExtended } from '../../Abstract';

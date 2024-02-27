@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { ButtonProps, ButtonPropsExtended } from '../Button';
 import type { ListPropsExtended } from '../List';
 import type { ErrorProps } from '../Error';

@@ -13,3 +13,6 @@ export declare const PRODUCTS_ROUTE = "/products";
 export declare const TAX_CLASSES_ROUTE = "/tax-classes";
 export declare const TAX_RATES_ROUTE = "/tax-rates";
 export declare const BUDGET_ROUTE = "/budgets";
+export declare const SHIPPING_METHODS_ROUTE = "/shipping-methods";
+export declare const SHIPPING_AREAS_ROUTE = "/shipping-areas";
+export declare const PROJECTS_ROUTE = "/projects";

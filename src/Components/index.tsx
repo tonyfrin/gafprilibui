@@ -43,3 +43,7 @@ export { Order } from './Order';
 export type { OrderProps, OrderStylesContainerProps } from './Order';
 export { Budget } from './Budget';
 export type { BudgetProps, BudgetStylesContainerProps } from './Budget';
+export { ShippingMethods, ShippingAreas } from './Shipping';
+export type { ShippingMethodsProps, ShippingAreasProps } from './Shipping';
+export { MainProjects } from './Projects';
+export type { MainProjectsProps } from './Projects';

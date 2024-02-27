@@ -27,6 +27,24 @@ Object.defineProperty(exports, "useGafpriApiProducts", {
     return _products.useGafpriApiProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriApiProjects", {
+  enumerable: true,
+  get: function get() {
+    return _projects.useGafpriApiProjects;
+  }
+});
+Object.defineProperty(exports, "useGafpriApiShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriApiShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriApiShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriApiShippingMethods;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -75,6 +93,24 @@ Object.defineProperty(exports, "useGafpriAttributesProducts", {
     return _products.useGafpriAttributesProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesProjects", {
+  enumerable: true,
+  get: function get() {
+    return _projects.useGafpriAttributesProjects;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriAttributesShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriAttributesShippingMethods;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -109,6 +145,24 @@ Object.defineProperty(exports, "useGafpriDataProducts", {
   enumerable: true,
   get: function get() {
     return _products.useGafpriDataProducts;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataProjects", {
+  enumerable: true,
+  get: function get() {
+    return _projects.useGafpriDataProjects;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriDataShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriDataShippingMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriDataTaxClasses", {
@@ -147,10 +201,28 @@ Object.defineProperty(exports, "useGafpriPagesProducts", {
     return _products.useGafpriPagesProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesProjects", {
+  enumerable: true,
+  get: function get() {
+    return _projects.useGafpriPagesProjects;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesSalesModule", {
   enumerable: true,
   get: function get() {
     return _salesModule.useGafpriPagesSalesModule;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriPagesShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriPagesShippingMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesTaxClasses", {
@@ -189,6 +261,24 @@ Object.defineProperty(exports, "useGafpriPaginationsProducts", {
     return _products.useGafpriPaginationsProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsProjects", {
+  enumerable: true,
+  get: function get() {
+    return _projects.useGafpriPaginationsProjects;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriPaginationsShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _shipping.useGafpriPaginationsShippingMethods;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -214,3 +304,5 @@ var _taxes = require("./taxes");
 var _order = require("./order");
 var _salesModule = require("./salesModule");
 var _budget = require("./budget");
+var _shipping = require("./shipping");
+var _projects = require("./projects");

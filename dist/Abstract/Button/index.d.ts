@@ -6,3 +6,5 @@ export { ButtonNext } from './ButtonNext';
 export type { ButtonNextProps } from './ButtonNext';
 export { CircleButton } from './CircleButton';
 export type { CircleButtonProps, CircleButtonPropsExtended, } from './CircleButton';
+export { ButtonOptionsContainer } from './ButtonOptionsContainer';
+export type { ButtonOptionsContainerProps, StylesContainer, } from './ButtonOptionsContainer';

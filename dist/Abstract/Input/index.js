@@ -39,6 +39,12 @@ Object.defineProperty(exports, "InputCity", {
     return _InputCity.InputCity;
   }
 });
+Object.defineProperty(exports, "InputCost", {
+  enumerable: true,
+  get: function get() {
+    return _InputCost.InputCost;
+  }
+});
 Object.defineProperty(exports, "InputCurrenciesSymbol", {
   enumerable: true,
   get: function get() {
@@ -87,6 +93,12 @@ Object.defineProperty(exports, "InputPhone", {
     return _InputPhone.InputPhone;
   }
 });
+Object.defineProperty(exports, "InputShippingTimeDays", {
+  enumerable: true,
+  get: function get() {
+    return _InputShippingTimeDays.InputShippingTimeDays;
+  }
+});
 Object.defineProperty(exports, "InputSku", {
   enumerable: true,
   get: function get() {
@@ -127,6 +139,12 @@ Object.defineProperty(exports, "SelectAreaCode", {
   enumerable: true,
   get: function get() {
     return _SelectAreaCode.SelectAreaCode;
+  }
+});
+Object.defineProperty(exports, "SelectAvailableShippingServices", {
+  enumerable: true,
+  get: function get() {
+    return _SelectAvailableShippingServices.SelectAvailableShippingServices;
   }
 });
 Object.defineProperty(exports, "SelectCity", {
@@ -177,6 +195,12 @@ Object.defineProperty(exports, "SelectParentId", {
     return _SelectParentId.SelectParentId;
   }
 });
+Object.defineProperty(exports, "SelectRegion", {
+  enumerable: true,
+  get: function get() {
+    return _SelectRegion.SelectRegion;
+  }
+});
 Object.defineProperty(exports, "SelectRoles", {
   enumerable: true,
   get: function get() {
@@ -201,10 +225,28 @@ Object.defineProperty(exports, "SelectStatus", {
     return _SelectStatus.SelectStatus;
   }
 });
+Object.defineProperty(exports, "SelectTaxClass", {
+  enumerable: true,
+  get: function get() {
+    return _SelectTaxClass.SelectTaxClass;
+  }
+});
+Object.defineProperty(exports, "SelectTaxStatus", {
+  enumerable: true,
+  get: function get() {
+    return _SelectTaxStatus.SelectTaxStatus;
+  }
+});
 Object.defineProperty(exports, "SelectTaxes", {
   enumerable: true,
   get: function get() {
     return _SelectTaxes.SelectTaxes;
+  }
+});
+Object.defineProperty(exports, "SelectType", {
+  enumerable: true,
+  get: function get() {
+    return _SelectType.SelectType;
   }
 });
 Object.defineProperty(exports, "SelectTypeDocumentIdId", {
@@ -247,3 +289,10 @@ var _SelectAreaCode = require("./SelectAreaCode");
 var _SelectRoles = require("./SelectRoles");
 var _InputCart = require("./InputCart");
 var _InputSku = require("./InputSku");
+var _InputCost = require("./InputCost");
+var _SelectType = require("./SelectType");
+var _InputShippingTimeDays = require("./InputShippingTimeDays");
+var _SelectAvailableShippingServices = require("./SelectAvailableShippingServices");
+var _SelectTaxStatus = require("./SelectTaxStatus");
+var _SelectTaxClass = require("./SelectTaxClass");
+var _SelectRegion = require("./SelectRegion");

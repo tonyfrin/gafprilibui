@@ -9,3 +9,8 @@ export type {
   CircleButtonProps,
   CircleButtonPropsExtended,
 } from './CircleButton';
+export { ButtonOptionsContainer } from './ButtonOptionsContainer';
+export type {
+  ButtonOptionsContainerProps,
+  StylesContainer,
+} from './ButtonOptionsContainer';

@@ -51,10 +51,28 @@ Object.defineProperty(exports, "useGafpriProducts", {
     return _useGafpriProducts.useGafpriProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriProjects", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriProjects.useGafpriProjects;
+  }
+});
 Object.defineProperty(exports, "useGafpriRoles", {
   enumerable: true,
   get: function get() {
     return _useGafpriRoles.useGafpriRoles;
+  }
+});
+Object.defineProperty(exports, "useGafpriShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriShippingAreas.useGafpriShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriShippingMethods.useGafpriShippingMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriSites", {
@@ -101,3 +119,6 @@ var _useGafpriTaxRates = require("./useGafpriTaxRates");
 var _useGafpriProducts = require("./useGafpriProducts");
 var _useGafpriOrder = require("./useGafpriOrder");
 var _useGafpriBudget = require("./useGafpriBudget");
+var _useGafpriShippingMethods = require("./useGafpriShippingMethods");
+var _useGafpriShippingAreas = require("./useGafpriShippingAreas");
+var _useGafpriProjects = require("./useGafpriProjects");

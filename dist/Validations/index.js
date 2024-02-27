@@ -28,6 +28,12 @@ Object.defineProperty(exports, "generalValidationAreaCode", {
     return _generalValidationAreaCode.generalValidationAreaCode;
   }
 });
+Object.defineProperty(exports, "generalValidationAvailableShippingServices", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationAvailableShippingServices.generalValidationAvailableShippingServices;
+  }
+});
 Object.defineProperty(exports, "generalValidationButtonNext", {
   enumerable: true,
   get: function get() {
@@ -286,6 +292,18 @@ Object.defineProperty(exports, "generalValidationSelectTaxes", {
     return _generalValidationSelectTaxes.generalValidationSelectTaxes;
   }
 });
+Object.defineProperty(exports, "generalValidationShippingAreasId", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationShippingAreasId.generalValidationShippingAreasId;
+  }
+});
+Object.defineProperty(exports, "generalValidationShippingTimeDays", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationShippingTimeDays.generalValidationShippingTimeDays;
+  }
+});
 Object.defineProperty(exports, "generalValidationSinglePassword", {
   enumerable: true,
   get: function get() {
@@ -460,6 +478,9 @@ var _generalValidationTaxClassesId = require("./generalValidationTaxClassesId");
 var _generalValidationRate = require("./generalValidationRate");
 var _generalValidationCustomerId = require("./generalValidationCustomerId");
 var _generalValidationReferredId = require("./generalValidationReferredId");
+var _generalValidationShippingAreasId = require("./generalValidationShippingAreasId");
+var _generalValidationShippingTimeDays = require("./generalValidationShippingTimeDays");
+var _generalValidationAvailableShippingServices = require("./generalValidationAvailableShippingServices");
 var validationInputNameLastNameUserName = exports.validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,

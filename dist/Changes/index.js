@@ -33,6 +33,12 @@ Object.defineProperty(exports, "generalChangeAttributes", {
     return _generalChangeAttributes.generalChangeAttributes;
   }
 });
+Object.defineProperty(exports, "generalChangeAvailableShippingServices", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeAvailableShippingServices.generalChangeAvailableShippingServices;
+  }
+});
 Object.defineProperty(exports, "generalChangeCatalogOrder", {
   enumerable: true,
   get: function get() {
@@ -213,6 +219,12 @@ Object.defineProperty(exports, "generalChangeReferredId", {
     return _generalChangeReferredId.generalChangeReferredId;
   }
 });
+Object.defineProperty(exports, "generalChangeRegion", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeRegion.generalChangeRegion;
+  }
+});
 Object.defineProperty(exports, "generalChangeRoles", {
   enumerable: true,
   get: function get() {
@@ -223,6 +235,18 @@ Object.defineProperty(exports, "generalChangeSalesPrice", {
   enumerable: true,
   get: function get() {
     return _generalChangeSalesPrice.generalChangeSalesPrice;
+  }
+});
+Object.defineProperty(exports, "generalChangeShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeShippingAreas.generalChangeShippingAreas;
+  }
+});
+Object.defineProperty(exports, "generalChangeShippingTimeDays", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeShippingTimeDays.generalChangeShippingTimeDays;
   }
 });
 Object.defineProperty(exports, "generalChangeSite", {
@@ -381,3 +405,7 @@ var _generalChangeTaxClasses = require("./generalChangeTaxClasses");
 var _generalChangeRate = require("./generalChangeRate");
 var _generalChangeCustomerId = require("./generalChangeCustomerId");
 var _generalChangeReferredId = require("./generalChangeReferredId");
+var _generalChangeShippingAreas = require("./generalChangeShippingAreas");
+var _generalChangeShippingTimeDays = require("./generalChangeShippingTimeDays");
+var _generalChangeAvailableShippingServices = require("./generalChangeAvailableShippingServices");
+var _generalChangeRegion = require("./generalChangeRegion");

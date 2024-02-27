@@ -39,6 +39,12 @@ Object.defineProperty(exports, "AREA_CODE_INPUT", {
     return _Inputs.AREA_CODE_INPUT;
   }
 });
+Object.defineProperty(exports, "AVAILABLE_SHIPPING_SERVICES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.AVAILABLE_SHIPPING_SERVICES_INPUT;
+  }
+});
 Object.defineProperty(exports, "AllRoles", {
   enumerable: true,
   get: function get() {
@@ -267,6 +273,48 @@ Object.defineProperty(exports, "OFFER_PRICE_INPUT", {
     return _Inputs.OFFER_PRICE_INPUT;
   }
 });
+Object.defineProperty(exports, "OPTIONS_REGION", {
+  enumerable: true,
+  get: function get() {
+    return _shippingDefault.OPTIONS_REGION;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_METHODS_STATUS", {
+  enumerable: true,
+  get: function get() {
+    return _shippingDefault.OPTIONS_SHIPPING_METHODS_STATUS;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_METHODS_STATUS_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _shippingDefault.OPTIONS_SHIPPING_METHODS_STATUS_DEFAULT;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_METHODS_TYPE", {
+  enumerable: true,
+  get: function get() {
+    return _shippingDefault.OPTIONS_SHIPPING_METHODS_TYPE;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_METHODS_TYPE_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _shippingDefault.OPTIONS_SHIPPING_METHODS_TYPE_DEFAULT;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_SERVICES", {
+  enumerable: true,
+  get: function get() {
+    return _shippingDefault.OPTIONS_SHIPPING_SERVICES;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_SERVICES_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _shippingDefault.OPTIONS_SHIPPING_SERVICES_DEFAULT;
+  }
+});
 Object.defineProperty(exports, "ORDER_ROUTE", {
   enumerable: true,
   get: function get() {
@@ -399,6 +447,18 @@ Object.defineProperty(exports, "PRODUCT_TYPES_DEFAULT", {
     return _products.PRODUCT_TYPES_DEFAULT;
   }
 });
+Object.defineProperty(exports, "PROJECTS_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.PROJECTS_ROUTE;
+  }
+});
+Object.defineProperty(exports, "PROJECTS_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.PROJECTS_STORAGE;
+  }
+});
 Object.defineProperty(exports, "PUBLIC_NAME_INPUT", {
   enumerable: true,
   get: function get() {
@@ -451,6 +511,42 @@ Object.defineProperty(exports, "SALES_PRICE_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.SALES_PRICE_INPUT;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_AREAS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.SHIPPING_AREAS_INPUT;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_AREAS_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.SHIPPING_AREAS_ROUTE;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_AREAS_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.SHIPPING_AREAS_STORAGE;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_METHODS_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.SHIPPING_METHODS_ROUTE;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_METHODS_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.SHIPPING_METHODS_STORAGE;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_TIME_DAYS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.SHIPPING_TIME_DAYS_INPUT;
   }
 });
 Object.defineProperty(exports, "SITES_ROUTE", {
@@ -698,3 +794,4 @@ var _DefaultValue = require("./DefaultValue");
 var _Api = require("./Api");
 var _LocalStorage = require("./LocalStorage");
 var _products = require("./products");
+var _shippingDefault = require("./shippingDefault");

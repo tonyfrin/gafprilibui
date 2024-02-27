@@ -63,3 +63,7 @@ export const TAX_CLASSES_INPUT = 'tax-classes-input-id';
 export const RATE_INPUT = 'rate-input-id';
 export const CUSTOMER_ID_INPUT = 'customer-id-input-id';
 export const REFFERED_ID_INPUT = 'reffered-id-input-id';
+export const SHIPPING_AREAS_INPUT = 'shipping-areas-input-id';
+export const SHIPPING_TIME_DAYS_INPUT = 'shipping-time-days-input-id';
+export const AVAILABLE_SHIPPING_SERVICES_INPUT =
+  'available-shipping-services-input-id';

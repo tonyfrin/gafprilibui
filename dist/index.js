@@ -39,6 +39,12 @@ Object.defineProperty(exports, "AREA_CODE_INPUT", {
     return _constants.AREA_CODE_INPUT;
   }
 });
+Object.defineProperty(exports, "AVAILABLE_SHIPPING_SERVICES_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.AVAILABLE_SHIPPING_SERVICES_INPUT;
+  }
+});
 Object.defineProperty(exports, "AddressAddForm", {
   enumerable: true,
   get: function get() {
@@ -139,6 +145,12 @@ Object.defineProperty(exports, "ButtonNext", {
   enumerable: true,
   get: function get() {
     return _Abstract.ButtonNext;
+  }
+});
+Object.defineProperty(exports, "ButtonOptionsContainer", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ButtonOptionsContainer;
   }
 });
 Object.defineProperty(exports, "CATALOG_ORDER_INPUT", {
@@ -543,10 +555,22 @@ Object.defineProperty(exports, "InitMainMenu", {
     return _Components.InitMainMenu;
   }
 });
+Object.defineProperty(exports, "InitProjects", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitProjects;
+  }
+});
 Object.defineProperty(exports, "InitRoles", {
   enumerable: true,
   get: function get() {
     return _Abstract.InitRoles;
+  }
+});
+Object.defineProperty(exports, "InitShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitShippingAreas;
   }
 });
 Object.defineProperty(exports, "InitSites", {
@@ -583,6 +607,12 @@ Object.defineProperty(exports, "InputCity", {
   enumerable: true,
   get: function get() {
     return _Abstract.InputCity;
+  }
+});
+Object.defineProperty(exports, "InputCost", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputCost;
   }
 });
 Object.defineProperty(exports, "InputCurrenciesSymbol", {
@@ -625,6 +655,12 @@ Object.defineProperty(exports, "InputPhone", {
   enumerable: true,
   get: function get() {
     return _Abstract.InputPhone;
+  }
+});
+Object.defineProperty(exports, "InputShippingTimeDays", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputShippingTimeDays;
   }
 });
 Object.defineProperty(exports, "InputSku", {
@@ -735,6 +771,12 @@ Object.defineProperty(exports, "List", {
     return _Abstract.List;
   }
 });
+Object.defineProperty(exports, "ListContainer", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ListContainer;
+  }
+});
 Object.defineProperty(exports, "Loading", {
   enumerable: true,
   get: function get() {
@@ -789,6 +831,12 @@ Object.defineProperty(exports, "MainMenu", {
     return _Abstract.MainMenu;
   }
 });
+Object.defineProperty(exports, "MainProjects", {
+  enumerable: true,
+  get: function get() {
+    return _Components.MainProjects;
+  }
+});
 Object.defineProperty(exports, "MainRoles", {
   enumerable: true,
   get: function get() {
@@ -831,6 +879,12 @@ Object.defineProperty(exports, "MenuButton", {
     return _Abstract.MenuButton;
   }
 });
+Object.defineProperty(exports, "Modal", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.Modal;
+  }
+});
 Object.defineProperty(exports, "ModelForm", {
   enumerable: true,
   get: function get() {
@@ -859,6 +913,48 @@ Object.defineProperty(exports, "OFFER_PRICE_INPUT", {
   enumerable: true,
   get: function get() {
     return _constants.OFFER_PRICE_INPUT;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_REGION", {
+  enumerable: true,
+  get: function get() {
+    return _constants.OPTIONS_REGION;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_METHODS_STATUS", {
+  enumerable: true,
+  get: function get() {
+    return _constants.OPTIONS_SHIPPING_METHODS_STATUS;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_METHODS_STATUS_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.OPTIONS_SHIPPING_METHODS_STATUS_DEFAULT;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_METHODS_TYPE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.OPTIONS_SHIPPING_METHODS_TYPE;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_METHODS_TYPE_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.OPTIONS_SHIPPING_METHODS_TYPE_DEFAULT;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_SERVICES", {
+  enumerable: true,
+  get: function get() {
+    return _constants.OPTIONS_SHIPPING_SERVICES;
+  }
+});
+Object.defineProperty(exports, "OPTIONS_SHIPPING_SERVICES_DEFAULT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.OPTIONS_SHIPPING_SERVICES_DEFAULT;
   }
 });
 Object.defineProperty(exports, "ORDER_ROUTE", {
@@ -1011,6 +1107,18 @@ Object.defineProperty(exports, "PRODUCT_TYPES_DEFAULT", {
     return _constants.PRODUCT_TYPES_DEFAULT;
   }
 });
+Object.defineProperty(exports, "PROJECTS_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.PROJECTS_ROUTE;
+  }
+});
+Object.defineProperty(exports, "PROJECTS_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.PROJECTS_STORAGE;
+  }
+});
 Object.defineProperty(exports, "PUBLIC_NAME_INPUT", {
   enumerable: true,
   get: function get() {
@@ -1063,6 +1171,12 @@ Object.defineProperty(exports, "ProductOrder", {
   enumerable: true,
   get: function get() {
     return _Components.ProductOrder;
+  }
+});
+Object.defineProperty(exports, "ProjectsForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ProjectsForm;
   }
 });
 Object.defineProperty(exports, "QTY_PACK_INPUT", {
@@ -1123,6 +1237,42 @@ Object.defineProperty(exports, "SALES_PRICE_INPUT", {
   enumerable: true,
   get: function get() {
     return _constants.SALES_PRICE_INPUT;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_AREAS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.SHIPPING_AREAS_INPUT;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_AREAS_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.SHIPPING_AREAS_ROUTE;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_AREAS_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.SHIPPING_AREAS_STORAGE;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_METHODS_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.SHIPPING_METHODS_ROUTE;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_METHODS_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.SHIPPING_METHODS_STORAGE;
+  }
+});
+Object.defineProperty(exports, "SHIPPING_TIME_DAYS_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.SHIPPING_TIME_DAYS_INPUT;
   }
 });
 Object.defineProperty(exports, "SITES_ROUTE", {
@@ -1209,6 +1359,12 @@ Object.defineProperty(exports, "SelectAreaCode", {
     return _Abstract.SelectAreaCode;
   }
 });
+Object.defineProperty(exports, "SelectAvailableShippingServices", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectAvailableShippingServices;
+  }
+});
 Object.defineProperty(exports, "SelectCity", {
   enumerable: true,
   get: function get() {
@@ -1257,6 +1413,12 @@ Object.defineProperty(exports, "SelectParentId", {
     return _Abstract.SelectParentId;
   }
 });
+Object.defineProperty(exports, "SelectRegion", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectRegion;
+  }
+});
 Object.defineProperty(exports, "SelectRoles", {
   enumerable: true,
   get: function get() {
@@ -1275,10 +1437,52 @@ Object.defineProperty(exports, "SelectStatus", {
     return _Abstract.SelectStatus;
   }
 });
+Object.defineProperty(exports, "SelectTaxClass", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectTaxClass;
+  }
+});
+Object.defineProperty(exports, "SelectTaxStatus", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectTaxStatus;
+  }
+});
+Object.defineProperty(exports, "SelectType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectType;
+  }
+});
 Object.defineProperty(exports, "SelectTypeDocumentIdId", {
   enumerable: true,
   get: function get() {
     return _Abstract.SelectTypeDocumentIdId;
+  }
+});
+Object.defineProperty(exports, "ShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Components.ShippingAreas;
+  }
+});
+Object.defineProperty(exports, "ShippingAreasForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ShippingAreasForm;
+  }
+});
+Object.defineProperty(exports, "ShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _Components.ShippingMethods;
+  }
+});
+Object.defineProperty(exports, "ShippingMethodsForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ShippingMethodsForm;
   }
 });
 Object.defineProperty(exports, "SimpleTable", {
@@ -1623,6 +1827,12 @@ Object.defineProperty(exports, "generalChangeAttributes", {
     return _Changes.generalChangeAttributes;
   }
 });
+Object.defineProperty(exports, "generalChangeAvailableShippingServices", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeAvailableShippingServices;
+  }
+});
 Object.defineProperty(exports, "generalChangeCatalogOrder", {
   enumerable: true,
   get: function get() {
@@ -1803,6 +2013,12 @@ Object.defineProperty(exports, "generalChangeReferredId", {
     return _Changes.generalChangeReferredId;
   }
 });
+Object.defineProperty(exports, "generalChangeRegion", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeRegion;
+  }
+});
 Object.defineProperty(exports, "generalChangeRoles", {
   enumerable: true,
   get: function get() {
@@ -1813,6 +2029,18 @@ Object.defineProperty(exports, "generalChangeSalesPrice", {
   enumerable: true,
   get: function get() {
     return _Changes.generalChangeSalesPrice;
+  }
+});
+Object.defineProperty(exports, "generalChangeShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeShippingAreas;
+  }
+});
+Object.defineProperty(exports, "generalChangeShippingTimeDays", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeShippingTimeDays;
   }
 });
 Object.defineProperty(exports, "generalChangeSite", {
@@ -1933,6 +2161,12 @@ Object.defineProperty(exports, "generalValidationAreaCode", {
   enumerable: true,
   get: function get() {
     return _Validations.generalValidationAreaCode;
+  }
+});
+Object.defineProperty(exports, "generalValidationAvailableShippingServices", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationAvailableShippingServices;
   }
 });
 Object.defineProperty(exports, "generalValidationButtonNext", {
@@ -2187,6 +2421,18 @@ Object.defineProperty(exports, "generalValidationSelectTaxes", {
     return _Validations.generalValidationSelectTaxes;
   }
 });
+Object.defineProperty(exports, "generalValidationShippingAreasId", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationShippingAreasId;
+  }
+});
+Object.defineProperty(exports, "generalValidationShippingTimeDays", {
+  enumerable: true,
+  get: function get() {
+    return _Validations.generalValidationShippingTimeDays;
+  }
+});
 Object.defineProperty(exports, "generalValidationSinglePassword", {
   enumerable: true,
   get: function get() {
@@ -2391,6 +2637,24 @@ Object.defineProperty(exports, "useGafpriApiProducts", {
     return _Abstract.useGafpriApiProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriApiProjects", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiProjects;
+  }
+});
+Object.defineProperty(exports, "useGafpriApiShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriApiShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiShippingMethods;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -2437,6 +2701,24 @@ Object.defineProperty(exports, "useGafpriAttributesProducts", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriAttributesProducts;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesProjects", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesProjects;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesShippingMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesTaxClasses", {
@@ -2491,6 +2773,24 @@ Object.defineProperty(exports, "useGafpriDataProducts", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriDataProducts;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataProjects", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataProjects;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataShippingMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriDataTaxClasses", {
@@ -2553,10 +2853,28 @@ Object.defineProperty(exports, "useGafpriPagesProducts", {
     return _Abstract.useGafpriPagesProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesProjects", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesProjects;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesSalesModule", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPagesSalesModule;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesShippingMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesTaxClasses", {
@@ -2595,6 +2913,24 @@ Object.defineProperty(exports, "useGafpriPaginationsProducts", {
     return _Abstract.useGafpriPaginationsProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsProjects", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsProjects;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsShippingMethods;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsTaxClasses", {
   enumerable: true,
   get: function get() {
@@ -2613,10 +2949,28 @@ Object.defineProperty(exports, "useGafpriProducts", {
     return _states.useGafpriProducts;
   }
 });
+Object.defineProperty(exports, "useGafpriProjects", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriProjects;
+  }
+});
 Object.defineProperty(exports, "useGafpriRoles", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriRoles;
+  }
+});
+Object.defineProperty(exports, "useGafpriShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriShippingAreas;
+  }
+});
+Object.defineProperty(exports, "useGafpriShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriShippingMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriSites", {

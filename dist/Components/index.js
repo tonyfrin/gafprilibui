@@ -57,6 +57,12 @@ Object.defineProperty(exports, "MainFooter", {
     return _Footer.MainFooter;
   }
 });
+Object.defineProperty(exports, "MainProjects", {
+  enumerable: true,
+  get: function get() {
+    return _Projects.MainProjects;
+  }
+});
 Object.defineProperty(exports, "MainRoles", {
   enumerable: true,
   get: function get() {
@@ -99,6 +105,18 @@ Object.defineProperty(exports, "ProductOrder", {
     return _Products.ProductOrder;
   }
 });
+Object.defineProperty(exports, "ShippingAreas", {
+  enumerable: true,
+  get: function get() {
+    return _Shipping.ShippingAreas;
+  }
+});
+Object.defineProperty(exports, "ShippingMethods", {
+  enumerable: true,
+  get: function get() {
+    return _Shipping.ShippingMethods;
+  }
+});
 var _Footer = require("./Footer");
 var _Header = require("./Header");
 var _Loading = require("./Loading");
@@ -113,3 +131,5 @@ var _Main = require("./Main");
 var _Entity = require("./Entity");
 var _Order = require("./Order");
 var _Budget = require("./Budget");
+var _Shipping = require("./Shipping");
+var _Projects = require("./Projects");

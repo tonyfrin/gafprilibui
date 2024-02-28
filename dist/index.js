@@ -1383,6 +1383,12 @@ Object.defineProperty(exports, "ProductOrder", {
     return _Components.ProductOrder;
   }
 });
+Object.defineProperty(exports, "Products", {
+  enumerable: true,
+  get: function get() {
+    return _Components.Products;
+  }
+});
 Object.defineProperty(exports, "ProductsForm", {
   enumerable: true,
   get: function get() {

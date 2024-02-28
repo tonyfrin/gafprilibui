@@ -659,6 +659,7 @@ export {
   Entity,
   TaxRates,
   TaxClasses,
+  Products,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -697,6 +698,7 @@ export type {
   EntityProps,
   TaxRatesProps,
   TaxClassesProps,
+  ProductsProps,
 } from './Components';
 export {
   addClass,

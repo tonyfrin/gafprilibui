@@ -9,6 +9,24 @@ Object.defineProperty(exports, "AddressAddForm", {
     return _Entity.AddressAddForm;
   }
 });
+Object.defineProperty(exports, "AdvancedForm", {
+  enumerable: true,
+  get: function get() {
+    return _Products.AdvancedForm;
+  }
+});
+Object.defineProperty(exports, "AttributeTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.AttributeTable;
+  }
+});
+Object.defineProperty(exports, "AttributesForm", {
+  enumerable: true,
+  get: function get() {
+    return _Products.AttributesForm;
+  }
+});
 Object.defineProperty(exports, "Background1", {
   enumerable: true,
   get: function get() {
@@ -135,10 +153,28 @@ Object.defineProperty(exports, "CartTable", {
     return _Table.CartTable;
   }
 });
+Object.defineProperty(exports, "CatalogForm", {
+  enumerable: true,
+  get: function get() {
+    return _Products.CatalogForm;
+  }
+});
+Object.defineProperty(exports, "CategoriesCheckBox", {
+  enumerable: true,
+  get: function get() {
+    return _CheckBox.CategoriesCheckBox;
+  }
+});
 Object.defineProperty(exports, "CategoryForm", {
   enumerable: true,
   get: function get() {
     return _Category.CategoryForm;
+  }
+});
+Object.defineProperty(exports, "CheckBox", {
+  enumerable: true,
+  get: function get() {
+    return _CheckBox.CheckBox;
   }
 });
 Object.defineProperty(exports, "CircleButton", {
@@ -279,6 +315,18 @@ Object.defineProperty(exports, "FadeIn", {
     return _Fade.FadeIn;
   }
 });
+Object.defineProperty(exports, "FloatingButtons", {
+  enumerable: true,
+  get: function get() {
+    return _Button.FloatingButtons;
+  }
+});
+Object.defineProperty(exports, "GeneralForm", {
+  enumerable: true,
+  get: function get() {
+    return _Products.GeneralForm;
+  }
+});
 Object.defineProperty(exports, "Globo", {
   enumerable: true,
   get: function get() {
@@ -309,6 +357,12 @@ Object.defineProperty(exports, "HeaderMenu", {
     return _Menu.HeaderMenu;
   }
 });
+Object.defineProperty(exports, "HorizontalMenu", {
+  enumerable: true,
+  get: function get() {
+    return _Menu.HorizontalMenu;
+  }
+});
 Object.defineProperty(exports, "InitCategory", {
   enumerable: true,
   get: function get() {
@@ -325,6 +379,12 @@ Object.defineProperty(exports, "InitEntity", {
   enumerable: true,
   get: function get() {
     return _Entity.InitEntity;
+  }
+});
+Object.defineProperty(exports, "InitProducts", {
+  enumerable: true,
+  get: function get() {
+    return _Products.InitProducts;
   }
 });
 Object.defineProperty(exports, "InitProjects", {
@@ -355,6 +415,12 @@ Object.defineProperty(exports, "InitStorage", {
   enumerable: true,
   get: function get() {
     return _Storage.InitStorage;
+  }
+});
+Object.defineProperty(exports, "InitTaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _Taxes.InitTaxClasses;
   }
 });
 Object.defineProperty(exports, "InitTypeDocumentId", {
@@ -393,6 +459,12 @@ Object.defineProperty(exports, "InputCart", {
     return _Input.InputCart;
   }
 });
+Object.defineProperty(exports, "InputCatalogOrder", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputCatalogOrder;
+  }
+});
 Object.defineProperty(exports, "InputCity", {
   enumerable: true,
   get: function get() {
@@ -429,10 +501,22 @@ Object.defineProperty(exports, "InputEmail", {
     return _Input.InputEmail;
   }
 });
+Object.defineProperty(exports, "InputHeight", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputHeight;
+  }
+});
 Object.defineProperty(exports, "InputLastName", {
   enumerable: true,
   get: function get() {
     return _Input.InputLastName;
+  }
+});
+Object.defineProperty(exports, "InputLength", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputLength;
   }
 });
 Object.defineProperty(exports, "InputName", {
@@ -441,16 +525,52 @@ Object.defineProperty(exports, "InputName", {
     return _Input.InputName;
   }
 });
+Object.defineProperty(exports, "InputOfferPrice", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputOfferPrice;
+  }
+});
 Object.defineProperty(exports, "InputPassword", {
   enumerable: true,
   get: function get() {
     return _Input.InputPassword;
   }
 });
+Object.defineProperty(exports, "InputPermanentLink", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputPermanentLink;
+  }
+});
 Object.defineProperty(exports, "InputPhone", {
   enumerable: true,
   get: function get() {
     return _Input.InputPhone;
+  }
+});
+Object.defineProperty(exports, "InputPublicName", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputPublicName;
+  }
+});
+Object.defineProperty(exports, "InputQtyPack", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputQtyPack;
+  }
+});
+Object.defineProperty(exports, "InputRate", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputRate;
+  }
+});
+Object.defineProperty(exports, "InputSalesPrice", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputSalesPrice;
   }
 });
 Object.defineProperty(exports, "InputShippingTimeDays", {
@@ -471,6 +591,18 @@ Object.defineProperty(exports, "InputStateCountry", {
     return _Input.InputStateCountry;
   }
 });
+Object.defineProperty(exports, "InputTags", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputTags;
+  }
+});
+Object.defineProperty(exports, "InputUndCbm", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputUndCbm;
+  }
+});
 Object.defineProperty(exports, "InputUserName", {
   enumerable: true,
   get: function get() {
@@ -483,10 +615,28 @@ Object.defineProperty(exports, "InputWebSite", {
     return _Input.InputWebSite;
   }
 });
+Object.defineProperty(exports, "InputWeight", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputWeight;
+  }
+});
+Object.defineProperty(exports, "InputWidth", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputWidth;
+  }
+});
 Object.defineProperty(exports, "InputZipCode", {
   enumerable: true,
   get: function get() {
     return _Input.InputZipCode;
+  }
+});
+Object.defineProperty(exports, "InventoryForm", {
+  enumerable: true,
+  get: function get() {
+    return _Products.InventoryForm;
   }
 });
 Object.defineProperty(exports, "LineBudgetPrint", {
@@ -639,6 +789,24 @@ Object.defineProperty(exports, "Pagination", {
     return _Pagination.Pagination;
   }
 });
+Object.defineProperty(exports, "Paragraph", {
+  enumerable: true,
+  get: function get() {
+    return _Input.Paragraph;
+  }
+});
+Object.defineProperty(exports, "ParagraphDescription", {
+  enumerable: true,
+  get: function get() {
+    return _Input.ParagraphDescription;
+  }
+});
+Object.defineProperty(exports, "ParagraphNote", {
+  enumerable: true,
+  get: function get() {
+    return _Input.ParagraphNote;
+  }
+});
 Object.defineProperty(exports, "PhotoCategory", {
   enumerable: true,
   get: function get() {
@@ -663,16 +831,40 @@ Object.defineProperty(exports, "PhotoForm", {
     return _Form.PhotoForm;
   }
 });
+Object.defineProperty(exports, "PhotoGalleryForm", {
+  enumerable: true,
+  get: function get() {
+    return _Form.PhotoGalleryForm;
+  }
+});
+Object.defineProperty(exports, "PhotoProduct", {
+  enumerable: true,
+  get: function get() {
+    return _Form.PhotoProduct;
+  }
+});
 Object.defineProperty(exports, "PhotoUser", {
   enumerable: true,
   get: function get() {
     return _Form.PhotoUser;
   }
 });
+Object.defineProperty(exports, "PriceForm", {
+  enumerable: true,
+  get: function get() {
+    return _Products.PriceForm;
+  }
+});
 Object.defineProperty(exports, "PrintButtonBudget", {
   enumerable: true,
   get: function get() {
     return _Pdf.PrintButtonBudget;
+  }
+});
+Object.defineProperty(exports, "ProductsForm", {
+  enumerable: true,
+  get: function get() {
+    return _Products.ProductsForm;
   }
 });
 Object.defineProperty(exports, "ProjectsForm", {
@@ -697,6 +889,12 @@ Object.defineProperty(exports, "Sales", {
   enumerable: true,
   get: function get() {
     return _Order.Sales;
+  }
+});
+Object.defineProperty(exports, "ScrollableContainer", {
+  enumerable: true,
+  get: function get() {
+    return _CheckBox.ScrollableContainer;
   }
 });
 Object.defineProperty(exports, "SearchBar", {
@@ -783,6 +981,12 @@ Object.defineProperty(exports, "SelectDocumentIdIndex", {
     return _Input.SelectDocumentIdIndex;
   }
 });
+Object.defineProperty(exports, "SelectPackageType", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectPackageType;
+  }
+});
 Object.defineProperty(exports, "SelectParentId", {
   enumerable: true,
   get: function get() {
@@ -849,6 +1053,18 @@ Object.defineProperty(exports, "SelectTypeDocumentIdId", {
     return _Input.SelectTypeDocumentIdId;
   }
 });
+Object.defineProperty(exports, "SelectVisibility", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectVisibility;
+  }
+});
+Object.defineProperty(exports, "ShipForm", {
+  enumerable: true,
+  get: function get() {
+    return _Products.ShipForm;
+  }
+});
 Object.defineProperty(exports, "ShippingAreasForm", {
   enumerable: true,
   get: function get() {
@@ -867,10 +1083,22 @@ Object.defineProperty(exports, "SimpleTable", {
     return _Table.SimpleTable;
   }
 });
+Object.defineProperty(exports, "SingleCheckBox", {
+  enumerable: true,
+  get: function get() {
+    return _CheckBox.SingleCheckBox;
+  }
+});
 Object.defineProperty(exports, "SitesForm", {
   enumerable: true,
   get: function get() {
     return _Sites.SitesForm;
+  }
+});
+Object.defineProperty(exports, "SliderHorizontal", {
+  enumerable: true,
+  get: function get() {
+    return _Slider.SliderHorizontal;
   }
 });
 Object.defineProperty(exports, "SpanValue", {
@@ -889,6 +1117,18 @@ Object.defineProperty(exports, "StorageForm", {
   enumerable: true,
   get: function get() {
     return _Storage.StorageForm;
+  }
+});
+Object.defineProperty(exports, "TaxClassesForm", {
+  enumerable: true,
+  get: function get() {
+    return _Taxes.TaxClassesForm;
+  }
+});
+Object.defineProperty(exports, "TaxRatesForm", {
+  enumerable: true,
+  get: function get() {
+    return _Taxes.TaxRatesForm;
   }
 });
 Object.defineProperty(exports, "Title1", {
@@ -1289,3 +1529,6 @@ var _Shipping = require("./Shipping");
 var _Modal = require("./Modal");
 var _Projects = require("./Projects");
 var _Storage = require("./Storage");
+var _Taxes = require("./Taxes");
+var _CheckBox = require("./CheckBox");
+var _Slider = require("./Slider");

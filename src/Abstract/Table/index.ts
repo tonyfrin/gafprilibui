@@ -12,3 +12,5 @@ export { BudgetPrintTable } from './BudgetPrintTable';
 export type { BudgetPrintTableProps } from './BudgetPrintTable';
 export { CartBudgetViewTable } from './CartBudgetViewTable';
 export type { CartBudgetViewTableProps } from './CartBudgetViewTable';
+export { AttributeTable } from './AttributeTable';
+export type { AttributeTableProps } from './AttributeTable';

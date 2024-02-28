@@ -9,6 +9,12 @@ Object.defineProperty(exports, "HeaderMenu", {
     return _HeaderMenu.HeaderMenu;
   }
 });
+Object.defineProperty(exports, "HorizontalMenu", {
+  enumerable: true,
+  get: function get() {
+    return _HorizontalMenu.HorizontalMenu;
+  }
+});
 Object.defineProperty(exports, "MainMenu", {
   enumerable: true,
   get: function get() {
@@ -38,3 +44,4 @@ var _Menu = require("./Menu1");
 var _Menu2 = require("./Menu2");
 var _MainMenu = require("./MainMenu");
 var _HeaderMenu = require("./HeaderMenu");
+var _HorizontalMenu = require("./HorizontalMenu");

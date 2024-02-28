@@ -33,6 +33,12 @@ Object.defineProperty(exports, "InputCart", {
     return _InputCart.InputCart;
   }
 });
+Object.defineProperty(exports, "InputCatalogOrder", {
+  enumerable: true,
+  get: function get() {
+    return _InputCatalogOrder.InputCatalogOrder;
+  }
+});
 Object.defineProperty(exports, "InputCity", {
   enumerable: true,
   get: function get() {
@@ -69,10 +75,22 @@ Object.defineProperty(exports, "InputEmail", {
     return _InputEmail.InputEmail;
   }
 });
+Object.defineProperty(exports, "InputHeight", {
+  enumerable: true,
+  get: function get() {
+    return _InputHeight.InputHeight;
+  }
+});
 Object.defineProperty(exports, "InputLastName", {
   enumerable: true,
   get: function get() {
     return _InputLastName.InputLastName;
+  }
+});
+Object.defineProperty(exports, "InputLength", {
+  enumerable: true,
+  get: function get() {
+    return _InputLength.InputLength;
   }
 });
 Object.defineProperty(exports, "InputName", {
@@ -81,16 +99,52 @@ Object.defineProperty(exports, "InputName", {
     return _InputName.InputName;
   }
 });
+Object.defineProperty(exports, "InputOfferPrice", {
+  enumerable: true,
+  get: function get() {
+    return _InputOfferPrice.InputOfferPrice;
+  }
+});
 Object.defineProperty(exports, "InputPassword", {
   enumerable: true,
   get: function get() {
     return _InputPassword.InputPassword;
   }
 });
+Object.defineProperty(exports, "InputPermanentLink", {
+  enumerable: true,
+  get: function get() {
+    return _InputPermanentLink.InputPermanentLink;
+  }
+});
 Object.defineProperty(exports, "InputPhone", {
   enumerable: true,
   get: function get() {
     return _InputPhone.InputPhone;
+  }
+});
+Object.defineProperty(exports, "InputPublicName", {
+  enumerable: true,
+  get: function get() {
+    return _InputPublicName.InputPublicName;
+  }
+});
+Object.defineProperty(exports, "InputQtyPack", {
+  enumerable: true,
+  get: function get() {
+    return _InputQtyPack.InputQtyPack;
+  }
+});
+Object.defineProperty(exports, "InputRate", {
+  enumerable: true,
+  get: function get() {
+    return _InputRate.InputRate;
+  }
+});
+Object.defineProperty(exports, "InputSalesPrice", {
+  enumerable: true,
+  get: function get() {
+    return _InputSalesPrice.InputSalesPrice;
   }
 });
 Object.defineProperty(exports, "InputShippingTimeDays", {
@@ -111,6 +165,18 @@ Object.defineProperty(exports, "InputStateCountry", {
     return _InputStateCountry.InputStateCountry;
   }
 });
+Object.defineProperty(exports, "InputTags", {
+  enumerable: true,
+  get: function get() {
+    return _InputTags.InputTags;
+  }
+});
+Object.defineProperty(exports, "InputUndCbm", {
+  enumerable: true,
+  get: function get() {
+    return _InputUndCbm.InputUndCbm;
+  }
+});
 Object.defineProperty(exports, "InputUserName", {
   enumerable: true,
   get: function get() {
@@ -123,10 +189,40 @@ Object.defineProperty(exports, "InputWebSite", {
     return _InputWebSite.InputWebSite;
   }
 });
+Object.defineProperty(exports, "InputWeight", {
+  enumerable: true,
+  get: function get() {
+    return _InputWeight.InputWeight;
+  }
+});
+Object.defineProperty(exports, "InputWidth", {
+  enumerable: true,
+  get: function get() {
+    return _InputWidth.InputWidth;
+  }
+});
 Object.defineProperty(exports, "InputZipCode", {
   enumerable: true,
   get: function get() {
     return _InputZipCode.InputZipCode;
+  }
+});
+Object.defineProperty(exports, "Paragraph", {
+  enumerable: true,
+  get: function get() {
+    return _Paragraph.Paragraph;
+  }
+});
+Object.defineProperty(exports, "ParagraphDescription", {
+  enumerable: true,
+  get: function get() {
+    return _ParagraphDescription.ParagraphDescription;
+  }
+});
+Object.defineProperty(exports, "ParagraphNote", {
+  enumerable: true,
+  get: function get() {
+    return _ParagraphNote.ParagraphNote;
   }
 });
 Object.defineProperty(exports, "SelectAddressType", {
@@ -187,6 +283,12 @@ Object.defineProperty(exports, "SelectDocumentIdIndex", {
   enumerable: true,
   get: function get() {
     return _SelectDocumentIdIndex.SelectDocumentIdIndex;
+  }
+});
+Object.defineProperty(exports, "SelectPackageType", {
+  enumerable: true,
+  get: function get() {
+    return _SelectPackageType.SelectPackageType;
   }
 });
 Object.defineProperty(exports, "SelectParentId", {
@@ -255,6 +357,12 @@ Object.defineProperty(exports, "SelectTypeDocumentIdId", {
     return _SelectTypeDocumentIdId.SelectTypeDocumentIdId;
   }
 });
+Object.defineProperty(exports, "SelectVisibility", {
+  enumerable: true,
+  get: function get() {
+    return _SelectVisibility.SelectVisibility;
+  }
+});
 var _Input = require("./Input");
 var _InputAddress = require("./InputAddress1");
 var _InputAddress2 = require("./InputAddress2");
@@ -296,3 +404,21 @@ var _SelectAvailableShippingServices = require("./SelectAvailableShippingService
 var _SelectTaxStatus = require("./SelectTaxStatus");
 var _SelectTaxClass = require("./SelectTaxClass");
 var _SelectRegion = require("./SelectRegion");
+var _InputRate = require("./InputRate");
+var _Paragraph = require("./Paragraph");
+var _ParagraphNote = require("./ParagraphNote");
+var _InputTags = require("./InputTags");
+var _InputCatalogOrder = require("./InputCatalogOrder");
+var _InputPublicName = require("./InputPublicName");
+var _InputPermanentLink = require("./InputPermanentLink");
+var _ParagraphDescription = require("./ParagraphDescription");
+var _SelectVisibility = require("./SelectVisibility");
+var _InputSalesPrice = require("./InputSalesPrice");
+var _InputOfferPrice = require("./InputOfferPrice");
+var _SelectPackageType = require("./SelectPackageType");
+var _InputQtyPack = require("./InputQtyPack");
+var _InputUndCbm = require("./InputUndCbm");
+var _InputWeight = require("./InputWeight");
+var _InputHeight = require("./InputHeight");
+var _InputWidth = require("./InputWidth");
+var _InputLength = require("./InputLength");

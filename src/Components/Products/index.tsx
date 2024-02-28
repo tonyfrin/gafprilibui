@@ -13,3 +13,5 @@ export type {
   ProductBudgetProps,
   ProductBudgetStylesContainerProps,
 } from './ProductBudget';
+export { Products } from './Products';
+export type { ProductsProps } from './Products';

@@ -4,6 +4,7 @@ export {
   ButtonNext,
   CircleButton,
   ButtonOptionsContainer,
+  FloatingButtons,
 } from './Button';
 export type {
   ButtonStyle,
@@ -14,6 +15,7 @@ export type {
   CircleButtonProps,
   CircleButtonPropsExtended,
   ButtonOptionsContainerProps,
+  FloatingButtonsProps,
 } from './Button';
 export { Box1, SearchBox } from './Box';
 export type {
@@ -85,6 +87,24 @@ export {
   SelectTaxStatus,
   SelectTaxClass,
   SelectRegion,
+  InputRate,
+  Paragraph,
+  ParagraphNote,
+  InputTags,
+  InputCatalogOrder,
+  InputPublicName,
+  InputPermanentLink,
+  ParagraphDescription,
+  SelectVisibility,
+  InputSalesPrice,
+  InputOfferPrice,
+  SelectPackageType,
+  InputQtyPack,
+  InputUndCbm,
+  InputWeight,
+  InputHeight,
+  InputWidth,
+  InputLength,
 } from './Input';
 export type {
   InputStyle,
@@ -133,6 +153,25 @@ export type {
   SelectTaxStatusProps,
   SelectTaxClassProps,
   SelectRegionProps,
+  InputRateProps,
+  ParagraphProps,
+  ParagraphStyle,
+  ParagraphNoteProps,
+  InputTagsProps,
+  InputCatalogOrderProps,
+  InputPublicNameProps,
+  InputPermanentLinkProps,
+  ParagraphDescriptionProps,
+  SelectVisibilityProps,
+  InputSalesPriceProps,
+  InputOfferPriceProps,
+  SelectPackageTypeProps,
+  InputQtyPackProps,
+  InputUndCbmProps,
+  InputWeightProps,
+  InputHeightProps,
+  InputWidthProps,
+  InputLengthProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -172,6 +211,8 @@ export {
   BudgetFormInfoHeader,
   EntityBudgetViewFormInfoHeader,
   BudgetViewFormInfoHeader,
+  PhotoGalleryForm,
+  PhotoProduct,
 } from './Form';
 export type {
   ModelFormProps,
@@ -192,8 +233,17 @@ export type {
   BudgetFormInfoHeaderProps,
   EntityBudgetViewFormInfoHeaderProps,
   BudgetViewFormInfoHeaderProps,
+  PhotoGalleryFormProps,
+  PhotoProductProps,
 } from './Form';
-export { Menu1, Menu2, MenuButton, MainMenu, HeaderMenu } from './Menu';
+export {
+  Menu1,
+  Menu2,
+  MenuButton,
+  MainMenu,
+  HeaderMenu,
+  HorizontalMenu,
+} from './Menu';
 export type {
   Menu1Props,
   Menu2Props,
@@ -212,6 +262,7 @@ export type {
   HeaderMenuStylesContentProps,
   HeaderMenuStylesContentUlProps,
   HeaderMenuStylesContentLiProps,
+  HorizontalMenuProps,
 } from './Menu';
 export { Header, ModuleHeader } from './Header';
 export type {
@@ -529,6 +580,7 @@ export {
   CartBudgetTable,
   BudgetPrintTable,
   CartBudgetViewTable,
+  AttributeTable,
 } from './Table';
 export type {
   CartListProps,
@@ -538,13 +590,44 @@ export type {
   CartBudgetTableProps,
   BudgetPrintTableProps,
   CartBudgetViewTableProps,
+  AttributeTableProps,
 } from './Table';
-export { SearchProducts, SearchProductsBudget } from './Products';
+export {
+  SearchProducts,
+  SearchProductsBudget,
+  AdvancedForm,
+  AttributesForm,
+  CatalogForm,
+  GeneralForm,
+  InitProducts,
+  InventoryForm,
+  PriceForm,
+  ProductsForm,
+  ShipForm,
+} from './Products';
 export type {
   SearchProductsProps,
   SearchProductsPropsExtended,
   SearchProductsBudgetProps,
   SearchProductsBudgetPropsExtended,
+  AdvancedFormProps,
+  AdvancedFormExtended,
+  AttributesFormProps,
+  AttributesFormExtended,
+  CatalogFormProps,
+  CatalogFormExtended,
+  GeneralFormProps,
+  GeneralFormExtended,
+  InitProductsProps,
+  InitProductsExtended,
+  InventoryFormProps,
+  InventoryFormExtended,
+  PriceFormProps,
+  PriceFormExtended,
+  ProductsFormProps,
+  ProductsFormExtended,
+  ShipFormProps,
+  ShipFormExtended,
 } from './Products';
 export {
   CartSections,
@@ -617,3 +700,25 @@ export type {
   StorageFormProps,
   StorageFormPropsExtended,
 } from './Storage';
+export { TaxRatesForm, TaxClassesForm, InitTaxClasses } from './Taxes';
+export type {
+  TaxRatesFormProps,
+  TaxClassesFormProps,
+  TaxClassesFormPropsExtended,
+  InitTaxClassesProps,
+  InitTaxClassesExtended,
+} from './Taxes';
+export {
+  CategoriesCheckBox,
+  CheckBox,
+  ScrollableContainer,
+  SingleCheckBox,
+} from './CheckBox';
+export type {
+  CategoriesCheckboxProps,
+  CheckboxProps,
+  ScrollableContainerProps,
+  SingleCheckBoxProps,
+} from './CheckBox';
+export { SliderHorizontal } from './Slider';
+export type { SliderHorizontalProps } from './Slider';

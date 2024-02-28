@@ -12,7 +12,12 @@ export type {
   MainTypeDocumentIdProps,
   MainTypeDocumentIdPropsExtend,
 } from './TypeDocumentId';
-export { MainCategory, ProductOrder, ProductBudget } from './Products';
+export {
+  MainCategory,
+  ProductOrder,
+  ProductBudget,
+  Products,
+} from './Products';
 export type {
   MainCategoryProps,
   MainCategoryPropsExtended,
@@ -20,6 +25,7 @@ export type {
   ProductOrderStylesContainerProps,
   ProductBudgetProps,
   ProductBudgetStylesContainerProps,
+  ProductsProps,
 } from './Products';
 export { MainRoles } from './Roles';
 export type { MainRolesProps, MainRolesPropsExtended } from './Roles';
@@ -34,10 +40,13 @@ export type {
   InitMainMenuProps,
   InitMainMenuStylesContainerProps,
 } from './Main';
-export { EntityOrder } from './Entity';
+export { EntityOrder, EntityBudget, Entity } from './Entity';
 export type {
   EntityOrderStylesContainerProps,
   EntityOrderProps,
+  EntityBudgetStylesContainerProps,
+  EntityBudgetProps,
+  EntityProps,
 } from './Entity';
 export { Order } from './Order';
 export type { OrderProps, OrderStylesContainerProps } from './Order';
@@ -49,3 +58,5 @@ export { MainProjects } from './Projects';
 export type { MainProjectsProps } from './Projects';
 export { MainStorage } from './Storage';
 export type { MainStorageProps, MainStoragePropsExtended } from './Storage';
+export { TaxRates, TaxClasses } from './Taxes';
+export type { TaxRatesProps, TaxClassesProps } from './Taxes';

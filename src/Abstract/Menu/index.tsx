@@ -23,3 +23,5 @@ export type {
   HeaderMenuStylesContentUlProps,
   HeaderMenuStylesContentLiProps,
 } from './HeaderMenu';
+export { HorizontalMenu } from './HorizontalMenu';
+export type { HorizontalMenuProps } from './HorizontalMenu';

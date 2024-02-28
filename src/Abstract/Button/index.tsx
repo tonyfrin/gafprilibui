@@ -14,3 +14,5 @@ export type {
   ButtonOptionsContainerProps,
   StylesContainer,
 } from './ButtonOptionsContainer';
+export { FloatingButtons } from './FloatingButtons';
+export type { FloatingButtonsProps } from './FloatingButtons';

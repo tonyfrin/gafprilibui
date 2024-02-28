@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "Entity", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.Entity;
+  }
+});
 Object.defineProperty(exports, "EntityBudget", {
   enumerable: true,
   get: function get() {
@@ -17,3 +23,4 @@ Object.defineProperty(exports, "EntityOrder", {
 });
 var _EntityOrder = require("./EntityOrder");
 var _EntityBudget = require("./EntityBudget");
+var _Entity = require("./Entity");

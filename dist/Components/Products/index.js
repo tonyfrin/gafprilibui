@@ -21,6 +21,13 @@ Object.defineProperty(exports, "ProductOrder", {
     return _ProductOrder.ProductOrder;
   }
 });
+Object.defineProperty(exports, "Products", {
+  enumerable: true,
+  get: function get() {
+    return _Products.Products;
+  }
+});
 var _MainCategory = require("./MainCategory");
 var _ProductOrder = require("./ProductOrder");
 var _ProductBudget = require("./ProductBudget");
+var _Products = require("./Products");

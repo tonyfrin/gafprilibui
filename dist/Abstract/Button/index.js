@@ -33,8 +33,15 @@ Object.defineProperty(exports, "CircleButton", {
     return _CircleButton.CircleButton;
   }
 });
+Object.defineProperty(exports, "FloatingButtons", {
+  enumerable: true,
+  get: function get() {
+    return _FloatingButtons.FloatingButtons;
+  }
+});
 var _Button = require("./Button");
 var _ButtonLarge = require("./ButtonLarge");
 var _ButtonNext = require("./ButtonNext");
 var _CircleButton = require("./CircleButton");
 var _ButtonOptionsContainer = require("./ButtonOptionsContainer");
+var _FloatingButtons = require("./FloatingButtons");

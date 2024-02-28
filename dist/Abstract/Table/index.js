@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "AttributeTable", {
+  enumerable: true,
+  get: function get() {
+    return _AttributeTable.AttributeTable;
+  }
+});
 Object.defineProperty(exports, "BudgetPrintTable", {
   enumerable: true,
   get: function get() {
@@ -38,3 +44,4 @@ var _SimpleTable = require("./SimpleTable");
 var _CartBudgetTable = require("./CartBudgetTable");
 var _BudgetPrintTable = require("./BudgetPrintTable");
 var _CartBudgetViewTable = require("./CartBudgetViewTable");
+var _AttributeTable = require("./AttributeTable");

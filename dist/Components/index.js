@@ -9,6 +9,18 @@ Object.defineProperty(exports, "Budget", {
     return _Budget.Budget;
   }
 });
+Object.defineProperty(exports, "Entity", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.Entity;
+  }
+});
+Object.defineProperty(exports, "EntityBudget", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.EntityBudget;
+  }
+});
 Object.defineProperty(exports, "EntityOrder", {
   enumerable: true,
   get: function get() {
@@ -111,6 +123,12 @@ Object.defineProperty(exports, "ProductOrder", {
     return _Products.ProductOrder;
   }
 });
+Object.defineProperty(exports, "Products", {
+  enumerable: true,
+  get: function get() {
+    return _Products.Products;
+  }
+});
 Object.defineProperty(exports, "ShippingAreas", {
   enumerable: true,
   get: function get() {
@@ -121,6 +139,18 @@ Object.defineProperty(exports, "ShippingMethods", {
   enumerable: true,
   get: function get() {
     return _Shipping.ShippingMethods;
+  }
+});
+Object.defineProperty(exports, "TaxClasses", {
+  enumerable: true,
+  get: function get() {
+    return _Taxes.TaxClasses;
+  }
+});
+Object.defineProperty(exports, "TaxRates", {
+  enumerable: true,
+  get: function get() {
+    return _Taxes.TaxRates;
   }
 });
 var _Footer = require("./Footer");
@@ -140,3 +170,4 @@ var _Budget = require("./Budget");
 var _Shipping = require("./Shipping");
 var _Projects = require("./Projects");
 var _Storage = require("./Storage");
+var _Taxes = require("./Taxes");

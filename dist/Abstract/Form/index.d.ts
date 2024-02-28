@@ -26,3 +26,7 @@ export { EntityBudgetViewFormInfoHeader } from './EntityBudgetViewFormInfoHeader
 export type { EntityBudgetViewFormInfoHeaderProps } from './EntityBudgetViewFormInfoHeader';
 export { BudgetViewFormInfoHeader } from './BudgetViewFormInfoHeader';
 export type { BudgetViewFormInfoHeaderProps } from './BudgetViewFormInfoHeader';
+export { PhotoGalleryForm } from './PhotoGalleryForm';
+export type { PhotoGalleryFormProps } from './PhotoGalleryForm';
+export { PhotoProduct } from './PhotoProduct';
+export type { PhotoProductProps } from './PhotoProduct';

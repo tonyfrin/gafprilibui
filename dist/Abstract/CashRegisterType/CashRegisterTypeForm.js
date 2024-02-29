@@ -152,16 +152,19 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     }
   })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '48%',
-      display: 'block'
+      width: '96.5%'
     }
   }, /*#__PURE__*/_react["default"].createElement(_BoxCashRegisterTypeUser.BoxCashRegisterTypeUser, {
     items: use.crtu.states.authorized,
     useUser: useUser,
-    removeItem: use.crtu.actions.removeAuthorized
+    removeItem: use.crtu.actions.removeAuthorized,
+    containerStyles: {
+      width: '100%'
+    }
   })))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '45%'
+      width: '48%',
+      display: 'block'
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
@@ -186,6 +189,9 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
   }, /*#__PURE__*/_react["default"].createElement(_BoxCashRegisterTypeUser.BoxCashRegisterTypeUser, {
     items: use.crtu.states.supervisor,
     useUser: useUser,
-    removeItem: use.crtu.actions.removeSupervisor
+    removeItem: use.crtu.actions.removeSupervisor,
+    containerStyles: {
+      width: '100%'
+    }
   }))))))));
 };

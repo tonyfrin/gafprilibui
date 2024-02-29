@@ -189,21 +189,24 @@ export const CashRegisterTypeForm = ({
                 </ContainerButton>
                 <ContainerButton
                   styles={{
-                    width: '48%',
-                    display: 'block',
+                    width: '96.5%',
                   }}
                 >
                   <BoxCashRegisterTypeUser
                     items={use.crtu.states.authorized}
                     useUser={useUser}
                     removeItem={use.crtu.actions.removeAuthorized}
+                    containerStyles={{
+                      width: '100%',
+                    }}
                   />
                 </ContainerButton>
               </>
             </ContainerButton>
             <ContainerButton
               styles={{
-                width: '45%',
+                width: '48%',
+                display: 'block',
               }}
             >
               <>
@@ -235,6 +238,9 @@ export const CashRegisterTypeForm = ({
                     items={use.crtu.states.supervisor}
                     useUser={useUser}
                     removeItem={use.crtu.actions.removeSupervisor}
+                    containerStyles={{
+                      width: '100%',
+                    }}
                   />
                 </ContainerButton>
               </>

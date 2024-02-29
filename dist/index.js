@@ -105,6 +105,18 @@ Object.defineProperty(exports, "Box1", {
     return _Abstract.Box1;
   }
 });
+Object.defineProperty(exports, "BoxCashRegisterTypeUser", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.BoxCashRegisterTypeUser;
+  }
+});
+Object.defineProperty(exports, "BoxLabel", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.BoxLabel;
+  }
+});
 Object.defineProperty(exports, "Budget", {
   enumerable: true,
   get: function get() {
@@ -169,6 +181,18 @@ Object.defineProperty(exports, "ButtonOptionsContainer", {
   enumerable: true,
   get: function get() {
     return _Abstract.ButtonOptionsContainer;
+  }
+});
+Object.defineProperty(exports, "CASH_REGISTER_TYPE_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.CASH_REGISTER_TYPE_ROUTE;
+  }
+});
+Object.defineProperty(exports, "CASH_REGISTER_TYPE_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.CASH_REGISTER_TYPE_STORAGE;
   }
 });
 Object.defineProperty(exports, "CATALOG_ORDER_INPUT", {
@@ -313,6 +337,18 @@ Object.defineProperty(exports, "CartTable", {
   enumerable: true,
   get: function get() {
     return _Abstract.CartTable;
+  }
+});
+Object.defineProperty(exports, "CashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _Components.CashRegisterType;
+  }
+});
+Object.defineProperty(exports, "CashRegisterTypeForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CashRegisterTypeForm;
   }
 });
 Object.defineProperty(exports, "CatalogForm", {
@@ -595,6 +631,12 @@ Object.defineProperty(exports, "HorizontalMenu", {
   enumerable: true,
   get: function get() {
     return _Abstract.HorizontalMenu;
+  }
+});
+Object.defineProperty(exports, "InitCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitCashRegisterType;
   }
 });
 Object.defineProperty(exports, "InitCategory", {
@@ -2919,6 +2961,12 @@ Object.defineProperty(exports, "useGafpriApiBudget", {
     return _Abstract.useGafpriApiBudget;
   }
 });
+Object.defineProperty(exports, "useGafpriApiCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiCashRegisterType;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiEntity", {
   enumerable: true,
   get: function get() {
@@ -2983,6 +3031,18 @@ Object.defineProperty(exports, "useGafpriAttributesBudgetItems", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriAttributesBudgetItems;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesCashRegisterType;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesCashRegisterTypeUser", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesCashRegisterTypeUser;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesEntity", {
@@ -3051,6 +3111,12 @@ Object.defineProperty(exports, "useGafpriBudget", {
     return _states.useGafpriBudget;
   }
 });
+Object.defineProperty(exports, "useGafpriCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriCashRegisterType;
+  }
+});
 Object.defineProperty(exports, "useGafpriCategory", {
   enumerable: true,
   get: function get() {
@@ -3067,6 +3133,12 @@ Object.defineProperty(exports, "useGafpriDataBudget", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriDataBudget;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataCashRegisterType;
   }
 });
 Object.defineProperty(exports, "useGafpriDataEntity", {
@@ -3153,6 +3225,12 @@ Object.defineProperty(exports, "useGafpriPagesBudget", {
     return _Abstract.useGafpriPagesBudget;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesCashRegisterType;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesEntity", {
   enumerable: true,
   get: function get() {
@@ -3217,6 +3295,12 @@ Object.defineProperty(exports, "useGafpriPaginationsBudget", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPaginationsBudget;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsCashRegisterType;
   }
 });
 Object.defineProperty(exports, "useGafpriPaginationsEntity", {

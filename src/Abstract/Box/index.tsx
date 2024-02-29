@@ -6,3 +6,7 @@ export type {
   SearchBoxProps,
   SearchBoxStylesContentProps,
 } from './SearchBox';
+export { BoxLabel } from './BoxLabel';
+export type { BoxLabelProps } from './BoxLabel';
+export { BoxCashRegisterTypeUser } from './BoxCashRegisterTypeUser';
+export type { BoxCashRegisterTypeUserProps } from './BoxCashRegisterTypeUser';

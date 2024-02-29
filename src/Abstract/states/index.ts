@@ -204,3 +204,25 @@ export type {
   UseGafpriPaginationsStorageProps,
   UseGafpriPaginationsStorageReturn,
 } from './storage';
+export {
+  useGafpriAttributesCashRegisterTypeUser,
+  useGafpriApiCashRegisterType,
+  useGafpriDataCashRegisterType,
+  useGafpriPaginationsCashRegisterType,
+  useGafpriPagesCashRegisterType,
+  useGafpriAttributesCashRegisterType,
+} from './cashRegisterType';
+export type {
+  UseGafpriAttributesCashRegisterTypeUserReturn,
+  CashRegisterTypeUserAttributes,
+  UseGafpriApiCashRegisterTypeReturn,
+  UseGafpriApiCashRegisterTypeProps,
+  UseGafpriDataCashRegisterTypeReturn,
+  UseGafpriDataCashRegisterTypeProps,
+  CashRegisterTypeAttributes,
+  UseGafpriPaginationsCashRegisterTypeReturn,
+  UseGafpriPaginationsCashRegisterTypeProps,
+  UseGafpriPagesCashRegisterTypeReturn,
+  UseGafpriPagesCashRegisterTypeProps,
+  UseGafpriAttributesCashRegisterTypeReturn,
+} from './cashRegisterType';

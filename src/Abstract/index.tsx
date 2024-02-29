@@ -17,13 +17,15 @@ export type {
   ButtonOptionsContainerProps,
   FloatingButtonsProps,
 } from './Button';
-export { Box1, SearchBox } from './Box';
+export { Box1, SearchBox, BoxLabel, BoxCashRegisterTypeUser } from './Box';
 export type {
   Box1Style,
   Box1Props,
   SearchBoxStylesContainerProps,
   SearchBoxProps,
   SearchBoxStylesContentProps,
+  BoxLabelProps,
+  BoxCashRegisterTypeUserProps,
 } from './Box';
 export {
   ContainerInput,
@@ -405,6 +407,12 @@ export {
   useGafpriDataStorage,
   useGafpriApiStorage,
   useGafpriPaginationsStorage,
+  useGafpriAttributesCashRegisterTypeUser,
+  useGafpriApiCashRegisterType,
+  useGafpriDataCashRegisterType,
+  useGafpriPaginationsCashRegisterType,
+  useGafpriPagesCashRegisterType,
+  useGafpriAttributesCashRegisterType,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -523,6 +531,18 @@ export type {
   UseGafpriApiStorageReturn,
   UseGafpriPaginationsStorageProps,
   UseGafpriPaginationsStorageReturn,
+  UseGafpriAttributesCashRegisterTypeUserReturn,
+  CashRegisterTypeUserAttributes,
+  UseGafpriApiCashRegisterTypeReturn,
+  UseGafpriApiCashRegisterTypeProps,
+  UseGafpriDataCashRegisterTypeReturn,
+  UseGafpriDataCashRegisterTypeProps,
+  CashRegisterTypeAttributes,
+  UseGafpriPaginationsCashRegisterTypeReturn,
+  UseGafpriPaginationsCashRegisterTypeProps,
+  UseGafpriPagesCashRegisterTypeReturn,
+  UseGafpriPagesCashRegisterTypeProps,
+  UseGafpriAttributesCashRegisterTypeReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -722,3 +742,9 @@ export type {
 } from './CheckBox';
 export { SliderHorizontal } from './Slider';
 export type { SliderHorizontalProps } from './Slider';
+export { CashRegisterTypeForm, InitCashRegisterType } from './CashRegisterType';
+export type {
+  CashRegisterTypeFormProps,
+  InitCashRegisterTypeProps,
+  InitCashRegisterTypePropsExtended,
+} from './CashRegisterType';

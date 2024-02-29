@@ -69,6 +69,18 @@ Object.defineProperty(exports, "BUTTON_NEXT_INPUT", {
     return _Inputs.BUTTON_NEXT_INPUT;
   }
 });
+Object.defineProperty(exports, "CASH_REGISTER_TYPE_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.CASH_REGISTER_TYPE_ROUTE;
+  }
+});
+Object.defineProperty(exports, "CASH_REGISTER_TYPE_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.CASH_REGISTER_TYPE_STORAGE;
+  }
+});
 Object.defineProperty(exports, "CATALOG_ORDER_INPUT", {
   enumerable: true,
   get: function get() {

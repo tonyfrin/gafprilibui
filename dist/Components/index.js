@@ -9,6 +9,12 @@ Object.defineProperty(exports, "Budget", {
     return _Budget.Budget;
   }
 });
+Object.defineProperty(exports, "CashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _CashRegisterType.CashRegisterType;
+  }
+});
 Object.defineProperty(exports, "Entity", {
   enumerable: true,
   get: function get() {
@@ -171,3 +177,4 @@ var _Shipping = require("./Shipping");
 var _Projects = require("./Projects");
 var _Storage = require("./Storage");
 var _Taxes = require("./Taxes");
+var _CashRegisterType = require("./CashRegisterType");

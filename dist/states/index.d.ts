@@ -36,3 +36,5 @@ export { useGafpriProjects } from './useGafpriProjects';
 export type { UseGafpriProjectsReturn, UseGafpriProjectsProps, } from './useGafpriProjects';
 export { useGafpriStorage } from './useGafpriStorage';
 export type { UseGafpriStorageReturn, UseGafpriStorageProps, } from './useGafpriStorage';
+export { useGafpriCashRegisterType } from './useGafpriCashRegisterType';
+export type { UseGafpriCashRegisterTypeReturn, UseGafpriCashRegisterTypeProps, } from './useGafpriCashRegisterType';

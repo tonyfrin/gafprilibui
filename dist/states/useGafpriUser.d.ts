@@ -129,6 +129,7 @@ export type UseUserReturn = {
         filterRoleByName: (roleArray: RoleArray[], search: string) => RoleArray[] | null;
         sortRoleByName: (items: RoleArray[] | null, order: 'asc' | 'desc') => RoleArray[] | null;
         getRolePaginated: (items: RoleArray[] | null, page: number, itemsPerPage: number) => RoleArray[] | null;
+        getOptionsUsers: () => SelectDefault[];
     };
 };
 export type UseUserProps = {

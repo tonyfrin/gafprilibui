@@ -194,6 +194,7 @@ export type UseUserReturn = {
       page: number,
       itemsPerPage: number
     ) => RoleArray[] | null;
+    getOptionsUsers: () => SelectDefault[];
   };
 };
 
@@ -740,6 +741,19 @@ export const useGafpriUsers = ({
     return users.data.items?.find((item) => item.id === id) || null;
   }
 
+  function getOptionsUsers(): SelectDefault[] {
+    return (
+      users.data.items?.map((item) => {
+        return {
+          value: `${item.id}`,
+          label: `${
+            item?.lastName ? `${item.name} ${item.lastName}` : `${item.name}`
+          }`,
+        };
+      }) || []
+    );
+  }
+
   const update = (): void => {
     if (
       nameValid &&
@@ -1002,6 +1016,7 @@ export const useGafpriUsers = ({
     filterRoleByName,
     sortRoleByName,
     getRolePaginated,
+    getOptionsUsers,
   };
 
   return {

@@ -607,6 +607,15 @@ var useGafpriUsers = exports.useGafpriUsers = function useGafpriUsers(_ref) {
       return item.id === id;
     })) || null;
   }
+  function getOptionsUsers() {
+    var _users$data$items3;
+    return ((_users$data$items3 = users.data.items) === null || _users$data$items3 === void 0 ? void 0 : _users$data$items3.map(function (item) {
+      return {
+        value: "".concat(item.id),
+        label: "".concat(item !== null && item !== void 0 && item.lastName ? "".concat(item.name, " ").concat(item.lastName) : "".concat(item.name))
+      };
+    })) || [];
+  }
   var update = function update() {
     if (nameValid && lastNameValid && emailValid && phoneNumberValid && areaCodeValid && roleValid && photoValid && isActiveValid && token) {
       var payload = {
@@ -809,7 +818,8 @@ var useGafpriUsers = exports.useGafpriUsers = function useGafpriUsers(_ref) {
     filterBySearch: filterBySearch,
     filterRoleByName: filterRoleByName,
     sortRoleByName: sortRoleByName,
-    getRolePaginated: getRolePaginated
+    getRolePaginated: getRolePaginated,
+    getOptionsUsers: getOptionsUsers
   };
   return {
     states: states,

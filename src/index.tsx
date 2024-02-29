@@ -235,6 +235,16 @@ export {
   PriceForm,
   ProductsForm,
   ShipForm,
+  useGafpriAttributesCashRegisterTypeUser,
+  useGafpriApiCashRegisterType,
+  useGafpriDataCashRegisterType,
+  useGafpriPaginationsCashRegisterType,
+  useGafpriPagesCashRegisterType,
+  useGafpriAttributesCashRegisterType,
+  BoxLabel,
+  BoxCashRegisterTypeUser,
+  CashRegisterTypeForm,
+  InitCashRegisterType,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -633,6 +643,23 @@ export type {
   ProductsFormExtended,
   ShipFormProps,
   ShipFormExtended,
+  UseGafpriAttributesCashRegisterTypeUserReturn,
+  CashRegisterTypeUserAttributes,
+  UseGafpriApiCashRegisterTypeReturn,
+  UseGafpriApiCashRegisterTypeProps,
+  UseGafpriDataCashRegisterTypeReturn,
+  UseGafpriDataCashRegisterTypeProps,
+  CashRegisterTypeAttributes,
+  UseGafpriPaginationsCashRegisterTypeReturn,
+  UseGafpriPaginationsCashRegisterTypeProps,
+  UseGafpriPagesCashRegisterTypeReturn,
+  UseGafpriPagesCashRegisterTypeProps,
+  UseGafpriAttributesCashRegisterTypeReturn,
+  BoxLabelProps,
+  BoxCashRegisterTypeUserProps,
+  CashRegisterTypeFormProps,
+  InitCashRegisterTypeProps,
+  InitCashRegisterTypePropsExtended,
 } from './Abstract';
 export {
   MainFooter,
@@ -660,6 +687,7 @@ export {
   TaxRates,
   TaxClasses,
   Products,
+  CashRegisterType,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -699,6 +727,7 @@ export type {
   TaxRatesProps,
   TaxClassesProps,
   ProductsProps,
+  CashRegisterTypeProps,
 } from './Components';
 export {
   addClass,
@@ -764,6 +793,7 @@ export {
   useGafpriShippingAreas,
   useGafpriProjects,
   useGafpriStorage,
+  useGafpriCashRegisterType,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -806,6 +836,8 @@ export type {
   UseGafpriProjectsReturn,
   UseGafpriStorageProps,
   UseGafpriStorageReturn,
+  UseGafpriCashRegisterTypeProps,
+  UseGafpriCashRegisterTypeReturn,
 } from './states';
 export {
   Countries,
@@ -940,6 +972,8 @@ export {
   PROJECTS_ROUTE,
   STOTAGE_STORAGE,
   STORAGE_ROUTE,
+  CASH_REGISTER_TYPE_STORAGE,
+  CASH_REGISTER_TYPE_ROUTE,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {

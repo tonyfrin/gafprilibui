@@ -17,3 +17,4 @@ export const SHIPPING_METHODS_ROUTE = '/shipping-methods';
 export const SHIPPING_AREAS_ROUTE = '/shipping-areas';
 export const PROJECTS_ROUTE = '/projects';
 export const STORAGE_ROUTE = '/storage';
+export const CASH_REGISTER_TYPE_ROUTE = '/cash-register-type';

@@ -172,7 +172,7 @@ export const BoxCashRegisterTypeUser = ({
             <>
               {user && (
                 <div
-                  key={`${item.id}-${index}`}
+                  key={`${item.userId}-${index}`}
                   className={cx(
                     boxCashRegisterTypeUserContentStyles(contentStyles),
                     contentClassName

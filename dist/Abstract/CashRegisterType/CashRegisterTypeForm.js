@@ -148,7 +148,7 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     defaultValue: use.crtu.states.authorizedDefault,
     title: 'Autorizados',
     containerStyles: {
-      custom: "\n                        display: flex;\n                        justify-content: center;\n                      "
+      custom: "\n                        display: block;\n                      "
     }
   })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
@@ -173,6 +173,9 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
   }, /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, {
     styles: {
       width: '100%'
+    },
+    containerStyles: {
+      custom: "\n                        display: block;\n                      "
     },
     options: use.crtu.states.supervisorOptions,
     onChange: function onChange(event) {

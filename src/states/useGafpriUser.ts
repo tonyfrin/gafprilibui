@@ -738,7 +738,7 @@ export const useGafpriUsers = ({
   };
 
   function getById(id: number): UserAttributes | null {
-    return users.data.items?.find((item) => item.id === id) || null;
+    return users.data.items?.find((item) => `${item.id}` === `${id}`) || null;
   }
 
   function getOptionsUsers(): SelectDefault[] {

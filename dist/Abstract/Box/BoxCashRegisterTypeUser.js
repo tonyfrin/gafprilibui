@@ -70,7 +70,7 @@ var BoxCashRegisterTypeUser = exports.BoxCashRegisterTypeUser = function BoxCash
   }, restContainerProps), items.map(function (item, index) {
     var user = useUser.actions.getById(item.userId);
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, user && /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-      key: "".concat(item.id, "-").concat(index),
+      key: "".concat(item.userId, "-").concat(index),
       className: (0, _css.cx)(boxCashRegisterTypeUserContentStyles(contentStyles), contentClassName)
     }, restContentProps), /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
       className: (0, _css.cx)(boxCashRegisterTypeUserContentItemsStyles(contentItemsStyles), contentItemsClassName)

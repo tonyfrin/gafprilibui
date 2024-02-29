@@ -604,7 +604,7 @@ var useGafpriUsers = exports.useGafpriUsers = function useGafpriUsers(_ref) {
   function getById(id) {
     var _users$data$items2;
     return ((_users$data$items2 = users.data.items) === null || _users$data$items2 === void 0 ? void 0 : _users$data$items2.find(function (item) {
-      return item.id === id;
+      return "".concat(item.id) === "".concat(id);
     })) || null;
   }
   function getOptionsUsers() {

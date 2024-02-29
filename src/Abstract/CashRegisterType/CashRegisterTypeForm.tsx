@@ -181,8 +181,7 @@ export const CashRegisterTypeForm = ({
                     title={'Autorizados'}
                     containerStyles={{
                       custom: `
-                        display: flex;
-                        justify-content: center;
+                        display: block;
                       `,
                     }}
                   />
@@ -218,6 +217,11 @@ export const CashRegisterTypeForm = ({
                   <GsSelect
                     styles={{
                       width: '100%',
+                    }}
+                    containerStyles={{
+                      custom: `
+                        display: block;
+                      `,
                     }}
                     options={use.crtu.states.supervisorOptions}
                     onChange={(event) => {

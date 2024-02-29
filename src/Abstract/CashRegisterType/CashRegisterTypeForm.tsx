@@ -138,16 +138,27 @@ export const CashRegisterTypeForm = ({
                   width: '90%',
                   padding: '10px 19px',
                 },
+                containerStyles: {
+                  custom: `
+                    display: flex;
+                    justify-content: center;
+                  `,
+                },
               }}
             />
             {InputSite}
           </>
         </ContainerButton>
-        <ContainerButton>
+        <ContainerButton
+          styles={{
+            width: '100%',
+          }}
+        >
           <>
             <ContainerButton
               styles={{
-                width: '45%',
+                width: '48%',
+                display: 'block',
               }}
             >
               <>
@@ -168,11 +179,18 @@ export const CashRegisterTypeForm = ({
                     }}
                     defaultValue={use.crtu.states.authorizedDefault}
                     title={'Autorizados'}
+                    containerStyles={{
+                      custom: `
+                        display: flex;
+                        justify-content: center;
+                      `,
+                    }}
                   />
                 </ContainerButton>
                 <ContainerButton
                   styles={{
-                    width: '96.5%',
+                    width: '48%',
+                    display: 'block',
                   }}
                 >
                   <BoxCashRegisterTypeUser

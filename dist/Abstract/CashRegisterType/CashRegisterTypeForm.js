@@ -117,11 +117,19 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
       styles: {
         width: '90%',
         padding: '10px 19px'
+      },
+      containerStyles: {
+        custom: "\n                    display: flex;\n                    justify-content: center;\n                  "
       }
     }
-  }), InputSite)), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, null, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+  }), InputSite)), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '45%'
+      width: '100%'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      width: '48%',
+      display: 'block'
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
@@ -138,10 +146,14 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
       }
     },
     defaultValue: use.crtu.states.authorizedDefault,
-    title: 'Autorizados'
+    title: 'Autorizados',
+    containerStyles: {
+      custom: "\n                        display: flex;\n                        justify-content: center;\n                      "
+    }
   })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '96.5%'
+      width: '48%',
+      display: 'block'
     }
   }, /*#__PURE__*/_react["default"].createElement(_BoxCashRegisterTypeUser.BoxCashRegisterTypeUser, {
     items: use.crtu.states.authorized,

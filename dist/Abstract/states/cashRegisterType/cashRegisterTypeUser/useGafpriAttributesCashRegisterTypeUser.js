@@ -81,7 +81,7 @@ function useGafpriAttributesCashRegisterTypeUser(_ref) {
   };
   var addSupervisor = function addSupervisor(id) {
     var userId = parseInt(id, 10);
-    var userExists = authorized.some(function (user) {
+    var userExists = supervisor.some(function (user) {
       return user.userId === userId;
     });
     if (!userExists) {

@@ -122,7 +122,7 @@ export function useGafpriAttributesCashRegisterTypeUser({
   const addSupervisor = (id: string): void => {
     const userId = parseInt(id, 10);
 
-    const userExists = authorized.some((user) => user.userId === userId);
+    const userExists = supervisor.some((user) => user.userId === userId);
 
     if (!userExists) {
       const user = {

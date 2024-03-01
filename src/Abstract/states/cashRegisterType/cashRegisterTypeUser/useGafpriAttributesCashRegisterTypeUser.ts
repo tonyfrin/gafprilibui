@@ -127,8 +127,8 @@ export function useGafpriAttributesCashRegisterTypeUser({
     if (!userExists) {
       const user = {
         userId,
-        isAuthorized: true,
-        isSupervisor: false,
+        isAuthorized: false,
+        isSupervisor: true,
       };
 
       setSupervisor((prevUsers) => [...prevUsers, user]);

@@ -87,8 +87,8 @@ function useGafpriAttributesCashRegisterTypeUser(_ref) {
     if (!userExists) {
       var user = {
         userId: userId,
-        isAuthorized: true,
-        isSupervisor: false
+        isAuthorized: false,
+        isSupervisor: true
       };
       setSupervisor(function (prevUsers) {
         return [].concat((0, _toConsumableArray2["default"])(prevUsers), [user]);

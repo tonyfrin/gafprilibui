@@ -127,6 +127,7 @@ export const CashRegisterTypeForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.attributes.states.name,
+                  title: 'Nombre',
                 },
                 styles: {
                   width: '90%',

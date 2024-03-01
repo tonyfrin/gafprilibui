@@ -105,7 +105,8 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     changeName: use.attributes.actions.changeName,
     props: {
       inputProps: {
-        defaultValue: use.attributes.states.name
+        defaultValue: use.attributes.states.name,
+        title: 'Nombre'
       },
       styles: {
         width: '90%',

@@ -79,7 +79,7 @@ export function useGafpriApiCashRegisterType({
   };
 
   const update = (): void => {
-    if (attributes.states.nameValid && attributes.states.siteValid && token) {
+    if (attributes.states.nameValid && token) {
       gafpriFetch({
         initMethod: 'PATCH',
         initRoute: `${CASH_REGISTER_TYPE_ROUTE}/${attributes.states.currentId}`,

@@ -49,7 +49,7 @@ function useGafpriApiCashRegisterType(_ref) {
     });
   };
   var update = function update() {
-    if (attributes.states.nameValid && attributes.states.siteValid && token) {
+    if (attributes.states.nameValid && token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
         initRoute: "".concat(_constants.CASH_REGISTER_TYPE_ROUTE, "/").concat(attributes.states.currentId),

@@ -41,6 +41,13 @@ export const CashRegisterTypeForm = ({
     if (current) {
       if (current.name) use.attributes.actions.changeName(current.name);
 
+      if (current.sitesId) {
+        use.attributes.actions.changeSite({
+          label: `${current.sitesId}`,
+          value: `${current.sitesId}`,
+        });
+      }
+
       if (current.cashRegisterTypeUser) {
         const authorized = current.cashRegisterTypeUser.filter(
           (item) => item.isAuthorized
@@ -64,14 +71,14 @@ export const CashRegisterTypeForm = ({
             changeSite={(event) => use.attributes.actions.changeSite(event)}
             props={{
               defaultValue: use.attributes.states.siteDefault,
+              title: 'Sucursal',
               styles: {
-                width: '90%',
+                width: '100%',
               },
               options: use.attributes.states.siteOptions,
               containerStyles: {
                 custom: `
-                  display: flex;
-                  justify-content: center;
+                  display: block;
                 `,
               },
             }}
@@ -122,26 +129,73 @@ export const CashRegisterTypeForm = ({
           }}
         >
           <>
-            <InputName
-              changeName={use.attributes.actions.changeName}
-              props={{
-                inputProps: {
-                  defaultValue: use.attributes.states.name,
-                  title: 'Nombre',
-                },
-                styles: {
-                  width: '90%',
-                  padding: '10px 19px',
-                },
-                containerStyles: {
-                  custom: `
-                    display: flex;
-                    justify-content: center;
-                  `,
-                },
-              }}
-            />
-            {InputSite}
+            {isAddForm && (
+              <>
+                <ContainerButton
+                  styles={{
+                    width: '50%',
+                    display: 'block',
+                  }}
+                >
+                  <InputName
+                    changeName={use.attributes.actions.changeName}
+                    props={{
+                      inputProps: {
+                        defaultValue: use.attributes.states.name,
+                        title: 'Nombre',
+                      },
+                      styles: {
+                        width: '100%',
+                        padding: '10px 19px',
+                      },
+                      containerStyles: {
+                        custom: `
+                        display: block;
+                      `,
+                      },
+                    }}
+                  />
+                </ContainerButton>
+                <ContainerButton
+                  styles={{
+                    width: '50%',
+                    display: 'block',
+                  }}
+                >
+                  {InputSite}
+                </ContainerButton>
+              </>
+            )}
+
+            {isUpdateForm && (
+              <>
+                <ContainerButton
+                  styles={{
+                    width: '100%',
+                    display: 'block',
+                  }}
+                >
+                  <InputName
+                    changeName={use.attributes.actions.changeName}
+                    props={{
+                      inputProps: {
+                        defaultValue: use.attributes.states.name,
+                        title: 'Nombre',
+                      },
+                      styles: {
+                        width: '100%',
+                        padding: '10px 19px',
+                      },
+                      containerStyles: {
+                        custom: `
+                        display: block;
+                      `,
+                      },
+                    }}
+                  />
+                </ContainerButton>
+              </>
+            )}
           </>
         </ContainerButton>
         <ContainerButton

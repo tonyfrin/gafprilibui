@@ -34,6 +34,12 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
   _react["default"].useEffect(function () {
     if (current) {
       if (current.name) use.attributes.actions.changeName(current.name);
+      if (current.sitesId) {
+        use.attributes.actions.changeSite({
+          label: "".concat(current.sitesId),
+          value: "".concat(current.sitesId)
+        });
+      }
       if (current.cashRegisterTypeUser) {
         var authorized = current.cashRegisterTypeUser.filter(function (item) {
           return item.isAuthorized;
@@ -57,12 +63,13 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
           },
           props: {
             defaultValue: use.attributes.states.siteDefault,
+            title: 'Sucursal',
             styles: {
-              width: '90%'
+              width: '100%'
             },
             options: use.attributes.states.siteOptions,
             containerStyles: {
-              custom: "\n                  display: flex;\n                  justify-content: center;\n                "
+              custom: "\n                  display: block;\n                "
             }
           }
         });
@@ -101,7 +108,12 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     styles: {
       width: '96.5%'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, isAddForm && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      width: '50%',
+      display: 'block'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
     changeName: use.attributes.actions.changeName,
     props: {
       inputProps: {
@@ -109,14 +121,39 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
         title: 'Nombre'
       },
       styles: {
-        width: '90%',
+        width: '100%',
         padding: '10px 19px'
       },
       containerStyles: {
-        custom: "\n                    display: flex;\n                    justify-content: center;\n                  "
+        custom: "\n                        display: block;\n                      "
       }
     }
-  }), InputSite)), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+  })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      width: '50%',
+      display: 'block'
+    }
+  }, InputSite)), isUpdateForm && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      width: '100%',
+      display: 'block'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
+    changeName: use.attributes.actions.changeName,
+    props: {
+      inputProps: {
+        defaultValue: use.attributes.states.name,
+        title: 'Nombre'
+      },
+      styles: {
+        width: '100%',
+        padding: '10px 19px'
+      },
+      containerStyles: {
+        custom: "\n                        display: block;\n                      "
+      }
+    }
+  }))))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '96.5%'
     }

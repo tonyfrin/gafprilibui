@@ -214,6 +214,7 @@ export const CashRegisterTypeForm = ({
                 <ContainerButton
                   styles={{
                     width: '96.5%',
+                    justifyContent: 'flex-start',
                   }}
                 >
                   <GsSelect
@@ -238,6 +239,7 @@ export const CashRegisterTypeForm = ({
                 <ContainerButton
                   styles={{
                     width: '96.5%',
+                    justifyContent: 'flex-start',
                   }}
                 >
                   <BoxCashRegisterTypeUser
@@ -245,7 +247,8 @@ export const CashRegisterTypeForm = ({
                     useUser={useUser}
                     removeItem={use.crtu.actions.removeAuthorized}
                     containerStyles={{
-                      width: '100%',
+                      width: '90%',
+                      margin: '20px 0px',
                     }}
                   />
                 </ContainerButton>
@@ -261,6 +264,7 @@ export const CashRegisterTypeForm = ({
                 <ContainerButton
                   styles={{
                     width: '96.5%',
+                    justifyContent: 'flex-start',
                   }}
                 >
                   <GsSelect
@@ -285,6 +289,7 @@ export const CashRegisterTypeForm = ({
                 <ContainerButton
                   styles={{
                     width: '96.5%',
+                    justifyContent: 'flex-start',
                   }}
                 >
                   <BoxCashRegisterTypeUser
@@ -292,7 +297,8 @@ export const CashRegisterTypeForm = ({
                     useUser={useUser}
                     removeItem={use.crtu.actions.removeSupervisor}
                     containerStyles={{
-                      width: '100%',
+                      width: '90%',
+                      margin: '20px 0px',
                     }}
                   />
                 </ContainerButton>

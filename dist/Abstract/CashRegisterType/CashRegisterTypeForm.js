@@ -164,7 +164,8 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '96.5%'
+      width: '96.5%',
+      justifyContent: 'flex-start'
     }
   }, /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, {
     styles: {
@@ -183,14 +184,16 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     title: 'Autorizados'
   })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '96.5%'
+      width: '96.5%',
+      justifyContent: 'flex-start'
     }
   }, /*#__PURE__*/_react["default"].createElement(_BoxCashRegisterTypeUser.BoxCashRegisterTypeUser, {
     items: use.crtu.states.authorized,
     useUser: useUser,
     removeItem: use.crtu.actions.removeAuthorized,
     containerStyles: {
-      width: '100%'
+      width: '90%',
+      margin: '20px 0px'
     }
   })))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
@@ -199,7 +202,8 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '96.5%'
+      width: '96.5%',
+      justifyContent: 'flex-start'
     }
   }, /*#__PURE__*/_react["default"].createElement(_Input.GsSelect, {
     styles: {
@@ -218,14 +222,16 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     title: 'Supervisores'
   })), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '96.5%'
+      width: '96.5%',
+      justifyContent: 'flex-start'
     }
   }, /*#__PURE__*/_react["default"].createElement(_BoxCashRegisterTypeUser.BoxCashRegisterTypeUser, {
     items: use.crtu.states.supervisor,
     useUser: useUser,
     removeItem: use.crtu.actions.removeSupervisor,
     containerStyles: {
-      width: '100%'
+      width: '90%',
+      margin: '20px 0px'
     }
   }))))))));
 };

@@ -156,7 +156,7 @@ export const BoxCashRegisterTypeUser = ({
   const { className: closeButtonClassName, ...restCloseButtonProps } =
     contentButtonProps;
   const { className: titleClassName, ...restTitleProps } = contentTitleProps;
-
+  console.log('items', items);
   return (
     <>
       <div
@@ -168,6 +168,7 @@ export const BoxCashRegisterTypeUser = ({
       >
         {items.map((item, index) => {
           const user = useUser.actions.getById(item.userId);
+          console.log('user', user);
           return (
             <>
               {user && (

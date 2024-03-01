@@ -1,13 +1,9 @@
 import React from 'react';
 import { css, cx } from '@emotion/css';
 
-const RowStyles = () => css`
-  display: flex;
-`;
-
 const ContainerInputStyles = (styles: ContainerStyles) => css`
-  width: ${styles.width || '91.66667%'};
-  margin: ${styles.margin || '10px 0px'};
+  width: ${styles?.width || '91.66667%'};
+  margin: ${styles?.margin || '10px 0px'};
   ${styles?.custom || ''}
 `;
 

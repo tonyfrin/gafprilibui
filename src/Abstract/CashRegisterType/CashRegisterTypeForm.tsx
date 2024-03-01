@@ -171,6 +171,11 @@ export const CashRegisterTypeForm = ({
                     styles={{
                       width: '100%',
                     }}
+                    containerStyles={{
+                      custom: `
+                        display: block;
+                      `,
+                    }}
                     options={use.crtu.states.authorizedOptions}
                     onChange={(event) => {
                       if (event) {
@@ -179,11 +184,6 @@ export const CashRegisterTypeForm = ({
                     }}
                     defaultValue={use.crtu.states.authorizedDefault}
                     title={'Autorizados'}
-                    containerStyles={{
-                      custom: `
-                        display: block;
-                      `,
-                    }}
                   />
                 </ContainerButton>
                 <ContainerButton

@@ -8,12 +8,9 @@ exports.ContainerInput = exports.ContainerGlobo = exports.ContainerForm = export
 var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
 var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
-var RowStyles = function RowStyles() {
-  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n"])));
-};
+var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 var ContainerInputStyles = function ContainerInputStyles(styles) {
-  return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  margin: ", ";\n  ", "\n"])), styles.width || '91.66667%', styles.margin || '10px 0px', (styles === null || styles === void 0 ? void 0 : styles.custom) || '');
+  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  margin: ", ";\n  ", "\n"])), (styles === null || styles === void 0 ? void 0 : styles.width) || '91.66667%', (styles === null || styles === void 0 ? void 0 : styles.margin) || '10px 0px', (styles === null || styles === void 0 ? void 0 : styles.custom) || '');
 };
 var ContainerInput = exports.ContainerInput = function ContainerInput(_ref) {
   var _ref$styles = _ref.styles,
@@ -26,7 +23,7 @@ var ContainerInput = exports.ContainerInput = function ContainerInput(_ref) {
   }, children);
 };
 var ContainerFormStyles = function ContainerFormStyles(styles) {
-  return (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  margin: ", ";\n"])), styles.width || '90%', styles.margin || 'auto');
+  return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  margin: ", ";\n"])), styles.width || '90%', styles.margin || 'auto');
 };
 var ContainerForm = exports.ContainerForm = function ContainerForm(_ref2) {
   var _ref2$styles = _ref2.styles,
@@ -39,7 +36,7 @@ var ContainerForm = exports.ContainerForm = function ContainerForm(_ref2) {
   }, children);
 };
 var ContainerGloboStyles = function ContainerGloboStyles(styles) {
-  return (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n"])), styles.width || '50%');
+  return (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n"])), styles.width || '50%');
 };
 var ContainerGlobo = exports.ContainerGlobo = function ContainerGlobo(_ref3) {
   var _ref3$styles = _ref3.styles,
@@ -52,7 +49,7 @@ var ContainerGlobo = exports.ContainerGlobo = function ContainerGlobo(_ref3) {
   }, children);
 };
 var ContainerButtonStyles = function ContainerButtonStyles(styles) {
-  return (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: ", ";\n  width: ", ";\n  display: ", ";\n  justify-content: ", ";\n  ", "\n  ", "\n"])), styles.transition || 'all 1s ease 0s', styles.width || '50%', styles.display || 'flex', styles.justifyContent || 'space-around', styles.flexDirection ? "flex-direction: ".concat(styles.flexDirection, ";") : '', styles.custom || '');
+  return (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: ", ";\n  width: ", ";\n  display: ", ";\n  justify-content: ", ";\n  ", "\n  ", "\n"])), styles.transition || 'all 1s ease 0s', styles.width || '50%', styles.display || 'flex', styles.justifyContent || 'space-around', styles.flexDirection ? "flex-direction: ".concat(styles.flexDirection, ";") : '', styles.custom || '');
 };
 var ContainerButton = exports.ContainerButton = function ContainerButton(_ref4) {
   var _ref4$styles = _ref4.styles,

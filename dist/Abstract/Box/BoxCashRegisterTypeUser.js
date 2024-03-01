@@ -65,10 +65,12 @@ var BoxCashRegisterTypeUser = exports.BoxCashRegisterTypeUser = function BoxCash
     restCloseButtonProps = (0, _objectWithoutProperties2["default"])(contentButtonProps, _excluded4);
   var titleClassName = contentTitleProps.className,
     restTitleProps = (0, _objectWithoutProperties2["default"])(contentTitleProps, _excluded5);
+  console.log('items', items);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _css.cx)(boxCashRegisterTypeUserContainerStyles(containerStyles), containerClassName)
   }, restContainerProps), items.map(function (item, index) {
     var user = useUser.actions.getById(item.userId);
+    console.log('user', user);
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, user && /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
       key: "".concat(item.userId, "-").concat(index),
       className: (0, _css.cx)(boxCashRegisterTypeUserContentStyles(contentStyles), contentClassName)

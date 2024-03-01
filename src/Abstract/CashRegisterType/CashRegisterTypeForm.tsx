@@ -41,30 +41,18 @@ export const CashRegisterTypeForm = ({
     if (current) {
       if (current.name) use.attributes.actions.changeName(current.name);
 
-      if (current.sitesId) {
-        const currentSite = useSites.actions.getById(current.sitesId);
-        if (currentSite) {
-          const sitesValue = {
-            label: currentSite.name,
-            value: `${current.sitesId}`,
-          };
-
-          use.attributes.actions.changeSite(sitesValue);
-
-          setInputSite((): JSX.Element => {
-            return (
-              <SelectSite
-                changeSite={(event) => use.attributes.actions.changeSite(event)}
-                props={{
-                  defaultValue: sitesValue,
-                  styles: {
-                    width: '90%',
-                  },
-                  options: use.attributes.states.siteOptions,
-                }}
-              />
-            );
-          });
+      if (current.cashRegisterTypeUser) {
+        const authorized = current.cashRegisterTypeUser.filter(
+          (item) => item.isAuthorized
+        );
+        const supervisor = current.cashRegisterTypeUser.filter(
+          (item) => item.isSupervisor
+        );
+        if (supervisor.length > 0) {
+          use.crtu.actions.setSupervisor(supervisor);
+        }
+        if (authorized.length > 0) {
+          use.crtu.actions.setAuthorized(authorized);
         }
       }
     }
@@ -80,6 +68,12 @@ export const CashRegisterTypeForm = ({
                 width: '90%',
               },
               options: use.attributes.states.siteOptions,
+              containerStyles: {
+                custom: `
+                  display: flex;
+                  justify-content: center;
+                `,
+              },
             }}
           />
         );
@@ -151,13 +145,13 @@ export const CashRegisterTypeForm = ({
         </ContainerButton>
         <ContainerButton
           styles={{
-            width: '100%',
+            width: '96.5%',
           }}
         >
           <>
             <ContainerButton
               styles={{
-                width: '48%',
+                width: '50%',
                 display: 'block',
               }}
             >
@@ -204,7 +198,7 @@ export const CashRegisterTypeForm = ({
             </ContainerButton>
             <ContainerButton
               styles={{
-                width: '48%',
+                width: '50%',
                 display: 'block',
               }}
             >

@@ -34,28 +34,18 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
   _react["default"].useEffect(function () {
     if (current) {
       if (current.name) use.attributes.actions.changeName(current.name);
-      if (current.sitesId) {
-        var currentSite = useSites.actions.getById(current.sitesId);
-        if (currentSite) {
-          var sitesValue = {
-            label: currentSite.name,
-            value: "".concat(current.sitesId)
-          };
-          use.attributes.actions.changeSite(sitesValue);
-          setInputSite(function () {
-            return /*#__PURE__*/_react["default"].createElement(_Input.SelectSite, {
-              changeSite: function changeSite(event) {
-                return use.attributes.actions.changeSite(event);
-              },
-              props: {
-                defaultValue: sitesValue,
-                styles: {
-                  width: '90%'
-                },
-                options: use.attributes.states.siteOptions
-              }
-            });
-          });
+      if (current.cashRegisterTypeUser) {
+        var authorized = current.cashRegisterTypeUser.filter(function (item) {
+          return item.isAuthorized;
+        });
+        var supervisor = current.cashRegisterTypeUser.filter(function (item) {
+          return item.isSupervisor;
+        });
+        if (supervisor.length > 0) {
+          use.crtu.actions.setSupervisor(supervisor);
+        }
+        if (authorized.length > 0) {
+          use.crtu.actions.setAuthorized(authorized);
         }
       }
     }
@@ -70,7 +60,10 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
             styles: {
               width: '90%'
             },
-            options: use.attributes.states.siteOptions
+            options: use.attributes.states.siteOptions,
+            containerStyles: {
+              custom: "\n                  display: flex;\n                  justify-content: center;\n                "
+            }
           }
         });
       });
@@ -124,11 +117,11 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     }
   }), InputSite)), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '100%'
+      width: '96.5%'
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '48%',
+      width: '50%',
       display: 'block'
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
@@ -163,7 +156,7 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
     }
   })))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '48%',
+      width: '50%',
       display: 'block'
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {

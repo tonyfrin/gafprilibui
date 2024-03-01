@@ -55,14 +55,20 @@ function useGafpriAttributesCashRegisterTypeUser(_ref) {
     });
   };
   var addAuthorized = function addAuthorized(id) {
-    var user = {
-      userId: parseInt(id, 10),
-      isAuthorized: true,
-      isSupervisor: false
-    };
-    setAuthorized(function (prevUsers) {
-      return [].concat((0, _toConsumableArray2["default"])(prevUsers), [user]);
+    var userId = parseInt(id, 10);
+    var userExists = authorized.some(function (user) {
+      return user.userId === userId;
     });
+    if (!userExists) {
+      var user = {
+        userId: userId,
+        isAuthorized: true,
+        isSupervisor: false
+      };
+      setAuthorized(function (prevUsers) {
+        return [].concat((0, _toConsumableArray2["default"])(prevUsers), [user]);
+      });
+    }
   };
   var removeSupervisor = function removeSupervisor(index) {
     setSupervisor(function (prevUsers) {
@@ -74,14 +80,20 @@ function useGafpriAttributesCashRegisterTypeUser(_ref) {
     });
   };
   var addSupervisor = function addSupervisor(id) {
-    var user = {
-      userId: parseInt(id, 10),
-      isAuthorized: false,
-      isSupervisor: true
-    };
-    setSupervisor(function (prevUsers) {
-      return [].concat((0, _toConsumableArray2["default"])(prevUsers), [user]);
+    var userId = parseInt(id, 10);
+    var userExists = authorized.some(function (user) {
+      return user.userId === userId;
     });
+    if (!userExists) {
+      var user = {
+        userId: userId,
+        isAuthorized: true,
+        isSupervisor: false
+      };
+      setSupervisor(function (prevUsers) {
+        return [].concat((0, _toConsumableArray2["default"])(prevUsers), [user]);
+      });
+    }
   };
 
   /**
@@ -104,7 +116,9 @@ function useGafpriAttributesCashRegisterTypeUser(_ref) {
     removeAuthorized: removeAuthorized,
     addAuthorized: addAuthorized,
     removeSupervisor: removeSupervisor,
-    addSupervisor: addSupervisor
+    addSupervisor: addSupervisor,
+    setAuthorized: setAuthorized,
+    setSupervisor: setSupervisor
   };
   return {
     states: states,

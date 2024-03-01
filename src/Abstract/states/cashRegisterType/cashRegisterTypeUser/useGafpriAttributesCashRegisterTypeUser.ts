@@ -38,6 +38,8 @@ type Actions = {
   removeSupervisor: (index: number) => void;
   addSupervisor: (id: string) => void;
   infoReset: () => void;
+  setAuthorized: (value: CashRegisterTypeUserAttributes[]) => void;
+  setSupervisor: (value: CashRegisterTypeUserAttributes[]) => void;
 };
 
 export type UseGafpriAttributesCashRegisterTypeUserReturn = {
@@ -92,12 +94,19 @@ export function useGafpriAttributesCashRegisterTypeUser({
   };
 
   const addAuthorized = (id: string): void => {
-    const user = {
-      userId: parseInt(id, 10),
-      isAuthorized: true,
-      isSupervisor: false,
-    };
-    setAuthorized((prevUsers) => [...prevUsers, user]);
+    const userId = parseInt(id, 10);
+
+    const userExists = authorized.some((user) => user.userId === userId);
+
+    if (!userExists) {
+      const user = {
+        userId,
+        isAuthorized: true,
+        isSupervisor: false,
+      };
+
+      setAuthorized((prevUsers) => [...prevUsers, user]);
+    }
   };
 
   const removeSupervisor = (index: number): void => {
@@ -111,12 +120,19 @@ export function useGafpriAttributesCashRegisterTypeUser({
   };
 
   const addSupervisor = (id: string): void => {
-    const user = {
-      userId: parseInt(id, 10),
-      isAuthorized: false,
-      isSupervisor: true,
-    };
-    setSupervisor((prevUsers) => [...prevUsers, user]);
+    const userId = parseInt(id, 10);
+
+    const userExists = authorized.some((user) => user.userId === userId);
+
+    if (!userExists) {
+      const user = {
+        userId,
+        isAuthorized: true,
+        isSupervisor: false,
+      };
+
+      setSupervisor((prevUsers) => [...prevUsers, user]);
+    }
   };
 
   /**
@@ -141,6 +157,8 @@ export function useGafpriAttributesCashRegisterTypeUser({
     addAuthorized,
     removeSupervisor,
     addSupervisor,
+    setAuthorized,
+    setSupervisor,
   };
 
   return {

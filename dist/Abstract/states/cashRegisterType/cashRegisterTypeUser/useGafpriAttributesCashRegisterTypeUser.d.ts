@@ -34,6 +34,8 @@ type Actions = {
     removeSupervisor: (index: number) => void;
     addSupervisor: (id: string) => void;
     infoReset: () => void;
+    setAuthorized: (value: CashRegisterTypeUserAttributes[]) => void;
+    setSupervisor: (value: CashRegisterTypeUserAttributes[]) => void;
 };
 export type UseGafpriAttributesCashRegisterTypeUserReturn = {
     states: State;

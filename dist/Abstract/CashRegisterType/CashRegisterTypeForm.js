@@ -65,7 +65,7 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
             defaultValue: use.attributes.states.siteDefault,
             title: 'Sucursal',
             styles: {
-              width: '100%'
+              width: '96.5%'
             },
             options: use.attributes.states.siteOptions,
             containerStyles: {
@@ -121,7 +121,7 @@ var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterT
         title: 'Nombre'
       },
       styles: {
-        width: '100%',
+        width: '96.5%',
         padding: '10px 19px'
       },
       containerStyles: {

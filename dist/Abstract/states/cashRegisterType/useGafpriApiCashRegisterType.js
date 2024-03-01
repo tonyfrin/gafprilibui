@@ -28,7 +28,7 @@ function useGafpriApiCashRegisterType(_ref) {
         initCredentials: {
           name: attributes.states.name,
           sitesId: attributes.states.site,
-          cashRegisterUser: [].concat((0, _toConsumableArray2["default"])(crtu.states.authorized), (0, _toConsumableArray2["default"])(crtu.states.supervisor)),
+          cashRegisterTypeUser: [].concat((0, _toConsumableArray2["default"])(crtu.states.authorized), (0, _toConsumableArray2["default"])(crtu.states.supervisor)),
           posts: {
             visibility: 'public'
           }
@@ -55,7 +55,7 @@ function useGafpriApiCashRegisterType(_ref) {
         initRoute: "".concat(_constants.CASH_REGISTER_TYPE_ROUTE, "/").concat(attributes.states.currentId),
         initCredentials: {
           name: attributes.states.name,
-          cashRegisterUser: [].concat((0, _toConsumableArray2["default"])(crtu.states.authorized), (0, _toConsumableArray2["default"])(crtu.states.supervisor))
+          cashRegisterTypeUser: [].concat((0, _toConsumableArray2["default"])(crtu.states.authorized), (0, _toConsumableArray2["default"])(crtu.states.supervisor))
         },
         initToken: {
           token: token

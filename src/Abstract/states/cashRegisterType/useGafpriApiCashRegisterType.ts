@@ -53,7 +53,7 @@ export function useGafpriApiCashRegisterType({
         initCredentials: {
           name: attributes.states.name,
           sitesId: attributes.states.site,
-          cashRegisterUser: [
+          cashRegisterTypeUser: [
             ...crtu.states.authorized,
             ...crtu.states.supervisor,
           ],
@@ -85,7 +85,7 @@ export function useGafpriApiCashRegisterType({
         initRoute: `${CASH_REGISTER_TYPE_ROUTE}/${attributes.states.currentId}`,
         initCredentials: {
           name: attributes.states.name,
-          cashRegisterUser: [
+          cashRegisterTypeUser: [
             ...crtu.states.authorized,
             ...crtu.states.supervisor,
           ],

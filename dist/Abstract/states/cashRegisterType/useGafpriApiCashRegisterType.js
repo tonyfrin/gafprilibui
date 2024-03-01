@@ -28,7 +28,10 @@ function useGafpriApiCashRegisterType(_ref) {
         initCredentials: {
           name: attributes.states.name,
           sitesId: attributes.states.site,
-          cashRegisterUser: [].concat((0, _toConsumableArray2["default"])(crtu.states.authorized), (0, _toConsumableArray2["default"])(crtu.states.supervisor))
+          cashRegisterUser: [].concat((0, _toConsumableArray2["default"])(crtu.states.authorized), (0, _toConsumableArray2["default"])(crtu.states.supervisor)),
+          posts: {
+            visibility: 'public'
+          }
         },
         initToken: {
           token: token

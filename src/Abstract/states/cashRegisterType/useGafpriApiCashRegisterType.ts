@@ -57,6 +57,9 @@ export function useGafpriApiCashRegisterType({
             ...crtu.states.authorized,
             ...crtu.states.supervisor,
           ],
+          posts: {
+            visibility: 'public',
+          },
         },
         initToken: { token },
         functionFetching: pages.actions.onFetching,

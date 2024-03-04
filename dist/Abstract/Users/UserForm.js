@@ -36,8 +36,7 @@ var UserForm = exports.UserForm = function UserForm(_ref) {
     phoneContainerProps = _ref.phoneContainerProps,
     areaCodeSelectProps = _ref.areaCodeSelectProps,
     phoneInputProps = _ref.phoneInputProps,
-    roleSelectProps = _ref.roleSelectProps,
-    propsPhoto = _ref.propsPhoto;
+    roleSelectProps = _ref.roleSelectProps;
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
     _React$useState2 = (0, _slicedToArray2["default"])(_React$useState, 2),
     InputAreaCode = _React$useState2[0],
@@ -73,6 +72,7 @@ var UserForm = exports.UserForm = function UserForm(_ref) {
           props: _objectSpread({
             options: use.states.areaCodeOptions,
             defaultValue: use.states.areaCodeDefault,
+            title: 'Código de area',
             styles: {
               width: '96%'
             }
@@ -87,6 +87,7 @@ var UserForm = exports.UserForm = function UserForm(_ref) {
           props: _objectSpread({
             options: use.states.roleOptions,
             defaultValue: use.states.roleDefault,
+            title: 'Rol de usuario',
             styles: {
               width: '96%'
             }
@@ -132,7 +133,9 @@ var UserForm = exports.UserForm = function UserForm(_ref) {
     submitting: use.states.submitting,
     changeError: use.actions.changeError,
     setSubmitting: use.actions.setSubmitting,
-    props: propsPhoto
+    props: {
+      imageStyle: "\n                  transition: all 1s ease 0s;\n                  width: 100%;\n                  max-width: 150px;\n                  max-height: 150px;\n                  object-fit: cover;\n                  border: 1px solid #ebebeb;\n                  margin: auto;\n                  border-radius: 100%;\n                "
+    }
   })), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(nameContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
@@ -141,7 +144,8 @@ var UserForm = exports.UserForm = function UserForm(_ref) {
     },
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.name
+        defaultValue: use.states.name,
+        title: 'Nombre'
       },
       styles: {
         width: '100%'
@@ -153,7 +157,8 @@ var UserForm = exports.UserForm = function UserForm(_ref) {
     },
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.lastName
+        defaultValue: use.states.lastName,
+        title: 'Apellido'
       },
       styles: {
         width: '100%'
@@ -165,7 +170,8 @@ var UserForm = exports.UserForm = function UserForm(_ref) {
     },
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.email
+        defaultValue: use.states.email,
+        title: 'Email'
       },
       styles: {
         width: '100%'
@@ -181,7 +187,8 @@ var UserForm = exports.UserForm = function UserForm(_ref) {
     },
     props: _objectSpread({
       inputProps: {
-        defaultValue: use.states.phoneNumber
+        defaultValue: use.states.phoneNumber,
+        title: 'Teléfono'
       },
       styles: {
         width: '96%'

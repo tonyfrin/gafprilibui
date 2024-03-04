@@ -1,12 +1,10 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import {
-  Input,
   InputLastName,
   InputName,
   SelectAreaCode,
   SelectRoles,
-  SelectSite,
   InputEmail,
   InputPhone,
 } from '../Input';
@@ -16,7 +14,6 @@ import type { ContainerButtonPropsExtended } from '../Containers';
 import { ModelForm, PhotoUser } from '../Form';
 import type { ModelFormPropsExtended } from '../Form';
 import type { UseUserReturn } from '../../states';
-import type { PhotoUserProps } from '../Form';
 
 export type UserFormProps = {
   use: UseUserReturn;
@@ -32,7 +29,6 @@ export type UserFormProps = {
   areaCodeSelectProps?: GsSelectPropsExtended;
   phoneInputProps?: InputProps;
   roleSelectProps?: GsSelectPropsExtended;
-  propsPhoto?: PhotoUserProps['props'];
 };
 
 export type UserFormPropsExtended = {
@@ -49,7 +45,6 @@ export type UserFormPropsExtended = {
   areaCodeSelectProps?: GsSelectPropsExtended;
   phoneInputProps?: InputProps;
   roleSelectProps?: GsSelectPropsExtended;
-  propsPhoto?: PhotoUserProps['props'];
 };
 
 const defaultPhotoContainerStyle = css`
@@ -79,7 +74,6 @@ export const UserForm = ({
   areaCodeSelectProps,
   phoneInputProps,
   roleSelectProps,
-  propsPhoto,
 }: UserFormProps): JSX.Element => {
   const [InputAreaCode, setInputAreaCode] = React.useState(<></>);
   const [InputRole, setInputRole] = React.useState(<></>);
@@ -135,6 +129,7 @@ export const UserForm = ({
             props={{
               options: use.states.areaCodeOptions,
               defaultValue: use.states.areaCodeDefault,
+              title: 'Código de area',
               styles: {
                 width: '96%',
               },
@@ -151,6 +146,7 @@ export const UserForm = ({
             props={{
               options: use.states.roleOptions,
               defaultValue: use.states.roleDefault,
+              title: 'Rol de usuario',
               styles: {
                 width: '96%',
               },
@@ -206,7 +202,18 @@ export const UserForm = ({
               submitting={use.states.submitting}
               changeError={use.actions.changeError}
               setSubmitting={use.actions.setSubmitting}
-              props={propsPhoto}
+              props={{
+                imageStyle: `
+                  transition: all 1s ease 0s;
+                  width: 100%;
+                  max-width: 150px;
+                  max-height: 150px;
+                  object-fit: cover;
+                  border: 1px solid #ebebeb;
+                  margin: auto;
+                  border-radius: 100%;
+                `,
+              }}
             />
           </div>
           <div className={css(nameContainerStyle)}>
@@ -216,6 +223,7 @@ export const UserForm = ({
                 props={{
                   inputProps: {
                     defaultValue: use.states.name,
+                    title: 'Nombre',
                   },
                   styles: {
                     width: '100%',
@@ -228,6 +236,7 @@ export const UserForm = ({
                 props={{
                   inputProps: {
                     defaultValue: use.states.lastName,
+                    title: 'Apellido',
                   },
                   styles: {
                     width: '100%',
@@ -240,6 +249,7 @@ export const UserForm = ({
                 props={{
                   inputProps: {
                     defaultValue: use.states.email,
+                    title: 'Email',
                   },
                   styles: {
                     width: '100%',
@@ -264,6 +274,7 @@ export const UserForm = ({
               props={{
                 inputProps: {
                   defaultValue: use.states.phoneNumber,
+                  title: 'Teléfono',
                 },
                 styles: {
                   width: '96%',

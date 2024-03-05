@@ -7,6 +7,6 @@ export type GeneralChangeParentIdProps = {
     }>;
     validation?: (valueValid: string) => boolean;
     setDefault: (valueDefault: SelectDefault) => void;
-    setValue: (transformedValue: number) => void;
+    setValue: (transformedValue: string) => void;
 };
 export declare const generalChangeParentId: ({ options, validation, setDefault, setValue, }: GeneralChangeParentIdProps) => void;

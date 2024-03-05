@@ -226,3 +226,21 @@ export type {
   UseGafpriPagesCashRegisterTypeProps,
   UseGafpriAttributesCashRegisterTypeReturn,
 } from './cashRegisterType';
+export {
+  useGafpriAttributesExpensesType,
+  useGafpriPagesExpensesType,
+  useGafpriDataExpensesType,
+  useGafpriApiExpensesType,
+  useGafpriPaginationsExpensesType,
+} from './expensesType';
+export type {
+  UseGafpriAttributesExpensesTypeProps,
+  UseGafpriAttributesExpensesTypeReturn,
+  UseGafpriPagesExpensesTypeProps,
+  UseGafpriPagesExpensesTypeReturn,
+  UseGafpriDataExpensesTypeProps,
+  UseGafpriDataExpensesTypeReturn,
+  UseGafpriApiExpensesTypeProps,
+  UseGafpriApiExpensesTypeReturn,
+  UseGafpriPaginationsExpensesTypeReturn,
+} from './expensesType';

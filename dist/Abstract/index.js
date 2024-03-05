@@ -327,6 +327,12 @@ Object.defineProperty(exports, "Error", {
     return _Error.Error;
   }
 });
+Object.defineProperty(exports, "ExpensesTypeForm", {
+  enumerable: true,
+  get: function get() {
+    return _ExpensesType.ExpensesTypeForm;
+  }
+});
 Object.defineProperty(exports, "FadeIn", {
   enumerable: true,
   get: function get() {
@@ -403,6 +409,12 @@ Object.defineProperty(exports, "InitEntity", {
   enumerable: true,
   get: function get() {
     return _Entity.InitEntity;
+  }
+});
+Object.defineProperty(exports, "InitExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _ExpensesType.InitExpensesType;
   }
 });
 Object.defineProperty(exports, "InitProducts", {
@@ -1209,6 +1221,12 @@ Object.defineProperty(exports, "useGafpriApiEntity", {
     return _states.useGafpriApiEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriApiExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriApiExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiOrder", {
   enumerable: true,
   get: function get() {
@@ -1287,6 +1305,12 @@ Object.defineProperty(exports, "useGafpriAttributesEntity", {
     return _states.useGafpriAttributesEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesOrder", {
   enumerable: true,
   get: function get() {
@@ -1359,6 +1383,12 @@ Object.defineProperty(exports, "useGafpriDataEntity", {
     return _states.useGafpriDataEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriDataExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriDataExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataOrder", {
   enumerable: true,
   get: function get() {
@@ -1423,6 +1453,12 @@ Object.defineProperty(exports, "useGafpriPagesEntity", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriPagesEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPagesExpensesType;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesOrder", {
@@ -1495,6 +1531,12 @@ Object.defineProperty(exports, "useGafpriPaginationsEntity", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriPaginationsEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPaginationsExpensesType;
   }
 });
 Object.defineProperty(exports, "useGafpriPaginationsOrder", {
@@ -1593,3 +1635,4 @@ var _Taxes = require("./Taxes");
 var _CheckBox = require("./CheckBox");
 var _Slider = require("./Slider");
 var _CashRegisterType = require("./CashRegisterType");
+var _ExpensesType = require("./ExpensesType");

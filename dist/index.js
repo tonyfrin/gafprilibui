@@ -483,6 +483,18 @@ Object.defineProperty(exports, "ENTITY_STORAGE", {
     return _constants.ENTITY_STORAGE;
   }
 });
+Object.defineProperty(exports, "EXPENSES_TYPE_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.EXPENSES_TYPE_ROUTE;
+  }
+});
+Object.defineProperty(exports, "EXPENSES_TYPE_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.EXPENSES_TYPE_STORAGE;
+  }
+});
 Object.defineProperty(exports, "Entity", {
   enumerable: true,
   get: function get() {
@@ -565,6 +577,18 @@ Object.defineProperty(exports, "Error", {
   enumerable: true,
   get: function get() {
     return _Abstract.Error;
+  }
+});
+Object.defineProperty(exports, "ExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Components.ExpensesType;
+  }
+});
+Object.defineProperty(exports, "ExpensesTypeForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ExpensesTypeForm;
   }
 });
 Object.defineProperty(exports, "FadeIn", {
@@ -655,6 +679,12 @@ Object.defineProperty(exports, "InitEntity", {
   enumerable: true,
   get: function get() {
     return _Abstract.InitEntity;
+  }
+});
+Object.defineProperty(exports, "InitExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitExpensesType;
   }
 });
 Object.defineProperty(exports, "InitMainMenu", {
@@ -2973,6 +3003,12 @@ Object.defineProperty(exports, "useGafpriApiEntity", {
     return _Abstract.useGafpriApiEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriApiExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiOrder", {
   enumerable: true,
   get: function get() {
@@ -3049,6 +3085,12 @@ Object.defineProperty(exports, "useGafpriAttributesEntity", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriAttributesEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesExpensesType;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesOrder", {
@@ -3147,6 +3189,12 @@ Object.defineProperty(exports, "useGafpriDataEntity", {
     return _Abstract.useGafpriDataEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriDataExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataOrder", {
   enumerable: true,
   get: function get() {
@@ -3207,6 +3255,12 @@ Object.defineProperty(exports, "useGafpriError", {
     return _states.useGafpriError;
   }
 });
+Object.defineProperty(exports, "useGafpriExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriLogin", {
   enumerable: true,
   get: function get() {
@@ -3235,6 +3289,12 @@ Object.defineProperty(exports, "useGafpriPagesEntity", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPagesEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesExpensesType;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesOrder", {
@@ -3307,6 +3367,12 @@ Object.defineProperty(exports, "useGafpriPaginationsEntity", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPaginationsEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsExpensesType;
   }
 });
 Object.defineProperty(exports, "useGafpriPaginationsOrder", {

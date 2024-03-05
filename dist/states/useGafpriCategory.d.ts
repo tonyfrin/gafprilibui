@@ -34,7 +34,7 @@ type State = {
     isUpdate: boolean;
     name: string;
     nameValid: boolean;
-    parentId: number | null;
+    parentId: string;
     parentIdValid: boolean;
     parentIdDefault: SelectDefault;
     parentIdOptions: SelectDefault[];

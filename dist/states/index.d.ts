@@ -38,3 +38,5 @@ export { useGafpriStorage } from './useGafpriStorage';
 export type { UseGafpriStorageReturn, UseGafpriStorageProps, } from './useGafpriStorage';
 export { useGafpriCashRegisterType } from './useGafpriCashRegisterType';
 export type { UseGafpriCashRegisterTypeReturn, UseGafpriCashRegisterTypeProps, } from './useGafpriCashRegisterType';
+export { useGafpriExpensesType } from './useGafpriExpensesType';
+export type { UseGafpriExpensesTypeReturn, UseGafpriExpensesTypeProps, } from './useGafpriExpensesType';

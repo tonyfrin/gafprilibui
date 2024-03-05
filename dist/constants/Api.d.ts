@@ -18,3 +18,4 @@ export declare const SHIPPING_AREAS_ROUTE = "/shipping-areas";
 export declare const PROJECTS_ROUTE = "/projects";
 export declare const STORAGE_ROUTE = "/storage";
 export declare const CASH_REGISTER_TYPE_ROUTE = "/cash-register-type";
+export declare const EXPENSES_TYPE_ROUTE = "/expenses-type";

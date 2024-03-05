@@ -63,7 +63,7 @@ type State = {
   name: string;
   nameValid: boolean;
 
-  parentId: number | null;
+  parentId: string;
   parentIdValid: boolean;
   parentIdDefault: SelectDefault;
   parentIdOptions: SelectDefault[];
@@ -205,7 +205,7 @@ export function useGafpriCategory({
     },
   });
 
-  const [parentId, setParentId] = useState<number | null>(null);
+  const [parentId, setParentId] = useState('');
   const [parentIdValid, setParentIdValid] = useState(false);
   const [parentIdDefault, setParentIdDefault] = useState<SelectDefault>({
     value: 'null',
@@ -251,7 +251,7 @@ export function useGafpriCategory({
   const infoReset = (): void => {
     setName('');
     setNameValid(false);
-    setParentId(null);
+    setParentId('');
     setParentIdValid(false);
     setDescription('');
     setDescriptionValid(true);

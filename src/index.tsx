@@ -245,6 +245,13 @@ export {
   BoxCashRegisterTypeUser,
   CashRegisterTypeForm,
   InitCashRegisterType,
+  useGafpriAttributesExpensesType,
+  useGafpriPagesExpensesType,
+  useGafpriDataExpensesType,
+  useGafpriApiExpensesType,
+  useGafpriPaginationsExpensesType,
+  InitExpensesType,
+  ExpensesTypeForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -660,6 +667,19 @@ export type {
   CashRegisterTypeFormProps,
   InitCashRegisterTypeProps,
   InitCashRegisterTypePropsExtended,
+  UseGafpriAttributesExpensesTypeProps,
+  UseGafpriAttributesExpensesTypeReturn,
+  UseGafpriPagesExpensesTypeProps,
+  UseGafpriPagesExpensesTypeReturn,
+  UseGafpriDataExpensesTypeProps,
+  UseGafpriDataExpensesTypeReturn,
+  UseGafpriApiExpensesTypeProps,
+  UseGafpriApiExpensesTypeReturn,
+  UseGafpriPaginationsExpensesTypeReturn,
+  InitExpensesTypeProps,
+  InitExpensesTypePropsExtended,
+  ExpensesTypeFormProps,
+  ExpensesTypeFormPropsExtended,
 } from './Abstract';
 export {
   MainFooter,
@@ -688,6 +708,7 @@ export {
   TaxClasses,
   Products,
   CashRegisterType,
+  ExpensesType,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -728,6 +749,8 @@ export type {
   TaxClassesProps,
   ProductsProps,
   CashRegisterTypeProps,
+  ExpensesTypeProps,
+  ExpensesTypePropsExtended,
 } from './Components';
 export {
   addClass,
@@ -794,6 +817,7 @@ export {
   useGafpriProjects,
   useGafpriStorage,
   useGafpriCashRegisterType,
+  useGafpriExpensesType,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -838,6 +862,8 @@ export type {
   UseGafpriStorageReturn,
   UseGafpriCashRegisterTypeProps,
   UseGafpriCashRegisterTypeReturn,
+  UseGafpriExpensesTypeProps,
+  UseGafpriExpensesTypeReturn,
 } from './states';
 export {
   Countries,
@@ -974,6 +1000,8 @@ export {
   STORAGE_ROUTE,
   CASH_REGISTER_TYPE_STORAGE,
   CASH_REGISTER_TYPE_ROUTE,
+  EXPENSES_TYPE_STORAGE,
+  EXPENSES_TYPE_ROUTE,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {

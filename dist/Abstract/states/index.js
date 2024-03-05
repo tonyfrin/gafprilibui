@@ -21,6 +21,12 @@ Object.defineProperty(exports, "useGafpriApiEntity", {
     return _entity.useGafpriApiEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriApiExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _expensesType.useGafpriApiExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiOrder", {
   enumerable: true,
   get: function get() {
@@ -99,6 +105,12 @@ Object.defineProperty(exports, "useGafpriAttributesEntity", {
     return _entity.useGafpriAttributesEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _expensesType.useGafpriAttributesExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesOrder", {
   enumerable: true,
   get: function get() {
@@ -171,6 +183,12 @@ Object.defineProperty(exports, "useGafpriDataEntity", {
     return _entity.useGafpriDataEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriDataExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _expensesType.useGafpriDataExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataOrder", {
   enumerable: true,
   get: function get() {
@@ -235,6 +253,12 @@ Object.defineProperty(exports, "useGafpriPagesEntity", {
   enumerable: true,
   get: function get() {
     return _entity.useGafpriPagesEntity;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _expensesType.useGafpriPagesExpensesType;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesOrder", {
@@ -309,6 +333,12 @@ Object.defineProperty(exports, "useGafpriPaginationsEntity", {
     return _entity.useGafpriPaginationsEntity;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _expensesType.useGafpriPaginationsExpensesType;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsOrder", {
   enumerable: true,
   get: function get() {
@@ -374,3 +404,4 @@ var _shipping = require("./shipping");
 var _projects = require("./projects");
 var _storage = require("./storage");
 var _cashRegisterType = require("./cashRegisterType");
+var _expensesType = require("./expensesType");

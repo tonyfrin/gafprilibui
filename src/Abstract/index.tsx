@@ -413,6 +413,11 @@ export {
   useGafpriPaginationsCashRegisterType,
   useGafpriPagesCashRegisterType,
   useGafpriAttributesCashRegisterType,
+  useGafpriAttributesExpensesType,
+  useGafpriPagesExpensesType,
+  useGafpriDataExpensesType,
+  useGafpriApiExpensesType,
+  useGafpriPaginationsExpensesType,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -543,6 +548,15 @@ export type {
   UseGafpriPagesCashRegisterTypeReturn,
   UseGafpriPagesCashRegisterTypeProps,
   UseGafpriAttributesCashRegisterTypeReturn,
+  UseGafpriAttributesExpensesTypeProps,
+  UseGafpriAttributesExpensesTypeReturn,
+  UseGafpriPagesExpensesTypeProps,
+  UseGafpriPagesExpensesTypeReturn,
+  UseGafpriDataExpensesTypeProps,
+  UseGafpriDataExpensesTypeReturn,
+  UseGafpriApiExpensesTypeProps,
+  UseGafpriApiExpensesTypeReturn,
+  UseGafpriPaginationsExpensesTypeReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -748,3 +762,10 @@ export type {
   InitCashRegisterTypeProps,
   InitCashRegisterTypePropsExtended,
 } from './CashRegisterType';
+export { InitExpensesType, ExpensesTypeForm } from './ExpensesType';
+export type {
+  InitExpensesTypeProps,
+  InitExpensesTypePropsExtended,
+  ExpensesTypeFormProps,
+  ExpensesTypeFormPropsExtended,
+} from './ExpensesType';

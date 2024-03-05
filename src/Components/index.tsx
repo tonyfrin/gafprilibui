@@ -62,3 +62,8 @@ export { TaxRates, TaxClasses } from './Taxes';
 export type { TaxRatesProps, TaxClassesProps } from './Taxes';
 export { CashRegisterType } from './CashRegisterType';
 export type { CashRegisterTypeProps } from './CashRegisterType';
+export { ExpensesType } from './ExpensesType';
+export type {
+  ExpensesTypeProps,
+  ExpensesTypePropsExtended,
+} from './ExpensesType';

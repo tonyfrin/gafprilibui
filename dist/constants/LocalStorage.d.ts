@@ -17,3 +17,4 @@ export declare const SHIPPING_AREAS_STORAGE = "GS_SHIPPING_AREAS_V2";
 export declare const PROJECTS_STORAGE = "GS_PROJECTS_V2";
 export declare const STOTAGE_STORAGE = "GS_STORAGE_V2";
 export declare const CASH_REGISTER_TYPE_STORAGE = "GS_CASH_REGISTER_TYPE_V2";
+export declare const EXPENSES_TYPE_STORAGE = "GS_EXPENSES_TYPE_STORAGE_V2";

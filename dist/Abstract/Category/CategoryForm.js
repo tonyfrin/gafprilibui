@@ -106,7 +106,7 @@ var CategoryForm = exports.CategoryForm = function CategoryForm(_ref) {
   _react["default"].useEffect(function () {
     use.actions.validationName(use.states.name);
     use.actions.validationDescription(use.states.description);
-    use.actions.validationParentId("".concat(use.states.currentId));
+    use.actions.validationParentId(use.states.parentId);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationStatus(use.states.status);
   }, [use.states.name, use.states.parentId, use.states.description, use.states.photo, use.states.status]);

@@ -41,7 +41,7 @@ function useGafpriCategory(_ref) {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     category = _useState6[0],
     setCategory = _useState6[1];
-  var _useState7 = (0, _react.useState)(null),
+  var _useState7 = (0, _react.useState)(''),
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
     parentId = _useState8[0],
     setParentId = _useState8[1];
@@ -148,7 +148,7 @@ function useGafpriCategory(_ref) {
   var infoReset = function infoReset() {
     setName('');
     setNameValid(false);
-    setParentId(null);
+    setParentId('');
     setParentIdValid(false);
     setDescription('');
     setDescriptionValid(true);

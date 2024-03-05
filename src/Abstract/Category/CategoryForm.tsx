@@ -163,7 +163,7 @@ export const CategoryForm = ({
   React.useEffect(() => {
     use.actions.validationName(use.states.name);
     use.actions.validationDescription(use.states.description);
-    use.actions.validationParentId(`${use.states.currentId}`);
+    use.actions.validationParentId(use.states.parentId);
     use.actions.validationPhoto(use.states.photo);
     use.actions.validationStatus(use.states.status);
   }, [

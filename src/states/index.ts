@@ -89,3 +89,8 @@ export type {
   UseGafpriCashRegisterTypeReturn,
   UseGafpriCashRegisterTypeProps,
 } from './useGafpriCashRegisterType';
+export { useGafpriExpensesType } from './useGafpriExpensesType';
+export type {
+  UseGafpriExpensesTypeReturn,
+  UseGafpriExpensesTypeProps,
+} from './useGafpriExpensesType';

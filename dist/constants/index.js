@@ -243,6 +243,18 @@ Object.defineProperty(exports, "ENTITY_STORAGE", {
     return _LocalStorage.ENTITY_STORAGE;
   }
 });
+Object.defineProperty(exports, "EXPENSES_TYPE_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.EXPENSES_TYPE_ROUTE;
+  }
+});
+Object.defineProperty(exports, "EXPENSES_TYPE_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.EXPENSES_TYPE_STORAGE;
+  }
+});
 Object.defineProperty(exports, "GALLERY_IMAGE_INPUT", {
   enumerable: true,
   get: function get() {

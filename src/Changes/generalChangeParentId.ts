@@ -5,7 +5,7 @@ export type GeneralChangeParentIdProps = {
   options: SingleValue<{ value: string; label: string }>;
   validation?: (valueValid: string) => boolean;
   setDefault: (valueDefault: SelectDefault) => void;
-  setValue: (transformedValue: number) => void;
+  setValue: (transformedValue: string) => void;
 };
 
 export const generalChangeParentId = ({
@@ -14,10 +14,7 @@ export const generalChangeParentId = ({
   setDefault,
   setValue,
 }: GeneralChangeParentIdProps): void => {
-  let value: number | null = null;
-  if (options && options.value !== 'null') {
-    value = parseInt(options.value, 10);
-  }
+  const value = options?.label || '';
   const label = options?.label || 'Sin categoría padre';
   const newOptions = { value, label };
 

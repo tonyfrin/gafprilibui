@@ -67,8 +67,8 @@ const defaultOptionsButtonMainContainerStyle = css`
 
 const defaultFormContainerStyle = css`
   display: flex;
-  justify-content: space-between;
   margin-top: 10px;
+  flex-direction: column;
 `;
 
 export const ExpensesTypeForm = ({
@@ -224,6 +224,7 @@ export const ExpensesTypeForm = ({
             props={{
               options: use.attributes.states.parentIdOptions,
               defaultValue: use.attributes.states.parentIdDefault,
+              title: 'Egreso padre',
               styles: {
                 width: '100%',
               },
@@ -240,6 +241,7 @@ export const ExpensesTypeForm = ({
             props={{
               options: use.attributes.states.statusOptions,
               defaultValue: use.attributes.states.statusDefault,
+              title: 'Estatus',
               styles: {
                 width: '100%',
               },

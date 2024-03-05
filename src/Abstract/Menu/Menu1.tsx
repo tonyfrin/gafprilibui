@@ -18,10 +18,8 @@ const defaultMainContainerStyle = css`
 const defaultListContainerStyle = css`
   padding: 0.5rem;
   margin-top: 40px;
-  max-height: calc(
-    100vh - 100px
-  ); /* Ajusta la altura máxima según sea necesario */
-  overflow-y: auto; /* Agrega esta línea para permitir el desplazamiento vertical */
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
 `;
 
 const defaultItemContainerStyle = css`

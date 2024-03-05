@@ -21,7 +21,7 @@ var _templateObject, _templateObject2;
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 var defaultOptionsButtonMainContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-evenly;\n"])));
-var defaultFormContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-between;\n  margin-top: 10px;\n"])));
+var defaultFormContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  margin-top: 10px;\n  flex-direction: column;\n"])));
 var ExpensesTypeForm = exports.ExpensesTypeForm = function ExpensesTypeForm(_ref) {
   var _paginated$map;
   var use = _ref.use,
@@ -141,6 +141,7 @@ var ExpensesTypeForm = exports.ExpensesTypeForm = function ExpensesTypeForm(_ref
           props: _objectSpread({
             options: use.attributes.states.parentIdOptions,
             defaultValue: use.attributes.states.parentIdDefault,
+            title: 'Egreso padre',
             styles: {
               width: '100%'
             }
@@ -155,6 +156,7 @@ var ExpensesTypeForm = exports.ExpensesTypeForm = function ExpensesTypeForm(_ref
           props: _objectSpread({
             options: use.attributes.states.statusOptions,
             defaultValue: use.attributes.states.statusDefault,
+            title: 'Estatus',
             styles: {
               width: '100%'
             }

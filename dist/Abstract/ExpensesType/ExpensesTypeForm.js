@@ -231,7 +231,7 @@ var ExpensesTypeForm = exports.ExpensesTypeForm = function ExpensesTypeForm(_ref
   }, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
-      justifyContent: 'end'
+      justifyContent: 'center'
     }
   }, nameContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputName, {
     changeName: use.attributes.actions.changeName,
@@ -248,7 +248,7 @@ var ExpensesTypeForm = exports.ExpensesTypeForm = function ExpensesTypeForm(_ref
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
-      justifyContent: 'end'
+      justifyContent: 'center'
     }
   }, descriptionContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.InputDescription, {
     changeDescription: use.attributes.actions.changeDescription,
@@ -265,12 +265,12 @@ var ExpensesTypeForm = exports.ExpensesTypeForm = function ExpensesTypeForm(_ref
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
-      justifyContent: 'end'
+      justifyContent: 'center'
     }
   }, parentIdContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputParentId)), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, (0, _extends2["default"])({
     styles: {
       width: '100%',
-      justifyContent: 'end'
+      justifyContent: 'center'
     }
   }, statusContainerProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, InputStatus))), children.length > 0 && /*#__PURE__*/_react["default"].createElement("div", null, use.pages.states.childrenFetching ? /*#__PURE__*/_react["default"].createElement(_Components.Loading, loadingProps) : /*#__PURE__*/_react["default"].createElement(_List.List, (0, _extends2["default"])({
     title: "Dependientes",

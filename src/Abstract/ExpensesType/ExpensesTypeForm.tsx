@@ -341,7 +341,7 @@ export const ExpensesTypeForm = ({
           <ContainerButton
             styles={{
               width: '100%',
-              justifyContent: 'end',
+              justifyContent: 'center',
             }}
             {...nameContainerProps}
           >
@@ -365,7 +365,7 @@ export const ExpensesTypeForm = ({
           <ContainerButton
             styles={{
               width: '100%',
-              justifyContent: 'end',
+              justifyContent: 'center',
             }}
             {...descriptionContainerProps}
           >
@@ -389,7 +389,7 @@ export const ExpensesTypeForm = ({
           <ContainerButton
             styles={{
               width: '100%',
-              justifyContent: 'end',
+              justifyContent: 'center',
             }}
             {...parentIdContainerProps}
           >
@@ -398,7 +398,7 @@ export const ExpensesTypeForm = ({
           <ContainerButton
             styles={{
               width: '100%',
-              justifyContent: 'end',
+              justifyContent: 'center',
             }}
             {...statusContainerProps}
           >

@@ -110,19 +110,17 @@ var ExpensesTypeForm = exports.ExpensesTypeForm = function ExpensesTypeForm(_ref
     if (currentCategory) {
       if (currentCategory.name) use.attributes.actions.changeName(currentCategory.name);
       if (currentCategory.description) use.attributes.actions.changeDescription(currentCategory.description);
-      if (currentCategory.parentId !== undefined) {
-        if (currentCategory.parentId === null) {
-          use.attributes.actions.changeParentId({
-            label: 'Sin categoría padre',
-            value: ''
-          });
-        } else {
-          var categoryParent = use.data.actions.getById(currentCategory.parentId);
-          use.attributes.actions.changeParentId({
-            label: "".concat(categoryParent === null || categoryParent === void 0 ? void 0 : categoryParent.name),
-            value: "".concat(categoryParent === null || categoryParent === void 0 ? void 0 : categoryParent.id)
-          });
-        }
+      if (currentCategory.parentId === null) {
+        use.attributes.actions.changeParentId({
+          label: 'Sin categoría padre',
+          value: ''
+        });
+      } else {
+        var categoryParent = use.data.actions.getById(currentCategory.parentId);
+        use.attributes.actions.changeParentId({
+          label: "".concat(categoryParent === null || categoryParent === void 0 ? void 0 : categoryParent.name),
+          value: "".concat(categoryParent === null || categoryParent === void 0 ? void 0 : categoryParent.id)
+        });
       }
       if (currentCategory.status) {
         var label = currentCategory.status === 'active' ? 'Activo' : currentCategory.status === 'disabled' ? 'Desactivo' : '';

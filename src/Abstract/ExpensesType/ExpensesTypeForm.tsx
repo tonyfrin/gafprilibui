@@ -186,21 +186,19 @@ export const ExpensesTypeForm = ({
         use.attributes.actions.changeName(currentCategory.name);
       if (currentCategory.description)
         use.attributes.actions.changeDescription(currentCategory.description);
-      if (currentCategory.parentId !== undefined) {
-        if (currentCategory.parentId === null) {
-          use.attributes.actions.changeParentId({
-            label: 'Sin categoría padre',
-            value: '',
-          });
-        } else {
-          const categoryParent = use.data.actions.getById(
-            currentCategory.parentId
-          );
-          use.attributes.actions.changeParentId({
-            label: `${categoryParent?.name}`,
-            value: `${categoryParent?.id}`,
-          });
-        }
+      if (currentCategory.parentId === null) {
+        use.attributes.actions.changeParentId({
+          label: 'Sin categoría padre',
+          value: '',
+        });
+      } else {
+        const categoryParent = use.data.actions.getById(
+          currentCategory.parentId
+        );
+        use.attributes.actions.changeParentId({
+          label: `${categoryParent?.name}`,
+          value: `${categoryParent?.id}`,
+        });
       }
       if (currentCategory.status) {
         const label =

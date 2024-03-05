@@ -14,7 +14,7 @@ export const generalChangeParentId = ({
   setDefault,
   setValue,
 }: GeneralChangeParentIdProps): void => {
-  const value = options?.label || '';
+  const value = options?.value || '';
   const label = options?.label || 'Sin categoría padre';
   const newOptions = { value, label };
 

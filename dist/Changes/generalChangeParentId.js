@@ -10,7 +10,7 @@ var generalChangeParentId = exports.generalChangeParentId = function generalChan
     validation = _ref.validation,
     setDefault = _ref.setDefault,
     setValue = _ref.setValue;
-  var value = (options === null || options === void 0 ? void 0 : options.label) || '';
+  var value = (options === null || options === void 0 ? void 0 : options.value) || '';
   var label = (options === null || options === void 0 ? void 0 : options.label) || 'Sin categoría padre';
   var newOptions = {
     value: value,

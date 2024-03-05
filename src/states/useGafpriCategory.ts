@@ -565,7 +565,7 @@ export function useGafpriCategory({
     ) {
       const payload = {
         name,
-        parentId,
+        parentId: parentId === '' ? null : parseInt(parentId, 10),
         status,
       };
 
@@ -636,7 +636,7 @@ export function useGafpriCategory({
     ) {
       const payload = {
         name,
-        parentId,
+        parentId: parentId === '' ? null : parseInt(parentId, 10),
         status,
       };
 

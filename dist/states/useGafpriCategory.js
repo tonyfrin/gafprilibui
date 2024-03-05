@@ -431,7 +431,7 @@ function useGafpriCategory(_ref) {
     if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token) {
       var payload = {
         name: name,
-        parentId: parentId,
+        parentId: parentId === '' ? null : parseInt(parentId, 10),
         status: status
       };
       var updatedPayload = _objectSpread(_objectSpread(_objectSpread({}, payload), description ? {
@@ -499,7 +499,7 @@ function useGafpriCategory(_ref) {
     if (nameValid && parentIdValid && descriptionValid && photoValid && statusValid && token) {
       var payload = {
         name: name,
-        parentId: parentId,
+        parentId: parentId === '' ? null : parseInt(parentId, 10),
         status: status
       };
       var updatedPayload = _objectSpread(_objectSpread(_objectSpread({}, payload), description ? {

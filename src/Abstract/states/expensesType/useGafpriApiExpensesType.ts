@@ -66,7 +66,10 @@ export function useGafpriApiExpensesType({
     ) {
       const payload = {
         name: attributes.states.name,
-        parentId: attributes.states.parentId,
+        parentId:
+          attributes.states.parentId === ''
+            ? null
+            : parseInt(attributes.states.parentId, 10),
         status: attributes.states.status,
       };
 
@@ -120,7 +123,10 @@ export function useGafpriApiExpensesType({
     ) {
       const payload = {
         name: attributes.states.name,
-        parentId: attributes.states.parentId,
+        parentId:
+          attributes.states.parentId === ''
+            ? null
+            : parseInt(attributes.states.parentId, 10),
         status: attributes.states.status,
       };
 

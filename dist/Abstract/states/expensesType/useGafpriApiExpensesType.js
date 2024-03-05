@@ -32,7 +32,7 @@ function useGafpriApiExpensesType(_ref) {
     if (attributes.states.nameValid && attributes.states.parentIdValid && attributes.states.descriptionValid && attributes.states.statusValid && token) {
       var payload = {
         name: attributes.states.name,
-        parentId: attributes.states.parentId,
+        parentId: attributes.states.parentId === '' ? null : parseInt(attributes.states.parentId, 10),
         status: attributes.states.status
       };
       var updatedPayload = _objectSpread(_objectSpread({}, payload), attributes.states.description ? {
@@ -80,7 +80,7 @@ function useGafpriApiExpensesType(_ref) {
     if (attributes.states.nameValid && attributes.states.parentIdValid && attributes.states.descriptionValid && attributes.states.statusValid && token) {
       var payload = {
         name: attributes.states.name,
-        parentId: attributes.states.parentId,
+        parentId: attributes.states.parentId === '' ? null : parseInt(attributes.states.parentId, 10),
         status: attributes.states.status
       };
       var updatedPayload = _objectSpread(_objectSpread({}, payload), attributes.states.description ? {

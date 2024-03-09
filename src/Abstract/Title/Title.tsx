@@ -15,6 +15,7 @@ const Title1Styles = (styles: Title1Styles) => css`
 
   @media (max-width: 750px) {
     font-size: ${styles.media750Style?.fontSize || '20px'};
+    line-height: 1.5rem;
   }
 
   @media (max-width: 400px) {

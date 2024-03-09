@@ -94,3 +94,8 @@ export type {
   UseGafpriExpensesTypeReturn,
   UseGafpriExpensesTypeProps,
 } from './useGafpriExpensesType';
+export { useGafpriExpenses } from './useGafpriExpenses';
+export type {
+  UseGafpriExpensesReturn,
+  UseGafpriExpensesProps,
+} from './useGafpriExpenses';

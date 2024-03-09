@@ -1,29 +1,29 @@
 export type CashTransactionsAttributes = {
     cashRegisterTypePostsId: number;
     cashRegisterPostsId: number;
-    type: 'deposit' | 'debit';
+    type: string;
     amount: number;
     change: number;
     currenciesId: number;
     note?: string;
 };
 type State = {
-    cashRegisterTypePostsId: string;
-    cashRegisterPostsId: string;
+    cashRegisterTypePostsId: number;
+    cashRegisterPostsId: number;
     type: string;
-    amount: string;
-    change: string;
-    currenciesId: string;
+    amount: number;
+    change: number;
+    currenciesId: number;
     note: string;
 };
 type Actions = {
     infoReset: () => void;
-    setCashRegisterTypePostsId: (value: string) => void;
-    setCashRegisterPostsId: (value: string) => void;
+    setCashRegisterTypePostsId: (value: number) => void;
+    setCashRegisterPostsId: (value: number) => void;
     setType: (value: string) => void;
-    setAmount: (value: string) => void;
-    setChange: (value: string) => void;
-    setCurrenciesId: (value: string) => void;
+    setAmount: (value: number) => void;
+    setChange: (value: number) => void;
+    setCurrenciesId: (value: number) => void;
     setNote: (value: string) => void;
 };
 export type UseGafpriAttributesCashTransactionsReturn = {

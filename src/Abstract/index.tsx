@@ -179,6 +179,7 @@ export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
 export { Background1 } from './Background';
 export { LogoContainer } from './Logo';
+export type { LogoProps } from './Logo';
 export { Step } from './Step';
 export { SearchBar } from './Bar';
 export type { SearchBarProps } from './Bar';
@@ -215,6 +216,7 @@ export {
   BudgetViewFormInfoHeader,
   PhotoGalleryForm,
   PhotoProduct,
+  EntityExpensesSearchForm,
 } from './Form';
 export type {
   ModelFormProps,
@@ -237,6 +239,8 @@ export type {
   BudgetViewFormInfoHeaderProps,
   PhotoGalleryFormProps,
   PhotoProductProps,
+  EntityExpensesSearchFormProps,
+  EntityExpensesSearchFormStaylesContainerProps,
 } from './Form';
 export {
   Menu1,
@@ -331,6 +335,8 @@ export {
   EntitySearch,
   EntityBudgetInit,
   EntityBudgetSearch,
+  EntityExpensesInit,
+  EntityExpensesSearch,
 } from './Entity';
 export type {
   InitEntityProps,
@@ -351,6 +357,10 @@ export type {
   EntityBudgetInitProps,
   EntityBudgetSearchProps,
   EntityBudgetSearchPropsExtended,
+  EntityExpensesInitStylesContainerProps,
+  EntityExpensesInitProps,
+  EntityExpensesSearchProps,
+  EntityExpensesSearchPropsExtended,
 } from './Entity';
 export {
   useGafpriApiEntity,
@@ -418,6 +428,11 @@ export {
   useGafpriDataExpensesType,
   useGafpriApiExpensesType,
   useGafpriPaginationsExpensesType,
+  useGafpriAttributesExpenses,
+  useGafpriDataExpenses,
+  useGafpriPagesExpenses,
+  useGafpriApiExpenses,
+  useGafpriPaginationsExpenses,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -557,6 +572,13 @@ export type {
   UseGafpriApiExpensesTypeProps,
   UseGafpriApiExpensesTypeReturn,
   UseGafpriPaginationsExpensesTypeReturn,
+  UseGafpriAttributesExpensesReturn,
+  UseGafpriDataExpensesReturn,
+  UseGafpriDataExpensesProps,
+  UseGafpriPagesExpensesReturn,
+  UseGafpriApiExpensesReturn,
+  UseGafpriApiExpensesProps,
+  UseGafpriPaginationsExpensesReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -769,3 +791,8 @@ export type {
   ExpensesTypeFormProps,
   ExpensesTypeFormPropsExtended,
 } from './ExpensesType';
+export { ExpensesInit } from './Expenses';
+export type {
+  ExpensesInitStylesContainerProps,
+  ExpensesInitProps,
+} from './Expenses';

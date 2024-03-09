@@ -67,3 +67,6 @@ export const SHIPPING_AREAS_INPUT = 'shipping-areas-input-id';
 export const SHIPPING_TIME_DAYS_INPUT = 'shipping-time-days-input-id';
 export const AVAILABLE_SHIPPING_SERVICES_INPUT =
   'available-shipping-services-input-id';
+export const SUPPLIER_ID_INPUT = 'supplier-id-input-id';
+export const EXPENSES_TYPE_INPUT = 'expenses-type-input-id';
+export const PROJECTS_ID_INPUT = 'projects-id-input-id';

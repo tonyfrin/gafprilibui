@@ -252,6 +252,15 @@ export {
   useGafpriPaginationsExpensesType,
   InitExpensesType,
   ExpensesTypeForm,
+  useGafpriAttributesExpenses,
+  useGafpriDataExpenses,
+  useGafpriPagesExpenses,
+  useGafpriApiExpenses,
+  useGafpriPaginationsExpenses,
+  EntityExpensesSearchForm,
+  ExpensesInit,
+  EntityExpensesInit,
+  EntityExpensesSearch,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -680,6 +689,21 @@ export type {
   InitExpensesTypePropsExtended,
   ExpensesTypeFormProps,
   ExpensesTypeFormPropsExtended,
+  UseGafpriAttributesExpensesReturn,
+  UseGafpriDataExpensesReturn,
+  UseGafpriDataExpensesProps,
+  UseGafpriPagesExpensesReturn,
+  UseGafpriApiExpensesReturn,
+  UseGafpriApiExpensesProps,
+  UseGafpriPaginationsExpensesReturn,
+  EntityExpensesSearchFormProps,
+  EntityExpensesSearchFormStaylesContainerProps,
+  ExpensesInitProps,
+  EntityExpensesInitProps,
+  ExpensesInitStylesContainerProps,
+  EntityExpensesInitStylesContainerProps,
+  EntityExpensesSearchProps,
+  LogoProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -709,6 +733,7 @@ export {
   Products,
   CashRegisterType,
   ExpensesType,
+  EntityExpenses,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -751,6 +776,8 @@ export type {
   CashRegisterTypeProps,
   ExpensesTypeProps,
   ExpensesTypePropsExtended,
+  EntityExpensesStylesContainerProps,
+  EntityExpensesProps,
 } from './Components';
 export {
   addClass,
@@ -818,6 +845,7 @@ export {
   useGafpriStorage,
   useGafpriCashRegisterType,
   useGafpriExpensesType,
+  useGafpriExpenses,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -864,6 +892,8 @@ export type {
   UseGafpriCashRegisterTypeReturn,
   UseGafpriExpensesTypeProps,
   UseGafpriExpensesTypeReturn,
+  UseGafpriExpensesReturn,
+  UseGafpriExpensesProps,
 } from './states';
 export {
   Countries,
@@ -1002,6 +1032,11 @@ export {
   CASH_REGISTER_TYPE_ROUTE,
   EXPENSES_TYPE_STORAGE,
   EXPENSES_TYPE_ROUTE,
+  SUPPLIER_ID_INPUT,
+  EXPENSES_TYPE_INPUT,
+  PROJECTS_ID_INPUT,
+  EXPENSES_ROUTE,
+  EXPENSES_STORAGE,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {
@@ -1079,6 +1114,9 @@ export {
   generalValidationShippingAreasId,
   generalValidationShippingTimeDays,
   generalValidationAvailableShippingServices,
+  generalValidationSupplierId,
+  generalValidationExpensesTypeId,
+  generalValidationProjectsId,
 } from './Validations';
 export type {
   ValidationInput,
@@ -1150,6 +1188,9 @@ export type {
   GeneralValidationShippingAreasIdProps,
   GeneralValidationShippingTimeDaysProps,
   GeneralValidationAvailableShippingServicesProps,
+  GeneralValidationSupplierIdProps,
+  GeneralValidationExpensesTypeIdProps,
+  GeneralValidationProjectsIdProps,
 } from './Validations';
 export {
   generalChangeUserName,
@@ -1209,6 +1250,9 @@ export {
   generalChangeShippingTimeDays,
   generalChangeAvailableShippingServices,
   generalChangeRegion,
+  generalChangeSupplierId,
+  generalChangeExpensesTypeId,
+  generalChangeProjectsId,
 } from './Changes';
 export type {
   GeneralChangeNoteProps,
@@ -1268,4 +1312,7 @@ export type {
   GeneralChangeShippingTimeDaysProps,
   GeneralChangeAvailableShippingServicesProps,
   GeneralChangeRegionProps,
+  GeneralChangeSupplierIdProps,
+  GeneralChangeExpensesTypeIdProps,
+  GeneralChangeProjectsIdProps,
 } from './Changes';

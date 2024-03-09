@@ -40,3 +40,13 @@ export type {
   EntityBudgetSearchProps,
   EntityBudgetSearchPropsExtended,
 } from './EntityBudgetSearch';
+export { EntityExpensesInit } from './EntityExpensesInit';
+export type {
+  EntityExpensesInitStylesContainerProps,
+  EntityExpensesInitProps,
+} from './EntityExpensesInit';
+export { EntityExpensesSearch } from './EntityExpensesSearch';
+export type {
+  EntityExpensesSearchProps,
+  EntityExpensesSearchPropsExtended,
+} from './EntityExpensesSearch';

@@ -40,3 +40,5 @@ export { useGafpriCashRegisterType } from './useGafpriCashRegisterType';
 export type { UseGafpriCashRegisterTypeReturn, UseGafpriCashRegisterTypeProps, } from './useGafpriCashRegisterType';
 export { useGafpriExpensesType } from './useGafpriExpensesType';
 export type { UseGafpriExpensesTypeReturn, UseGafpriExpensesTypeProps, } from './useGafpriExpensesType';
+export { useGafpriExpenses } from './useGafpriExpenses';
+export type { UseGafpriExpensesReturn, UseGafpriExpensesProps, } from './useGafpriExpenses';

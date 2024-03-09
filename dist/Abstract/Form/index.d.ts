@@ -30,3 +30,5 @@ export { PhotoGalleryForm } from './PhotoGalleryForm';
 export type { PhotoGalleryFormProps } from './PhotoGalleryForm';
 export { PhotoProduct } from './PhotoProduct';
 export type { PhotoProductProps } from './PhotoProduct';
+export { EntityExpensesSearchForm } from './EntityExpensesSearchForm';
+export type { EntityExpensesSearchFormProps, EntityExpensesSearchFormStaylesContainerProps, } from './EntityExpensesSearchForm';

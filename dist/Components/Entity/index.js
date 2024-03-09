@@ -15,6 +15,12 @@ Object.defineProperty(exports, "EntityBudget", {
     return _EntityBudget.EntityBudget;
   }
 });
+Object.defineProperty(exports, "EntityExpenses", {
+  enumerable: true,
+  get: function get() {
+    return _EntityExpenses.EntityExpenses;
+  }
+});
 Object.defineProperty(exports, "EntityOrder", {
   enumerable: true,
   get: function get() {
@@ -24,3 +30,4 @@ Object.defineProperty(exports, "EntityOrder", {
 var _EntityOrder = require("./EntityOrder");
 var _EntityBudget = require("./EntityBudget");
 var _Entity = require("./Entity");
+var _EntityExpenses = require("./EntityExpenses");

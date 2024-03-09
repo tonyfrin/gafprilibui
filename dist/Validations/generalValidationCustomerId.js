@@ -14,7 +14,7 @@ var generalValidationCustomerId = exports.generalValidationCustomerId = function
     required = _ref$required === void 0 ? true : _ref$required,
     _ref$inputId = _ref.inputId,
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
-  var valid = value !== null ? value : 1;
+  var valid = value !== null ? value : 0;
   return (0, _index.validationInputNumbersWithValue)({
     value: valid,
     inputId: "".concat(_constants.CUSTOMER_ID_INPUT).concat(inputId),

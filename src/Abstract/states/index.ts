@@ -244,3 +244,19 @@ export type {
   UseGafpriApiExpensesTypeReturn,
   UseGafpriPaginationsExpensesTypeReturn,
 } from './expensesType';
+export {
+  useGafpriAttributesExpenses,
+  useGafpriDataExpenses,
+  useGafpriPagesExpenses,
+  useGafpriApiExpenses,
+  useGafpriPaginationsExpenses,
+} from './expenses';
+export type {
+  UseGafpriAttributesExpensesReturn,
+  UseGafpriDataExpensesReturn,
+  UseGafpriDataExpensesProps,
+  UseGafpriPagesExpensesReturn,
+  UseGafpriApiExpensesReturn,
+  UseGafpriApiExpensesProps,
+  UseGafpriPaginationsExpensesReturn,
+} from './expenses';

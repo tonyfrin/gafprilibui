@@ -33,6 +33,18 @@ Object.defineProperty(exports, "EntityBudgetSearch", {
     return _EntityBudgetSearch.EntityBudgetSearch;
   }
 });
+Object.defineProperty(exports, "EntityExpensesInit", {
+  enumerable: true,
+  get: function get() {
+    return _EntityExpensesInit.EntityExpensesInit;
+  }
+});
+Object.defineProperty(exports, "EntityExpensesSearch", {
+  enumerable: true,
+  get: function get() {
+    return _EntityExpensesSearch.EntityExpensesSearch;
+  }
+});
 Object.defineProperty(exports, "EntityOrderInit", {
   enumerable: true,
   get: function get() {
@@ -66,3 +78,5 @@ var _EntityOrderInit = require("./EntityOrderInit");
 var _EntitySearch = require("./EntitySearch");
 var _EntityBudgetInit = require("./EntityBudgetInit");
 var _EntityBudgetSearch = require("./EntityBudgetSearch");
+var _EntityExpensesInit = require("./EntityExpensesInit");
+var _EntityExpensesSearch = require("./EntityExpensesSearch");

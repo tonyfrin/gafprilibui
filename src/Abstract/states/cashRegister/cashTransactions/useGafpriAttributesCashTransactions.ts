@@ -3,7 +3,7 @@ import { useState } from 'react';
 export type CashTransactionsAttributes = {
   cashRegisterTypePostsId: number;
   cashRegisterPostsId: number;
-  type: 'deposit' | 'debit';
+  type: string;
   amount: number;
   change: number;
   currenciesId: number;
@@ -11,23 +11,23 @@ export type CashTransactionsAttributes = {
 };
 
 type State = {
-  cashRegisterTypePostsId: string;
-  cashRegisterPostsId: string;
+  cashRegisterTypePostsId: number;
+  cashRegisterPostsId: number;
   type: string;
-  amount: string;
-  change: string;
-  currenciesId: string;
+  amount: number;
+  change: number;
+  currenciesId: number;
   note: string;
 };
 
 type Actions = {
   infoReset: () => void;
-  setCashRegisterTypePostsId: (value: string) => void;
-  setCashRegisterPostsId: (value: string) => void;
+  setCashRegisterTypePostsId: (value: number) => void;
+  setCashRegisterPostsId: (value: number) => void;
   setType: (value: string) => void;
-  setAmount: (value: string) => void;
-  setChange: (value: string) => void;
-  setCurrenciesId: (value: string) => void;
+  setAmount: (value: number) => void;
+  setChange: (value: number) => void;
+  setCurrenciesId: (value: number) => void;
   setNote: (value: string) => void;
 };
 
@@ -37,21 +37,21 @@ export type UseGafpriAttributesCashTransactionsReturn = {
 };
 
 export function useGafpriAttributesCashTransactions(): UseGafpriAttributesCashTransactionsReturn {
-  const [cashRegisterTypePostsId, setCashRegisterTypePostsId] = useState('');
-  const [cashRegisterPostsId, setCashRegisterPostsId] = useState('');
+  const [cashRegisterTypePostsId, setCashRegisterTypePostsId] = useState(0);
+  const [cashRegisterPostsId, setCashRegisterPostsId] = useState(0);
   const [type, setType] = useState('');
-  const [amount, setAmount] = useState('');
-  const [change, setChange] = useState('');
-  const [currenciesId, setCurrenciesId] = useState('');
+  const [amount, setAmount] = useState(0);
+  const [change, setChange] = useState(0);
+  const [currenciesId, setCurrenciesId] = useState(0);
   const [note, setNote] = useState('');
 
   const infoReset = (): void => {
-    setCashRegisterTypePostsId('');
-    setCashRegisterPostsId('');
+    setCashRegisterTypePostsId(0);
+    setCashRegisterPostsId(0);
     setType('');
-    setAmount('');
-    setChange('');
-    setCurrenciesId('');
+    setAmount(0);
+    setChange(0);
+    setCurrenciesId(0);
     setNote('');
   };
 

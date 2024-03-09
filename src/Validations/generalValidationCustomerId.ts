@@ -16,7 +16,7 @@ export const generalValidationCustomerId = ({
   required = true,
   inputId = '',
 }: GeneralValidationCustomerIdProps): boolean => {
-  const valid = value !== null ? value : 1;
+  const valid = value !== null ? value : 0;
   return validationInputNumbersWithValue({
     value: valid,
     inputId: `${CUSTOMER_ID_INPUT}${inputId}`,

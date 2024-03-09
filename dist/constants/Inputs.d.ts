@@ -65,3 +65,6 @@ export declare const REFFERED_ID_INPUT = "reffered-id-input-id";
 export declare const SHIPPING_AREAS_INPUT = "shipping-areas-input-id";
 export declare const SHIPPING_TIME_DAYS_INPUT = "shipping-time-days-input-id";
 export declare const AVAILABLE_SHIPPING_SERVICES_INPUT = "available-shipping-services-input-id";
+export declare const SUPPLIER_ID_INPUT = "supplier-id-input-id";
+export declare const EXPENSES_TYPE_INPUT = "expenses-type-input-id";
+export declare const PROJECTS_ID_INPUT = "projects-id-input-id";

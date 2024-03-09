@@ -117,6 +117,12 @@ Object.defineProperty(exports, "generalChangeEmail", {
     return _generalChangeEmail.generalChangeEmail;
   }
 });
+Object.defineProperty(exports, "generalChangeExpensesTypeId", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeExpensesTypeId.generalChangeExpensesTypeId;
+  }
+});
 Object.defineProperty(exports, "generalChangeGalleryPhoto", {
   enumerable: true,
   get: function get() {
@@ -201,6 +207,12 @@ Object.defineProperty(exports, "generalChangePostCode", {
     return _generalChangePostCode.generalChangePostCode;
   }
 });
+Object.defineProperty(exports, "generalChangeProjectsId", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeProjectsId.generalChangeProjectsId;
+  }
+});
 Object.defineProperty(exports, "generalChangeQtyPack", {
   enumerable: true,
   get: function get() {
@@ -271,6 +283,12 @@ Object.defineProperty(exports, "generalChangeStatus", {
   enumerable: true,
   get: function get() {
     return _generalChangeStatus.generalChangeStatus;
+  }
+});
+Object.defineProperty(exports, "generalChangeSupplierId", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeSupplierId.generalChangeSupplierId;
   }
 });
 Object.defineProperty(exports, "generalChangeTags", {
@@ -409,3 +427,6 @@ var _generalChangeShippingAreas = require("./generalChangeShippingAreas");
 var _generalChangeShippingTimeDays = require("./generalChangeShippingTimeDays");
 var _generalChangeAvailableShippingServices = require("./generalChangeAvailableShippingServices");
 var _generalChangeRegion = require("./generalChangeRegion");
+var _generalChangeSupplierId = require("./generalChangeSupplierId");
+var _generalChangeExpensesTypeId = require("./generalChangeExpensesTypeId");
+var _generalChangeProjectsId = require("./generalChangeProjectsId");

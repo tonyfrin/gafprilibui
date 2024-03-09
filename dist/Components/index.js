@@ -27,6 +27,12 @@ Object.defineProperty(exports, "EntityBudget", {
     return _Entity.EntityBudget;
   }
 });
+Object.defineProperty(exports, "EntityExpenses", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.EntityExpenses;
+  }
+});
 Object.defineProperty(exports, "EntityOrder", {
   enumerable: true,
   get: function get() {

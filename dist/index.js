@@ -621,6 +621,12 @@ Object.defineProperty(exports, "Error", {
     return _Abstract.Error;
   }
 });
+Object.defineProperty(exports, "ExpensesCashRegister", {
+  enumerable: true,
+  get: function get() {
+    return _Components.ExpensesCashRegister;
+  }
+});
 Object.defineProperty(exports, "ExpensesInit", {
   enumerable: true,
   get: function get() {

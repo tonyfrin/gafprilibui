@@ -39,6 +39,12 @@ Object.defineProperty(exports, "EntityOrder", {
     return _Entity.EntityOrder;
   }
 });
+Object.defineProperty(exports, "ExpensesCashRegister", {
+  enumerable: true,
+  get: function get() {
+    return _Expenses.ExpensesCashRegister;
+  }
+});
 Object.defineProperty(exports, "ExpensesType", {
   enumerable: true,
   get: function get() {
@@ -191,3 +197,4 @@ var _Storage = require("./Storage");
 var _Taxes = require("./Taxes");
 var _CashRegisterType = require("./CashRegisterType");
 var _ExpensesType = require("./ExpensesType");
+var _Expenses = require("./Expenses");

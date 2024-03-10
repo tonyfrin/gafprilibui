@@ -94,7 +94,7 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
   var goExpensesEntity = function goExpensesEntity(entity) {
     useAttributes.actions.setEntity(entity);
     useAttributes.actions.changeSupplierId(entity.id);
-    onExpensesForm();
+    onExpensesCrForm();
   };
   var returnInit = function returnInit() {
     useAttributes.actions.infoReset();

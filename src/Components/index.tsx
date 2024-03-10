@@ -69,3 +69,8 @@ export type {
   ExpensesTypeProps,
   ExpensesTypePropsExtended,
 } from './ExpensesType';
+export { ExpensesCashRegister } from './Expenses';
+export type {
+  ExpensesCashRegisterProps,
+  ExpensesCashRegisterStylesContainerProps,
+} from './Expenses';

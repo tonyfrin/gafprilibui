@@ -110,7 +110,7 @@ export const useGafpriPagesExpenses = ({
   const goExpensesEntity = (entity: EntityAttributes): void => {
     useAttributes.actions.setEntity(entity);
     useAttributes.actions.changeSupplierId(entity.id);
-    onExpensesForm();
+    onExpensesCrForm();
   };
 
   const returnInit = (): void => {

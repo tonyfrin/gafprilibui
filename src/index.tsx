@@ -742,6 +742,7 @@ export {
   CashRegisterType,
   ExpensesType,
   EntityExpenses,
+  ExpensesCashRegister,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -786,6 +787,7 @@ export type {
   ExpensesTypePropsExtended,
   EntityExpensesStylesContainerProps,
   EntityExpensesProps,
+  ExpensesCashRegisterProps,
 } from './Components';
 export {
   addClass,

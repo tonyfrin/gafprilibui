@@ -29,10 +29,8 @@ export type ExpensesCashRegisterProps = {
   useCurrencies: UseCurrenciesReturn;
   returnInitModule: () => void;
   sitesOptions: SiteOptions;
-  containerStyles?: ExpensesCashRegisterStylesContainerProps;
   containerProps?: React.HTMLAttributes<HTMLDivElement>;
   menuEntity: MainMenuItems[];
-  uploadOrderOnlyProducts: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const ExpensesCashRegister = ({

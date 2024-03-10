@@ -11,6 +11,7 @@ export type UseGafpriPagesExpensesReturn = {
     isEntitySearch: boolean;
     isAddEntity: boolean;
     isExpensesForm: boolean;
+    isExpensesCrForm: boolean;
   };
   actions: {
     onFetching: () => void;
@@ -18,6 +19,7 @@ export type UseGafpriPagesExpensesReturn = {
     onEntitySearch: () => void;
     onAddEntity: () => void;
     onExpensesForm: () => void;
+    onExpensesCrForm: () => void;
     returnInit: () => void;
     processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
     processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;
@@ -38,10 +40,11 @@ export const useGafpriPagesExpenses = ({
   useEntity,
 }: UseGafpriPagesExpensesProps): UseGafpriPagesExpensesReturn => {
   const [isFetching, setIsFetching] = useState(false);
-  const [isInit, setIsInit] = useState(true); // busqueda del cliente
-  const [isEntitySearch, setIsEntitySearch] = useState(false); // tabla de busqueda del cliente
-  const [isAddEntity, setIsAddEntity] = useState(false); // formulario de Add Entity
-  const [isExpensesForm, setIsExpensesForm] = useState(false); // formulario de ventas
+  const [isInit, setIsInit] = useState(true);
+  const [isEntitySearch, setIsEntitySearch] = useState(false);
+  const [isAddEntity, setIsAddEntity] = useState(false);
+  const [isExpensesForm, setIsExpensesForm] = useState(false);
+  const [isExpensesCrForm, setIsExpensesCrForm] = useState(false);
 
   // Funciones de paginas
   const onFetching = (): void => {
@@ -50,6 +53,7 @@ export const useGafpriPagesExpenses = ({
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(false);
+    setIsExpensesCrForm(false);
     scrollToTop();
   };
 
@@ -59,6 +63,7 @@ export const useGafpriPagesExpenses = ({
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(false);
+    setIsExpensesCrForm(false);
     scrollToTop();
   };
 
@@ -68,6 +73,7 @@ export const useGafpriPagesExpenses = ({
     setIsEntitySearch(true);
     setIsAddEntity(false);
     setIsExpensesForm(false);
+    setIsExpensesCrForm(false);
     scrollToTop();
   };
 
@@ -77,6 +83,7 @@ export const useGafpriPagesExpenses = ({
     setIsEntitySearch(false);
     setIsAddEntity(true);
     setIsExpensesForm(false);
+    setIsExpensesCrForm(false);
     scrollToTop();
   };
 
@@ -86,15 +93,17 @@ export const useGafpriPagesExpenses = ({
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(true);
+    setIsExpensesCrForm(false);
     scrollToTop();
   };
 
-  const onProductSearch = (): void => {
+  const onExpensesCrForm = (): void => {
     setIsFetching(false);
     setIsInit(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(false);
+    setIsExpensesCrForm(true);
     scrollToTop();
   };
 
@@ -182,6 +191,7 @@ export const useGafpriPagesExpenses = ({
     isEntitySearch,
     isAddEntity,
     isExpensesForm,
+    isExpensesCrForm,
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -191,7 +201,7 @@ export const useGafpriPagesExpenses = ({
     onEntitySearch,
     onAddEntity,
     onExpensesForm,
-    onProductSearch,
+    onExpensesCrForm,
     returnInit,
     processEntityBydocumentId,
     processEntityByName,

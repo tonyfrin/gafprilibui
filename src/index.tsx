@@ -261,6 +261,10 @@ export {
   ExpensesInit,
   EntityExpensesInit,
   EntityExpensesSearch,
+  SelectProjectId,
+  SelectExpensesType,
+  InputNote,
+  InputInvoice,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -704,6 +708,10 @@ export type {
   EntityExpensesInitStylesContainerProps,
   EntityExpensesSearchProps,
   LogoProps,
+  SelectProjectIdProps,
+  SelectExpensesTypeProps,
+  InputNoteProps,
+  InputInvoiceProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -1037,6 +1045,7 @@ export {
   PROJECTS_ID_INPUT,
   EXPENSES_ROUTE,
   EXPENSES_STORAGE,
+  INVOICE_INPUT,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {

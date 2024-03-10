@@ -345,6 +345,12 @@ Object.defineProperty(exports, "Error", {
     return _Error.Error;
   }
 });
+Object.defineProperty(exports, "ExpensesCrForm", {
+  enumerable: true,
+  get: function get() {
+    return _Expenses.ExpensesCrForm;
+  }
+});
 Object.defineProperty(exports, "ExpensesInit", {
   enumerable: true,
   get: function get() {
@@ -567,6 +573,12 @@ Object.defineProperty(exports, "InputHeight", {
     return _Input.InputHeight;
   }
 });
+Object.defineProperty(exports, "InputInvoice", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputInvoice;
+  }
+});
 Object.defineProperty(exports, "InputLastName", {
   enumerable: true,
   get: function get() {
@@ -583,6 +595,12 @@ Object.defineProperty(exports, "InputName", {
   enumerable: true,
   get: function get() {
     return _Input.InputName;
+  }
+});
+Object.defineProperty(exports, "InputNote", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputNote;
   }
 });
 Object.defineProperty(exports, "InputOfferPrice", {
@@ -1041,6 +1059,12 @@ Object.defineProperty(exports, "SelectDocumentIdIndex", {
     return _Input.SelectDocumentIdIndex;
   }
 });
+Object.defineProperty(exports, "SelectExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectExpensesType;
+  }
+});
 Object.defineProperty(exports, "SelectPackageType", {
   enumerable: true,
   get: function get() {
@@ -1051,6 +1075,12 @@ Object.defineProperty(exports, "SelectParentId", {
   enumerable: true,
   get: function get() {
     return _Input.SelectParentId;
+  }
+});
+Object.defineProperty(exports, "SelectProjectId", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectProjectId;
   }
 });
 Object.defineProperty(exports, "SelectRegion", {

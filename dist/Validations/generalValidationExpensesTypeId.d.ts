@@ -1,8 +1,7 @@
 export type GeneralValidationExpensesTypeIdProps = {
-    value: number | null;
+    value: string;
     setValid: (value: boolean) => void;
     currentValid: boolean;
-    required?: boolean;
     inputId?: string;
 };
-export declare const generalValidationExpensesTypeId: ({ value, setValid, currentValid, required, inputId, }: GeneralValidationExpensesTypeIdProps) => boolean;
+export declare const generalValidationExpensesTypeId: ({ value, setValid, currentValid, inputId, }: GeneralValidationExpensesTypeIdProps) => boolean;

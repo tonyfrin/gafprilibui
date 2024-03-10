@@ -5,21 +5,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generalValidationProjectsId = void 0;
 var _constants = require("../constants");
-var _index = require("./index");
+var _helpers = require("../helpers");
 var generalValidationProjectsId = exports.generalValidationProjectsId = function generalValidationProjectsId(_ref) {
   var value = _ref.value,
     setValid = _ref.setValid,
     currentValid = _ref.currentValid,
-    _ref$required = _ref.required,
-    required = _ref$required === void 0 ? true : _ref$required,
     _ref$inputId = _ref.inputId,
     inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
-  var valid = value !== null ? value : 0;
-  return (0, _index.validationInputNumbersWithValue)({
-    value: valid,
-    inputId: "".concat(_constants.PROJECTS_ID_INPUT).concat(inputId),
-    setValid: setValid,
-    currentValid: currentValid,
-    required: required
-  });
+  var valid = (0, _helpers.validationSelect)(value, "".concat(_constants.PROJECTS_ID_INPUT).concat(inputId));
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
 };

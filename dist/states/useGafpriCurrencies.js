@@ -318,6 +318,15 @@ function useGafpriCurrencies(_ref) {
       return currency.id === id;
     })) || null;
   }
+  function getOptionsItems() {
+    var _currencies$data$item3;
+    return ((_currencies$data$item3 = currencies.data.items) === null || _currencies$data$item3 === void 0 ? void 0 : _currencies$data$item3.map(function (item) {
+      return {
+        value: "".concat(item.id),
+        label: item.name
+      };
+    })) || [];
+  }
   var updateCurrency = function updateCurrency() {
     if (nameValid && symbolValid && token) {
       (0, _helpers.gafpriFetch)({
@@ -442,7 +451,8 @@ function useGafpriCurrencies(_ref) {
     deleteCurrency: deleteCurrency,
     handleNewCurrency: handleNewCurrency,
     handleUpdatedCurrency: handleUpdatedCurrency,
-    handleDeletedCurrency: handleDeletedCurrency
+    handleDeletedCurrency: handleDeletedCurrency,
+    getOptionsItems: getOptionsItems
   };
   return {
     states: states,

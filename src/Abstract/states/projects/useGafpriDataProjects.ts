@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { getItem, saveItem } from '../../../Context';
-import { getLastEntryDateAndCount, gafpriFetch } from '../../../helpers';
+import {
+  getLastEntryDateAndCount,
+  gafpriFetch,
+  SelectDefault,
+} from '../../../helpers';
 import { PROJECTS_STORAGE, PROJECTS_ROUTE } from '../../../constants';
 import type { PostsAttributes } from '../../../states';
 
@@ -39,6 +43,8 @@ type Actions = {
   handleUpdatedItem: (updatedProject: ProjectsAttributes) => void;
 
   handleDeletedItem: ({ itemId }: DeletedProject) => void;
+
+  getOptionsItems: () => SelectDefault[];
 };
 
 export type UseGafpriDataProjectsReturn = {
@@ -179,6 +185,17 @@ export function useGafpriDataProjects({
     return items.data.items?.find((project) => project.postsId === id) || null;
   }
 
+  function getOptionsItems(): SelectDefault[] {
+    return (
+      items.data.items?.map((item) => {
+        return {
+          value: `${item.postsId}`,
+          label: item.name,
+        };
+      }) || []
+    );
+  }
+
   /**
    * Effects
    *
@@ -211,6 +228,8 @@ export function useGafpriDataProjects({
     handleUpdatedItem,
 
     handleDeletedItem,
+
+    getOptionsItems,
   };
 
   return {

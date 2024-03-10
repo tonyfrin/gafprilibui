@@ -107,6 +107,10 @@ export {
   InputHeight,
   InputWidth,
   InputLength,
+  SelectProjectId,
+  SelectExpensesType,
+  InputNote,
+  InputInvoice,
 } from './Input';
 export type {
   InputStyle,
@@ -174,6 +178,10 @@ export type {
   InputHeightProps,
   InputWidthProps,
   InputLengthProps,
+  SelectProjectIdProps,
+  SelectExpensesTypeProps,
+  InputNoteProps,
+  InputInvoiceProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -791,8 +799,9 @@ export type {
   ExpensesTypeFormProps,
   ExpensesTypeFormPropsExtended,
 } from './ExpensesType';
-export { ExpensesInit } from './Expenses';
+export { ExpensesInit, ExpensesCrForm } from './Expenses';
 export type {
   ExpensesInitStylesContainerProps,
   ExpensesInitProps,
+  ExpensesCrFormProps,
 } from './Expenses';

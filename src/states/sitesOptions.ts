@@ -22,4 +22,5 @@ export type SiteOptions = {
   host: string;
   footerBudget: string[];
   budgetValidation: string;
+  currencyId: number;
 };

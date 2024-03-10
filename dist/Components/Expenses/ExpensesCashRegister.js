@@ -14,6 +14,7 @@ var _excluded = ["className"];
 var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashRegister(_ref) {
   var use = _ref.use,
     useEntity = _ref.useEntity,
+    useCurrencies = _ref.useCurrencies,
     returnInitModule = _ref.returnInitModule,
     _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
@@ -39,10 +40,14 @@ var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashR
     use: useEntity,
     useExpenses: use,
     menu: menuEntity
-  })), use.pages.states.isExpensesForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
-    keyName: "sales",
-    isVisible: use.pages.states.isExpensesForm
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+  })), use.pages.states.isExpensesCrForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+    keyName: "ExpensesCrForm",
+    isVisible: use.pages.states.isExpensesCrForm
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.ExpensesCrForm, {
+    use: use,
+    siteOptions: sitesOptions,
+    useCurrencies: useCurrencies
+  }))), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entitySearch",
     isVisible: use.pages.states.isEntitySearch
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.EntityExpensesSearch, {

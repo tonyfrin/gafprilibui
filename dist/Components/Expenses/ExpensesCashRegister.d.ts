@@ -1,5 +1,5 @@
 import React, { KeyboardEvent } from 'react';
-import { UseGafpriExpensesReturn, UseGafpriEntityReturn, SiteOptions } from '../../states';
+import { UseGafpriExpensesReturn, UseGafpriEntityReturn, SiteOptions, UseCurrenciesReturn } from '../../states';
 import { MainMenuItems } from '../../Abstract';
 export type ExpensesCashRegisterStylesContainerProps = {
     backgroundImage?: string;
@@ -11,6 +11,7 @@ export type ExpensesCashRegisterStylesContainerProps = {
 export type ExpensesCashRegisterProps = {
     use: UseGafpriExpensesReturn;
     useEntity: UseGafpriEntityReturn;
+    useCurrencies: UseCurrenciesReturn;
     returnInitModule: () => void;
     sitesOptions: SiteOptions;
     containerStyles?: ExpensesCashRegisterStylesContainerProps;
@@ -18,4 +19,4 @@ export type ExpensesCashRegisterProps = {
     menuEntity: MainMenuItems[];
     uploadOrderOnlyProducts: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
-export declare const ExpensesCashRegister: ({ use, useEntity, returnInitModule, containerProps, sitesOptions, menuEntity, }: ExpensesCashRegisterProps) => JSX.Element;
+export declare const ExpensesCashRegister: ({ use, useEntity, useCurrencies, returnInitModule, containerProps, sitesOptions, menuEntity, }: ExpensesCashRegisterProps) => JSX.Element;

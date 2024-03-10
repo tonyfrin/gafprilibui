@@ -1,22 +1,27 @@
+import { SingleValue } from 'react-select';
+import { changeSelect, SelectDefault } from '../helpers';
+
 export type GeneralChangeProjectsIdProps = {
-  value: number;
-  validation?: (valueValid: number) => boolean;
-  setValue: (transformedValue: number) => void;
+  options: SingleValue<{ value: string; label: string }>;
+  validation?: (valueValid: string) => boolean;
+  setDefault: (valueDefault: SelectDefault) => void;
+  setValue: (transformedValue: string) => void;
 };
 
 export const generalChangeProjectsId = ({
-  value,
+  options,
   validation,
+  setDefault,
   setValue,
 }: GeneralChangeProjectsIdProps): void => {
   const defaultValidation = (): boolean => {
     return true;
   };
 
-  const newValidations = validation || defaultValidation;
-
-  const valid = newValidations(value);
-  if (valid) {
-    setValue(value);
-  }
+  changeSelect({
+    newValue: options,
+    validation: validation || defaultValidation,
+    setDefault,
+    setValue,
+  });
 };

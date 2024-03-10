@@ -5,6 +5,7 @@ import {
   CustomErrorResponseProps,
   gafpriFetch,
   scrollToTop,
+  SelectDefault,
 } from '../helpers';
 import { getItem, saveItem } from '../Context';
 import type { UseErrorReturn } from './useGafpriError';
@@ -120,6 +121,8 @@ type Actions = {
   handleUpdatedCurrency: (updatedCurrency: CurrenciesAttributes) => void;
 
   handleDeletedCurrency: ({ itemId }: DeletedCurrency) => void;
+
+  getOptionsItems: () => SelectDefault[];
 };
 
 export type UseCurrenciesReturn = {
@@ -409,6 +412,17 @@ export function useGafpriCurrencies({
     );
   }
 
+  function getOptionsItems(): SelectDefault[] {
+    return (
+      currencies.data.items?.map((item) => {
+        return {
+          value: `${item.id}`,
+          label: item.name,
+        };
+      }) || []
+    );
+  }
+
   const updateCurrency = (): void => {
     if (nameValid && symbolValid && token) {
       gafpriFetch({
@@ -556,6 +570,7 @@ export function useGafpriCurrencies({
     handleNewCurrency,
     handleUpdatedCurrency,
     handleDeletedCurrency,
+    getOptionsItems,
   };
 
   return {

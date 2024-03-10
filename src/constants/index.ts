@@ -75,6 +75,7 @@ export {
   SUPPLIER_ID_INPUT,
   EXPENSES_TYPE_INPUT,
   PROJECTS_ID_INPUT,
+  INVOICE_INPUT,
 } from './Inputs';
 export {
   COUNTRY_DEFAULT,

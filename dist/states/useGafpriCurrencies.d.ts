@@ -1,3 +1,4 @@
+import { SelectDefault } from '../helpers';
 import type { UseErrorReturn } from './useGafpriError';
 export interface CurrenciesAttributes {
     id: number;
@@ -60,6 +61,7 @@ type Actions = {
     handleNewCurrency: (newCurrency: CurrenciesAttributes) => void;
     handleUpdatedCurrency: (updatedCurrency: CurrenciesAttributes) => void;
     handleDeletedCurrency: ({ itemId }: DeletedCurrency) => void;
+    getOptionsItems: () => SelectDefault[];
 };
 export type UseCurrenciesReturn = {
     states: State;

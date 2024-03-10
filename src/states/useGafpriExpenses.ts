@@ -13,6 +13,9 @@ import {
   UseGafpriDataExpensesReturn,
   useGafpriDataExpenses,
 } from '../Abstract';
+import { UseGafpriProjectsReturn } from './useGafpriProjects';
+import { UseCurrenciesReturn } from './useGafpriCurrencies';
+import { UseGafpriExpensesTypeReturn } from './useGafpriExpensesType';
 
 export interface UseGafpriExpensesReturn {
   attributes: UseGafpriAttributesExpensesReturn;
@@ -26,11 +29,17 @@ export interface UseGafpriExpensesReturn {
 export type UseGafpriExpensesProps = {
   token: string | null;
   useEntity: UseGafpriEntityReturn;
+  useProject: UseGafpriProjectsReturn;
+  useCurrencies: UseCurrenciesReturn;
+  useExpensesType: UseGafpriExpensesTypeReturn;
 };
 
 export function useGafpriExpenses({
   token,
   useEntity,
+  useProject,
+  useCurrencies,
+  useExpensesType,
 }: UseGafpriExpensesProps): UseGafpriExpensesReturn {
   /**
    * States
@@ -39,7 +48,11 @@ export function useGafpriExpenses({
    */
 
   const error = useGafpriError();
-  const attributes = useGafpriAttributesExpenses();
+  const attributes = useGafpriAttributesExpenses({
+    currencies: useCurrencies,
+    projects: useProject,
+    expensesType: useExpensesType,
+  });
   const data = useGafpriDataExpenses({ token });
   const paginations = useGafpriPaginationsExpenses({ useData: data });
   const pages = useGafpriPagesExpenses({

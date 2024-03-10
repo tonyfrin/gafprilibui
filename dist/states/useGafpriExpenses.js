@@ -8,7 +8,10 @@ var _useGafpriError = require("./useGafpriError");
 var _Abstract = require("../Abstract");
 function useGafpriExpenses(_ref) {
   var token = _ref.token,
-    useEntity = _ref.useEntity;
+    useEntity = _ref.useEntity,
+    useProject = _ref.useProject,
+    useCurrencies = _ref.useCurrencies,
+    useExpensesType = _ref.useExpensesType;
   /**
    * States
    *
@@ -16,7 +19,11 @@ function useGafpriExpenses(_ref) {
    */
 
   var error = (0, _useGafpriError.useGafpriError)();
-  var attributes = (0, _Abstract.useGafpriAttributesExpenses)();
+  var attributes = (0, _Abstract.useGafpriAttributesExpenses)({
+    currencies: useCurrencies,
+    projects: useProject,
+    expensesType: useExpensesType
+  });
   var data = (0, _Abstract.useGafpriDataExpenses)({
     token: token
   });

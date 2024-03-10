@@ -1,11 +1,10 @@
 import { EXPENSES_TYPE_INPUT } from '../constants';
-import { validationInputNumbersWithValue } from './index';
+import { validationSelect } from '../helpers';
 
 export type GeneralValidationExpensesTypeIdProps = {
-  value: number | null;
+  value: string;
   setValid: (value: boolean) => void;
   currentValid: boolean;
-  required?: boolean;
   inputId?: string;
 };
 
@@ -13,15 +12,11 @@ export const generalValidationExpensesTypeId = ({
   value,
   setValid,
   currentValid,
-  required = true,
   inputId = '',
 }: GeneralValidationExpensesTypeIdProps): boolean => {
-  const valid = value !== null ? value : 0;
-  return validationInputNumbersWithValue({
-    value: valid,
-    inputId: `${EXPENSES_TYPE_INPUT}${inputId}`,
-    setValid,
-    currentValid,
-    required,
-  });
+  const valid = validationSelect(value, `${EXPENSES_TYPE_INPUT}${inputId}`);
+  if (valid !== currentValid) {
+    setValid(valid);
+  }
+  return valid;
 };

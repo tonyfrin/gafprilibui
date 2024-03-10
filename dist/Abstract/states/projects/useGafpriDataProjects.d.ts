@@ -1,3 +1,4 @@
+import { SelectDefault } from '../../../helpers';
 import type { PostsAttributes } from '../../../states';
 export interface ProjectsAttributes {
     postsId: number;
@@ -24,6 +25,7 @@ type Actions = {
     handleNewItem: (newProject: ProjectsAttributes) => void;
     handleUpdatedItem: (updatedProject: ProjectsAttributes) => void;
     handleDeletedItem: ({ itemId }: DeletedProject) => void;
+    getOptionsItems: () => SelectDefault[];
 };
 export type UseGafpriDataProjectsReturn = {
     states: State;

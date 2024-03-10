@@ -4,16 +4,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.generalChangeExpensesTypeId = void 0;
+var _helpers = require("../helpers");
 var generalChangeExpensesTypeId = exports.generalChangeExpensesTypeId = function generalChangeExpensesTypeId(_ref) {
-  var value = _ref.value,
+  var options = _ref.options,
     validation = _ref.validation,
+    setDefault = _ref.setDefault,
     setValue = _ref.setValue;
   var defaultValidation = function defaultValidation() {
     return true;
   };
-  var newValidations = validation || defaultValidation;
-  var valid = newValidations(value);
-  if (valid) {
-    setValue(value);
-  }
+  (0, _helpers.changeSelect)({
+    newValue: options,
+    validation: validation || defaultValidation,
+    setDefault: setDefault,
+    setValue: setValue
+  });
 };

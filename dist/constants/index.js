@@ -285,6 +285,12 @@ Object.defineProperty(exports, "HEIGHT_INPUT", {
     return _Inputs.HEIGHT_INPUT;
   }
 });
+Object.defineProperty(exports, "INVOICE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.INVOICE_INPUT;
+  }
+});
 Object.defineProperty(exports, "LAST_NAME_INPUT", {
   enumerable: true,
   get: function get() {

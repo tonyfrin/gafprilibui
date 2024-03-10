@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { getLastEntryDateAndCount, gafpriFetch } from '../../../helpers';
+import {
+  getLastEntryDateAndCount,
+  gafpriFetch,
+  SelectDefault,
+} from '../../../helpers';
 import { getItem, saveItem } from '../../../Context';
 import { EXPENSES_TYPE_STORAGE, EXPENSES_TYPE_ROUTE } from '../../../constants';
 import { UseGafpriAttributesExpensesTypeReturn } from './useGafpriAttributesExpensesType';
@@ -44,6 +48,8 @@ type Actions = {
   handleUpdatedItem: (updatedCurrency: ExpensesTypeAttributes) => void;
 
   handleDeletedItem: ({ itemId }: DeletedExpensesType) => void;
+
+  getOptionsItems: () => SelectDefault[];
 };
 
 export type UseGafpriDataExpensesTypeReturn = {
@@ -193,6 +199,17 @@ export function useGafpriDataExpensesType({
     return children;
   }
 
+  function getOptionsItems(): SelectDefault[] {
+    return (
+      items.data.items?.map((item) => {
+        return {
+          value: `${item.id}`,
+          label: item.name,
+        };
+      }) || []
+    );
+  }
+
   /**
    * Effects
    *
@@ -243,6 +260,7 @@ export function useGafpriDataExpensesType({
     handleUpdatedItem,
     handleDeletedItem,
     getChildren,
+    getOptionsItems,
   };
 
   return {

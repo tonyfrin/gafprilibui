@@ -150,6 +150,15 @@ function useGafpriDataProjects(_ref) {
       return project.postsId === id;
     })) || null;
   }
+  function getOptionsItems() {
+    var _items$data$items3;
+    return ((_items$data$items3 = items.data.items) === null || _items$data$items3 === void 0 ? void 0 : _items$data$items3.map(function (item) {
+      return {
+        value: "".concat(item.postsId),
+        label: item.name
+      };
+    })) || [];
+  }
 
   /**
    * Effects
@@ -176,7 +185,8 @@ function useGafpriDataProjects(_ref) {
     getById: getById,
     handleNewItem: handleNewItem,
     handleUpdatedItem: handleUpdatedItem,
-    handleDeletedItem: handleDeletedItem
+    handleDeletedItem: handleDeletedItem,
+    getOptionsItems: getOptionsItems
   };
   return {
     states: states,

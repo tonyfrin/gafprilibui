@@ -36,7 +36,12 @@ function useGafpriAttributesGeneralPaymentMethods() {
     useCashTransactions.actions.infoReset();
     setArrayPaymentMethod([]);
   };
-  var addCashTransaction = function addCashTransaction() {
+  var addCashTransaction = function addCashTransaction(cashRegisterTypePostsId, cashRegisterPostsId, type) {
+    useCashTransactions.actions.setCashRegisterTypePostsId(cashRegisterTypePostsId);
+    useCashTransactions.actions.setCashRegisterPostsId(cashRegisterPostsId);
+    useCashTransactions.actions.setType(type);
+    usePaymentMethods.actions.setMethodType('cash');
+    usePaymentMethods.actions.setType(type);
     setArrayPaymentMethod([_objectSpread(_objectSpread({}, arrayPaymentMethod), {}, {
       paymentMethod: usePaymentMethods.states,
       cashTransactions: useCashTransactions.states

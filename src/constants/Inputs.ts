@@ -70,3 +70,4 @@ export const AVAILABLE_SHIPPING_SERVICES_INPUT =
 export const SUPPLIER_ID_INPUT = 'supplier-id-input-id';
 export const EXPENSES_TYPE_INPUT = 'expenses-type-input-id';
 export const PROJECTS_ID_INPUT = 'projects-id-input-id';
+export const INVOICE_INPUT = 'invoice-input-id';

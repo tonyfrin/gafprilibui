@@ -1,6 +1,12 @@
+import { SingleValue } from 'react-select';
+import { SelectDefault } from '../helpers';
 export type GeneralChangeProjectsIdProps = {
-    value: number;
-    validation?: (valueValid: number) => boolean;
-    setValue: (transformedValue: number) => void;
+    options: SingleValue<{
+        value: string;
+        label: string;
+    }>;
+    validation?: (valueValid: string) => boolean;
+    setDefault: (valueDefault: SelectDefault) => void;
+    setValue: (transformedValue: string) => void;
 };
-export declare const generalChangeProjectsId: ({ value, validation, setValue, }: GeneralChangeProjectsIdProps) => void;
+export declare const generalChangeProjectsId: ({ options, validation, setDefault, setValue, }: GeneralChangeProjectsIdProps) => void;

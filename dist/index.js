@@ -705,6 +705,12 @@ Object.defineProperty(exports, "HorizontalMenu", {
     return _Abstract.HorizontalMenu;
   }
 });
+Object.defineProperty(exports, "INVOICE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _constants.INVOICE_INPUT;
+  }
+});
 Object.defineProperty(exports, "InitCashRegisterType", {
   enumerable: true,
   get: function get() {
@@ -855,6 +861,12 @@ Object.defineProperty(exports, "InputHeight", {
     return _Abstract.InputHeight;
   }
 });
+Object.defineProperty(exports, "InputInvoice", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputInvoice;
+  }
+});
 Object.defineProperty(exports, "InputLastName", {
   enumerable: true,
   get: function get() {
@@ -871,6 +883,12 @@ Object.defineProperty(exports, "InputName", {
   enumerable: true,
   get: function get() {
     return _Abstract.InputName;
+  }
+});
+Object.defineProperty(exports, "InputNote", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InputNote;
   }
 });
 Object.defineProperty(exports, "InputOfferPrice", {
@@ -1779,6 +1797,12 @@ Object.defineProperty(exports, "SelectDocumentIdIndex", {
     return _Abstract.SelectDocumentIdIndex;
   }
 });
+Object.defineProperty(exports, "SelectExpensesType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectExpensesType;
+  }
+});
 Object.defineProperty(exports, "SelectPackageType", {
   enumerable: true,
   get: function get() {
@@ -1789,6 +1813,12 @@ Object.defineProperty(exports, "SelectParentId", {
   enumerable: true,
   get: function get() {
     return _Abstract.SelectParentId;
+  }
+});
+Object.defineProperty(exports, "SelectProjectId", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SelectProjectId;
   }
 });
 Object.defineProperty(exports, "SelectRegion", {

@@ -1,3 +1,4 @@
+import { SelectDefault } from '../../../helpers';
 import { UseGafpriAttributesExpensesTypeReturn } from './useGafpriAttributesExpensesType';
 export interface ExpensesTypeAttributes {
     id: number;
@@ -29,6 +30,7 @@ type Actions = {
     handleNewItem: (newCurrency: ExpensesTypeAttributes) => void;
     handleUpdatedItem: (updatedCurrency: ExpensesTypeAttributes) => void;
     handleDeletedItem: ({ itemId }: DeletedExpensesType) => void;
+    getOptionsItems: () => SelectDefault[];
 };
 export type UseGafpriDataExpensesTypeReturn = {
     states: State;

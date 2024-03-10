@@ -11,7 +11,7 @@ type State = {
 };
 type Actions = {
     infoReset: () => void;
-    addCashTransaction: () => void;
+    addCashTransaction: (cashRegisterTypePostsId: number, cashRegisterPostsId: number, type: 'deposit' | 'debit') => void;
     emptyPaymentMethodArray: () => void;
     deletePaymentMethod: (index: number) => void;
 };

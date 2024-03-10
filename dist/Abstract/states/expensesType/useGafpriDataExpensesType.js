@@ -158,6 +158,15 @@ function useGafpriDataExpensesType(_ref) {
     }
     return children;
   }
+  function getOptionsItems() {
+    var _items$data$items4;
+    return ((_items$data$items4 = items.data.items) === null || _items$data$items4 === void 0 ? void 0 : _items$data$items4.map(function (item) {
+      return {
+        value: "".concat(item.id),
+        label: item.name
+      };
+    })) || [];
+  }
 
   /**
    * Effects
@@ -210,7 +219,8 @@ function useGafpriDataExpensesType(_ref) {
     handleNewItem: handleNewItem,
     handleUpdatedItem: handleUpdatedItem,
     handleDeletedItem: handleDeletedItem,
-    getChildren: getChildren
+    getChildren: getChildren,
+    getOptionsItems: getOptionsItems
   };
   return {
     states: states,

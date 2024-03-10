@@ -4,12 +4,14 @@ import {
   UseGafpriExpensesReturn,
   UseGafpriEntityReturn,
   SiteOptions,
+  UseCurrenciesReturn,
 } from '../../states';
 import {
   FadeIn,
   MainMenuItems,
   ExpensesInit,
   EntityExpensesSearch,
+  ExpensesCrForm,
 } from '../../Abstract';
 import { EntityExpenses } from '../Entity';
 
@@ -24,6 +26,7 @@ export type ExpensesCashRegisterStylesContainerProps = {
 export type ExpensesCashRegisterProps = {
   use: UseGafpriExpensesReturn;
   useEntity: UseGafpriEntityReturn;
+  useCurrencies: UseCurrenciesReturn;
   returnInitModule: () => void;
   sitesOptions: SiteOptions;
   containerStyles?: ExpensesCashRegisterStylesContainerProps;
@@ -35,6 +38,7 @@ export type ExpensesCashRegisterProps = {
 export const ExpensesCashRegister = ({
   use,
   useEntity,
+  useCurrencies,
   returnInitModule,
   containerProps = {},
   sitesOptions,
@@ -66,15 +70,17 @@ export const ExpensesCashRegister = ({
           <EntityExpenses use={useEntity} useExpenses={use} menu={menuEntity} />
         </FadeIn>
       )}
-      {use.pages.states.isExpensesForm && (
-        <FadeIn keyName="sales" isVisible={use.pages.states.isExpensesForm}>
+      {use.pages.states.isExpensesCrForm && (
+        <FadeIn
+          keyName="ExpensesCrForm"
+          isVisible={use.pages.states.isExpensesCrForm}
+        >
           <>
-            {/* <Sales
-                useOrder={use}
-                sitesOptions={sitesOptions}
-                useProducts={useProducts}
-                uploadOrder={uploadOrderOnlyProducts}
-              /> */}
+            <ExpensesCrForm
+              use={use}
+              siteOptions={sitesOptions}
+              useCurrencies={useCurrencies}
+            />
           </>
         </FadeIn>
       )}

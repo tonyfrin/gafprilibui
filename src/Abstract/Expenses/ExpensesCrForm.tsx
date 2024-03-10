@@ -15,6 +15,8 @@ import type {
   UseCurrenciesReturn,
   UseGafpriExpensesReturn,
 } from '../../states';
+import { SpanValue } from '../Span';
+import { decimalFormatPriceConverter } from '../../helpers';
 
 export type ExpensesCrFormProps = {
   use: UseGafpriExpensesReturn;
@@ -305,18 +307,20 @@ export const ExpensesCrForm = ({
         <ContainerButton
           styles={{
             width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
           <>
-            <Input
-              inputProps={{
-                readOnly: true,
-                value: use.attributes.states.total,
-                title: 'Total',
-              }}
-              styles={{
-                width: '100%',
-              }}
+            <SpanValue value="Total: " />
+            <SpanValue
+              value={decimalFormatPriceConverter(
+                use.attributes.states.total,
+                siteOptions.DECIMAL_NUMBERS,
+                siteOptions.CURRENCY_SYMBOL,
+                siteOptions.CURRENCY_LOCATION,
+                siteOptions.CURRENCY_FORMAT
+              )}
             />
           </>
         </ContainerButton>

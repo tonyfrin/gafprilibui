@@ -226,7 +226,9 @@ function useGafpriAttributesExpenses(_ref) {
     setSubTotalTax(value);
   };
   var changeTotal = function changeTotal() {
-    var newTotal = parseFloat(subTotal) + parseFloat(subTotalTax);
+    var newSubTotal = parseFloat(subTotal) || 0;
+    var newSubTotalTax = parseFloat(subTotalTax) || 0;
+    var newTotal = newSubTotal + newSubTotalTax;
     setTotal("".concat(newTotal));
   };
   var addCashTransaction = function addCashTransaction() {

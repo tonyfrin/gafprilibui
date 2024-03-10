@@ -310,7 +310,9 @@ export function useGafpriAttributesExpenses({
   };
 
   const changeTotal = (): void => {
-    const newTotal = parseFloat(subTotal) + parseFloat(subTotalTax);
+    const newSubTotal = parseFloat(subTotal) || 0;
+    const newSubTotalTax = parseFloat(subTotalTax) || 0;
+    const newTotal = newSubTotal + newSubTotalTax;
     setTotal(`${newTotal}`);
   };
 

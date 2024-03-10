@@ -10,6 +10,8 @@ var _react = _interopRequireDefault(require("react"));
 var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
+var _Span = require("../Span");
+var _helpers = require("../../helpers");
 var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
   var _use$attributes$state, _use$attributes$state2, _use$attributes$state3, _use$attributes$state4, _use$attributes$state5;
   var use = _ref.use,
@@ -235,17 +237,14 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
     }
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '100%'
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'space-between'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, {
-    inputProps: {
-      readOnly: true,
-      value: use.attributes.states.total,
-      title: 'Total'
-    },
-    styles: {
-      width: '100%'
-    }
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
+    value: "Total: "
+  }), /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
+    value: (0, _helpers.decimalFormatPriceConverter)(use.attributes.states.total, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION, siteOptions.CURRENCY_FORMAT)
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%'

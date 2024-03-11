@@ -11,10 +11,14 @@ var useGafpriApiExpenses = exports.useGafpriApiExpenses = function useGafpriApiE
     useAttributes = _ref.useAttributes,
     useError = _ref.useError,
     token = _ref.token;
+  var returnErrorAdd = function returnErrorAdd() {
+    useAttributes.usePayment.actions.infoReset();
+    usePages.actions.onExpensesForm();
+  };
   var newError = function newError(newErrorValue) {
     useError.actions.newError({
       newErrorValue: newErrorValue,
-      functionAction: usePages.actions.onExpensesForm
+      functionAction: returnErrorAdd
     });
   };
   var add = function add() {

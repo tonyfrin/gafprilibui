@@ -31,12 +31,17 @@ export const useGafpriApiExpenses = ({
   useError,
   token,
 }: UseGafpriApiExpensesProps): UseGafpriApiExpensesReturn => {
+  const returnErrorAdd = (): void => {
+    useAttributes.usePayment.actions.infoReset();
+    usePages.actions.onExpensesForm();
+  };
+
   const newError = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
     useError.actions.newError({
       newErrorValue,
-      functionAction: usePages.actions.onExpensesForm,
+      functionAction: returnErrorAdd,
     });
   };
 

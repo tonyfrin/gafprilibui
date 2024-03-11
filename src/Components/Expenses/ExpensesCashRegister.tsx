@@ -77,11 +77,7 @@ export const ExpensesCashRegister = ({
           isVisible={use.pages.states.isExpensesForm}
         >
           <>
-            <ExpensesForm
-              use={use}
-              siteOptions={sitesOptions}
-              useCurrencies={useCurrencies}
-            />
+            <ExpensesForm use={use} siteOptions={sitesOptions} />
           </>
         </FadeIn>
       )}

@@ -51,6 +51,12 @@ Object.defineProperty(exports, "useGafpriExpensesType", {
     return _useGafpriExpensesType.useGafpriExpensesType;
   }
 });
+Object.defineProperty(exports, "useGafpriIncome", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriIncome.useGafpriIncome;
+  }
+});
 Object.defineProperty(exports, "useGafpriLogin", {
   enumerable: true,
   get: function get() {
@@ -150,3 +156,4 @@ var _useGafpriStorage = require("./useGafpriStorage");
 var _useGafpriCashRegisterType = require("./useGafpriCashRegisterType");
 var _useGafpriExpensesType = require("./useGafpriExpensesType");
 var _useGafpriExpenses = require("./useGafpriExpenses");
+var _useGafpriIncome = require("./useGafpriIncome");

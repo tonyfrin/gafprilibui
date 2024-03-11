@@ -42,3 +42,5 @@ export { useGafpriExpensesType } from './useGafpriExpensesType';
 export type { UseGafpriExpensesTypeReturn, UseGafpriExpensesTypeProps, } from './useGafpriExpensesType';
 export { useGafpriExpenses } from './useGafpriExpenses';
 export type { UseGafpriExpensesReturn, UseGafpriExpensesProps, } from './useGafpriExpenses';
+export { useGafpriIncome } from './useGafpriIncome';
+export type { UseGafpriIncomeReturn, UseGafpriIncomeProps, } from './useGafpriIncome';

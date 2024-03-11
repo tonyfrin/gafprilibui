@@ -285,6 +285,18 @@ Object.defineProperty(exports, "HEIGHT_INPUT", {
     return _Inputs.HEIGHT_INPUT;
   }
 });
+Object.defineProperty(exports, "INCOME_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.INCOME_ROUTE;
+  }
+});
+Object.defineProperty(exports, "INCOME_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.INCOME_STORAGE;
+  }
+});
 Object.defineProperty(exports, "INVOICE_INPUT", {
   enumerable: true,
   get: function get() {

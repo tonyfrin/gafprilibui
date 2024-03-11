@@ -46,8 +46,7 @@ var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashR
     isVisible: use.pages.states.isExpensesForm
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.ExpensesForm, {
     use: use,
-    siteOptions: sitesOptions,
-    useCurrencies: useCurrencies
+    siteOptions: sitesOptions
   }))), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entitySearch",
     isVisible: use.pages.states.isEntitySearch

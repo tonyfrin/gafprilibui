@@ -267,6 +267,17 @@ export {
   InputInvoice,
   CashForm,
   CashExpensesPaymentForm,
+  useGafpriAttributesIncome,
+  useGafpriDataIncome,
+  useGafpriPagesIncome,
+  useGafpriApiIncome,
+  useGafpriPaginationsIncome,
+  EntityIncomeSearchForm,
+  EntityIncomeSearch,
+  IncomeInit,
+  IncomeForm,
+  CashIncomePaymentForm,
+  EntityIncomeInit,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -716,6 +727,22 @@ export type {
   InputInvoiceProps,
   CashFormProps,
   CashExpensesPaymentFormProps,
+  UseGafpriAttributesIncomeReturn,
+  UseGafpriDataIncomeReturn,
+  UseGafpriDataIncomeProps,
+  UseGafpriPagesIncomeReturn,
+  UseGafpriApiIncomeReturn,
+  UseGafpriApiIncomeProps,
+  UseGafpriPaginationsIncomeReturn,
+  EntityIncomeSearchFormProps,
+  EntityIncomeSearchProps,
+  EntityIncomeSearchPropsExtended,
+  IncomeInitStylesContainerProps,
+  IncomeInitProps,
+  IncomeFormProps,
+  CashIncomePaymentFormProps,
+  EntityIncomeInitStylesContainerProps,
+  EntityIncomeInitProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -747,6 +774,8 @@ export {
   ExpensesType,
   EntityExpenses,
   ExpensesCashRegister,
+  EntityIncome,
+  IncomeCashRegister,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -792,6 +821,11 @@ export type {
   EntityExpensesStylesContainerProps,
   EntityExpensesProps,
   ExpensesCashRegisterProps,
+  ExpensesCashRegisterStylesContainerProps,
+  EntityIncomeStylesContainerProps,
+  EntityIncomeProps,
+  IncomeCashRegisterProps,
+  IncomeCashRegisterStylesContainerProps,
 } from './Components';
 export {
   addClass,
@@ -860,6 +894,7 @@ export {
   useGafpriCashRegisterType,
   useGafpriExpensesType,
   useGafpriExpenses,
+  useGafpriIncome,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -908,6 +943,8 @@ export type {
   UseGafpriExpensesTypeReturn,
   UseGafpriExpensesReturn,
   UseGafpriExpensesProps,
+  UseGafpriIncomeReturn,
+  UseGafpriIncomeProps,
 } from './states';
 export {
   Countries,
@@ -1052,6 +1089,8 @@ export {
   EXPENSES_ROUTE,
   EXPENSES_STORAGE,
   INVOICE_INPUT,
+  INCOME_ROUTE,
+  INCOME_STORAGE,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {

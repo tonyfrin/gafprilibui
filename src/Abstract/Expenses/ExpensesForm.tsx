@@ -5,12 +5,10 @@ import {
   SelectExpensesType,
   InputNote,
   InputInvoice,
-  SelectCurrencies,
 } from '../Input';
 import { ContainerButton } from '../Containers';
 import { ModelForm } from '../Form';
 import type {
-  CurrenciesAttributes,
   SiteOptions,
   UseCurrenciesReturn,
   UseGafpriExpensesReturn,
@@ -22,13 +20,11 @@ import { EXPENSES_ROUTE } from '../../constants';
 export type ExpensesFormProps = {
   use: UseGafpriExpensesReturn;
   siteOptions: SiteOptions;
-  useCurrencies: UseCurrenciesReturn;
 };
 
 export const ExpensesForm = ({
   use,
   siteOptions,
-  useCurrencies,
 }: ExpensesFormProps): JSX.Element => {
   const [InputProjects, setInputProjects] = React.useState(<></>);
   const [InputExpensesType, setInputExpensesType] = React.useState(<></>);

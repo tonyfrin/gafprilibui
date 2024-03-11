@@ -16,8 +16,7 @@ var _constants = require("../../constants");
 var ExpensesForm = exports.ExpensesForm = function ExpensesForm(_ref) {
   var _use$attributes$state, _use$attributes$state2, _use$attributes$state3, _use$attributes$state4, _use$attributes$state5;
   var use = _ref.use,
-    siteOptions = _ref.siteOptions,
-    useCurrencies = _ref.useCurrencies;
+    siteOptions = _ref.siteOptions;
   var _React$useState = _react["default"].useState( /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null)),
     _React$useState2 = (0, _slicedToArray2["default"])(_React$useState, 2),
     InputProjects = _React$useState2[0],

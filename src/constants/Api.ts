@@ -20,3 +20,4 @@ export const STORAGE_ROUTE = '/storage';
 export const CASH_REGISTER_TYPE_ROUTE = '/cash-register-type';
 export const EXPENSES_TYPE_ROUTE = '/expenses-type';
 export const EXPENSES_ROUTE = '/expenses';
+export const INCOME_ROUTE = '/income';

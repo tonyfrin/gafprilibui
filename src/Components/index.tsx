@@ -40,7 +40,13 @@ export type {
   InitMainMenuProps,
   InitMainMenuStylesContainerProps,
 } from './Main';
-export { EntityOrder, EntityBudget, Entity, EntityExpenses } from './Entity';
+export {
+  EntityOrder,
+  EntityBudget,
+  Entity,
+  EntityExpenses,
+  EntityIncome,
+} from './Entity';
 export type {
   EntityOrderStylesContainerProps,
   EntityOrderProps,
@@ -49,6 +55,8 @@ export type {
   EntityProps,
   EntityExpensesStylesContainerProps,
   EntityExpensesProps,
+  EntityIncomeStylesContainerProps,
+  EntityIncomeProps,
 } from './Entity';
 export { Order } from './Order';
 export type { OrderProps, OrderStylesContainerProps } from './Order';
@@ -74,3 +82,8 @@ export type {
   ExpensesCashRegisterProps,
   ExpensesCashRegisterStylesContainerProps,
 } from './Expenses';
+export { IncomeCashRegister } from './Income';
+export type {
+  IncomeCashRegisterProps,
+  IncomeCashRegisterStylesContainerProps,
+} from './Income';

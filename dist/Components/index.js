@@ -33,6 +33,12 @@ Object.defineProperty(exports, "EntityExpenses", {
     return _Entity.EntityExpenses;
   }
 });
+Object.defineProperty(exports, "EntityIncome", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.EntityIncome;
+  }
+});
 Object.defineProperty(exports, "EntityOrder", {
   enumerable: true,
   get: function get() {
@@ -49,6 +55,12 @@ Object.defineProperty(exports, "ExpensesType", {
   enumerable: true,
   get: function get() {
     return _ExpensesType.ExpensesType;
+  }
+});
+Object.defineProperty(exports, "IncomeCashRegister", {
+  enumerable: true,
+  get: function get() {
+    return _Income.IncomeCashRegister;
   }
 });
 Object.defineProperty(exports, "InitMainMenu", {
@@ -198,3 +210,4 @@ var _Taxes = require("./Taxes");
 var _CashRegisterType = require("./CashRegisterType");
 var _ExpensesType = require("./ExpensesType");
 var _Expenses = require("./Expenses");
+var _Income = require("./Income");

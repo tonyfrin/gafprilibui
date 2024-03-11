@@ -225,6 +225,7 @@ export {
   PhotoGalleryForm,
   PhotoProduct,
   EntityExpensesSearchForm,
+  EntityIncomeSearchForm,
 } from './Form';
 export type {
   ModelFormProps,
@@ -249,6 +250,7 @@ export type {
   PhotoProductProps,
   EntityExpensesSearchFormProps,
   EntityExpensesSearchFormStaylesContainerProps,
+  EntityIncomeSearchFormProps,
 } from './Form';
 export {
   Menu1,
@@ -345,6 +347,8 @@ export {
   EntityBudgetSearch,
   EntityExpensesInit,
   EntityExpensesSearch,
+  EntityIncomeSearch,
+  EntityIncomeInit,
 } from './Entity';
 export type {
   InitEntityProps,
@@ -369,6 +373,10 @@ export type {
   EntityExpensesInitProps,
   EntityExpensesSearchProps,
   EntityExpensesSearchPropsExtended,
+  EntityIncomeSearchProps,
+  EntityIncomeSearchPropsExtended,
+  EntityIncomeInitStylesContainerProps,
+  EntityIncomeInitProps,
 } from './Entity';
 export {
   useGafpriApiEntity,
@@ -441,6 +449,11 @@ export {
   useGafpriPagesExpenses,
   useGafpriApiExpenses,
   useGafpriPaginationsExpenses,
+  useGafpriAttributesIncome,
+  useGafpriDataIncome,
+  useGafpriPagesIncome,
+  useGafpriApiIncome,
+  useGafpriPaginationsIncome,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -587,6 +600,13 @@ export type {
   UseGafpriApiExpensesReturn,
   UseGafpriApiExpensesProps,
   UseGafpriPaginationsExpensesReturn,
+  UseGafpriAttributesIncomeReturn,
+  UseGafpriDataIncomeReturn,
+  UseGafpriDataIncomeProps,
+  UseGafpriPagesIncomeReturn,
+  UseGafpriApiIncomeReturn,
+  UseGafpriApiIncomeProps,
+  UseGafpriPaginationsIncomeReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -812,3 +832,10 @@ export type {
 } from './Expenses';
 export { CashForm } from './MethodPayments';
 export type { CashFormProps } from './MethodPayments';
+export { IncomeInit, IncomeForm, CashIncomePaymentForm } from './Income';
+export type {
+  IncomeInitStylesContainerProps,
+  IncomeInitProps,
+  IncomeFormProps,
+  CashIncomePaymentFormProps,
+} from './Income';

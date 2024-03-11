@@ -99,3 +99,8 @@ export type {
   UseGafpriExpensesReturn,
   UseGafpriExpensesProps,
 } from './useGafpriExpenses';
+export { useGafpriIncome } from './useGafpriIncome';
+export type {
+  UseGafpriIncomeReturn,
+  UseGafpriIncomeProps,
+} from './useGafpriIncome';

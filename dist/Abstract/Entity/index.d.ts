@@ -20,3 +20,7 @@ export { EntityExpensesInit } from './EntityExpensesInit';
 export type { EntityExpensesInitStylesContainerProps, EntityExpensesInitProps, } from './EntityExpensesInit';
 export { EntityExpensesSearch } from './EntityExpensesSearch';
 export type { EntityExpensesSearchProps, EntityExpensesSearchPropsExtended, } from './EntityExpensesSearch';
+export { EntityIncomeSearch } from './EntityIncomeSearch';
+export type { EntityIncomeSearchProps, EntityIncomeSearchPropsExtended, } from './EntityIncomeSearch';
+export { EntityIncomeInit } from './EntityIncomeInit';
+export type { EntityIncomeInitStylesContainerProps, EntityIncomeInitProps, } from './EntityIncomeInit';

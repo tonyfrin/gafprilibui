@@ -15,3 +15,8 @@ export type {
   EntityExpensesStylesContainerProps,
   EntityExpensesProps,
 } from './EntityExpenses';
+export { EntityIncome } from './EntityIncome';
+export type {
+  EntityIncomeStylesContainerProps,
+  EntityIncomeProps,
+} from './EntityIncome';

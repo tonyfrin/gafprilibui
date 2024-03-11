@@ -260,3 +260,19 @@ export type {
   UseGafpriApiExpensesProps,
   UseGafpriPaginationsExpensesReturn,
 } from './expenses';
+export {
+  useGafpriAttributesIncome,
+  useGafpriDataIncome,
+  useGafpriPagesIncome,
+  useGafpriApiIncome,
+  useGafpriPaginationsIncome,
+} from './income';
+export type {
+  UseGafpriAttributesIncomeReturn,
+  UseGafpriDataIncomeReturn,
+  UseGafpriDataIncomeProps,
+  UseGafpriPagesIncomeReturn,
+  UseGafpriApiIncomeReturn,
+  UseGafpriApiIncomeProps,
+  UseGafpriPaginationsIncomeReturn,
+} from './income';

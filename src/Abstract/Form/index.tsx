@@ -41,3 +41,5 @@ export type {
   EntityExpensesSearchFormProps,
   EntityExpensesSearchFormStaylesContainerProps,
 } from './EntityExpensesSearchForm';
+export { EntityIncomeSearchForm } from './EntityIncomeSearchForm';
+export type { EntityIncomeSearchFormProps } from './EntityIncomeSearchForm';

@@ -67,12 +67,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       currentValid: currenciesIdValid
     });
   };
-  var addCashTransaction = function addCashTransaction(cashRegisterTypePostsId, cashRegisterPostsId, type) {
-    useCashTransactions.actions.setCashRegisterTypePostsId(cashRegisterTypePostsId);
-    useCashTransactions.actions.setCashRegisterPostsId(cashRegisterPostsId);
-    useCashTransactions.actions.setType(type);
-    usePaymentMethods.actions.setMethodType('cash');
-    usePaymentMethods.actions.setType(type);
+  var addCashTransaction = function addCashTransaction() {
     setArrayPaymentMethod([_objectSpread(_objectSpread({}, arrayPaymentMethod), {}, {
       paymentMethod: usePaymentMethods.states,
       cashTransactions: useCashTransactions.states

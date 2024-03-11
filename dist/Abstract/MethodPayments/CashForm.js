@@ -25,6 +25,10 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
     currentCurrency = _React$useState4[0],
     setCurrentCurrency = _React$useState4[1];
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
+  var add = function add() {
+    usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
+    currentPaymentInfo.add();
+  };
   var changeAmount = function changeAmount(e) {
     var value = e.target.value;
     if (siteOptions.currencyId === usePayment.useGeneralPaymentMethods.states.currenciesId) {
@@ -98,7 +102,7 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
   var title1Text = 'Pago en efectivo';
   var title2Text = 'Agrega un nuevo pago en efectivo';
   var buttonTitle = 'Procesar';
-  var buttonAction = currentPaymentInfo.add;
+  var buttonAction = add;
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':

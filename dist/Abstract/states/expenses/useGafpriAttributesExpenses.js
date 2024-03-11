@@ -195,12 +195,6 @@ function useGafpriAttributesExpenses(_ref) {
     var newTotal = newSubTotal + newSubTotalTax;
     setTotal("".concat(newTotal));
   };
-  var addCashTransaction = function addCashTransaction() {
-    if (cashRegisterTypePostsId === 0 || cashRegisterPostsId === 0) return;
-    usePayment.useGeneralPaymentMethods.actions.emptyPaymentMethodArray();
-    usePayment.useGeneralPaymentMethods.actions.addCashTransaction(cashRegisterTypePostsId, cashRegisterPostsId, 'debit');
-    usePayment.actions.setType('expenses');
-  };
 
   /**
    * Effects
@@ -252,7 +246,6 @@ function useGafpriAttributesExpenses(_ref) {
     changeTotal: changeTotal,
     setEntity: setEntity,
     validationButtonNext: validationButtonNext,
-    addCashTransaction: addCashTransaction,
     setCashRegisterTypePostsId: setCashRegisterTypePostsId,
     setCashRegisterPostsId: setCashRegisterPostsId,
     validationButtonNextPaymentCr: validationButtonNextPaymentCr

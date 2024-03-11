@@ -69,7 +69,7 @@ var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashR
       add: function add() {
         return console.log(use.attributes);
       },
-      type: 'deposit',
+      type: 'debit',
       cashRegisterPostsId: use.attributes.states.cashRegisterPostsId,
       cashRegisterTypePostsId: use.attributes.states.cashRegisterTypePostsId,
       paymentType: 'expenses'

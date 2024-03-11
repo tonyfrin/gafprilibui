@@ -44,7 +44,6 @@ type Actions = {
     changeTotal: () => void;
     setEntity: (value: EntityAttributes | null) => void;
     validationButtonNext: () => void;
-    addCashTransaction: () => void;
     setCashRegisterTypePostsId: (value: number) => void;
     setCashRegisterPostsId: (value: number) => void;
     validationButtonNextPaymentCr: () => void;

@@ -31,11 +31,7 @@ type State = {
 
 type Actions = {
   infoReset: () => void;
-  addCashTransaction: (
-    cashRegisterTypePostsId: number,
-    cashRegisterPostsId: number,
-    type: 'deposit' | 'debit'
-  ) => void;
+  addCashTransaction: () => void;
   emptyPaymentMethodArray: () => void;
   deletePaymentMethod: (index: number) => void;
   validationCurrenciesId: (value: string) => boolean;
@@ -96,20 +92,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     });
   };
 
-  const addCashTransaction = (
-    cashRegisterTypePostsId: number,
-    cashRegisterPostsId: number,
-    type: 'deposit' | 'debit'
-  ): void => {
-    useCashTransactions.actions.setCashRegisterTypePostsId(
-      cashRegisterTypePostsId
-    );
-    useCashTransactions.actions.setCashRegisterPostsId(cashRegisterPostsId);
-    useCashTransactions.actions.setType(type);
-
-    usePaymentMethods.actions.setMethodType('cash');
-    usePaymentMethods.actions.setType(type);
-
+  const addCashTransaction = (): void => {
     setArrayPaymentMethod([
       {
         ...arrayPaymentMethod,

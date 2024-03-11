@@ -108,7 +108,7 @@ export const ExpensesCashRegister = ({
               returnInit: use.pages.actions.onExpensesForm,
               buttonNextId: `${EXPENSES_ROUTE}-2`,
               add: () => console.log(use.attributes),
-              type: 'deposit',
+              type: 'debit',
               cashRegisterPostsId: use.attributes.states.cashRegisterPostsId,
               cashRegisterTypePostsId:
                 use.attributes.states.cashRegisterTypePostsId,

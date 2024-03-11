@@ -43,6 +43,11 @@ export const CashForm = ({
     React.useState<CurrenciesAttributes | null>(null);
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
 
+  const add = () => {
+    usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
+    currentPaymentInfo.add();
+  };
+
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (
@@ -180,7 +185,7 @@ export const CashForm = ({
   const title2Text = 'Agrega un nuevo pago en efectivo';
 
   const buttonTitle = 'Procesar';
-  const buttonAction = currentPaymentInfo.add;
+  const buttonAction = add;
 
   const handleActions = (action: string, value: any) => {
     switch (action) {

@@ -74,7 +74,6 @@ type Actions = {
   changeTotal: () => void;
   setEntity: (value: EntityAttributes | null) => void;
   validationButtonNext: () => void;
-  addCashTransaction: () => void;
   setCashRegisterTypePostsId: (value: number) => void;
   setCashRegisterPostsId: (value: number) => void;
   validationButtonNextPaymentCr: () => void;
@@ -270,17 +269,6 @@ export function useGafpriAttributesExpenses({
     setTotal(`${newTotal}`);
   };
 
-  const addCashTransaction = (): void => {
-    if (cashRegisterTypePostsId === 0 || cashRegisterPostsId === 0) return;
-    usePayment.useGeneralPaymentMethods.actions.emptyPaymentMethodArray();
-    usePayment.useGeneralPaymentMethods.actions.addCashTransaction(
-      cashRegisterTypePostsId,
-      cashRegisterPostsId,
-      'debit'
-    );
-    usePayment.actions.setType('expenses');
-  };
-
   /**
    * Effects
    *
@@ -337,7 +325,6 @@ export function useGafpriAttributesExpenses({
     changeTotal,
     setEntity,
     validationButtonNext,
-    addCashTransaction,
     setCashRegisterTypePostsId,
     setCashRegisterPostsId,
     validationButtonNextPaymentCr,

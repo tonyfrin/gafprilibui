@@ -17,6 +17,7 @@ import type {
 } from '../../states';
 import { SpanValue } from '../Span';
 import { decimalFormatPriceConverter } from '../../helpers';
+import { EXPENSES_ROUTE } from '../../constants';
 
 export type ExpensesCrFormProps = {
   use: UseGafpriExpensesReturn;
@@ -109,6 +110,33 @@ export const ExpensesCrForm = ({
   }, [use.attributes.states.currencyId]);
 
   React.useEffect(() => {
+    use.attributes.actions.validationSupplierId(
+      use.attributes.states.supplierId
+    );
+    use.attributes.actions.validationExpensesTypeId(
+      use.attributes.states.expensesTypeId
+    );
+    use.attributes.actions.validationProjectsPostsId(
+      use.attributes.states.projectsPostsId
+    );
+    use.attributes.actions.validationCurrencyId(
+      `${use.attributes.states.currencyId}`
+    );
+  }, [
+    use.attributes.states.supplierId,
+    use.attributes.states.expensesTypeId,
+    use.attributes.states.projectsPostsId,
+    use.attributes.states.currencyId,
+    use.attributes.states.supplierIdValid,
+    use.attributes.states.expensesTypeIdValid,
+    use.attributes.states.projectsPostsIdValid,
+    use.attributes.states.currencyIdValid,
+    InputCurrencies,
+    InputExpensesType,
+    InputProjects,
+  ]);
+
+  React.useEffect(() => {
     use.attributes.actions.validationButtonNext();
   }, [
     use.attributes.states.supplierIdValid,
@@ -196,23 +224,40 @@ export const ExpensesCrForm = ({
       }}
       handleActions={handleActions}
       error={use.error.states.error}
+      buttonNextId={EXPENSES_ROUTE}
     >
       <>
         <ContainerButton
           styles={{
             width: '100%',
+            display: 'flex',
+            justifyContent: 'flex-start',
+            custom: `
+              margin: 20px 0px;
+              padding-left: 5%;
+            `,
           }}
         >
           <>
-            <Input
-              inputProps={{
-                readOnly: true,
-                value: supplierName,
-                title: 'Proveedor',
+            <SpanValue
+              value="Proveedor: "
+              containerStyles={{
+                margin: '0px 15px 0px 0px',
+                custom: `
+                  font-weight: 700;
+                  font-size: 20px;
+                `,
               }}
-              styles={{
-                width: '100%',
+            />
+            <SpanValue
+              containerStyles={{
+                margin: '0',
+                custom: `
+                  font-weight: 700;
+                  font-size: 20px;
+                `,
               }}
+              value={supplierName}
             />
           </>
         </ContainerButton>
@@ -315,7 +360,7 @@ export const ExpensesCrForm = ({
             justifyContent: 'flex-start',
             custom: `
               margin: 20px 0px;
-              padding-left: 4%;
+              padding-left: 5%;
             `,
           }}
         >

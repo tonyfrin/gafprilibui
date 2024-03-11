@@ -12,6 +12,7 @@ var _Containers = require("../Containers");
 var _Form = require("../Form");
 var _Span = require("../Span");
 var _helpers = require("../../helpers");
+var _constants = require("../../constants");
 var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
   var _use$attributes$state, _use$attributes$state2, _use$attributes$state3, _use$attributes$state4, _use$attributes$state5;
   var use = _ref.use,
@@ -79,6 +80,12 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
       setCurrentCurrency(useCurrencies.actions.getById(use.attributes.states.currencyId));
     }
   }, [use.attributes.states.currencyId]);
+  _react["default"].useEffect(function () {
+    use.attributes.actions.validationSupplierId(use.attributes.states.supplierId);
+    use.attributes.actions.validationExpensesTypeId(use.attributes.states.expensesTypeId);
+    use.attributes.actions.validationProjectsPostsId(use.attributes.states.projectsPostsId);
+    use.attributes.actions.validationCurrencyId("".concat(use.attributes.states.currencyId));
+  }, [use.attributes.states.supplierId, use.attributes.states.expensesTypeId, use.attributes.states.projectsPostsId, use.attributes.states.currencyId, use.attributes.states.supplierIdValid, use.attributes.states.expensesTypeIdValid, use.attributes.states.projectsPostsIdValid, use.attributes.states.currencyIdValid, InputCurrencies, InputExpensesType, InputProjects]);
   _react["default"].useEffect(function () {
     use.attributes.actions.validationButtonNext();
   }, [use.attributes.states.supplierIdValid, use.attributes.states.expensesTypeIdValid, use.attributes.states.projectsPostsIdValid, use.attributes.states.currencyIdValid]);
@@ -153,20 +160,27 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
       returnButton: 'Volver'
     },
     handleActions: handleActions,
-    error: use.error.states.error
+    error: use.error.states.error,
+    buttonNextId: _constants.EXPENSES_ROUTE
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
-      width: '100%'
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'flex-start',
+      custom: "\n              margin: 20px 0px;\n              padding-left: 5%;\n            "
     }
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, {
-    inputProps: {
-      readOnly: true,
-      value: supplierName,
-      title: 'Proveedor'
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
+    value: "Proveedor: ",
+    containerStyles: {
+      margin: '0px 15px 0px 0px',
+      custom: "\n                  font-weight: 700;\n                  font-size: 20px;\n                "
+    }
+  }), /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
+    containerStyles: {
+      margin: '0',
+      custom: "\n                  font-weight: 700;\n                  font-size: 20px;\n                "
     },
-    styles: {
-      width: '100%'
-    }
+    value: supplierName
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%'
@@ -244,7 +258,7 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
       width: '100%',
       display: 'flex',
       justifyContent: 'flex-start',
-      custom: "\n              margin: 20px 0px;\n              padding-left: 4%;\n            "
+      custom: "\n              margin: 20px 0px;\n              padding-left: 5%;\n            "
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
     value: "Total: ",

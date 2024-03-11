@@ -215,7 +215,9 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
         return use.attributes.actions.changeSubTotal(e.target.value);
       },
       title: 'Sub-Total',
-      placeholder: 'Sub-Total'
+      placeholder: 'Sub-Total',
+      type: 'number',
+      step: '0.01'
     },
     styles: {
       width: '100%'
@@ -230,7 +232,9 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
         return use.attributes.actions.changeSubTotalTax(e.target.value);
       },
       title: 'Impuestos',
-      placeholder: 'Impuestos'
+      placeholder: 'Impuestos',
+      type: 'number',
+      step: '0.01'
     },
     styles: {
       width: '100%'
@@ -239,11 +243,20 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
     styles: {
       width: '100%',
       display: 'flex',
-      justifyContent: 'space-between'
+      justifyContent: 'flex-start',
+      custom: "\n              margin: '20px 0px';\n              padding-left: 60px;\n            "
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
-    value: "Total: "
+    value: "Total: ",
+    containerStyles: {
+      margin: '0px 15px 0px 0px',
+      custom: "\n                  font-weight: 700;\n                  font-size: 20px;\n                "
+    }
   }), /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
+    containerStyles: {
+      margin: '0',
+      custom: "\n                  font-weight: 700;\n                  font-size: 20px;\n                "
+    },
     value: (0, _helpers.decimalFormatPriceConverter)(use.attributes.states.total, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION, siteOptions.CURRENCY_FORMAT)
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
@@ -258,7 +271,9 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
       onChange: function onChange(e) {
         return changeAmount(e);
       },
-      title: "Monto en ".concat(currentCurrency.name, " ").concat(currentCurrency.symbol)
+      title: "Monto en ".concat(currentCurrency.name, " ").concat(currentCurrency.symbol),
+      type: 'number',
+      step: '0.01'
     },
     styles: {
       width: '100%'
@@ -268,7 +283,9 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
       onChange: function onChange(e) {
         return setChange(e);
       },
-      title: "Monto en ".concat(siteCurrency.name, " ").concat(siteCurrency.symbol)
+      title: "Monto en ".concat(siteCurrency.name, " ").concat(siteCurrency.symbol),
+      type: 'number',
+      step: '0.01'
     },
     styles: {
       width: '100%'

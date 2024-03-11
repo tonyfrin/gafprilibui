@@ -278,6 +278,8 @@ export const ExpensesCrForm = ({
                   use.attributes.actions.changeSubTotal(e.target.value),
                 title: 'Sub-Total',
                 placeholder: 'Sub-Total',
+                type: 'number',
+                step: '0.01',
               }}
               styles={{
                 width: '100%',
@@ -297,6 +299,8 @@ export const ExpensesCrForm = ({
                   use.attributes.actions.changeSubTotalTax(e.target.value),
                 title: 'Impuestos',
                 placeholder: 'Impuestos',
+                type: 'number',
+                step: '0.01',
               }}
               styles={{
                 width: '100%',
@@ -308,12 +312,32 @@ export const ExpensesCrForm = ({
           styles={{
             width: '100%',
             display: 'flex',
-            justifyContent: 'space-between',
+            justifyContent: 'flex-start',
+            custom: `
+              margin: '20px 0px';
+              padding-left: 60px;
+            `,
           }}
         >
           <>
-            <SpanValue value="Total: " />
             <SpanValue
+              value="Total: "
+              containerStyles={{
+                margin: '0px 15px 0px 0px',
+                custom: `
+                  font-weight: 700;
+                  font-size: 20px;
+                `,
+              }}
+            />
+            <SpanValue
+              containerStyles={{
+                margin: '0',
+                custom: `
+                  font-weight: 700;
+                  font-size: 20px;
+                `,
+              }}
               value={decimalFormatPriceConverter(
                 use.attributes.states.total,
                 siteOptions.DECIMAL_NUMBERS,
@@ -342,6 +366,8 @@ export const ExpensesCrForm = ({
                 inputProps={{
                   onChange: (e) => changeAmount(e),
                   title: `Monto en ${currentCurrency.name} ${currentCurrency.symbol}`,
+                  type: 'number',
+                  step: '0.01',
                 }}
                 styles={{
                   width: '100%',
@@ -356,6 +382,8 @@ export const ExpensesCrForm = ({
                   inputProps={{
                     onChange: (e) => setChange(e),
                     title: `Monto en ${siteCurrency.name} ${siteCurrency.symbol}`,
+                    type: 'number',
+                    step: '0.01',
                   }}
                   styles={{
                     width: '100%',

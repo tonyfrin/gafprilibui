@@ -169,7 +169,8 @@ var ExpensesForm = exports.ExpensesForm = function ExpensesForm(_ref) {
       title: 'Sub-Total',
       placeholder: 'Sub-Total',
       type: 'number',
-      step: '0.01'
+      step: '0.01',
+      defaultValue: use.attributes.states.subTotal
     },
     styles: {
       width: '100%'
@@ -186,7 +187,8 @@ var ExpensesForm = exports.ExpensesForm = function ExpensesForm(_ref) {
       title: 'Impuestos',
       placeholder: 'Impuestos',
       type: 'number',
-      step: '0.01'
+      step: '0.01',
+      defaultValue: use.attributes.states.subTotalTax
     },
     styles: {
       width: '100%'

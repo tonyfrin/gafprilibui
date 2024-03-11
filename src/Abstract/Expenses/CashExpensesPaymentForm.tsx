@@ -18,8 +18,6 @@ export const CashExpensesPaymentForm = ({
   const buttonTitle = 'Procesar';
   const buttonAction = use.api.actions.add;
 
-  console.log(use.attributes);
-
   const handleActions = (action: string, value: any) => {
     switch (action) {
       case 'submit':

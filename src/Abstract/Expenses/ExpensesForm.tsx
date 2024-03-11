@@ -240,6 +240,7 @@ export const ExpensesForm = ({
                 placeholder: 'Sub-Total',
                 type: 'number',
                 step: '0.01',
+                defaultValue: use.attributes.states.subTotal,
               }}
               styles={{
                 width: '100%',
@@ -261,6 +262,7 @@ export const ExpensesForm = ({
                 placeholder: 'Impuestos',
                 type: 'number',
                 step: '0.01',
+                defaultValue: use.attributes.states.subTotalTax,
               }}
               styles={{
                 width: '100%',

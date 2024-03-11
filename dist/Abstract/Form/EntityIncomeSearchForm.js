@@ -33,7 +33,7 @@ var EntityIncomeSearchForm = exports.EntityIncomeSearchForm = function EntityInc
     className: (0, _css.cx)(entityIncomeSearchFormStaylesContainer(containerStyles), containerClassName)
   }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Box.SearchBox, {
     title1Props: {
-      title: 'Modulo de egresos'
+      title: 'Modulo de ingresos'
     },
     title2Props: {
       title: 'Busqueda de clientes'

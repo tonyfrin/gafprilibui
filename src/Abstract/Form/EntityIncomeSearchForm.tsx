@@ -59,7 +59,7 @@ export const EntityIncomeSearchForm = ({
       >
         <SearchBox
           title1Props={{
-            title: 'Modulo de egresos',
+            title: 'Modulo de ingresos',
           }}
           title2Props={{
             title: 'Busqueda de clientes',

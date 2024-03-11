@@ -16,6 +16,7 @@ var CashExpensesPaymentForm = exports.CashExpensesPaymentForm = function CashExp
   var title2Text = 'Agrega un nuevo engreso';
   var buttonTitle = 'Procesar';
   var buttonAction = use.api.actions.add;
+  console.log(use.attributes);
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':

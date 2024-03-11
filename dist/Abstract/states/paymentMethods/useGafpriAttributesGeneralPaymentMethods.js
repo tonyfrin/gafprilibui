@@ -69,7 +69,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
   };
   var addCashTransaction = function addCashTransaction() {
     setArrayPaymentMethod([_objectSpread(_objectSpread({}, arrayPaymentMethod), {}, {
-      paymentMethod: usePaymentMethods.states,
+      paymentMethods: usePaymentMethods.states,
       cashTransactions: useCashTransactions.states
     })]);
     usePaymentMethods.actions.infoReset();
@@ -89,7 +89,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
   };
   var calculateTotalPaymentMethod = function calculateTotalPaymentMethod() {
     return arrayPaymentMethod.reduce(function (acc, item) {
-      var newSubTotal = parseFloat("".concat(item.paymentMethod.change));
+      var newSubTotal = parseFloat("".concat(item.paymentMethods.change));
       return acc + newSubTotal;
     }, 0);
   };

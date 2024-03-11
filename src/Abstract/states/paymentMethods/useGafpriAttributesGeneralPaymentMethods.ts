@@ -15,7 +15,7 @@ import { SelectDefault } from '../../../helpers';
 import { generalValidationSelectCurrencies } from '../../../Validations';
 
 export type GeneralPaymentMethodsAttributes = {
-  paymentMethod: PaymentMethodsAttributes;
+  paymentMethods: PaymentMethodsAttributes;
   cashTransactions?: CashTransactionsAttributes;
 };
 
@@ -96,7 +96,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     setArrayPaymentMethod([
       {
         ...arrayPaymentMethod,
-        paymentMethod: usePaymentMethods.states,
+        paymentMethods: usePaymentMethods.states,
         cashTransactions: useCashTransactions.states,
       },
     ]);
@@ -125,7 +125,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
 
   const calculateTotalPaymentMethod = (): number => {
     return arrayPaymentMethod.reduce((acc, item) => {
-      const newSubTotal = parseFloat(`${item.paymentMethod.change}`);
+      const newSubTotal = parseFloat(`${item.paymentMethods.change}`);
       return acc + newSubTotal;
     }, 0);
   };

@@ -4,7 +4,7 @@ import { CashTransactionsAttributes, UseGafpriAttributesCashTransactionsReturn }
 import { UseCurrenciesReturn } from '../../../states';
 import { SelectDefault } from '../../../helpers';
 export type GeneralPaymentMethodsAttributes = {
-    paymentMethod: PaymentMethodsAttributes;
+    paymentMethods: PaymentMethodsAttributes;
     cashTransactions?: CashTransactionsAttributes;
 };
 type State = {

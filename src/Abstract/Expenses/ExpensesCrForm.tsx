@@ -143,6 +143,10 @@ export const ExpensesCrForm = ({
     use.attributes.states.expensesTypeIdValid,
     use.attributes.states.projectsPostsIdValid,
     use.attributes.states.currencyIdValid,
+    use.attributes.states.total,
+    use.attributes.usePayment.states.total,
+    use.attributes.usePayment.useGeneralPaymentMethods.states
+      .totalPaymentMethod,
   ]);
 
   React.useEffect(() => {

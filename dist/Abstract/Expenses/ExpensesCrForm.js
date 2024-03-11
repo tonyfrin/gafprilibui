@@ -88,7 +88,7 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
   }, [use.attributes.states.supplierId, use.attributes.states.expensesTypeId, use.attributes.states.projectsPostsId, use.attributes.states.currencyId, use.attributes.states.supplierIdValid, use.attributes.states.expensesTypeIdValid, use.attributes.states.projectsPostsIdValid, use.attributes.states.currencyIdValid, InputCurrencies, InputExpensesType, InputProjects]);
   _react["default"].useEffect(function () {
     use.attributes.actions.validationButtonNext();
-  }, [use.attributes.states.supplierIdValid, use.attributes.states.expensesTypeIdValid, use.attributes.states.projectsPostsIdValid, use.attributes.states.currencyIdValid]);
+  }, [use.attributes.states.supplierIdValid, use.attributes.states.expensesTypeIdValid, use.attributes.states.projectsPostsIdValid, use.attributes.states.currencyIdValid, use.attributes.states.total, use.attributes.usePayment.states.total, use.attributes.usePayment.useGeneralPaymentMethods.states.totalPaymentMethod]);
   _react["default"].useEffect(function () {
     setInputProjects(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectProjectId, {

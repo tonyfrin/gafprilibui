@@ -229,6 +229,12 @@ export function useGafpriAttributesExpenses({
         expensesTypeIdValid,
         projectsPostsIdValid,
         currencyIdValid,
+        parseFloat(total) === parseFloat(usePayment.states.total),
+        parseFloat(total) ===
+          usePayment.useGeneralPaymentMethods.states.totalPaymentMethod,
+        parseFloat(total) ===
+          usePayment.useGeneralPaymentMethods.states.totalMethods,
+        parseFloat(total) > 0,
       ],
       inputId: EXPENSES_ROUTE,
     });

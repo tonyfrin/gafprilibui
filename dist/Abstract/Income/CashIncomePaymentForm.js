@@ -12,8 +12,8 @@ var _Span = require("../Span");
 var _constants = require("../../constants");
 var CashIncomePaymentForm = exports.CashIncomePaymentForm = function CashIncomePaymentForm(_ref) {
   var use = _ref.use;
-  var title1Text = 'Nuevo Egreso';
-  var title2Text = 'Agrega un nuevo engreso';
+  var title1Text = 'Nuevo Ingreso';
+  var title2Text = 'Agrega un nuevo ingreso';
   var buttonTitle = 'Procesar';
   var buttonAction = use.api.actions.add;
   var buttonReturn = function buttonReturn() {

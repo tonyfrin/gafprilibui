@@ -12,8 +12,8 @@ export type CashIncomePaymentFormProps = {
 export const CashIncomePaymentForm = ({
   use,
 }: CashIncomePaymentFormProps): JSX.Element => {
-  const title1Text = 'Nuevo Egreso';
-  const title2Text = 'Agrega un nuevo engreso';
+  const title1Text = 'Nuevo Ingreso';
+  const title2Text = 'Agrega un nuevo ingreso';
 
   const buttonTitle = 'Procesar';
   const buttonAction = use.api.actions.add;

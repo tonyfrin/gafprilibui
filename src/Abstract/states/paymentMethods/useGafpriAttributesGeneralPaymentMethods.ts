@@ -76,6 +76,12 @@ export function useGafpriAttributesGeneralPaymentMethods({
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
     setArrayPaymentMethod([]);
+    setCurrenciesId(0);
+    setCurrenciesIdValid(false);
+    setCurrenciesIdDefault({
+      value: '',
+      label: 'Selecciona la Moneda',
+    });
   };
 
   const validationCurrenciesId = (value: string): boolean => {

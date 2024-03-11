@@ -152,8 +152,6 @@ export const IncomeForm = ({
               change={(e) => use.attributes.actions.changeNote(e)}
               props={{
                 inputProps: {
-                  placeholder: 'Motivo del gasto',
-                  title: 'Motivo del gasto',
                   defaultValue: use.attributes.states.note,
                 },
                 styles: {

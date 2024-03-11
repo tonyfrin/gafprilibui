@@ -109,8 +109,6 @@ var IncomeForm = exports.IncomeForm = function IncomeForm(_ref) {
     },
     props: {
       inputProps: {
-        placeholder: 'Motivo del gasto',
-        title: 'Motivo del gasto',
         defaultValue: use.attributes.states.note
       },
       styles: {

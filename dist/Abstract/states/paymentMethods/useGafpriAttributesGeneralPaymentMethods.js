@@ -53,6 +53,12 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
     setArrayPaymentMethod([]);
+    setCurrenciesId(0);
+    setCurrenciesIdValid(false);
+    setCurrenciesIdDefault({
+      value: '',
+      label: 'Selecciona la Moneda'
+    });
   };
   var validationCurrenciesId = function validationCurrenciesId(value) {
     var newValue;

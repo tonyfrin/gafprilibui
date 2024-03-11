@@ -149,6 +149,12 @@ function useGafpriAttributesExpenses(_ref) {
       inputId: "".concat(_constants.EXPENSES_ROUTE, "-2")
     });
   };
+  var validationButtonNextAdd = function validationButtonNextAdd() {
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [supplierIdValid, expensesTypeIdValid, projectsPostsIdValid, usePayment.useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(total) === parseFloat(usePayment.states.total)],
+      inputId: "".concat(_constants.EXPENSES_ROUTE, "-Add")
+    });
+  };
 
   // Funciones de Change
   var changeSupplierId = function changeSupplierId(value) {
@@ -248,7 +254,8 @@ function useGafpriAttributesExpenses(_ref) {
     validationButtonNext: validationButtonNext,
     setCashRegisterTypePostsId: setCashRegisterTypePostsId,
     setCashRegisterPostsId: setCashRegisterPostsId,
-    validationButtonNextPaymentCr: validationButtonNextPaymentCr
+    validationButtonNextPaymentCr: validationButtonNextPaymentCr,
+    validationButtonNextAdd: validationButtonNextAdd
   };
   return {
     states: states,

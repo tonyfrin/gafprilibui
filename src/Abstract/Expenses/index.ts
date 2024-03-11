@@ -5,3 +5,5 @@ export type {
 } from './ExpensesInit';
 export { ExpensesForm } from './ExpensesForm';
 export type { ExpensesFormProps } from './ExpensesForm';
+export { CashExpensesPaymentForm } from './CashExpensesPaymentForm';
+export type { CashExpensesPaymentFormProps } from './CashExpensesPaymentForm';

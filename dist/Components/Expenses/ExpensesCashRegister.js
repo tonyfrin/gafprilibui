@@ -66,13 +66,18 @@ var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashR
       validationButtonNext: use.attributes.actions.validationButtonNextPaymentCr,
       returnInit: use.pages.actions.onExpensesForm,
       buttonNextId: "".concat(_constants.EXPENSES_ROUTE, "-2"),
-      add: function add() {
-        return console.log(use.attributes);
+      next: function next() {
+        return use.pages.actions.onFinalPaymentCrForm();
       },
       type: 'debit',
       cashRegisterPostsId: use.attributes.states.cashRegisterPostsId,
       cashRegisterTypePostsId: use.attributes.states.cashRegisterTypePostsId,
       paymentType: 'expenses'
     }
+  })), use.pages.states.isFinalPaymentCrForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+    keyName: "FinalPaymentCrForm",
+    isVisible: use.pages.states.isFinalPaymentCrForm
+  }, /*#__PURE__*/_react["default"].createElement(_Abstract.CashExpensesPaymentForm, {
+    use: use
   })));
 };

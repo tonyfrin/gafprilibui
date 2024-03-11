@@ -266,6 +266,7 @@ export {
   InputNote,
   InputInvoice,
   CashForm,
+  CashExpensesPaymentForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -714,6 +715,7 @@ export type {
   InputNoteProps,
   InputInvoiceProps,
   CashFormProps,
+  CashExpensesPaymentFormProps,
 } from './Abstract';
 export {
   MainFooter,

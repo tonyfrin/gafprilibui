@@ -27,7 +27,7 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
   var add = function add() {
     usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
-    currentPaymentInfo.add();
+    currentPaymentInfo.next();
   };
   var changeAmount = function changeAmount(e) {
     var value = e.target.value;

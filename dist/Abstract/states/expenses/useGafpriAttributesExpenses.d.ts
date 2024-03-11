@@ -47,6 +47,7 @@ type Actions = {
     setCashRegisterTypePostsId: (value: number) => void;
     setCashRegisterPostsId: (value: number) => void;
     validationButtonNextPaymentCr: () => void;
+    validationButtonNextAdd: () => void;
 };
 export type UseGafpriAttributesExpensesReturn = {
     states: State;

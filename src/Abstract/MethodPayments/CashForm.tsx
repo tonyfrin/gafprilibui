@@ -8,15 +8,13 @@ import type {
   UseCurrenciesReturn,
   UseErrorReturn,
 } from '../../states';
-import { SelectDefault } from '../../helpers';
-import { SingleValue } from 'react-select';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 
 export type CurrentPaymentInfo = {
   validationButtonNext: () => void;
   returnInit: () => void;
+  next: () => void;
   buttonNextId: string;
-  add: () => void;
   cashRegisterTypePostsId: number;
   cashRegisterPostsId: number;
   type: 'deposit' | 'debit';
@@ -45,7 +43,7 @@ export const CashForm = ({
 
   const add = () => {
     usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
-    currentPaymentInfo.add();
+    currentPaymentInfo.next();
   };
 
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -799,11 +799,16 @@ export type {
   ExpensesTypeFormProps,
   ExpensesTypeFormPropsExtended,
 } from './ExpensesType';
-export { ExpensesInit, ExpensesForm } from './Expenses';
+export {
+  ExpensesInit,
+  ExpensesForm,
+  CashExpensesPaymentForm,
+} from './Expenses';
 export type {
   ExpensesInitStylesContainerProps,
   ExpensesInitProps,
   ExpensesFormProps,
+  CashExpensesPaymentFormProps,
 } from './Expenses';
 export { CashForm } from './MethodPayments';
 export type { CashFormProps } from './MethodPayments';

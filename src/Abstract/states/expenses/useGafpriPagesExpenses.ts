@@ -12,6 +12,7 @@ export type UseGafpriPagesExpensesReturn = {
     isAddEntity: boolean;
     isExpensesForm: boolean;
     isPaymentCrForm: boolean;
+    isFinalPaymentCrForm: boolean;
   };
   actions: {
     onFetching: () => void;
@@ -20,6 +21,7 @@ export type UseGafpriPagesExpensesReturn = {
     onAddEntity: () => void;
     onExpensesForm: () => void;
     onPaymentCrForm: () => void;
+    onFinalPaymentCrForm: () => void;
     returnInit: () => void;
     processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
     processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;
@@ -45,6 +47,7 @@ export const useGafpriPagesExpenses = ({
   const [isAddEntity, setIsAddEntity] = useState(false);
   const [isExpensesForm, setIsExpensesForm] = useState(false);
   const [isPaymentCrForm, setIsPaymentCrForm] = useState(false);
+  const [isFinalPaymentCrForm, setIsFinalPaymentCrForm] = useState(false);
 
   // Funciones de paginas
   const onFetching = (): void => {
@@ -54,6 +57,7 @@ export const useGafpriPagesExpenses = ({
     setIsAddEntity(false);
     setIsExpensesForm(false);
     setIsPaymentCrForm(false);
+    setIsFinalPaymentCrForm(false);
     scrollToTop();
   };
 
@@ -64,6 +68,7 @@ export const useGafpriPagesExpenses = ({
     setIsAddEntity(false);
     setIsExpensesForm(false);
     setIsPaymentCrForm(false);
+    setIsFinalPaymentCrForm(false);
     scrollToTop();
   };
 
@@ -74,6 +79,7 @@ export const useGafpriPagesExpenses = ({
     setIsAddEntity(false);
     setIsExpensesForm(false);
     setIsPaymentCrForm(false);
+    setIsFinalPaymentCrForm(false);
     scrollToTop();
   };
 
@@ -84,6 +90,7 @@ export const useGafpriPagesExpenses = ({
     setIsAddEntity(true);
     setIsExpensesForm(false);
     setIsPaymentCrForm(false);
+    setIsFinalPaymentCrForm(false);
     scrollToTop();
   };
 
@@ -94,6 +101,7 @@ export const useGafpriPagesExpenses = ({
     setIsAddEntity(false);
     setIsExpensesForm(true);
     setIsPaymentCrForm(false);
+    setIsFinalPaymentCrForm(false);
     scrollToTop();
   };
 
@@ -104,6 +112,18 @@ export const useGafpriPagesExpenses = ({
     setIsAddEntity(false);
     setIsExpensesForm(false);
     setIsPaymentCrForm(true);
+    setIsFinalPaymentCrForm(false);
+    scrollToTop();
+  };
+
+  const onFinalPaymentCrForm = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsExpensesForm(false);
+    setIsPaymentCrForm(true);
+    setIsFinalPaymentCrForm(false);
     scrollToTop();
   };
 
@@ -192,6 +212,7 @@ export const useGafpriPagesExpenses = ({
     isAddEntity,
     isExpensesForm,
     isPaymentCrForm,
+    isFinalPaymentCrForm,
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -202,6 +223,7 @@ export const useGafpriPagesExpenses = ({
     onAddEntity,
     onExpensesForm,
     onPaymentCrForm,
+    onFinalPaymentCrForm,
     returnInit,
     processEntityBydocumentId,
     processEntityByName,

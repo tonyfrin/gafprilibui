@@ -13,6 +13,7 @@ import {
   EntityExpensesSearch,
   ExpensesForm,
   CashForm,
+  CashExpensesPaymentForm,
 } from '../../Abstract';
 import { EntityExpenses } from '../Entity';
 import { EXPENSES_ROUTE } from '../../constants';
@@ -107,7 +108,7 @@ export const ExpensesCashRegister = ({
                 use.attributes.actions.validationButtonNextPaymentCr,
               returnInit: use.pages.actions.onExpensesForm,
               buttonNextId: `${EXPENSES_ROUTE}-2`,
-              add: () => console.log(use.attributes),
+              next: () => use.pages.actions.onFinalPaymentCrForm(),
               type: 'debit',
               cashRegisterPostsId: use.attributes.states.cashRegisterPostsId,
               cashRegisterTypePostsId:
@@ -115,6 +116,15 @@ export const ExpensesCashRegister = ({
               paymentType: 'expenses',
             }}
           />
+        </FadeIn>
+      )}
+
+      {use.pages.states.isFinalPaymentCrForm && (
+        <FadeIn
+          keyName="FinalPaymentCrForm"
+          isVisible={use.pages.states.isFinalPaymentCrForm}
+        >
+          <CashExpensesPaymentForm use={use} />
         </FadeIn>
       )}
     </>

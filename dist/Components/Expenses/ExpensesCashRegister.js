@@ -40,10 +40,10 @@ var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashR
     use: useEntity,
     useExpenses: use,
     menu: menuEntity
-  })), use.pages.states.isExpensesCrForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+  })), use.pages.states.isExpensesForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "ExpensesCrForm",
-    isVisible: use.pages.states.isExpensesCrForm
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.ExpensesCrForm, {
+    isVisible: use.pages.states.isExpensesForm
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.ExpensesForm, {
     use: use,
     siteOptions: sitesOptions,
     useCurrencies: useCurrencies

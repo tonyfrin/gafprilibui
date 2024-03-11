@@ -799,9 +799,9 @@ export type {
   ExpensesTypeFormProps,
   ExpensesTypeFormPropsExtended,
 } from './ExpensesType';
-export { ExpensesInit, ExpensesCrForm } from './Expenses';
+export { ExpensesInit, ExpensesForm } from './Expenses';
 export type {
   ExpensesInitStylesContainerProps,
   ExpensesInitProps,
-  ExpensesCrFormProps,
+  ExpensesFormProps,
 } from './Expenses';

@@ -33,8 +33,8 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     setIsExpensesForm = _useState10[1];
   var _useState11 = (0, _react.useState)(false),
     _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
-    isExpensesCrForm = _useState12[0],
-    setIsExpensesCrForm = _useState12[1];
+    isPaymentCrForm = _useState12[0],
+    setIsPaymentCrForm = _useState12[1];
 
   // Funciones de paginas
   var onFetching = function onFetching() {
@@ -43,7 +43,7 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(false);
-    setIsExpensesCrForm(false);
+    setIsPaymentCrForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
@@ -52,7 +52,7 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(false);
-    setIsExpensesCrForm(false);
+    setIsPaymentCrForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onEntitySearch = function onEntitySearch() {
@@ -61,7 +61,7 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     setIsEntitySearch(true);
     setIsAddEntity(false);
     setIsExpensesForm(false);
-    setIsExpensesCrForm(false);
+    setIsPaymentCrForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onAddEntity = function onAddEntity() {
@@ -70,7 +70,7 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     setIsEntitySearch(false);
     setIsAddEntity(true);
     setIsExpensesForm(false);
-    setIsExpensesCrForm(false);
+    setIsPaymentCrForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onExpensesForm = function onExpensesForm() {
@@ -79,22 +79,22 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(true);
-    setIsExpensesCrForm(false);
+    setIsPaymentCrForm(false);
     (0, _helpers.scrollToTop)();
   };
-  var onExpensesCrForm = function onExpensesCrForm() {
+  var onPaymentCrForm = function onPaymentCrForm() {
     setIsFetching(false);
     setIsInit(false);
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(false);
-    setIsExpensesCrForm(true);
+    setIsPaymentCrForm(true);
     (0, _helpers.scrollToTop)();
   };
   var goExpensesEntity = function goExpensesEntity(entity) {
     useAttributes.actions.setEntity(entity);
     useAttributes.actions.changeSupplierId(entity.id);
-    onExpensesCrForm();
+    onExpensesForm();
   };
   var returnInit = function returnInit() {
     useAttributes.actions.infoReset();
@@ -152,7 +152,7 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     isEntitySearch: isEntitySearch,
     isAddEntity: isAddEntity,
     isExpensesForm: isExpensesForm,
-    isExpensesCrForm: isExpensesCrForm
+    isPaymentCrForm: isPaymentCrForm
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -162,7 +162,7 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     onEntitySearch: onEntitySearch,
     onAddEntity: onAddEntity,
     onExpensesForm: onExpensesForm,
-    onExpensesCrForm: onExpensesCrForm,
+    onPaymentCrForm: onPaymentCrForm,
     returnInit: returnInit,
     processEntityBydocumentId: processEntityBydocumentId,
     processEntityByName: processEntityByName,

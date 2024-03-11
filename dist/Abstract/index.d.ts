@@ -82,5 +82,5 @@ export { CashRegisterTypeForm, InitCashRegisterType } from './CashRegisterType';
 export type { CashRegisterTypeFormProps, InitCashRegisterTypeProps, InitCashRegisterTypePropsExtended, } from './CashRegisterType';
 export { InitExpensesType, ExpensesTypeForm } from './ExpensesType';
 export type { InitExpensesTypeProps, InitExpensesTypePropsExtended, ExpensesTypeFormProps, ExpensesTypeFormPropsExtended, } from './ExpensesType';
-export { ExpensesInit, ExpensesCrForm } from './Expenses';
-export type { ExpensesInitStylesContainerProps, ExpensesInitProps, ExpensesCrFormProps, } from './Expenses';
+export { ExpensesInit, ExpensesForm } from './Expenses';
+export type { ExpensesInitStylesContainerProps, ExpensesInitProps, ExpensesFormProps, } from './Expenses';

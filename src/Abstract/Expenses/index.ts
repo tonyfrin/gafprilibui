@@ -3,5 +3,5 @@ export type {
   ExpensesInitStylesContainerProps,
   ExpensesInitProps,
 } from './ExpensesInit';
-export { ExpensesCrForm } from './ExpensesCrForm';
-export type { ExpensesCrFormProps } from './ExpensesCrForm';
+export { ExpensesForm } from './ExpensesForm';
+export type { ExpensesFormProps } from './ExpensesForm';

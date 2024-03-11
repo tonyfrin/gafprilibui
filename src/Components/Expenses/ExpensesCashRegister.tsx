@@ -11,7 +11,7 @@ import {
   MainMenuItems,
   ExpensesInit,
   EntityExpensesSearch,
-  ExpensesCrForm,
+  ExpensesForm,
 } from '../../Abstract';
 import { EntityExpenses } from '../Entity';
 
@@ -68,13 +68,13 @@ export const ExpensesCashRegister = ({
           <EntityExpenses use={useEntity} useExpenses={use} menu={menuEntity} />
         </FadeIn>
       )}
-      {use.pages.states.isExpensesCrForm && (
+      {use.pages.states.isExpensesForm && (
         <FadeIn
           keyName="ExpensesCrForm"
-          isVisible={use.pages.states.isExpensesCrForm}
+          isVisible={use.pages.states.isExpensesForm}
         >
           <>
-            <ExpensesCrForm
+            <ExpensesForm
               use={use}
               siteOptions={sitesOptions}
               useCurrencies={useCurrencies}

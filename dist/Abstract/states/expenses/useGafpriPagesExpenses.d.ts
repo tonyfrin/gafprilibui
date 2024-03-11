@@ -9,7 +9,7 @@ export type UseGafpriPagesExpensesReturn = {
         isEntitySearch: boolean;
         isAddEntity: boolean;
         isExpensesForm: boolean;
-        isExpensesCrForm: boolean;
+        isPaymentCrForm: boolean;
     };
     actions: {
         onFetching: () => void;
@@ -17,7 +17,7 @@ export type UseGafpriPagesExpensesReturn = {
         onEntitySearch: () => void;
         onAddEntity: () => void;
         onExpensesForm: () => void;
-        onExpensesCrForm: () => void;
+        onPaymentCrForm: () => void;
         returnInit: () => void;
         processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
         processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;

@@ -229,7 +229,6 @@ export function useGafpriAttributesExpenses({
         expensesTypeIdValid,
         projectsPostsIdValid,
         currencyIdValid,
-        parseFloat(total) === parseFloat(usePayment.states.total),
         parseFloat(total) > 0,
       ],
       inputId: EXPENSES_ROUTE,

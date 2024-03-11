@@ -314,8 +314,8 @@ export const ExpensesCrForm = ({
             display: 'flex',
             justifyContent: 'flex-start',
             custom: `
-              margin: '20px 0px';
-              padding-left: 60px;
+              margin: 20px 0px;
+              padding-left: 4%;
             `,
           }}
         >

@@ -244,7 +244,7 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
       width: '100%',
       display: 'flex',
       justifyContent: 'flex-start',
-      custom: "\n              margin: '20px 0px';\n              padding-left: 60px;\n            "
+      custom: "\n              margin: 20px 0px;\n              padding-left: 4%;\n            "
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
     value: "Total: ",

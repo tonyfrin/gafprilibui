@@ -320,6 +320,7 @@ export function useGafpriAttributesExpenses({
 
   const addCashTransaction = (): void => {
     if (cashRegisterTypePostsId === 0 || cashRegisterPostsId === 0) return;
+    usePayment.useGeneralPaymentMethods.actions.emptyPaymentMethodArray();
     usePayment.useGeneralPaymentMethods.actions.addCashTransaction(
       cashRegisterTypePostsId,
       cashRegisterPostsId,

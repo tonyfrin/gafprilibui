@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from 'react';
+import React from 'react';
 import { Loading } from '../Loading';
 import {
   UseGafpriExpensesReturn,
@@ -15,7 +15,7 @@ import {
   CashForm,
 } from '../../Abstract';
 import { EntityExpenses } from '../Entity';
-import { EXPENSES_ROUTE } from 'src/constants';
+import { EXPENSES_ROUTE } from '../../constants';
 
 export type ExpensesCashRegisterStylesContainerProps = {
   backgroundImage?: string;

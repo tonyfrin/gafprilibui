@@ -10,7 +10,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
 var _Entity = require("../Entity");
-var _constants = require("src/constants");
+var _constants = require("../../constants");
 var _excluded = ["className"];
 var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashRegister(_ref) {
   var use = _ref.use,

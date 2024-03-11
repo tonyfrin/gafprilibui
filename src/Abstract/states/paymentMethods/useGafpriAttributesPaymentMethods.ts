@@ -47,6 +47,7 @@ export function useGafpriAttributesPaymentMethods(): UseGafpriAttributesPaymentM
   const [type, setType] = useState<'deposit' | 'debit' | ''>('');
   const [paymentType, setPaymentType] = useState('');
   const [currenciesId, setCurrenciesId] = useState(0);
+
   const [bank, setBank] = useState('');
   const [number, setNumber] = useState('');
   const [amount, setAmount] = useState(0);

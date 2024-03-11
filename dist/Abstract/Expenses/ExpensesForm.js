@@ -34,7 +34,7 @@ var ExpensesForm = exports.ExpensesForm = function ExpensesForm(_ref) {
     use.attributes.actions.validationSupplierId(use.attributes.states.supplierId);
     use.attributes.actions.validationExpensesTypeId(use.attributes.states.expensesTypeId);
     use.attributes.actions.validationProjectsPostsId(use.attributes.states.projectsPostsId);
-  }, [use.attributes.states.supplierId, use.attributes.states.expensesTypeId, use.attributes.states.projectsPostsId, use.attributes.states.currencyId, use.attributes.states.supplierIdValid, use.attributes.states.expensesTypeIdValid, use.attributes.states.projectsPostsIdValid, InputExpensesType, InputProjects]);
+  }, [use.attributes.states.supplierId, use.attributes.states.expensesTypeId, use.attributes.states.projectsPostsId, use.attributes.states.supplierIdValid, use.attributes.states.expensesTypeIdValid, use.attributes.states.projectsPostsIdValid, InputExpensesType, InputProjects]);
   _react["default"].useEffect(function () {
     use.attributes.actions.validationButtonNext();
   }, [use.attributes.states.supplierIdValid, use.attributes.states.expensesTypeIdValid, use.attributes.states.projectsPostsIdValid, use.attributes.states.total]);
@@ -134,7 +134,8 @@ var ExpensesForm = exports.ExpensesForm = function ExpensesForm(_ref) {
     props: {
       inputProps: {
         placeholder: 'Motivo del gasto',
-        title: 'Motivo del gasto'
+        title: 'Motivo del gasto',
+        defaultValue: use.attributes.states.note
       },
       styles: {
         width: '100%'
@@ -151,6 +152,9 @@ var ExpensesForm = exports.ExpensesForm = function ExpensesForm(_ref) {
     props: {
       styles: {
         width: '100%'
+      },
+      inputProps: {
+        defaultValue: use.attributes.states.invoice
       }
     }
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {

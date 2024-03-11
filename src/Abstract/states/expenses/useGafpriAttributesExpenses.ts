@@ -4,7 +4,6 @@ import {
   generalValidationSupplierId,
   generalValidationExpensesTypeId,
   generalValidationProjectsId,
-  generalValidationSelectCurrencies,
   generalValidationButtonNext,
 } from '../../../Validations';
 import {
@@ -12,7 +11,6 @@ import {
   generalChangeExpensesTypeId,
   generalChangeProjectsId,
   generalChangeNote,
-  generalChangeCurrenciesId,
 } from '../../../Changes';
 import { EntityAttributes } from '../entity';
 import {
@@ -45,11 +43,6 @@ type State = {
 
   note: string;
 
-  currencyId: number;
-  currencyIdValid: boolean;
-  currencyIdDefault: SelectDefault;
-  currencyIdOptions: SelectDefault[];
-
   subTotal: string;
 
   subTotalTax: string;
@@ -57,6 +50,9 @@ type State = {
   total: string;
 
   entity: EntityAttributes | null;
+
+  cashRegisterTypePostsId: number;
+  cashRegisterPostsId: number;
 };
 
 type Actions = {
@@ -64,15 +60,11 @@ type Actions = {
   validationSupplierId: (value: number) => boolean;
   validationExpensesTypeId: (value: string) => boolean;
   validationProjectsPostsId: (value: string) => boolean;
-  validationCurrencyId: (value: string) => boolean;
   changeSupplierId: (value: number) => void;
   changeExpensesTypeId: (
     value: SingleValue<{ value: string; label: string }>
   ) => void;
   changeProjectsPostsId: (
-    value: SingleValue<{ value: string; label: string }>
-  ) => void;
-  changeCurrencyId: (
     value: SingleValue<{ value: string; label: string }>
   ) => void;
   changeNote: (value: string) => void;
@@ -82,9 +74,6 @@ type Actions = {
   changeTotal: () => void;
   setEntity: (value: EntityAttributes | null) => void;
   validationButtonNext: () => void;
-  changeCurrencyIdCr: (
-    options: SingleValue<{ value: string; label: string }>
-  ) => void;
   addCashTransaction: () => void;
   setCashRegisterTypePostsId: (value: number) => void;
   setCashRegisterPostsId: (value: number) => void;
@@ -141,19 +130,10 @@ export function useGafpriAttributesExpenses({
 
   const [total, setTotal] = useState('');
 
-  const [currencyId, setCurrencyId] = useState(0);
-  const [currencyIdValid, setCurrencyIdValid] = useState(false);
-  const [currencyIdDefault, setCurrencyIdDefault] = useState<SelectDefault>({
-    value: '',
-    label: 'Selecciona la Moneda',
-  });
-  const currencyIdOptions: SelectDefault[] =
-    currencies.actions.getOptionsItems();
-
   const [entity, setEntity] = useState<EntityAttributes | null>(null);
   const [cashRegisterTypePostsId, setCashRegisterTypePostsId] = useState(0);
   const [cashRegisterPostsId, setCashRegisterPostsId] = useState(0);
-  const usePayment = useGafpriAttributesPayment();
+  const usePayment = useGafpriAttributesPayment({ currencies });
 
   const infoReset = (): void => {
     setSupplierId(0);
@@ -172,13 +152,6 @@ export function useGafpriAttributesExpenses({
     });
 
     setNote('');
-
-    setCurrencyId(0);
-    setCurrencyIdValid(false);
-    setCurrencyIdDefault({
-      value: '',
-      label: 'Selecciona la Moneda',
-    });
 
     setSubTotal('');
     setSubTotalTax('');
@@ -215,14 +188,6 @@ export function useGafpriAttributesExpenses({
     });
   };
 
-  const validationCurrencyId = (value: string): boolean => {
-    return generalValidationSelectCurrencies({
-      value,
-      setValid: setCurrencyIdValid,
-      currentValid: currencyIdValid,
-    });
-  };
-
   const validationButtonNext = (): void => {
     generalValidationButtonNext({
       validations: [
@@ -238,6 +203,7 @@ export function useGafpriAttributesExpenses({
   const validationButtonNextPaymentCr = (): void => {
     generalValidationButtonNext({
       validations: [
+        usePayment.useGeneralPaymentMethods.states.currenciesIdValid,
         parseFloat(usePayment.states.total) > 0,
         usePayment.useGeneralPaymentMethods.useCashTransactions.states.change >
           0,
@@ -276,31 +242,6 @@ export function useGafpriAttributesExpenses({
       setDefault: setProjectsPostsIdDefault,
       setValue: setProjectsPostsId,
     });
-  };
-
-  const changeCurrencyId = (
-    options: SingleValue<{ value: string; label: string }>
-  ): void => {
-    generalChangeCurrenciesId({
-      options,
-      validation: validationCurrencyId,
-      setDefault: setCurrencyIdDefault,
-      setValue: setCurrencyId,
-    });
-  };
-
-  const changeCurrencyIdCr = (
-    options: SingleValue<{ value: string; label: string }>
-  ): void => {
-    if (!options) return;
-    const value = parseInt(options.value, 10);
-    usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setCurrenciesId(
-      value
-    );
-    usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setCurrenciesId(
-      value
-    );
-    changeCurrencyId(options);
   };
 
   const changeNote = (value: string): void => {
@@ -371,16 +312,14 @@ export function useGafpriAttributesExpenses({
     projectsPostsIdDefault,
     projectsPostsIdOptions,
 
-    currencyId,
-    currencyIdValid,
-    currencyIdDefault,
-    currencyIdOptions,
-
     note,
     subTotal,
     subTotalTax,
     total,
     entity,
+
+    cashRegisterTypePostsId,
+    cashRegisterPostsId,
   };
 
   const actions = {
@@ -388,11 +327,9 @@ export function useGafpriAttributesExpenses({
     validationSupplierId,
     validationExpensesTypeId,
     validationProjectsPostsId,
-    validationCurrencyId,
     changeSupplierId,
     changeExpensesTypeId,
     changeProjectsPostsId,
-    changeCurrencyId,
     changeNote,
     changeInvoice,
     changeSubTotal,
@@ -400,7 +337,6 @@ export function useGafpriAttributesExpenses({
     changeTotal,
     setEntity,
     validationButtonNext,
-    changeCurrencyIdCr,
     addCashTransaction,
     setCashRegisterTypePostsId,
     setCashRegisterPostsId,

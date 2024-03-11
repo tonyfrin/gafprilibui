@@ -16,31 +16,24 @@ type State = {
     projectsPostsIdDefault: SelectDefault;
     projectsPostsIdOptions: SelectDefault[];
     note: string;
-    currencyId: number;
-    currencyIdValid: boolean;
-    currencyIdDefault: SelectDefault;
-    currencyIdOptions: SelectDefault[];
     subTotal: string;
     subTotalTax: string;
     total: string;
     entity: EntityAttributes | null;
+    cashRegisterTypePostsId: number;
+    cashRegisterPostsId: number;
 };
 type Actions = {
     infoReset: () => void;
     validationSupplierId: (value: number) => boolean;
     validationExpensesTypeId: (value: string) => boolean;
     validationProjectsPostsId: (value: string) => boolean;
-    validationCurrencyId: (value: string) => boolean;
     changeSupplierId: (value: number) => void;
     changeExpensesTypeId: (value: SingleValue<{
         value: string;
         label: string;
     }>) => void;
     changeProjectsPostsId: (value: SingleValue<{
-        value: string;
-        label: string;
-    }>) => void;
-    changeCurrencyId: (value: SingleValue<{
         value: string;
         label: string;
     }>) => void;
@@ -51,10 +44,6 @@ type Actions = {
     changeTotal: () => void;
     setEntity: (value: EntityAttributes | null) => void;
     validationButtonNext: () => void;
-    changeCurrencyIdCr: (options: SingleValue<{
-        value: string;
-        label: string;
-    }>) => void;
     addCashTransaction: () => void;
     setCashRegisterTypePostsId: (value: number) => void;
     setCashRegisterPostsId: (value: number) => void;

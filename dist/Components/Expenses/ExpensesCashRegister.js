@@ -63,18 +63,16 @@ var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashR
     useCurrencies: useCurrencies,
     usePayment: use.attributes.usePayment,
     currentPaymentInfo: {
-      currencyId: use.attributes.states.currencyId,
-      validationCurrencyId: use.attributes.actions.validationCurrencyId,
-      currencyIdValid: use.attributes.states.currencyIdValid,
       validationButtonNext: use.attributes.actions.validationButtonNextPaymentCr,
-      changeCurrencyId: use.attributes.actions.changeCurrencyId,
-      currencyIdDefault: use.attributes.states.currencyIdDefault,
-      currencyIdOptions: use.attributes.states.currencyIdOptions,
       returnInit: use.pages.actions.onExpensesForm,
       buttonNextId: "".concat(_constants.EXPENSES_ROUTE, "-2"),
       add: function add() {
         return console.log(use.attributes);
-      }
+      },
+      type: 'deposit',
+      cashRegisterPostsId: use.attributes.states.cashRegisterPostsId,
+      cashRegisterTypePostsId: use.attributes.states.cashRegisterTypePostsId,
+      paymentType: 'expenses'
     }
   })));
 };

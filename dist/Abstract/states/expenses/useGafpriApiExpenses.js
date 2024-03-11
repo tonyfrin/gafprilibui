@@ -18,7 +18,7 @@ var useGafpriApiExpenses = exports.useGafpriApiExpenses = function useGafpriApiE
     });
   };
   var add = function add() {
-    if (useAttributes.states.supplierIdValid && useAttributes.states.expensesTypeIdValid && useAttributes.states.projectsPostsIdValid && useAttributes.states.currencyIdValid && parseFloat(useAttributes.states.total) === parseFloat(useAttributes.usePayment.states.total) && parseFloat(useAttributes.states.total) === useAttributes.usePayment.useGeneralPaymentMethods.states.totalPaymentMethod && parseFloat(useAttributes.states.total) === useAttributes.usePayment.useGeneralPaymentMethods.states.totalMethods && parseFloat(useAttributes.states.total) > 0 && token) {
+    if (useAttributes.states.supplierIdValid && useAttributes.states.expensesTypeIdValid && useAttributes.states.projectsPostsIdValid && useAttributes.usePayment.useGeneralPaymentMethods.states.currenciesIdValid && parseFloat(useAttributes.states.total) === parseFloat(useAttributes.usePayment.states.total) && parseFloat(useAttributes.states.total) === useAttributes.usePayment.useGeneralPaymentMethods.states.totalPaymentMethod && parseFloat(useAttributes.states.total) === useAttributes.usePayment.useGeneralPaymentMethods.states.totalMethods && parseFloat(useAttributes.states.total) > 0 && token) {
       var payload = {
         supplierId: useAttributes.states.supplierId,
         expensesTypeId: useAttributes.states.expensesTypeId,

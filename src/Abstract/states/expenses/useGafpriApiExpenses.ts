@@ -45,7 +45,8 @@ export const useGafpriApiExpenses = ({
       useAttributes.states.supplierIdValid &&
       useAttributes.states.expensesTypeIdValid &&
       useAttributes.states.projectsPostsIdValid &&
-      useAttributes.states.currencyIdValid &&
+      useAttributes.usePayment.useGeneralPaymentMethods.states
+        .currenciesIdValid &&
       parseFloat(useAttributes.states.total) ===
         parseFloat(useAttributes.usePayment.states.total) &&
       parseFloat(useAttributes.states.total) ===

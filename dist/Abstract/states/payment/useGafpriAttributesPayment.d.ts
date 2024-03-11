@@ -1,4 +1,5 @@
 import { GeneralPaymentMethodsAttributes, UseGafpriAttributesGeneralPaymentMethodsReturn } from '../paymentMethods';
+import { UseCurrenciesReturn } from '../../../states';
 export type PaymentAttributes = {
     total: string;
     note?: string;
@@ -21,5 +22,8 @@ export type UseGafpriAttributesPaymentReturn = {
     actions: Actions;
     useGeneralPaymentMethods: UseGafpriAttributesGeneralPaymentMethodsReturn;
 };
-export declare function useGafpriAttributesPayment(): UseGafpriAttributesPaymentReturn;
+export type UseGafpriAttributesPaymentProps = {
+    currencies: UseCurrenciesReturn;
+};
+export declare function useGafpriAttributesPayment({ currencies, }: UseGafpriAttributesPaymentProps): UseGafpriAttributesPaymentReturn;
 export {};

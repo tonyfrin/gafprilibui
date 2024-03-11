@@ -13,18 +13,14 @@ import { SingleValue } from 'react-select';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 
 export type CurrentPaymentInfo = {
-  currencyId: number;
-  validationCurrencyId: (value: string) => void;
-  currencyIdValid: boolean;
   validationButtonNext: () => void;
-  changeCurrencyId: (
-    value: SingleValue<{ label: string; value: string }>
-  ) => void;
-  currencyIdOptions: SelectDefault[];
-  currencyIdDefault: SelectDefault;
   returnInit: () => void;
   buttonNextId: string;
   add: () => void;
+  cashRegisterTypePostsId: number;
+  cashRegisterPostsId: number;
+  type: 'deposit' | 'debit';
+  paymentType: string;
 };
 
 export type CashFormProps = {
@@ -49,7 +45,10 @@ export const CashForm = ({
 
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (siteOptions.currencyId === currentPaymentInfo.currencyId) {
+    if (
+      siteOptions.currencyId ===
+      usePayment.useGeneralPaymentMethods.states.currenciesId
+    ) {
       //cashTransactions
       usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setAmount(
         parseFloat(value)
@@ -83,7 +82,10 @@ export const CashForm = ({
 
   const setChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (siteOptions.currencyId !== currentPaymentInfo.currencyId) {
+    if (
+      siteOptions.currencyId !==
+      usePayment.useGeneralPaymentMethods.states.currenciesId
+    ) {
       //cashTransactions
       usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setChange(
         parseFloat(value)
@@ -100,25 +102,51 @@ export const CashForm = ({
   };
 
   React.useEffect(() => {
-    if (currentPaymentInfo.currencyId !== 0) {
-      setCurrentCurrency(
-        useCurrencies.actions.getById(currentPaymentInfo.currencyId)
-      );
-    }
-  }, [currentPaymentInfo.currencyId]);
+    usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setCashRegisterPostsId(
+      currentPaymentInfo.cashRegisterPostsId
+    );
+    usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setCashRegisterTypePostsId(
+      currentPaymentInfo.cashRegisterTypePostsId
+    );
+
+    usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setType(
+      currentPaymentInfo.type
+    );
+    usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setType(
+      currentPaymentInfo.type
+    );
+
+    usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setMethodType(
+      'cash'
+    );
+
+    usePayment.actions.setType(currentPaymentInfo.paymentType);
+  }, []);
 
   React.useEffect(() => {
-    currentPaymentInfo.validationCurrencyId(`${currentPaymentInfo.currencyId}`);
+    if (usePayment.useGeneralPaymentMethods.states.currenciesId !== 0) {
+      setCurrentCurrency(
+        useCurrencies.actions.getById(
+          usePayment.useGeneralPaymentMethods.states.currenciesId
+        )
+      );
+    }
+  }, [usePayment.useGeneralPaymentMethods.states.currenciesId]);
+
+  React.useEffect(() => {
+    usePayment.useGeneralPaymentMethods.actions.validationCurrenciesId(
+      `${usePayment.useGeneralPaymentMethods.states.currenciesId}`
+    );
   }, [
-    currentPaymentInfo.currencyId,
-    currentPaymentInfo.currencyIdValid,
+    usePayment.useGeneralPaymentMethods.states.currenciesId,
+    usePayment.useGeneralPaymentMethods.states.currenciesIdValid,
     InputCurrencies,
   ]);
 
   React.useEffect(() => {
     currentPaymentInfo.validationButtonNext();
   }, [
-    currentPaymentInfo.currencyIdValid,
+    usePayment.useGeneralPaymentMethods.states.currenciesIdValid,
     usePayment.useGeneralPaymentMethods.useCashTransactions.states.change,
     usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change,
     usePayment.states.total,
@@ -128,10 +156,16 @@ export const CashForm = ({
     setInputCurrencies((): JSX.Element => {
       return (
         <SelectCurrencies
-          changeCurrencies={(e) => currentPaymentInfo.changeCurrencyId(e)}
+          changeCurrencies={(e) =>
+            usePayment.useGeneralPaymentMethods.actions.changeCashCurrenciesId(
+              e
+            )
+          }
           props={{
-            options: currentPaymentInfo.currencyIdOptions,
-            defaultValue: currentPaymentInfo.currencyIdDefault,
+            options:
+              usePayment.useGeneralPaymentMethods.states.currenciesIdOptions,
+            defaultValue:
+              usePayment.useGeneralPaymentMethods.states.currenciesIdDefault,
             title: 'Moneda',
             styles: {
               width: '100%',

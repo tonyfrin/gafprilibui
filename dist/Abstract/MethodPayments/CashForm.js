@@ -27,7 +27,7 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
   var changeAmount = function changeAmount(e) {
     var value = e.target.value;
-    if (siteOptions.currencyId === currentPaymentInfo.currencyId) {
+    if (siteOptions.currencyId === usePayment.useGeneralPaymentMethods.states.currenciesId) {
       //cashTransactions
       usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setAmount(parseFloat(value));
       usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setChange(parseFloat(value));
@@ -48,7 +48,7 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
   };
   var setChange = function setChange(e) {
     var value = e.target.value;
-    if (siteOptions.currencyId !== currentPaymentInfo.currencyId) {
+    if (siteOptions.currencyId !== usePayment.useGeneralPaymentMethods.states.currenciesId) {
       //cashTransactions
       usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setChange(parseFloat(value));
 
@@ -60,25 +60,33 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
     }
   };
   _react["default"].useEffect(function () {
-    if (currentPaymentInfo.currencyId !== 0) {
-      setCurrentCurrency(useCurrencies.actions.getById(currentPaymentInfo.currencyId));
-    }
-  }, [currentPaymentInfo.currencyId]);
+    usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setCashRegisterPostsId(currentPaymentInfo.cashRegisterPostsId);
+    usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setCashRegisterTypePostsId(currentPaymentInfo.cashRegisterTypePostsId);
+    usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setType(currentPaymentInfo.type);
+    usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setType(currentPaymentInfo.type);
+    usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setMethodType('cash');
+    usePayment.actions.setType(currentPaymentInfo.paymentType);
+  }, []);
   _react["default"].useEffect(function () {
-    currentPaymentInfo.validationCurrencyId("".concat(currentPaymentInfo.currencyId));
-  }, [currentPaymentInfo.currencyId, currentPaymentInfo.currencyIdValid, InputCurrencies]);
+    if (usePayment.useGeneralPaymentMethods.states.currenciesId !== 0) {
+      setCurrentCurrency(useCurrencies.actions.getById(usePayment.useGeneralPaymentMethods.states.currenciesId));
+    }
+  }, [usePayment.useGeneralPaymentMethods.states.currenciesId]);
+  _react["default"].useEffect(function () {
+    usePayment.useGeneralPaymentMethods.actions.validationCurrenciesId("".concat(usePayment.useGeneralPaymentMethods.states.currenciesId));
+  }, [usePayment.useGeneralPaymentMethods.states.currenciesId, usePayment.useGeneralPaymentMethods.states.currenciesIdValid, InputCurrencies]);
   _react["default"].useEffect(function () {
     currentPaymentInfo.validationButtonNext();
-  }, [currentPaymentInfo.currencyIdValid, usePayment.useGeneralPaymentMethods.useCashTransactions.states.change, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change, usePayment.states.total]);
+  }, [usePayment.useGeneralPaymentMethods.states.currenciesIdValid, usePayment.useGeneralPaymentMethods.useCashTransactions.states.change, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change, usePayment.states.total]);
   _react["default"].useEffect(function () {
     setInputCurrencies(function () {
       return /*#__PURE__*/_react["default"].createElement(_Input.SelectCurrencies, {
         changeCurrencies: function changeCurrencies(e) {
-          return currentPaymentInfo.changeCurrencyId(e);
+          return usePayment.useGeneralPaymentMethods.actions.changeCashCurrenciesId(e);
         },
         props: {
-          options: currentPaymentInfo.currencyIdOptions,
-          defaultValue: currentPaymentInfo.currencyIdDefault,
+          options: usePayment.useGeneralPaymentMethods.states.currenciesIdOptions,
+          defaultValue: usePayment.useGeneralPaymentMethods.states.currenciesIdDefault,
           title: 'Moneda',
           styles: {
             width: '100%'

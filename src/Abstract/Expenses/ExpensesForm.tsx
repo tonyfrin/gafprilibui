@@ -56,7 +56,6 @@ export const ExpensesForm = ({
     use.attributes.states.supplierId,
     use.attributes.states.expensesTypeId,
     use.attributes.states.projectsPostsId,
-    use.attributes.states.currencyId,
     use.attributes.states.supplierIdValid,
     use.attributes.states.expensesTypeIdValid,
     use.attributes.states.projectsPostsIdValid,
@@ -199,6 +198,7 @@ export const ExpensesForm = ({
                 inputProps: {
                   placeholder: 'Motivo del gasto',
                   title: 'Motivo del gasto',
+                  defaultValue: use.attributes.states.note,
                 },
                 styles: {
                   width: '100%',
@@ -218,6 +218,9 @@ export const ExpensesForm = ({
               props={{
                 styles: {
                   width: '100%',
+                },
+                inputProps: {
+                  defaultValue: use.attributes.states.invoice,
                 },
               }}
             />

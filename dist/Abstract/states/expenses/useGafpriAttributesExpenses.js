@@ -78,35 +78,21 @@ function useGafpriAttributesExpenses(_ref) {
     _useState26 = (0, _slicedToArray2["default"])(_useState25, 2),
     total = _useState26[0],
     setTotal = _useState26[1];
-  var _useState27 = (0, _react.useState)(0),
+  var _useState27 = (0, _react.useState)(null),
     _useState28 = (0, _slicedToArray2["default"])(_useState27, 2),
-    currencyId = _useState28[0],
-    setCurrencyId = _useState28[1];
-  var _useState29 = (0, _react.useState)(false),
+    entity = _useState28[0],
+    setEntity = _useState28[1];
+  var _useState29 = (0, _react.useState)(0),
     _useState30 = (0, _slicedToArray2["default"])(_useState29, 2),
-    currencyIdValid = _useState30[0],
-    setCurrencyIdValid = _useState30[1];
-  var _useState31 = (0, _react.useState)({
-      value: '',
-      label: 'Selecciona la Moneda'
-    }),
+    cashRegisterTypePostsId = _useState30[0],
+    setCashRegisterTypePostsId = _useState30[1];
+  var _useState31 = (0, _react.useState)(0),
     _useState32 = (0, _slicedToArray2["default"])(_useState31, 2),
-    currencyIdDefault = _useState32[0],
-    setCurrencyIdDefault = _useState32[1];
-  var currencyIdOptions = currencies.actions.getOptionsItems();
-  var _useState33 = (0, _react.useState)(null),
-    _useState34 = (0, _slicedToArray2["default"])(_useState33, 2),
-    entity = _useState34[0],
-    setEntity = _useState34[1];
-  var _useState35 = (0, _react.useState)(0),
-    _useState36 = (0, _slicedToArray2["default"])(_useState35, 2),
-    cashRegisterTypePostsId = _useState36[0],
-    setCashRegisterTypePostsId = _useState36[1];
-  var _useState37 = (0, _react.useState)(0),
-    _useState38 = (0, _slicedToArray2["default"])(_useState37, 2),
-    cashRegisterPostsId = _useState38[0],
-    setCashRegisterPostsId = _useState38[1];
-  var usePayment = (0, _payment.useGafpriAttributesPayment)();
+    cashRegisterPostsId = _useState32[0],
+    setCashRegisterPostsId = _useState32[1];
+  var usePayment = (0, _payment.useGafpriAttributesPayment)({
+    currencies: currencies
+  });
   var infoReset = function infoReset() {
     setSupplierId(0);
     setSupplierIdValid(false);
@@ -120,12 +106,6 @@ function useGafpriAttributesExpenses(_ref) {
       label: 'Selecciona un proyecto'
     });
     setNote('');
-    setCurrencyId(0);
-    setCurrencyIdValid(false);
-    setCurrencyIdDefault({
-      value: '',
-      label: 'Selecciona la Moneda'
-    });
     setSubTotal('');
     setSubTotalTax('');
     setTotal('');
@@ -157,13 +137,6 @@ function useGafpriAttributesExpenses(_ref) {
       currentValid: projectsPostsIdValid
     });
   };
-  var validationCurrencyId = function validationCurrencyId(value) {
-    return (0, _Validations.generalValidationSelectCurrencies)({
-      value: value,
-      setValid: setCurrencyIdValid,
-      currentValid: currencyIdValid
-    });
-  };
   var validationButtonNext = function validationButtonNext() {
     (0, _Validations.generalValidationButtonNext)({
       validations: [supplierIdValid, expensesTypeIdValid, projectsPostsIdValid, parseFloat(total) > 0],
@@ -172,7 +145,7 @@ function useGafpriAttributesExpenses(_ref) {
   };
   var validationButtonNextPaymentCr = function validationButtonNextPaymentCr() {
     (0, _Validations.generalValidationButtonNext)({
-      validations: [parseFloat(usePayment.states.total) > 0, usePayment.useGeneralPaymentMethods.useCashTransactions.states.change > 0, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
+      validations: [usePayment.useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(usePayment.states.total) > 0, usePayment.useGeneralPaymentMethods.useCashTransactions.states.change > 0, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
       inputId: "".concat(_constants.EXPENSES_ROUTE, "-2")
     });
   };
@@ -200,21 +173,6 @@ function useGafpriAttributesExpenses(_ref) {
       setDefault: setProjectsPostsIdDefault,
       setValue: setProjectsPostsId
     });
-  };
-  var changeCurrencyId = function changeCurrencyId(options) {
-    (0, _Changes.generalChangeCurrenciesId)({
-      options: options,
-      validation: validationCurrencyId,
-      setDefault: setCurrencyIdDefault,
-      setValue: setCurrencyId
-    });
-  };
-  var changeCurrencyIdCr = function changeCurrencyIdCr(options) {
-    if (!options) return;
-    var value = parseInt(options.value, 10);
-    usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setCurrenciesId(value);
-    usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setCurrenciesId(value);
-    changeCurrencyId(options);
   };
   var changeNote = function changeNote(value) {
     (0, _Changes.generalChangeNote)({
@@ -271,26 +229,22 @@ function useGafpriAttributesExpenses(_ref) {
     projectsPostsIdValid: projectsPostsIdValid,
     projectsPostsIdDefault: projectsPostsIdDefault,
     projectsPostsIdOptions: projectsPostsIdOptions,
-    currencyId: currencyId,
-    currencyIdValid: currencyIdValid,
-    currencyIdDefault: currencyIdDefault,
-    currencyIdOptions: currencyIdOptions,
     note: note,
     subTotal: subTotal,
     subTotalTax: subTotalTax,
     total: total,
-    entity: entity
+    entity: entity,
+    cashRegisterTypePostsId: cashRegisterTypePostsId,
+    cashRegisterPostsId: cashRegisterPostsId
   };
   var actions = {
     infoReset: infoReset,
     validationSupplierId: validationSupplierId,
     validationExpensesTypeId: validationExpensesTypeId,
     validationProjectsPostsId: validationProjectsPostsId,
-    validationCurrencyId: validationCurrencyId,
     changeSupplierId: changeSupplierId,
     changeExpensesTypeId: changeExpensesTypeId,
     changeProjectsPostsId: changeProjectsPostsId,
-    changeCurrencyId: changeCurrencyId,
     changeNote: changeNote,
     changeInvoice: changeInvoice,
     changeSubTotal: changeSubTotal,
@@ -298,7 +252,6 @@ function useGafpriAttributesExpenses(_ref) {
     changeTotal: changeTotal,
     setEntity: setEntity,
     validationButtonNext: validationButtonNext,
-    changeCurrencyIdCr: changeCurrencyIdCr,
     addCashTransaction: addCashTransaction,
     setCashRegisterTypePostsId: setCashRegisterTypePostsId,
     setCashRegisterPostsId: setCashRegisterPostsId,

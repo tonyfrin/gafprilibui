@@ -108,7 +108,7 @@ export const ExpensesCashRegister = ({
                 use.attributes.actions.validationButtonNextPaymentCr,
               returnInit: use.pages.actions.onExpensesForm,
               buttonNextId: `${EXPENSES_ROUTE}-2`,
-              next: () => use.pages.actions.onFinalPaymentCrForm(),
+              next: use.pages.actions.onFinalPaymentCrForm,
               type: 'debit',
               cashRegisterPostsId: use.attributes.states.cashRegisterPostsId,
               cashRegisterTypePostsId:

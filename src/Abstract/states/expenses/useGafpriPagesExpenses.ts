@@ -122,8 +122,8 @@ export const useGafpriPagesExpenses = ({
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(false);
-    setIsPaymentCrForm(true);
-    setIsFinalPaymentCrForm(false);
+    setIsPaymentCrForm(false);
+    setIsFinalPaymentCrForm(true);
     scrollToTop();
   };
 

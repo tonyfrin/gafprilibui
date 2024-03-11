@@ -107,8 +107,8 @@ var useGafpriPagesExpenses = exports.useGafpriPagesExpenses = function useGafpri
     setIsEntitySearch(false);
     setIsAddEntity(false);
     setIsExpensesForm(false);
-    setIsPaymentCrForm(true);
-    setIsFinalPaymentCrForm(false);
+    setIsPaymentCrForm(false);
+    setIsFinalPaymentCrForm(true);
     (0, _helpers.scrollToTop)();
   };
   var goExpensesEntity = function goExpensesEntity(entity) {

@@ -166,7 +166,7 @@ function useGafpriAttributesExpenses(_ref) {
   };
   var validationButtonNext = function validationButtonNext() {
     (0, _Validations.generalValidationButtonNext)({
-      validations: [supplierIdValid, expensesTypeIdValid, projectsPostsIdValid, currencyIdValid, parseFloat(total) > 0],
+      validations: [supplierIdValid, expensesTypeIdValid, projectsPostsIdValid, parseFloat(total) > 0],
       inputId: _constants.EXPENSES_ROUTE
     });
   };

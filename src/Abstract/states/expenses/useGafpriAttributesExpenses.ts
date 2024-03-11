@@ -228,7 +228,6 @@ export function useGafpriAttributesExpenses({
         supplierIdValid,
         expensesTypeIdValid,
         projectsPostsIdValid,
-        currencyIdValid,
         parseFloat(total) > 0,
       ],
       inputId: EXPENSES_ROUTE,

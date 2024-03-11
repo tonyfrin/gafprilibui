@@ -49,6 +49,7 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
 
       //Payment
       use.attributes.usePayment.actions.setTotal(value);
+      use.attributes.actions.addCashTransaction();
     }
     if (siteOptions.currencyId !== use.attributes.states.currencyId) {
       //cashTransactions
@@ -69,10 +70,10 @@ var ExpensesCrForm = exports.ExpensesCrForm = function ExpensesCrForm(_ref) {
 
       //Payment
       use.attributes.usePayment.actions.setTotal(value);
+      use.attributes.actions.addCashTransaction();
     }
   };
   var add = function add() {
-    use.attributes.actions.addCashTransaction();
     use.api.actions.add();
   };
   _react["default"].useEffect(function () {

@@ -63,6 +63,7 @@ export const ExpensesCrForm = ({
 
       //Payment
       use.attributes.usePayment.actions.setTotal(value);
+      use.attributes.actions.addCashTransaction();
     }
 
     if (siteOptions.currencyId !== use.attributes.states.currencyId) {
@@ -93,11 +94,11 @@ export const ExpensesCrForm = ({
 
       //Payment
       use.attributes.usePayment.actions.setTotal(value);
+      use.attributes.actions.addCashTransaction();
     }
   };
 
   const add = () => {
-    use.attributes.actions.addCashTransaction();
     use.api.actions.add();
   };
 

@@ -26,7 +26,7 @@ var useGafpriApiExpenses = exports.useGafpriApiExpenses = function useGafpriApiE
         projectsPostsId: useAttributes.states.projectsPostsId,
         note: useAttributes.states.note,
         subTotal: parseFloat(useAttributes.states.subTotal),
-        subTotalTax: parseFloat(useAttributes.states.subTotalTax),
+        subTotalTax: parseFloat(useAttributes.states.subTotalTax) || 0,
         total: parseFloat(useAttributes.states.total),
         posts: {
           visibility: 'public'

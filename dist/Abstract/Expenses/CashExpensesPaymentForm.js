@@ -16,13 +16,17 @@ var CashExpensesPaymentForm = exports.CashExpensesPaymentForm = function CashExp
   var title2Text = 'Agrega un nuevo engreso';
   var buttonTitle = 'Procesar';
   var buttonAction = use.api.actions.add;
+  var buttonReturn = function buttonReturn() {
+    use.attributes.usePayment.actions.infoReset();
+    use.pages.actions.onPaymentCrForm();
+  };
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':
         buttonAction();
         break;
       case 'return':
-        use.pages.actions.onPaymentCrForm();
+        buttonReturn();
         break;
       default:
         console.log('Acción desconocida:', action);

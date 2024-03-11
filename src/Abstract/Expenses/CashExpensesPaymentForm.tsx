@@ -17,6 +17,10 @@ export const CashExpensesPaymentForm = ({
 
   const buttonTitle = 'Procesar';
   const buttonAction = use.api.actions.add;
+  const buttonReturn = () => {
+    use.attributes.usePayment.actions.infoReset();
+    use.pages.actions.onPaymentCrForm();
+  };
 
   const handleActions = (action: string, value: any) => {
     switch (action) {
@@ -24,7 +28,7 @@ export const CashExpensesPaymentForm = ({
         buttonAction();
         break;
       case 'return':
-        use.pages.actions.onPaymentCrForm();
+        buttonReturn();
         break;
       default:
         console.log('Acción desconocida:', action);

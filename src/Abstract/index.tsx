@@ -805,3 +805,5 @@ export type {
   ExpensesInitProps,
   ExpensesFormProps,
 } from './Expenses';
+export { CashForm } from './MethodPayments';
+export type { CashFormProps } from './MethodPayments';

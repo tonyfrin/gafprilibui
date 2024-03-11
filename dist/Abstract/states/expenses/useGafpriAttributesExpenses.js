@@ -170,6 +170,12 @@ function useGafpriAttributesExpenses(_ref) {
       inputId: _constants.EXPENSES_ROUTE
     });
   };
+  var validationButtonNextPaymentCr = function validationButtonNextPaymentCr() {
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [parseFloat(usePayment.states.total) > 0, usePayment.useGeneralPaymentMethods.useCashTransactions.states.change > 0, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
+      inputId: "".concat(_constants.EXPENSES_ROUTE, "-2")
+    });
+  };
 
   // Funciones de Change
   var changeSupplierId = function changeSupplierId(value) {
@@ -295,7 +301,8 @@ function useGafpriAttributesExpenses(_ref) {
     changeCurrencyIdCr: changeCurrencyIdCr,
     addCashTransaction: addCashTransaction,
     setCashRegisterTypePostsId: setCashRegisterTypePostsId,
-    setCashRegisterPostsId: setCashRegisterPostsId
+    setCashRegisterPostsId: setCashRegisterPostsId,
+    validationButtonNextPaymentCr: validationButtonNextPaymentCr
   };
   return {
     states: states,

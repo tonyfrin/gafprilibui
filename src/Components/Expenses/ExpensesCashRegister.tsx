@@ -12,8 +12,10 @@ import {
   ExpensesInit,
   EntityExpensesSearch,
   ExpensesForm,
+  CashForm,
 } from '../../Abstract';
 import { EntityExpenses } from '../Entity';
+import { EXPENSES_ROUTE } from 'src/constants';
 
 export type ExpensesCashRegisterStylesContainerProps = {
   backgroundImage?: string;
@@ -88,6 +90,32 @@ export const ExpensesCashRegister = ({
           isVisible={use.pages.states.isEntitySearch}
         >
           <EntityExpensesSearch use={useEntity} useExpenses={use} />
+        </FadeIn>
+      )}
+      {use.pages.states.isPaymentCrForm && (
+        <FadeIn
+          keyName="PaymentCrForm"
+          isVisible={use.pages.states.isPaymentCrForm}
+        >
+          <CashForm
+            useError={use.error}
+            siteOptions={sitesOptions}
+            useCurrencies={useCurrencies}
+            usePayment={use.attributes.usePayment}
+            currentPaymentInfo={{
+              currencyId: use.attributes.states.currencyId,
+              validationCurrencyId: use.attributes.actions.validationCurrencyId,
+              currencyIdValid: use.attributes.states.currencyIdValid,
+              validationButtonNext:
+                use.attributes.actions.validationButtonNextPaymentCr,
+              changeCurrencyId: use.attributes.actions.changeCurrencyId,
+              currencyIdDefault: use.attributes.states.currencyIdDefault,
+              currencyIdOptions: use.attributes.states.currencyIdOptions,
+              returnInit: use.pages.actions.onExpensesForm,
+              buttonNextId: `${EXPENSES_ROUTE}-2`,
+              add: () => console.log(use.attributes),
+            }}
+          />
         </FadeIn>
       )}
     </>

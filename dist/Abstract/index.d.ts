@@ -84,3 +84,5 @@ export { InitExpensesType, ExpensesTypeForm } from './ExpensesType';
 export type { InitExpensesTypeProps, InitExpensesTypePropsExtended, ExpensesTypeFormProps, ExpensesTypeFormPropsExtended, } from './ExpensesType';
 export { ExpensesInit, ExpensesForm } from './Expenses';
 export type { ExpensesInitStylesContainerProps, ExpensesInitProps, ExpensesFormProps, } from './Expenses';
+export { CashForm } from './MethodPayments';
+export type { CashFormProps } from './MethodPayments';

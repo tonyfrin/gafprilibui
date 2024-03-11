@@ -10,6 +10,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
 var _Entity = require("../Entity");
+var _constants = require("src/constants");
 var _excluded = ["className"];
 var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashRegister(_ref) {
   var use = _ref.use,
@@ -53,5 +54,27 @@ var ExpensesCashRegister = exports.ExpensesCashRegister = function ExpensesCashR
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.EntityExpensesSearch, {
     use: useEntity,
     useExpenses: use
+  })), use.pages.states.isPaymentCrForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+    keyName: "PaymentCrForm",
+    isVisible: use.pages.states.isPaymentCrForm
+  }, /*#__PURE__*/_react["default"].createElement(_Abstract.CashForm, {
+    useError: use.error,
+    siteOptions: sitesOptions,
+    useCurrencies: useCurrencies,
+    usePayment: use.attributes.usePayment,
+    currentPaymentInfo: {
+      currencyId: use.attributes.states.currencyId,
+      validationCurrencyId: use.attributes.actions.validationCurrencyId,
+      currencyIdValid: use.attributes.states.currencyIdValid,
+      validationButtonNext: use.attributes.actions.validationButtonNextPaymentCr,
+      changeCurrencyId: use.attributes.actions.changeCurrencyId,
+      currencyIdDefault: use.attributes.states.currencyIdDefault,
+      currencyIdOptions: use.attributes.states.currencyIdOptions,
+      returnInit: use.pages.actions.onExpensesForm,
+      buttonNextId: "".concat(_constants.EXPENSES_ROUTE, "-2"),
+      add: function add() {
+        return console.log(use.attributes);
+      }
+    }
   })));
 };

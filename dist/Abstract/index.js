@@ -165,6 +165,12 @@ Object.defineProperty(exports, "CartTable", {
     return _Table.CartTable;
   }
 });
+Object.defineProperty(exports, "CashForm", {
+  enumerable: true,
+  get: function get() {
+    return _MethodPayments.CashForm;
+  }
+});
 Object.defineProperty(exports, "CashRegisterTypeForm", {
   enumerable: true,
   get: function get() {
@@ -1721,3 +1727,4 @@ var _Slider = require("./Slider");
 var _CashRegisterType = require("./CashRegisterType");
 var _ExpensesType = require("./ExpensesType");
 var _Expenses = require("./Expenses");
+var _MethodPayments = require("./MethodPayments");

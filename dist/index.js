@@ -339,6 +339,12 @@ Object.defineProperty(exports, "CartTable", {
     return _Abstract.CartTable;
   }
 });
+Object.defineProperty(exports, "CashForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CashForm;
+  }
+});
 Object.defineProperty(exports, "CashRegisterType", {
   enumerable: true,
   get: function get() {

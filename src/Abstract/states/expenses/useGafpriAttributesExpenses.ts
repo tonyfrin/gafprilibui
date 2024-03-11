@@ -88,6 +88,7 @@ type Actions = {
   addCashTransaction: () => void;
   setCashRegisterTypePostsId: (value: number) => void;
   setCashRegisterPostsId: (value: number) => void;
+  validationButtonNextPaymentCr: () => void;
 };
 
 export type UseGafpriAttributesExpensesReturn = {
@@ -231,6 +232,18 @@ export function useGafpriAttributesExpenses({
         parseFloat(total) > 0,
       ],
       inputId: EXPENSES_ROUTE,
+    });
+  };
+
+  const validationButtonNextPaymentCr = (): void => {
+    generalValidationButtonNext({
+      validations: [
+        parseFloat(usePayment.states.total) > 0,
+        usePayment.useGeneralPaymentMethods.useCashTransactions.states.change >
+          0,
+        usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0,
+      ],
+      inputId: `${EXPENSES_ROUTE}-2`,
     });
   };
 
@@ -391,6 +404,7 @@ export function useGafpriAttributesExpenses({
     addCashTransaction,
     setCashRegisterTypePostsId,
     setCashRegisterPostsId,
+    validationButtonNextPaymentCr,
   };
 
   return {

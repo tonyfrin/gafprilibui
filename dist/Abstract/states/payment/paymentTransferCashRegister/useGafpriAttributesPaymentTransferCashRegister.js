@@ -76,13 +76,13 @@ function useGafpriAttributesPaymentTransferCashRegister(_ref) {
   };
   var validationButtonNextPaymentCr = function validationButtonNextPaymentCr() {
     (0, _Validations.generalValidationButtonNext)({
-      validations: [cashRegisterTypePostsIdValid, usePayment.useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(usePayment.states.total) > 0, usePayment.useGeneralPaymentMethods.useCashTransactions.states.change > 0, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
+      validations: [cashRegisterTypePostsIdValid, usePayment.useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(usePayment.states.total) > 0, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
       inputId: _constants.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE
     });
   };
   var validationButtonNextAdd = function validationButtonNextAdd() {
     (0, _Validations.generalValidationButtonNext)({
-      validations: [cashRegisterTypePostsIdValid, usePayment.useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(usePayment.states.total) > 0, usePayment.useGeneralPaymentMethods.useCashTransactions.states.change > 0, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
+      validations: [cashRegisterTypePostsIdValid, usePayment.useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(usePayment.states.total) > 0, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
       inputId: "".concat(_constants.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE, "-Add")
     });
   };

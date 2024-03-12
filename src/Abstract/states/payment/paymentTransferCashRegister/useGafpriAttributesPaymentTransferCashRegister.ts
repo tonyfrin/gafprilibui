@@ -110,8 +110,6 @@ export function useGafpriAttributesPaymentTransferCashRegister({
         cashRegisterTypePostsIdValid,
         usePayment.useGeneralPaymentMethods.states.currenciesIdValid,
         parseFloat(usePayment.states.total) > 0,
-        usePayment.useGeneralPaymentMethods.useCashTransactions.states.change >
-          0,
         usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0,
       ],
       inputId: PAYMENT_TRANSFER_CASH_REGISTER_ROUTE,
@@ -124,8 +122,6 @@ export function useGafpriAttributesPaymentTransferCashRegister({
         cashRegisterTypePostsIdValid,
         usePayment.useGeneralPaymentMethods.states.currenciesIdValid,
         parseFloat(usePayment.states.total) > 0,
-        usePayment.useGeneralPaymentMethods.useCashTransactions.states.change >
-          0,
         usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0,
       ],
       inputId: `${PAYMENT_TRANSFER_CASH_REGISTER_ROUTE}-Add`,

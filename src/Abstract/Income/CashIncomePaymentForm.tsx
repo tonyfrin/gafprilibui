@@ -105,7 +105,7 @@ export const CashIncomePaymentForm = ({
               value={
                 use.attributes.states.total ===
                 use.attributes.usePayment.states.total
-                  ? 'Todo listo para precesar el egreso'
+                  ? 'Todo listo para precesar el ingreso'
                   : 'El monto ingresado no coincide con el monto total'
               }
             />

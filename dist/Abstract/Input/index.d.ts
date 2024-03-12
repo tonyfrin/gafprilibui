@@ -124,3 +124,5 @@ export { InputNote } from './InputNote';
 export type { InputNoteProps } from './InputNote';
 export { InputInvoice } from './InputInvoice';
 export type { InputInvoiceProps } from './InputInvoice';
+export { SelectCashRegisterType } from './SelectCashRegisterType';
+export type { SelectCashRegisterTypeProps } from './SelectCashRegisterType';

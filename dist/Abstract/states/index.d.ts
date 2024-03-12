@@ -26,3 +26,5 @@ export { useGafpriAttributesExpenses, useGafpriDataExpenses, useGafpriPagesExpen
 export type { UseGafpriAttributesExpensesReturn, UseGafpriDataExpensesReturn, UseGafpriDataExpensesProps, UseGafpriPagesExpensesReturn, UseGafpriApiExpensesReturn, UseGafpriApiExpensesProps, UseGafpriPaginationsExpensesReturn, } from './expenses';
 export { useGafpriAttributesIncome, useGafpriDataIncome, useGafpriPagesIncome, useGafpriApiIncome, useGafpriPaginationsIncome, } from './income';
 export type { UseGafpriAttributesIncomeReturn, UseGafpriDataIncomeReturn, UseGafpriDataIncomeProps, UseGafpriPagesIncomeReturn, UseGafpriApiIncomeReturn, UseGafpriApiIncomeProps, UseGafpriPaginationsIncomeReturn, } from './income';
+export { useGafpriAttributesPayment, useGafpriAttributesPaymentTransferCashRegister, useGafpriApiPaymentTransferCashRegister, useGafpriPagesPaymentTransferCashRegister, } from './payment';
+export type { UseGafpriAttributesPaymentReturn, PaymentAttributes, UseGafpriAttributesPaymentTransferCashRegisterReturn, UseGafpriApiPaymentTransferCashRegisterReturn, UseGafpriPagesPaymentTransferCashRegisterReturn, } from './payment';

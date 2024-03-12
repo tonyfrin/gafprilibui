@@ -120,3 +120,5 @@ export { generalChangeExpensesTypeId } from './generalChangeExpensesTypeId';
 export type { GeneralChangeExpensesTypeIdProps } from './generalChangeExpensesTypeId';
 export { generalChangeProjectsId } from './generalChangeProjectsId';
 export type { GeneralChangeProjectsIdProps } from './generalChangeProjectsId';
+export { generalChangeCashRegisterType } from './generalChangeCashRegisterType';
+export type { GeneralChangeCashRegisterTypeProps } from './generalChangeCashRegisterType';

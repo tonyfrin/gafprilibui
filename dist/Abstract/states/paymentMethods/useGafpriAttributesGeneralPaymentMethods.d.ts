@@ -26,6 +26,7 @@ type Actions = {
         label: string;
         value: string;
     }>) => void;
+    addTransferCashRegister: (currentCashRegisterPostsId: number, currentCashRegisterTypePostsId: number, cashRegisterPostsId: number, cashRegisterTypePostsId: number) => void;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     states: State;

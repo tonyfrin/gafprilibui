@@ -38,6 +38,12 @@ type Actions = {
   changeCashCurrenciesId: (
     value: SingleValue<{ label: string; value: string }>
   ) => void;
+  addTransferCashRegister: (
+    currentCashRegisterPostsId: number,
+    currentCashRegisterTypePostsId: number,
+    cashRegisterPostsId: number,
+    cashRegisterTypePostsId: number
+  ) => void;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
@@ -100,14 +106,83 @@ export function useGafpriAttributesGeneralPaymentMethods({
 
   const addCashTransaction = (): void => {
     setArrayPaymentMethod([
+      ...arrayPaymentMethod,
       {
-        ...arrayPaymentMethod,
         paymentMethods: usePaymentMethods.states,
         cashTransactions: useCashTransactions.states,
       },
     ]);
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
+  };
+
+  const addTransferCashRegister = (
+    currentCashRegisterPostsId: number,
+    currentCashRegisterTypePostsId: number,
+    cashRegisterPostsId: number,
+    cashRegisterTypePostsId: number
+  ): void => {
+    const debitCashTransactions = {
+      cashRegisterTypePostsId: currentCashRegisterPostsId,
+      cashRegisterPostsId: currentCashRegisterTypePostsId,
+      type: 'debit',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      currenciesId,
+      note: '',
+    };
+
+    const depositCashTransactions = {
+      cashRegisterTypePostsId,
+      cashRegisterPostsId,
+      type: 'deposit',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      currenciesId,
+      note: '',
+    };
+
+    const debitPaymentMethods: GeneralPaymentMethodsAttributes['paymentMethods'] =
+      {
+        methodType: 'cash',
+        type: 'debit',
+        paymentType: '',
+        currenciesId,
+        bank: '',
+        number: '',
+        amount: usePaymentMethods.states.amount,
+        change: usePaymentMethods.states.change,
+        note: '',
+      };
+
+    const depositPaymentMethods: GeneralPaymentMethodsAttributes['paymentMethods'] =
+      {
+        methodType: 'cash',
+        type: 'deposit',
+        paymentType: '',
+        currenciesId,
+        bank: '',
+        number: '',
+        amount: usePaymentMethods.states.amount,
+        change: usePaymentMethods.states.change,
+        note: '',
+      };
+
+    const debitTransfer: GeneralPaymentMethodsAttributes = {
+      paymentMethods: debitPaymentMethods,
+      cashTransactions: debitCashTransactions,
+    };
+
+    const depositTransfer: GeneralPaymentMethodsAttributes = {
+      paymentMethods: depositPaymentMethods,
+      cashTransactions: depositCashTransactions,
+    };
+
+    setArrayPaymentMethod([
+      ...arrayPaymentMethod,
+      debitTransfer,
+      depositTransfer,
+    ]);
   };
 
   const deletePaymentMethod = (index: number): void => {
@@ -209,6 +284,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     deletePaymentMethod,
     validationCurrenciesId,
     changeCashCurrenciesId,
+    addTransferCashRegister,
   };
 
   return {

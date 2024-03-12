@@ -276,3 +276,16 @@ export type {
   UseGafpriApiIncomeProps,
   UseGafpriPaginationsIncomeReturn,
 } from './income';
+export {
+  useGafpriAttributesPayment,
+  useGafpriAttributesPaymentTransferCashRegister,
+  useGafpriApiPaymentTransferCashRegister,
+  useGafpriPagesPaymentTransferCashRegister,
+} from './payment';
+export type {
+  UseGafpriAttributesPaymentReturn,
+  PaymentAttributes,
+  UseGafpriAttributesPaymentTransferCashRegisterReturn,
+  UseGafpriApiPaymentTransferCashRegisterReturn,
+  UseGafpriPagesPaymentTransferCashRegisterReturn,
+} from './payment';

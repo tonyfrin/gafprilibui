@@ -69,6 +69,6 @@ var CashIncomePaymentForm = exports.CashIncomePaymentForm = function CashIncomeP
       margin: '0',
       custom: "\n                  font-weight: 700;\n                  font-size: 20px;\n                "
     },
-    value: use.attributes.states.total === use.attributes.usePayment.states.total ? 'Todo listo para precesar el egreso' : 'El monto ingresado no coincide con el monto total'
+    value: use.attributes.states.total === use.attributes.usePayment.states.total ? 'Todo listo para precesar el ingreso' : 'El monto ingresado no coincide con el monto total'
   })))));
 };

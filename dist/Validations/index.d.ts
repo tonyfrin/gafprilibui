@@ -195,3 +195,5 @@ export { generalValidationExpensesTypeId } from './generalValidationExpensesType
 export type { GeneralValidationExpensesTypeIdProps } from './generalValidationExpensesTypeId';
 export { generalValidationProjectsId } from './generalValidationProjectsId';
 export type { GeneralValidationProjectsIdProps } from './generalValidationProjectsId';
+export { generalValidationCashRegisterType } from './generalValidationCashRegisterType';
+export type { GeneralValidationCashRegisterTypeProps } from './generalValidationCashRegisterType';

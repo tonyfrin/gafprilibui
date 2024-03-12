@@ -87,3 +87,5 @@ export type {
   IncomeCashRegisterProps,
   IncomeCashRegisterStylesContainerProps,
 } from './Income';
+export { PaymentTransferCashRegister } from './Payment';
+export type { PaymentTransferCashRegisterProps } from './Payment';

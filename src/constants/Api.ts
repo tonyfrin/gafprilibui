@@ -21,3 +21,5 @@ export const CASH_REGISTER_TYPE_ROUTE = '/cash-register-type';
 export const EXPENSES_TYPE_ROUTE = '/expenses-type';
 export const EXPENSES_ROUTE = '/expenses';
 export const INCOME_ROUTE = '/income';
+export const PAYMENT_TRANSFER_CASH_REGISTER_ROUTE =
+  '/payment-transfer-cash-register';

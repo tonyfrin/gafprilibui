@@ -278,6 +278,13 @@ export {
   IncomeForm,
   CashIncomePaymentForm,
   EntityIncomeInit,
+  useGafpriAttributesPaymentTransferCashRegister,
+  useGafpriApiPaymentTransferCashRegister,
+  useGafpriPagesPaymentTransferCashRegister,
+  useGafpriAttributesPayment,
+  SelectCashRegisterType,
+  TransferCashRegisterForm,
+  FinalPaymentTransferCashRegister,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -743,6 +750,14 @@ export type {
   CashIncomePaymentFormProps,
   EntityIncomeInitStylesContainerProps,
   EntityIncomeInitProps,
+  UseGafpriAttributesPaymentReturn,
+  PaymentAttributes,
+  UseGafpriAttributesPaymentTransferCashRegisterReturn,
+  UseGafpriApiPaymentTransferCashRegisterReturn,
+  UseGafpriPagesPaymentTransferCashRegisterReturn,
+  SelectCashRegisterTypeProps,
+  TransferCashRegisterFormProps,
+  FinalPaymentTransferCashRegisterProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -776,6 +791,7 @@ export {
   ExpensesCashRegister,
   EntityIncome,
   IncomeCashRegister,
+  PaymentTransferCashRegister,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -826,6 +842,7 @@ export type {
   EntityIncomeProps,
   IncomeCashRegisterProps,
   IncomeCashRegisterStylesContainerProps,
+  PaymentTransferCashRegisterProps,
 } from './Components';
 export {
   addClass,
@@ -895,6 +912,7 @@ export {
   useGafpriExpensesType,
   useGafpriExpenses,
   useGafpriIncome,
+  useGafpriPaymentTransferCashRegister,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -945,6 +963,8 @@ export type {
   UseGafpriExpensesProps,
   UseGafpriIncomeReturn,
   UseGafpriIncomeProps,
+  UseGafpriPaymentTransferCashRegisterReturn,
+  UseGafpriPaymentTransferCashRegisterProps,
 } from './states';
 export {
   Countries,
@@ -1091,6 +1111,8 @@ export {
   INVOICE_INPUT,
   INCOME_ROUTE,
   INCOME_STORAGE,
+  PAYMENT_TRANSFER_CASH_REGISTER_ROUTE,
+  CASH_REGISTER_TYPE_INPUT,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {
@@ -1171,6 +1193,7 @@ export {
   generalValidationSupplierId,
   generalValidationExpensesTypeId,
   generalValidationProjectsId,
+  generalValidationCashRegisterType,
 } from './Validations';
 export type {
   ValidationInput,
@@ -1245,6 +1268,7 @@ export type {
   GeneralValidationSupplierIdProps,
   GeneralValidationExpensesTypeIdProps,
   GeneralValidationProjectsIdProps,
+  GeneralValidationCashRegisterTypeProps,
 } from './Validations';
 export {
   generalChangeUserName,
@@ -1307,6 +1331,7 @@ export {
   generalChangeSupplierId,
   generalChangeExpensesTypeId,
   generalChangeProjectsId,
+  generalChangeCashRegisterType,
 } from './Changes';
 export type {
   GeneralChangeNoteProps,
@@ -1369,4 +1394,5 @@ export type {
   GeneralChangeSupplierIdProps,
   GeneralChangeExpensesTypeIdProps,
   GeneralChangeProjectsIdProps,
+  GeneralChangeCashRegisterTypeProps,
 } from './Changes';

@@ -111,6 +111,7 @@ export {
   SelectExpensesType,
   InputNote,
   InputInvoice,
+  SelectCashRegisterType,
 } from './Input';
 export type {
   InputStyle,
@@ -182,6 +183,7 @@ export type {
   SelectExpensesTypeProps,
   InputNoteProps,
   InputInvoiceProps,
+  SelectCashRegisterTypeProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -454,6 +456,10 @@ export {
   useGafpriPagesIncome,
   useGafpriApiIncome,
   useGafpriPaginationsIncome,
+  useGafpriAttributesPaymentTransferCashRegister,
+  useGafpriApiPaymentTransferCashRegister,
+  useGafpriPagesPaymentTransferCashRegister,
+  useGafpriAttributesPayment,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -607,6 +613,11 @@ export type {
   UseGafpriApiIncomeReturn,
   UseGafpriApiIncomeProps,
   UseGafpriPaginationsIncomeReturn,
+  UseGafpriAttributesPaymentReturn,
+  PaymentAttributes,
+  UseGafpriAttributesPaymentTransferCashRegisterReturn,
+  UseGafpriApiPaymentTransferCashRegisterReturn,
+  UseGafpriPagesPaymentTransferCashRegisterReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -830,8 +841,11 @@ export type {
   ExpensesFormProps,
   CashExpensesPaymentFormProps,
 } from './Expenses';
-export { CashForm } from './MethodPayments';
-export type { CashFormProps } from './MethodPayments';
+export { CashForm, TransferCashRegisterForm } from './MethodPayments';
+export type {
+  CashFormProps,
+  TransferCashRegisterFormProps,
+} from './MethodPayments';
 export { IncomeInit, IncomeForm, CashIncomePaymentForm } from './Income';
 export type {
   IncomeInitStylesContainerProps,
@@ -839,3 +853,5 @@ export type {
   IncomeFormProps,
   CashIncomePaymentFormProps,
 } from './Income';
+export { FinalPaymentTransferCashRegister } from './Payment';
+export type { FinalPaymentTransferCashRegisterProps } from './Payment';

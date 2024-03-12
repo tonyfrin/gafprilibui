@@ -1,4 +1,5 @@
 export type SiteOptions = {
+    id: number;
     CURRENCY_FORMAT: {
         miles: '.' | ',';
         decimal: '.' | ',';

@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
 import { PostsAttributes } from '../../../states';
 import { getItem, saveItem } from '../../../Context';
-import { getLastEntryDateAndCount, gafpriFetch } from '../../../helpers';
+import {
+  getLastEntryDateAndCount,
+  gafpriFetch,
+  SelectDefault,
+} from '../../../helpers';
 import {
   CASH_REGISTER_TYPE_STORAGE,
   CASH_REGISTER_TYPE_ROUTE,
 } from '../../../constants';
 import { CashRegisterTypeUserAttributes } from './cashRegisterTypeUser';
+import { CashTransactionsAttributes } from '../cashRegister';
+
+export type CashRegisterAttributes = {
+  postsId: number;
+  cashRegisterTypePostsId: number;
+  posts: PostsAttributes;
+  cashTransactions: CashTransactionsAttributes[];
+};
 
 export interface CashRegisterTypeAttributes {
   postsId: number;
@@ -14,6 +26,7 @@ export interface CashRegisterTypeAttributes {
   sitesId: number;
   posts: PostsAttributes;
   cashRegisterTypeUser: CashRegisterTypeUserAttributes[];
+  cashRegister: CashRegisterAttributes[];
 }
 
 type DeletedCashRegisterType = {
@@ -43,6 +56,10 @@ type Actions = {
   handleUpdatedItem: (updatedStorage: CashRegisterTypeAttributes) => void;
 
   handleDeletedItem: ({ itemId }: DeletedCashRegisterType) => void;
+
+  getOptionsItems: (sitesId: number) => SelectDefault[];
+
+  getCurrentCashRegisterPostsId(postsId: number): number;
 };
 
 export type UseGafpriDataCashRegisterTypeReturn = {
@@ -185,6 +202,24 @@ export function useGafpriDataCashRegisterType({
     return items.data.items?.find((storage) => storage.postsId === id) || null;
   }
 
+  function getOptionsItems(sitesId: number): SelectDefault[] {
+    return (
+      items.data.items
+        ?.filter((item) => `${item.sitesId}` === `${sitesId}`)
+        .map((filteredItem) => {
+          return {
+            value: `${filteredItem.postsId}`,
+            label: filteredItem.name,
+          };
+        }) || []
+    );
+  }
+
+  function getCurrentCashRegisterPostsId(postsId: number): number {
+    const cashRegisterType = getById(postsId);
+    return cashRegisterType?.cashRegister[0].postsId || 0;
+  }
+
   /**
    * Effects
    *
@@ -217,6 +252,10 @@ export function useGafpriDataCashRegisterType({
     handleUpdatedItem,
 
     handleDeletedItem,
+
+    getOptionsItems,
+
+    getCurrentCashRegisterPostsId,
   };
 
   return {

@@ -40,6 +40,12 @@ Object.defineProperty(exports, "generalValidationButtonNext", {
     return _generalValidationButtonNext.generalValidationButtonNext;
   }
 });
+Object.defineProperty(exports, "generalValidationCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationCashRegisterType.generalValidationCashRegisterType;
+  }
+});
 Object.defineProperty(exports, "generalValidationCatalogOrder", {
   enumerable: true,
   get: function get() {
@@ -502,6 +508,7 @@ var _generalValidationAvailableShippingServices = require("./generalValidationAv
 var _generalValidationSupplierId = require("./generalValidationSupplierId");
 var _generalValidationExpensesTypeId = require("./generalValidationExpensesTypeId");
 var _generalValidationProjectsId = require("./generalValidationProjectsId");
+var _generalValidationCashRegisterType = require("./generalValidationCashRegisterType");
 var validationInputNameLastNameUserName = exports.validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,

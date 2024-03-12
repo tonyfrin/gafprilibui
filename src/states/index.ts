@@ -104,3 +104,8 @@ export type {
   UseGafpriIncomeReturn,
   UseGafpriIncomeProps,
 } from './useGafpriIncome';
+export { useGafpriPaymentTransferCashRegister } from './useGafpriPaymentTransferCashRegister';
+export type {
+  UseGafpriPaymentTransferCashRegisterReturn,
+  UseGafpriPaymentTransferCashRegisterProps,
+} from './useGafpriPaymentTransferCashRegister';

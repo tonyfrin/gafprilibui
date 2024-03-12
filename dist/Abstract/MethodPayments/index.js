@@ -9,4 +9,11 @@ Object.defineProperty(exports, "CashForm", {
     return _CashForm.CashForm;
   }
 });
+Object.defineProperty(exports, "TransferCashRegisterForm", {
+  enumerable: true,
+  get: function get() {
+    return _TransferCashRegisterForm.TransferCashRegisterForm;
+  }
+});
 var _CashForm = require("./CashForm");
+var _TransferCashRegisterForm = require("./TransferCashRegisterForm");

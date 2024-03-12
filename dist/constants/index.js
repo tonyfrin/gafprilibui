@@ -69,6 +69,12 @@ Object.defineProperty(exports, "BUTTON_NEXT_INPUT", {
     return _Inputs.BUTTON_NEXT_INPUT;
   }
 });
+Object.defineProperty(exports, "CASH_REGISTER_TYPE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.CASH_REGISTER_TYPE_INPUT;
+  }
+});
 Object.defineProperty(exports, "CASH_REGISTER_TYPE_ROUTE", {
   enumerable: true,
   get: function get() {
@@ -415,6 +421,12 @@ Object.defineProperty(exports, "PASSWORD_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.PASSWORD_INPUT;
+  }
+});
+Object.defineProperty(exports, "PAYMENT_TRANSFER_CASH_REGISTER_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE;
   }
 });
 Object.defineProperty(exports, "PERMANENT_LINK_INPUT", {

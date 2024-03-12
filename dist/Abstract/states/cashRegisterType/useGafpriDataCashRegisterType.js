@@ -150,6 +150,21 @@ function useGafpriDataCashRegisterType(_ref) {
       return storage.postsId === id;
     })) || null;
   }
+  function getOptionsItems(sitesId) {
+    var _items$data$items3;
+    return ((_items$data$items3 = items.data.items) === null || _items$data$items3 === void 0 ? void 0 : _items$data$items3.filter(function (item) {
+      return "".concat(item.sitesId) === "".concat(sitesId);
+    }).map(function (filteredItem) {
+      return {
+        value: "".concat(filteredItem.postsId),
+        label: filteredItem.name
+      };
+    })) || [];
+  }
+  function getCurrentCashRegisterPostsId(postsId) {
+    var cashRegisterType = getById(postsId);
+    return (cashRegisterType === null || cashRegisterType === void 0 ? void 0 : cashRegisterType.cashRegister[0].postsId) || 0;
+  }
 
   /**
    * Effects
@@ -176,7 +191,9 @@ function useGafpriDataCashRegisterType(_ref) {
     offItems: offItems,
     handleNewItem: handleNewItem,
     handleUpdatedItem: handleUpdatedItem,
-    handleDeletedItem: handleDeletedItem
+    handleDeletedItem: handleDeletedItem,
+    getOptionsItems: getOptionsItems,
+    getCurrentCashRegisterPostsId: getCurrentCashRegisterPostsId
   };
   return {
     states: states,

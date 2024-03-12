@@ -39,6 +39,12 @@ Object.defineProperty(exports, "generalChangeAvailableShippingServices", {
     return _generalChangeAvailableShippingServices.generalChangeAvailableShippingServices;
   }
 });
+Object.defineProperty(exports, "generalChangeCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeCashRegisterType.generalChangeCashRegisterType;
+  }
+});
 Object.defineProperty(exports, "generalChangeCatalogOrder", {
   enumerable: true,
   get: function get() {
@@ -430,3 +436,4 @@ var _generalChangeRegion = require("./generalChangeRegion");
 var _generalChangeSupplierId = require("./generalChangeSupplierId");
 var _generalChangeExpensesTypeId = require("./generalChangeExpensesTypeId");
 var _generalChangeProjectsId = require("./generalChangeProjectsId");
+var _generalChangeCashRegisterType = require("./generalChangeCashRegisterType");

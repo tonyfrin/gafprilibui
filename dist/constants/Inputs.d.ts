@@ -69,3 +69,4 @@ export declare const SUPPLIER_ID_INPUT = "supplier-id-input-id";
 export declare const EXPENSES_TYPE_INPUT = "expenses-type-input-id";
 export declare const PROJECTS_ID_INPUT = "projects-id-input-id";
 export declare const INVOICE_INPUT = "invoice-input-id";
+export declare const CASH_REGISTER_TYPE_INPUT = "cash-register-type-input-id";

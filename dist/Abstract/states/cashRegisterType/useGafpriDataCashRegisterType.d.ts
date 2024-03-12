@@ -1,11 +1,20 @@
 import { PostsAttributes } from '../../../states';
+import { SelectDefault } from '../../../helpers';
 import { CashRegisterTypeUserAttributes } from './cashRegisterTypeUser';
+import { CashTransactionsAttributes } from '../cashRegister';
+export type CashRegisterAttributes = {
+    postsId: number;
+    cashRegisterTypePostsId: number;
+    posts: PostsAttributes;
+    cashTransactions: CashTransactionsAttributes[];
+};
 export interface CashRegisterTypeAttributes {
     postsId: number;
     name: string;
     sitesId: number;
     posts: PostsAttributes;
     cashRegisterTypeUser: CashRegisterTypeUserAttributes[];
+    cashRegister: CashRegisterAttributes[];
 }
 type DeletedCashRegisterType = {
     itemId: number;
@@ -26,6 +35,8 @@ type Actions = {
     handleNewItem: (newStorage: CashRegisterTypeAttributes) => void;
     handleUpdatedItem: (updatedStorage: CashRegisterTypeAttributes) => void;
     handleDeletedItem: ({ itemId }: DeletedCashRegisterType) => void;
+    getOptionsItems: (sitesId: number) => SelectDefault[];
+    getCurrentCashRegisterPostsId(postsId: number): number;
 };
 export type UseGafpriDataCashRegisterTypeReturn = {
     states: State;

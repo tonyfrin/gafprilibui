@@ -7,7 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.useGafpriAttributesGeneralPaymentMethods = useGafpriAttributesGeneralPaymentMethods;
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
 var _useGafpriAttributesPaymentMethods = require("./useGafpriAttributesPaymentMethods");
@@ -15,8 +14,6 @@ var _cashRegister = require("../cashRegister");
 var _Validations = require("../../../Validations");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function useGafpriAttributesGeneralPaymentMethods(_ref) {
   var currencies = _ref.currencies;
   var _useState = (0, _react.useState)([]),
@@ -74,12 +71,63 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     });
   };
   var addCashTransaction = function addCashTransaction() {
-    setArrayPaymentMethod([_objectSpread(_objectSpread({}, arrayPaymentMethod), {}, {
+    setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [{
       paymentMethods: usePaymentMethods.states,
       cashTransactions: useCashTransactions.states
-    })]);
+    }]));
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
+  };
+  var addTransferCashRegister = function addTransferCashRegister(currentCashRegisterPostsId, currentCashRegisterTypePostsId, cashRegisterPostsId, cashRegisterTypePostsId) {
+    var debitCashTransactions = {
+      cashRegisterTypePostsId: currentCashRegisterPostsId,
+      cashRegisterPostsId: currentCashRegisterTypePostsId,
+      type: 'debit',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      currenciesId: currenciesId,
+      note: ''
+    };
+    var depositCashTransactions = {
+      cashRegisterTypePostsId: cashRegisterTypePostsId,
+      cashRegisterPostsId: cashRegisterPostsId,
+      type: 'deposit',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      currenciesId: currenciesId,
+      note: ''
+    };
+    var debitPaymentMethods = {
+      methodType: 'cash',
+      type: 'debit',
+      paymentType: '',
+      currenciesId: currenciesId,
+      bank: '',
+      number: '',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      note: ''
+    };
+    var depositPaymentMethods = {
+      methodType: 'cash',
+      type: 'deposit',
+      paymentType: '',
+      currenciesId: currenciesId,
+      bank: '',
+      number: '',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      note: ''
+    };
+    var debitTransfer = {
+      paymentMethods: debitPaymentMethods,
+      cashTransactions: debitCashTransactions
+    };
+    var depositTransfer = {
+      paymentMethods: depositPaymentMethods,
+      cashTransactions: depositCashTransactions
+    };
+    setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [debitTransfer, depositTransfer]));
   };
   var deletePaymentMethod = function deletePaymentMethod(index) {
     var newArray = (0, _toConsumableArray2["default"])(arrayPaymentMethod);
@@ -159,7 +207,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     emptyPaymentMethodArray: emptyPaymentMethodArray,
     deletePaymentMethod: deletePaymentMethod,
     validationCurrenciesId: validationCurrenciesId,
-    changeCashCurrenciesId: changeCashCurrenciesId
+    changeCashCurrenciesId: changeCashCurrenciesId,
+    addTransferCashRegister: addTransferCashRegister
   };
   return {
     states: states,

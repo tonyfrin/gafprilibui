@@ -255,6 +255,12 @@ Object.defineProperty(exports, "SelectAvailableShippingServices", {
     return _SelectAvailableShippingServices.SelectAvailableShippingServices;
   }
 });
+Object.defineProperty(exports, "SelectCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _SelectCashRegisterType.SelectCashRegisterType;
+  }
+});
 Object.defineProperty(exports, "SelectCity", {
   enumerable: true,
   get: function get() {
@@ -450,3 +456,4 @@ var _SelectProjectId = require("./SelectProjectId");
 var _SelectExpensesType = require("./SelectExpensesType");
 var _InputNote = require("./InputNote");
 var _InputInvoice = require("./InputInvoice");
+var _SelectCashRegisterType = require("./SelectCashRegisterType");

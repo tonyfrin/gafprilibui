@@ -204,7 +204,7 @@ function useGafpriCurrencies(_ref) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _helpers.getLastEntryDateAndCount)('currencies');
+            return (0, _helpers.getLastEntryDateAndCount)(_constants.CURRENCIES_ROUTE);
           case 2:
             lastEntryDateAndCount = _context.sent;
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;

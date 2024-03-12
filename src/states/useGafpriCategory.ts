@@ -461,7 +461,9 @@ export function useGafpriCategory({
   };
 
   const getCategory = async (): Promise<void> => {
-    const lastEntryDateAndCount = await getLastEntryDateAndCount('category');
+    const lastEntryDateAndCount = await getLastEntryDateAndCount(
+      CATEGORY_ROUTE
+    );
     const lastDate = getLastItem?.modifiedAt || null;
     const count = category.data.items?.length || 0;
 

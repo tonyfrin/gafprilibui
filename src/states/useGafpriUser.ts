@@ -623,7 +623,7 @@ export const useGafpriUsers = ({
   };
 
   const getUsers = async (): Promise<void> => {
-    const lastEntryDateAndCount = await getLastEntryDateAndCount('users');
+    const lastEntryDateAndCount = await getLastEntryDateAndCount(USERS_ROUTE);
     const lastDate = getLastItem?.modifiedAt || null;
     const count = users.data.items?.length || 0;
 

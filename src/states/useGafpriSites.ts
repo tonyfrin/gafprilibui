@@ -957,7 +957,7 @@ export const useGafpriSites = ({
   };
 
   const getSites = async (): Promise<void> => {
-    const lastEntryDateAndCount = await getLastEntryDateAndCount('sites');
+    const lastEntryDateAndCount = await getLastEntryDateAndCount(SITES_ROUTE);
     const lastDate = getLastItem?.modifiedAt || null;
     const count = sites.data.items?.length || 0;
 

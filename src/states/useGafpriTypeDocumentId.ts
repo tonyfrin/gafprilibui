@@ -309,7 +309,7 @@ export function useGafpriTypeDocumentId({
 
   const getTypeDocumentId = async (): Promise<void> => {
     const lastEntryDateAndCount = await getLastEntryDateAndCount(
-      'type-document-id'
+      TYPE_DOCUMENT_ID_ROUTE
     );
     const lastDate = getLastItem?.modifiedAt || null;
     const count = typeDocumentId.data.items?.length || 0;

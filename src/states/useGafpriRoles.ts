@@ -290,7 +290,7 @@ export function useGafpriRoles({
   };
 
   const getRoles = async (): Promise<void> => {
-    const lastEntryDateAndCount = await getLastEntryDateAndCount('roles');
+    const lastEntryDateAndCount = await getLastEntryDateAndCount(ROLES_ROUTE);
     const lastDate = getLastItem?.modifiedAt || null;
     const count = roles.data.items?.length || 0;
 

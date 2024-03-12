@@ -293,7 +293,9 @@ export function useGafpriCurrencies({
   };
 
   const getCurrencies = async (): Promise<void> => {
-    const lastEntryDateAndCount = await getLastEntryDateAndCount('currencies');
+    const lastEntryDateAndCount = await getLastEntryDateAndCount(
+      CURRENCIES_ROUTE
+    );
     const lastDate = getLastItem?.modifiedAt || null;
     const count = currencies.data.items?.length || 0;
 

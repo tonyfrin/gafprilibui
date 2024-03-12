@@ -500,7 +500,7 @@ var useGafpriUsers = exports.useGafpriUsers = function useGafpriUsers(_ref) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return (0, _helpers.getLastEntryDateAndCount)('users');
+            return (0, _helpers.getLastEntryDateAndCount)(_constants.USERS_ROUTE);
           case 2:
             lastEntryDateAndCount = _context2.sent;
             lastDate = (getLastItem === null || getLastItem === void 0 ? void 0 : getLastItem.modifiedAt) || null;

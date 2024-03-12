@@ -24,7 +24,7 @@ export const useGafpriPagesPaymentTransferCashRegister = ({
   useAttributes,
 }: UseGafpriPagesPaymentTransferCashRegisterProps): UseGafpriPagesPaymentTransferCashRegisterReturn => {
   const [isFetching, setIsFetching] = useState(false);
-  const [isPaymentCrForm, setIsPaymentCrForm] = useState(false);
+  const [isPaymentCrForm, setIsPaymentCrForm] = useState(true);
   const [isFinalPaymentCrForm, setIsFinalPaymentCrForm] = useState(false);
 
   // Funciones de paginas

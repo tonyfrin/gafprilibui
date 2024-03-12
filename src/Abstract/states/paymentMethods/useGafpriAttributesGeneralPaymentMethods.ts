@@ -123,8 +123,8 @@ export function useGafpriAttributesGeneralPaymentMethods({
     cashRegisterTypePostsId: number
   ): void => {
     const debitCashTransactions = {
-      cashRegisterTypePostsId: currentCashRegisterPostsId,
-      cashRegisterPostsId: currentCashRegisterTypePostsId,
+      cashRegisterPostsId: currentCashRegisterPostsId,
+      cashRegisterTypePostsId: currentCashRegisterTypePostsId,
       type: 'debit',
       amount: usePaymentMethods.states.amount,
       change: usePaymentMethods.states.change,

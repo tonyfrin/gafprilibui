@@ -80,8 +80,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
   };
   var addTransferCashRegister = function addTransferCashRegister(currentCashRegisterPostsId, currentCashRegisterTypePostsId, cashRegisterPostsId, cashRegisterTypePostsId) {
     var debitCashTransactions = {
-      cashRegisterTypePostsId: currentCashRegisterPostsId,
-      cashRegisterPostsId: currentCashRegisterTypePostsId,
+      cashRegisterPostsId: currentCashRegisterPostsId,
+      cashRegisterTypePostsId: currentCashRegisterTypePostsId,
       type: 'debit',
       amount: usePaymentMethods.states.amount,
       change: usePaymentMethods.states.change,

@@ -16,7 +16,7 @@ export const FinalPaymentTransferCashRegister = ({
   const title2Text = 'Agrega un nuevo traspaso de efectivo';
 
   const buttonTitle = 'Procesar';
-  const buttonAction = () => console.log(use.attributes.states);
+  const buttonAction = () => console.log('payment', use.attributes.states);
   const buttonReturn = () => {
     use.attributes.usePayment.actions.infoReset();
     use.pages.actions.onPaymentCrForm();

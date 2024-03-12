@@ -186,6 +186,10 @@ export const TransferCashRegisterForm = ({
 
   const buttonTitle = 'Procesar';
   const buttonAction = add;
+  const buttonReturn = () => {
+    usePayment.actions.infoReset();
+    currentPaymentInfo.returnInit();
+  };
 
   const handleActions = (action: string, value: any) => {
     switch (action) {
@@ -193,7 +197,7 @@ export const TransferCashRegisterForm = ({
         buttonAction();
         break;
       case 'return':
-        currentPaymentInfo.returnInit();
+        buttonReturn();
         break;
       default:
         console.log('Acción desconocida:', action);

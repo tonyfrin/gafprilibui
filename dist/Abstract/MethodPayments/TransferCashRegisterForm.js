@@ -108,13 +108,17 @@ var TransferCashRegisterForm = exports.TransferCashRegisterForm = function Trans
   var title2Text = 'Agrega un nuevo transpaso de efectivo';
   var buttonTitle = 'Procesar';
   var buttonAction = add;
+  var buttonReturn = function buttonReturn() {
+    usePayment.actions.infoReset();
+    currentPaymentInfo.returnInit();
+  };
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':
         buttonAction();
         break;
       case 'return':
-        currentPaymentInfo.returnInit();
+        buttonReturn();
         break;
       default:
         console.log('Acción desconocida:', action);

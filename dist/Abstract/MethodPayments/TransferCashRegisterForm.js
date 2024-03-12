@@ -30,7 +30,7 @@ var TransferCashRegisterForm = exports.TransferCashRegisterForm = function Trans
     setCurrentCurrency = _React$useState6[1];
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
   var add = function add() {
-    usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferCashRegister(currentPaymentInfo.cashRegisterPostsId, currentPaymentInfo.cashRegisterTypePostsId, usePayment.states.cashRegisterPostsId, parseInt(usePayment.states.cashRegisterTypePostsId, 10));
+    usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferCashRegister(usePayment.states.currentCashRegisterPostsId, usePayment.states.currentCashRegisterTypePostsId, usePayment.states.cashRegisterPostsId, parseInt(usePayment.states.cashRegisterTypePostsId, 10));
     currentPaymentInfo.next();
   };
   var changeAmount = function changeAmount(e) {

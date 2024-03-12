@@ -43,8 +43,8 @@ export const TransferCashRegisterForm = ({
 
   const add = () => {
     usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferCashRegister(
-      currentPaymentInfo.cashRegisterPostsId,
-      currentPaymentInfo.cashRegisterTypePostsId,
+      usePayment.states.currentCashRegisterPostsId,
+      usePayment.states.currentCashRegisterTypePostsId,
       usePayment.states.cashRegisterPostsId,
       parseInt(usePayment.states.cashRegisterTypePostsId, 10)
     );

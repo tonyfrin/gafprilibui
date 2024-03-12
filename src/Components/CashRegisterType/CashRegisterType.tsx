@@ -7,19 +7,16 @@ import {
 } from '../../Abstract';
 import type {
   UseGafpriCashRegisterTypeReturn,
-  UseSitesReturn,
   UseUserReturn,
 } from '../../states';
 
 export type CashRegisterTypeProps = {
   use: UseGafpriCashRegisterTypeReturn;
-  useSites: UseSitesReturn;
   useUser: UseUserReturn;
 };
 
 export const CashRegisterType = ({
   use,
-  useSites,
   useUser,
 }: CashRegisterTypeProps): JSX.Element => {
   return (
@@ -32,22 +29,12 @@ export const CashRegisterType = ({
       )}
       {use.pages.states.isAdd && (
         <FadeIn keyName="add" isVisible={use.pages.states.isAdd}>
-          <CashRegisterTypeForm
-            use={use}
-            formType="add"
-            useSites={useSites}
-            useUser={useUser}
-          />
+          <CashRegisterTypeForm use={use} formType="add" useUser={useUser} />
         </FadeIn>
       )}
       {use.pages.states.isUpdate && (
         <FadeIn keyName="update" isVisible={use.pages.states.isUpdate}>
-          <CashRegisterTypeForm
-            formType="update"
-            use={use}
-            useSites={useSites}
-            useUser={useUser}
-          />
+          <CashRegisterTypeForm formType="update" use={use} useUser={useUser} />
         </FadeIn>
       )}
     </>

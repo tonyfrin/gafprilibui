@@ -6,6 +6,8 @@ type State = {
   isInit: boolean;
   isAdd: boolean;
   isUpdate: boolean;
+  modalPage: boolean;
+  isCashPortal: boolean;
 };
 
 type Actions = {
@@ -22,6 +24,12 @@ type Actions = {
   goUpdate: (id: number) => void;
 
   onUpdate: () => void;
+
+  openModalPage: () => void;
+
+  closeModalPage: () => void;
+
+  onCashPortal: () => void;
 };
 
 export type UseGafpriPagesCashRegisterTypeReturn = {
@@ -40,12 +48,16 @@ export function useGafpriPagesCashRegisterType({
   const [isInit, setIsInit] = useState(true);
   const [isAdd, setIsAdd] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
+  const [modalPage, setModalPage] = useState(false);
+  const [isCashPortal, setIsCashPortal] = useState(false);
 
   const onFetching = (): void => {
     setIsFetching(true);
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(false);
+    setModalPage(false);
+    setIsCashPortal(false);
   };
 
   const onInit = (): void => {
@@ -53,6 +65,8 @@ export function useGafpriPagesCashRegisterType({
     setIsInit(true);
     setIsAdd(false);
     setIsUpdate(false);
+    setModalPage(false);
+    setIsCashPortal(false);
   };
 
   const onAdd = (): void => {
@@ -60,6 +74,8 @@ export function useGafpriPagesCashRegisterType({
     setIsInit(false);
     setIsAdd(true);
     setIsUpdate(false);
+    setModalPage(false);
+    setIsCashPortal(false);
   };
 
   const onUpdate = (): void => {
@@ -67,6 +83,17 @@ export function useGafpriPagesCashRegisterType({
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(true);
+    setModalPage(false);
+    setIsCashPortal(false);
+  };
+
+  const onCashPortal = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsAdd(false);
+    setIsUpdate(false);
+    setModalPage(false);
+    setIsCashPortal(true);
   };
 
   const goUpdate = (id: number): void => {
@@ -85,6 +112,14 @@ export function useGafpriPagesCashRegisterType({
     onInit();
   };
 
+  const openModalPage = (): void => {
+    setModalPage(true);
+  };
+
+  const closeModalPage = (): void => {
+    setModalPage(false);
+  };
+
   /**
    * Export
    *
@@ -95,6 +130,8 @@ export function useGafpriPagesCashRegisterType({
     isInit,
     isAdd,
     isUpdate,
+    modalPage,
+    isCashPortal,
   };
 
   const actions = {
@@ -111,6 +148,12 @@ export function useGafpriPagesCashRegisterType({
     goUpdate,
 
     returnInit,
+
+    openModalPage,
+
+    closeModalPage,
+
+    onCashPortal,
   };
 
   return {

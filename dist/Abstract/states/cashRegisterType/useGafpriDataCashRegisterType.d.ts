@@ -37,6 +37,7 @@ type Actions = {
     handleDeletedItem: ({ itemId }: DeletedCashRegisterType) => void;
     getOptionsItems: (sitesId: number) => SelectDefault[];
     getCurrentCashRegisterPostsId(postsId: number): number;
+    getOptionsItemsByAutorized: (userId: number) => SelectDefault[];
 };
 export type UseGafpriDataCashRegisterTypeReturn = {
     states: State;

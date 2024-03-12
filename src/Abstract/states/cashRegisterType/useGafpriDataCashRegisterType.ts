@@ -60,6 +60,8 @@ type Actions = {
   getOptionsItems: (sitesId: number) => SelectDefault[];
 
   getCurrentCashRegisterPostsId(postsId: number): number;
+
+  getOptionsItemsByAutorized: (userId: number) => SelectDefault[];
 };
 
 export type UseGafpriDataCashRegisterTypeReturn = {
@@ -220,6 +222,23 @@ export function useGafpriDataCashRegisterType({
     return cashRegisterType?.cashRegister[0].postsId || 0;
   }
 
+  function getOptionsItemsByAutorized(userId: number): SelectDefault[] {
+    return (
+      items.data.items
+        ?.filter((item) =>
+          item.cashRegisterTypeUser.some(
+            (user) => `${user.userId}` === `${userId}` && user.isAuthorized
+          )
+        )
+        .map((filteredItem) => {
+          return {
+            value: `${filteredItem.postsId}`,
+            label: filteredItem.name,
+          };
+        }) || []
+    );
+  }
+
   /**
    * Effects
    *
@@ -256,6 +275,8 @@ export function useGafpriDataCashRegisterType({
     getOptionsItems,
 
     getCurrentCashRegisterPostsId,
+
+    getOptionsItemsByAutorized,
   };
 
   return {

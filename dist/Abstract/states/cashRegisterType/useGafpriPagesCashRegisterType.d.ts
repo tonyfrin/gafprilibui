@@ -4,6 +4,8 @@ type State = {
     isInit: boolean;
     isAdd: boolean;
     isUpdate: boolean;
+    modalPage: boolean;
+    isCashPortal: boolean;
 };
 type Actions = {
     onFetching: () => void;
@@ -13,6 +15,9 @@ type Actions = {
     goAdd: () => void;
     goUpdate: (id: number) => void;
     onUpdate: () => void;
+    openModalPage: () => void;
+    closeModalPage: () => void;
+    onCashPortal: () => void;
 };
 export type UseGafpriPagesCashRegisterTypeReturn = {
     states: State;

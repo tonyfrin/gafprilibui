@@ -165,6 +165,19 @@ function useGafpriDataCashRegisterType(_ref) {
     var cashRegisterType = getById(postsId);
     return (cashRegisterType === null || cashRegisterType === void 0 ? void 0 : cashRegisterType.cashRegister[0].postsId) || 0;
   }
+  function getOptionsItemsByAutorized(userId) {
+    var _items$data$items4;
+    return ((_items$data$items4 = items.data.items) === null || _items$data$items4 === void 0 ? void 0 : _items$data$items4.filter(function (item) {
+      return item.cashRegisterTypeUser.some(function (user) {
+        return "".concat(user.userId) === "".concat(userId) && user.isAuthorized;
+      });
+    }).map(function (filteredItem) {
+      return {
+        value: "".concat(filteredItem.postsId),
+        label: filteredItem.name
+      };
+    })) || [];
+  }
 
   /**
    * Effects
@@ -193,7 +206,8 @@ function useGafpriDataCashRegisterType(_ref) {
     handleUpdatedItem: handleUpdatedItem,
     handleDeletedItem: handleDeletedItem,
     getOptionsItems: getOptionsItems,
-    getCurrentCashRegisterPostsId: getCurrentCashRegisterPostsId
+    getCurrentCashRegisterPostsId: getCurrentCashRegisterPostsId,
+    getOptionsItemsByAutorized: getOptionsItemsByAutorized
   };
   return {
     states: states,

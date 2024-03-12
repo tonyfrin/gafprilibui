@@ -10,7 +10,6 @@ var _Loading = require("../Loading");
 var _Abstract = require("../../Abstract");
 var CashRegisterType = exports.CashRegisterType = function CashRegisterType(_ref) {
   var use = _ref.use,
-    useSites = _ref.useSites,
     useUser = _ref.useUser;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, null), use.pages.states.isInit && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "init",
@@ -23,7 +22,6 @@ var CashRegisterType = exports.CashRegisterType = function CashRegisterType(_ref
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.CashRegisterTypeForm, {
     use: use,
     formType: "add",
-    useSites: useSites,
     useUser: useUser
   })), use.pages.states.isUpdate && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "update",
@@ -31,7 +29,6 @@ var CashRegisterType = exports.CashRegisterType = function CashRegisterType(_ref
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.CashRegisterTypeForm, {
     formType: "update",
     use: use,
-    useSites: useSites,
     useUser: useUser
   })));
 };

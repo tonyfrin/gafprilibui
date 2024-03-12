@@ -1,4 +1,5 @@
 export type CashTransactionsAttributes = {
+    id?: number;
     cashRegisterTypePostsId: number;
     cashRegisterPostsId: number;
     type: string;

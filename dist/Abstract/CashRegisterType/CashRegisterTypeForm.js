@@ -13,7 +13,6 @@ var _Input = require("../Input");
 var _BoxCashRegisterTypeUser = require("../Box/BoxCashRegisterTypeUser");
 var CashRegisterTypeForm = exports.CashRegisterTypeForm = function CashRegisterTypeForm(_ref) {
   var use = _ref.use,
-    useSites = _ref.useSites,
     formType = _ref.formType,
     useUser = _ref.useUser;
   var isAddForm = formType === 'add';

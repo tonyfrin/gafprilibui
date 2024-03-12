@@ -3,6 +3,7 @@ import {
   CashRegisterTypeAttributes,
   UseGafpriDataCashRegisterTypeReturn,
 } from './useGafpriDataCashRegisterType';
+import { CashTransactionsAttributes } from '../cashRegister';
 
 type State = {
   orderList: 'asc' | 'desc';
@@ -12,6 +13,8 @@ type State = {
   currentPage: number;
 
   itemsPerPage: number;
+
+  debitCurrentPage: number;
 };
 
 type Actions = {
@@ -33,6 +36,19 @@ type Actions = {
     page: number,
     itemsPerPage: number
   ) => CashRegisterTypeAttributes[] | null;
+
+  sortCashTransactionsById: (
+    items: CashTransactionsAttributes[] | null,
+    order: 'asc' | 'desc'
+  ) => CashTransactionsAttributes[] | null;
+
+  setDebitCurrentPage: (value: number) => void;
+
+  getCashTransactionsgetPaginated: (
+    items: CashTransactionsAttributes[] | null,
+    page: number,
+    itemPerPage: number
+  ) => CashTransactionsAttributes[] | null;
 };
 
 export type UseGafpriPaginationsCashRegisterTypeReturn = {
@@ -50,6 +66,7 @@ export function useGafpriPaginationsCashRegisterType({
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [debitCurrentPage, setDebitCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
   function sortByName(
@@ -61,6 +78,22 @@ export function useGafpriPaginationsCashRegisterType({
         const comparison = a.name.localeCompare(b.name, undefined, {
           sensitivity: 'base',
         });
+        return order === 'asc' ? comparison : -comparison;
+      });
+    }
+    return null;
+  }
+
+  function sortCashTransactionsById(
+    items: CashTransactionsAttributes[] | null,
+    order: 'asc' | 'desc'
+  ): CashTransactionsAttributes[] | null {
+    if (items) {
+      return items.slice().sort((a, b) => {
+        const idA = a.id || 0;
+        const idB = b.id || 0;
+
+        const comparison = idA - idB;
         return order === 'asc' ? comparison : -comparison;
       });
     }
@@ -79,15 +112,30 @@ export function useGafpriPaginationsCashRegisterType({
   };
 
   const getPaginated = (
-    itemStorages: CashRegisterTypeAttributes[] | null,
+    items: CashRegisterTypeAttributes[] | null,
     page: number,
     itemPerPage: number
   ): CashRegisterTypeAttributes[] | null => {
     const startIndex = (page - 1) * itemPerPage;
     const endIndex = startIndex + itemPerPage;
 
-    if (itemStorages) {
-      return itemStorages.slice(startIndex, endIndex);
+    if (items) {
+      return items.slice(startIndex, endIndex);
+    }
+
+    return null;
+  };
+
+  const getCashTransactionsgetPaginated = (
+    items: CashTransactionsAttributes[] | null,
+    page: number,
+    itemPerPage: number
+  ): CashTransactionsAttributes[] | null => {
+    const startIndex = (page - 1) * itemPerPage;
+    const endIndex = startIndex + itemPerPage;
+
+    if (items) {
+      return items.slice(startIndex, endIndex);
     }
 
     return null;
@@ -101,6 +149,7 @@ export function useGafpriPaginationsCashRegisterType({
 
   React.useEffect(() => {
     setCurrentPage(1);
+    setDebitCurrentPage(1);
   }, [searchTerm]);
 
   /**
@@ -116,6 +165,8 @@ export function useGafpriPaginationsCashRegisterType({
     currentPage,
 
     itemsPerPage,
+
+    debitCurrentPage,
   };
 
   const actions = {
@@ -130,6 +181,12 @@ export function useGafpriPaginationsCashRegisterType({
     setCurrentPage,
 
     getPaginated,
+
+    sortCashTransactionsById,
+
+    setDebitCurrentPage,
+
+    getCashTransactionsgetPaginated,
   };
 
   return {

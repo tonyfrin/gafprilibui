@@ -24,6 +24,10 @@ function useGafpriPaginationsCashRegisterType(_ref) {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     currentPage = _useState6[0],
     setCurrentPage = _useState6[1];
+  var _useState7 = (0, _react.useState)(1),
+    _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
+    debitCurrentPage = _useState8[0],
+    setDebitCurrentPage = _useState8[1];
   var itemsPerPage = 6;
   function sortByName(itemStorages, order) {
     if (itemStorages) {
@@ -31,6 +35,17 @@ function useGafpriPaginationsCashRegisterType(_ref) {
         var comparison = a.name.localeCompare(b.name, undefined, {
           sensitivity: 'base'
         });
+        return order === 'asc' ? comparison : -comparison;
+      });
+    }
+    return null;
+  }
+  function sortCashTransactionsById(items, order) {
+    if (items) {
+      return items.slice().sort(function (a, b) {
+        var idA = a.id || 0;
+        var idB = b.id || 0;
+        var comparison = idA - idB;
         return order === 'asc' ? comparison : -comparison;
       });
     }
@@ -44,11 +59,19 @@ function useGafpriPaginationsCashRegisterType(_ref) {
     }
     return null;
   };
-  var getPaginated = function getPaginated(itemStorages, page, itemPerPage) {
+  var getPaginated = function getPaginated(items, page, itemPerPage) {
     var startIndex = (page - 1) * itemPerPage;
     var endIndex = startIndex + itemPerPage;
-    if (itemStorages) {
-      return itemStorages.slice(startIndex, endIndex);
+    if (items) {
+      return items.slice(startIndex, endIndex);
+    }
+    return null;
+  };
+  var getCashTransactionsgetPaginated = function getCashTransactionsgetPaginated(items, page, itemPerPage) {
+    var startIndex = (page - 1) * itemPerPage;
+    var endIndex = startIndex + itemPerPage;
+    if (items) {
+      return items.slice(startIndex, endIndex);
     }
     return null;
   };
@@ -61,6 +84,7 @@ function useGafpriPaginationsCashRegisterType(_ref) {
 
   _react["default"].useEffect(function () {
     setCurrentPage(1);
+    setDebitCurrentPage(1);
   }, [searchTerm]);
 
   /**
@@ -72,7 +96,8 @@ function useGafpriPaginationsCashRegisterType(_ref) {
     orderList: orderList,
     searchTerm: searchTerm,
     currentPage: currentPage,
-    itemsPerPage: itemsPerPage
+    itemsPerPage: itemsPerPage,
+    debitCurrentPage: debitCurrentPage
   };
   var actions = {
     sortByName: sortByName,
@@ -80,7 +105,10 @@ function useGafpriPaginationsCashRegisterType(_ref) {
     setSearchTerm: setSearchTerm,
     filterByName: filterByName,
     setCurrentPage: setCurrentPage,
-    getPaginated: getPaginated
+    getPaginated: getPaginated,
+    sortCashTransactionsById: sortCashTransactionsById,
+    setDebitCurrentPage: setDebitCurrentPage,
+    getCashTransactionsgetPaginated: getCashTransactionsgetPaginated
   };
   return {
     states: states,

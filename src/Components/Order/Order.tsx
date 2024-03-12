@@ -24,13 +24,16 @@ export type OrderStylesContainerProps = {
   backgroundImage?: string;
   backgroundSize?: string;
   backgroundRepeat?: string;
-  height?: string;
+  minHeight?: string;
+  paddingTop?: string;
+  paddingBottom?: string;
   custom?: string;
 };
 
 const orderStylesContainer = (stayles: OrderStylesContainerProps) => css`
-  padding-top: 60px;
-  padding-bottom: 50px;
+  padding-top: ${stayles.paddingTop || '60px'};
+  padding-bottom: ${stayles.paddingBottom || '50px'};
+  min-height: ${stayles.minHeight || '100vh'};
   ${stayles.backgroundImage &&
   `background-image: url(${stayles.backgroundImage});`}
   background-repeat: ${stayles.backgroundRepeat || 'no-repeat'};

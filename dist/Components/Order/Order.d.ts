@@ -5,7 +5,9 @@ export type OrderStylesContainerProps = {
     backgroundImage?: string;
     backgroundSize?: string;
     backgroundRepeat?: string;
-    height?: string;
+    minHeight?: string;
+    paddingTop?: string;
+    paddingBottom?: string;
     custom?: string;
 };
 export type OrderProps = {

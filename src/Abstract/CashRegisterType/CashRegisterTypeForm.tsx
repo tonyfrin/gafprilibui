@@ -1,21 +1,19 @@
 import React from 'react';
 import { ContainerButton } from '../Containers';
 import { ModelForm } from '../Form';
-import { UseGafpriCashRegisterTypeReturn, UseSitesReturn } from '../../states';
+import { UseGafpriCashRegisterTypeReturn } from '../../states';
 import { GsSelect, InputName, SelectSite } from '../Input';
 import { UseUserReturn } from '../../states';
 import { BoxCashRegisterTypeUser } from '../Box/BoxCashRegisterTypeUser';
 
 export type CashRegisterTypeFormProps = {
   use: UseGafpriCashRegisterTypeReturn;
-  useSites: UseSitesReturn;
   formType: 'add' | 'update';
   useUser: UseUserReturn;
 };
 
 export const CashRegisterTypeForm = ({
   use,
-  useSites,
   formType,
   useUser,
 }: CashRegisterTypeFormProps): JSX.Element => {

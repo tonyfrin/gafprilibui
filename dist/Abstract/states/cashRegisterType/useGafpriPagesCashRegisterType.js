@@ -25,29 +25,53 @@ function useGafpriPagesCashRegisterType(_ref) {
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
     isUpdate = _useState8[0],
     setIsUpdate = _useState8[1];
+  var _useState9 = (0, _react.useState)(false),
+    _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
+    modalPage = _useState10[0],
+    setModalPage = _useState10[1];
+  var _useState11 = (0, _react.useState)(false),
+    _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
+    isCashPortal = _useState12[0],
+    setIsCashPortal = _useState12[1];
   var onFetching = function onFetching() {
     setIsFetching(true);
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(false);
+    setModalPage(false);
+    setIsCashPortal(false);
   };
   var onInit = function onInit() {
     setIsFetching(false);
     setIsInit(true);
     setIsAdd(false);
     setIsUpdate(false);
+    setModalPage(false);
+    setIsCashPortal(false);
   };
   var onAdd = function onAdd() {
     setIsFetching(false);
     setIsInit(false);
     setIsAdd(true);
     setIsUpdate(false);
+    setModalPage(false);
+    setIsCashPortal(false);
   };
   var onUpdate = function onUpdate() {
     setIsFetching(false);
     setIsInit(false);
     setIsAdd(false);
     setIsUpdate(true);
+    setModalPage(false);
+    setIsCashPortal(false);
+  };
+  var onCashPortal = function onCashPortal() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsAdd(false);
+    setIsUpdate(false);
+    setModalPage(false);
+    setIsCashPortal(true);
   };
   var goUpdate = function goUpdate(id) {
     attributes.actions.infoReset();
@@ -62,6 +86,12 @@ function useGafpriPagesCashRegisterType(_ref) {
     attributes.actions.infoReset();
     onInit();
   };
+  var openModalPage = function openModalPage() {
+    setModalPage(true);
+  };
+  var closeModalPage = function closeModalPage() {
+    setModalPage(false);
+  };
 
   /**
    * Export
@@ -72,7 +102,9 @@ function useGafpriPagesCashRegisterType(_ref) {
     isFetching: isFetching,
     isInit: isInit,
     isAdd: isAdd,
-    isUpdate: isUpdate
+    isUpdate: isUpdate,
+    modalPage: modalPage,
+    isCashPortal: isCashPortal
   };
   var actions = {
     onFetching: onFetching,
@@ -81,7 +113,10 @@ function useGafpriPagesCashRegisterType(_ref) {
     goAdd: goAdd,
     onUpdate: onUpdate,
     goUpdate: goUpdate,
-    returnInit: returnInit
+    returnInit: returnInit,
+    openModalPage: openModalPage,
+    closeModalPage: closeModalPage,
+    onCashPortal: onCashPortal
   };
   return {
     states: states,

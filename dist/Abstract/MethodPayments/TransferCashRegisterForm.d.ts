@@ -1,7 +1,6 @@
 import type { SiteOptions, UseCurrenciesReturn, UseErrorReturn } from '../../states';
 import { UseGafpriAttributesPaymentTransferCashRegisterReturn } from '../states/payment';
 export type CurrentPaymentInfo = {
-    validationButtonNext: () => void;
     returnInit: () => void;
     next: () => void;
     buttonNextId: string;

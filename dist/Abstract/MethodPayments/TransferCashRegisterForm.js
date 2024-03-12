@@ -71,7 +71,7 @@ var TransferCashRegisterForm = exports.TransferCashRegisterForm = function Trans
     usePayment.actions.validationCashRegisterTypePostsId(usePayment.states.cashRegisterTypePostsId);
   }, [usePayment.usePayment.useGeneralPaymentMethods.states.currenciesId, usePayment.usePayment.useGeneralPaymentMethods.states.currenciesIdValid, usePayment.states.cashRegisterTypePostsId, usePayment.states.cashRegisterTypePostsIdValid, InputCashRegisterType, InputCurrencies]);
   _react["default"].useEffect(function () {
-    currentPaymentInfo.validationButtonNext();
+    usePayment.actions.validationButtonNextPaymentCr();
   }, [usePayment.usePayment.useGeneralPaymentMethods.states.currenciesIdValid, usePayment.usePayment.useGeneralPaymentMethods.useCashTransactions.states.change, usePayment.usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change, usePayment.usePayment.states.total, usePayment.states.cashRegisterTypePostsIdValid]);
   _react["default"].useEffect(function () {
     setInputCurrencies(function () {

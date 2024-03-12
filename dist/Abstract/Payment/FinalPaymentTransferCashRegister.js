@@ -15,7 +15,9 @@ var FinalPaymentTransferCashRegister = exports.FinalPaymentTransferCashRegister 
   var title1Text = 'Nuevo Traspaso';
   var title2Text = 'Agrega un nuevo traspaso de efectivo';
   var buttonTitle = 'Procesar';
-  var buttonAction = use.api.actions.add;
+  var buttonAction = function buttonAction() {
+    return console.log(use.attributes.states);
+  };
   var buttonReturn = function buttonReturn() {
     use.attributes.usePayment.actions.infoReset();
     use.pages.actions.onPaymentCrForm();

@@ -16,7 +16,8 @@ var PaymentTransferCashRegister = exports.PaymentTransferCashRegister = function
     useCurrencies = _ref.useCurrencies,
     _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
-    sitesOptions = _ref.sitesOptions;
+    sitesOptions = _ref.sitesOptions,
+    returnInitModule = _ref.returnInitModule;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, {
@@ -32,8 +33,7 @@ var PaymentTransferCashRegister = exports.PaymentTransferCashRegister = function
     useCurrencies: useCurrencies,
     usePayment: use.attributes,
     currentPaymentInfo: {
-      validationButtonNext: use.attributes.actions.validationButtonNextPaymentCr,
-      returnInit: use.pages.actions.onPaymentCrForm,
+      returnInit: returnInitModule,
       buttonNextId: _constants.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE,
       next: use.pages.actions.onFinalPaymentCrForm,
       cashRegisterPostsId: use.attributes.states.currentCashRegisterPostsId,

@@ -11,7 +11,6 @@ import type {
 import { UseGafpriAttributesPaymentTransferCashRegisterReturn } from '../states/payment';
 
 export type CurrentPaymentInfo = {
-  validationButtonNext: () => void;
   returnInit: () => void;
   next: () => void;
   buttonNextId: string;
@@ -130,7 +129,7 @@ export const TransferCashRegisterForm = ({
   ]);
 
   React.useEffect(() => {
-    currentPaymentInfo.validationButtonNext();
+    usePayment.actions.validationButtonNextPaymentCr();
   }, [
     usePayment.usePayment.useGeneralPaymentMethods.states.currenciesIdValid,
     usePayment.usePayment.useGeneralPaymentMethods.useCashTransactions.states

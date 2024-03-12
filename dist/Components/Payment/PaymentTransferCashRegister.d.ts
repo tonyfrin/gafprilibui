@@ -5,5 +5,6 @@ export type PaymentTransferCashRegisterProps = {
     useCurrencies: UseCurrenciesReturn;
     sitesOptions: SiteOptions;
     containerProps?: React.HTMLAttributes<HTMLDivElement>;
+    returnInitModule: () => void;
 };
-export declare const PaymentTransferCashRegister: ({ use, useCurrencies, containerProps, sitesOptions, }: PaymentTransferCashRegisterProps) => JSX.Element;
+export declare const PaymentTransferCashRegister: ({ use, useCurrencies, containerProps, sitesOptions, returnInitModule, }: PaymentTransferCashRegisterProps) => JSX.Element;

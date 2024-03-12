@@ -17,6 +17,7 @@ export type PaymentTransferCashRegisterProps = {
   useCurrencies: UseCurrenciesReturn;
   sitesOptions: SiteOptions;
   containerProps?: React.HTMLAttributes<HTMLDivElement>;
+  returnInitModule: () => void;
 };
 
 export const PaymentTransferCashRegister = ({
@@ -24,6 +25,7 @@ export const PaymentTransferCashRegister = ({
   useCurrencies,
   containerProps = {},
   sitesOptions,
+  returnInitModule,
 }: PaymentTransferCashRegisterProps): JSX.Element => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;
@@ -49,9 +51,7 @@ export const PaymentTransferCashRegister = ({
             useCurrencies={useCurrencies}
             usePayment={use.attributes}
             currentPaymentInfo={{
-              validationButtonNext:
-                use.attributes.actions.validationButtonNextPaymentCr,
-              returnInit: use.pages.actions.onPaymentCrForm,
+              returnInit: returnInitModule,
               buttonNextId: PAYMENT_TRANSFER_CASH_REGISTER_ROUTE,
               next: use.pages.actions.onFinalPaymentCrForm,
               cashRegisterPostsId:

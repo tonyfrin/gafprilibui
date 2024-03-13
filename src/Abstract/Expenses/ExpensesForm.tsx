@@ -132,6 +132,12 @@ export const ExpensesForm = ({
       handleActions={handleActions}
       error={use.error.states.error}
       buttonNextId={EXPENSES_ROUTE}
+      boxProps={{
+        styles: {
+          width: 'auto',
+          height: 'auto',
+        },
+      }}
     >
       <>
         <ContainerButton

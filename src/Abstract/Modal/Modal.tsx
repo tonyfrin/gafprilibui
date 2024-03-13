@@ -21,9 +21,9 @@ const contentStyles = css`
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  /* Estilos del contenido */
-  max-height: 80vh; /* Máxima altura del contenido */
-  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+  width: 60%;
+  max-height: 80vh;
+  overflow-y: auto;
 `;
 
 const buttonStyles = css`

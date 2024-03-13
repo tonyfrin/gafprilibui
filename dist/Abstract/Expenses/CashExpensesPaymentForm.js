@@ -51,7 +51,14 @@ var CashExpensesPaymentForm = exports.CashExpensesPaymentForm = function CashExp
     },
     handleActions: handleActions,
     error: use.error.states.error,
-    buttonNextId: "".concat(_constants.EXPENSES_ROUTE, "-Add")
+    buttonNextId: "".concat(_constants.EXPENSES_ROUTE, "-Add"),
+    returnButtonConatinerStyle: "padding-button: 0px;",
+    boxProps: {
+      styles: {
+        width: 'auto',
+        height: 'auto'
+      }
+    }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%',

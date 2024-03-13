@@ -94,7 +94,13 @@ var ExpensesForm = exports.ExpensesForm = function ExpensesForm(_ref) {
     },
     handleActions: handleActions,
     error: use.error.states.error,
-    buttonNextId: _constants.EXPENSES_ROUTE
+    buttonNextId: _constants.EXPENSES_ROUTE,
+    boxProps: {
+      styles: {
+        width: 'auto',
+        height: 'auto'
+      }
+    }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%',

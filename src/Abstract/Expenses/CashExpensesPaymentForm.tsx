@@ -76,6 +76,13 @@ export const CashExpensesPaymentForm = ({
       handleActions={handleActions}
       error={use.error.states.error}
       buttonNextId={`${EXPENSES_ROUTE}-Add`}
+      returnButtonConatinerStyle='padding-button: 0px;'
+      boxProps={{
+        styles: {
+          width: 'auto',
+          height: 'auto',
+        },
+      }}
     >
       <>
         <ContainerButton

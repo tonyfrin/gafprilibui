@@ -12,7 +12,7 @@ var _templateObject, _templateObject2, _templateObject3;
 var paginaOpcionesStyles = function paginaOpcionesStyles(open) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.5);\n  opacity: ", ";\n  visibility: ", ";\n  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out,\n    transform 0.5s ease-in-out;\n  transform: translateX(", ");\n"])), open ? 1 : 0, open ? 'visible' : 'hidden', open ? 0 : '-100%');
 };
-var contentStyles = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 20px;\n  /* Estilos del contenido */\n  max-height: 80vh; /* M\xE1xima altura del contenido */\n  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */\n"])));
+var contentStyles = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 20px;\n  width: 60%;\n  max-height: 80vh;\n  overflow-y: auto;\n"])));
 var buttonStyles = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  position: absolute;\n  top: 87px;\n  transform: translateY(-50%);\n  right: -49%;\n  cursor: pointer;\n  color: #fff;\n  background-color: #c12429;\n  border-radius: 100%;\n  padding: 6px 7px 6px 8px;\n  font-size: 13px;\n"])));
 var Modal = exports.Modal = function Modal(_ref) {
   var children = _ref.children,

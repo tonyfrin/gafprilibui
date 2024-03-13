@@ -75,6 +75,7 @@ export const EntityExpensesInit = ({
               padding: '20px',
             },
           }}
+          returnButtonConatinerStyle="padding-button: 0px;"
         >
           <MainMenu
             items={menu}

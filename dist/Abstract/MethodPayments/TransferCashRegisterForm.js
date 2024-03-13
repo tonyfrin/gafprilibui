@@ -135,7 +135,15 @@ var TransferCashRegisterForm = exports.TransferCashRegisterForm = function Trans
     },
     handleActions: handleActions,
     error: useError.states.error,
-    buttonNextId: currentPaymentInfo.buttonNextId
+    buttonNextId: currentPaymentInfo.buttonNextId,
+    boxProps: {
+      styles: {
+        height: 'auto',
+        width: 'auto',
+        padding: '20px'
+      }
+    },
+    returnButtonConatinerStyle: "padding-button: 0px;"
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%'

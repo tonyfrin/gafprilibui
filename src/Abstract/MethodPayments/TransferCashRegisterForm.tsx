@@ -217,6 +217,14 @@ export const TransferCashRegisterForm = ({
       handleActions={handleActions}
       error={useError.states.error}
       buttonNextId={currentPaymentInfo.buttonNextId}
+      boxProps={{
+        styles: {
+          height: 'auto',
+          width: 'auto',
+          padding: '20px',
+        },
+      }}
+      returnButtonConatinerStyle="padding-button: 0px;"
     >
       <>
         <ContainerButton

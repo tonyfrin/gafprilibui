@@ -51,7 +51,15 @@ var FinalPaymentTransferCashRegister = exports.FinalPaymentTransferCashRegister 
     },
     handleActions: handleActions,
     error: use.error.states.error,
-    buttonNextId: "".concat(_constants.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE, "-Add")
+    buttonNextId: "".concat(_constants.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE, "-Add"),
+    boxProps: {
+      styles: {
+        height: 'auto',
+        width: 'auto',
+        padding: '20px'
+      }
+    },
+    returnButtonConatinerStyle: "padding-button: 0px;"
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%',

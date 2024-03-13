@@ -68,6 +68,14 @@ export const FinalPaymentTransferCashRegister = ({
       handleActions={handleActions}
       error={use.error.states.error}
       buttonNextId={`${PAYMENT_TRANSFER_CASH_REGISTER_ROUTE}-Add`}
+      boxProps={{
+        styles: {
+          height: 'auto',
+          width: 'auto',
+          padding: '20px',
+        },
+      }}
+      returnButtonConatinerStyle="padding-button: 0px;"
     >
       <>
         <ContainerButton

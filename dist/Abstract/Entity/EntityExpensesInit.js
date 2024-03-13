@@ -57,7 +57,8 @@ var EntityExpensesInit = exports.EntityExpensesInit = function EntityExpensesIni
         width: 'auto',
         padding: '20px'
       }
-    }
+    },
+    returnButtonConatinerStyle: "padding-button: 0px;"
   }, /*#__PURE__*/_react["default"].createElement(_Menu.MainMenu, {
     items: menu,
     stylesContainer: {

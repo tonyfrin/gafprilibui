@@ -414,6 +414,7 @@ export const EntityAddForm = ({
       error={use.error.states.error}
       boxProps={modelFormContainerProps}
       buttonNextId={ENTITY_ROUTE}
+      returnButtonConatinerStyle="padding-button: 0px;"
       {...modelFormProps}
     >
       <>

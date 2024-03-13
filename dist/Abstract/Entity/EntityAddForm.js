@@ -263,7 +263,8 @@ var EntityAddForm = exports.EntityAddForm = function EntityAddForm(_ref) {
     handleActions: customHandleActions || handleActions,
     error: use.error.states.error,
     boxProps: modelFormContainerProps,
-    buttonNextId: _constants.ENTITY_ROUTE
+    buttonNextId: _constants.ENTITY_ROUTE,
+    returnButtonConatinerStyle: "padding-button: 0px;"
   }, modelFormProps), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(photoMainContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement("div", {

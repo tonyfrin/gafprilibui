@@ -100,7 +100,8 @@ var ExpensesForm = exports.ExpensesForm = function ExpensesForm(_ref) {
         width: 'auto',
         height: 'auto'
       }
-    }
+    },
+    returnButtonConatinerStyle: "padding-button: 0px;"
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%',

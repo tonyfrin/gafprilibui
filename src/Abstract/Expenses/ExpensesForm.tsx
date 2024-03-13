@@ -138,6 +138,7 @@ export const ExpensesForm = ({
           height: 'auto',
         },
       }}
+      returnButtonConatinerStyle="padding-button: 0px;"
     >
       <>
         <ContainerButton

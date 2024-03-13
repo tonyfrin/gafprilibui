@@ -126,7 +126,14 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
     },
     handleActions: handleActions,
     error: useError.states.error,
-    buttonNextId: currentPaymentInfo.buttonNextId
+    buttonNextId: currentPaymentInfo.buttonNextId,
+    boxProps: {
+      styles: {
+        width: 'auto',
+        height: 'auto'
+      }
+    },
+    returnButtonConatinerStyle: "padding-button: 0px;"
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%'

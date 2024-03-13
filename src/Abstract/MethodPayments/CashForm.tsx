@@ -211,6 +211,13 @@ export const CashForm = ({
       handleActions={handleActions}
       error={useError.states.error}
       buttonNextId={currentPaymentInfo.buttonNextId}
+      boxProps={{
+        styles: {
+          width: 'auto',
+          height: 'auto',
+        },
+      }}
+      returnButtonConatinerStyle="padding-button: 0px;"
     >
       <>
         <ContainerButton

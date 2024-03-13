@@ -760,6 +760,7 @@ export type {
   TransferCashRegisterFormProps,
   FinalPaymentTransferCashRegisterProps,
   UseGafpriSubPagesCashRegisterTypeReturn,
+  CashRegisterTypeCurrenciesAttributes,
 } from './Abstract';
 export {
   MainFooter,

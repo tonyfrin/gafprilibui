@@ -227,6 +227,7 @@ export type {
   UseGafpriPagesCashRegisterTypeProps,
   UseGafpriAttributesCashRegisterTypeReturn,
   UseGafpriSubPagesCashRegisterTypeReturn,
+  CashRegisterTypeCurrenciesAttributes,
 } from './cashRegisterType';
 export {
   useGafpriAttributesExpensesType,

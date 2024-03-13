@@ -3,7 +3,7 @@ export type { UseGafpriAttributesCashRegisterTypeUserReturn, CashRegisterTypeUse
 export { useGafpriApiCashRegisterType } from './useGafpriApiCashRegisterType';
 export type { UseGafpriApiCashRegisterTypeReturn, UseGafpriApiCashRegisterTypeProps, } from './useGafpriApiCashRegisterType';
 export { useGafpriDataCashRegisterType } from './useGafpriDataCashRegisterType';
-export type { UseGafpriDataCashRegisterTypeReturn, UseGafpriDataCashRegisterTypeProps, CashRegisterTypeAttributes, } from './useGafpriDataCashRegisterType';
+export type { UseGafpriDataCashRegisterTypeReturn, UseGafpriDataCashRegisterTypeProps, CashRegisterTypeAttributes, CashRegisterTypeCurrenciesAttributes, } from './useGafpriDataCashRegisterType';
 export { useGafpriPaginationsCashRegisterType } from './useGafpriPaginationsCashRegisterType';
 export type { UseGafpriPaginationsCashRegisterTypeReturn, UseGafpriPaginationsCashRegisterTypeProps, } from './useGafpriPaginationsCashRegisterType';
 export { useGafpriPagesCashRegisterType } from './useGafpriPagesCashRegisterType';

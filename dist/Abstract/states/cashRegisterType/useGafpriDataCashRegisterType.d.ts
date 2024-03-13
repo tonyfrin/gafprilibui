@@ -8,6 +8,13 @@ export type CashRegisterAttributes = {
     posts: PostsAttributes;
     cashTransactions: CashTransactionsAttributes[];
 };
+export type CashRegisterTypeCurrenciesAttributes = {
+    id?: number;
+    cashRegisterTypePostsId: number;
+    currenciesId: number;
+    balance: number;
+    balanceChange: number;
+};
 export interface CashRegisterTypeAttributes {
     postsId: number;
     name: string;
@@ -15,6 +22,7 @@ export interface CashRegisterTypeAttributes {
     posts: PostsAttributes;
     cashRegisterTypeUser: CashRegisterTypeUserAttributes[];
     cashRegister: CashRegisterAttributes[];
+    cashRegisterTypeCurrencies: CashRegisterTypeCurrenciesAttributes[];
 }
 type DeletedCashRegisterType = {
     itemId: number;

@@ -621,6 +621,7 @@ export type {
   UseGafpriPagesPaymentTransferCashRegisterReturn,
   UseGafpriSubPagesCashRegisterTypeReturn,
   CashRegisterTypeCurrenciesAttributes,
+  CashRegisterCurrenciesAttributes,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';

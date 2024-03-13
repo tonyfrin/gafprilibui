@@ -14,6 +14,7 @@ export type {
   UseGafpriDataCashRegisterTypeProps,
   CashRegisterTypeAttributes,
   CashRegisterTypeCurrenciesAttributes,
+  CashRegisterCurrenciesAttributes,
 } from './useGafpriDataCashRegisterType';
 export { useGafpriPaginationsCashRegisterType } from './useGafpriPaginationsCashRegisterType';
 export type {

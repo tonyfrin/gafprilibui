@@ -2,11 +2,21 @@ import { PostsAttributes } from '../../../states';
 import { SelectDefault } from '../../../helpers';
 import { CashRegisterTypeUserAttributes } from './cashRegisterTypeUser';
 import { CashTransactionsAttributes } from '../cashRegister';
+export type CashRegisterCurrenciesAttributes = {
+    id?: number;
+    cashRegisterPostsId?: number;
+    currenciesId: number;
+    initCash: number;
+    endCash: number;
+    initCashChange: number;
+    endCashChange: number;
+};
 export type CashRegisterAttributes = {
     postsId: number;
     cashRegisterTypePostsId: number;
     posts: PostsAttributes;
     cashTransactions: CashTransactionsAttributes[];
+    cashRegisterCurrencies: CashRegisterCurrenciesAttributes[];
 };
 export type CashRegisterTypeCurrenciesAttributes = {
     id?: number;

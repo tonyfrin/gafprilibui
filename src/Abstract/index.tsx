@@ -460,6 +460,7 @@ export {
   useGafpriApiPaymentTransferCashRegister,
   useGafpriPagesPaymentTransferCashRegister,
   useGafpriAttributesPayment,
+  useGafpriSubPagesCashRegisterType,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -618,6 +619,7 @@ export type {
   UseGafpriAttributesPaymentTransferCashRegisterReturn,
   UseGafpriApiPaymentTransferCashRegisterReturn,
   UseGafpriPagesPaymentTransferCashRegisterReturn,
+  UseGafpriSubPagesCashRegisterTypeReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';

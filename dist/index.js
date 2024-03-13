@@ -3825,6 +3825,12 @@ Object.defineProperty(exports, "useGafpriStorage", {
     return _states.useGafpriStorage;
   }
 });
+Object.defineProperty(exports, "useGafpriSubPagesCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriSubPagesCashRegisterType;
+  }
+});
 Object.defineProperty(exports, "useGafpriSubPagesProducts", {
   enumerable: true,
   get: function get() {

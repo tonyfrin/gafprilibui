@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { UseGafpriAttributesCashRegisterTypeReturn } from './useGafpriAttributesCashRegisterType';
+import { UseGafpriSubPagesCashRegisterTypeReturn } from './useGafpriSubPagesCashRegisterType';
 
 type State = {
   isFetching: boolean;
@@ -39,10 +40,12 @@ export type UseGafpriPagesCashRegisterTypeReturn = {
 
 export type UseGafpriPagesCashRegisterTypeProps = {
   attributes: UseGafpriAttributesCashRegisterTypeReturn;
+  subPages: UseGafpriSubPagesCashRegisterTypeReturn;
 };
 
 export function useGafpriPagesCashRegisterType({
   attributes,
+  subPages,
 }: UseGafpriPagesCashRegisterTypeProps): UseGafpriPagesCashRegisterTypeReturn {
   const [isFetching, setIsFetching] = useState(false);
   const [isInit, setIsInit] = useState(true);
@@ -109,6 +112,7 @@ export function useGafpriPagesCashRegisterType({
 
   const returnInit = (): void => {
     attributes.actions.infoReset();
+    subPages.actions.onInit();
     onInit();
   };
 

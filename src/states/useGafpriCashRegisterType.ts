@@ -15,12 +15,15 @@ import {
   useGafpriPaginationsCashRegisterType,
   UseGafpriAttributesCashRegisterTypeUserReturn,
   useGafpriAttributesCashRegisterTypeUser,
+  UseGafpriSubPagesCashRegisterTypeReturn,
+  useGafpriSubPagesCashRegisterType,
 } from '../Abstract';
 
 export interface UseGafpriCashRegisterTypeReturn {
   crtu: UseGafpriAttributesCashRegisterTypeUserReturn;
   attributes: UseGafpriAttributesCashRegisterTypeReturn;
   pages: UseGafpriPagesCashRegisterTypeReturn;
+  subPages: UseGafpriSubPagesCashRegisterTypeReturn;
   paginations: UseGafpriPaginationsCashRegisterTypeReturn;
   api: UseGafpriApiCashRegisterTypeReturn;
   data: UseGafpriDataCashRegisterTypeReturn;
@@ -50,7 +53,8 @@ export function useGafpriCashRegisterType({
     useSites,
     useCrtu: crtu,
   });
-  const pages = useGafpriPagesCashRegisterType({ attributes });
+  const subPages = useGafpriSubPagesCashRegisterType();
+  const pages = useGafpriPagesCashRegisterType({ attributes, subPages });
   const data = useGafpriDataCashRegisterType({ token });
   const paginations = useGafpriPaginationsCashRegisterType({ data });
   const api = useGafpriApiCashRegisterType({
@@ -64,6 +68,7 @@ export function useGafpriCashRegisterType({
   return {
     attributes,
     pages,
+    subPages,
     paginations,
     api,
     data,

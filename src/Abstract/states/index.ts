@@ -211,6 +211,7 @@ export {
   useGafpriPaginationsCashRegisterType,
   useGafpriPagesCashRegisterType,
   useGafpriAttributesCashRegisterType,
+  useGafpriSubPagesCashRegisterType,
 } from './cashRegisterType';
 export type {
   UseGafpriAttributesCashRegisterTypeUserReturn,
@@ -225,6 +226,7 @@ export type {
   UseGafpriPagesCashRegisterTypeReturn,
   UseGafpriPagesCashRegisterTypeProps,
   UseGafpriAttributesCashRegisterTypeReturn,
+  UseGafpriSubPagesCashRegisterTypeReturn,
 } from './cashRegisterType';
 export {
   useGafpriAttributesExpensesType,

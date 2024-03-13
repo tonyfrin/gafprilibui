@@ -24,8 +24,10 @@ function useGafpriCashRegisterType(_ref) {
     useSites: useSites,
     useCrtu: crtu
   });
+  var subPages = (0, _Abstract.useGafpriSubPagesCashRegisterType)();
   var pages = (0, _Abstract.useGafpriPagesCashRegisterType)({
-    attributes: attributes
+    attributes: attributes,
+    subPages: subPages
   });
   var data = (0, _Abstract.useGafpriDataCashRegisterType)({
     token: token
@@ -43,6 +45,7 @@ function useGafpriCashRegisterType(_ref) {
   return {
     attributes: attributes,
     pages: pages,
+    subPages: subPages,
     paginations: paginations,
     api: api,
     data: data,

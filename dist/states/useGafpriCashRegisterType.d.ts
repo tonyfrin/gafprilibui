@@ -1,11 +1,12 @@
 import type { UseErrorReturn } from './useGafpriError';
 import { UseSitesReturn } from './useGafpriSites';
 import { UseUserReturn } from './useGafpriUser';
-import { UseGafpriApiCashRegisterTypeReturn, UseGafpriPagesCashRegisterTypeReturn, UseGafpriAttributesCashRegisterTypeReturn, UseGafpriDataCashRegisterTypeReturn, UseGafpriPaginationsCashRegisterTypeReturn, UseGafpriAttributesCashRegisterTypeUserReturn } from '../Abstract';
+import { UseGafpriApiCashRegisterTypeReturn, UseGafpriPagesCashRegisterTypeReturn, UseGafpriAttributesCashRegisterTypeReturn, UseGafpriDataCashRegisterTypeReturn, UseGafpriPaginationsCashRegisterTypeReturn, UseGafpriAttributesCashRegisterTypeUserReturn, UseGafpriSubPagesCashRegisterTypeReturn } from '../Abstract';
 export interface UseGafpriCashRegisterTypeReturn {
     crtu: UseGafpriAttributesCashRegisterTypeUserReturn;
     attributes: UseGafpriAttributesCashRegisterTypeReturn;
     pages: UseGafpriPagesCashRegisterTypeReturn;
+    subPages: UseGafpriSubPagesCashRegisterTypeReturn;
     paginations: UseGafpriPaginationsCashRegisterTypeReturn;
     api: UseGafpriApiCashRegisterTypeReturn;
     data: UseGafpriDataCashRegisterTypeReturn;

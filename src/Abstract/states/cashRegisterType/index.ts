@@ -26,3 +26,5 @@ export type {
 } from './useGafpriPagesCashRegisterType';
 export { useGafpriAttributesCashRegisterType } from './useGafpriAttributesCashRegisterType';
 export type { UseGafpriAttributesCashRegisterTypeReturn } from './useGafpriAttributesCashRegisterType';
+export { useGafpriSubPagesCashRegisterType } from './useGafpriSubPagesCashRegisterType';
+export type { UseGafpriSubPagesCashRegisterTypeReturn } from './useGafpriSubPagesCashRegisterType';

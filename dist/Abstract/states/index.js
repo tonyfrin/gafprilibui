@@ -471,6 +471,12 @@ Object.defineProperty(exports, "useGafpriPaginationsTaxRates", {
     return _taxes.useGafpriPaginationsTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriSubPagesCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _cashRegisterType.useGafpriSubPagesCashRegisterType;
+  }
+});
 Object.defineProperty(exports, "useGafpriSubPagesProducts", {
   enumerable: true,
   get: function get() {

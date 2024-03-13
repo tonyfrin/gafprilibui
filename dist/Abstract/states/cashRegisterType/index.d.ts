@@ -10,3 +10,5 @@ export { useGafpriPagesCashRegisterType } from './useGafpriPagesCashRegisterType
 export type { UseGafpriPagesCashRegisterTypeReturn, UseGafpriPagesCashRegisterTypeProps, } from './useGafpriPagesCashRegisterType';
 export { useGafpriAttributesCashRegisterType } from './useGafpriAttributesCashRegisterType';
 export type { UseGafpriAttributesCashRegisterTypeReturn } from './useGafpriAttributesCashRegisterType';
+export { useGafpriSubPagesCashRegisterType } from './useGafpriSubPagesCashRegisterType';
+export type { UseGafpriSubPagesCashRegisterTypeReturn } from './useGafpriSubPagesCashRegisterType';

@@ -285,6 +285,7 @@ export {
   SelectCashRegisterType,
   TransferCashRegisterForm,
   FinalPaymentTransferCashRegister,
+  useGafpriSubPagesCashRegisterType,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -758,6 +759,7 @@ export type {
   SelectCashRegisterTypeProps,
   TransferCashRegisterFormProps,
   FinalPaymentTransferCashRegisterProps,
+  UseGafpriSubPagesCashRegisterTypeReturn,
 } from './Abstract';
 export {
   MainFooter,

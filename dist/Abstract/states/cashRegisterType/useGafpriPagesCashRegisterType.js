@@ -8,7 +8,8 @@ exports.useGafpriPagesCashRegisterType = useGafpriPagesCashRegisterType;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 function useGafpriPagesCashRegisterType(_ref) {
-  var attributes = _ref.attributes;
+  var attributes = _ref.attributes,
+    subPages = _ref.subPages;
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     isFetching = _useState2[0],
@@ -84,6 +85,7 @@ function useGafpriPagesCashRegisterType(_ref) {
   };
   var returnInit = function returnInit() {
     attributes.actions.infoReset();
+    subPages.actions.onInit();
     onInit();
   };
   var openModalPage = function openModalPage() {

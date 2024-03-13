@@ -39,9 +39,16 @@ Object.defineProperty(exports, "useGafpriPaginationsCashRegisterType", {
     return _useGafpriPaginationsCashRegisterType.useGafpriPaginationsCashRegisterType;
   }
 });
+Object.defineProperty(exports, "useGafpriSubPagesCashRegisterType", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriSubPagesCashRegisterType.useGafpriSubPagesCashRegisterType;
+  }
+});
 var _cashRegisterTypeUser = require("./cashRegisterTypeUser");
 var _useGafpriApiCashRegisterType = require("./useGafpriApiCashRegisterType");
 var _useGafpriDataCashRegisterType = require("./useGafpriDataCashRegisterType");
 var _useGafpriPaginationsCashRegisterType = require("./useGafpriPaginationsCashRegisterType");
 var _useGafpriPagesCashRegisterType = require("./useGafpriPagesCashRegisterType");
 var _useGafpriAttributesCashRegisterType = require("./useGafpriAttributesCashRegisterType");
+var _useGafpriSubPagesCashRegisterType = require("./useGafpriSubPagesCashRegisterType");

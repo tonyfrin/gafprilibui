@@ -1,4 +1,5 @@
 import { UseGafpriAttributesCashRegisterTypeReturn } from './useGafpriAttributesCashRegisterType';
+import { UseGafpriSubPagesCashRegisterTypeReturn } from './useGafpriSubPagesCashRegisterType';
 type State = {
     isFetching: boolean;
     isInit: boolean;
@@ -25,6 +26,7 @@ export type UseGafpriPagesCashRegisterTypeReturn = {
 };
 export type UseGafpriPagesCashRegisterTypeProps = {
     attributes: UseGafpriAttributesCashRegisterTypeReturn;
+    subPages: UseGafpriSubPagesCashRegisterTypeReturn;
 };
-export declare function useGafpriPagesCashRegisterType({ attributes, }: UseGafpriPagesCashRegisterTypeProps): UseGafpriPagesCashRegisterTypeReturn;
+export declare function useGafpriPagesCashRegisterType({ attributes, subPages, }: UseGafpriPagesCashRegisterTypeProps): UseGafpriPagesCashRegisterTypeReturn;
 export {};

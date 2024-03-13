@@ -28,6 +28,10 @@ function useGafpriPaginationsCashRegisterType(_ref) {
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
     debitCurrentPage = _useState8[0],
     setDebitCurrentPage = _useState8[1];
+  var _useState9 = (0, _react.useState)(1),
+    _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
+    creditCurrentPage = _useState10[0],
+    setCreditCurrentPage = _useState10[1];
   var itemsPerPage = 6;
   function sortByName(itemStorages, order) {
     if (itemStorages) {
@@ -85,6 +89,7 @@ function useGafpriPaginationsCashRegisterType(_ref) {
   _react["default"].useEffect(function () {
     setCurrentPage(1);
     setDebitCurrentPage(1);
+    setCreditCurrentPage(1);
   }, [searchTerm]);
 
   /**
@@ -97,7 +102,8 @@ function useGafpriPaginationsCashRegisterType(_ref) {
     searchTerm: searchTerm,
     currentPage: currentPage,
     itemsPerPage: itemsPerPage,
-    debitCurrentPage: debitCurrentPage
+    debitCurrentPage: debitCurrentPage,
+    creditCurrentPage: creditCurrentPage
   };
   var actions = {
     sortByName: sortByName,
@@ -108,7 +114,8 @@ function useGafpriPaginationsCashRegisterType(_ref) {
     getPaginated: getPaginated,
     sortCashTransactionsById: sortCashTransactionsById,
     setDebitCurrentPage: setDebitCurrentPage,
-    getCashTransactionsgetPaginated: getCashTransactionsgetPaginated
+    getCashTransactionsgetPaginated: getCashTransactionsgetPaginated,
+    setCreditCurrentPage: setCreditCurrentPage
   };
   return {
     states: states,

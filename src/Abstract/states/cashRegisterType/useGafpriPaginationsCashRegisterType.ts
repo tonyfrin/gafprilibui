@@ -15,6 +15,8 @@ type State = {
   itemsPerPage: number;
 
   debitCurrentPage: number;
+
+  creditCurrentPage: number;
 };
 
 type Actions = {
@@ -43,6 +45,7 @@ type Actions = {
   ) => CashTransactionsAttributes[] | null;
 
   setDebitCurrentPage: (value: number) => void;
+  setCreditCurrentPage: (value: number) => void;
 
   getCashTransactionsgetPaginated: (
     items: CashTransactionsAttributes[] | null,
@@ -67,6 +70,7 @@ export function useGafpriPaginationsCashRegisterType({
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [debitCurrentPage, setDebitCurrentPage] = useState(1);
+  const [creditCurrentPage, setCreditCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
   function sortByName(
@@ -150,6 +154,7 @@ export function useGafpriPaginationsCashRegisterType({
   React.useEffect(() => {
     setCurrentPage(1);
     setDebitCurrentPage(1);
+    setCreditCurrentPage(1);
   }, [searchTerm]);
 
   /**
@@ -167,6 +172,8 @@ export function useGafpriPaginationsCashRegisterType({
     itemsPerPage,
 
     debitCurrentPage,
+
+    creditCurrentPage,
   };
 
   const actions = {
@@ -187,6 +194,8 @@ export function useGafpriPaginationsCashRegisterType({
     setDebitCurrentPage,
 
     getCashTransactionsgetPaginated,
+
+    setCreditCurrentPage,
   };
 
   return {

@@ -6,6 +6,7 @@ type State = {
     currentPage: number;
     itemsPerPage: number;
     debitCurrentPage: number;
+    creditCurrentPage: number;
 };
 type Actions = {
     sortByName: (storages: CashRegisterTypeAttributes[] | null, order: 'asc' | 'desc') => CashRegisterTypeAttributes[] | null;
@@ -16,6 +17,7 @@ type Actions = {
     getPaginated: (itemStorages: CashRegisterTypeAttributes[] | null, page: number, itemsPerPage: number) => CashRegisterTypeAttributes[] | null;
     sortCashTransactionsById: (items: CashTransactionsAttributes[] | null, order: 'asc' | 'desc') => CashTransactionsAttributes[] | null;
     setDebitCurrentPage: (value: number) => void;
+    setCreditCurrentPage: (value: number) => void;
     getCashTransactionsgetPaginated: (items: CashTransactionsAttributes[] | null, page: number, itemPerPage: number) => CashTransactionsAttributes[] | null;
 };
 export type UseGafpriPaginationsCashRegisterTypeReturn = {

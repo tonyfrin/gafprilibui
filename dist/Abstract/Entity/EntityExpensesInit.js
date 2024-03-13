@@ -53,11 +53,15 @@ var EntityExpensesInit = exports.EntityExpensesInit = function EntityExpensesIni
     error: useEntity.error.states.error,
     boxProps: {
       styles: {
-        height: '100%',
-        padding: '40px 40px 0 40px'
+        height: 'auto',
+        width: 'auto',
+        padding: '20px'
       }
     }
   }, /*#__PURE__*/_react["default"].createElement(_Menu.MainMenu, {
-    items: menu
+    items: menu,
+    stylesContainer: {
+      custom: "\n                padding: 0px;\n              "
+    }
   }))));
 };

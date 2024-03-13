@@ -70,12 +70,20 @@ export const EntityExpensesInit = ({
           error={useEntity.error.states.error}
           boxProps={{
             styles: {
-              height: '100%',
-              padding: '40px 40px 0 40px',
+              height: 'auto',
+              width: 'auto',
+              padding: '20px',
             },
           }}
         >
-          <MainMenu items={menu} />
+          <MainMenu
+            items={menu}
+            stylesContainer={{
+              custom: `
+                padding: 0px;
+              `,
+            }}
+          />
         </ModelForm>
       </div>
     </>

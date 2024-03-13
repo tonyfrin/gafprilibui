@@ -3237,6 +3237,12 @@ Object.defineProperty(exports, "toTitleCase", {
     return _helpers.toTitleCase;
   }
 });
+Object.defineProperty(exports, "truncarTexto", {
+  enumerable: true,
+  get: function get() {
+    return _helpers.truncarTexto;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiBudget", {
   enumerable: true,
   get: function get() {

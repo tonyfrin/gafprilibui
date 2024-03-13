@@ -6,20 +6,12 @@ import {
   Text,
   Image,
   StyleSheet,
-  Font,
 } from '@react-pdf/renderer';
 import { formatDate, decimalFormatPriceConverter } from '../../helpers';
 import { BudgetAttributes } from '../states';
 import { Countries, StatesCountries } from '../../constants';
 import { SiteOptions } from '../../states';
-
-function truncarTexto(texto: string, longitudMaxima: number = 65): string {
-  if (texto.length <= longitudMaxima) {
-    return texto;
-  } else {
-    return texto.substring(0, longitudMaxima - 3) + '...';
-  }
-}
+import { truncarTexto } from '../../helpers';
 
 export interface BudgetPdfProps {
   budget: BudgetAttributes; // Define la interfaz Order según tu modelo de datos
@@ -173,7 +165,9 @@ export const BudgetPdf: React.FC<BudgetPdfProps> = ({
               <View key={item.id} style={styles.tableRow}>
                 <Text style={styles.col1}>{item.sku}</Text>
                 <Text style={styles.col8}>
-                  <Text style={styles.tableCol}>{truncarTexto(item.name)}</Text>
+                  <Text style={styles.tableCol}>
+                    {truncarTexto(item.name, 65)}
+                  </Text>
                 </Text>
                 <Text style={styles.col1}>
                   {parseFloat(`${item.qty}`).toFixed(2)}

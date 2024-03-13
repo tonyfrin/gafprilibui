@@ -9,14 +9,6 @@ var _react = _interopRequireDefault(require("react"));
 var _renderer = require("@react-pdf/renderer");
 var _helpers = require("../../helpers");
 var _constants = require("../../constants");
-function truncarTexto(texto) {
-  var longitudMaxima = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 65;
-  if (texto.length <= longitudMaxima) {
-    return texto;
-  } else {
-    return texto.substring(0, longitudMaxima - 3) + '...';
-  }
-}
 var BudgetPdf = exports.BudgetPdf = function BudgetPdf(_ref) {
   var _budget$budgetCustome, _budget$budgetCustome2, _StatesCountries$0$bu, _budget$budgetCustome3, _StatesCountries$0$si;
   var budget = _ref.budget,
@@ -119,7 +111,7 @@ var BudgetPdf = exports.BudgetPdf = function BudgetPdf(_ref) {
       style: styles.col8
     }, /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
       style: styles.tableCol
-    }, truncarTexto(item.name))), /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
+    }, (0, _helpers.truncarTexto)(item.name, 65))), /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
       style: styles.col1
     }, parseFloat("".concat(item.qty)).toFixed(2)), /*#__PURE__*/_react["default"].createElement(_renderer.Text, {
       style: styles.col2

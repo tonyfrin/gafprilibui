@@ -641,3 +641,11 @@ export const formatDate = (date: string): string => {
 
   return format.format(newDate);
 };
+
+export function truncarTexto(texto: string, longitudMaxima: number): string {
+  if (texto.length <= longitudMaxima) {
+    return texto;
+  }
+
+  return `${texto.substring(0, longitudMaxima - 3)}...`;
+}

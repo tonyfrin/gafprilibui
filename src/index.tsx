@@ -873,6 +873,7 @@ export {
   scrollToTop,
   decimalFormatPriceConverter,
   formatDate,
+  truncarTexto,
 } from './helpers';
 export type {
   ChangeInputText,

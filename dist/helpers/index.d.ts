@@ -131,4 +131,5 @@ export interface FormatOptions {
 }
 export declare const decimalFormatPriceConverter: (str: string | number, dig: number, currencySymbol: string, currencyLocation: 'left' | 'right', formatOptions?: FormatOptions) => string;
 export declare const formatDate: (date: string) => string;
+export declare function truncarTexto(texto: string, longitudMaxima: number): string;
 export {};

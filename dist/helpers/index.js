@@ -12,6 +12,7 @@ exports.getMimeTypeByExtension = getMimeTypeByExtension;
 exports.isCustomErrorResponse = isCustomErrorResponse;
 exports.scrollToTop = exports.removeClass = exports.removeAccentsAndSpecialChars = exports.isSelectDefaultArray = exports.isSelectDefault = exports.isErrorResponse = void 0;
 exports.toTitleCase = toTitleCase;
+exports.truncarTexto = truncarTexto;
 exports.validationHidden = validationHidden;
 exports.validationSelect = exports.validationInputPostcode = exports.validationInputPhone = exports.validationInputName = exports.validationInputEmail = exports.validationInput = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
@@ -421,3 +422,9 @@ var formatDate = exports.formatDate = function formatDate(date) {
   });
   return format.format(newDate);
 };
+function truncarTexto(texto, longitudMaxima) {
+  if (texto.length <= longitudMaxima) {
+    return texto;
+  }
+  return "".concat(texto.substring(0, longitudMaxima - 3), "...");
+}

@@ -42,8 +42,9 @@ var EntityIncome = exports.EntityIncome = function EntityIncome(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.EntityAddForm, {
     modelFormContainerProps: {
       styles: {
-        height: '100%',
-        padding: '40px 40px 0px 40px'
+        height: 'auto',
+        padding: '10px',
+        width: 'auto'
       }
     },
     use: use,

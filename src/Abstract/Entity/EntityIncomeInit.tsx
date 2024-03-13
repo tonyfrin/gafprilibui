@@ -70,10 +70,12 @@ export const EntityIncomeInit = ({
           error={useEntity.error.states.error}
           boxProps={{
             styles: {
-              height: '100%',
-              padding: '40px 40px 0 40px',
+              height: 'auto',
+              width: 'auto',
+              padding: '20px',
             },
           }}
+          returnButtonConatinerStyle="padding-button: 0px;"
         >
           <MainMenu items={menu} />
         </ModelForm>

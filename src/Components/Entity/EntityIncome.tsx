@@ -65,8 +65,9 @@ export const EntityIncome = ({
             <EntityAddForm
               modelFormContainerProps={{
                 styles: {
-                  height: '100%',
-                  padding: '40px 40px 0px 40px',
+                  height: 'auto',
+                  padding: '10px',
+                  width: 'auto',
                 },
               }}
               use={use}

@@ -37,6 +37,9 @@ var EntityIncomeSearchForm = exports.EntityIncomeSearchForm = function EntityInc
     },
     title2Props: {
       title: 'Busqueda de clientes'
+    },
+    containerStyles: {
+      width: 'auto'
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {

@@ -75,7 +75,14 @@ var IncomeForm = exports.IncomeForm = function IncomeForm(_ref) {
     },
     handleActions: handleActions,
     error: use.error.states.error,
-    buttonNextId: _constants.INCOME_ROUTE
+    buttonNextId: _constants.INCOME_ROUTE,
+    boxProps: {
+      styles: {
+        width: 'auto',
+        height: 'auto'
+      }
+    },
+    returnButtonConatinerStyle: "padding-button: 0px;"
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%',

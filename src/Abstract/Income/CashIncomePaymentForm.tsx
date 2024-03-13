@@ -70,6 +70,13 @@ export const CashIncomePaymentForm = ({
       handleActions={handleActions}
       error={use.error.states.error}
       buttonNextId={`${INCOME_ROUTE}-Add`}
+      returnButtonConatinerStyle="padding-button: 0px;"
+      boxProps={{
+        styles: {
+          width: 'auto',
+          height: 'auto',
+        },
+      }}
     >
       <>
         <ContainerButton

@@ -64,6 +64,9 @@ export const EntityIncomeSearchForm = ({
           title2Props={{
             title: 'Busqueda de clientes',
           }}
+          containerStyles={{
+            width: 'auto',
+          }}
         >
           <>
             <ContainerButton

@@ -99,6 +99,13 @@ export const IncomeForm = ({
       handleActions={handleActions}
       error={use.error.states.error}
       buttonNextId={INCOME_ROUTE}
+      boxProps={{
+        styles: {
+          width: 'auto',
+          height: 'auto',
+        },
+      }}
+      returnButtonConatinerStyle="padding-button: 0px;"
     >
       <>
         <ContainerButton

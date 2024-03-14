@@ -129,8 +129,7 @@ function useGafpriLogin(_ref) {
             if (userNameValid && passwordValid) {
               (0, _helpers.gafpriFetch)({
                 initMethod: 'POST',
-                initApi: 'http://localhost:4000',
-                initRoute: 'api/v1/auth/login',
+                initRoute: _constants.LOGIN_ROUTE,
                 initCredentials: {
                   userName: userName,
                   password: password
@@ -158,8 +157,7 @@ function useGafpriLogin(_ref) {
             if (token) {
               (0, _helpers.gafpriFetch)({
                 initMethod: 'GET',
-                initApi: 'http://localhost:4000',
-                initRoute: 'api/v1/auth/jwt',
+                initRoute: _constants.LOGIN_TOKEN_ROUTE,
                 initToken: {
                   token: token
                 },

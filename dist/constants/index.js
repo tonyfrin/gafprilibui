@@ -321,6 +321,18 @@ Object.defineProperty(exports, "LENGTH_INPUT", {
     return _Inputs.LENGTH_INPUT;
   }
 });
+Object.defineProperty(exports, "LOGIN_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.LOGIN_ROUTE;
+  }
+});
+Object.defineProperty(exports, "LOGIN_TOKEN_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.LOGIN_TOKEN_ROUTE;
+  }
+});
 Object.defineProperty(exports, "NAME_INPUT", {
   enumerable: true,
   get: function get() {

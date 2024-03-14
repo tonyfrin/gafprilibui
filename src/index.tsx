@@ -1118,6 +1118,8 @@ export {
   INCOME_STORAGE,
   PAYMENT_TRANSFER_CASH_REGISTER_ROUTE,
   CASH_REGISTER_TYPE_INPUT,
+  LOGIN_ROUTE,
+  LOGIN_TOKEN_ROUTE,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {

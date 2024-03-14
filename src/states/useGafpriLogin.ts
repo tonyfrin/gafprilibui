@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { gafpriFetch } from '../helpers';
 import { getItem, saveItem } from '../Context';
-import { TOKEN_STORAGE, CURRENT_USER_STORAGE } from '../constants';
+import {
+  TOKEN_STORAGE,
+  CURRENT_USER_STORAGE,
+  LOGIN_ROUTE,
+  LOGIN_TOKEN_ROUTE,
+} from '../constants';
 import {
   generalValidationUserName,
   generalValidationSinglePassword,
@@ -168,8 +173,7 @@ export function useGafpriLogin({
     if (userNameValid && passwordValid) {
       gafpriFetch({
         initMethod: 'POST',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/auth/login',
+        initRoute: LOGIN_ROUTE,
         initCredentials: {
           userName,
           password,
@@ -185,8 +189,7 @@ export function useGafpriLogin({
     if (token) {
       gafpriFetch({
         initMethod: 'GET',
-        initApi: 'http://localhost:4000',
-        initRoute: 'api/v1/auth/jwt',
+        initRoute: LOGIN_TOKEN_ROUTE,
         initToken: {
           token,
         },

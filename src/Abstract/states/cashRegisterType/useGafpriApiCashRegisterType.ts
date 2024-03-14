@@ -132,7 +132,7 @@ export function useGafpriApiCashRegisterType({
   };
 
   const conciliate = (cashRegisterPostId: number): void => {
-    if (attributes.states.nameValid && attributes.states.siteValid && token) {
+    if (token) {
       gafpriFetch({
         initMethod: 'POST',
         initRoute: `${CASH_REGISTER_TYPE_ROUTE}/conciliate/${attributes.states.currentId}`,

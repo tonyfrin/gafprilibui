@@ -93,7 +93,7 @@ function useGafpriApiCashRegisterType(_ref) {
     }
   };
   var conciliate = function conciliate(cashRegisterPostId) {
-    if (attributes.states.nameValid && attributes.states.siteValid && token) {
+    if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'POST',
         initRoute: "".concat(_constants.CASH_REGISTER_TYPE_ROUTE, "/conciliate/").concat(attributes.states.currentId),

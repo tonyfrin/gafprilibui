@@ -92,13 +92,13 @@ function useGafpriApiCashRegisterType(_ref) {
       });
     }
   };
-  var conciliate = function conciliate(cashRegisterPostId) {
+  var conciliate = function conciliate(cashRegisterPostsId) {
     if (token) {
       (0, _helpers.gafpriFetch)({
         initMethod: 'PATCH',
         initRoute: "".concat(_constants.CASH_REGISTER_TYPE_ROUTE, "/conciliate/").concat(attributes.states.currentId),
         initCredentials: {
-          cashRegisterPostId: cashRegisterPostId
+          cashRegisterPostsId: cashRegisterPostsId
         },
         initToken: {
           token: token

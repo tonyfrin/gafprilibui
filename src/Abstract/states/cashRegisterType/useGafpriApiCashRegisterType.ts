@@ -131,13 +131,13 @@ export function useGafpriApiCashRegisterType({
     }
   };
 
-  const conciliate = (cashRegisterPostId: number): void => {
+  const conciliate = (cashRegisterPostsId: number): void => {
     if (token) {
       gafpriFetch({
         initMethod: 'PATCH',
         initRoute: `${CASH_REGISTER_TYPE_ROUTE}/conciliate/${attributes.states.currentId}`,
         initCredentials: {
-          cashRegisterPostId,
+          cashRegisterPostsId,
         },
         initToken: { token },
         functionFetching: pages.actions.onFetching,

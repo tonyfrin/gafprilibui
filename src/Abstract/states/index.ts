@@ -293,3 +293,24 @@ export type {
   UseGafpriApiPaymentTransferCashRegisterReturn,
   UseGafpriPagesPaymentTransferCashRegisterReturn,
 } from './payment';
+export {
+  useGafpriApiBankType,
+  useGafpriDataBankType,
+  useGafpriPaginationsBankType,
+  useGafpriPagesBankType,
+  useGafpriAttributesBankType,
+  useGafpriSubPagesBankType,
+} from './bank';
+export type {
+  UseGafpriApiBankTypeReturn,
+  UseGafpriApiBankTypeProps,
+  UseGafpriDataBankTypeReturn,
+  UseGafpriDataBankTypeProps,
+  BankTypeAttributes,
+  UseGafpriPaginationsBankTypeReturn,
+  UseGafpriPaginationsBankTypeProps,
+  UseGafpriPagesBankTypeReturn,
+  UseGafpriPagesBankTypeProps,
+  UseGafpriAttributesBankTypeReturn,
+  UseGafpriSubPagesBankTypeReturn,
+} from './bank';

@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "useGafpriBankType", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriBankType.useGafpriBankType;
+  }
+});
 Object.defineProperty(exports, "useGafpriBudget", {
   enumerable: true,
   get: function get() {
@@ -164,3 +170,4 @@ var _useGafpriExpensesType = require("./useGafpriExpensesType");
 var _useGafpriExpenses = require("./useGafpriExpenses");
 var _useGafpriIncome = require("./useGafpriIncome");
 var _useGafpriPaymentTransferCashRegister = require("./useGafpriPaymentTransferCashRegister");
+var _useGafpriBankType = require("./useGafpriBankType");

@@ -24,3 +24,4 @@ export declare const INCOME_ROUTE = "/income";
 export declare const PAYMENT_TRANSFER_CASH_REGISTER_ROUTE = "/payment-transfer-cash-register";
 export declare const LOGIN_ROUTE = "/auth/login";
 export declare const LOGIN_TOKEN_ROUTE = "/auth/jwt";
+export declare const BANK_TYPE_ROUTE = "/bank-type";

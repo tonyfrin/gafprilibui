@@ -9,6 +9,18 @@ Object.defineProperty(exports, "generalChanceIsActive", {
     return _generalChanceIsActive.generalChanceIsActive;
   }
 });
+Object.defineProperty(exports, "generalChangeAccountNumber", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeAccountNumber.generalChangeAccountNumber;
+  }
+});
+Object.defineProperty(exports, "generalChangeAccountType", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeAccountType.generalChangeAccountType;
+  }
+});
 Object.defineProperty(exports, "generalChangeAddress", {
   enumerable: true,
   get: function get() {
@@ -37,6 +49,12 @@ Object.defineProperty(exports, "generalChangeAvailableShippingServices", {
   enumerable: true,
   get: function get() {
     return _generalChangeAvailableShippingServices.generalChangeAvailableShippingServices;
+  }
+});
+Object.defineProperty(exports, "generalChangeBankName", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeBankName.generalChangeBankName;
   }
 });
 Object.defineProperty(exports, "generalChangeCashRegisterType", {
@@ -91,6 +109,12 @@ Object.defineProperty(exports, "generalChangeCurrenciesSymbol", {
   enumerable: true,
   get: function get() {
     return _generalChangeCurrenciesSymbol.generalChangeCurrenciesSymbol;
+  }
+});
+Object.defineProperty(exports, "generalChangeCurrency", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeCurrency.generalChangeCurrency;
   }
 });
 Object.defineProperty(exports, "generalChangeCustomerId", {
@@ -253,6 +277,12 @@ Object.defineProperty(exports, "generalChangeSalesPrice", {
   enumerable: true,
   get: function get() {
     return _generalChangeSalesPrice.generalChangeSalesPrice;
+  }
+});
+Object.defineProperty(exports, "generalChangeSettings", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeSettings.generalChangeSettings;
   }
 });
 Object.defineProperty(exports, "generalChangeShippingAreas", {
@@ -437,3 +467,8 @@ var _generalChangeSupplierId = require("./generalChangeSupplierId");
 var _generalChangeExpensesTypeId = require("./generalChangeExpensesTypeId");
 var _generalChangeProjectsId = require("./generalChangeProjectsId");
 var _generalChangeCashRegisterType = require("./generalChangeCashRegisterType");
+var _generalChangeBankName = require("./generalChangeBankName");
+var _generalChangeAccountNumber = require("./generalChangeAccountNumber");
+var _generalChangeAccountType = require("./generalChangeAccountType");
+var _generalChangeCurrency = require("./generalChangeCurrency");
+var _generalChangeSettings = require("./generalChangeSettings");

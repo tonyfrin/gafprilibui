@@ -70,3 +70,7 @@ export declare const EXPENSES_TYPE_INPUT = "expenses-type-input-id";
 export declare const PROJECTS_ID_INPUT = "projects-id-input-id";
 export declare const INVOICE_INPUT = "invoice-input-id";
 export declare const CASH_REGISTER_TYPE_INPUT = "cash-register-type-input-id";
+export declare const BANK_NAME_INPUT = "bank-name-input-id";
+export declare const ACCOUNT_NUMBER_INPUT = "account-number-input-id";
+export declare const ACCOUNT_TYPE_INPUT = "account-type-input-id";
+export declare const SETTINGS_INPUT = "settings-input-id";

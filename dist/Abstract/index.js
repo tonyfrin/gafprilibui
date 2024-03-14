@@ -33,6 +33,12 @@ Object.defineProperty(exports, "Background1", {
     return _Background.Background1;
   }
 });
+Object.defineProperty(exports, "BankTypeForm", {
+  enumerable: true,
+  get: function get() {
+    return _BankType.BankTypeForm;
+  }
+});
 Object.defineProperty(exports, "Box1", {
   enumerable: true,
   get: function get() {
@@ -471,6 +477,12 @@ Object.defineProperty(exports, "IncomeInit", {
     return _Income.IncomeInit;
   }
 });
+Object.defineProperty(exports, "InitBankType", {
+  enumerable: true,
+  get: function get() {
+    return _BankType.InitBankType;
+  }
+});
 Object.defineProperty(exports, "InitCashRegisterType", {
   enumerable: true,
   get: function get() {
@@ -561,6 +573,12 @@ Object.defineProperty(exports, "Input", {
     return _Input.Input;
   }
 });
+Object.defineProperty(exports, "InputAccountNumber", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputAccountNumber;
+  }
+});
 Object.defineProperty(exports, "InputAddress1", {
   enumerable: true,
   get: function get() {
@@ -571,6 +589,12 @@ Object.defineProperty(exports, "InputAddress2", {
   enumerable: true,
   get: function get() {
     return _Input.InputAddress2;
+  }
+});
+Object.defineProperty(exports, "InputBankName", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputBankName;
   }
 });
 Object.defineProperty(exports, "InputCart", {
@@ -1053,6 +1077,12 @@ Object.defineProperty(exports, "SearchProductsBudget", {
     return _Products.SearchProductsBudget;
   }
 });
+Object.defineProperty(exports, "SelectAccountType", {
+  enumerable: true,
+  get: function get() {
+    return _Input.SelectAccountType;
+  }
+});
 Object.defineProperty(exports, "SelectAddressType", {
   enumerable: true,
   get: function get() {
@@ -1323,6 +1353,12 @@ Object.defineProperty(exports, "UserView", {
     return _Users.UserView;
   }
 });
+Object.defineProperty(exports, "useGafpriApiBankType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriApiBankType;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiBudget", {
   enumerable: true,
   get: function get() {
@@ -1411,6 +1447,12 @@ Object.defineProperty(exports, "useGafpriApiTaxRates", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriApiTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesBankType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesBankType;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesBudget", {
@@ -1527,6 +1569,12 @@ Object.defineProperty(exports, "useGafpriAttributesTaxRates", {
     return _states.useGafpriAttributesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriDataBankType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriDataBankType;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataBudget", {
   enumerable: true,
   get: function get() {
@@ -1609,6 +1657,12 @@ Object.defineProperty(exports, "useGafpriDataTaxRates", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriDataTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesBankType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPagesBankType;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesBudget", {
@@ -1707,6 +1761,12 @@ Object.defineProperty(exports, "useGafpriPagesTaxRates", {
     return _states.useGafpriPagesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsBankType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPaginationsBankType;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsBudget", {
   enumerable: true,
   get: function get() {
@@ -1791,6 +1851,12 @@ Object.defineProperty(exports, "useGafpriPaginationsTaxRates", {
     return _states.useGafpriPaginationsTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriSubPagesBankType", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriSubPagesBankType;
+  }
+});
 Object.defineProperty(exports, "useGafpriSubPagesCashRegisterType", {
   enumerable: true,
   get: function get() {
@@ -1850,3 +1916,5 @@ var _Expenses = require("./Expenses");
 var _MethodPayments = require("./MethodPayments");
 var _Income = require("./Income");
 var _Payment = require("./Payment");
+var _BankType = require("./BankType");
+require("./InitBankType");

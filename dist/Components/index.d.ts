@@ -42,3 +42,5 @@ export { IncomeCashRegister } from './Income';
 export type { IncomeCashRegisterProps, IncomeCashRegisterStylesContainerProps, } from './Income';
 export { PaymentTransferCashRegister } from './Payment';
 export type { PaymentTransferCashRegisterProps } from './Payment';
+export { BankType } from './Bank';
+export type { BankTypeProps } from './Bank';

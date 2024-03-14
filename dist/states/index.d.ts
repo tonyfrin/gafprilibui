@@ -46,3 +46,5 @@ export { useGafpriIncome } from './useGafpriIncome';
 export type { UseGafpriIncomeReturn, UseGafpriIncomeProps, } from './useGafpriIncome';
 export { useGafpriPaymentTransferCashRegister } from './useGafpriPaymentTransferCashRegister';
 export type { UseGafpriPaymentTransferCashRegisterReturn, UseGafpriPaymentTransferCashRegisterProps, } from './useGafpriPaymentTransferCashRegister';
+export { useGafpriBankType } from './useGafpriBankType';
+export type { UseGafpriBankTypeReturn, UseGafpriBankTypeProps, } from './useGafpriBankType';

@@ -112,6 +112,9 @@ export {
   InputNote,
   InputInvoice,
   SelectCashRegisterType,
+  SelectAccountType,
+  InputBankName,
+  InputAccountNumber,
 } from './Input';
 export type {
   InputStyle,
@@ -184,6 +187,9 @@ export type {
   InputNoteProps,
   InputInvoiceProps,
   SelectCashRegisterTypeProps,
+  SelectAccountTypeProps,
+  InputBankNameProps,
+  InputAccountNumberProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -461,6 +467,12 @@ export {
   useGafpriPagesPaymentTransferCashRegister,
   useGafpriAttributesPayment,
   useGafpriSubPagesCashRegisterType,
+  useGafpriApiBankType,
+  useGafpriDataBankType,
+  useGafpriPaginationsBankType,
+  useGafpriPagesBankType,
+  useGafpriAttributesBankType,
+  useGafpriSubPagesBankType,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -622,6 +634,17 @@ export type {
   UseGafpriSubPagesCashRegisterTypeReturn,
   CashRegisterTypeCurrenciesAttributes,
   CashRegisterCurrenciesAttributes,
+  UseGafpriApiBankTypeReturn,
+  UseGafpriApiBankTypeProps,
+  UseGafpriDataBankTypeReturn,
+  UseGafpriDataBankTypeProps,
+  BankTypeAttributes,
+  UseGafpriPaginationsBankTypeReturn,
+  UseGafpriPaginationsBankTypeProps,
+  UseGafpriPagesBankTypeReturn,
+  UseGafpriPagesBankTypeProps,
+  UseGafpriAttributesBankTypeReturn,
+  UseGafpriSubPagesBankTypeReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -859,3 +882,10 @@ export type {
 } from './Income';
 export { FinalPaymentTransferCashRegister } from './Payment';
 export type { FinalPaymentTransferCashRegisterProps } from './Payment';
+export { BankTypeForm, InitBankType } from './BankType';
+export type {
+  BankTypeFormProps,
+  InitBankTypeProps,
+  InitBankTypePropsExtended,
+} from './BankType';
+export {} from './InitBankType';

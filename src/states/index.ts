@@ -109,3 +109,8 @@ export type {
   UseGafpriPaymentTransferCashRegisterReturn,
   UseGafpriPaymentTransferCashRegisterProps,
 } from './useGafpriPaymentTransferCashRegister';
+export { useGafpriBankType } from './useGafpriBankType';
+export type {
+  UseGafpriBankTypeReturn,
+  UseGafpriBankTypeProps,
+} from './useGafpriBankType';

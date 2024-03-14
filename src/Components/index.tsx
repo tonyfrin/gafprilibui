@@ -89,3 +89,5 @@ export type {
 } from './Income';
 export { PaymentTransferCashRegister } from './Payment';
 export type { PaymentTransferCashRegisterProps } from './Payment';
+export { BankType } from './Bank';
+export type { BankTypeProps } from './Bank';

@@ -31,6 +31,8 @@ type Actions = {
   closeModalPage: () => void;
 
   onCashPortal: () => void;
+
+  goCashPortal: (postsId: number) => void;
 };
 
 export type UseGafpriPagesCashRegisterTypeReturn = {
@@ -124,6 +126,11 @@ export function useGafpriPagesCashRegisterType({
     setModalPage(false);
   };
 
+  const goCashPortal = (postsId: number): void => {
+    attributes.actions.setCurrentId(postsId);
+    onCashPortal();
+  };
+
   /**
    * Export
    *
@@ -158,6 +165,8 @@ export function useGafpriPagesCashRegisterType({
     closeModalPage,
 
     onCashPortal,
+
+    goCashPortal,
   };
 
   return {

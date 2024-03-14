@@ -19,6 +19,7 @@ type Actions = {
     openModalPage: () => void;
     closeModalPage: () => void;
     onCashPortal: () => void;
+    goCashPortal: (postsId: number) => void;
 };
 export type UseGafpriPagesCashRegisterTypeReturn = {
     states: State;

@@ -94,6 +94,10 @@ function useGafpriPagesCashRegisterType(_ref) {
   var closeModalPage = function closeModalPage() {
     setModalPage(false);
   };
+  var goCashPortal = function goCashPortal(postsId) {
+    attributes.actions.setCurrentId(postsId);
+    onCashPortal();
+  };
 
   /**
    * Export
@@ -118,7 +122,8 @@ function useGafpriPagesCashRegisterType(_ref) {
     returnInit: returnInit,
     openModalPage: openModalPage,
     closeModalPage: closeModalPage,
-    onCashPortal: onCashPortal
+    onCashPortal: onCashPortal,
+    goCashPortal: goCashPortal
   };
   return {
     states: states,

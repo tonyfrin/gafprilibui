@@ -368,8 +368,12 @@ var BankTypeForm = exports.BankTypeForm = function BankTypeForm(_ref) {
       title: 'Valor',
       placeholder: 'Valor'
     }
-  }))), /*#__PURE__*/_react["default"].createElement(_Table.AttributeTable, {
+  }))))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      width: '96.5%'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Table.AttributeTable, {
     data: use.attributes.states.settings,
     onRemove: use.attributes.actions.onRemoveSettings
-  })))));
+  }))));
 };

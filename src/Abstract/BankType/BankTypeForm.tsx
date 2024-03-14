@@ -507,12 +507,17 @@ export const BankTypeForm = ({
                 />
               </div>
             </div>
-
-            <AttributeTable
-              data={use.attributes.states.settings}
-              onRemove={use.attributes.actions.onRemoveSettings}
-            />
           </>
+        </ContainerButton>
+        <ContainerButton
+          styles={{
+            width: '96.5%',
+          }}
+        >
+          <AttributeTable
+            data={use.attributes.states.settings}
+            onRemove={use.attributes.actions.onRemoveSettings}
+          />
         </ContainerButton>
       </>
     </ModelForm>

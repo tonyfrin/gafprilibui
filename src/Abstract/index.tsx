@@ -888,4 +888,3 @@ export type {
   InitBankTypeProps,
   InitBankTypePropsExtended,
 } from './BankType';
-export {} from './InitBankType';

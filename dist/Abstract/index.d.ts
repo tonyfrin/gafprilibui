@@ -92,4 +92,3 @@ export { FinalPaymentTransferCashRegister } from './Payment';
 export type { FinalPaymentTransferCashRegisterProps } from './Payment';
 export { BankTypeForm, InitBankType } from './BankType';
 export type { BankTypeFormProps, InitBankTypeProps, InitBankTypePropsExtended, } from './BankType';
-export {} from './InitBankType';

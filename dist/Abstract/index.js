@@ -1917,4 +1917,3 @@ var _MethodPayments = require("./MethodPayments");
 var _Income = require("./Income");
 var _Payment = require("./Payment");
 var _BankType = require("./BankType");
-require("./InitBankType");

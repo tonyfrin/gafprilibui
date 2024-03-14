@@ -340,7 +340,7 @@ export function gafpriFetch<T = unknown>({
     body: JSON.stringify(initCredentials),
   };
 
-  fetch(`${initApi}/${initRoute}`, options)
+  fetch(`${initApi}${initRoute}`, options)
     .then((response) => response.json())
     .then((data) => {
       console.log(data); // eslint-disable-line no-console

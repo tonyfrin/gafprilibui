@@ -219,7 +219,7 @@ function gafpriFetch(_ref9) {
     headers: headers,
     body: JSON.stringify(initCredentials)
   };
-  fetch("".concat(initApi, "/").concat(initRoute), options).then(function (response) {
+  fetch("".concat(initApi).concat(initRoute), options).then(function (response) {
     return response.json();
   }).then(function (data) {
     console.log(data); // eslint-disable-line no-console

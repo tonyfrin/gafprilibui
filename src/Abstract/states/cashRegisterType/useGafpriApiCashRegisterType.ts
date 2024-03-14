@@ -15,6 +15,8 @@ type Actions = {
   add: () => void;
 
   erase: (id: number) => void;
+
+  conciliate: (cashRegisterPostId: number) => void;
 };
 
 export type UseGafpriApiCashRegisterTypeReturn = {
@@ -42,6 +44,15 @@ export function useGafpriApiCashRegisterType({
     useError.actions.newError({
       newErrorValue,
       functionAction: pages.actions.onAdd,
+    });
+  };
+
+  const newErrorConciliate = (
+    newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
+  ): void => {
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: pages.actions.onCashPortal,
     });
   };
 
@@ -120,6 +131,22 @@ export function useGafpriApiCashRegisterType({
     }
   };
 
+  const conciliate = (cashRegisterPostId: number): void => {
+    if (attributes.states.nameValid && attributes.states.siteValid && token) {
+      gafpriFetch({
+        initMethod: 'POST',
+        initRoute: `${CASH_REGISTER_TYPE_ROUTE}/conciliate/${attributes.states.currentId}`,
+        initCredentials: {
+          cashRegisterPostId,
+        },
+        initToken: { token },
+        functionFetching: pages.actions.onFetching,
+        functionSuccess: pages.actions.returnInit,
+        functionError: newErrorConciliate,
+      });
+    }
+  };
+
   /**
    * Export
    *
@@ -130,6 +157,7 @@ export function useGafpriApiCashRegisterType({
     update,
     add,
     erase,
+    conciliate,
   };
 
   return {

@@ -6,6 +6,7 @@ type Actions = {
     update: () => void;
     add: () => void;
     erase: (id: number) => void;
+    conciliate: (cashRegisterPostId: number) => void;
 };
 export type UseGafpriApiCashRegisterTypeReturn = {
     actions: Actions;

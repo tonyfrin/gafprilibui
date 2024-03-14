@@ -20,6 +20,12 @@ function useGafpriApiCashRegisterType(_ref) {
       functionAction: pages.actions.onAdd
     });
   };
+  var newErrorConciliate = function newErrorConciliate(newErrorValue) {
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: pages.actions.onCashPortal
+    });
+  };
   var add = function add() {
     if (attributes.states.nameValid && attributes.states.siteValid && token) {
       (0, _helpers.gafpriFetch)({
@@ -86,6 +92,23 @@ function useGafpriApiCashRegisterType(_ref) {
       });
     }
   };
+  var conciliate = function conciliate(cashRegisterPostId) {
+    if (attributes.states.nameValid && attributes.states.siteValid && token) {
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'POST',
+        initRoute: "".concat(_constants.CASH_REGISTER_TYPE_ROUTE, "/conciliate/").concat(attributes.states.currentId),
+        initCredentials: {
+          cashRegisterPostId: cashRegisterPostId
+        },
+        initToken: {
+          token: token
+        },
+        functionFetching: pages.actions.onFetching,
+        functionSuccess: pages.actions.returnInit,
+        functionError: newErrorConciliate
+      });
+    }
+  };
 
   /**
    * Export
@@ -96,7 +119,8 @@ function useGafpriApiCashRegisterType(_ref) {
   var actions = {
     update: update,
     add: add,
-    erase: erase
+    erase: erase,
+    conciliate: conciliate
   };
   return {
     actions: actions

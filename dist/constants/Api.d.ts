@@ -22,5 +22,5 @@ export declare const EXPENSES_TYPE_ROUTE = "/expenses-type";
 export declare const EXPENSES_ROUTE = "/expenses";
 export declare const INCOME_ROUTE = "/income";
 export declare const PAYMENT_TRANSFER_CASH_REGISTER_ROUTE = "/payment-transfer-cash-register";
-export declare const LOGIN_ROUTE = "/login";
+export declare const LOGIN_ROUTE = "/auth/login";
 export declare const LOGIN_TOKEN_ROUTE = "/auth/jwt";

@@ -30,5 +30,5 @@ var EXPENSES_TYPE_ROUTE = exports.EXPENSES_TYPE_ROUTE = '/expenses-type';
 var EXPENSES_ROUTE = exports.EXPENSES_ROUTE = '/expenses';
 var INCOME_ROUTE = exports.INCOME_ROUTE = '/income';
 var PAYMENT_TRANSFER_CASH_REGISTER_ROUTE = exports.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE = '/payment-transfer-cash-register';
-var LOGIN_ROUTE = exports.LOGIN_ROUTE = '/login';
+var LOGIN_ROUTE = exports.LOGIN_ROUTE = '/auth/login';
 var LOGIN_TOKEN_ROUTE = exports.LOGIN_TOKEN_ROUTE = '/auth/jwt';

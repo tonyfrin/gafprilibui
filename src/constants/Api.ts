@@ -23,5 +23,5 @@ export const EXPENSES_ROUTE = '/expenses';
 export const INCOME_ROUTE = '/income';
 export const PAYMENT_TRANSFER_CASH_REGISTER_ROUTE =
   '/payment-transfer-cash-register';
-export const LOGIN_ROUTE = '/login';
+export const LOGIN_ROUTE = '/auth/login';
 export const LOGIN_TOKEN_ROUTE = '/auth/jwt';

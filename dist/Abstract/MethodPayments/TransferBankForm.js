@@ -28,6 +28,9 @@ var TransferBankForm = exports.TransferBankForm = function TransferBankForm(_ref
     setDepositCurrency = _React$useState4[1];
   var debitCurrency = useCurrencies.actions.getById(((_useBankType$data$act = useBankType.data.actions.getById(usePayment.states.debitBankTypePostsId)) === null || _useBankType$data$act === void 0 ? void 0 : _useBankType$data$act.currenciesId) || 0);
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
+  console.log('debitCurrency', debitCurrency);
+  console.log('depositCurrency', depositCurrency);
+  console.log('siteCurrency', siteCurrency);
   var add = function add() {
     if (parseFloat(usePayment.usePayment.states.total) > 0 && usePayment.states.depositBankTypePostsIdValid) {
       usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferBankRegister(usePayment.states.debitBankTypePostsId, parseInt(usePayment.states.depositBankTypePostsId, 10));

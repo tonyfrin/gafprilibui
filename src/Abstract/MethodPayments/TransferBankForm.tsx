@@ -44,6 +44,10 @@ export const TransferBankForm = ({
   );
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
 
+  console.log('debitCurrency', debitCurrency);
+  console.log('depositCurrency', depositCurrency);
+  console.log('siteCurrency', siteCurrency);
+
   const add = () => {
     if (
       parseFloat(usePayment.usePayment.states.total) > 0 &&

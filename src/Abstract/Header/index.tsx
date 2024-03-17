@@ -5,3 +5,5 @@ export type {
   ModuleHeaderProps,
   ModuleHeaderStylesContainerProps,
 } from './ModuleHeader';
+export { CashRegisterHeader } from './CashRegisterHeader';
+export type { CashRegisterHeaderProps } from './CashRegisterHeader';

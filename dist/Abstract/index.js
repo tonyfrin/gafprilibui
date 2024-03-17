@@ -171,6 +171,12 @@ Object.defineProperty(exports, "CartTable", {
     return _Table.CartTable;
   }
 });
+Object.defineProperty(exports, "CashBalanceTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.CashBalanceTable;
+  }
+});
 Object.defineProperty(exports, "CashExpensesPaymentForm", {
   enumerable: true,
   get: function get() {
@@ -189,10 +195,28 @@ Object.defineProperty(exports, "CashIncomePaymentForm", {
     return _Income.CashIncomePaymentForm;
   }
 });
+Object.defineProperty(exports, "CashRegisterForm", {
+  enumerable: true,
+  get: function get() {
+    return _CashRegisterType.CashRegisterForm;
+  }
+});
+Object.defineProperty(exports, "CashRegisterHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Header.CashRegisterHeader;
+  }
+});
 Object.defineProperty(exports, "CashRegisterTypeForm", {
   enumerable: true,
   get: function get() {
     return _CashRegisterType.CashRegisterTypeForm;
+  }
+});
+Object.defineProperty(exports, "CashTransationsTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.CashTransationsTable;
   }
 });
 Object.defineProperty(exports, "CatalogForm", {
@@ -235,6 +259,12 @@ Object.defineProperty(exports, "ColumnList", {
   enumerable: true,
   get: function get() {
     return _List.ColumnList;
+  }
+});
+Object.defineProperty(exports, "ConciliateTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.ConciliateTable;
   }
 });
 Object.defineProperty(exports, "ContainerButton", {
@@ -487,6 +517,12 @@ Object.defineProperty(exports, "InitBankType", {
   enumerable: true,
   get: function get() {
     return _BankType.InitBankType;
+  }
+});
+Object.defineProperty(exports, "InitCashRegister", {
+  enumerable: true,
+  get: function get() {
+    return _CashRegisterType.InitCashRegister;
   }
 });
 Object.defineProperty(exports, "InitCashRegisterType", {
@@ -1281,6 +1317,24 @@ Object.defineProperty(exports, "SingleCheckBox", {
     return _CheckBox.SingleCheckBox;
   }
 });
+Object.defineProperty(exports, "SingleHiddenTablet", {
+  enumerable: true,
+  get: function get() {
+    return _Table.SingleHiddenTablet;
+  }
+});
+Object.defineProperty(exports, "SingleList", {
+  enumerable: true,
+  get: function get() {
+    return _List.SingleList;
+  }
+});
+Object.defineProperty(exports, "SingleTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.SingleTable;
+  }
+});
 Object.defineProperty(exports, "SitesForm", {
   enumerable: true,
   get: function get() {
@@ -1507,6 +1561,12 @@ Object.defineProperty(exports, "useGafpriAttributesCashRegisterTypeUser", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriAttributesCashRegisterTypeUser;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesCashTransactions", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesCashTransactions;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesEntity", {

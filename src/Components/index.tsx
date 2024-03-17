@@ -70,8 +70,11 @@ export { MainStorage } from './Storage';
 export type { MainStorageProps, MainStoragePropsExtended } from './Storage';
 export { TaxRates, TaxClasses } from './Taxes';
 export type { TaxRatesProps, TaxClassesProps } from './Taxes';
-export { CashRegisterType } from './CashRegisterType';
-export type { CashRegisterTypeProps } from './CashRegisterType';
+export { CashRegisterType, CashRegister } from './CashRegisterType';
+export type {
+  CashRegisterTypeProps,
+  CashRegisterProps,
+} from './CashRegisterType';
 export { ExpensesType } from './ExpensesType';
 export type {
   ExpensesTypeProps,

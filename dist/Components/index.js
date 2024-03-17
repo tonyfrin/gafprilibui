@@ -15,6 +15,12 @@ Object.defineProperty(exports, "Budget", {
     return _Budget.Budget;
   }
 });
+Object.defineProperty(exports, "CashRegister", {
+  enumerable: true,
+  get: function get() {
+    return _CashRegisterType.CashRegister;
+  }
+});
 Object.defineProperty(exports, "CashRegisterType", {
   enumerable: true,
   get: function get() {

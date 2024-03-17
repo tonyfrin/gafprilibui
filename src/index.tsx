@@ -304,6 +304,16 @@ export {
   SelectBankType,
   TransferBankForm,
   FinalPaymentTransferBank,
+  CashRegisterHeader,
+  SingleTable,
+  SingleList,
+  CashBalanceTable,
+  useGafpriAttributesCashTransactions,
+  CashTransationsTable,
+  SingleHiddenTablet,
+  ConciliateTable,
+  InitCashRegister,
+  CashRegisterForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -805,6 +815,17 @@ export type {
   SelectBankTypeProps,
   TransferBankFormProps,
   FinalPaymentTransferBankProps,
+  CashRegisterHeaderProps,
+  SingleTableProps,
+  SingleListProps,
+  CashBalanceTableProps,
+  UseGafpriAttributesCashTransactionsReturn,
+  CashTransactionsAttributes,
+  CashTransationsTableProps,
+  SingleHiddenTabletProps,
+  ConciliateTableProps,
+  InitCashRegisterProps,
+  CashRegisterFormProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -841,6 +862,7 @@ export {
   PaymentTransferCashRegister,
   BankType,
   PaymentTransferBank,
+  CashRegister,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -894,6 +916,7 @@ export type {
   PaymentTransferCashRegisterProps,
   BankTypeProps,
   PaymentTransferBankProps,
+  CashRegisterProps,
 } from './Components';
 export {
   addClass,

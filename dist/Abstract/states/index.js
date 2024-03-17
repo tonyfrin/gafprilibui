@@ -141,6 +141,12 @@ Object.defineProperty(exports, "useGafpriAttributesCashRegisterTypeUser", {
     return _cashRegisterType.useGafpriAttributesCashRegisterTypeUser;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesCashTransactions", {
+  enumerable: true,
+  get: function get() {
+    return _cashRegister.useGafpriAttributesCashTransactions;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesEntity", {
   enumerable: true,
   get: function get() {
@@ -559,3 +565,4 @@ var _expenses = require("./expenses");
 var _income = require("./income");
 var _payment = require("./payment");
 var _bank = require("./bank");
+var _cashRegister = require("./cashRegister");

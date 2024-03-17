@@ -323,3 +323,8 @@ export type {
   UseGafpriAttributesBankTransactionsReturn,
   BankTransactionsAttributes,
 } from './bank';
+export { useGafpriAttributesCashTransactions } from './cashRegister';
+export type {
+  UseGafpriAttributesCashTransactionsReturn,
+  CashTransactionsAttributes,
+} from './cashRegister';

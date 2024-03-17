@@ -201,13 +201,14 @@ export type { LogoProps } from './Logo';
 export { Step } from './Step';
 export { SearchBar } from './Bar';
 export type { SearchBarProps } from './Bar';
-export { List, ColumnList, ListContainer } from './List';
+export { List, ColumnList, ListContainer, SingleList } from './List';
 export type {
   ListProps,
   ListPropsExtended,
   ColumnListProps,
   DivListListContainerStyle,
   ListContainerProps,
+  SingleListProps,
 } from './List';
 export { Pagination } from './Pagination';
 export type { PaginationProps } from './Pagination';
@@ -290,12 +291,13 @@ export type {
   HeaderMenuStylesContentLiProps,
   HorizontalMenuProps,
 } from './Menu';
-export { Header, ModuleHeader } from './Header';
+export { Header, ModuleHeader, CashRegisterHeader } from './Header';
 export type {
   HeaderProps,
   HeaderPropsExtended,
   ModuleHeaderProps,
   ModuleHeaderStylesContainerProps,
+  CashRegisterHeaderProps,
 } from './Header';
 export { InitCurrencies, CurrencyForm } from './Currencies';
 export type {
@@ -479,6 +481,7 @@ export {
   useGafpriAttributesPaymentTransferBank,
   useGafpriApiPaymentTransferBank,
   useGafpriPagesPaymentTransferBank,
+  useGafpriAttributesCashTransactions,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -656,6 +659,8 @@ export type {
   UseGafpriAttributesPaymentTransferBankReturn,
   UseGafpriApiPaymentTransferBankReturn,
   UseGafpriPagesPaymentTransferBankReturn,
+  UseGafpriAttributesCashTransactionsReturn,
+  CashTransactionsAttributes,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -714,6 +719,11 @@ export {
   BudgetPrintTable,
   CartBudgetViewTable,
   AttributeTable,
+  SingleTable,
+  CashBalanceTable,
+  CashTransationsTable,
+  SingleHiddenTablet,
+  ConciliateTable,
 } from './Table';
 export type {
   CartListProps,
@@ -724,6 +734,11 @@ export type {
   BudgetPrintTableProps,
   CartBudgetViewTableProps,
   AttributeTableProps,
+  SingleTableProps,
+  CashBalanceTableProps,
+  CashTransationsTableProps,
+  SingleHiddenTabletProps,
+  ConciliateTableProps,
 } from './Table';
 export {
   SearchProducts,
@@ -855,11 +870,18 @@ export type {
 } from './CheckBox';
 export { SliderHorizontal } from './Slider';
 export type { SliderHorizontalProps } from './Slider';
-export { CashRegisterTypeForm, InitCashRegisterType } from './CashRegisterType';
+export {
+  CashRegisterTypeForm,
+  InitCashRegisterType,
+  InitCashRegister,
+  CashRegisterForm,
+} from './CashRegisterType';
 export type {
   CashRegisterTypeFormProps,
   InitCashRegisterTypeProps,
   InitCashRegisterTypePropsExtended,
+  InitCashRegisterProps,
+  CashRegisterFormProps,
 } from './CashRegisterType';
 export { InitExpensesType, ExpensesTypeForm } from './ExpensesType';
 export type {

@@ -153,28 +153,30 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       var debitBankType = useBankType.data.actions.getById(debitBankTypePostsId);
       var depositBankType = useBankType.data.actions.getById(depositBankTypePostsId);
       if (!debitBankType || !depositBankType) return;
+      var currentDate = new Date();
+      var formatDate = currentDate.toISOString().split('T')[0];
       var debitBankTransactions = {
         bankTypePostsId: debitBankTypePostsId,
         type: 'debit',
-        paymentType: 'transfer',
+        paymentType: 'transfers',
         description: "Transferecia de ".concat(debitBankType.name, " a ").concat(depositBankType.name),
         amount: debitAmount,
         change: change,
-        dateTransations: useBankTransactions.states.dateTransations
+        dateTransations: "".concat(formatDate)
       };
       var depositBankTransactions = {
         bankTypePostsId: depositBankTypePostsId,
         type: 'deposit',
-        paymentType: 'transfer',
+        paymentType: 'transfers',
         description: "Transferecia de ".concat(debitBankType.name, " a ").concat(depositBankType.name),
         amount: depositAmount,
         change: change,
-        dateTransations: useBankTransactions.states.dateTransations
+        dateTransations: "".concat(formatDate)
       };
       var debitPaymentMethods = {
         methodType: 'bank',
         type: 'debit',
-        paymentType: 'transfer',
+        paymentType: 'transfers',
         currenciesId: debitBankType.currenciesId,
         bank: debitBankType.bankName,
         number: usePaymentMethods.states.number,
@@ -185,7 +187,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       var depositPaymentMethods = {
         methodType: 'bank',
         type: 'deposit',
-        paymentType: 'transfer',
+        paymentType: 'transfers',
         currenciesId: depositBankType.currenciesId,
         bank: debitBankType.bankName,
         number: usePaymentMethods.states.number,

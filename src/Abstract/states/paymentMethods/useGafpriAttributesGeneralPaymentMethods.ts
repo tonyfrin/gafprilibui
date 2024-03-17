@@ -225,32 +225,34 @@ export function useGafpriAttributesGeneralPaymentMethods({
       );
 
       if (!debitBankType || !depositBankType) return;
+      const currentDate = new Date();
+      const formatDate = currentDate.toISOString().split('T')[0];
 
       const debitBankTransactions = {
         bankTypePostsId: debitBankTypePostsId,
         type: 'debit',
-        paymentType: 'transfer',
+        paymentType: 'transfers',
         description: `Transferecia de ${debitBankType.name} a ${depositBankType.name}`,
         amount: debitAmount,
         change,
-        dateTransations: useBankTransactions.states.dateTransations,
+        dateTransations: `${formatDate}`,
       };
 
       const depositBankTransactions = {
         bankTypePostsId: depositBankTypePostsId,
         type: 'deposit',
-        paymentType: 'transfer',
+        paymentType: 'transfers',
         description: `Transferecia de ${debitBankType.name} a ${depositBankType.name}`,
         amount: depositAmount,
         change,
-        dateTransations: useBankTransactions.states.dateTransations,
+        dateTransations: `${formatDate}`,
       };
 
       const debitPaymentMethods: GeneralPaymentMethodsAttributes['paymentMethods'] =
         {
           methodType: 'bank',
           type: 'debit',
-          paymentType: 'transfer',
+          paymentType: 'transfers',
           currenciesId: debitBankType.currenciesId,
           bank: debitBankType.bankName,
           number: usePaymentMethods.states.number,
@@ -263,7 +265,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
         {
           methodType: 'bank',
           type: 'deposit',
-          paymentType: 'transfer',
+          paymentType: 'transfers',
           currenciesId: depositBankType.currenciesId,
           bank: debitBankType.bankName,
           number: usePaymentMethods.states.number,

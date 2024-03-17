@@ -297,6 +297,13 @@ export {
   InputAccountNumber,
   BankTypeForm,
   InitBankType,
+  useGafpriAttributesBankTransactions,
+  useGafpriAttributesPaymentTransferBank,
+  useGafpriApiPaymentTransferBank,
+  useGafpriPagesPaymentTransferBank,
+  SelectBankType,
+  TransferBankForm,
+  FinalPaymentTransferBank,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -789,6 +796,15 @@ export type {
   InputAccountNumberProps,
   BankTypeFormProps,
   InitBankTypeProps,
+  InitBankTypePropsExtended,
+  UseGafpriAttributesBankTransactionsReturn,
+  BankTransactionsAttributes,
+  UseGafpriAttributesPaymentTransferBankReturn,
+  UseGafpriApiPaymentTransferBankReturn,
+  UseGafpriPagesPaymentTransferBankReturn,
+  SelectBankTypeProps,
+  TransferBankFormProps,
+  FinalPaymentTransferBankProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -824,6 +840,7 @@ export {
   IncomeCashRegister,
   PaymentTransferCashRegister,
   BankType,
+  PaymentTransferBank,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -876,6 +893,7 @@ export type {
   IncomeCashRegisterStylesContainerProps,
   PaymentTransferCashRegisterProps,
   BankTypeProps,
+  PaymentTransferBankProps,
 } from './Components';
 export {
   addClass,
@@ -948,6 +966,7 @@ export {
   useGafpriIncome,
   useGafpriPaymentTransferCashRegister,
   useGafpriBankType,
+  useGafpriPaymentTransferBank,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -1002,6 +1021,7 @@ export type {
   UseGafpriPaymentTransferCashRegisterProps,
   UseGafpriBankTypeReturn,
   UseGafpriBankTypeProps,
+  UseGafpriPaymentTransferBankReturn,
 } from './states';
 export {
   Countries,
@@ -1158,6 +1178,7 @@ export {
   SETTINGS_INPUT,
   BANK_TYPE_STORAGE,
   BANK_TYPE_ROUTE,
+  BANK_TYPE_INPUT,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {
@@ -1243,6 +1264,7 @@ export {
   generalValidationAccountNumber,
   generalValidationSelectAccountType,
   generalValidationBankSettings,
+  generalValidationBankType,
 } from './Validations';
 export type {
   ValidationInput,
@@ -1389,6 +1411,7 @@ export {
   generalChangeAccountType,
   generalChangeCurrency,
   generalChangeSettings,
+  generalChangeBankType,
 } from './Changes';
 export type {
   GeneralChangeNoteProps,
@@ -1457,4 +1480,5 @@ export type {
   GeneralChangeAccountTypeProps,
   GeneralChangeCurrencyProps,
   GeneralChangeSettingsProps,
+  GeneralChangeBankTypeProps,
 } from './Changes';

@@ -13,3 +13,13 @@ export type {
   UseGafpriApiPaymentTransferCashRegisterReturn,
   UseGafpriPagesPaymentTransferCashRegisterReturn,
 } from './paymentTransferCashRegister';
+export {
+  useGafpriAttributesPaymentTransferBank,
+  useGafpriApiPaymentTransferBank,
+  useGafpriPagesPaymentTransferBank,
+} from './paymentTransferBank';
+export type {
+  UseGafpriAttributesPaymentTransferBankReturn,
+  UseGafpriApiPaymentTransferBankReturn,
+  UseGafpriPagesPaymentTransferBankReturn,
+} from './paymentTransferBank';

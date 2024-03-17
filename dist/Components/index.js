@@ -153,6 +153,12 @@ Object.defineProperty(exports, "Order", {
     return _Order.Order;
   }
 });
+Object.defineProperty(exports, "PaymentTransferBank", {
+  enumerable: true,
+  get: function get() {
+    return _Payment.PaymentTransferBank;
+  }
+});
 Object.defineProperty(exports, "PaymentTransferCashRegister", {
   enumerable: true,
   get: function get() {

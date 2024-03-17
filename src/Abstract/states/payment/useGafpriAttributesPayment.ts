@@ -4,7 +4,7 @@ import {
   useGafpriAttributesGeneralPaymentMethods,
   UseGafpriAttributesGeneralPaymentMethodsReturn,
 } from '../paymentMethods';
-import { UseCurrenciesReturn } from '../../../states';
+import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
 
 export type PaymentAttributes = {
   total: string;
@@ -33,17 +33,20 @@ export type UseGafpriAttributesPaymentReturn = {
 };
 
 export type UseGafpriAttributesPaymentProps = {
-  currencies: UseCurrenciesReturn;
+  currencies?: UseCurrenciesReturn;
+  useBankType?: UseGafpriBankTypeReturn;
 };
 
 export function useGafpriAttributesPayment({
   currencies,
+  useBankType,
 }: UseGafpriAttributesPaymentProps): UseGafpriAttributesPaymentReturn {
   const [type, setType] = useState('');
   const [total, setTotal] = useState('');
   const [note, setNote] = useState('');
   const useGeneralPaymentMethods = useGafpriAttributesGeneralPaymentMethods({
     currencies,
+    useBankType,
   });
 
   const infoReset = (): void => {

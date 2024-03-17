@@ -9,6 +9,12 @@ Object.defineProperty(exports, "useGafpriApiBankType", {
     return _useGafpriApiBankType.useGafpriApiBankType;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesBankTransactions", {
+  enumerable: true,
+  get: function get() {
+    return _bankTransactions.useGafpriAttributesBankTransactions;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesBankType", {
   enumerable: true,
   get: function get() {
@@ -45,3 +51,4 @@ var _useGafpriPaginationsBankType = require("./useGafpriPaginationsBankType");
 var _useGafpriPagesBankType = require("./useGafpriPagesBankType");
 var _useGafpriAttributesBankType = require("./useGafpriAttributesBankType");
 var _useGafpriSubPagesBankType = require("./useGafpriSubPagesBankType");
+var _bankTransactions = require("./bankTransactions");

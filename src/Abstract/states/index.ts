@@ -285,6 +285,9 @@ export {
   useGafpriAttributesPaymentTransferCashRegister,
   useGafpriApiPaymentTransferCashRegister,
   useGafpriPagesPaymentTransferCashRegister,
+  useGafpriAttributesPaymentTransferBank,
+  useGafpriApiPaymentTransferBank,
+  useGafpriPagesPaymentTransferBank,
 } from './payment';
 export type {
   UseGafpriAttributesPaymentReturn,
@@ -292,6 +295,9 @@ export type {
   UseGafpriAttributesPaymentTransferCashRegisterReturn,
   UseGafpriApiPaymentTransferCashRegisterReturn,
   UseGafpriPagesPaymentTransferCashRegisterReturn,
+  UseGafpriAttributesPaymentTransferBankReturn,
+  UseGafpriApiPaymentTransferBankReturn,
+  UseGafpriPagesPaymentTransferBankReturn,
 } from './payment';
 export {
   useGafpriApiBankType,
@@ -300,6 +306,7 @@ export {
   useGafpriPagesBankType,
   useGafpriAttributesBankType,
   useGafpriSubPagesBankType,
+  useGafpriAttributesBankTransactions,
 } from './bank';
 export type {
   UseGafpriApiBankTypeReturn,
@@ -313,4 +320,6 @@ export type {
   UseGafpriPagesBankTypeProps,
   UseGafpriAttributesBankTypeReturn,
   UseGafpriSubPagesBankTypeReturn,
+  UseGafpriAttributesBankTransactionsReturn,
+  BankTransactionsAttributes,
 } from './bank';

@@ -76,3 +76,4 @@ export const BANK_NAME_INPUT = 'bank-name-input-id';
 export const ACCOUNT_NUMBER_INPUT = 'account-number-input-id';
 export const ACCOUNT_TYPE_INPUT = 'account-type-input-id';
 export const SETTINGS_INPUT = 'settings-input-id';
+export const BANK_TYPE_INPUT = 'bank-type-input-id';

@@ -69,6 +69,12 @@ Object.defineProperty(exports, "BANK_NAME_INPUT", {
     return _Inputs.BANK_NAME_INPUT;
   }
 });
+Object.defineProperty(exports, "BANK_TYPE_INPUT", {
+  enumerable: true,
+  get: function get() {
+    return _Inputs.BANK_TYPE_INPUT;
+  }
+});
 Object.defineProperty(exports, "BANK_TYPE_ROUTE", {
   enumerable: true,
   get: function get() {
@@ -463,6 +469,12 @@ Object.defineProperty(exports, "PASSWORD_INPUT", {
   enumerable: true,
   get: function get() {
     return _Inputs.PASSWORD_INPUT;
+  }
+});
+Object.defineProperty(exports, "PAYMENT_TRANSFER_BANK_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.PAYMENT_TRANSFER_BANK_ROUTE;
   }
 });
 Object.defineProperty(exports, "PAYMENT_TRANSFER_CASH_REGISTER_ROUTE", {

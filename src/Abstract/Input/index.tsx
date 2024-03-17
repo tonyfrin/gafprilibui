@@ -139,3 +139,5 @@ export { InputBankName } from './InputBankName';
 export type { InputBankNameProps } from './InputBankName';
 export { InputAccountNumber } from './InputAccountNumber';
 export type { InputAccountNumberProps } from './InputAccountNumber';
+export { SelectBankType } from './SelectBankType';
+export type { SelectBankTypeProps } from './SelectBankType';

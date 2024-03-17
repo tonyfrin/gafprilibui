@@ -52,6 +52,12 @@ Object.defineProperty(exports, "generalValidationBankSettings", {
     return _generalValidationBankSettings.generalValidationBankSettings;
   }
 });
+Object.defineProperty(exports, "generalValidationBankType", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationBankType.generalValidationBankType;
+  }
+});
 Object.defineProperty(exports, "generalValidationButtonNext", {
   enumerable: true,
   get: function get() {
@@ -537,6 +543,7 @@ var _generalValidationBankName = require("./generalValidationBankName");
 var _generalValidationAccountNumber = require("./generalValidationAccountNumber");
 var _generalValidationSelectAccountType = require("./generalValidationSelectAccountType");
 var _generalValidationBankSettings = require("./generalValidationBankSettings");
+var _generalValidationBankType = require("./generalValidationBankType");
 var validationInputNameLastNameUserName = exports.validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,

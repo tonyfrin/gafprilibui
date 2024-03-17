@@ -74,3 +74,4 @@ export declare const BANK_NAME_INPUT = "bank-name-input-id";
 export declare const ACCOUNT_NUMBER_INPUT = "account-number-input-id";
 export declare const ACCOUNT_TYPE_INPUT = "account-type-input-id";
 export declare const SETTINGS_INPUT = "settings-input-id";
+export declare const BANK_TYPE_INPUT = "bank-type-input-id";

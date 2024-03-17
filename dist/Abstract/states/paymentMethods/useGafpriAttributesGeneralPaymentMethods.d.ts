@@ -1,11 +1,13 @@
 import { SingleValue } from 'react-select';
 import { PaymentMethodsAttributes, UseGafpriAttributesPaymentMethodsReturn } from './useGafpriAttributesPaymentMethods';
 import { CashTransactionsAttributes, UseGafpriAttributesCashTransactionsReturn } from '../cashRegister';
-import { UseCurrenciesReturn } from '../../../states';
+import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
 import { SelectDefault } from '../../../helpers';
+import { BankTransactionsAttributes, UseGafpriAttributesBankTransactionsReturn } from '../bank/bankTransactions/useGafpriAttributesBankTransactions';
 export type GeneralPaymentMethodsAttributes = {
     paymentMethods: PaymentMethodsAttributes;
     cashTransactions?: CashTransactionsAttributes;
+    bankTransactions?: BankTransactionsAttributes;
 };
 type State = {
     arrayPaymentMethod: GeneralPaymentMethodsAttributes[];
@@ -15,6 +17,9 @@ type State = {
     currenciesIdValid: boolean;
     currenciesIdDefault: SelectDefault;
     currenciesIdOptions: SelectDefault[];
+    change: number;
+    debitAmount: number;
+    depositAmount: number;
 };
 type Actions = {
     infoReset: () => void;
@@ -27,15 +32,21 @@ type Actions = {
         value: string;
     }>) => void;
     addTransferCashRegister: (currentCashRegisterPostsId: number, currentCashRegisterTypePostsId: number, cashRegisterPostsId: number, cashRegisterTypePostsId: number) => void;
+    addTransferBankRegister: (debitBankTypePostsId: number, depositBankTypePostsId: number) => void;
+    setChange: (value: number) => void;
+    setDebitAmount: (value: number) => void;
+    setDepositAmount: (value: number) => void;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     states: State;
     actions: Actions;
     usePaymentMethods: UseGafpriAttributesPaymentMethodsReturn;
     useCashTransactions: UseGafpriAttributesCashTransactionsReturn;
+    useBankTransactions: UseGafpriAttributesBankTransactionsReturn;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsProps = {
-    currencies: UseCurrenciesReturn;
+    currencies?: UseCurrenciesReturn;
+    useBankType?: UseGafpriBankTypeReturn;
 };
-export declare function useGafpriAttributesGeneralPaymentMethods({ currencies, }: UseGafpriAttributesGeneralPaymentMethodsProps): UseGafpriAttributesGeneralPaymentMethodsReturn;
+export declare function useGafpriAttributesGeneralPaymentMethods({ currencies, useBankType, }: UseGafpriAttributesGeneralPaymentMethodsProps): UseGafpriAttributesGeneralPaymentMethodsReturn;
 export {};

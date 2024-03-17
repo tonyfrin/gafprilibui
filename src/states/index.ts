@@ -114,3 +114,5 @@ export type {
   UseGafpriBankTypeReturn,
   UseGafpriBankTypeProps,
 } from './useGafpriBankType';
+export { useGafpriPaymentTransferBank } from './useGafpriPaymentTransferBank';
+export type { UseGafpriPaymentTransferBankReturn } from './useGafpriPaymentTransferBank';

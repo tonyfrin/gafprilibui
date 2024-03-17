@@ -23,3 +23,8 @@ export { useGafpriAttributesBankType } from './useGafpriAttributesBankType';
 export type { UseGafpriAttributesBankTypeReturn } from './useGafpriAttributesBankType';
 export { useGafpriSubPagesBankType } from './useGafpriSubPagesBankType';
 export type { UseGafpriSubPagesBankTypeReturn } from './useGafpriSubPagesBankType';
+export { useGafpriAttributesBankTransactions } from './bankTransactions';
+export type {
+  UseGafpriAttributesBankTransactionsReturn,
+  BankTransactionsAttributes,
+} from './bankTransactions';

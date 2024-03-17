@@ -115,6 +115,7 @@ export {
   SelectAccountType,
   InputBankName,
   InputAccountNumber,
+  SelectBankType,
 } from './Input';
 export type {
   InputStyle,
@@ -190,6 +191,7 @@ export type {
   SelectAccountTypeProps,
   InputBankNameProps,
   InputAccountNumberProps,
+  SelectBankTypeProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -473,6 +475,10 @@ export {
   useGafpriPagesBankType,
   useGafpriAttributesBankType,
   useGafpriSubPagesBankType,
+  useGafpriAttributesBankTransactions,
+  useGafpriAttributesPaymentTransferBank,
+  useGafpriApiPaymentTransferBank,
+  useGafpriPagesPaymentTransferBank,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -645,6 +651,11 @@ export type {
   UseGafpriPagesBankTypeProps,
   UseGafpriAttributesBankTypeReturn,
   UseGafpriSubPagesBankTypeReturn,
+  UseGafpriAttributesBankTransactionsReturn,
+  BankTransactionsAttributes,
+  UseGafpriAttributesPaymentTransferBankReturn,
+  UseGafpriApiPaymentTransferBankReturn,
+  UseGafpriPagesPaymentTransferBankReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -868,10 +879,15 @@ export type {
   ExpensesFormProps,
   CashExpensesPaymentFormProps,
 } from './Expenses';
-export { CashForm, TransferCashRegisterForm } from './MethodPayments';
+export {
+  CashForm,
+  TransferCashRegisterForm,
+  TransferBankForm,
+} from './MethodPayments';
 export type {
   CashFormProps,
   TransferCashRegisterFormProps,
+  TransferBankFormProps,
 } from './MethodPayments';
 export { IncomeInit, IncomeForm, CashIncomePaymentForm } from './Income';
 export type {
@@ -880,8 +896,14 @@ export type {
   IncomeFormProps,
   CashIncomePaymentFormProps,
 } from './Income';
-export { FinalPaymentTransferCashRegister } from './Payment';
-export type { FinalPaymentTransferCashRegisterProps } from './Payment';
+export {
+  FinalPaymentTransferCashRegister,
+  FinalPaymentTransferBank,
+} from './Payment';
+export type {
+  FinalPaymentTransferCashRegisterProps,
+  FinalPaymentTransferBankProps,
+} from './Payment';
 export { BankTypeForm, InitBankType } from './BankType';
 export type {
   BankTypeFormProps,

@@ -25,3 +25,4 @@ export declare const PAYMENT_TRANSFER_CASH_REGISTER_ROUTE = "/payment-transfer-c
 export declare const LOGIN_ROUTE = "/auth/login";
 export declare const LOGIN_TOKEN_ROUTE = "/auth/jwt";
 export declare const BANK_TYPE_ROUTE = "/bank-type";
+export declare const PAYMENT_TRANSFER_BANK_ROUTE = "/payment-transfer-bank";

@@ -12,16 +12,19 @@ var _react = _interopRequireWildcard(require("react"));
 var _useGafpriAttributesPaymentMethods = require("./useGafpriAttributesPaymentMethods");
 var _cashRegister = require("../cashRegister");
 var _Validations = require("../../../Validations");
+var _useGafpriAttributesBankTransactions = require("../bank/bankTransactions/useGafpriAttributesBankTransactions");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function useGafpriAttributesGeneralPaymentMethods(_ref) {
-  var currencies = _ref.currencies;
+  var currencies = _ref.currencies,
+    useBankType = _ref.useBankType;
   var _useState = (0, _react.useState)([]),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     arrayPaymentMethod = _useState2[0],
     setArrayPaymentMethod = _useState2[1];
   var usePaymentMethods = (0, _useGafpriAttributesPaymentMethods.useGafpriAttributesPaymentMethods)();
   var useCashTransactions = (0, _cashRegister.useGafpriAttributesCashTransactions)();
+  var useBankTransactions = (0, _useGafpriAttributesBankTransactions.useGafpriAttributesBankTransactions)();
   var _useState3 = (0, _react.useState)(0),
     _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
     totalPaymentMethod = _useState4[0],
@@ -45,10 +48,23 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
     currenciesIdDefault = _useState12[0],
     setCurrenciesIdDefault = _useState12[1];
-  var currenciesIdOptions = currencies.actions.getOptionsItems();
+  var currenciesIdOptions = currencies ? currencies.actions.getOptionsItems() : [];
+  var _useState13 = (0, _react.useState)(0),
+    _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
+    change = _useState14[0],
+    setChange = _useState14[1];
+  var _useState15 = (0, _react.useState)(0),
+    _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
+    debitAmount = _useState16[0],
+    setDebitAmount = _useState16[1];
+  var _useState17 = (0, _react.useState)(0),
+    _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
+    depositAmount = _useState18[0],
+    setDepositAmount = _useState18[1];
   var infoReset = function infoReset() {
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
+    useBankTransactions.actions.infoReset();
     setArrayPaymentMethod([]);
     setCurrenciesId(0);
     setCurrenciesIdValid(false);
@@ -56,6 +72,9 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       value: '',
       label: 'Selecciona la Moneda'
     });
+    setChange(0);
+    setDebitAmount(0);
+    setDepositAmount(0);
   };
   var validationCurrenciesId = function validationCurrenciesId(value) {
     var newValue;
@@ -129,6 +148,62 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     };
     setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [debitTransfer, depositTransfer]));
   };
+  var addTransferBankRegister = function addTransferBankRegister(debitBankTypePostsId, depositBankTypePostsId) {
+    if (useBankType) {
+      var debitBankType = useBankType.data.actions.getById(debitBankTypePostsId);
+      var depositBankType = useBankType.data.actions.getById(depositBankTypePostsId);
+      if (!debitBankType || !depositBankType) return;
+      var debitBankTransactions = {
+        bankTypePostsId: debitBankTypePostsId,
+        type: 'debit',
+        paymentType: 'transfer',
+        description: "Transferecia de ".concat(debitBankType.name, " a ").concat(depositBankType.name),
+        amount: debitAmount,
+        change: change,
+        dateTransations: useBankTransactions.states.dateTransations
+      };
+      var depositBankTransactions = {
+        bankTypePostsId: depositBankTypePostsId,
+        type: 'deposit',
+        paymentType: 'transfer',
+        description: "Transferecia de ".concat(debitBankType.name, " a ").concat(depositBankType.name),
+        amount: depositAmount,
+        change: change,
+        dateTransations: useBankTransactions.states.dateTransations
+      };
+      var debitPaymentMethods = {
+        methodType: 'bank',
+        type: 'debit',
+        paymentType: 'transfer',
+        currenciesId: debitBankType.currenciesId,
+        bank: debitBankType.bankName,
+        number: usePaymentMethods.states.number,
+        amount: debitAmount,
+        change: change,
+        note: ''
+      };
+      var depositPaymentMethods = {
+        methodType: 'bank',
+        type: 'deposit',
+        paymentType: 'transfer',
+        currenciesId: depositBankType.currenciesId,
+        bank: debitBankType.bankName,
+        number: usePaymentMethods.states.number,
+        amount: depositAmount,
+        change: change,
+        note: ''
+      };
+      var debitTransfer = {
+        paymentMethods: debitPaymentMethods,
+        bankTransactions: debitBankTransactions
+      };
+      var depositTransfer = {
+        paymentMethods: depositPaymentMethods,
+        bankTransactions: depositBankTransactions
+      };
+      setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [debitTransfer, depositTransfer]));
+    }
+  };
   var deletePaymentMethod = function deletePaymentMethod(index) {
     var newArray = (0, _toConsumableArray2["default"])(arrayPaymentMethod);
     if (index >= 0 && index < newArray.length) {
@@ -199,7 +274,10 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     currenciesId: currenciesId,
     currenciesIdValid: currenciesIdValid,
     currenciesIdDefault: currenciesIdDefault,
-    currenciesIdOptions: currenciesIdOptions
+    currenciesIdOptions: currenciesIdOptions,
+    change: change,
+    debitAmount: debitAmount,
+    depositAmount: depositAmount
   };
   var actions = {
     infoReset: infoReset,
@@ -208,12 +286,17 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     deletePaymentMethod: deletePaymentMethod,
     validationCurrenciesId: validationCurrenciesId,
     changeCashCurrenciesId: changeCashCurrenciesId,
-    addTransferCashRegister: addTransferCashRegister
+    addTransferCashRegister: addTransferCashRegister,
+    addTransferBankRegister: addTransferBankRegister,
+    setChange: setChange,
+    setDebitAmount: setDebitAmount,
+    setDepositAmount: setDepositAmount
   };
   return {
     states: states,
     actions: actions,
     usePaymentMethods: usePaymentMethods,
-    useCashTransactions: useCashTransactions
+    useCashTransactions: useCashTransactions,
+    useBankTransactions: useBankTransactions
   };
 }

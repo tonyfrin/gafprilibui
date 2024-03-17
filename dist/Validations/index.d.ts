@@ -205,3 +205,5 @@ export { generalValidationSelectAccountType } from './generalValidationSelectAcc
 export type { GeneralValidationSelectAccountTypeProps } from './generalValidationSelectAccountType';
 export { generalValidationBankSettings } from './generalValidationBankSettings';
 export type { GeneralValidationBankSettingsProps } from './generalValidationBankSettings';
+export { generalValidationBankType } from './generalValidationBankType';
+export type { GeneralValidationBankTypeProps } from './generalValidationBankType';

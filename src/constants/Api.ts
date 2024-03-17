@@ -26,3 +26,4 @@ export const PAYMENT_TRANSFER_CASH_REGISTER_ROUTE =
 export const LOGIN_ROUTE = '/auth/login';
 export const LOGIN_TOKEN_ROUTE = '/auth/jwt';
 export const BANK_TYPE_ROUTE = '/bank-type';
+export const PAYMENT_TRANSFER_BANK_ROUTE = '/payment-transfer-bank';

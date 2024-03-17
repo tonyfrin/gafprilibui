@@ -10,13 +10,19 @@ import {
   useGafpriAttributesCashTransactions,
   UseGafpriAttributesCashTransactionsReturn,
 } from '../cashRegister';
-import { UseCurrenciesReturn } from '../../../states';
+import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
 import { SelectDefault } from '../../../helpers';
 import { generalValidationSelectCurrencies } from '../../../Validations';
+import {
+  BankTransactionsAttributes,
+  UseGafpriAttributesBankTransactionsReturn,
+  useGafpriAttributesBankTransactions,
+} from '../bank/bankTransactions/useGafpriAttributesBankTransactions';
 
 export type GeneralPaymentMethodsAttributes = {
   paymentMethods: PaymentMethodsAttributes;
   cashTransactions?: CashTransactionsAttributes;
+  bankTransactions?: BankTransactionsAttributes;
 };
 
 type State = {
@@ -27,6 +33,9 @@ type State = {
   currenciesIdValid: boolean;
   currenciesIdDefault: SelectDefault;
   currenciesIdOptions: SelectDefault[];
+  change: number;
+  debitAmount: number;
+  depositAmount: number;
 };
 
 type Actions = {
@@ -44,6 +53,13 @@ type Actions = {
     cashRegisterPostsId: number,
     cashRegisterTypePostsId: number
   ) => void;
+  addTransferBankRegister: (
+    debitBankTypePostsId: number,
+    depositBankTypePostsId: number
+  ) => void;
+  setChange: (value: number) => void;
+  setDebitAmount: (value: number) => void;
+  setDepositAmount: (value: number) => void;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
@@ -51,20 +67,24 @@ export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
   actions: Actions;
   usePaymentMethods: UseGafpriAttributesPaymentMethodsReturn;
   useCashTransactions: UseGafpriAttributesCashTransactionsReturn;
+  useBankTransactions: UseGafpriAttributesBankTransactionsReturn;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsProps = {
-  currencies: UseCurrenciesReturn;
+  currencies?: UseCurrenciesReturn;
+  useBankType?: UseGafpriBankTypeReturn;
 };
 
 export function useGafpriAttributesGeneralPaymentMethods({
   currencies,
+  useBankType,
 }: UseGafpriAttributesGeneralPaymentMethodsProps): UseGafpriAttributesGeneralPaymentMethodsReturn {
   const [arrayPaymentMethod, setArrayPaymentMethod] = useState<
     GeneralPaymentMethodsAttributes[]
   >([]);
   const usePaymentMethods = useGafpriAttributesPaymentMethods();
   const useCashTransactions = useGafpriAttributesCashTransactions();
+  const useBankTransactions = useGafpriAttributesBankTransactions();
   const [totalPaymentMethod, setTotalPaymentMethod] = useState(0);
   const [totalMethods, setTotalMethods] = useState(0);
   const [currenciesId, setCurrenciesId] = useState(0);
@@ -75,12 +95,17 @@ export function useGafpriAttributesGeneralPaymentMethods({
       label: 'Selecciona la Moneda',
     }
   );
-  const currenciesIdOptions: SelectDefault[] =
-    currencies.actions.getOptionsItems();
+  const currenciesIdOptions: SelectDefault[] = currencies
+    ? currencies.actions.getOptionsItems()
+    : [];
+  const [change, setChange] = useState(0);
+  const [debitAmount, setDebitAmount] = useState(0);
+  const [depositAmount, setDepositAmount] = useState(0);
 
   const infoReset = (): void => {
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
+    useBankTransactions.actions.infoReset();
     setArrayPaymentMethod([]);
     setCurrenciesId(0);
     setCurrenciesIdValid(false);
@@ -88,6 +113,9 @@ export function useGafpriAttributesGeneralPaymentMethods({
       value: '',
       label: 'Selecciona la Moneda',
     });
+    setChange(0);
+    setDebitAmount(0);
+    setDepositAmount(0);
   };
 
   const validationCurrenciesId = (value: string): boolean => {
@@ -185,6 +213,83 @@ export function useGafpriAttributesGeneralPaymentMethods({
     ]);
   };
 
+  const addTransferBankRegister = (
+    debitBankTypePostsId: number,
+    depositBankTypePostsId: number
+  ): void => {
+    if (useBankType) {
+      const debitBankType =
+        useBankType.data.actions.getById(debitBankTypePostsId);
+      const depositBankType = useBankType.data.actions.getById(
+        depositBankTypePostsId
+      );
+
+      if (!debitBankType || !depositBankType) return;
+
+      const debitBankTransactions = {
+        bankTypePostsId: debitBankTypePostsId,
+        type: 'debit',
+        paymentType: 'transfer',
+        description: `Transferecia de ${debitBankType.name} a ${depositBankType.name}`,
+        amount: debitAmount,
+        change,
+        dateTransations: useBankTransactions.states.dateTransations,
+      };
+
+      const depositBankTransactions = {
+        bankTypePostsId: depositBankTypePostsId,
+        type: 'deposit',
+        paymentType: 'transfer',
+        description: `Transferecia de ${debitBankType.name} a ${depositBankType.name}`,
+        amount: depositAmount,
+        change,
+        dateTransations: useBankTransactions.states.dateTransations,
+      };
+
+      const debitPaymentMethods: GeneralPaymentMethodsAttributes['paymentMethods'] =
+        {
+          methodType: 'bank',
+          type: 'debit',
+          paymentType: 'transfer',
+          currenciesId: debitBankType.currenciesId,
+          bank: debitBankType.bankName,
+          number: usePaymentMethods.states.number,
+          amount: debitAmount,
+          change,
+          note: '',
+        };
+
+      const depositPaymentMethods: GeneralPaymentMethodsAttributes['paymentMethods'] =
+        {
+          methodType: 'bank',
+          type: 'deposit',
+          paymentType: 'transfer',
+          currenciesId: depositBankType.currenciesId,
+          bank: debitBankType.bankName,
+          number: usePaymentMethods.states.number,
+          amount: depositAmount,
+          change,
+          note: '',
+        };
+
+      const debitTransfer: GeneralPaymentMethodsAttributes = {
+        paymentMethods: debitPaymentMethods,
+        bankTransactions: debitBankTransactions,
+      };
+
+      const depositTransfer: GeneralPaymentMethodsAttributes = {
+        paymentMethods: depositPaymentMethods,
+        bankTransactions: depositBankTransactions,
+      };
+
+      setArrayPaymentMethod([
+        ...arrayPaymentMethod,
+        debitTransfer,
+        depositTransfer,
+      ]);
+    }
+  };
+
   const deletePaymentMethod = (index: number): void => {
     const newArray = [...arrayPaymentMethod];
 
@@ -275,6 +380,9 @@ export function useGafpriAttributesGeneralPaymentMethods({
     currenciesIdValid,
     currenciesIdDefault,
     currenciesIdOptions,
+    change,
+    debitAmount,
+    depositAmount,
   };
 
   const actions = {
@@ -285,6 +393,10 @@ export function useGafpriAttributesGeneralPaymentMethods({
     validationCurrenciesId,
     changeCashCurrenciesId,
     addTransferCashRegister,
+    addTransferBankRegister,
+    setChange,
+    setDebitAmount,
+    setDepositAmount,
   };
 
   return {
@@ -292,5 +404,6 @@ export function useGafpriAttributesGeneralPaymentMethods({
     actions,
     usePaymentMethods,
     useCashTransactions,
+    useBankTransactions,
   };
 }

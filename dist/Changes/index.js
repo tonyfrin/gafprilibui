@@ -57,6 +57,12 @@ Object.defineProperty(exports, "generalChangeBankName", {
     return _generalChangeBankName.generalChangeBankName;
   }
 });
+Object.defineProperty(exports, "generalChangeBankType", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeBankType.generalChangeBankType;
+  }
+});
 Object.defineProperty(exports, "generalChangeCashRegisterType", {
   enumerable: true,
   get: function get() {
@@ -472,3 +478,4 @@ var _generalChangeAccountNumber = require("./generalChangeAccountNumber");
 var _generalChangeAccountType = require("./generalChangeAccountType");
 var _generalChangeCurrency = require("./generalChangeCurrency");
 var _generalChangeSettings = require("./generalChangeSettings");
+var _generalChangeBankType = require("./generalChangeBankType");

@@ -9,7 +9,8 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = require("react");
 var _paymentMethods = require("../paymentMethods");
 function useGafpriAttributesPayment(_ref) {
-  var currencies = _ref.currencies;
+  var currencies = _ref.currencies,
+    useBankType = _ref.useBankType;
   var _useState = (0, _react.useState)(''),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     type = _useState2[0],
@@ -23,7 +24,8 @@ function useGafpriAttributesPayment(_ref) {
     note = _useState6[0],
     setNote = _useState6[1];
   var useGeneralPaymentMethods = (0, _paymentMethods.useGafpriAttributesGeneralPaymentMethods)({
-    currencies: currencies
+    currencies: currencies,
+    useBankType: useBankType
   });
   var infoReset = function infoReset() {
     setType('');

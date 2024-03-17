@@ -132,3 +132,5 @@ export { generalChangeCurrency } from './generalChangeCurrency';
 export type { GeneralChangeCurrencyProps } from './generalChangeCurrency';
 export { generalChangeSettings } from './generalChangeSettings';
 export type { GeneralChangeSettingsProps } from './generalChangeSettings';
+export { generalChangeBankType } from './generalChangeBankType';
+export type { GeneralChangeBankTypeProps } from './generalChangeBankType';

@@ -28,9 +28,6 @@ var TransferBankForm = exports.TransferBankForm = function TransferBankForm(_ref
     setDepositCurrency = _React$useState4[1];
   var debitCurrency = useCurrencies.actions.getById(((_useBankType$data$act = useBankType.data.actions.getById(usePayment.states.debitBankTypePostsId)) === null || _useBankType$data$act === void 0 ? void 0 : _useBankType$data$act.currenciesId) || 0);
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
-  console.log('debitCurrency', debitCurrency);
-  console.log('depositCurrency', depositCurrency);
-  console.log('siteCurrency', siteCurrency);
   var add = function add() {
     if (parseFloat(usePayment.usePayment.states.total) > 0 && usePayment.states.depositBankTypePostsIdValid) {
       usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferBankRegister(usePayment.states.debitBankTypePostsId, parseInt(usePayment.states.depositBankTypePostsId, 10));
@@ -73,7 +70,8 @@ var TransferBankForm = exports.TransferBankForm = function TransferBankForm(_ref
   };
   _react["default"].useEffect(function () {
     if (usePayment.states.depositBankTypePostsId !== '') {
-      setDepositCurrency(useCurrencies.actions.getById(parseInt(usePayment.states.depositBankTypePostsId, 10)));
+      var _useBankType$data$act2;
+      setDepositCurrency(useCurrencies.actions.getById(((_useBankType$data$act2 = useBankType.data.actions.getById(parseInt(usePayment.states.depositBankTypePostsId, 10))) === null || _useBankType$data$act2 === void 0 ? void 0 : _useBankType$data$act2.currenciesId) || 0));
     }
   }, [usePayment.states.depositBankTypePostsId]);
   _react["default"].useEffect(function () {

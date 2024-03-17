@@ -44,10 +44,6 @@ export const TransferBankForm = ({
   );
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
 
-  console.log('debitCurrency', debitCurrency);
-  console.log('depositCurrency', depositCurrency);
-  console.log('siteCurrency', siteCurrency);
-
   const add = () => {
     if (
       parseFloat(usePayment.usePayment.states.total) > 0 &&
@@ -146,7 +142,9 @@ export const TransferBankForm = ({
     if (usePayment.states.depositBankTypePostsId !== '') {
       setDepositCurrency(
         useCurrencies.actions.getById(
-          parseInt(usePayment.states.depositBankTypePostsId, 10)
+          useBankType.data.actions.getById(
+            parseInt(usePayment.states.depositBankTypePostsId, 10)
+          )?.currenciesId || 0
         )
       );
     }

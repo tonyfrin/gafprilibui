@@ -56,7 +56,9 @@ export const TransferBankForm = ({
     const value = e.target.value;
 
     if (!debitCurrency || !depositCurrency) return;
-
+    console.log('debitCurrency', debitCurrency);
+    console.log('depositCurrency', depositCurrency);
+    console.log('siteOptions', siteOptions);
     if (
       `${siteOptions.currencyId}` === `${debitCurrency.id}` &&
       `${siteOptions.currencyId}` === `${depositCurrency.id}`
@@ -240,7 +242,7 @@ export const TransferBankForm = ({
           }}
         >
           <>
-            {siteCurrency && (
+            {siteCurrency && debitCurrency && depositCurrency && (
               <Input
                 inputProps={{
                   onChange: (e) => setChange(e),
@@ -261,7 +263,9 @@ export const TransferBankForm = ({
           }}
         >
           <>
-            {debitCurrency &&
+            {siteCurrency &&
+              debitCurrency &&
+              depositCurrency &&
               `${siteOptions.currencyId}` !== `${debitCurrency.id}` && (
                 <Input
                   inputProps={{
@@ -283,8 +287,9 @@ export const TransferBankForm = ({
           }}
         >
           <>
-            {depositCurrency &&
+            {siteCurrency &&
               debitCurrency &&
+              depositCurrency &&
               `${siteOptions.currencyId}` !== `${depositCurrency.id}` &&
               `${debitCurrency.id}` !== `${depositCurrency.id}` && (
                 <Input

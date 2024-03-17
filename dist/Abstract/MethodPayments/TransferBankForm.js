@@ -35,6 +35,9 @@ var TransferBankForm = exports.TransferBankForm = function TransferBankForm(_ref
   var setChange = function setChange(e) {
     var value = e.target.value;
     if (!debitCurrency || !depositCurrency) return;
+    console.log('debitCurrency', debitCurrency);
+    console.log('depositCurrency', depositCurrency);
+    console.log('siteOptions', siteOptions);
     if ("".concat(siteOptions.currencyId) === "".concat(debitCurrency.id) && "".concat(siteOptions.currencyId) === "".concat(depositCurrency.id)) {
       usePayment.usePayment.useGeneralPaymentMethods.actions.setDebitAmount(parseFloat(value));
       usePayment.usePayment.useGeneralPaymentMethods.actions.setDepositAmount(parseFloat(value));
@@ -141,7 +144,7 @@ var TransferBankForm = exports.TransferBankForm = function TransferBankForm(_ref
     styles: {
       width: '100%'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, siteCurrency && /*#__PURE__*/_react["default"].createElement(_Input.Input, {
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, siteCurrency && debitCurrency && depositCurrency && /*#__PURE__*/_react["default"].createElement(_Input.Input, {
     inputProps: {
       onChange: function onChange(e) {
         return setChange(e);
@@ -157,7 +160,7 @@ var TransferBankForm = exports.TransferBankForm = function TransferBankForm(_ref
     styles: {
       width: '100%'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, debitCurrency && "".concat(siteOptions.currencyId) !== "".concat(debitCurrency.id) && /*#__PURE__*/_react["default"].createElement(_Input.Input, {
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, siteCurrency && debitCurrency && depositCurrency && "".concat(siteOptions.currencyId) !== "".concat(debitCurrency.id) && /*#__PURE__*/_react["default"].createElement(_Input.Input, {
     inputProps: {
       onChange: function onChange(e) {
         return changeDebitAmount(e);
@@ -173,7 +176,7 @@ var TransferBankForm = exports.TransferBankForm = function TransferBankForm(_ref
     styles: {
       width: '100%'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, depositCurrency && debitCurrency && "".concat(siteOptions.currencyId) !== "".concat(depositCurrency.id) && "".concat(debitCurrency.id) !== "".concat(depositCurrency.id) && /*#__PURE__*/_react["default"].createElement(_Input.Input, {
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, siteCurrency && debitCurrency && depositCurrency && "".concat(siteOptions.currencyId) !== "".concat(depositCurrency.id) && "".concat(debitCurrency.id) !== "".concat(depositCurrency.id) && /*#__PURE__*/_react["default"].createElement(_Input.Input, {
     inputProps: {
       onChange: function onChange(e) {
         return changeDepositAmount(e);

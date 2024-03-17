@@ -29,8 +29,10 @@ var TransferBankForm = exports.TransferBankForm = function TransferBankForm(_ref
   var debitCurrency = useCurrencies.actions.getById(((_useBankType$data$act = useBankType.data.actions.getById(usePayment.states.debitBankTypePostsId)) === null || _useBankType$data$act === void 0 ? void 0 : _useBankType$data$act.currenciesId) || 0);
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
   var add = function add() {
-    usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferBankRegister(usePayment.states.debitBankTypePostsId, parseInt(usePayment.states.depositBankTypePostsId, 10));
-    currentPaymentInfo.next();
+    if (parseFloat(usePayment.usePayment.states.total) > 0 && usePayment.states.depositBankTypePostsIdValid) {
+      usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferBankRegister(usePayment.states.debitBankTypePostsId, parseInt(usePayment.states.depositBankTypePostsId, 10));
+      currentPaymentInfo.next();
+    }
   };
   var setChange = function setChange(e) {
     var value = e.target.value;

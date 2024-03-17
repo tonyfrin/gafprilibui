@@ -45,11 +45,16 @@ export const TransferBankForm = ({
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
 
   const add = () => {
-    usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferBankRegister(
-      usePayment.states.debitBankTypePostsId,
-      parseInt(usePayment.states.depositBankTypePostsId, 10)
-    );
-    currentPaymentInfo.next();
+    if (
+      parseFloat(usePayment.usePayment.states.total) > 0 &&
+      usePayment.states.depositBankTypePostsIdValid
+    ) {
+      usePayment.usePayment.useGeneralPaymentMethods.actions.addTransferBankRegister(
+        usePayment.states.debitBankTypePostsId,
+        parseInt(usePayment.states.depositBankTypePostsId, 10)
+      );
+      currentPaymentInfo.next();
+    }
   };
 
   const setChange = (e: React.ChangeEvent<HTMLInputElement>) => {

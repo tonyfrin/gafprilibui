@@ -135,6 +135,24 @@ Object.defineProperty(exports, "Background1", {
     return _Abstract.Background1;
   }
 });
+Object.defineProperty(exports, "BankForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.BankForm;
+  }
+});
+Object.defineProperty(exports, "BankHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.BankHeader;
+  }
+});
+Object.defineProperty(exports, "BankTransationsTable", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.BankTransationsTable;
+  }
+});
 Object.defineProperty(exports, "BankType", {
   enumerable: true,
   get: function get() {
@@ -873,6 +891,12 @@ Object.defineProperty(exports, "INVOICE_INPUT", {
     return _constants.INVOICE_INPUT;
   }
 });
+Object.defineProperty(exports, "Icon", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.Icon;
+  }
+});
 Object.defineProperty(exports, "IncomeCashRegister", {
   enumerable: true,
   get: function get() {
@@ -889,6 +913,12 @@ Object.defineProperty(exports, "IncomeInit", {
   enumerable: true,
   get: function get() {
     return _Abstract.IncomeInit;
+  }
+});
+Object.defineProperty(exports, "InitBank", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitBank;
   }
 });
 Object.defineProperty(exports, "InitBankType", {

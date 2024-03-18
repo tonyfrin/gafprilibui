@@ -3,6 +3,7 @@ import {
   BankTypeAttributes,
   UseGafpriDataBankTypeReturn,
 } from './useGafpriDataBankType';
+import { BankTransactionsAttributes } from './bankTransactions';
 
 type State = {
   orderList: 'asc' | 'desc';
@@ -11,14 +12,20 @@ type State = {
 
   currentPage: number;
 
+  transCurrentPage: number;
+
   itemsPerPage: number;
 };
 
 type Actions = {
   sortByName: (
-    storages: BankTypeAttributes[] | null,
+    items: BankTypeAttributes[] | null,
     order: 'asc' | 'desc'
   ) => BankTypeAttributes[] | null;
+
+  sortTransactionsById: (
+    items: BankTransactionsAttributes[] | null
+  ) => BankTransactionsAttributes[] | null;
 
   setOrderList: (order: 'asc' | 'desc') => void;
 
@@ -28,11 +35,18 @@ type Actions = {
 
   setCurrentPage: (value: number) => void;
 
+  setTransCurrentPage: (value: number) => void;
+
   getPaginated: (
-    itemStorages: BankTypeAttributes[] | null,
+    items: BankTypeAttributes[] | null,
     page: number,
     itemsPerPage: number
   ) => BankTypeAttributes[] | null;
+
+  getTransactionsgetPaginated: (
+    items: BankTransactionsAttributes[] | null,
+    page: number
+  ) => BankTransactionsAttributes[] | null;
 };
 
 export type UseGafpriPaginationsBankTypeReturn = {
@@ -50,7 +64,9 @@ export function useGafpriPaginationsBankType({
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [transCurrentPage, setTransCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  const itemsPerPageTransactions = 30;
 
   function sortByName(
     itemStorages: BankTypeAttributes[] | null,
@@ -76,6 +92,21 @@ export function useGafpriPaginationsBankType({
     return null;
   };
 
+  function sortTransactionsById(
+    items: BankTransactionsAttributes[] | null
+  ): BankTransactionsAttributes[] | null {
+    if (items) {
+      return items.slice().sort((a, b) => {
+        const idA = a.id || 0;
+        const idB = b.id || 0;
+
+        const comparison = idA - idB;
+        return -comparison;
+      });
+    }
+    return null;
+  }
+
   const getPaginated = (
     items: BankTypeAttributes[] | null,
     page: number,
@@ -83,6 +114,20 @@ export function useGafpriPaginationsBankType({
   ): BankTypeAttributes[] | null => {
     const startIndex = (page - 1) * itemPerPage;
     const endIndex = startIndex + itemPerPage;
+
+    if (items) {
+      return items.slice(startIndex, endIndex);
+    }
+
+    return null;
+  };
+
+  const getTransactionsgetPaginated = (
+    items: BankTransactionsAttributes[] | null,
+    page: number
+  ): BankTransactionsAttributes[] | null => {
+    const startIndex = (page - 1) * itemsPerPageTransactions;
+    const endIndex = startIndex + itemsPerPageTransactions;
 
     if (items) {
       return items.slice(startIndex, endIndex);
@@ -114,6 +159,8 @@ export function useGafpriPaginationsBankType({
     currentPage,
 
     itemsPerPage,
+
+    transCurrentPage,
   };
 
   const actions = {
@@ -127,7 +174,13 @@ export function useGafpriPaginationsBankType({
 
     setCurrentPage,
 
+    setTransCurrentPage,
+
     getPaginated,
+
+    getTransactionsgetPaginated,
+
+    sortTransactionsById,
   };
 
   return {

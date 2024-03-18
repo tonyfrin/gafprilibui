@@ -7,3 +7,5 @@ export type {
 } from './ModuleHeader';
 export { CashRegisterHeader } from './CashRegisterHeader';
 export type { CashRegisterHeaderProps } from './CashRegisterHeader';
+export { BankHeader } from './BankHeader';
+export type { BankHeaderProps } from './BankHeader';

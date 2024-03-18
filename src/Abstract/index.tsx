@@ -291,13 +291,14 @@ export type {
   HeaderMenuStylesContentLiProps,
   HorizontalMenuProps,
 } from './Menu';
-export { Header, ModuleHeader, CashRegisterHeader } from './Header';
+export { Header, ModuleHeader, CashRegisterHeader, BankHeader } from './Header';
 export type {
   HeaderProps,
   HeaderPropsExtended,
   ModuleHeaderProps,
   ModuleHeaderStylesContainerProps,
   CashRegisterHeaderProps,
+  BankHeaderProps,
 } from './Header';
 export { InitCurrencies, CurrencyForm } from './Currencies';
 export type {
@@ -724,6 +725,7 @@ export {
   CashTransationsTable,
   SingleHiddenTablet,
   ConciliateTable,
+  BankTransationsTable,
 } from './Table';
 export type {
   CartListProps,
@@ -739,6 +741,7 @@ export type {
   CashTransationsTableProps,
   SingleHiddenTabletProps,
   ConciliateTableProps,
+  BankTransationsTableProps,
 } from './Table';
 export {
   SearchProducts,
@@ -932,3 +935,7 @@ export type {
   InitBankTypeProps,
   InitBankTypePropsExtended,
 } from './BankType';
+export { Icon } from './Icon';
+export type { IconProps, IconItem } from './Icon';
+export { InitBank, BankForm } from './Bank';
+export type { InitBankProps, BankFormProps } from './Bank';

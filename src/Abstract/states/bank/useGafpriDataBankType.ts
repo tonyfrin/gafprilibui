@@ -8,6 +8,7 @@ import {
 } from '../../../helpers';
 import { BANK_TYPE_STORAGE, BANK_TYPE_ROUTE } from '../../../constants';
 import { GeneralAttribute } from '../../../Validations';
+import { BankTransactionsAttributes } from './bankTransactions';
 
 export interface BankTypeAttributes {
   postsId: number;
@@ -21,6 +22,7 @@ export interface BankTypeAttributes {
   currenciesId: number;
   settings: GeneralAttribute[];
   posts: PostsAttributes;
+  bankTransactions: BankTransactionsAttributes[];
 }
 
 type DeletedBankType = {

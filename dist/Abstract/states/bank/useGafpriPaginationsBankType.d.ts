@@ -1,17 +1,22 @@
 import { BankTypeAttributes, UseGafpriDataBankTypeReturn } from './useGafpriDataBankType';
+import { BankTransactionsAttributes } from './bankTransactions';
 type State = {
     orderList: 'asc' | 'desc';
     searchTerm: string;
     currentPage: number;
+    transCurrentPage: number;
     itemsPerPage: number;
 };
 type Actions = {
-    sortByName: (storages: BankTypeAttributes[] | null, order: 'asc' | 'desc') => BankTypeAttributes[] | null;
+    sortByName: (items: BankTypeAttributes[] | null, order: 'asc' | 'desc') => BankTypeAttributes[] | null;
+    sortTransactionsById: (items: BankTransactionsAttributes[] | null) => BankTransactionsAttributes[] | null;
     setOrderList: (order: 'asc' | 'desc') => void;
     setSearchTerm: (value: string) => void;
     filterByName: (search: string) => BankTypeAttributes[] | null;
     setCurrentPage: (value: number) => void;
-    getPaginated: (itemStorages: BankTypeAttributes[] | null, page: number, itemsPerPage: number) => BankTypeAttributes[] | null;
+    setTransCurrentPage: (value: number) => void;
+    getPaginated: (items: BankTypeAttributes[] | null, page: number, itemsPerPage: number) => BankTypeAttributes[] | null;
+    getTransactionsgetPaginated: (items: BankTransactionsAttributes[] | null, page: number) => BankTransactionsAttributes[] | null;
 };
 export type UseGafpriPaginationsBankTypeReturn = {
     states: State;

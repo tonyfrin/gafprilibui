@@ -9,6 +9,12 @@ Object.defineProperty(exports, "AttributeTable", {
     return _AttributeTable.AttributeTable;
   }
 });
+Object.defineProperty(exports, "BankTransationsTable", {
+  enumerable: true,
+  get: function get() {
+    return _BankTransationsTable.BankTransationsTable;
+  }
+});
 Object.defineProperty(exports, "BudgetPrintTable", {
   enumerable: true,
   get: function get() {
@@ -80,3 +86,4 @@ var _CashBalanceTable = require("./CashBalanceTable");
 var _CashTransationsTable = require("./CashTransationsTable");
 var _SingleHiddenTablet = require("./SingleHiddenTablet");
 var _ConciliateTable = require("./ConciliateTable");
+var _BankTransationsTable = require("./BankTransationsTable");

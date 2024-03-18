@@ -24,7 +24,12 @@ function useGafpriPaginationsBankType(_ref) {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     currentPage = _useState6[0],
     setCurrentPage = _useState6[1];
+  var _useState7 = (0, _react.useState)(1),
+    _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
+    transCurrentPage = _useState8[0],
+    setTransCurrentPage = _useState8[1];
   var itemsPerPage = 6;
+  var itemsPerPageTransactions = 30;
   function sortByName(itemStorages, order) {
     if (itemStorages) {
       return itemStorages.slice().sort(function (a, b) {
@@ -44,9 +49,28 @@ function useGafpriPaginationsBankType(_ref) {
     }
     return null;
   };
+  function sortTransactionsById(items) {
+    if (items) {
+      return items.slice().sort(function (a, b) {
+        var idA = a.id || 0;
+        var idB = b.id || 0;
+        var comparison = idA - idB;
+        return -comparison;
+      });
+    }
+    return null;
+  }
   var getPaginated = function getPaginated(items, page, itemPerPage) {
     var startIndex = (page - 1) * itemPerPage;
     var endIndex = startIndex + itemPerPage;
+    if (items) {
+      return items.slice(startIndex, endIndex);
+    }
+    return null;
+  };
+  var getTransactionsgetPaginated = function getTransactionsgetPaginated(items, page) {
+    var startIndex = (page - 1) * itemsPerPageTransactions;
+    var endIndex = startIndex + itemsPerPageTransactions;
     if (items) {
       return items.slice(startIndex, endIndex);
     }
@@ -72,7 +96,8 @@ function useGafpriPaginationsBankType(_ref) {
     orderList: orderList,
     searchTerm: searchTerm,
     currentPage: currentPage,
-    itemsPerPage: itemsPerPage
+    itemsPerPage: itemsPerPage,
+    transCurrentPage: transCurrentPage
   };
   var actions = {
     sortByName: sortByName,
@@ -80,7 +105,10 @@ function useGafpriPaginationsBankType(_ref) {
     setSearchTerm: setSearchTerm,
     filterByName: filterByName,
     setCurrentPage: setCurrentPage,
-    getPaginated: getPaginated
+    setTransCurrentPage: setTransCurrentPage,
+    getPaginated: getPaginated,
+    getTransactionsgetPaginated: getTransactionsgetPaginated,
+    sortTransactionsById: sortTransactionsById
   };
   return {
     states: states,

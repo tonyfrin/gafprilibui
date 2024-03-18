@@ -314,6 +314,11 @@ export {
   ConciliateTable,
   InitCashRegister,
   CashRegisterForm,
+  BankHeader,
+  Icon,
+  BankTransationsTable,
+  InitBank,
+  BankForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -826,6 +831,11 @@ export type {
   ConciliateTableProps,
   InitCashRegisterProps,
   CashRegisterFormProps,
+  BankHeaderProps,
+  IconProps,
+  BankTransationsTableProps,
+  InitBankProps,
+  BankFormProps,
 } from './Abstract';
 export {
   MainFooter,

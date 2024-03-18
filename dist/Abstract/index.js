@@ -33,6 +33,24 @@ Object.defineProperty(exports, "Background1", {
     return _Background.Background1;
   }
 });
+Object.defineProperty(exports, "BankForm", {
+  enumerable: true,
+  get: function get() {
+    return _Bank.BankForm;
+  }
+});
+Object.defineProperty(exports, "BankHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Header.BankHeader;
+  }
+});
+Object.defineProperty(exports, "BankTransationsTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.BankTransationsTable;
+  }
+});
 Object.defineProperty(exports, "BankTypeForm", {
   enumerable: true,
   get: function get() {
@@ -501,6 +519,12 @@ Object.defineProperty(exports, "HorizontalMenu", {
     return _Menu.HorizontalMenu;
   }
 });
+Object.defineProperty(exports, "Icon", {
+  enumerable: true,
+  get: function get() {
+    return _Icon.Icon;
+  }
+});
 Object.defineProperty(exports, "IncomeForm", {
   enumerable: true,
   get: function get() {
@@ -511,6 +535,12 @@ Object.defineProperty(exports, "IncomeInit", {
   enumerable: true,
   get: function get() {
     return _Income.IncomeInit;
+  }
+});
+Object.defineProperty(exports, "InitBank", {
+  enumerable: true,
+  get: function get() {
+    return _Bank.InitBank;
   }
 });
 Object.defineProperty(exports, "InitBankType", {
@@ -2019,3 +2049,5 @@ var _MethodPayments = require("./MethodPayments");
 var _Income = require("./Income");
 var _Payment = require("./Payment");
 var _BankType = require("./BankType");
+var _Icon = require("./Icon");
+var _Bank = require("./Bank");

@@ -1,6 +1,7 @@
 import { PostsAttributes } from '../../../states';
 import { SelectDefault } from '../../../helpers';
 import { GeneralAttribute } from '../../../Validations';
+import { BankTransactionsAttributes } from './bankTransactions';
 export interface BankTypeAttributes {
     postsId: number;
     sitesId: number;
@@ -13,6 +14,7 @@ export interface BankTypeAttributes {
     currenciesId: number;
     settings: GeneralAttribute[];
     posts: PostsAttributes;
+    bankTransactions: BankTransactionsAttributes[];
 }
 type DeletedBankType = {
     itemId: number;

@@ -20,3 +20,5 @@ export { SingleHiddenTablet } from './SingleHiddenTablet';
 export type { SingleHiddenTabletProps } from './SingleHiddenTablet';
 export { ConciliateTable } from './ConciliateTable';
 export type { ConciliateTableProps } from './ConciliateTable';
+export { BankTransationsTable } from './BankTransationsTable';
+export type { BankTransationsTableProps } from './BankTransationsTable';

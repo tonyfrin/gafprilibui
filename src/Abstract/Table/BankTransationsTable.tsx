@@ -10,7 +10,9 @@ import { SingleList } from '../List';
 import { formatDate } from '../../helpers';
 import { Icon } from '../Icon';
 
-const btContainerStyle = () => css``;
+const btContainerStyle = () => css`
+  width: 100%;
+`;
 
 const btTdStyle = (width: string, custom?: string) => css`
   width: ${width};
@@ -56,19 +58,32 @@ export const BankTransationsTable = ({
         <td className={cx(btTdStyle('0.083333333%', `text-align: start;`))}>
           {formatDate(item.dateTransations)}
         </td>,
-        <td className={cx(btTdStyle('0.41666666%', `text-align: start;`))}>
-          {truncarTexto(item.description || '', 40)}
+        <td className={cx(btTdStyle('0.66583333%', `text-align: start;`))}>
+          {truncarTexto(item.description || '', 1000)}
         </td>,
-        <td className={cx(btTdStyle('0.083333333%', `text-align: start;`))}>
+        <td className={cx(btTdStyle('0.01%', `text-align: start;`))}>
           <Icon
             item={{
               id: `${item.id}`,
               onClick: () => {},
               icon: icon,
             }}
+            containerStyles={{
+              padding: '0px',
+              custom: `
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              `,
+            }}
+            contentStyle={{
+              fontSize: '12px',
+              width: '1rem',
+              height: '1rem',
+            }}
           />
         </td>,
-        <td className={cx(btTdStyle('0.1666666666', `text-align: end;`))}>
+        <td className={cx(btTdStyle('0.083333333%', `text-align: end;`))}>
           {decimalFormatPriceConverter(
             item.amount || 0,
             siteOptions.DECIMAL_NUMBERS,
@@ -76,7 +91,7 @@ export const BankTransationsTable = ({
             siteOptions.CURRENCY_LOCATION
           )}
         </td>,
-        <td className={cx(btTdStyle('0.1666666666', `text-align: end;`))}>
+        <td className={cx(btTdStyle('0.083333333%', `text-align: end;`))}>
           {decimalFormatPriceConverter(
             item.balance || 0,
             siteOptions.DECIMAL_NUMBERS,

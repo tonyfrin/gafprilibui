@@ -45,7 +45,6 @@ var Bank = exports.Bank = function Bank(_ref) {
   }), use.pages.states.isPortal && /*#__PURE__*/_react["default"].createElement(_Abstract.BankForm, {
     use: use,
     siteOptions: siteOptions,
-    useCurrencies: useCurrencies,
-    entityMenu: entityMenu
+    useCurrencies: useCurrencies
   })));
 };

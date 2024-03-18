@@ -15,7 +15,7 @@ var _List = require("../List");
 var _Icon = require("../Icon");
 var _templateObject, _templateObject2;
 var btContainerStyle = function btContainerStyle() {
-  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])([""])));
+  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: 100%;\n"])));
 };
 var btTdStyle = function btTdStyle(width, custom) {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  border: 1px solid #ddd;\n  padding: 4px;\n  text-align: center;\n  ", "\n"])), width, custom || '');
@@ -38,19 +38,28 @@ var BankTransationsTable = exports.BankTransationsTable = function BankTransatio
     }, item.createdAt ? (0, _helpers.formatDate)(item.createdAt) : ''), /*#__PURE__*/_react["default"].createElement("td", {
       className: (0, _css.cx)(btTdStyle('0.083333333%', "text-align: start;"))
     }, (0, _helpers.formatDate)(item.dateTransations)), /*#__PURE__*/_react["default"].createElement("td", {
-      className: (0, _css.cx)(btTdStyle('0.41666666%', "text-align: start;"))
-    }, (0, _helpers.truncarTexto)(item.description || '', 40)), /*#__PURE__*/_react["default"].createElement("td", {
-      className: (0, _css.cx)(btTdStyle('0.083333333%', "text-align: start;"))
+      className: (0, _css.cx)(btTdStyle('0.66583333%', "text-align: start;"))
+    }, (0, _helpers.truncarTexto)(item.description || '', 1000)), /*#__PURE__*/_react["default"].createElement("td", {
+      className: (0, _css.cx)(btTdStyle('0.01%', "text-align: start;"))
     }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
       item: {
         id: "".concat(item.id),
         onClick: function onClick() {},
         icon: icon
+      },
+      containerStyles: {
+        padding: '0px',
+        custom: "\n                display: flex;\n                justify-content: center;\n                align-items: center;\n              "
+      },
+      contentStyle: {
+        fontSize: '12px',
+        width: '1rem',
+        height: '1rem'
       }
     })), /*#__PURE__*/_react["default"].createElement("td", {
-      className: (0, _css.cx)(btTdStyle('0.1666666666', "text-align: end;"))
+      className: (0, _css.cx)(btTdStyle('0.083333333%', "text-align: end;"))
     }, (0, _helpers.decimalFormatPriceConverter)(item.amount || 0, siteOptions.DECIMAL_NUMBERS, bankCurrency.symbol, siteOptions.CURRENCY_LOCATION)), /*#__PURE__*/_react["default"].createElement("td", {
-      className: (0, _css.cx)(btTdStyle('0.1666666666', "text-align: end;"))
+      className: (0, _css.cx)(btTdStyle('0.083333333%', "text-align: end;"))
     }, (0, _helpers.decimalFormatPriceConverter)(item.balance || 0, siteOptions.DECIMAL_NUMBERS, bankCurrency.symbol, siteOptions.CURRENCY_LOCATION))];
   })) !== null && _paginated$map !== void 0 ? _paginated$map : [];
   var header = ['Fecha', 'Procesado', 'Descripción', 'Estado', 'Monto', 'Balance'];

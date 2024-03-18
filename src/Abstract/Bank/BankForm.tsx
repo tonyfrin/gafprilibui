@@ -33,64 +33,24 @@ const bodyMainContainerStyle = () => css`
 const bodyContainerStyle = () => css`
   display: flex;
   justify-content: center;
-  width: 95%;
-`;
-
-const leftMainBodyContainerStyle = () => css`
-  width: 60%;
-  display: block;
-`;
-
-const rigthMainBodyContainerStyle = () => css`
-  width: 40%;
-  display: block;
-`;
-
-const leftBodyContainerStyle = () => css`
-  display: flex;
-`;
-
-const rightBodyContainerStyle = () => css``;
-
-const expensesContainerStyle = () => css`
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
-  margin: 1em 0.5em;
-  width: 95%;
-  height: auto;
-`;
-
-const conciliatedContainerStyle = () => css`
-  background: linear-gradient(
-    to bottom,
-    rgb(77, 174, 205, 0.75),
-    rgb(96, 100, 124, 0.55)
-  );
-  border-radius: 10px;
-  margin: 1em 0.5em;
-  color: #fff;
-  height: auto;
-  padding: 20px;
-`;
-
-const expensesBodyContainerStyle = () => css`
+  background-color: #fff;
+  padding: 10px 40px;
   width: 90%;
-  margin: auto;
-  padding: 10px 0px;
+  border-radius: 10px;
+  height: auto;
+  margin: 0;
 `;
 
 export type BankFormProps = {
   use: UseGafpriBankTypeReturn;
   siteOptions: SiteOptions;
   useCurrencies: UseCurrenciesReturn;
-  entityMenu: MainMenuItems[];
 };
 
 export const BankForm = ({
   use,
   siteOptions,
   useCurrencies,
-  entityMenu,
 }: BankFormProps): JSX.Element => {
   const current = use.data.actions.getById(use.attributes.states.currentId);
 

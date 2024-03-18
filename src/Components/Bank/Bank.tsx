@@ -90,7 +90,6 @@ export const Bank = ({
             use={use}
             siteOptions={siteOptions}
             useCurrencies={useCurrencies}
-            entityMenu={entityMenu}
           />
         )}
       </div>

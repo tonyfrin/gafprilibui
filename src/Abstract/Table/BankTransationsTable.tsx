@@ -58,8 +58,8 @@ export const BankTransationsTable = ({
         <td className={cx(btTdStyle('0.083333333%', `text-align: start;`))}>
           {formatDate(item.dateTransations)}
         </td>,
-        <td className={cx(btTdStyle('0.66583333%', `text-align: start;`))}>
-          {truncarTexto(item.description || '', 140)}
+        <td className={cx(btTdStyle('0.49%', `text-align: start;`))}>
+          {truncarTexto(item.description || '', 110)}
         </td>,
         <td className={cx(btTdStyle('0.01%', `text-align: start;`))}>
           <Icon
@@ -83,7 +83,7 @@ export const BankTransationsTable = ({
             }}
           />
         </td>,
-        <td className={cx(btTdStyle('0.083333333%', `text-align: end;`))}>
+        <td className={cx(btTdStyle('0.16666667%', `text-align: end;`))}>
           {decimalFormatPriceConverter(
             item.amount || 0,
             siteOptions.DECIMAL_NUMBERS,
@@ -91,7 +91,7 @@ export const BankTransationsTable = ({
             siteOptions.CURRENCY_LOCATION
           )}
         </td>,
-        <td className={cx(btTdStyle('0.083333333%', `text-align: end;`))}>
+        <td className={cx(btTdStyle('0.16666667%', `text-align: end;`))}>
           {decimalFormatPriceConverter(
             item.balance || 0,
             siteOptions.DECIMAL_NUMBERS,

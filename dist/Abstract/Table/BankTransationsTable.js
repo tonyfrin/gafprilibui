@@ -38,8 +38,8 @@ var BankTransationsTable = exports.BankTransationsTable = function BankTransatio
     }, item.createdAt ? (0, _helpers.formatDate)(item.createdAt) : ''), /*#__PURE__*/_react["default"].createElement("td", {
       className: (0, _css.cx)(btTdStyle('0.083333333%', "text-align: start;"))
     }, (0, _helpers.formatDate)(item.dateTransations)), /*#__PURE__*/_react["default"].createElement("td", {
-      className: (0, _css.cx)(btTdStyle('0.66583333%', "text-align: start;"))
-    }, (0, _helpers.truncarTexto)(item.description || '', 140)), /*#__PURE__*/_react["default"].createElement("td", {
+      className: (0, _css.cx)(btTdStyle('0.49%', "text-align: start;"))
+    }, (0, _helpers.truncarTexto)(item.description || '', 110)), /*#__PURE__*/_react["default"].createElement("td", {
       className: (0, _css.cx)(btTdStyle('0.01%', "text-align: start;"))
     }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
       item: {
@@ -57,9 +57,9 @@ var BankTransationsTable = exports.BankTransationsTable = function BankTransatio
         height: '1rem'
       }
     })), /*#__PURE__*/_react["default"].createElement("td", {
-      className: (0, _css.cx)(btTdStyle('0.083333333%', "text-align: end;"))
+      className: (0, _css.cx)(btTdStyle('0.16666667%', "text-align: end;"))
     }, (0, _helpers.decimalFormatPriceConverter)(item.amount || 0, siteOptions.DECIMAL_NUMBERS, bankCurrency.symbol, siteOptions.CURRENCY_LOCATION)), /*#__PURE__*/_react["default"].createElement("td", {
-      className: (0, _css.cx)(btTdStyle('0.083333333%', "text-align: end;"))
+      className: (0, _css.cx)(btTdStyle('0.16666667%', "text-align: end;"))
     }, (0, _helpers.decimalFormatPriceConverter)(item.balance || 0, siteOptions.DECIMAL_NUMBERS, bankCurrency.symbol, siteOptions.CURRENCY_LOCATION))];
   })) !== null && _paginated$map !== void 0 ? _paginated$map : [];
   var header = ['Fecha', 'Procesado', 'Descripción', 'Estado', 'Monto', 'Balance'];

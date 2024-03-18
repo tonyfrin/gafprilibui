@@ -59,7 +59,7 @@ export const BankTransationsTable = ({
           {formatDate(item.dateTransations)}
         </td>,
         <td className={cx(btTdStyle('0.66583333%', `text-align: start;`))}>
-          {truncarTexto(item.description || '', 1000)}
+          {truncarTexto(item.description || '', 140)}
         </td>,
         <td className={cx(btTdStyle('0.01%', `text-align: start;`))}>
           <Icon

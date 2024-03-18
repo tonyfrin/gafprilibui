@@ -39,7 +39,7 @@ var BankTransationsTable = exports.BankTransationsTable = function BankTransatio
       className: (0, _css.cx)(btTdStyle('0.083333333%', "text-align: start;"))
     }, (0, _helpers.formatDate)(item.dateTransations)), /*#__PURE__*/_react["default"].createElement("td", {
       className: (0, _css.cx)(btTdStyle('0.66583333%', "text-align: start;"))
-    }, (0, _helpers.truncarTexto)(item.description || '', 1000)), /*#__PURE__*/_react["default"].createElement("td", {
+    }, (0, _helpers.truncarTexto)(item.description || '', 140)), /*#__PURE__*/_react["default"].createElement("td", {
       className: (0, _css.cx)(btTdStyle('0.01%', "text-align: start;"))
     }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
       item: {

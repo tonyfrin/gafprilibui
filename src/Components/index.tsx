@@ -95,5 +95,5 @@ export type {
   PaymentTransferCashRegisterProps,
   PaymentTransferBankProps,
 } from './Payment';
-export { BankType } from './Bank';
-export type { BankTypeProps } from './Bank';
+export { BankType, Bank } from './Bank';
+export type { BankTypeProps, BankProps } from './Bank';

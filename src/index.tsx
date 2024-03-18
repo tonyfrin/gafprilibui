@@ -873,6 +873,7 @@ export {
   BankType,
   PaymentTransferBank,
   CashRegister,
+  Bank,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -927,6 +928,7 @@ export type {
   BankTypeProps,
   PaymentTransferBankProps,
   CashRegisterProps,
+  BankProps,
 } from './Components';
 export {
   addClass,

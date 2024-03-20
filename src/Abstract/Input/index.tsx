@@ -141,3 +141,7 @@ export { InputAccountNumber } from './InputAccountNumber';
 export type { InputAccountNumberProps } from './InputAccountNumber';
 export { SelectBankType } from './SelectBankType';
 export type { SelectBankTypeProps } from './SelectBankType';
+export { InputCreditTimeToPay } from './InputCreditTimeToPay';
+export type { InputCreditTimeToPayProps } from './InputCreditTimeToPay';
+export { InputCreditLimit } from './InputCreditLimit';
+export type { InputCreditLimitProps } from './InputCreditLimit';

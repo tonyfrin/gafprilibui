@@ -60,3 +60,13 @@ export type {
   EntityIncomeInitStylesContainerProps,
   EntityIncomeInitProps,
 } from './EntityIncomeInit';
+export { EntityAccountsReceivableInit } from './EntityAccountsReceivableInit';
+export type {
+  EntityAccountsReceivableInitStylesContainerProps,
+  EntityAccountsReceivableInitProps,
+} from './EntityAccountsReceivableInit';
+export { EntityAccountsReceivableSearch } from './EntityAccountsReceivableSearch';
+export type {
+  EntityAccountsReceivableSearchProps,
+  EntityAccountsReceivableSearchPropsExtended,
+} from './EntityAccountsReceivableSearch';

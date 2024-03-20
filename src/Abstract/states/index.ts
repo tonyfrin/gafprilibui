@@ -328,3 +328,22 @@ export type {
   UseGafpriAttributesCashTransactionsReturn,
   CashTransactionsAttributes,
 } from './cashRegister';
+export {
+  useGafpriApiAccountsReceivable,
+  useGafpriDataAccountsReceivable,
+  useGafpriPaginationsAccountsReceivable,
+  useGafpriPagesAccountsReceivable,
+  useGafpriAttributesAccountsReceivable,
+} from './credits';
+export type {
+  UseGafpriApiAccountsReceivableReturn,
+  UseGafpriApiAccountsReceivableProps,
+  UseGafpriDataAccountsReceivableReturn,
+  UseGafpriDataAccountsReceivableProps,
+  AccountsReceivableAttributes,
+  UseGafpriPaginationsAccountsReceivableReturn,
+  UseGafpriPaginationsAccountsReceivableProps,
+  UseGafpriPagesAccountsReceivableReturn,
+  UseGafpriPagesAccountsReceivableProps,
+  UseGafpriAttributesAccountsReceivableReturn,
+} from './credits';

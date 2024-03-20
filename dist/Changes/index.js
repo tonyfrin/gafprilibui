@@ -99,6 +99,18 @@ Object.defineProperty(exports, "generalChangeCost", {
     return _generalChangeCost.generalChangeCost;
   }
 });
+Object.defineProperty(exports, "generalChangeCreditLimit", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeCreditLimit.generalChangeCreditLimit;
+  }
+});
+Object.defineProperty(exports, "generalChangeCreditTimeToPay", {
+  enumerable: true,
+  get: function get() {
+    return _generalChangeCreditTimeToPay.generalChangeCreditTimeToPay;
+  }
+});
 Object.defineProperty(exports, "generalChangeCurrenciesDecimalNumbers", {
   enumerable: true,
   get: function get() {
@@ -479,3 +491,5 @@ var _generalChangeAccountType = require("./generalChangeAccountType");
 var _generalChangeCurrency = require("./generalChangeCurrency");
 var _generalChangeSettings = require("./generalChangeSettings");
 var _generalChangeBankType = require("./generalChangeBankType");
+var _generalChangeCreditLimit = require("./generalChangeCreditLimit");
+var _generalChangeCreditTimeToPay = require("./generalChangeCreditTimeToPay");

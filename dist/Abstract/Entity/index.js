@@ -15,6 +15,18 @@ Object.defineProperty(exports, "DocumentAddForm", {
     return _DocumentAddForm.DocumentAddForm;
   }
 });
+Object.defineProperty(exports, "EntityAccountsReceivableInit", {
+  enumerable: true,
+  get: function get() {
+    return _EntityAccountsReceivableInit.EntityAccountsReceivableInit;
+  }
+});
+Object.defineProperty(exports, "EntityAccountsReceivableSearch", {
+  enumerable: true,
+  get: function get() {
+    return _EntityAccountsReceivableSearch.EntityAccountsReceivableSearch;
+  }
+});
 Object.defineProperty(exports, "EntityAddForm", {
   enumerable: true,
   get: function get() {
@@ -94,3 +106,5 @@ var _EntityExpensesInit = require("./EntityExpensesInit");
 var _EntityExpensesSearch = require("./EntityExpensesSearch");
 var _EntityIncomeSearch = require("./EntityIncomeSearch");
 var _EntityIncomeInit = require("./EntityIncomeInit");
+var _EntityAccountsReceivableInit = require("./EntityAccountsReceivableInit");
+var _EntityAccountsReceivableSearch = require("./EntityAccountsReceivableSearch");

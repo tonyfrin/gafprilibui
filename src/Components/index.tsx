@@ -46,6 +46,7 @@ export {
   Entity,
   EntityExpenses,
   EntityIncome,
+  EntityAccountsReceivable,
 } from './Entity';
 export type {
   EntityOrderStylesContainerProps,
@@ -57,6 +58,8 @@ export type {
   EntityExpensesProps,
   EntityIncomeStylesContainerProps,
   EntityIncomeProps,
+  EntityAccountsReceivableStylesContainerProps,
+  EntityAccountsReceivableProps,
 } from './Entity';
 export { Order } from './Order';
 export type { OrderProps, OrderStylesContainerProps } from './Order';
@@ -97,3 +100,5 @@ export type {
 } from './Payment';
 export { BankType, Bank } from './Bank';
 export type { BankTypeProps, BankProps } from './Bank';
+export { AccountsReceivable } from './Credits';
+export type { AccountsReceivableProps } from './Credits';

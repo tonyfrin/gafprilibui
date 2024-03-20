@@ -8,11 +8,7 @@ import {
 } from '../Input';
 import { ContainerButton } from '../Containers';
 import { ModelForm } from '../Form';
-import type {
-  SiteOptions,
-  UseCurrenciesReturn,
-  UseGafpriExpensesReturn,
-} from '../../states';
+import type { SiteOptions, UseGafpriExpensesReturn } from '../../states';
 import { SpanValue } from '../Span';
 import { decimalFormatPriceConverter } from '../../helpers';
 import { EXPENSES_ROUTE } from '../../constants';

@@ -88,6 +88,18 @@ Object.defineProperty(exports, "generalValidationCost", {
     return _generalValidationCost.generalValidationCost;
   }
 });
+Object.defineProperty(exports, "generalValidationCreditLimit", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationCreditLimit.generalValidationCreditLimit;
+  }
+});
+Object.defineProperty(exports, "generalValidationCreditTimeToPay", {
+  enumerable: true,
+  get: function get() {
+    return _generalValidationCreditTimeToPay.generalValidationCreditTimeToPay;
+  }
+});
 Object.defineProperty(exports, "generalValidationCurrenciesSymbol", {
   enumerable: true,
   get: function get() {
@@ -544,6 +556,8 @@ var _generalValidationAccountNumber = require("./generalValidationAccountNumber"
 var _generalValidationSelectAccountType = require("./generalValidationSelectAccountType");
 var _generalValidationBankSettings = require("./generalValidationBankSettings");
 var _generalValidationBankType = require("./generalValidationBankType");
+var _generalValidationCreditLimit = require("./generalValidationCreditLimit");
+var _generalValidationCreditTimeToPay = require("./generalValidationCreditTimeToPay");
 var validationInputNameLastNameUserName = exports.validationInputNameLastNameUserName = function validationInputNameLastNameUserName(_ref) {
   var value = _ref.value,
     currentValid = _ref.currentValid,

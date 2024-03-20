@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "useGafpriApiAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _credits.useGafpriApiAccountsReceivable;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiBankType", {
   enumerable: true,
   get: function get() {
@@ -103,6 +109,12 @@ Object.defineProperty(exports, "useGafpriApiTaxRates", {
   enumerable: true,
   get: function get() {
     return _taxes.useGafpriApiTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _credits.useGafpriAttributesAccountsReceivable;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesBankTransactions", {
@@ -243,6 +255,12 @@ Object.defineProperty(exports, "useGafpriAttributesTaxRates", {
     return _taxes.useGafpriAttributesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriDataAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _credits.useGafpriDataAccountsReceivable;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataBankType", {
   enumerable: true,
   get: function get() {
@@ -331,6 +349,12 @@ Object.defineProperty(exports, "useGafpriDataTaxRates", {
   enumerable: true,
   get: function get() {
     return _taxes.useGafpriDataTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _credits.useGafpriPagesAccountsReceivable;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesBankType", {
@@ -439,6 +463,12 @@ Object.defineProperty(exports, "useGafpriPagesTaxRates", {
   enumerable: true,
   get: function get() {
     return _taxes.useGafpriPagesTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _credits.useGafpriPaginationsAccountsReceivable;
   }
 });
 Object.defineProperty(exports, "useGafpriPaginationsBankType", {
@@ -566,3 +596,4 @@ var _income = require("./income");
 var _payment = require("./payment");
 var _bank = require("./bank");
 var _cashRegister = require("./cashRegister");
+var _credits = require("./credits");

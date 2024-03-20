@@ -3,6 +3,18 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "AccountsReceivableAddForm", {
+  enumerable: true,
+  get: function get() {
+    return _AccountsReceivable.AccountsReceivableAddForm;
+  }
+});
+Object.defineProperty(exports, "AccountsReceivableLoginForm", {
+  enumerable: true,
+  get: function get() {
+    return _AccountsReceivable.AccountsReceivableLoginForm;
+  }
+});
 Object.defineProperty(exports, "AddressAddForm", {
   enumerable: true,
   get: function get() {
@@ -327,6 +339,24 @@ Object.defineProperty(exports, "DocumentAddForm", {
     return _Entity.DocumentAddForm;
   }
 });
+Object.defineProperty(exports, "EntityAccountsReceivableInit", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.EntityAccountsReceivableInit;
+  }
+});
+Object.defineProperty(exports, "EntityAccountsReceivableSearch", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.EntityAccountsReceivableSearch;
+  }
+});
+Object.defineProperty(exports, "EntityAccountsReceivableSearchForm", {
+  enumerable: true,
+  get: function get() {
+    return _Form.EntityAccountsReceivableSearchForm;
+  }
+});
 Object.defineProperty(exports, "EntityAddForm", {
   enumerable: true,
   get: function get() {
@@ -537,6 +567,18 @@ Object.defineProperty(exports, "IncomeInit", {
     return _Income.IncomeInit;
   }
 });
+Object.defineProperty(exports, "InitAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _AccountsReceivable.InitAccountsReceivable;
+  }
+});
+Object.defineProperty(exports, "InitAddAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _AccountsReceivable.InitAddAccountsReceivable;
+  }
+});
 Object.defineProperty(exports, "InitBank", {
   enumerable: true,
   get: function get() {
@@ -691,6 +733,18 @@ Object.defineProperty(exports, "InputCost", {
   enumerable: true,
   get: function get() {
     return _Input.InputCost;
+  }
+});
+Object.defineProperty(exports, "InputCreditLimit", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputCreditLimit;
+  }
+});
+Object.defineProperty(exports, "InputCreditTimeToPay", {
+  enumerable: true,
+  get: function get() {
+    return _Input.InputCreditTimeToPay;
   }
 });
 Object.defineProperty(exports, "InputCurrenciesSymbol", {
@@ -1455,6 +1509,12 @@ Object.defineProperty(exports, "UserView", {
     return _Users.UserView;
   }
 });
+Object.defineProperty(exports, "useGafpriApiAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriApiAccountsReceivable;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiBankType", {
   enumerable: true,
   get: function get() {
@@ -1555,6 +1615,12 @@ Object.defineProperty(exports, "useGafpriApiTaxRates", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriApiTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesAccountsReceivable;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesBankTransactions", {
@@ -1695,6 +1761,12 @@ Object.defineProperty(exports, "useGafpriAttributesTaxRates", {
     return _states.useGafpriAttributesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriDataAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriDataAccountsReceivable;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataBankType", {
   enumerable: true,
   get: function get() {
@@ -1783,6 +1855,12 @@ Object.defineProperty(exports, "useGafpriDataTaxRates", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriDataTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPagesAccountsReceivable;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesBankType", {
@@ -1891,6 +1969,12 @@ Object.defineProperty(exports, "useGafpriPagesTaxRates", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriPagesTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPaginationsAccountsReceivable;
   }
 });
 Object.defineProperty(exports, "useGafpriPaginationsBankType", {
@@ -2051,3 +2135,4 @@ var _Payment = require("./Payment");
 var _BankType = require("./BankType");
 var _Icon = require("./Icon");
 var _Bank = require("./Bank");
+var _AccountsReceivable = require("./AccountsReceivable");

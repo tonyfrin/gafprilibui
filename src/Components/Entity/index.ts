@@ -20,3 +20,8 @@ export type {
   EntityIncomeStylesContainerProps,
   EntityIncomeProps,
 } from './EntityIncome';
+export { EntityAccountsReceivable } from './EntityAccountsReceivable';
+export type {
+  EntityAccountsReceivableStylesContainerProps,
+  EntityAccountsReceivableProps,
+} from './EntityAccountsReceivable';

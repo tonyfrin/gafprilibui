@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "AccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _Credits.AccountsReceivable;
+  }
+});
 Object.defineProperty(exports, "Bank", {
   enumerable: true,
   get: function get() {
@@ -37,6 +43,12 @@ Object.defineProperty(exports, "Entity", {
   enumerable: true,
   get: function get() {
     return _Entity.Entity;
+  }
+});
+Object.defineProperty(exports, "EntityAccountsReceivable", {
+  enumerable: true,
+  get: function get() {
+    return _Entity.EntityAccountsReceivable;
   }
 });
 Object.defineProperty(exports, "EntityBudget", {
@@ -243,3 +255,4 @@ var _Expenses = require("./Expenses");
 var _Income = require("./Income");
 var _Payment = require("./Payment");
 var _Bank = require("./Bank");
+var _Credits = require("./Credits");

@@ -77,3 +77,5 @@ export const ACCOUNT_NUMBER_INPUT = 'account-number-input-id';
 export const ACCOUNT_TYPE_INPUT = 'account-type-input-id';
 export const SETTINGS_INPUT = 'settings-input-id';
 export const BANK_TYPE_INPUT = 'bank-type-input-id';
+export const CREDIT_LIMIT_INPUT = 'credit-limit-input-id';
+export const CREDIT_TIME_TO_PAY_INPUT = 'credit-time-to-pay-input-id';

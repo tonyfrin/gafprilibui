@@ -43,3 +43,8 @@ export type {
 } from './EntityExpensesSearchForm';
 export { EntityIncomeSearchForm } from './EntityIncomeSearchForm';
 export type { EntityIncomeSearchFormProps } from './EntityIncomeSearchForm';
+export { EntityAccountsReceivableSearchForm } from './EntityAccountsReceivableSearchForm';
+export type {
+  EntityAccountsReceivableSearchFormProps,
+  EntityAccountsReceivableSearchFormStaylesContainerProps,
+} from './EntityAccountsReceivableSearchForm';

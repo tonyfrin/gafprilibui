@@ -559,3 +559,7 @@ export { generalValidationBankSettings } from './generalValidationBankSettings';
 export type { GeneralValidationBankSettingsProps } from './generalValidationBankSettings';
 export { generalValidationBankType } from './generalValidationBankType';
 export type { GeneralValidationBankTypeProps } from './generalValidationBankType';
+export { generalValidationCreditLimit } from './generalValidationCreditLimit';
+export type { GeneralValidationCreditLimitProps } from './generalValidationCreditLimit';
+export { generalValidationCreditTimeToPay } from './generalValidationCreditTimeToPay';
+export type { GeneralValidationCreditTimeToPayProps } from './generalValidationCreditTimeToPay';

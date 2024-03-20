@@ -116,6 +116,8 @@ export {
   InputBankName,
   InputAccountNumber,
   SelectBankType,
+  InputCreditTimeToPay,
+  InputCreditLimit,
 } from './Input';
 export type {
   InputStyle,
@@ -192,6 +194,8 @@ export type {
   InputBankNameProps,
   InputAccountNumberProps,
   SelectBankTypeProps,
+  InputCreditTimeToPayProps,
+  InputCreditLimitProps,
 } from './Input';
 export { Title1, Title2, GloboTitle } from './Title';
 export type { GloboTitleStyle, Title1Props, Title2Props } from './Title';
@@ -237,6 +241,7 @@ export {
   PhotoProduct,
   EntityExpensesSearchForm,
   EntityIncomeSearchForm,
+  EntityAccountsReceivableSearchForm,
 } from './Form';
 export type {
   ModelFormProps,
@@ -262,6 +267,7 @@ export type {
   EntityExpensesSearchFormProps,
   EntityExpensesSearchFormStaylesContainerProps,
   EntityIncomeSearchFormProps,
+  EntityAccountsReceivableSearchFormProps,
 } from './Form';
 export {
   Menu1,
@@ -362,6 +368,8 @@ export {
   EntityExpensesSearch,
   EntityIncomeSearch,
   EntityIncomeInit,
+  EntityAccountsReceivableInit,
+  EntityAccountsReceivableSearch,
 } from './Entity';
 export type {
   InitEntityProps,
@@ -390,6 +398,9 @@ export type {
   EntityIncomeSearchPropsExtended,
   EntityIncomeInitStylesContainerProps,
   EntityIncomeInitProps,
+  EntityAccountsReceivableInitProps,
+  EntityAccountsReceivableSearchProps,
+  EntityAccountsReceivableSearchPropsExtended,
 } from './Entity';
 export {
   useGafpriApiEntity,
@@ -483,6 +494,11 @@ export {
   useGafpriApiPaymentTransferBank,
   useGafpriPagesPaymentTransferBank,
   useGafpriAttributesCashTransactions,
+  useGafpriApiAccountsReceivable,
+  useGafpriDataAccountsReceivable,
+  useGafpriPaginationsAccountsReceivable,
+  useGafpriPagesAccountsReceivable,
+  useGafpriAttributesAccountsReceivable,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -662,6 +678,16 @@ export type {
   UseGafpriPagesPaymentTransferBankReturn,
   UseGafpriAttributesCashTransactionsReturn,
   CashTransactionsAttributes,
+  UseGafpriApiAccountsReceivableReturn,
+  UseGafpriApiAccountsReceivableProps,
+  UseGafpriDataAccountsReceivableReturn,
+  UseGafpriDataAccountsReceivableProps,
+  AccountsReceivableAttributes,
+  UseGafpriPaginationsAccountsReceivableReturn,
+  UseGafpriPaginationsAccountsReceivableProps,
+  UseGafpriPagesAccountsReceivableReturn,
+  UseGafpriPagesAccountsReceivableProps,
+  UseGafpriAttributesAccountsReceivableReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -939,3 +965,15 @@ export { Icon } from './Icon';
 export type { IconProps, IconItem } from './Icon';
 export { InitBank, BankForm } from './Bank';
 export type { InitBankProps, BankFormProps } from './Bank';
+export {
+  InitAccountsReceivable,
+  InitAddAccountsReceivable,
+  AccountsReceivableAddForm,
+  AccountsReceivableLoginForm,
+} from './AccountsReceivable';
+export type {
+  InitAccountsReceivableProps,
+  InitAddAccountsReceivableProps,
+  AccountsReceivableAddFormProps,
+  AccountsReceivableLoginFormProps,
+} from './AccountsReceivable';

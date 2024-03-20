@@ -7,7 +7,7 @@ import type {
   UseGafpriAccountsReceivableReturn,
 } from '../../states';
 import { SpanValue } from '../Span';
-import { Loading } from 'src/Components';
+import { Loading } from '../../Components';
 
 export type AccountsReceivableUpdateFormProps = {
   use: UseGafpriAccountsReceivableReturn;

@@ -10,7 +10,7 @@ var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
 var _Span = require("../Span");
-var _Components = require("src/Components");
+var _Components = require("../../Components");
 var AccountsReceivableUpdateForm = exports.AccountsReceivableUpdateForm = function AccountsReceivableUpdateForm(_ref) {
   var _current$entity, _current$entity2, _current$entity3, _current$entity4;
   var use = _ref.use;

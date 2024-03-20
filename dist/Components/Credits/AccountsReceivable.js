@@ -25,16 +25,13 @@ var AccountsReceivable = exports.AccountsReceivable = function AccountsReceivabl
     containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
     _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
-    itemsMenu = _ref.itemsMenu,
     sitesOptions = _ref.sitesOptions,
     menuEntity = _ref.menuEntity;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _css.cx)(accountsReceivableStylesContainer(containerStyles), containerClassName)
-  }, restContainerProps), /*#__PURE__*/_react["default"].createElement(_Abstract.HeaderMenu, {
-    items: itemsMenu
-  }), use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, {
+  }, restContainerProps), use.pages.states.isFetching && /*#__PURE__*/_react["default"].createElement(_Loading.Loading, {
     mainStyles: {
       custom: 'height: 100vh;'
     }

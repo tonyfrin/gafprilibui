@@ -1,6 +1,6 @@
 import React from 'react';
 import { UseGafpriAccountsReceivableReturn, UseGafpriEntityReturn, SiteOptions } from '../../states';
-import { HeaderMenuItem, MainMenuItems } from '../../Abstract';
+import { MainMenuItems } from '../../Abstract';
 export type AccountsReceivableStylesContainerProps = {
     backgroundImage?: string;
     backgroundSize?: string;
@@ -16,7 +16,6 @@ export type AccountsReceivableProps = {
     sitesOptions: SiteOptions;
     containerStyles?: AccountsReceivableStylesContainerProps;
     containerProps?: React.HTMLAttributes<HTMLDivElement>;
-    itemsMenu: HeaderMenuItem[];
     menuEntity: MainMenuItems[];
 };
-export declare const AccountsReceivable: ({ use, useEntity, containerStyles, containerProps, itemsMenu, sitesOptions, menuEntity, }: AccountsReceivableProps) => JSX.Element;
+export declare const AccountsReceivable: ({ use, useEntity, containerStyles, containerProps, sitesOptions, menuEntity, }: AccountsReceivableProps) => JSX.Element;

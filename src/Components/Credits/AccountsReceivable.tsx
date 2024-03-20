@@ -51,7 +51,6 @@ export type AccountsReceivableProps = {
   sitesOptions: SiteOptions;
   containerStyles?: AccountsReceivableStylesContainerProps;
   containerProps?: React.HTMLAttributes<HTMLDivElement>;
-  itemsMenu: HeaderMenuItem[];
   menuEntity: MainMenuItems[];
 };
 
@@ -60,7 +59,6 @@ export const AccountsReceivable = ({
   useEntity,
   containerStyles = {},
   containerProps = {},
-  itemsMenu,
   sitesOptions,
   menuEntity,
 }: AccountsReceivableProps): JSX.Element => {
@@ -76,7 +74,6 @@ export const AccountsReceivable = ({
         )}
         {...restContainerProps}
       >
-        <HeaderMenu items={itemsMenu} />
         {use.pages.states.isFetching && (
           <Loading
             mainStyles={{

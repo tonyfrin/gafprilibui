@@ -152,7 +152,7 @@ export const InitAccountsReceivable = ({
         title="Creditos"
         items={items}
         headers={headers}
-        columns={2}
+        columns={4}
         selectProps={{
           options: options,
           onChange: (event) => {

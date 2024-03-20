@@ -23,7 +23,6 @@ var AccountsReceivableLoginForm = exports.AccountsReceivableLoginForm = function
     actionButtonContainerStyle = _ref$actionButtonCont === void 0 ? defaultActionButtonContainerStyle : _ref$actionButtonCont;
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    use.api.actions.add();
   };
   _react["default"].useEffect(function () {
     use.attributes.actions.validationButtonNextLogin();
@@ -44,9 +43,7 @@ var AccountsReceivableLoginForm = exports.AccountsReceivableLoginForm = function
     styles: {
       textTransform: 'none'
     }
-  })), /*#__PURE__*/_react["default"].createElement("form", {
-    onSubmit: handleSubmit
-  }, /*#__PURE__*/_react["default"].createElement("div", {
+  })), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(nameContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.InputUserName, {
     changeUserName: use.attributes.actions.changeAuthorizedLogin,
@@ -67,6 +64,14 @@ var AccountsReceivableLoginForm = exports.AccountsReceivableLoginForm = function
   }))), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(actionButtonContainerStyle)
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.ButtonNext, {
-    title: "Autorizar"
+    title: "Autorizar",
+    props: {
+      buttonProps: {
+        onClick: function onClick() {
+          return use.api.actions.add();
+        }
+      },
+      title: 'Autorizar'
+    }
   })))));
 };

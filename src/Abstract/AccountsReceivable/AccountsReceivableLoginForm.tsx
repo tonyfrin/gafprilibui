@@ -45,7 +45,6 @@ export const AccountsReceivableLoginForm = ({
 }: AccountsReceivableLoginFormProps): JSX.Element => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    use.api.actions.add();
   };
 
   React.useEffect(() => {
@@ -78,7 +77,7 @@ export const AccountsReceivableLoginForm = ({
             }}
           />
         </div>
-        <form onSubmit={handleSubmit}>
+        <div>
           <div className={css(nameContainerStyle)}>
             <>
               <InputUserName
@@ -104,9 +103,17 @@ export const AccountsReceivableLoginForm = ({
             </>
           </div>
           <div className={css(actionButtonContainerStyle)}>
-            <ButtonNext title="Autorizar" />
+            <ButtonNext
+              title="Autorizar"
+              props={{
+                buttonProps: {
+                  onClick: () => use.api.actions.add(),
+                },
+                title: 'Autorizar',
+              }}
+            />
           </div>
-        </form>
+        </div>
       </>
     </Box1>
   );

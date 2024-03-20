@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import type { UseLoginReturn } from 'src/states';
+import type { UseLoginReturn } from '../../states';
 import {
   Box1,
   Background1,

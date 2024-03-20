@@ -1,6 +1,6 @@
-import React, { KeyboardEvent } from 'react';
-import { UseGafpriProductsReturn, UseGafpriAccountsReceivableReturn, UseGafpriEntityReturn, SiteOptions } from '../../states';
-import { HeaderMenuItem, MainMenuItems, UseGafpriPagesSalesModuleReturn } from '../../Abstract';
+import React from 'react';
+import { UseGafpriAccountsReceivableReturn, UseGafpriEntityReturn, SiteOptions } from '../../states';
+import { HeaderMenuItem, MainMenuItems } from '../../Abstract';
 export type AccountsReceivableStylesContainerProps = {
     backgroundImage?: string;
     backgroundSize?: string;
@@ -13,14 +13,10 @@ export type AccountsReceivableStylesContainerProps = {
 export type AccountsReceivableProps = {
     use: UseGafpriAccountsReceivableReturn;
     useEntity: UseGafpriEntityReturn;
-    usePagesMain: UseGafpriPagesSalesModuleReturn;
     sitesOptions: SiteOptions;
     containerStyles?: AccountsReceivableStylesContainerProps;
     containerProps?: React.HTMLAttributes<HTMLDivElement>;
     itemsMenu: HeaderMenuItem[];
-    useProducts: UseGafpriProductsReturn;
     menuEntity: MainMenuItems[];
-    uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
-    uploadOrderOnlyProducts: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
-export declare const AccountsReceivable: ({ use, useEntity, containerStyles, containerProps, itemsMenu, usePagesMain, sitesOptions, useProducts, menuEntity, uploadOrder, uploadOrderOnlyProducts, }: AccountsReceivableProps) => JSX.Element;
+export declare const AccountsReceivable: ({ use, useEntity, containerStyles, containerProps, itemsMenu, sitesOptions, menuEntity, }: AccountsReceivableProps) => JSX.Element;

@@ -26,12 +26,8 @@ var AccountsReceivable = exports.AccountsReceivable = function AccountsReceivabl
     _ref$containerProps = _ref.containerProps,
     containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
     itemsMenu = _ref.itemsMenu,
-    usePagesMain = _ref.usePagesMain,
     sitesOptions = _ref.sitesOptions,
-    useProducts = _ref.useProducts,
-    menuEntity = _ref.menuEntity,
-    uploadOrder = _ref.uploadOrder,
-    uploadOrderOnlyProducts = _ref.uploadOrderOnlyProducts;
+    menuEntity = _ref.menuEntity;
   var containerClassName = containerProps.className,
     restContainerProps = (0, _objectWithoutProperties2["default"])(containerProps, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({

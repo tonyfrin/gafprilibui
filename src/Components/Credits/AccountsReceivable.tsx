@@ -48,15 +48,11 @@ const accountsReceivableStylesContainer = (
 export type AccountsReceivableProps = {
   use: UseGafpriAccountsReceivableReturn;
   useEntity: UseGafpriEntityReturn;
-  usePagesMain: UseGafpriPagesSalesModuleReturn;
   sitesOptions: SiteOptions;
   containerStyles?: AccountsReceivableStylesContainerProps;
   containerProps?: React.HTMLAttributes<HTMLDivElement>;
   itemsMenu: HeaderMenuItem[];
-  useProducts: UseGafpriProductsReturn;
   menuEntity: MainMenuItems[];
-  uploadOrder: (event: KeyboardEvent<HTMLInputElement>) => void;
-  uploadOrderOnlyProducts: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const AccountsReceivable = ({
@@ -65,12 +61,8 @@ export const AccountsReceivable = ({
   containerStyles = {},
   containerProps = {},
   itemsMenu,
-  usePagesMain,
   sitesOptions,
-  useProducts,
   menuEntity,
-  uploadOrder,
-  uploadOrderOnlyProducts,
 }: AccountsReceivableProps): JSX.Element => {
   const { className: containerClassName, ...restContainerProps } =
     containerProps;

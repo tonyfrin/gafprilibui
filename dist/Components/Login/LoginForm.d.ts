@@ -1,4 +1,4 @@
-import type { UseLoginReturn } from 'src/states';
+import type { UseLoginReturn } from '../../states';
 export type LoginFormProps = {
     use: UseLoginReturn;
     titleContainerStyle?: string;

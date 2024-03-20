@@ -25,16 +25,18 @@ var AccountsReceivableUpdateForm = exports.AccountsReceivableUpdateForm = functi
     }
   };
   _react["default"].useEffect(function () {
+    use.attributes.actions.changeEntityId(current.entityId);
     use.attributes.actions.changeLimit("".concat(current.limit));
     use.attributes.actions.changeTimeToPay("".concat(current.timeToPay));
   }, []);
   _react["default"].useEffect(function () {
+    use.attributes.actions.validationEntityId(use.attributes.states.entityId);
     use.attributes.actions.validationLimit(use.attributes.states.limit);
     use.attributes.actions.validationTimeToPay(use.attributes.states.timeToPay);
-  }, [use.attributes.states.limit, use.attributes.states.timeToPay]);
+  }, [use.attributes.states.limit, use.attributes.states.timeToPay, use.attributes.states.entityId]);
   _react["default"].useEffect(function () {
     use.attributes.actions.validationButtonNext();
-  }, [use.attributes.states.limitValid, use.attributes.states.timeToPayValid]);
+  }, [use.attributes.states.entityIdValid, use.attributes.states.limitValid, use.attributes.states.timeToPayValid]);
   var title1Text = 'Actualiza cuenta de credito';
   var title2Text = "Actualiza la cuenta de credito # ".concat(current.postsId);
   var buttonTitle = 'Siguiente';

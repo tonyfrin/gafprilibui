@@ -9,6 +9,7 @@ import {
   InputUserName,
   ButtonNext,
 } from '../../Abstract';
+import { ACCOUNTS_RECEIVABLE_ROUTE } from '../../constants';
 
 const defaultTitleContainerStyle = css`
   margin-top: 22px;
@@ -43,10 +44,6 @@ export const AccountsReceivableLoginForm = ({
   nameContainerStyle = defaultNameContainerStyle,
   actionButtonContainerStyle = defaultActionButtonContainerStyle,
 }: AccountsReceivableLoginFormProps): JSX.Element => {
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-  };
-
   React.useEffect(() => {
     use.attributes.actions.validationButtonNextLogin();
     use.attributes.actions.validationAuthorizedLogin(
@@ -111,6 +108,7 @@ export const AccountsReceivableLoginForm = ({
                 },
                 title: 'Autorizar',
               }}
+              inputId={`${ACCOUNTS_RECEIVABLE_ROUTE}-login`}
             />
           </div>
         </div>

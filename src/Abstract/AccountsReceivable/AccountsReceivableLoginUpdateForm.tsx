@@ -9,6 +9,7 @@ import {
   InputUserName,
   ButtonNext,
 } from '../../Abstract';
+import { ACCOUNTS_RECEIVABLE_ROUTE } from '../../constants';
 
 const defaultTitleContainerStyle = css`
   margin-top: 22px;
@@ -107,6 +108,7 @@ export const AccountsReceivableLoginUpdateForm = ({
                 },
                 title: 'Autorizar',
               }}
+              inputId={`${ACCOUNTS_RECEIVABLE_ROUTE}-login`}
             />
           </div>
         </div>

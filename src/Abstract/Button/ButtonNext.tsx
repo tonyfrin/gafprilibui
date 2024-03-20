@@ -6,15 +6,16 @@ import type { ButtonProps } from './Button';
 export type ButtonNextProps = {
   title: string;
   props?: ButtonProps;
+  inputId?: string;
 };
 
-export const ButtonNext = ({ title, props }: ButtonNextProps) => {
+export const ButtonNext = ({ title, props, inputId = '' }: ButtonNextProps) => {
   return (
     <>
       <Button
         title={title}
         buttonProps={{
-          id: BUTTON_NEXT_INPUT,
+          id: `${BUTTON_NEXT_INPUT}${inputId}`,
           type: 'submit',
         }}
         {...props}

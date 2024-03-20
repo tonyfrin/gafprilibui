@@ -9,6 +9,7 @@ var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/hel
 var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
 var _Abstract = require("../../Abstract");
+var _constants = require("../../constants");
 var _templateObject, _templateObject2, _templateObject3;
 var defaultTitleContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  margin-top: 22px;\n  margin-bottom: 30px;\n"])));
 var defaultNameContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 95%;\n  margin: 0 auto;\n"])));
@@ -69,6 +70,7 @@ var AccountsReceivableLoginUpdateForm = exports.AccountsReceivableLoginUpdateFor
         }
       },
       title: 'Autorizar'
-    }
+    },
+    inputId: "".concat(_constants.ACCOUNTS_RECEIVABLE_ROUTE, "-login")
   })))));
 };

@@ -11,11 +11,13 @@ var _constants = require("../../constants");
 var _Button = require("./Button");
 var ButtonNext = exports.ButtonNext = function ButtonNext(_ref) {
   var title = _ref.title,
-    props = _ref.props;
+    props = _ref.props,
+    _ref$inputId = _ref.inputId,
+    inputId = _ref$inputId === void 0 ? '' : _ref$inputId;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Button.Button, (0, _extends2["default"])({
     title: title,
     buttonProps: {
-      id: _constants.BUTTON_NEXT_INPUT,
+      id: "".concat(_constants.BUTTON_NEXT_INPUT).concat(inputId),
       type: 'submit'
     }
   }, props)));

@@ -10,6 +10,7 @@ var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
 var _Span = require("../Span");
+var _constants = require("src/constants");
 var AccountsReceivableAddForm = exports.AccountsReceivableAddForm = function AccountsReceivableAddForm(_ref) {
   var _use$attributes$state, _use$attributes$state2, _use$attributes$state3, _use$attributes$state4, _use$attributes$state5;
   var use = _ref.use;
@@ -60,7 +61,8 @@ var AccountsReceivableAddForm = exports.AccountsReceivableAddForm = function Acc
         height: 'auto'
       }
     },
-    returnButtonConatinerStyle: "padding-button: 0px;"
+    returnButtonConatinerStyle: "padding-button: 0px;",
+    buttonNextId: _constants.ACCOUNTS_RECEIVABLE_ROUTE
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%',

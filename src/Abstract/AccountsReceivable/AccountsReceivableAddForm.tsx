@@ -7,6 +7,7 @@ import type {
   UseGafpriAccountsReceivableReturn,
 } from '../../states';
 import { SpanValue } from '../Span';
+import { ACCOUNTS_RECEIVABLE_ROUTE } from 'src/constants';
 
 export type AccountsReceivableAddFormProps = {
   use: UseGafpriAccountsReceivableReturn;
@@ -88,6 +89,7 @@ export const AccountsReceivableAddForm = ({
         },
       }}
       returnButtonConatinerStyle="padding-button: 0px;"
+      buttonNextId={ACCOUNTS_RECEIVABLE_ROUTE}
     >
       <>
         <ContainerButton

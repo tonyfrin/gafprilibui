@@ -9,6 +9,7 @@ var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/hel
 var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
 var _Abstract = require("../../Abstract");
+var _constants = require("../../constants");
 var _templateObject, _templateObject2, _templateObject3;
 var defaultTitleContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  margin-top: 22px;\n  margin-bottom: 30px;\n"])));
 var defaultNameContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  width: 95%;\n  margin: 0 auto;\n"])));
@@ -21,9 +22,6 @@ var AccountsReceivableLoginForm = exports.AccountsReceivableLoginForm = function
     nameContainerStyle = _ref$nameContainerSty === void 0 ? defaultNameContainerStyle : _ref$nameContainerSty,
     _ref$actionButtonCont = _ref.actionButtonContainerStyle,
     actionButtonContainerStyle = _ref$actionButtonCont === void 0 ? defaultActionButtonContainerStyle : _ref$actionButtonCont;
-  var handleSubmit = function handleSubmit(event) {
-    event.preventDefault();
-  };
   _react["default"].useEffect(function () {
     use.attributes.actions.validationButtonNextLogin();
     use.attributes.actions.validationAuthorizedLogin(use.attributes.states.authorizedLogin);
@@ -72,6 +70,7 @@ var AccountsReceivableLoginForm = exports.AccountsReceivableLoginForm = function
         }
       },
       title: 'Autorizar'
-    }
+    },
+    inputId: "".concat(_constants.ACCOUNTS_RECEIVABLE_ROUTE, "-login")
   })))));
 };

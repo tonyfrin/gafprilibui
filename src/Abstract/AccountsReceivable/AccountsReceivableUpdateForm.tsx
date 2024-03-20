@@ -39,18 +39,28 @@ export const AccountsReceivableUpdateForm = ({
   };
 
   React.useEffect(() => {
+    use.attributes.actions.changeEntityId(current.entityId);
     use.attributes.actions.changeLimit(`${current.limit}`);
     use.attributes.actions.changeTimeToPay(`${current.timeToPay}`);
   }, []);
 
   React.useEffect(() => {
+    use.attributes.actions.validationEntityId(use.attributes.states.entityId);
     use.attributes.actions.validationLimit(use.attributes.states.limit);
     use.attributes.actions.validationTimeToPay(use.attributes.states.timeToPay);
-  }, [use.attributes.states.limit, use.attributes.states.timeToPay]);
+  }, [
+    use.attributes.states.limit,
+    use.attributes.states.timeToPay,
+    use.attributes.states.entityId,
+  ]);
 
   React.useEffect(() => {
     use.attributes.actions.validationButtonNext();
-  }, [use.attributes.states.limitValid, use.attributes.states.timeToPayValid]);
+  }, [
+    use.attributes.states.entityIdValid,
+    use.attributes.states.limitValid,
+    use.attributes.states.timeToPayValid,
+  ]);
 
   const title1Text = 'Actualiza cuenta de credito';
   const title2Text = `Actualiza la cuenta de credito # ${current.postsId}`;

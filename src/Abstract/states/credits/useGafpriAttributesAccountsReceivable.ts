@@ -9,6 +9,7 @@ import {
 } from '../../../Validations';
 import { generalChangeUserName, generalChangePassword } from '../../../Changes';
 import { EntityAttributes } from '../entity';
+import { ACCOUNTS_RECEIVABLE_ROUTE } from '../../../constants';
 
 type State = {
   entityId: number;
@@ -125,6 +126,7 @@ export function useGafpriAttributesAccountsReceivable(): UseGafpriAttributesAcco
   const validationButtonNext = (): void => {
     generalValidationButtonNext({
       validations: [entityIdValid, limitValid, timeToPayValid],
+      inputId: ACCOUNTS_RECEIVABLE_ROUTE,
     });
   };
 
@@ -137,6 +139,7 @@ export function useGafpriAttributesAccountsReceivable(): UseGafpriAttributesAcco
         limitValid,
         timeToPayValid,
       ],
+      inputId: `${ACCOUNTS_RECEIVABLE_ROUTE}-login`,
     });
   };
 

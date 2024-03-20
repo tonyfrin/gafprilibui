@@ -9,6 +9,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _react = require("react");
 var _Validations = require("../../../Validations");
 var _Changes = require("../../../Changes");
+var _constants = require("../../../constants");
 function useGafpriAttributesAccountsReceivable() {
   var _useState = (0, _react.useState)(0),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -110,12 +111,14 @@ function useGafpriAttributesAccountsReceivable() {
   };
   var validationButtonNext = function validationButtonNext() {
     (0, _Validations.generalValidationButtonNext)({
-      validations: [entityIdValid, limitValid, timeToPayValid]
+      validations: [entityIdValid, limitValid, timeToPayValid],
+      inputId: _constants.ACCOUNTS_RECEIVABLE_ROUTE
     });
   };
   var validationButtonNextLogin = function validationButtonNextLogin() {
     (0, _Validations.generalValidationButtonNext)({
-      validations: [entityIdValid, authorizedLoginValid, authorizedPasswordValid, limitValid, timeToPayValid]
+      validations: [entityIdValid, authorizedLoginValid, authorizedPasswordValid, limitValid, timeToPayValid],
+      inputId: "".concat(_constants.ACCOUNTS_RECEIVABLE_ROUTE, "-login")
     });
   };
 

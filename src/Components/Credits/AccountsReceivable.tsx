@@ -19,6 +19,8 @@ import {
   InitAddAccountsReceivable,
   AccountsReceivableAddForm,
   AccountsReceivableLoginForm,
+  AccountsReceivableLoginUpdateForm,
+  AccountsReceivableUpdateForm,
 } from '../../Abstract';
 import { EntityAccountsReceivable } from '../Entity';
 
@@ -108,6 +110,19 @@ export const AccountsReceivable = ({
             </>
           </FadeIn>
         )}
+        {use.pages.states.isFormUpdate && (
+          <FadeIn
+            keyName="form-update"
+            isVisible={use.pages.states.isFormUpdate}
+          >
+            <>
+              <AccountsReceivableUpdateForm
+                use={use}
+                siteOptions={sitesOptions}
+              />
+            </>
+          </FadeIn>
+        )}
         {use.pages.states.isEntitySearch && (
           <FadeIn
             keyName="entitySearch"
@@ -123,6 +138,17 @@ export const AccountsReceivable = ({
           <FadeIn keyName="login-form" isVisible={use.pages.states.isLoginForm}>
             <>
               <AccountsReceivableLoginForm use={use} />
+            </>
+          </FadeIn>
+        )}
+
+        {use.pages.states.isLoginUpdateForm && (
+          <FadeIn
+            keyName="login-update-form"
+            isVisible={use.pages.states.isLoginUpdateForm}
+          >
+            <>
+              <AccountsReceivableLoginUpdateForm use={use} />
             </>
           </FadeIn>
         )}

@@ -96,5 +96,5 @@ export { Icon } from './Icon';
 export type { IconProps, IconItem } from './Icon';
 export { InitBank, BankForm } from './Bank';
 export type { InitBankProps, BankFormProps } from './Bank';
-export { InitAccountsReceivable, InitAddAccountsReceivable, AccountsReceivableAddForm, AccountsReceivableLoginForm, } from './AccountsReceivable';
-export type { InitAccountsReceivableProps, InitAddAccountsReceivableProps, AccountsReceivableAddFormProps, AccountsReceivableLoginFormProps, } from './AccountsReceivable';
+export { InitAccountsReceivable, InitAddAccountsReceivable, AccountsReceivableAddForm, AccountsReceivableLoginForm, AccountsReceivableUpdateForm, AccountsReceivableLoginUpdateForm, } from './AccountsReceivable';
+export type { InitAccountsReceivableProps, InitAddAccountsReceivableProps, AccountsReceivableAddFormProps, AccountsReceivableLoginFormProps, AccountsReceivableUpdateFormProps, AccountsReceivableLoginUpdateFormProps, } from './AccountsReceivable';

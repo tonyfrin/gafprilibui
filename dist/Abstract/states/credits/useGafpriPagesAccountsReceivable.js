@@ -43,6 +43,10 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
     isLoginForm = _useState16[0],
     setIsLoginForm = _useState16[1];
+  var _useState17 = (0, _react.useState)(false),
+    _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
+    isLoginUpdateForm = _useState18[0],
+    setIsLoginUpdateForm = _useState18[1];
 
   // Funciones de paginas
   var onFetching = function onFetching() {
@@ -54,6 +58,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
@@ -65,6 +70,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onInitAdd = function onInitAdd() {
@@ -76,6 +82,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onEntitySearch = function onEntitySearch() {
@@ -87,6 +94,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onAddEntity = function onAddEntity() {
@@ -98,6 +106,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onForm = function onForm() {
@@ -109,6 +118,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsForm(true);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onLoginForm = function onLoginForm() {
@@ -120,6 +130,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsForm(false);
     setIsLoginForm(true);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     (0, _helpers.scrollToTop)();
   };
   var onFormUpdate = function onFormUpdate() {
@@ -131,6 +142,19 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(true);
+    setIsLoginUpdateForm(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onLoginUpdateForm = function onLoginUpdateForm() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(true);
+    setIsLoginUpdateForm(false);
     (0, _helpers.scrollToTop)();
   };
   var goForm = function goForm(entity) {
@@ -139,11 +163,8 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     onForm();
   };
   var goFormUpdate = function goFormUpdate(id) {
-    var currentEntity = useEntity.data.actions.getById(id);
-    if (currentEntity) {
-      useAttributes.actions.setEntity(currentEntity);
-      onFormUpdate();
-    }
+    useAttributes.actions.setCurrentId(id);
+    onFormUpdate();
   };
   var returnInit = function returnInit() {
     useAttributes.actions.infoReset();
@@ -203,6 +224,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     isAddEntity: isAddEntity,
     isForm: isForm,
     isFormUpdate: isFormUpdate,
+    isLoginUpdateForm: isLoginUpdateForm,
     isLoginForm: isLoginForm
   };
 
@@ -223,7 +245,8 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     processEntityByPhone: processEntityByPhone,
     processEntityByEmail: processEntityByEmail,
     goForm: goForm,
-    goFormUpdate: goFormUpdate
+    goFormUpdate: goFormUpdate,
+    onLoginUpdateForm: onLoginUpdateForm
   };
   return {
     states: states,

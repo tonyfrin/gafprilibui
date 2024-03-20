@@ -14,6 +14,7 @@ export type UseGafpriPagesAccountsReceivableReturn = {
     isForm: boolean;
     isFormUpdate: boolean;
     isLoginForm: boolean;
+    isLoginUpdateForm: boolean;
   };
   actions: {
     onFetching: () => void;
@@ -24,6 +25,7 @@ export type UseGafpriPagesAccountsReceivableReturn = {
     onForm: () => void;
     onFormUpdate: () => void;
     onLoginForm: () => void;
+    onLoginUpdateForm: () => void;
     returnInit: () => void;
     processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
     processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;
@@ -52,6 +54,7 @@ export const useGafpriPagesAccountsReceivable = ({
   const [isForm, setIsForm] = useState(false);
   const [isFormUpdate, setIsFormUpdate] = useState(false);
   const [isLoginForm, setIsLoginForm] = useState(false);
+  const [isLoginUpdateForm, setIsLoginUpdateForm] = useState(false);
 
   // Funciones de paginas
   const onFetching = (): void => {
@@ -63,6 +66,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     scrollToTop();
   };
 
@@ -75,6 +79,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     scrollToTop();
   };
 
@@ -87,6 +92,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     scrollToTop();
   };
 
@@ -99,6 +105,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     scrollToTop();
   };
 
@@ -111,6 +118,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     scrollToTop();
   };
 
@@ -123,6 +131,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsForm(true);
     setIsLoginForm(false);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     scrollToTop();
   };
 
@@ -135,6 +144,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsForm(false);
     setIsLoginForm(true);
     setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
     scrollToTop();
   };
 
@@ -147,6 +157,20 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsForm(false);
     setIsLoginForm(false);
     setIsFormUpdate(true);
+    setIsLoginUpdateForm(false);
+    scrollToTop();
+  };
+
+  const onLoginUpdateForm = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(true);
+    setIsLoginUpdateForm(false);
     scrollToTop();
   };
 
@@ -157,11 +181,8 @@ export const useGafpriPagesAccountsReceivable = ({
   };
 
   const goFormUpdate = (id: number): void => {
-    const currentEntity = useEntity.data.actions.getById(id);
-    if (currentEntity) {
-      useAttributes.actions.setEntity(currentEntity);
-      onFormUpdate();
-    }
+    useAttributes.actions.setCurrentId(id);
+    onFormUpdate();
   };
 
   const returnInit = (): void => {
@@ -244,6 +265,7 @@ export const useGafpriPagesAccountsReceivable = ({
     isAddEntity,
     isForm,
     isFormUpdate,
+    isLoginUpdateForm,
     isLoginForm,
   };
 
@@ -265,6 +287,7 @@ export const useGafpriPagesAccountsReceivable = ({
     processEntityByEmail,
     goForm,
     goFormUpdate,
+    onLoginUpdateForm,
   };
 
   return {

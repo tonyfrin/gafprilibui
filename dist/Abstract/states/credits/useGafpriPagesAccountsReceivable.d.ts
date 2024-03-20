@@ -12,6 +12,7 @@ export type UseGafpriPagesAccountsReceivableReturn = {
         isForm: boolean;
         isFormUpdate: boolean;
         isLoginForm: boolean;
+        isLoginUpdateForm: boolean;
     };
     actions: {
         onFetching: () => void;
@@ -22,6 +23,7 @@ export type UseGafpriPagesAccountsReceivableReturn = {
         onForm: () => void;
         onFormUpdate: () => void;
         onLoginForm: () => void;
+        onLoginUpdateForm: () => void;
         returnInit: () => void;
         processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
         processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;

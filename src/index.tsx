@@ -332,6 +332,8 @@ export {
   InputCreditLimit,
   AccountsReceivableAddForm,
   AccountsReceivableLoginForm,
+  AccountsReceivableUpdateForm,
+  AccountsReceivableLoginUpdateForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -867,6 +869,8 @@ export type {
   InputCreditLimitProps,
   AccountsReceivableAddFormProps,
   AccountsReceivableLoginFormProps,
+  AccountsReceivableUpdateFormProps,
+  AccountsReceivableLoginUpdateFormProps,
 } from './Abstract';
 export {
   MainFooter,

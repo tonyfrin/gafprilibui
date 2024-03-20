@@ -60,6 +60,12 @@ var AccountsReceivable = exports.AccountsReceivable = function AccountsReceivabl
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.AccountsReceivableAddForm, {
     use: use,
     siteOptions: sitesOptions
+  }))), use.pages.states.isFormUpdate && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+    keyName: "form-update",
+    isVisible: use.pages.states.isFormUpdate
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.AccountsReceivableUpdateForm, {
+    use: use,
+    siteOptions: sitesOptions
   }))), use.pages.states.isEntitySearch && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "entitySearch",
     isVisible: use.pages.states.isEntitySearch
@@ -70,6 +76,11 @@ var AccountsReceivable = exports.AccountsReceivable = function AccountsReceivabl
     keyName: "login-form",
     isVisible: use.pages.states.isLoginForm
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.AccountsReceivableLoginForm, {
+    use: use
+  }))), use.pages.states.isLoginUpdateForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
+    keyName: "login-update-form",
+    isVisible: use.pages.states.isLoginUpdateForm
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.AccountsReceivableLoginUpdateForm, {
     use: use
   })))));
 };

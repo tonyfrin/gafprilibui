@@ -81,6 +81,18 @@ Object.defineProperty(exports, "AccountsReceivableLoginForm", {
     return _Abstract.AccountsReceivableLoginForm;
   }
 });
+Object.defineProperty(exports, "AccountsReceivableLoginUpdateForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.AccountsReceivableLoginUpdateForm;
+  }
+});
+Object.defineProperty(exports, "AccountsReceivableUpdateForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.AccountsReceivableUpdateForm;
+  }
+});
 Object.defineProperty(exports, "AddressAddForm", {
   enumerable: true,
   get: function get() {

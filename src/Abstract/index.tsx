@@ -970,10 +970,14 @@ export {
   InitAddAccountsReceivable,
   AccountsReceivableAddForm,
   AccountsReceivableLoginForm,
+  AccountsReceivableUpdateForm,
+  AccountsReceivableLoginUpdateForm,
 } from './AccountsReceivable';
 export type {
   InitAccountsReceivableProps,
   InitAddAccountsReceivableProps,
   AccountsReceivableAddFormProps,
   AccountsReceivableLoginFormProps,
+  AccountsReceivableUpdateFormProps,
+  AccountsReceivableLoginUpdateFormProps,
 } from './AccountsReceivable';

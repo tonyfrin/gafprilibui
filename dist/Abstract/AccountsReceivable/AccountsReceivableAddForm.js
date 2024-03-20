@@ -34,7 +34,7 @@ var AccountsReceivableAddForm = exports.AccountsReceivableAddForm = function Acc
   var handleActions = function handleActions(action, value) {
     switch (action) {
       case 'submit':
-        buttonAction();
+        use.pages.actions.onLoginForm();
         break;
       case 'return':
         use.pages.actions.returnInit();

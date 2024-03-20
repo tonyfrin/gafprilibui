@@ -120,7 +120,7 @@ export const AccountsReceivable = ({
           </FadeIn>
         )}
         {use.pages.states.isLoginForm && (
-          <FadeIn keyName="login-form" isVisible={use.pages.states.isForm}>
+          <FadeIn keyName="login-form" isVisible={use.pages.states.isLoginForm}>
             <>
               <AccountsReceivableLoginForm use={use} />
             </>

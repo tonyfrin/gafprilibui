@@ -68,7 +68,7 @@ var AccountsReceivable = exports.AccountsReceivable = function AccountsReceivabl
     useAccountsReceivable: use
   })), use.pages.states.isLoginForm && /*#__PURE__*/_react["default"].createElement(_Abstract.FadeIn, {
     keyName: "login-form",
-    isVisible: use.pages.states.isForm
+    isVisible: use.pages.states.isLoginForm
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.AccountsReceivableLoginForm, {
     use: use
   })))));

@@ -59,7 +59,7 @@ export const AccountsReceivableAddForm = ({
   const handleActions = (action: string, value: any) => {
     switch (action) {
       case 'submit':
-        use.pages.actions.onLoginForm();
+        buttonAction();
         break;
       case 'return':
         use.pages.actions.returnInit();

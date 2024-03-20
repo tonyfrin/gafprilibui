@@ -10,7 +10,7 @@ var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
 var _Span = require("../Span");
-var _constants = require("src/constants");
+var _constants = require("../../constants");
 var AccountsReceivableAddForm = exports.AccountsReceivableAddForm = function AccountsReceivableAddForm(_ref) {
   var _use$attributes$state, _use$attributes$state2, _use$attributes$state3, _use$attributes$state4, _use$attributes$state5;
   var use = _ref.use;

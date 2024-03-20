@@ -25,6 +25,10 @@ var AccountsReceivableUpdateForm = exports.AccountsReceivableUpdateForm = functi
     }
   };
   _react["default"].useEffect(function () {
+    use.attributes.actions.changeLimit("".concat(current.limit));
+    use.attributes.actions.changeTimeToPay("".concat(current.timeToPay));
+  }, []);
+  _react["default"].useEffect(function () {
     use.attributes.actions.validationLimit(use.attributes.states.limit);
     use.attributes.actions.validationTimeToPay(use.attributes.states.timeToPay);
   }, [use.attributes.states.limit, use.attributes.states.timeToPay]);

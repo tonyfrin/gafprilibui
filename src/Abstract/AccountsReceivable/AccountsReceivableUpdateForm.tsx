@@ -39,6 +39,11 @@ export const AccountsReceivableUpdateForm = ({
   };
 
   React.useEffect(() => {
+    use.attributes.actions.changeLimit(`${current.limit}`);
+    use.attributes.actions.changeTimeToPay(`${current.timeToPay}`);
+  }, []);
+
+  React.useEffect(() => {
     use.attributes.actions.validationLimit(use.attributes.states.limit);
     use.attributes.actions.validationTimeToPay(use.attributes.states.timeToPay);
   }, [use.attributes.states.limit, use.attributes.states.timeToPay]);

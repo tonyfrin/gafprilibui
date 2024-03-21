@@ -169,8 +169,8 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsAddEntity(false);
     setIsForm(false);
     setIsLoginForm(false);
-    setIsFormUpdate(true);
-    setIsLoginUpdateForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(true);
     scrollToTop();
   };
 

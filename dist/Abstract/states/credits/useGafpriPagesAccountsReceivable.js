@@ -153,8 +153,8 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsAddEntity(false);
     setIsForm(false);
     setIsLoginForm(false);
-    setIsFormUpdate(true);
-    setIsLoginUpdateForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(true);
     (0, _helpers.scrollToTop)();
   };
   var goForm = function goForm(entity) {

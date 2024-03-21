@@ -121,3 +121,8 @@ export type {
   UseGafpriAccountsReceivableReturn,
   UseGafpriAccountsReceivableProps,
 } from './useGafpriAccountsReceivable';
+export { useGafpriPayment } from './useGafpriPayment';
+export type {
+  UseGafpriPaymentReturn,
+  UseGafpriPaymentProps,
+} from './useGafpriPayment';

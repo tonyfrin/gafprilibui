@@ -33,6 +33,12 @@ Object.defineProperty(exports, "useGafpriAttributesPaymentTransferCashRegister",
     return _paymentTransferCashRegister.useGafpriAttributesPaymentTransferCashRegister;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesPayment", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriPagesPayment.useGafpriPagesPayment;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesPaymentTransferBank", {
   enumerable: true,
   get: function get() {
@@ -45,6 +51,14 @@ Object.defineProperty(exports, "useGafpriPagesPaymentTransferCashRegister", {
     return _paymentTransferCashRegister.useGafpriPagesPaymentTransferCashRegister;
   }
 });
+Object.defineProperty(exports, "useGafpriSubPagesDepositPayment", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriSubPagesDepositPayment.useGafpriSubPagesDepositPayment;
+  }
+});
 var _useGafpriAttributesPayment = require("./useGafpriAttributesPayment");
 var _paymentTransferCashRegister = require("./paymentTransferCashRegister");
 var _paymentTransferBank = require("./paymentTransferBank");
+var _useGafpriSubPagesDepositPayment = require("./useGafpriSubPagesDepositPayment");
+var _useGafpriPagesPayment = require("./useGafpriPagesPayment");

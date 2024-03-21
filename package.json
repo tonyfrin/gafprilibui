@@ -1,6 +1,6 @@
 {
   "name": "gafpriuilib",
-  "version": "0.2.374",
+  "version": "0.2.375",
   "description": "Libreria Ui del sistema Gafpri Admin",
   "main": "./dist/index.js",
   "scripts": {

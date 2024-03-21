@@ -334,6 +334,8 @@ export {
   AccountsReceivableLoginForm,
   AccountsReceivableUpdateForm,
   AccountsReceivableLoginUpdateForm,
+  useGafpriPagesPayment,
+  useGafpriSubPagesDepositPayment,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -871,6 +873,9 @@ export type {
   AccountsReceivableLoginFormProps,
   AccountsReceivableUpdateFormProps,
   AccountsReceivableLoginUpdateFormProps,
+  UseGafpriPagesPaymentReturn,
+  UseGafpriSubPagesDepositPaymentReturn,
+  UseGafpriPagesPaymentProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -1041,6 +1046,7 @@ export {
   useGafpriBankType,
   useGafpriPaymentTransferBank,
   useGafpriAccountsReceivable,
+  useGafpriPayment,
 } from './states';
 export type {
   UseCurrenciesReturn,
@@ -1098,6 +1104,8 @@ export type {
   UseGafpriPaymentTransferBankReturn,
   UseGafpriAccountsReceivableReturn,
   UseGafpriAccountsReceivableProps,
+  UseGafpriPaymentReturn,
+  UseGafpriPaymentProps,
 } from './states';
 export {
   Countries,

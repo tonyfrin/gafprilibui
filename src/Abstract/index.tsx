@@ -499,6 +499,8 @@ export {
   useGafpriPaginationsAccountsReceivable,
   useGafpriPagesAccountsReceivable,
   useGafpriAttributesAccountsReceivable,
+  useGafpriPagesPayment,
+  useGafpriSubPagesDepositPayment,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -688,6 +690,9 @@ export type {
   UseGafpriPagesAccountsReceivableReturn,
   UseGafpriPagesAccountsReceivableProps,
   UseGafpriAttributesAccountsReceivableReturn,
+  UseGafpriPagesPaymentReturn,
+  UseGafpriSubPagesDepositPaymentReturn,
+  UseGafpriPagesPaymentProps,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';

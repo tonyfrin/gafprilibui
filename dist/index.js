@@ -4113,6 +4113,12 @@ Object.defineProperty(exports, "useGafpriPagesOrder", {
     return _Abstract.useGafpriPagesOrder;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesPayment", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesPayment;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesPaymentTransferBank", {
   enumerable: true,
   get: function get() {
@@ -4269,6 +4275,12 @@ Object.defineProperty(exports, "useGafpriPaginationsTaxRates", {
     return _Abstract.useGafpriPaginationsTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriPayment", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPayment;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaymentTransferBank", {
   enumerable: true,
   get: function get() {
@@ -4333,6 +4345,12 @@ Object.defineProperty(exports, "useGafpriSubPagesCashRegisterType", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriSubPagesCashRegisterType;
+  }
+});
+Object.defineProperty(exports, "useGafpriSubPagesDepositPayment", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriSubPagesDepositPayment;
   }
 });
 Object.defineProperty(exports, "useGafpriSubPagesProducts", {

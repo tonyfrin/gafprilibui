@@ -23,3 +23,10 @@ export type {
   UseGafpriApiPaymentTransferBankReturn,
   UseGafpriPagesPaymentTransferBankReturn,
 } from './paymentTransferBank';
+export { useGafpriSubPagesDepositPayment } from './useGafpriSubPagesDepositPayment';
+export type { UseGafpriSubPagesDepositPaymentReturn } from './useGafpriSubPagesDepositPayment';
+export { useGafpriPagesPayment } from './useGafpriPagesPayment';
+export type {
+  UseGafpriPagesPaymentReturn,
+  UseGafpriPagesPaymentProps,
+} from './useGafpriPagesPayment';

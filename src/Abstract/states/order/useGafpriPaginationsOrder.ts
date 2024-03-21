@@ -44,6 +44,10 @@ export type UseGafpriPaginationsOrderReturn = {
     setSearchTerm: (search: string) => void;
     setCurrentPage: (page: number) => void;
     setDocumentCurrentPage: (page: number) => void;
+    sortById: (
+      items: OrderAttributes[] | null,
+      order: 'asc' | 'desc'
+    ) => OrderAttributes[] | null;
   };
 };
 
@@ -86,6 +90,22 @@ export const useGafpriPaginationsOrder = ({
             sensitivity: 'base',
           }
         );
+        return order === 'asc' ? comparison : -comparison;
+      });
+    }
+    return null;
+  }
+
+  function sortById(
+    items: OrderAttributes[] | null,
+    order: 'asc' | 'desc'
+  ): OrderAttributes[] | null {
+    if (items) {
+      return items.slice().sort((a, b) => {
+        const idA = a.postsId || 0;
+        const idB = b.postsId || 0;
+
+        const comparison = idA - idB;
         return order === 'asc' ? comparison : -comparison;
       });
     }
@@ -238,6 +258,7 @@ export const useGafpriPaginationsOrder = ({
     setSearchTerm,
     setCurrentPage,
     setDocumentCurrentPage,
+    sortById,
   };
 
   return {

@@ -29,6 +29,7 @@ export type UseGafpriPaginationsOrderReturn = {
         setSearchTerm: (search: string) => void;
         setCurrentPage: (page: number) => void;
         setDocumentCurrentPage: (page: number) => void;
+        sortById: (items: OrderAttributes[] | null, order: 'asc' | 'desc') => OrderAttributes[] | null;
     };
 };
 export type UseGafpriPaginationsOrderProps = {

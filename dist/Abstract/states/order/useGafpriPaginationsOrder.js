@@ -64,6 +64,17 @@ var useGafpriPaginationsOrder = exports.useGafpriPaginationsOrder = function use
     }
     return null;
   }
+  function sortById(items, order) {
+    if (items) {
+      return items.slice().sort(function (a, b) {
+        var idA = a.postsId || 0;
+        var idB = b.postsId || 0;
+        var comparison = idA - idB;
+        return order === 'asc' ? comparison : -comparison;
+      });
+    }
+    return null;
+  }
   var filterByName = function filterByName(search) {
     if (useData.states.items && useData.states.items.data.items) {
       return useData.states.items.data.items.filter(function (item) {
@@ -171,7 +182,8 @@ var useGafpriPaginationsOrder = exports.useGafpriPaginationsOrder = function use
     setOrderList: setOrderList,
     setSearchTerm: setSearchTerm,
     setCurrentPage: setCurrentPage,
-    setDocumentCurrentPage: setDocumentCurrentPage
+    setDocumentCurrentPage: setDocumentCurrentPage,
+    sortById: sortById
   };
   return {
     states: states,

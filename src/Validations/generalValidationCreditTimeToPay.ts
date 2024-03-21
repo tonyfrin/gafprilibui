@@ -13,7 +13,7 @@ export const generalValidationCreditTimeToPay = ({
   value,
   setValid,
   currentValid,
-  required = false,
+  required = true,
   inputId = '',
 }: GeneralValidationCreditTimeToPayProps): boolean => {
   return validationInputNumbers({

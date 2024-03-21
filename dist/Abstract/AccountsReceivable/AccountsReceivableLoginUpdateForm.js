@@ -61,16 +61,13 @@ var AccountsReceivableLoginUpdateForm = exports.AccountsReceivableLoginUpdateFor
     }
   }))), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.css)(actionButtonContainerStyle)
-  }, /*#__PURE__*/_react["default"].createElement(_Abstract.ButtonNext, {
+  }, /*#__PURE__*/_react["default"].createElement(_Abstract.Button, {
     title: "Autorizar",
-    props: {
-      buttonProps: {
-        onClick: function onClick() {
-          return use.api.actions.update();
-        }
+    buttonProps: {
+      onClick: function onClick() {
+        return use.api.actions.update();
       },
-      title: 'Autorizar'
-    },
-    inputId: "".concat(_constants.ACCOUNTS_RECEIVABLE_ROUTE, "-login")
+      id: "".concat(_constants.BUTTON_NEXT_INPUT).concat(_constants.ACCOUNTS_RECEIVABLE_ROUTE, "-login")
+    }
   })))));
 };

@@ -7,9 +7,9 @@ import {
   Title2,
   InputPassword,
   InputUserName,
-  ButtonNext,
+  Button,
 } from '../../Abstract';
-import { ACCOUNTS_RECEIVABLE_ROUTE } from '../../constants';
+import { ACCOUNTS_RECEIVABLE_ROUTE, BUTTON_NEXT_INPUT } from '../../constants';
 
 const defaultTitleContainerStyle = css`
   margin-top: 22px;
@@ -100,15 +100,12 @@ export const AccountsReceivableLoginForm = ({
             </>
           </div>
           <div className={css(actionButtonContainerStyle)}>
-            <ButtonNext
+            <Button
               title="Autorizar"
-              props={{
-                buttonProps: {
-                  onClick: () => use.api.actions.add(),
-                },
-                title: 'Autorizar',
+              buttonProps={{
+                onClick: () => use.api.actions.add(),
+                id: `${BUTTON_NEXT_INPUT}${ACCOUNTS_RECEIVABLE_ROUTE}-login`,
               }}
-              inputId={`${ACCOUNTS_RECEIVABLE_ROUTE}-login`}
             />
           </div>
         </div>

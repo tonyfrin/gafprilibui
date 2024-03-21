@@ -13,7 +13,7 @@ export const generalValidationCreditLimit = ({
   value,
   setValid,
   currentValid,
-  required = false,
+  required = true,
   inputId = '',
 }: GeneralValidationCreditLimitProps): boolean => {
   return validationInputNumbers({

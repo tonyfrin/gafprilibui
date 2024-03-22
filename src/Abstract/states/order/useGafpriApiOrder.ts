@@ -77,7 +77,7 @@ export const useGafpriApiOrder = ({
   ): void => {
     useError.actions.newError({
       newErrorValue,
-      functionAction: usePages.actions.returnInit,
+      functionAction: usePages.actions.onOrderList,
     });
   };
 
@@ -151,7 +151,7 @@ export const useGafpriApiOrder = ({
         initRoute: `${ORDER_ROUTE}/${id}`,
         initToken: { token },
         functionFetching: usePages.actions.onFetching,
-        functionSuccess: usePages.actions.returnInit,
+        functionSuccess: usePages.actions.onOrderList,
         functionError: newErrorDelete,
       });
     }

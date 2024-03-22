@@ -31,7 +31,7 @@ var useGafpriApiOrder = exports.useGafpriApiOrder = function useGafpriApiOrder(_
   var newErrorDelete = function newErrorDelete(newErrorValue) {
     useError.actions.newError({
       newErrorValue: newErrorValue,
-      functionAction: usePages.actions.returnInit
+      functionAction: usePages.actions.onOrderList
     });
   };
   var add = function add() {
@@ -94,7 +94,7 @@ var useGafpriApiOrder = exports.useGafpriApiOrder = function useGafpriApiOrder(_
           token: token
         },
         functionFetching: usePages.actions.onFetching,
-        functionSuccess: usePages.actions.returnInit,
+        functionSuccess: usePages.actions.onOrderList,
         functionError: newErrorDelete
       });
     }

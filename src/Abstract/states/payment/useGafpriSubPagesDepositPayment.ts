@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { UseGafpriOrderReturn } from '../../../states';
 
 type State = {
   isFetching: boolean;
   isOrder: boolean;
-  isOrderView: boolean;
   isCredits: boolean;
   isPayment: boolean;
   modalPage: boolean;
@@ -14,10 +12,6 @@ type Actions = {
   onFetching: () => void;
 
   onOrder: () => void;
-
-  onOrderView: () => void;
-
-  goOrderView: (id: number) => void;
 
   onCredits: () => void;
 
@@ -33,16 +27,9 @@ export type UseGafpriSubPagesDepositPaymentReturn = {
   actions: Actions;
 };
 
-export type UseGafpriSubPagesDepositPaymentProps = {
-  useOrder: UseGafpriOrderReturn;
-};
-
-export function useGafpriSubPagesDepositPayment({
-  useOrder,
-}: UseGafpriSubPagesDepositPaymentProps): UseGafpriSubPagesDepositPaymentReturn {
+export function useGafpriSubPagesDepositPayment(): UseGafpriSubPagesDepositPaymentReturn {
   const [isFetching, setIsFetching] = useState(false);
   const [isOrder, setIsOrder] = useState(true);
-  const [isOrderView, setIsOrderView] = useState(false);
   const [isCredits, setIsCredits] = useState(false);
   const [isPayment, setIsPayment] = useState(false);
   const [modalPage, setModalPage] = useState(false);
@@ -50,7 +37,6 @@ export function useGafpriSubPagesDepositPayment({
   const onFetching = (): void => {
     setIsFetching(true);
     setIsOrder(false);
-    setIsOrderView(false);
     setIsCredits(false);
     setIsPayment(false);
     setModalPage(false);
@@ -59,16 +45,6 @@ export function useGafpriSubPagesDepositPayment({
   const onOrder = (): void => {
     setIsFetching(false);
     setIsOrder(true);
-    setIsOrderView(false);
-    setIsCredits(false);
-    setIsPayment(false);
-    setModalPage(false);
-  };
-
-  const onOrderView = (): void => {
-    setIsFetching(false);
-    setIsOrder(false);
-    setIsOrderView(true);
     setIsCredits(false);
     setIsPayment(false);
     setModalPage(false);
@@ -90,11 +66,6 @@ export function useGafpriSubPagesDepositPayment({
     setModalPage(false);
   };
 
-  const goOrderView = (id: number): void => {
-    useOrder.attributes.actions.setCurrentId(id);
-    onOrderView();
-  };
-
   const openModalPage = (): void => {
     setModalPage(true);
   };
@@ -111,7 +82,6 @@ export function useGafpriSubPagesDepositPayment({
   const states = {
     isFetching,
     isOrder,
-    isOrderView,
     isCredits,
     isPayment,
     modalPage,
@@ -121,10 +91,6 @@ export function useGafpriSubPagesDepositPayment({
     onFetching,
 
     onOrder,
-
-    onOrderView,
-
-    goOrderView,
 
     onCredits,
 

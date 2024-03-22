@@ -17,6 +17,8 @@ export type UseGafpriPagesOrderReturn = {
     isAddEntity: boolean;
     isSales: boolean;
     isProductSearch: boolean;
+    isOrderList: boolean;
+    isOrderView: boolean;
   };
   actions: {
     onFetching: () => void;
@@ -35,6 +37,9 @@ export type UseGafpriPagesOrderReturn = {
     selectproduct: (id: number) => void;
     processProductByName: (event: KeyboardEvent<HTMLInputElement>) => void;
     goSalesEntity: (entity: EntityAttributes) => void;
+    onOrderList: () => void;
+    onOrderView: () => void;
+    goOrderView: (id: number) => void;
   };
 };
 
@@ -58,6 +63,9 @@ export const useGafpriPagesOrder = ({
   const [isSales, setIsSales] = useState(false); // formulario de ventas
   const [isProductSearch, setIsProductSearch] = useState(false); // tabla de busqueda de productos
 
+  const [isOrderList, setIsOrderList] = useState(true);
+  const [isOrderView, setIsOrderView] = useState(false);
+
   // Funciones de paginas
   const onFetching = (): void => {
     setIsFetching(true);
@@ -66,6 +74,8 @@ export const useGafpriPagesOrder = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     scrollToTop();
   };
 
@@ -76,6 +86,8 @@ export const useGafpriPagesOrder = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     scrollToTop();
   };
 
@@ -86,6 +98,8 @@ export const useGafpriPagesOrder = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     scrollToTop();
   };
 
@@ -96,6 +110,8 @@ export const useGafpriPagesOrder = ({
     setIsAddEntity(true);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     scrollToTop();
   };
 
@@ -106,6 +122,8 @@ export const useGafpriPagesOrder = ({
     setIsAddEntity(false);
     setIsSales(true);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     scrollToTop();
   };
 
@@ -116,6 +134,32 @@ export const useGafpriPagesOrder = ({
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(true);
+    setIsOrderList(false);
+    setIsOrderView(false);
+    scrollToTop();
+  };
+
+  const onOrderList = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsOrderList(true);
+    setIsOrderView(false);
+    scrollToTop();
+  };
+
+  const onOrderView = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(true);
     scrollToTop();
   };
 
@@ -128,6 +172,11 @@ export const useGafpriPagesOrder = ({
   const goSalesProduct = (product: ProductsAttributes): void => {
     useProductItems.actions.addItemToCart(product);
     onSales();
+  };
+
+  const goOrderView = (id: number): void => {
+    useAttributes.actions.setCurrentId(id);
+    onOrderView();
   };
 
   const returnInit = (): void => {
@@ -255,6 +304,8 @@ export const useGafpriPagesOrder = ({
     isAddEntity,
     isSales,
     isProductSearch,
+    isOrderList,
+    isOrderView,
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -275,6 +326,9 @@ export const useGafpriPagesOrder = ({
     selectproduct,
     processProductByName,
     goSalesEntity,
+    onOrderList,
+    onOrderView,
+    goOrderView,
   };
 
   return {

@@ -38,6 +38,15 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     isProductSearch = _useState12[0],
     setIsProductSearch = _useState12[1]; // tabla de busqueda de productos
 
+  var _useState13 = (0, _react.useState)(true),
+    _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
+    isOrderList = _useState14[0],
+    setIsOrderList = _useState14[1];
+  var _useState15 = (0, _react.useState)(false),
+    _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
+    isOrderView = _useState16[0],
+    setIsOrderView = _useState16[1];
+
   // Funciones de paginas
   var onFetching = function onFetching() {
     setIsFetching(true);
@@ -46,6 +55,8 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
@@ -55,6 +66,8 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     (0, _helpers.scrollToTop)();
   };
   var onEntitySearch = function onEntitySearch() {
@@ -64,6 +77,8 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     (0, _helpers.scrollToTop)();
   };
   var onAddEntity = function onAddEntity() {
@@ -73,6 +88,8 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsAddEntity(true);
     setIsSales(false);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     (0, _helpers.scrollToTop)();
   };
   var onSales = function onSales() {
@@ -82,6 +99,8 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsAddEntity(false);
     setIsSales(true);
     setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
     (0, _helpers.scrollToTop)();
   };
   var onProductSearch = function onProductSearch() {
@@ -91,6 +110,30 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsAddEntity(false);
     setIsSales(false);
     setIsProductSearch(true);
+    setIsOrderList(false);
+    setIsOrderView(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onOrderList = function onOrderList() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsOrderList(true);
+    setIsOrderView(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onOrderView = function onOrderView() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(true);
     (0, _helpers.scrollToTop)();
   };
   var goSalesEntity = function goSalesEntity(entity) {
@@ -101,6 +144,10 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
   var goSalesProduct = function goSalesProduct(product) {
     useProductItems.actions.addItemToCart(product);
     onSales();
+  };
+  var goOrderView = function goOrderView(id) {
+    useAttributes.actions.setCurrentId(id);
+    onOrderView();
   };
   var returnInit = function returnInit() {
     useAttributes.actions.infoReset();
@@ -191,7 +238,9 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     isEntitySearch: isEntitySearch,
     isAddEntity: isAddEntity,
     isSales: isSales,
-    isProductSearch: isProductSearch
+    isProductSearch: isProductSearch,
+    isOrderList: isOrderList,
+    isOrderView: isOrderView
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -211,7 +260,10 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     processProductBySku: processProductBySku,
     selectproduct: selectproduct,
     processProductByName: processProductByName,
-    goSalesEntity: goSalesEntity
+    goSalesEntity: goSalesEntity,
+    onOrderList: onOrderList,
+    onOrderView: onOrderView,
+    goOrderView: goOrderView
   };
   return {
     states: states,

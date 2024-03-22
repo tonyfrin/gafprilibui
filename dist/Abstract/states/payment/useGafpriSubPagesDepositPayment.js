@@ -7,8 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.useGafpriSubPagesDepositPayment = useGafpriSubPagesDepositPayment;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
-function useGafpriSubPagesDepositPayment(_ref) {
-  var useOrder = _ref.useOrder;
+function useGafpriSubPagesDepositPayment() {
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     isFetching = _useState2[0],
@@ -19,24 +18,19 @@ function useGafpriSubPagesDepositPayment(_ref) {
     setIsOrder = _useState4[1];
   var _useState5 = (0, _react.useState)(false),
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
-    isOrderView = _useState6[0],
-    setIsOrderView = _useState6[1];
+    isCredits = _useState6[0],
+    setIsCredits = _useState6[1];
   var _useState7 = (0, _react.useState)(false),
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
-    isCredits = _useState8[0],
-    setIsCredits = _useState8[1];
+    isPayment = _useState8[0],
+    setIsPayment = _useState8[1];
   var _useState9 = (0, _react.useState)(false),
     _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
-    isPayment = _useState10[0],
-    setIsPayment = _useState10[1];
-  var _useState11 = (0, _react.useState)(false),
-    _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
-    modalPage = _useState12[0],
-    setModalPage = _useState12[1];
+    modalPage = _useState10[0],
+    setModalPage = _useState10[1];
   var onFetching = function onFetching() {
     setIsFetching(true);
     setIsOrder(false);
-    setIsOrderView(false);
     setIsCredits(false);
     setIsPayment(false);
     setModalPage(false);
@@ -44,15 +38,6 @@ function useGafpriSubPagesDepositPayment(_ref) {
   var onOrder = function onOrder() {
     setIsFetching(false);
     setIsOrder(true);
-    setIsOrderView(false);
-    setIsCredits(false);
-    setIsPayment(false);
-    setModalPage(false);
-  };
-  var onOrderView = function onOrderView() {
-    setIsFetching(false);
-    setIsOrder(false);
-    setIsOrderView(true);
     setIsCredits(false);
     setIsPayment(false);
     setModalPage(false);
@@ -71,10 +56,6 @@ function useGafpriSubPagesDepositPayment(_ref) {
     setIsPayment(true);
     setModalPage(false);
   };
-  var goOrderView = function goOrderView(id) {
-    useOrder.attributes.actions.setCurrentId(id);
-    onOrderView();
-  };
   var openModalPage = function openModalPage() {
     setModalPage(true);
   };
@@ -90,7 +71,6 @@ function useGafpriSubPagesDepositPayment(_ref) {
   var states = {
     isFetching: isFetching,
     isOrder: isOrder,
-    isOrderView: isOrderView,
     isCredits: isCredits,
     isPayment: isPayment,
     modalPage: modalPage
@@ -98,8 +78,6 @@ function useGafpriSubPagesDepositPayment(_ref) {
   var actions = {
     onFetching: onFetching,
     onOrder: onOrder,
-    onOrderView: onOrderView,
-    goOrderView: goOrderView,
     onCredits: onCredits,
     onPayment: onPayment,
     openModalPage: openModalPage,

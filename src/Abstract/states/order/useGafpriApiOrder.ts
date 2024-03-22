@@ -35,6 +35,7 @@ export type UseGafpriApiOrderReturn = {
 
     add: () => void;
     update: () => void;
+    erase: (id: number) => void;
   };
 };
 
@@ -63,6 +64,15 @@ export const useGafpriApiOrder = ({
   };
 
   const newErrorUpdate = (
+    newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
+  ): void => {
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: usePages.actions.returnInit,
+    });
+  };
+
+  const newErrorDelete = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
     useError.actions.newError({
@@ -134,12 +144,26 @@ export const useGafpriApiOrder = ({
     }
   };
 
+  const erase = (id: number): void => {
+    if (token) {
+      gafpriFetch({
+        initMethod: 'DELETE',
+        initRoute: `${ORDER_ROUTE}/${id}`,
+        initToken: { token },
+        functionFetching: usePages.actions.onFetching,
+        functionSuccess: usePages.actions.returnInit,
+        functionError: newErrorDelete,
+      });
+    }
+  };
+
   // Define las acciones necesarias para los atributos de Site
   const actions = {
     newError,
     newErrorUpdate,
     add,
     update,
+    erase,
   };
 
   return {

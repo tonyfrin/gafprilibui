@@ -28,6 +28,12 @@ var useGafpriApiOrder = exports.useGafpriApiOrder = function useGafpriApiOrder(_
       functionAction: usePages.actions.returnInit
     });
   };
+  var newErrorDelete = function newErrorDelete(newErrorValue) {
+    useError.actions.newError({
+      newErrorValue: newErrorValue,
+      functionAction: usePages.actions.returnInit
+    });
+  };
   var add = function add() {
     if (useAttributes.states.customerIdValid && useAttributes.states.referredIdValid && useProductItems.actions.calculateTotal() > 0 && token) {
       var payload = {
@@ -79,13 +85,28 @@ var useGafpriApiOrder = exports.useGafpriApiOrder = function useGafpriApiOrder(_
       });
     }
   };
+  var erase = function erase(id) {
+    if (token) {
+      (0, _helpers.gafpriFetch)({
+        initMethod: 'DELETE',
+        initRoute: "".concat(_constants.ORDER_ROUTE, "/").concat(id),
+        initToken: {
+          token: token
+        },
+        functionFetching: usePages.actions.onFetching,
+        functionSuccess: usePages.actions.returnInit,
+        functionError: newErrorDelete
+      });
+    }
+  };
 
   // Define las acciones necesarias para los atributos de Site
   var actions = {
     newError: newError,
     newErrorUpdate: newErrorUpdate,
     add: add,
-    update: update
+    update: update,
+    erase: erase
   };
   return {
     actions: actions

@@ -9,6 +9,7 @@ export type UseGafpriApiOrderReturn = {
         newErrorUpdate: (newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps) => void;
         add: () => void;
         update: () => void;
+        erase: (id: number) => void;
     };
 };
 export type UseGafpriApiOrderProps = {

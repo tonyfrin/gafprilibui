@@ -11,6 +11,8 @@ export type UseGafpriPagesOrderReturn = {
         isAddEntity: boolean;
         isSales: boolean;
         isProductSearch: boolean;
+        isOrderList: boolean;
+        isOrderView: boolean;
     };
     actions: {
         onFetching: () => void;
@@ -29,6 +31,9 @@ export type UseGafpriPagesOrderReturn = {
         selectproduct: (id: number) => void;
         processProductByName: (event: KeyboardEvent<HTMLInputElement>) => void;
         goSalesEntity: (entity: EntityAttributes) => void;
+        onOrderList: () => void;
+        onOrderView: () => void;
+        goOrderView: (id: number) => void;
     };
 };
 export type UseGafpriPagesOrderProps = {

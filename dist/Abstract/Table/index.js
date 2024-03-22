@@ -33,6 +33,12 @@ Object.defineProperty(exports, "CartBudgetViewTable", {
     return _CartBudgetViewTable.CartBudgetViewTable;
   }
 });
+Object.defineProperty(exports, "CartOrderViewTable", {
+  enumerable: true,
+  get: function get() {
+    return _CartOrderViewTable.CartOrderViewTable;
+  }
+});
 Object.defineProperty(exports, "CartTable", {
   enumerable: true,
   get: function get() {
@@ -87,3 +93,4 @@ var _CashTransationsTable = require("./CashTransationsTable");
 var _SingleHiddenTablet = require("./SingleHiddenTablet");
 var _ConciliateTable = require("./ConciliateTable");
 var _BankTransationsTable = require("./BankTransationsTable");
+var _CartOrderViewTable = require("./CartOrderViewTable");

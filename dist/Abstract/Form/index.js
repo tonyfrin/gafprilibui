@@ -57,6 +57,12 @@ Object.defineProperty(exports, "EntityIncomeSearchForm", {
     return _EntityIncomeSearchForm.EntityIncomeSearchForm;
   }
 });
+Object.defineProperty(exports, "EntityOrderViewFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _EntityOrderViewFormInfoHeader.EntityOrderViewFormInfoHeader;
+  }
+});
 Object.defineProperty(exports, "EntitySearchForm", {
   enumerable: true,
   get: function get() {
@@ -73,6 +79,12 @@ Object.defineProperty(exports, "OrderFormInfoHeader", {
   enumerable: true,
   get: function get() {
     return _OrderFormInfoHeader.OrderFormInfoHeader;
+  }
+});
+Object.defineProperty(exports, "OrderViewFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _OrderViewFormInfoHeader.OrderViewFormInfoHeader;
   }
 });
 Object.defineProperty(exports, "PhotoCategory", {
@@ -136,3 +148,5 @@ var _PhotoProduct = require("./PhotoProduct");
 var _EntityExpensesSearchForm = require("./EntityExpensesSearchForm");
 var _EntityIncomeSearchForm = require("./EntityIncomeSearchForm");
 var _EntityAccountsReceivableSearchForm = require("./EntityAccountsReceivableSearchForm");
+var _EntityOrderViewFormInfoHeader = require("./EntityOrderViewFormInfoHeader");
+var _OrderViewFormInfoHeader = require("./OrderViewFormInfoHeader");

@@ -9,6 +9,12 @@ Object.defineProperty(exports, "OrderInit", {
     return _OrderInit.OrderInit;
   }
 });
+Object.defineProperty(exports, "OrderView", {
+  enumerable: true,
+  get: function get() {
+    return _OrderView.OrderView;
+  }
+});
 Object.defineProperty(exports, "Sales", {
   enumerable: true,
   get: function get() {
@@ -17,3 +23,4 @@ Object.defineProperty(exports, "Sales", {
 });
 var _OrderInit = require("./OrderInit");
 var _Sales = require("./Sales");
+var _OrderView = require("./OrderView");

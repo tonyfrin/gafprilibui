@@ -24,4 +24,5 @@ export type SiteOptions = {
     footerBudget: string[];
     budgetValidation: string;
     currencyId: number;
+    footerOrderPending: string[];
 };

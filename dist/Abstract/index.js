@@ -453,6 +453,12 @@ Object.defineProperty(exports, "EntityOrderInit", {
     return _Entity.EntityOrderInit;
   }
 });
+Object.defineProperty(exports, "EntityOrderViewFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Form.EntityOrderViewFormInfoHeader;
+  }
+});
 Object.defineProperty(exports, "EntitySearch", {
   enumerable: true,
   get: function get() {
@@ -1075,6 +1081,12 @@ Object.defineProperty(exports, "OrderInit", {
   enumerable: true,
   get: function get() {
     return _Order.OrderInit;
+  }
+});
+Object.defineProperty(exports, "OrderView", {
+  enumerable: true,
+  get: function get() {
+    return _Order.OrderView;
   }
 });
 Object.defineProperty(exports, "Pagination", {

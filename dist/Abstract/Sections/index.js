@@ -15,6 +15,12 @@ Object.defineProperty(exports, "CartBudgetViewSections", {
     return _CartBudgetViewSections.CartBudgetViewSections;
   }
 });
+Object.defineProperty(exports, "CartOrderViewSections", {
+  enumerable: true,
+  get: function get() {
+    return _CartOrderViewSections.CartOrderViewSections;
+  }
+});
 Object.defineProperty(exports, "CartSections", {
   enumerable: true,
   get: function get() {
@@ -24,3 +30,4 @@ Object.defineProperty(exports, "CartSections", {
 var _CartSections = require("./CartSections");
 var _CartBudgetSections = require("./CartBudgetSections");
 var _CartBudgetViewSections = require("./CartBudgetViewSections");
+var _CartOrderViewSections = require("./CartOrderViewSections");

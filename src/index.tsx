@@ -336,6 +336,8 @@ export {
   AccountsReceivableLoginUpdateForm,
   useGafpriPagesPayment,
   useGafpriSubPagesDepositPayment,
+  EntityOrderViewFormInfoHeader,
+  OrderView,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -876,6 +878,8 @@ export type {
   UseGafpriPagesPaymentReturn,
   UseGafpriSubPagesDepositPaymentReturn,
   UseGafpriPagesPaymentProps,
+  EntityOrderViewFormInfoHeaderProps,
+  OrderViewProps,
 } from './Abstract';
 export {
   MainFooter,

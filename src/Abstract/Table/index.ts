@@ -26,3 +26,5 @@ export { ConciliateTable } from './ConciliateTable';
 export type { ConciliateTableProps } from './ConciliateTable';
 export { BankTransationsTable } from './BankTransationsTable';
 export type { BankTransationsTableProps } from './BankTransationsTable';
+export { CartOrderViewTable } from './CartOrderViewTable';
+export type { CartOrderViewTableProps } from './CartOrderViewTable';

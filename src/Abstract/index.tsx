@@ -242,6 +242,7 @@ export {
   EntityExpensesSearchForm,
   EntityIncomeSearchForm,
   EntityAccountsReceivableSearchForm,
+  EntityOrderViewFormInfoHeader,
 } from './Form';
 export type {
   ModelFormProps,
@@ -268,6 +269,7 @@ export type {
   EntityExpensesSearchFormStaylesContainerProps,
   EntityIncomeSearchFormProps,
   EntityAccountsReceivableSearchFormProps,
+  EntityOrderViewFormInfoHeaderProps,
 } from './Form';
 export {
   Menu1,
@@ -830,11 +832,12 @@ export type {
   CartBudgetViewSectionsStylesContentItemsProps,
   CartBudgetViewSectionsStylesContentOptionsProps,
 } from './Sections';
-export { OrderInit, Sales } from './Order';
+export { OrderInit, Sales, OrderView } from './Order';
 export type {
   OrderInitStylesContainerProps,
   OrderInitProps,
   SalesProps,
+  OrderViewProps,
 } from './Order';
 export {
   BudgetInit,

@@ -19,3 +19,10 @@ export type {
   CartBudgetViewSectionsStylesContentItemsProps,
   CartBudgetViewSectionsStylesContentOptionsProps,
 } from './CartBudgetViewSections';
+export { CartOrderViewSections } from './CartOrderViewSections';
+export type {
+  CartOrderViewSectionsProps,
+  CartOrderViewSectionsStylesContainerProps,
+  CartOrderViewSectionsStylesContentItemsProps,
+  CartOrderViewSectionsStylesContentOptionsProps,
+} from './CartOrderViewSections';

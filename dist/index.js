@@ -819,6 +819,12 @@ Object.defineProperty(exports, "EntityOrderInit", {
     return _Abstract.EntityOrderInit;
   }
 });
+Object.defineProperty(exports, "EntityOrderViewFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.EntityOrderViewFormInfoHeader;
+  }
+});
 Object.defineProperty(exports, "EntitySearch", {
   enumerable: true,
   get: function get() {
@@ -1639,6 +1645,12 @@ Object.defineProperty(exports, "OrderInit", {
   enumerable: true,
   get: function get() {
     return _Abstract.OrderInit;
+  }
+});
+Object.defineProperty(exports, "OrderView", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderView;
   }
 });
 Object.defineProperty(exports, "PACKAGE_TYPE", {

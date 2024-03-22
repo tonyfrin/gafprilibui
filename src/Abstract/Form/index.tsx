@@ -48,3 +48,7 @@ export type {
   EntityAccountsReceivableSearchFormProps,
   EntityAccountsReceivableSearchFormStaylesContainerProps,
 } from './EntityAccountsReceivableSearchForm';
+export { EntityOrderViewFormInfoHeader } from './EntityOrderViewFormInfoHeader';
+export type { EntityOrderViewFormInfoHeaderProps } from './EntityOrderViewFormInfoHeader';
+export { OrderViewFormInfoHeader } from './OrderViewFormInfoHeader';
+export type { OrderViewFormInfoHeaderProps } from './OrderViewFormInfoHeader';

@@ -36,3 +36,7 @@ export { EntityIncomeSearchForm } from './EntityIncomeSearchForm';
 export type { EntityIncomeSearchFormProps } from './EntityIncomeSearchForm';
 export { EntityAccountsReceivableSearchForm } from './EntityAccountsReceivableSearchForm';
 export type { EntityAccountsReceivableSearchFormProps, EntityAccountsReceivableSearchFormStaylesContainerProps, } from './EntityAccountsReceivableSearchForm';
+export { EntityOrderViewFormInfoHeader } from './EntityOrderViewFormInfoHeader';
+export type { EntityOrderViewFormInfoHeaderProps } from './EntityOrderViewFormInfoHeader';
+export { OrderViewFormInfoHeader } from './OrderViewFormInfoHeader';
+export type { OrderViewFormInfoHeaderProps } from './OrderViewFormInfoHeader';

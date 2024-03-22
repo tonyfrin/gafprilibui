@@ -18,19 +18,24 @@ function useGafpriSubPagesDepositPayment() {
     setIsOrder = _useState4[1];
   var _useState5 = (0, _react.useState)(false),
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
-    isCredits = _useState6[0],
-    setIsCredits = _useState6[1];
+    isOrderView = _useState6[0],
+    setIsOrderView = _useState6[1];
   var _useState7 = (0, _react.useState)(false),
     _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
-    isPayment = _useState8[0],
-    setIsPayment = _useState8[1];
+    isCredits = _useState8[0],
+    setIsCredits = _useState8[1];
   var _useState9 = (0, _react.useState)(false),
     _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
-    modalPage = _useState10[0],
-    setModalPage = _useState10[1];
+    isPayment = _useState10[0],
+    setIsPayment = _useState10[1];
+  var _useState11 = (0, _react.useState)(false),
+    _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
+    modalPage = _useState12[0],
+    setModalPage = _useState12[1];
   var onFetching = function onFetching() {
     setIsFetching(true);
     setIsOrder(false);
+    setIsOrderView(false);
     setIsCredits(false);
     setIsPayment(false);
     setModalPage(false);
@@ -38,6 +43,15 @@ function useGafpriSubPagesDepositPayment() {
   var onOrder = function onOrder() {
     setIsFetching(false);
     setIsOrder(true);
+    setIsOrderView(false);
+    setIsCredits(false);
+    setIsPayment(false);
+    setModalPage(false);
+  };
+  var onOrderView = function onOrderView() {
+    setIsFetching(false);
+    setIsOrder(false);
+    setIsOrderView(true);
     setIsCredits(false);
     setIsPayment(false);
     setModalPage(false);
@@ -71,6 +85,7 @@ function useGafpriSubPagesDepositPayment() {
   var states = {
     isFetching: isFetching,
     isOrder: isOrder,
+    isOrderView: isOrderView,
     isCredits: isCredits,
     isPayment: isPayment,
     modalPage: modalPage
@@ -78,6 +93,7 @@ function useGafpriSubPagesDepositPayment() {
   var actions = {
     onFetching: onFetching,
     onOrder: onOrder,
+    onOrderView: onOrderView,
     onCredits: onCredits,
     onPayment: onPayment,
     openModalPage: openModalPage,

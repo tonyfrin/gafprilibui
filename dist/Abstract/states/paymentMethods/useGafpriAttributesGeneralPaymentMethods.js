@@ -13,6 +13,7 @@ var _useGafpriAttributesPaymentMethods = require("./useGafpriAttributesPaymentMe
 var _cashRegister = require("../cashRegister");
 var _Validations = require("../../../Validations");
 var _useGafpriAttributesBankTransactions = require("../bank/bankTransactions/useGafpriAttributesBankTransactions");
+var _useGafpriPagesPaymentMethods = require("./useGafpriPagesPaymentMethods");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function useGafpriAttributesGeneralPaymentMethods(_ref) {
@@ -25,6 +26,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
   var usePaymentMethods = (0, _useGafpriAttributesPaymentMethods.useGafpriAttributesPaymentMethods)();
   var useCashTransactions = (0, _cashRegister.useGafpriAttributesCashTransactions)();
   var useBankTransactions = (0, _useGafpriAttributesBankTransactions.useGafpriAttributesBankTransactions)();
+  var pages = (0, _useGafpriPagesPaymentMethods.useGafpriPagesPaymentMethods)();
   var _useState3 = (0, _react.useState)(0),
     _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
     totalPaymentMethod = _useState4[0],
@@ -299,6 +301,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     actions: actions,
     usePaymentMethods: usePaymentMethods,
     useCashTransactions: useCashTransactions,
-    useBankTransactions: useBankTransactions
+    useBankTransactions: useBankTransactions,
+    pages: pages
   };
 }

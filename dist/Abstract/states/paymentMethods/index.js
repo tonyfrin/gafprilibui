@@ -15,5 +15,12 @@ Object.defineProperty(exports, "useGafpriAttributesPaymentMethods", {
     return _useGafpriAttributesPaymentMethods.useGafpriAttributesPaymentMethods;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesPaymentMethods", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriPagesPaymentMethods.useGafpriPagesPaymentMethods;
+  }
+});
 var _useGafpriAttributesGeneralPaymentMethods = require("./useGafpriAttributesGeneralPaymentMethods");
 var _useGafpriAttributesPaymentMethods = require("./useGafpriAttributesPaymentMethods");
+var _useGafpriPagesPaymentMethods = require("./useGafpriPagesPaymentMethods");

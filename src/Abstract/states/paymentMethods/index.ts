@@ -5,3 +5,5 @@ export type {
   GeneralPaymentMethodsAttributes,
   UseGafpriAttributesGeneralPaymentMethodsReturn,
 } from './useGafpriAttributesGeneralPaymentMethods';
+export { useGafpriPagesPaymentMethods } from './useGafpriPagesPaymentMethods';
+export type { UseGafpriPagesPaymentMethodsReturn } from './useGafpriPagesPaymentMethods';

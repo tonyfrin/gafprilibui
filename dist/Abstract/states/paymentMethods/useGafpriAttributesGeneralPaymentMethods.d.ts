@@ -4,6 +4,7 @@ import { CashTransactionsAttributes, UseGafpriAttributesCashTransactionsReturn }
 import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
 import { SelectDefault } from '../../../helpers';
 import { BankTransactionsAttributes, UseGafpriAttributesBankTransactionsReturn } from '../bank/bankTransactions/useGafpriAttributesBankTransactions';
+import { UseGafpriPagesPaymentMethodsReturn } from './useGafpriPagesPaymentMethods';
 export type GeneralPaymentMethodsAttributes = {
     paymentMethods: PaymentMethodsAttributes;
     cashTransactions?: CashTransactionsAttributes;
@@ -40,6 +41,7 @@ type Actions = {
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     states: State;
     actions: Actions;
+    pages: UseGafpriPagesPaymentMethodsReturn;
     usePaymentMethods: UseGafpriAttributesPaymentMethodsReturn;
     useCashTransactions: UseGafpriAttributesCashTransactionsReturn;
     useBankTransactions: UseGafpriAttributesBankTransactionsReturn;

@@ -18,6 +18,10 @@ import {
   UseGafpriAttributesBankTransactionsReturn,
   useGafpriAttributesBankTransactions,
 } from '../bank/bankTransactions/useGafpriAttributesBankTransactions';
+import {
+  UseGafpriPagesPaymentMethodsReturn,
+  useGafpriPagesPaymentMethods,
+} from './useGafpriPagesPaymentMethods';
 
 export type GeneralPaymentMethodsAttributes = {
   paymentMethods: PaymentMethodsAttributes;
@@ -65,6 +69,7 @@ type Actions = {
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
   states: State;
   actions: Actions;
+  pages: UseGafpriPagesPaymentMethodsReturn;
   usePaymentMethods: UseGafpriAttributesPaymentMethodsReturn;
   useCashTransactions: UseGafpriAttributesCashTransactionsReturn;
   useBankTransactions: UseGafpriAttributesBankTransactionsReturn;
@@ -85,6 +90,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
   const usePaymentMethods = useGafpriAttributesPaymentMethods();
   const useCashTransactions = useGafpriAttributesCashTransactions();
   const useBankTransactions = useGafpriAttributesBankTransactions();
+  const pages = useGafpriPagesPaymentMethods();
   const [totalPaymentMethod, setTotalPaymentMethod] = useState(0);
   const [totalMethods, setTotalMethods] = useState(0);
   const [currenciesId, setCurrenciesId] = useState(0);
@@ -407,5 +413,6 @@ export function useGafpriAttributesGeneralPaymentMethods({
     usePaymentMethods,
     useCashTransactions,
     useBankTransactions,
+    pages,
   };
 }

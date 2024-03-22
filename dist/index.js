@@ -1827,6 +1827,12 @@ Object.defineProperty(exports, "ParagraphNote", {
     return _Abstract.ParagraphNote;
   }
 });
+Object.defineProperty(exports, "PaymentInfoForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.PaymentInfoForm;
+  }
+});
 Object.defineProperty(exports, "PaymentTransferBank", {
   enumerable: true,
   get: function get() {

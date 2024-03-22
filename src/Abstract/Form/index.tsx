@@ -52,3 +52,5 @@ export { EntityOrderViewFormInfoHeader } from './EntityOrderViewFormInfoHeader';
 export type { EntityOrderViewFormInfoHeaderProps } from './EntityOrderViewFormInfoHeader';
 export { OrderViewFormInfoHeader } from './OrderViewFormInfoHeader';
 export type { OrderViewFormInfoHeaderProps } from './OrderViewFormInfoHeader';
+export { PaymentInfoForm } from './PaymentInfoForm';
+export type { PaymentInfoFormProps } from './PaymentInfoForm';

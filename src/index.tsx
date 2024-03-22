@@ -338,6 +338,7 @@ export {
   useGafpriSubPagesDepositPayment,
   EntityOrderViewFormInfoHeader,
   OrderView,
+  PaymentInfoForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -880,6 +881,7 @@ export type {
   UseGafpriPagesPaymentProps,
   EntityOrderViewFormInfoHeaderProps,
   OrderViewProps,
+  PaymentInfoFormProps,
 } from './Abstract';
 export {
   MainFooter,

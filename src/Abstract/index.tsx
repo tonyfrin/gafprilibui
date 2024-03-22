@@ -243,6 +243,7 @@ export {
   EntityIncomeSearchForm,
   EntityAccountsReceivableSearchForm,
   EntityOrderViewFormInfoHeader,
+  PaymentInfoForm,
 } from './Form';
 export type {
   ModelFormProps,
@@ -270,6 +271,7 @@ export type {
   EntityIncomeSearchFormProps,
   EntityAccountsReceivableSearchFormProps,
   EntityOrderViewFormInfoHeaderProps,
+  PaymentInfoFormProps,
 } from './Form';
 export {
   Menu1,

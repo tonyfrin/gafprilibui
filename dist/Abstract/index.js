@@ -1113,6 +1113,12 @@ Object.defineProperty(exports, "ParagraphNote", {
     return _Input.ParagraphNote;
   }
 });
+Object.defineProperty(exports, "PaymentInfoForm", {
+  enumerable: true,
+  get: function get() {
+    return _Form.PaymentInfoForm;
+  }
+});
 Object.defineProperty(exports, "PhotoCategory", {
   enumerable: true,
   get: function get() {

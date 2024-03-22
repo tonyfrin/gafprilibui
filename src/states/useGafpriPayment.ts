@@ -10,6 +10,7 @@ import {
   useGafpriSubPagesDepositPayment,
   UseGafpriSubPagesDepositPaymentReturn,
 } from '../Abstract';
+import { UseGafpriOrderReturn } from './useGafpriOrder';
 
 export interface UseGafpriPaymentReturn {
   attributes: UseGafpriAttributesPaymentReturn;
@@ -21,11 +22,13 @@ export interface UseGafpriPaymentReturn {
 export type UseGafpriPaymentProps = {
   currencies: UseCurrenciesReturn;
   useBankType: UseGafpriBankTypeReturn;
+  useOrder: UseGafpriOrderReturn;
 };
 
 export function useGafpriPayment({
   currencies,
   useBankType,
+  useOrder,
 }: UseGafpriPaymentProps): UseGafpriPaymentReturn {
   const error = useGafpriError();
 
@@ -33,7 +36,7 @@ export function useGafpriPayment({
     currencies,
     useBankType,
   });
-  const subPagesDeposit = useGafpriSubPagesDepositPayment();
+  const subPagesDeposit = useGafpriSubPagesDepositPayment({ useOrder });
   const pages = useGafpriPagesPayment({
     attributes,
     subPagesDeposit,

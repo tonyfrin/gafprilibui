@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { UseGafpriOrderReturn } from '../../../states';
 
 type State = {
   isFetching: boolean;
@@ -16,6 +17,8 @@ type Actions = {
 
   onOrderView: () => void;
 
+  goOrderView: (id: number) => void;
+
   onCredits: () => void;
 
   onPayment: () => void;
@@ -30,7 +33,13 @@ export type UseGafpriSubPagesDepositPaymentReturn = {
   actions: Actions;
 };
 
-export function useGafpriSubPagesDepositPayment(): UseGafpriSubPagesDepositPaymentReturn {
+export type UseGafpriSubPagesDepositPaymentProps = {
+  useOrder: UseGafpriOrderReturn;
+};
+
+export function useGafpriSubPagesDepositPayment({
+  useOrder,
+}: UseGafpriSubPagesDepositPaymentProps): UseGafpriSubPagesDepositPaymentReturn {
   const [isFetching, setIsFetching] = useState(false);
   const [isOrder, setIsOrder] = useState(true);
   const [isOrderView, setIsOrderView] = useState(false);
@@ -81,6 +90,11 @@ export function useGafpriSubPagesDepositPayment(): UseGafpriSubPagesDepositPayme
     setModalPage(false);
   };
 
+  const goOrderView = (id: number): void => {
+    useOrder.attributes.actions.setCurrentId(id);
+    onOrderView();
+  };
+
   const openModalPage = (): void => {
     setModalPage(true);
   };
@@ -109,6 +123,8 @@ export function useGafpriSubPagesDepositPayment(): UseGafpriSubPagesDepositPayme
     onOrder,
 
     onOrderView,
+
+    goOrderView,
 
     onCredits,
 

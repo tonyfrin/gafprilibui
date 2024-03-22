@@ -7,7 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.useGafpriSubPagesDepositPayment = useGafpriSubPagesDepositPayment;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
-function useGafpriSubPagesDepositPayment() {
+function useGafpriSubPagesDepositPayment(_ref) {
+  var useOrder = _ref.useOrder;
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     isFetching = _useState2[0],
@@ -70,6 +71,10 @@ function useGafpriSubPagesDepositPayment() {
     setIsPayment(true);
     setModalPage(false);
   };
+  var goOrderView = function goOrderView(id) {
+    useOrder.attributes.actions.setCurrentId(id);
+    onOrderView();
+  };
   var openModalPage = function openModalPage() {
     setModalPage(true);
   };
@@ -94,6 +99,7 @@ function useGafpriSubPagesDepositPayment() {
     onFetching: onFetching,
     onOrder: onOrder,
     onOrderView: onOrderView,
+    goOrderView: goOrderView,
     onCredits: onCredits,
     onPayment: onPayment,
     openModalPage: openModalPage,

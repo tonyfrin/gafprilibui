@@ -11,7 +11,9 @@ var _Li = require("../Li");
 var PaymentInfoForm = exports.PaymentInfoForm = function PaymentInfoForm(_ref) {
   var type = _ref.type,
     postsId = _ref.postsId,
-    total = _ref.total;
+    total = _ref.total,
+    totalMethodsPayment = _ref.totalMethodsPayment,
+    difference = _ref.difference;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerHeaderInfo, null, /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
     title: "tipo: ",
     info: type
@@ -21,5 +23,11 @@ var PaymentInfoForm = exports.PaymentInfoForm = function PaymentInfoForm(_ref) {
   }), /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
     title: "Pago Total: ",
     info: total
+  }), /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
+    title: "Pagos agregados: ",
+    info: totalMethodsPayment
+  }), /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
+    title: "Diferencia: ",
+    info: difference
   })));
 };

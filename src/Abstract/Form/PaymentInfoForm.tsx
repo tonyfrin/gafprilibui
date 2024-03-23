@@ -6,12 +6,16 @@ export type PaymentInfoFormProps = {
   type: string;
   postsId: string;
   total: string;
+  totalMethodsPayment: string;
+  difference: string;
 };
 
 export const PaymentInfoForm = ({
   type,
   postsId,
   total,
+  totalMethodsPayment,
+  difference,
 }: PaymentInfoFormProps) => {
   return (
     <>
@@ -19,6 +23,8 @@ export const PaymentInfoForm = ({
         <LineInfoTwo title="tipo: " info={type} />
         <LineInfoTwo title="Numero: " info={postsId} />
         <LineInfoTwo title="Pago Total: " info={total} />
+        <LineInfoTwo title="Pagos agregados: " info={totalMethodsPayment} />
+        <LineInfoTwo title="Diferencia: " info={difference} />
       </ContainerHeaderInfo>
     </>
   );

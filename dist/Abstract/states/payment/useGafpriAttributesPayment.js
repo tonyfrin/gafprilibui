@@ -36,7 +36,7 @@ function useGafpriAttributesPayment(_ref) {
   };
   var validationButtonNextPaymentCash = function validationButtonNextPaymentCash() {
     return (0, _Validations.generalValidationButtonNext)({
-      validations: [useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(total) > 0, useGeneralPaymentMethods.useCashTransactions.states.change > 0, useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
+      validations: [useGeneralPaymentMethods.states.currenciesIdValid, useGeneralPaymentMethods.useCashTransactions.states.change > 0, useGeneralPaymentMethods.useCashTransactions.states.amount > 0, useGeneralPaymentMethods.usePaymentMethods.states.change > 0, useGeneralPaymentMethods.usePaymentMethods.states.amount > 0],
       inputId: 'cash'
     });
   };

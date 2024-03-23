@@ -62,9 +62,10 @@ export function useGafpriAttributesPayment({
     return generalValidationButtonNext({
       validations: [
         useGeneralPaymentMethods.states.currenciesIdValid,
-        parseFloat(total) > 0,
         useGeneralPaymentMethods.useCashTransactions.states.change > 0,
+        useGeneralPaymentMethods.useCashTransactions.states.amount > 0,
         useGeneralPaymentMethods.usePaymentMethods.states.change > 0,
+        useGeneralPaymentMethods.usePaymentMethods.states.amount > 0,
       ],
       inputId: 'cash',
     });

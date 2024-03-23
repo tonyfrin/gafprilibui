@@ -77,7 +77,9 @@ export const ElectronicForm = ({
       parseFloat(value)
     );
 
-    usePayment.useGeneralPaymentMethods.actions.setChange(parseFloat(value));
+    usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setChange(
+      parseFloat(value)
+    );
   };
 
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {

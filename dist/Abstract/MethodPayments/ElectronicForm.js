@@ -40,7 +40,7 @@ var ElectronicForm = exports.ElectronicForm = function ElectronicForm(_ref) {
       usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(parseFloat(value));
     }
     usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setChange(parseFloat(value));
-    usePayment.useGeneralPaymentMethods.actions.setChange(parseFloat(value));
+    usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setChange(parseFloat(value));
   };
   var changeAmount = function changeAmount(e) {
     var value = e.target.value;

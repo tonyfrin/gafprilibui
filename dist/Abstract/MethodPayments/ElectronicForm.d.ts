@@ -1,7 +1,7 @@
 import React from 'react';
 import { SingleValue } from 'react-select';
 import type { UseGafpriBankTypeReturn, SiteOptions, UseCurrenciesReturn, UseErrorReturn } from '../../states';
-import { UseGafpriAttributesPaymentTransferBankReturn } from '../states/payment';
+import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 import { SelectDefault } from '../../helpers';
 type CurrentPaymentInfo = {
     paymentMethod: string;
@@ -23,7 +23,7 @@ export type ElectronicFormProps = {
     useError: UseErrorReturn;
     siteOptions: SiteOptions;
     currentPaymentInfo: CurrentPaymentInfo;
-    usePayment: UseGafpriAttributesPaymentTransferBankReturn;
+    usePayment: UseGafpriAttributesPaymentReturn;
     useBankType: UseGafpriBankTypeReturn;
     useCurrencies: UseCurrenciesReturn;
 };

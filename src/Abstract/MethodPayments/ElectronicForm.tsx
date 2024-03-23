@@ -10,7 +10,7 @@ import type {
   UseErrorReturn,
   CurrenciesAttributes,
 } from '../../states';
-import { UseGafpriAttributesPaymentTransferBankReturn } from '../states/payment';
+import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 import { SpanValue } from '../Span';
 import { SelectDefault } from '../../helpers';
 
@@ -37,7 +37,7 @@ export type ElectronicFormProps = {
   useError: UseErrorReturn;
   siteOptions: SiteOptions;
   currentPaymentInfo: CurrentPaymentInfo;
-  usePayment: UseGafpriAttributesPaymentTransferBankReturn;
+  usePayment: UseGafpriAttributesPaymentReturn;
   useBankType: UseGafpriBankTypeReturn;
   useCurrencies: UseCurrenciesReturn;
 };
@@ -61,21 +61,19 @@ export const ElectronicForm = ({
     if (!bankCurrency) return;
 
     if (`${siteOptions.currencyId}` === `${bankCurrency.id}`) {
-      usePayment.usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setAmount(
+      usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setAmount(
         parseFloat(value)
       );
-      usePayment.usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(
+      usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(
         parseFloat(value)
       );
     }
 
-    usePayment.usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setChange(
+    usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setChange(
       parseFloat(value)
     );
 
-    usePayment.usePayment.useGeneralPaymentMethods.actions.setChange(
-      parseFloat(value)
-    );
+    usePayment.useGeneralPaymentMethods.actions.setChange(parseFloat(value));
   };
 
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,10 +82,10 @@ export const ElectronicForm = ({
     if (!bankCurrency) return;
 
     if (`${siteOptions.currencyId}` !== `${bankCurrency.id}`) {
-      usePayment.usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setAmount(
+      usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setAmount(
         parseFloat(value)
       );
-      usePayment.usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(
+      usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(
         parseFloat(value)
       );
     }

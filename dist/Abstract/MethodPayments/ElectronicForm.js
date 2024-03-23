@@ -31,18 +31,18 @@ var ElectronicForm = exports.ElectronicForm = function ElectronicForm(_ref) {
     var value = e.target.value;
     if (!bankCurrency) return;
     if ("".concat(siteOptions.currencyId) === "".concat(bankCurrency.id)) {
-      usePayment.usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setAmount(parseFloat(value));
-      usePayment.usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(parseFloat(value));
+      usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setAmount(parseFloat(value));
+      usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(parseFloat(value));
     }
-    usePayment.usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setChange(parseFloat(value));
-    usePayment.usePayment.useGeneralPaymentMethods.actions.setChange(parseFloat(value));
+    usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setChange(parseFloat(value));
+    usePayment.useGeneralPaymentMethods.actions.setChange(parseFloat(value));
   };
   var changeAmount = function changeAmount(e) {
     var value = e.target.value;
     if (!bankCurrency) return;
     if ("".concat(siteOptions.currencyId) !== "".concat(bankCurrency.id)) {
-      usePayment.usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setAmount(parseFloat(value));
-      usePayment.usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(parseFloat(value));
+      usePayment.useGeneralPaymentMethods.useBankTransactions.actions.setAmount(parseFloat(value));
+      usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(parseFloat(value));
     }
   };
   _react["default"].useEffect(function () {

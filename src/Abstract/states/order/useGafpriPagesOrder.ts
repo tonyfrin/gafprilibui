@@ -19,6 +19,7 @@ export type UseGafpriPagesOrderReturn = {
     isProductSearch: boolean;
     isOrderList: boolean;
     isOrderView: boolean;
+    isOrderPayment: boolean;
   };
   actions: {
     onFetching: () => void;
@@ -40,6 +41,7 @@ export type UseGafpriPagesOrderReturn = {
     onOrderList: () => void;
     onOrderView: () => void;
     goOrderView: (id: number) => void;
+    onOrderPayment: () => void;
   };
 };
 
@@ -65,6 +67,7 @@ export const useGafpriPagesOrder = ({
 
   const [isOrderList, setIsOrderList] = useState(true);
   const [isOrderView, setIsOrderView] = useState(false);
+  const [isOrderPayment, setIsOrderPayment] = useState(false);
 
   // Funciones de paginas
   const onFetching = (): void => {
@@ -76,6 +79,7 @@ export const useGafpriPagesOrder = ({
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     scrollToTop();
   };
 
@@ -88,6 +92,7 @@ export const useGafpriPagesOrder = ({
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     scrollToTop();
   };
 
@@ -100,6 +105,7 @@ export const useGafpriPagesOrder = ({
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     scrollToTop();
   };
 
@@ -112,6 +118,7 @@ export const useGafpriPagesOrder = ({
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     scrollToTop();
   };
 
@@ -124,6 +131,7 @@ export const useGafpriPagesOrder = ({
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     scrollToTop();
   };
 
@@ -136,6 +144,7 @@ export const useGafpriPagesOrder = ({
     setIsProductSearch(true);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     scrollToTop();
   };
 
@@ -148,6 +157,7 @@ export const useGafpriPagesOrder = ({
     setIsProductSearch(false);
     setIsOrderList(true);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     scrollToTop();
   };
 
@@ -160,6 +170,20 @@ export const useGafpriPagesOrder = ({
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(true);
+    setIsOrderPayment(false);
+    scrollToTop();
+  };
+
+  const onOrderPayment = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
+    setIsOrderPayment(true);
     scrollToTop();
   };
 
@@ -306,6 +330,7 @@ export const useGafpriPagesOrder = ({
     isProductSearch,
     isOrderList,
     isOrderView,
+    isOrderPayment,
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -329,6 +354,7 @@ export const useGafpriPagesOrder = ({
     onOrderList,
     onOrderView,
     goOrderView,
+    onOrderPayment,
   };
 
   return {

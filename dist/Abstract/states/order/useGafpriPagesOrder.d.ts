@@ -13,6 +13,7 @@ export type UseGafpriPagesOrderReturn = {
         isProductSearch: boolean;
         isOrderList: boolean;
         isOrderView: boolean;
+        isOrderPayment: boolean;
     };
     actions: {
         onFetching: () => void;
@@ -34,6 +35,7 @@ export type UseGafpriPagesOrderReturn = {
         onOrderList: () => void;
         onOrderView: () => void;
         goOrderView: (id: number) => void;
+        onOrderPayment: () => void;
     };
 };
 export type UseGafpriPagesOrderProps = {

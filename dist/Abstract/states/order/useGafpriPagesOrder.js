@@ -46,6 +46,10 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
     isOrderView = _useState16[0],
     setIsOrderView = _useState16[1];
+  var _useState17 = (0, _react.useState)(false),
+    _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
+    isOrderPayment = _useState18[0],
+    setIsOrderPayment = _useState18[1];
 
   // Funciones de paginas
   var onFetching = function onFetching() {
@@ -57,6 +61,7 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
@@ -68,6 +73,7 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onEntitySearch = function onEntitySearch() {
@@ -79,6 +85,7 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onAddEntity = function onAddEntity() {
@@ -90,6 +97,7 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onSales = function onSales() {
@@ -101,6 +109,7 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onProductSearch = function onProductSearch() {
@@ -112,6 +121,7 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsProductSearch(true);
     setIsOrderList(false);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onOrderList = function onOrderList() {
@@ -123,6 +133,7 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsProductSearch(false);
     setIsOrderList(true);
     setIsOrderView(false);
+    setIsOrderPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onOrderView = function onOrderView() {
@@ -134,6 +145,19 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     setIsProductSearch(false);
     setIsOrderList(false);
     setIsOrderView(true);
+    setIsOrderPayment(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onOrderPayment = function onOrderPayment() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsSales(false);
+    setIsProductSearch(false);
+    setIsOrderList(false);
+    setIsOrderView(false);
+    setIsOrderPayment(true);
     (0, _helpers.scrollToTop)();
   };
   var goSalesEntity = function goSalesEntity(entity) {
@@ -240,7 +264,8 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     isSales: isSales,
     isProductSearch: isProductSearch,
     isOrderList: isOrderList,
-    isOrderView: isOrderView
+    isOrderView: isOrderView,
+    isOrderPayment: isOrderPayment
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -263,7 +288,8 @@ var useGafpriPagesOrder = exports.useGafpriPagesOrder = function useGafpriPagesO
     goSalesEntity: goSalesEntity,
     onOrderList: onOrderList,
     onOrderView: onOrderView,
-    goOrderView: goOrderView
+    goOrderView: goOrderView,
+    onOrderPayment: onOrderPayment
   };
   return {
     states: states,

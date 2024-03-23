@@ -40,6 +40,7 @@ type State = {
   change: number;
   debitAmount: number;
   depositAmount: number;
+  type: string;
 };
 
 type Actions = {
@@ -64,6 +65,7 @@ type Actions = {
   setChange: (value: number) => void;
   setDebitAmount: (value: number) => void;
   setDepositAmount: (value: number) => void;
+  setType: (value: 'deposit' | 'debit') => void;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
@@ -107,6 +109,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
   const [change, setChange] = useState(0);
   const [debitAmount, setDebitAmount] = useState(0);
   const [depositAmount, setDepositAmount] = useState(0);
+  const [type, setType] = useState<'deposit' | 'debit'>('deposit');
 
   const infoReset = (): void => {
     usePaymentMethods.actions.infoReset();
@@ -122,6 +125,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     setChange(0);
     setDebitAmount(0);
     setDepositAmount(0);
+    setType('deposit');
   };
 
   const validationCurrenciesId = (value: string): boolean => {
@@ -391,6 +395,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     change,
     debitAmount,
     depositAmount,
+    type,
   };
 
   const actions = {
@@ -405,6 +410,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     setChange,
     setDebitAmount,
     setDepositAmount,
+    setType,
   };
 
   return {

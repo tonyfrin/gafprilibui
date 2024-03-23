@@ -63,6 +63,10 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
     depositAmount = _useState18[0],
     setDepositAmount = _useState18[1];
+  var _useState19 = (0, _react.useState)('deposit'),
+    _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
+    type = _useState20[0],
+    setType = _useState20[1];
   var infoReset = function infoReset() {
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
@@ -77,6 +81,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     setChange(0);
     setDebitAmount(0);
     setDepositAmount(0);
+    setType('deposit');
   };
   var validationCurrenciesId = function validationCurrenciesId(value) {
     var newValue;
@@ -281,7 +286,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     currenciesIdOptions: currenciesIdOptions,
     change: change,
     debitAmount: debitAmount,
-    depositAmount: depositAmount
+    depositAmount: depositAmount,
+    type: type
   };
   var actions = {
     infoReset: infoReset,
@@ -294,7 +300,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     addTransferBankRegister: addTransferBankRegister,
     setChange: setChange,
     setDebitAmount: setDebitAmount,
-    setDepositAmount: setDepositAmount
+    setDepositAmount: setDepositAmount,
+    setType: setType
   };
   return {
     states: states,

@@ -41,7 +41,9 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
       usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setChange(parseFloat(value));
 
       //Payment
-      usePayment.actions.setTotal(value);
+      if (currentPaymentInfo.paymentType) {
+        usePayment.actions.setTotal(value);
+      }
     } else {
       //cashTransactions
       usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setAmount(parseFloat(value));
@@ -60,7 +62,9 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
       usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setChange(parseFloat(value));
 
       //Payment
-      usePayment.actions.setTotal(value);
+      if (currentPaymentInfo.paymentType) {
+        usePayment.actions.setTotal(value);
+      }
     }
   };
   _react["default"].useEffect(function () {
@@ -69,7 +73,9 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
     usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setType(currentPaymentInfo.type);
     usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setType(currentPaymentInfo.type);
     usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setMethodType('cash');
-    usePayment.actions.setType(currentPaymentInfo.paymentType);
+    if (currentPaymentInfo.paymentType) {
+      usePayment.actions.setType(currentPaymentInfo.paymentType);
+    }
   }, []);
   _react["default"].useEffect(function () {
     if (usePayment.useGeneralPaymentMethods.states.currenciesId !== 0) {

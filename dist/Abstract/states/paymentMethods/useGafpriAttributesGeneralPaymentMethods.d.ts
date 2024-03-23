@@ -21,6 +21,7 @@ type State = {
     change: number;
     debitAmount: number;
     depositAmount: number;
+    type: string;
 };
 type Actions = {
     infoReset: () => void;
@@ -37,6 +38,7 @@ type Actions = {
     setChange: (value: number) => void;
     setDebitAmount: (value: number) => void;
     setDepositAmount: (value: number) => void;
+    setType: (value: 'deposit' | 'debit') => void;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     states: State;

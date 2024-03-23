@@ -8,7 +8,7 @@ export type CurrentPaymentInfo = {
     cashRegisterTypePostsId: number;
     cashRegisterPostsId: number;
     type: 'deposit' | 'debit';
-    paymentType: string;
+    paymentType?: string;
 };
 export type CashFormProps = {
     useError: UseErrorReturn;

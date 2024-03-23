@@ -18,7 +18,7 @@ export type CurrentPaymentInfo = {
   cashRegisterTypePostsId: number;
   cashRegisterPostsId: number;
   type: 'deposit' | 'debit';
-  paymentType: string;
+  paymentType?: string;
 };
 
 export type CashFormProps = {
@@ -69,7 +69,9 @@ export const CashForm = ({
       );
 
       //Payment
-      usePayment.actions.setTotal(value);
+      if (currentPaymentInfo.paymentType) {
+        usePayment.actions.setTotal(value);
+      }
     } else {
       //cashTransactions
       usePayment.useGeneralPaymentMethods.useCashTransactions.actions.setAmount(
@@ -100,7 +102,9 @@ export const CashForm = ({
       );
 
       //Payment
-      usePayment.actions.setTotal(value);
+      if (currentPaymentInfo.paymentType) {
+        usePayment.actions.setTotal(value);
+      }
     }
   };
 
@@ -123,7 +127,9 @@ export const CashForm = ({
       'cash'
     );
 
-    usePayment.actions.setType(currentPaymentInfo.paymentType);
+    if (currentPaymentInfo.paymentType) {
+      usePayment.actions.setType(currentPaymentInfo.paymentType);
+    }
   }, []);
 
   React.useEffect(() => {

@@ -161,6 +161,19 @@ function useGafpriDataBankType(_ref) {
       };
     })) || [];
   }
+  var getOptionsByMethods = function getOptionsByMethods(sitesId, methods) {
+    var _items$data$items4;
+    return ((_items$data$items4 = items.data.items) === null || _items$data$items4 === void 0 ? void 0 : _items$data$items4.filter(function (item) {
+      return "".concat(item.sitesId) === "".concat(sitesId) && item.settings.some(function (setting) {
+        return setting.name === methods && setting.value === 'yes';
+      });
+    }).map(function (filteredItem) {
+      return {
+        value: "".concat(filteredItem.postsId),
+        label: filteredItem.name
+      };
+    })) || [];
+  };
 
   /**
    * Effects
@@ -188,7 +201,8 @@ function useGafpriDataBankType(_ref) {
     handleNewItem: handleNewItem,
     handleUpdatedItem: handleUpdatedItem,
     handleDeletedItem: handleDeletedItem,
-    getOptionsItems: getOptionsItems
+    getOptionsItems: getOptionsItems,
+    getOptionsByMethods: getOptionsByMethods
   };
   return {
     states: states,

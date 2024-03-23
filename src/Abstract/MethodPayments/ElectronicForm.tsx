@@ -12,10 +12,9 @@ import type {
 } from '../../states';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 import { SpanValue } from '../Span';
-import { SelectDefault } from '../../helpers';
 
 type CurrentPaymentInfo = {
-  paymentMethod: string;
+  paymentType: string;
   changeNumber: (e: React.ChangeEvent<HTMLInputElement>) => void;
   changeBankTypePostsId: (
     e: SingleValue<{
@@ -23,8 +22,6 @@ type CurrentPaymentInfo = {
       label: string;
     }>
   ) => void;
-  bankTypePostsIdOptions: SelectDefault[];
-  bankTypePostsIdDefault: SelectDefault;
   bankTypePostsId: number;
   changeNote: (e: React.ChangeEvent<HTMLInputElement>) => void;
   add: () => void;
@@ -54,6 +51,13 @@ export const ElectronicForm = ({
   const [bankCurrency, setBankCurrency] =
     React.useState<CurrenciesAttributes | null>(null);
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
+
+  const bankTypeOptions = useBankType.data.actions.getOptionsByMethods(
+    siteOptions.id,
+    currentPaymentInfo.paymentType
+  );
+
+  const bankTypePostsIdDefault = { label: 'Selecciona un banco', value: '' };
 
   const setChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -108,8 +112,8 @@ export const ElectronicForm = ({
         <SelectBankType
           change={(e) => currentPaymentInfo.changeBankTypePostsId(e)}
           props={{
-            options: currentPaymentInfo.bankTypePostsIdOptions,
-            defaultValue: currentPaymentInfo.bankTypePostsIdDefault,
+            options: bankTypeOptions,
+            defaultValue: bankTypePostsIdDefault,
             styles: {
               width: '100%',
             },
@@ -195,7 +199,7 @@ export const ElectronicForm = ({
                   font-size: 20px;
                 `,
               }}
-              value={currentPaymentInfo.paymentMethod}
+              value={currentPaymentInfo.paymentType}
             />
           </>
         </ContainerButton>

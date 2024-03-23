@@ -103,7 +103,6 @@ export function useGafpriApiBankType({
           bankName: attributes.states.bankName,
           account: attributes.states.account,
           accountType: attributes.states.accountType,
-          currenciesId: attributes.states.currency,
           settings: attributes.states.settings,
           posts: {
             visibility: 'public',

@@ -54,6 +54,8 @@ type Actions = {
   handleDeletedItem: ({ itemId }: DeletedBankType) => void;
 
   getOptionsItems: (sitesId: number) => SelectDefault[];
+
+  getOptionsByMethods: (sitesId: number, methods: string) => SelectDefault[];
 };
 
 export type UseGafpriDataBankTypeReturn = {
@@ -207,6 +209,28 @@ export function useGafpriDataBankType({
     );
   }
 
+  const getOptionsByMethods = (
+    sitesId: number,
+    methods: string
+  ): SelectDefault[] => {
+    return (
+      items.data.items
+        ?.filter(
+          (item) =>
+            `${item.sitesId}` === `${sitesId}` &&
+            item.settings.some(
+              (setting) => setting.name === methods && setting.value === 'yes'
+            )
+        )
+        .map((filteredItem) => {
+          return {
+            value: `${filteredItem.postsId}`,
+            label: filteredItem.name,
+          };
+        }) || []
+    );
+  };
+
   /**
    * Effects
    *
@@ -241,6 +265,8 @@ export function useGafpriDataBankType({
     handleDeletedItem,
 
     getOptionsItems,
+
+    getOptionsByMethods,
   };
 
   return {

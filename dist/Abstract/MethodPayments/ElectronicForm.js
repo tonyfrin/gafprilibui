@@ -27,6 +27,11 @@ var ElectronicForm = exports.ElectronicForm = function ElectronicForm(_ref) {
     bankCurrency = _React$useState4[0],
     setBankCurrency = _React$useState4[1];
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
+  var bankTypeOptions = useBankType.data.actions.getOptionsByMethods(siteOptions.id, currentPaymentInfo.paymentType);
+  var bankTypePostsIdDefault = {
+    label: 'Selecciona un banco',
+    value: ''
+  };
   var setChange = function setChange(e) {
     var value = e.target.value;
     if (!bankCurrency) return;
@@ -58,8 +63,8 @@ var ElectronicForm = exports.ElectronicForm = function ElectronicForm(_ref) {
           return currentPaymentInfo.changeBankTypePostsId(e);
         },
         props: {
-          options: currentPaymentInfo.bankTypePostsIdOptions,
-          defaultValue: currentPaymentInfo.bankTypePostsIdDefault,
+          options: bankTypeOptions,
+          defaultValue: bankTypePostsIdDefault,
           styles: {
             width: '100%'
           }
@@ -125,7 +130,7 @@ var ElectronicForm = exports.ElectronicForm = function ElectronicForm(_ref) {
       margin: '0',
       custom: "\n                  font-weight: 700;\n                  font-size: 20px;\n                "
     },
-    value: currentPaymentInfo.paymentMethod
+    value: currentPaymentInfo.paymentType
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%'

@@ -36,6 +36,7 @@ type Actions = {
     handleUpdatedItem: (updatedStorage: BankTypeAttributes) => void;
     handleDeletedItem: ({ itemId }: DeletedBankType) => void;
     getOptionsItems: (sitesId: number) => SelectDefault[];
+    getOptionsByMethods: (sitesId: number, methods: string) => SelectDefault[];
 };
 export type UseGafpriDataBankTypeReturn = {
     states: State;

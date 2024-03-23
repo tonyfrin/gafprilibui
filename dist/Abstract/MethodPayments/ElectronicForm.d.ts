@@ -2,16 +2,13 @@ import React from 'react';
 import { SingleValue } from 'react-select';
 import type { UseGafpriBankTypeReturn, SiteOptions, UseCurrenciesReturn, UseErrorReturn } from '../../states';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
-import { SelectDefault } from '../../helpers';
 type CurrentPaymentInfo = {
-    paymentMethod: string;
+    paymentType: string;
     changeNumber: (e: React.ChangeEvent<HTMLInputElement>) => void;
     changeBankTypePostsId: (e: SingleValue<{
         value: string;
         label: string;
     }>) => void;
-    bankTypePostsIdOptions: SelectDefault[];
-    bankTypePostsIdDefault: SelectDefault;
     bankTypePostsId: number;
     changeNote: (e: React.ChangeEvent<HTMLInputElement>) => void;
     add: () => void;

@@ -39,6 +39,7 @@ type Actions = {
     setDebitAmount: (value: number) => void;
     setDepositAmount: (value: number) => void;
     setType: (value: 'deposit' | 'debit') => void;
+    partiallyInfoReset: () => void;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     states: State;

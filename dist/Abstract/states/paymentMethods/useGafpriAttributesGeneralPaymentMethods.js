@@ -83,6 +83,21 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     setDepositAmount(0);
     setType('deposit');
   };
+  var partiallyInfoReset = function partiallyInfoReset() {
+    usePaymentMethods.actions.infoReset();
+    useCashTransactions.actions.infoReset();
+    useBankTransactions.actions.infoReset();
+    setCurrenciesId(0);
+    setCurrenciesIdValid(false);
+    setCurrenciesIdDefault({
+      value: '',
+      label: 'Selecciona la Moneda'
+    });
+    setChange(0);
+    setDebitAmount(0);
+    setDepositAmount(0);
+    setType('deposit');
+  };
   var validationCurrenciesId = function validationCurrenciesId(value) {
     var newValue;
     if (value) {
@@ -301,7 +316,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     setChange: setChange,
     setDebitAmount: setDebitAmount,
     setDepositAmount: setDepositAmount,
-    setType: setType
+    setType: setType,
+    partiallyInfoReset: partiallyInfoReset
   };
   return {
     states: states,

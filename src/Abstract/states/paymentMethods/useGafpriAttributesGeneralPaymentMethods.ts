@@ -66,6 +66,7 @@ type Actions = {
   setDebitAmount: (value: number) => void;
   setDepositAmount: (value: number) => void;
   setType: (value: 'deposit' | 'debit') => void;
+  partiallyInfoReset: () => void;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
@@ -116,6 +117,22 @@ export function useGafpriAttributesGeneralPaymentMethods({
     useCashTransactions.actions.infoReset();
     useBankTransactions.actions.infoReset();
     setArrayPaymentMethod([]);
+    setCurrenciesId(0);
+    setCurrenciesIdValid(false);
+    setCurrenciesIdDefault({
+      value: '',
+      label: 'Selecciona la Moneda',
+    });
+    setChange(0);
+    setDebitAmount(0);
+    setDepositAmount(0);
+    setType('deposit');
+  };
+
+  const partiallyInfoReset = (): void => {
+    usePaymentMethods.actions.infoReset();
+    useCashTransactions.actions.infoReset();
+    useBankTransactions.actions.infoReset();
     setCurrenciesId(0);
     setCurrenciesIdValid(false);
     setCurrenciesIdDefault({
@@ -411,6 +428,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     setDebitAmount,
     setDepositAmount,
     setType,
+    partiallyInfoReset,
   };
 
   return {

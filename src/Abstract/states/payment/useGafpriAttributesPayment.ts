@@ -25,7 +25,7 @@ type Actions = {
   setType: (value: string) => void;
   setTotal: (value: string) => void;
   setNote: (value: string) => void;
-  validationButtonNextPaymentCash: () => void;
+  validationButtonNextPaymentCash: () => boolean;
 };
 
 export type UseGafpriAttributesPaymentReturn = {
@@ -58,8 +58,8 @@ export function useGafpriAttributesPayment({
     useGeneralPaymentMethods.actions.infoReset();
   };
 
-  const validationButtonNextPaymentCash = (): void => {
-    generalValidationButtonNext({
+  const validationButtonNextPaymentCash = (): boolean => {
+    return generalValidationButtonNext({
       validations: [
         useGeneralPaymentMethods.states.currenciesIdValid,
         parseFloat(total) > 0,

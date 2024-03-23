@@ -17,4 +17,5 @@ var generalValidationButtonNext = exports.generalValidationButtonNext = function
   } else {
     (0, _helpers.addClass)("".concat(_constants.BUTTON_NEXT_INPUT).concat(inputId), _constants.DISABLED);
   }
+  return isAllValid;
 };

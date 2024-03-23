@@ -11,7 +11,7 @@ import type {
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 
 export type CurrentPaymentInfo = {
-  validationButtonNext: () => void;
+  validationButtonNext: () => boolean;
   returnInit: () => void;
   next: () => void;
   buttonNextId: string;
@@ -42,8 +42,10 @@ export const CashForm = ({
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
 
   const add = () => {
-    usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
-    currentPaymentInfo.next();
+    if (currentPaymentInfo.validationButtonNext()) {
+      usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
+      currentPaymentInfo.next();
+    }
   };
 
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {

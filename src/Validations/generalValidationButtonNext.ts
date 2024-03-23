@@ -9,7 +9,7 @@ export type GeneralValidationButtonNextProps = {
 export const generalValidationButtonNext = ({
   validations,
   inputId,
-}: GeneralValidationButtonNextProps): void => {
+}: GeneralValidationButtonNextProps): boolean => {
   const isAllValid = validations.every((validation) => validation);
 
   if (isAllValid) {
@@ -17,4 +17,6 @@ export const generalValidationButtonNext = ({
   } else {
     addClass(`${BUTTON_NEXT_INPUT}${inputId}`, DISABLED);
   }
+
+  return isAllValid;
 };

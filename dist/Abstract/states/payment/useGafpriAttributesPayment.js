@@ -35,7 +35,7 @@ function useGafpriAttributesPayment(_ref) {
     useGeneralPaymentMethods.actions.infoReset();
   };
   var validationButtonNextPaymentCash = function validationButtonNextPaymentCash() {
-    (0, _Validations.generalValidationButtonNext)({
+    return (0, _Validations.generalValidationButtonNext)({
       validations: [useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(total) > 0, useGeneralPaymentMethods.useCashTransactions.states.change > 0, useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
       inputId: 'cash'
     });

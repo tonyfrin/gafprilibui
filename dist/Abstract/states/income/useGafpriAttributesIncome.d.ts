@@ -35,7 +35,7 @@ type Actions = {
     validationButtonNext: () => void;
     setCashRegisterTypePostsId: (value: number) => void;
     setCashRegisterPostsId: (value: number) => void;
-    validationButtonNextPaymentCr: () => void;
+    validationButtonNextPaymentCr: () => boolean;
     validationButtonNextAdd: () => void;
 };
 export type UseGafpriAttributesIncomeReturn = {

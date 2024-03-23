@@ -58,7 +58,7 @@ type Actions = {
   validationButtonNext: () => void;
   setCashRegisterTypePostsId: (value: number) => void;
   setCashRegisterPostsId: (value: number) => void;
-  validationButtonNextPaymentCr: () => void;
+  validationButtonNextPaymentCr: () => boolean;
   validationButtonNextAdd: () => void;
 };
 
@@ -154,8 +154,8 @@ export function useGafpriAttributesIncome({
     });
   };
 
-  const validationButtonNextPaymentCr = (): void => {
-    generalValidationButtonNext({
+  const validationButtonNextPaymentCr = (): boolean => {
+    return generalValidationButtonNext({
       validations: [
         usePayment.useGeneralPaymentMethods.states.currenciesIdValid,
         parseFloat(usePayment.states.total) > 0,

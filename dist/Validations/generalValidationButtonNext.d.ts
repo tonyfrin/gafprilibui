@@ -2,4 +2,4 @@ export type GeneralValidationButtonNextProps = {
     validations: boolean[];
     inputId?: string;
 };
-export declare const generalValidationButtonNext: ({ validations, inputId, }: GeneralValidationButtonNextProps) => void;
+export declare const generalValidationButtonNext: ({ validations, inputId, }: GeneralValidationButtonNextProps) => boolean;

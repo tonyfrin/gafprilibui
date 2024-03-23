@@ -144,7 +144,7 @@ function useGafpriAttributesExpenses(_ref) {
     });
   };
   var validationButtonNextPaymentCr = function validationButtonNextPaymentCr() {
-    (0, _Validations.generalValidationButtonNext)({
+    return (0, _Validations.generalValidationButtonNext)({
       validations: [usePayment.useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(usePayment.states.total) > 0, usePayment.useGeneralPaymentMethods.useCashTransactions.states.change > 0, usePayment.useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
       inputId: "".concat(_constants.EXPENSES_ROUTE, "-2")
     });

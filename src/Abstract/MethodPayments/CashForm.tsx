@@ -42,8 +42,8 @@ export const CashForm = ({
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
 
   const add = () => {
+    usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
     if (currentPaymentInfo.validationButtonNext()) {
-      usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
       currentPaymentInfo.next();
     }
   };

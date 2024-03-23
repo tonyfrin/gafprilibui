@@ -254,10 +254,17 @@ export const CashForm = ({
                 }}
               />
             )}
-
-            {currentCurrency &&
-              siteCurrency &&
-              currentCurrency.id !== siteCurrency.id && (
+          </>
+        </ContainerButton>
+        {currentCurrency &&
+          siteCurrency &&
+          currentCurrency.id !== siteCurrency.id && (
+            <ContainerButton
+              styles={{
+                width: '100%',
+              }}
+            >
+              <>
                 <Input
                   inputProps={{
                     onChange: (e) => setChange(e),
@@ -269,9 +276,9 @@ export const CashForm = ({
                     width: '100%',
                   }}
                 />
-              )}
-          </>
-        </ContainerButton>
+              </>
+            </ContainerButton>
+          )}
       </>
     </ModelForm>
   );

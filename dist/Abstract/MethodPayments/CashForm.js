@@ -162,7 +162,11 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
     styles: {
       width: '100%'
     }
-  }), currentCurrency && siteCurrency && currentCurrency.id !== siteCurrency.id && /*#__PURE__*/_react["default"].createElement(_Input.Input, {
+  }))), currentCurrency && siteCurrency && currentCurrency.id !== siteCurrency.id && /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      width: '100%'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, {
     inputProps: {
       onChange: function onChange(e) {
         return setChange(e);

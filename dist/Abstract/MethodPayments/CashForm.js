@@ -26,8 +26,8 @@ var CashForm = exports.CashForm = function CashForm(_ref) {
     setCurrentCurrency = _React$useState4[1];
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
   var add = function add() {
-    usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
     if (currentPaymentInfo.validationButtonNext()) {
+      usePayment.useGeneralPaymentMethods.actions.addCashTransaction();
       currentPaymentInfo.next();
     }
   };

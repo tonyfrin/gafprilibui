@@ -693,6 +693,12 @@ Object.defineProperty(exports, "EXPENSES_TYPE_STORAGE", {
     return _constants.EXPENSES_TYPE_STORAGE;
   }
 });
+Object.defineProperty(exports, "ElectronicForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ElectronicForm;
+  }
+});
 Object.defineProperty(exports, "Entity", {
   enumerable: true,
   get: function get() {

@@ -67,6 +67,7 @@ type Actions = {
   setDepositAmount: (value: number) => void;
   setType: (value: 'deposit' | 'debit') => void;
   partiallyInfoReset: () => void;
+  addElectronicPaymentMethod: () => void;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
@@ -319,6 +320,43 @@ export function useGafpriAttributesGeneralPaymentMethods({
     }
   };
 
+  const addElectronicPaymentMethod = (): void => {
+    if (useBankType) {
+      const bankType = useBankType.data.actions.getById(
+        useBankTransactions.states.bankTypePostsId
+      );
+      if (!bankType) return;
+      const newBankTransactions = {
+        bankTypePostsId: useBankTransactions.states.bankTypePostsId,
+        type,
+        paymentType: useBankTransactions.states.paymentType,
+        description: useBankTransactions.states.description,
+        amount: useBankTransactions.states.amount,
+        change: useBankTransactions.states.change,
+        dateTransations: useBankTransactions.states.dateTransations,
+      };
+
+      const newPaymentMethods = {
+        methodType: 'bank',
+        type,
+        paymentType: usePaymentMethods.states.paymentType,
+        currenciesId: bankType.currenciesId,
+        bank: bankType.bankName,
+        number: usePaymentMethods.states.number,
+        amount: usePaymentMethods.states.amount,
+        change: usePaymentMethods.states.change,
+        note: usePaymentMethods.states.note,
+      };
+
+      const newPayment: GeneralPaymentMethodsAttributes = {
+        paymentMethods: newPaymentMethods,
+        bankTransactions: newBankTransactions,
+      };
+
+      setArrayPaymentMethod([...arrayPaymentMethod, newPayment]);
+    }
+  };
+
   const deletePaymentMethod = (index: number): void => {
     const newArray = [...arrayPaymentMethod];
 
@@ -429,6 +467,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     setDepositAmount,
     setType,
     partiallyInfoReset,
+    addElectronicPaymentMethod,
   };
 
   return {

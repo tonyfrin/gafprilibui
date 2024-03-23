@@ -228,6 +228,37 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [debitTransfer, depositTransfer]));
     }
   };
+  var addElectronicPaymentMethod = function addElectronicPaymentMethod() {
+    if (useBankType) {
+      var bankType = useBankType.data.actions.getById(useBankTransactions.states.bankTypePostsId);
+      if (!bankType) return;
+      var newBankTransactions = {
+        bankTypePostsId: useBankTransactions.states.bankTypePostsId,
+        type: type,
+        paymentType: useBankTransactions.states.paymentType,
+        description: useBankTransactions.states.description,
+        amount: useBankTransactions.states.amount,
+        change: useBankTransactions.states.change,
+        dateTransations: useBankTransactions.states.dateTransations
+      };
+      var newPaymentMethods = {
+        methodType: 'bank',
+        type: type,
+        paymentType: usePaymentMethods.states.paymentType,
+        currenciesId: bankType.currenciesId,
+        bank: bankType.bankName,
+        number: usePaymentMethods.states.number,
+        amount: usePaymentMethods.states.amount,
+        change: usePaymentMethods.states.change,
+        note: usePaymentMethods.states.note
+      };
+      var newPayment = {
+        paymentMethods: newPaymentMethods,
+        bankTransactions: newBankTransactions
+      };
+      setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [newPayment]));
+    }
+  };
   var deletePaymentMethod = function deletePaymentMethod(index) {
     var newArray = (0, _toConsumableArray2["default"])(arrayPaymentMethod);
     if (index >= 0 && index < newArray.length) {
@@ -317,7 +348,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     setDebitAmount: setDebitAmount,
     setDepositAmount: setDepositAmount,
     setType: setType,
-    partiallyInfoReset: partiallyInfoReset
+    partiallyInfoReset: partiallyInfoReset,
+    addElectronicPaymentMethod: addElectronicPaymentMethod
   };
   return {
     states: states,

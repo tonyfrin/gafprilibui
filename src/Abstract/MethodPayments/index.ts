@@ -4,3 +4,5 @@ export { TransferCashRegisterForm } from './TransferCashRegisterForm';
 export type { TransferCashRegisterFormProps } from './TransferCashRegisterForm';
 export { TransferBankForm } from './TransferBankForm';
 export type { TransferBankFormProps } from './TransferBankForm';
+export { ElectronicForm } from './ElectronicForm';
+export type { ElectronicFormProps } from './ElectronicForm';

@@ -339,6 +339,7 @@ export {
   EntityOrderViewFormInfoHeader,
   OrderView,
   PaymentInfoForm,
+  ElectronicForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -882,6 +883,7 @@ export type {
   EntityOrderViewFormInfoHeaderProps,
   OrderViewProps,
   PaymentInfoFormProps,
+  ElectronicFormProps,
 } from './Abstract';
 export {
   MainFooter,

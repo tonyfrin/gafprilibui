@@ -351,6 +351,12 @@ Object.defineProperty(exports, "DocumentAddForm", {
     return _Entity.DocumentAddForm;
   }
 });
+Object.defineProperty(exports, "ElectronicForm", {
+  enumerable: true,
+  get: function get() {
+    return _MethodPayments.ElectronicForm;
+  }
+});
 Object.defineProperty(exports, "EntityAccountsReceivableInit", {
   enumerable: true,
   get: function get() {

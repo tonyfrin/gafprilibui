@@ -944,11 +944,13 @@ export {
   CashForm,
   TransferCashRegisterForm,
   TransferBankForm,
+  ElectronicForm,
 } from './MethodPayments';
 export type {
   CashFormProps,
   TransferCashRegisterFormProps,
   TransferBankFormProps,
+  ElectronicFormProps,
 } from './MethodPayments';
 export { IncomeInit, IncomeForm, CashIncomePaymentForm } from './Income';
 export type {

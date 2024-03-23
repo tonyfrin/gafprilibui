@@ -40,7 +40,7 @@ type State = {
   change: number;
   debitAmount: number;
   depositAmount: number;
-  type: string;
+  type: 'deposit' | 'debit';
 };
 
 type Actions = {

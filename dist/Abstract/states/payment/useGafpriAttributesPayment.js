@@ -8,6 +8,7 @@ exports.useGafpriAttributesPayment = useGafpriAttributesPayment;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 var _paymentMethods = require("../paymentMethods");
+var _Validations = require("../../../Validations");
 function useGafpriAttributesPayment(_ref) {
   var currencies = _ref.currencies,
     useBankType = _ref.useBankType;
@@ -33,6 +34,12 @@ function useGafpriAttributesPayment(_ref) {
     setNote('');
     useGeneralPaymentMethods.actions.infoReset();
   };
+  var validationButtonNextPaymentCash = function validationButtonNextPaymentCash() {
+    (0, _Validations.generalValidationButtonNext)({
+      validations: [useGeneralPaymentMethods.states.currenciesIdValid, parseFloat(total) > 0, useGeneralPaymentMethods.useCashTransactions.states.change > 0, useGeneralPaymentMethods.usePaymentMethods.states.change > 0],
+      inputId: 'cash'
+    });
+  };
 
   /**
    * Export
@@ -48,7 +55,8 @@ function useGafpriAttributesPayment(_ref) {
     infoReset: infoReset,
     setType: setType,
     setTotal: setTotal,
-    setNote: setNote
+    setNote: setNote,
+    validationButtonNextPaymentCash: validationButtonNextPaymentCash
   };
   return {
     states: states,

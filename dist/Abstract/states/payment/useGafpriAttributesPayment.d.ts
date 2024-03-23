@@ -16,6 +16,7 @@ type Actions = {
     setType: (value: string) => void;
     setTotal: (value: string) => void;
     setNote: (value: string) => void;
+    validationButtonNextPaymentCash: () => void;
 };
 export type UseGafpriAttributesPaymentReturn = {
     states: State;

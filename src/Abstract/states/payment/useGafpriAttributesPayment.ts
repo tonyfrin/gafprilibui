@@ -5,6 +5,7 @@ import {
   UseGafpriAttributesGeneralPaymentMethodsReturn,
 } from '../paymentMethods';
 import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
+import { generalValidationButtonNext } from '../../../Validations';
 
 export type PaymentAttributes = {
   total: string;
@@ -24,6 +25,7 @@ type Actions = {
   setType: (value: string) => void;
   setTotal: (value: string) => void;
   setNote: (value: string) => void;
+  validationButtonNextPaymentCash: () => void;
 };
 
 export type UseGafpriAttributesPaymentReturn = {
@@ -56,6 +58,18 @@ export function useGafpriAttributesPayment({
     useGeneralPaymentMethods.actions.infoReset();
   };
 
+  const validationButtonNextPaymentCash = (): void => {
+    generalValidationButtonNext({
+      validations: [
+        useGeneralPaymentMethods.states.currenciesIdValid,
+        parseFloat(total) > 0,
+        useGeneralPaymentMethods.useCashTransactions.states.change > 0,
+        useGeneralPaymentMethods.usePaymentMethods.states.change > 0,
+      ],
+      inputId: 'cash',
+    });
+  };
+
   /**
    * Export
    *
@@ -72,6 +86,7 @@ export function useGafpriAttributesPayment({
     setType,
     setTotal,
     setNote,
+    validationButtonNextPaymentCash,
   };
 
   return {

@@ -2337,6 +2337,12 @@ Object.defineProperty(exports, "SingleCheckBox", {
     return _Abstract.SingleCheckBox;
   }
 });
+Object.defineProperty(exports, "SingleForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SingleForm;
+  }
+});
 Object.defineProperty(exports, "SingleHiddenTablet", {
   enumerable: true,
   get: function get() {

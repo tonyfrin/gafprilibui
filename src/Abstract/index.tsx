@@ -949,6 +949,7 @@ export {
   ElectronicForm,
   CreditForm,
   PaymentLoginForm,
+  SingleForm,
 } from './MethodPayments';
 export type {
   CashFormProps,
@@ -957,6 +958,7 @@ export type {
   ElectronicFormProps,
   CreditFormProps,
   PaymentLoginFormProps,
+  SingleFormProps,
 } from './MethodPayments';
 export { IncomeInit, IncomeForm, CashIncomePaymentForm } from './Income';
 export type {

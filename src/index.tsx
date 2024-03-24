@@ -343,6 +343,7 @@ export {
   useGafpriAttributesCreditOpening,
   CreditForm,
   PaymentLoginForm,
+  SingleForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -890,6 +891,7 @@ export type {
   UseGafpriAttributesCreditOpeningReturn,
   CreditFormProps,
   PaymentLoginFormProps,
+  SingleFormProps,
 } from './Abstract';
 export {
   MainFooter,

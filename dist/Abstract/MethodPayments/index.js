@@ -27,6 +27,12 @@ Object.defineProperty(exports, "PaymentLoginForm", {
     return _PaymentLoginForm.PaymentLoginForm;
   }
 });
+Object.defineProperty(exports, "SingleForm", {
+  enumerable: true,
+  get: function get() {
+    return _SingleForm.SingleForm;
+  }
+});
 Object.defineProperty(exports, "TransferBankForm", {
   enumerable: true,
   get: function get() {
@@ -45,3 +51,4 @@ var _TransferBankForm = require("./TransferBankForm");
 var _ElectronicForm = require("./ElectronicForm");
 var _CreditForm = require("./CreditForm");
 var _PaymentLoginForm = require("./PaymentLoginForm");
+var _SingleForm = require("./SingleForm");

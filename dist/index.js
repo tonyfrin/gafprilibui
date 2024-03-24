@@ -615,6 +615,12 @@ Object.defineProperty(exports, "Countries", {
     return _constants.Countries;
   }
 });
+Object.defineProperty(exports, "CreditForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CreditForm;
+  }
+});
 Object.defineProperty(exports, "CurrencyForm", {
   enumerable: true,
   get: function get() {
@@ -1837,6 +1843,12 @@ Object.defineProperty(exports, "PaymentInfoForm", {
   enumerable: true,
   get: function get() {
     return _Abstract.PaymentInfoForm;
+  }
+});
+Object.defineProperty(exports, "PaymentLoginForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.PaymentLoginForm;
   }
 });
 Object.defineProperty(exports, "PaymentTransferBank", {
@@ -3817,6 +3829,12 @@ Object.defineProperty(exports, "useGafpriAttributesCashTransactions", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriAttributesCashTransactions;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesCreditOpening", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesCreditOpening;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesEntity", {

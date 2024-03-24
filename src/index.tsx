@@ -340,6 +340,9 @@ export {
   OrderView,
   PaymentInfoForm,
   ElectronicForm,
+  useGafpriAttributesCreditOpening,
+  CreditForm,
+  PaymentLoginForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -884,6 +887,9 @@ export type {
   OrderViewProps,
   PaymentInfoFormProps,
   ElectronicFormProps,
+  UseGafpriAttributesCreditOpeningReturn,
+  CreditFormProps,
+  PaymentLoginFormProps,
 } from './Abstract';
 export {
   MainFooter,

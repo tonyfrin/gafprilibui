@@ -22,11 +22,17 @@ import {
   UseGafpriPagesPaymentMethodsReturn,
   useGafpriPagesPaymentMethods,
 } from './useGafpriPagesPaymentMethods';
+import {
+  useGafpriAttributesCreditOpening,
+  UseGafpriAttributesCreditOpeningReturn,
+  CreditOpeningAttributes,
+} from '../credits';
 
 export type GeneralPaymentMethodsAttributes = {
   paymentMethods: PaymentMethodsAttributes;
   cashTransactions?: CashTransactionsAttributes;
   bankTransactions?: BankTransactionsAttributes;
+  creditOpening?: CreditOpeningAttributes;
 };
 
 type State = {
@@ -68,6 +74,7 @@ type Actions = {
   setType: (value: 'deposit' | 'debit') => void;
   partiallyInfoReset: () => void;
   addElectronicPaymentMethod: () => void;
+  addCreditPaymentMethod: (entityId: number, currenciesId: number) => void;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
@@ -77,6 +84,7 @@ export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
   usePaymentMethods: UseGafpriAttributesPaymentMethodsReturn;
   useCashTransactions: UseGafpriAttributesCashTransactionsReturn;
   useBankTransactions: UseGafpriAttributesBankTransactionsReturn;
+  useCreditOpening: UseGafpriAttributesCreditOpeningReturn;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsProps = {
@@ -94,6 +102,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
   const usePaymentMethods = useGafpriAttributesPaymentMethods();
   const useCashTransactions = useGafpriAttributesCashTransactions();
   const useBankTransactions = useGafpriAttributesBankTransactions();
+  const useCreditOpening = useGafpriAttributesCreditOpening();
   const pages = useGafpriPagesPaymentMethods();
   const [totalPaymentMethod, setTotalPaymentMethod] = useState(0);
   const [totalMethods, setTotalMethods] = useState(0);
@@ -117,6 +126,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
     useBankTransactions.actions.infoReset();
+    useCreditOpening.actions.infoReset();
     setArrayPaymentMethod([]);
     setCurrenciesId(0);
     setCurrenciesIdValid(false);
@@ -134,6 +144,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
     useBankTransactions.actions.infoReset();
+    useCreditOpening.actions.infoReset();
     setCurrenciesId(0);
     setCurrenciesIdValid(false);
     setCurrenciesIdDefault({
@@ -357,6 +368,39 @@ export function useGafpriAttributesGeneralPaymentMethods({
     }
   };
 
+  const addCreditPaymentMethod = (
+    entityId: number,
+    siteCurrenciesId: number
+  ): void => {
+    const newCreditOpening = {
+      entityId,
+      authorizedLogin: useCreditOpening.states.authorizedLogin,
+      authorizedPassword: useCreditOpening.states.authorizedPassword,
+      amount: useCreditOpening.states.amount,
+    };
+
+    const newType: 'deposit' | 'debit' = 'deposit';
+
+    const newPaymentMethods = {
+      methodType: 'credit',
+      type: newType,
+      paymentType: '',
+      currenciesId: siteCurrenciesId,
+      bank: '',
+      number: '',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      note: '',
+    };
+
+    const newPayment: GeneralPaymentMethodsAttributes = {
+      paymentMethods: newPaymentMethods,
+      creditOpening: newCreditOpening,
+    };
+
+    setArrayPaymentMethod([...arrayPaymentMethod, newPayment]);
+  };
+
   const deletePaymentMethod = (index: number): void => {
     const newArray = [...arrayPaymentMethod];
 
@@ -468,6 +512,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     setType,
     partiallyInfoReset,
     addElectronicPaymentMethod,
+    addCreditPaymentMethod,
   };
 
   return {
@@ -476,6 +521,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     usePaymentMethods,
     useCashTransactions,
     useBankTransactions,
+    useCreditOpening,
     pages,
   };
 }

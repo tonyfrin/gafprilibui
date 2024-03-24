@@ -20,20 +20,48 @@ function useGafpriPagesPaymentMethods() {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     isTransfer = _useState6[0],
     setIsTransfer = _useState6[1];
+  var _useState7 = (0, _react.useState)(false),
+    _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
+    isCredit = _useState8[0],
+    setIsCredit = _useState8[1];
+  var _useState9 = (0, _react.useState)(false),
+    _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
+    isAuthorization = _useState10[0],
+    setIsAuthorization = _useState10[1];
   var onFetching = function onFetching() {
     setIsFetching(true);
     setIsCash(false);
     setIsTransfer(false);
+    setIsCredit(false);
+    setIsAuthorization(false);
   };
   var onCash = function onCash() {
     setIsFetching(false);
     setIsCash(true);
     setIsTransfer(false);
+    setIsCredit(false);
+    setIsAuthorization(false);
   };
   var onTransfer = function onTransfer() {
     setIsFetching(false);
     setIsCash(false);
     setIsTransfer(true);
+    setIsCredit(false);
+    setIsAuthorization(false);
+  };
+  var onCredit = function onCredit() {
+    setIsFetching(false);
+    setIsCash(false);
+    setIsTransfer(false);
+    setIsCredit(true);
+    setIsAuthorization(false);
+  };
+  var onAuthorization = function onAuthorization() {
+    setIsFetching(false);
+    setIsCash(false);
+    setIsTransfer(false);
+    setIsCredit(false);
+    setIsAuthorization(true);
   };
 
   /**
@@ -44,12 +72,16 @@ function useGafpriPagesPaymentMethods() {
   var states = {
     isFetching: isFetching,
     isCash: isCash,
-    isTransfer: isTransfer
+    isTransfer: isTransfer,
+    isCredit: isCredit,
+    isAuthorization: isAuthorization
   };
   var actions = {
     onFetching: onFetching,
     onCash: onCash,
-    onTransfer: onTransfer
+    onTransfer: onTransfer,
+    onCredit: onCredit,
+    onAuthorization: onAuthorization
   };
   return {
     states: states,

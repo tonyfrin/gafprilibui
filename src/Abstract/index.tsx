@@ -505,6 +505,7 @@ export {
   useGafpriAttributesAccountsReceivable,
   useGafpriPagesPayment,
   useGafpriSubPagesDepositPayment,
+  useGafpriAttributesCreditOpening,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -697,6 +698,7 @@ export type {
   UseGafpriPagesPaymentReturn,
   UseGafpriSubPagesDepositPaymentReturn,
   UseGafpriPagesPaymentProps,
+  UseGafpriAttributesCreditOpeningReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -945,12 +947,16 @@ export {
   TransferCashRegisterForm,
   TransferBankForm,
   ElectronicForm,
+  CreditForm,
+  PaymentLoginForm,
 } from './MethodPayments';
 export type {
   CashFormProps,
   TransferCashRegisterFormProps,
   TransferBankFormProps,
   ElectronicFormProps,
+  CreditFormProps,
+  PaymentLoginFormProps,
 } from './MethodPayments';
 export { IncomeInit, IncomeForm, CashIncomePaymentForm } from './Income';
 export type {

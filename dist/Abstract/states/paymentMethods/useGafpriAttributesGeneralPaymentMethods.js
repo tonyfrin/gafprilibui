@@ -14,6 +14,7 @@ var _cashRegister = require("../cashRegister");
 var _Validations = require("../../../Validations");
 var _useGafpriAttributesBankTransactions = require("../bank/bankTransactions/useGafpriAttributesBankTransactions");
 var _useGafpriPagesPaymentMethods = require("./useGafpriPagesPaymentMethods");
+var _credits = require("../credits");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function useGafpriAttributesGeneralPaymentMethods(_ref) {
@@ -26,6 +27,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
   var usePaymentMethods = (0, _useGafpriAttributesPaymentMethods.useGafpriAttributesPaymentMethods)();
   var useCashTransactions = (0, _cashRegister.useGafpriAttributesCashTransactions)();
   var useBankTransactions = (0, _useGafpriAttributesBankTransactions.useGafpriAttributesBankTransactions)();
+  var useCreditOpening = (0, _credits.useGafpriAttributesCreditOpening)();
   var pages = (0, _useGafpriPagesPaymentMethods.useGafpriPagesPaymentMethods)();
   var _useState3 = (0, _react.useState)(0),
     _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
@@ -71,6 +73,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
     useBankTransactions.actions.infoReset();
+    useCreditOpening.actions.infoReset();
     setArrayPaymentMethod([]);
     setCurrenciesId(0);
     setCurrenciesIdValid(false);
@@ -87,6 +90,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
     useBankTransactions.actions.infoReset();
+    useCreditOpening.actions.infoReset();
     setCurrenciesId(0);
     setCurrenciesIdValid(false);
     setCurrenciesIdDefault({
@@ -259,6 +263,31 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [newPayment]));
     }
   };
+  var addCreditPaymentMethod = function addCreditPaymentMethod(entityId, siteCurrenciesId) {
+    var newCreditOpening = {
+      entityId: entityId,
+      authorizedLogin: useCreditOpening.states.authorizedLogin,
+      authorizedPassword: useCreditOpening.states.authorizedPassword,
+      amount: useCreditOpening.states.amount
+    };
+    var newType = 'deposit';
+    var newPaymentMethods = {
+      methodType: 'credit',
+      type: newType,
+      paymentType: '',
+      currenciesId: siteCurrenciesId,
+      bank: '',
+      number: '',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      note: ''
+    };
+    var newPayment = {
+      paymentMethods: newPaymentMethods,
+      creditOpening: newCreditOpening
+    };
+    setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [newPayment]));
+  };
   var deletePaymentMethod = function deletePaymentMethod(index) {
     var newArray = (0, _toConsumableArray2["default"])(arrayPaymentMethod);
     if (index >= 0 && index < newArray.length) {
@@ -349,7 +378,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     setDepositAmount: setDepositAmount,
     setType: setType,
     partiallyInfoReset: partiallyInfoReset,
-    addElectronicPaymentMethod: addElectronicPaymentMethod
+    addElectronicPaymentMethod: addElectronicPaymentMethod,
+    addCreditPaymentMethod: addCreditPaymentMethod
   };
   return {
     states: states,
@@ -357,6 +387,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     usePaymentMethods: usePaymentMethods,
     useCashTransactions: useCashTransactions,
     useBankTransactions: useBankTransactions,
+    useCreditOpening: useCreditOpening,
     pages: pages
   };
 }

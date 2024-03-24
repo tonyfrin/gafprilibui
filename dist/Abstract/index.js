@@ -339,6 +339,12 @@ Object.defineProperty(exports, "ContainerInput", {
     return _Containers.ContainerInput;
   }
 });
+Object.defineProperty(exports, "CreditForm", {
+  enumerable: true,
+  get: function get() {
+    return _MethodPayments.CreditForm;
+  }
+});
 Object.defineProperty(exports, "CurrencyForm", {
   enumerable: true,
   get: function get() {
@@ -1125,6 +1131,12 @@ Object.defineProperty(exports, "PaymentInfoForm", {
     return _Form.PaymentInfoForm;
   }
 });
+Object.defineProperty(exports, "PaymentLoginForm", {
+  enumerable: true,
+  get: function get() {
+    return _MethodPayments.PaymentLoginForm;
+  }
+});
 Object.defineProperty(exports, "PhotoCategory", {
   enumerable: true,
   get: function get() {
@@ -1699,6 +1711,12 @@ Object.defineProperty(exports, "useGafpriAttributesCashTransactions", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriAttributesCashTransactions;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesCreditOpening", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesCreditOpening;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesEntity", {

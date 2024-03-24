@@ -339,6 +339,7 @@ export {
   useGafpriPaginationsAccountsReceivable,
   useGafpriPagesAccountsReceivable,
   useGafpriAttributesAccountsReceivable,
+  useGafpriAttributesCreditOpening,
 } from './credits';
 export type {
   UseGafpriApiAccountsReceivableReturn,
@@ -351,4 +352,6 @@ export type {
   UseGafpriPagesAccountsReceivableReturn,
   UseGafpriPagesAccountsReceivableProps,
   UseGafpriAttributesAccountsReceivableReturn,
+  UseGafpriAttributesCreditOpeningReturn,
+  CreditOpeningAttributes,
 } from './credits';

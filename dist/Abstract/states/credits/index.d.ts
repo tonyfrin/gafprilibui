@@ -8,3 +8,5 @@ export { useGafpriPagesAccountsReceivable } from './useGafpriPagesAccountsReceiv
 export type { UseGafpriPagesAccountsReceivableReturn, UseGafpriPagesAccountsReceivableProps, } from './useGafpriPagesAccountsReceivable';
 export { useGafpriAttributesAccountsReceivable } from './useGafpriAttributesAccountsReceivable';
 export type { UseGafpriAttributesAccountsReceivableReturn } from './useGafpriAttributesAccountsReceivable';
+export { useGafpriAttributesCreditOpening } from './creditOpening';
+export type { UseGafpriAttributesCreditOpeningReturn, CreditOpeningAttributes, } from './creditOpening';

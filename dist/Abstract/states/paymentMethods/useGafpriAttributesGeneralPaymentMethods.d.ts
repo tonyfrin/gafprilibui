@@ -5,10 +5,12 @@ import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
 import { SelectDefault } from '../../../helpers';
 import { BankTransactionsAttributes, UseGafpriAttributesBankTransactionsReturn } from '../bank/bankTransactions/useGafpriAttributesBankTransactions';
 import { UseGafpriPagesPaymentMethodsReturn } from './useGafpriPagesPaymentMethods';
+import { UseGafpriAttributesCreditOpeningReturn, CreditOpeningAttributes } from '../credits';
 export type GeneralPaymentMethodsAttributes = {
     paymentMethods: PaymentMethodsAttributes;
     cashTransactions?: CashTransactionsAttributes;
     bankTransactions?: BankTransactionsAttributes;
+    creditOpening?: CreditOpeningAttributes;
 };
 type State = {
     arrayPaymentMethod: GeneralPaymentMethodsAttributes[];
@@ -41,6 +43,7 @@ type Actions = {
     setType: (value: 'deposit' | 'debit') => void;
     partiallyInfoReset: () => void;
     addElectronicPaymentMethod: () => void;
+    addCreditPaymentMethod: (entityId: number, currenciesId: number) => void;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     states: State;
@@ -49,6 +52,7 @@ export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     usePaymentMethods: UseGafpriAttributesPaymentMethodsReturn;
     useCashTransactions: UseGafpriAttributesCashTransactionsReturn;
     useBankTransactions: UseGafpriAttributesBankTransactionsReturn;
+    useCreditOpening: UseGafpriAttributesCreditOpeningReturn;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsProps = {
     currencies?: UseCurrenciesReturn;

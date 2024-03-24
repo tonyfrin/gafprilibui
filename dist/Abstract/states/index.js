@@ -159,6 +159,12 @@ Object.defineProperty(exports, "useGafpriAttributesCashTransactions", {
     return _cashRegister.useGafpriAttributesCashTransactions;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesCreditOpening", {
+  enumerable: true,
+  get: function get() {
+    return _credits.useGafpriAttributesCreditOpening;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesEntity", {
   enumerable: true,
   get: function get() {

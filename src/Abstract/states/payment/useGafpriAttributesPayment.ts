@@ -28,6 +28,8 @@ type Actions = {
   setNote: (value: string) => void;
   validationButtonNextPaymentCash: () => boolean;
   setDifference: (value: number) => void;
+  validationButtonNextPaymentCredit: () => boolean;
+  validationButtonNextPaymentCreditAdd: () => boolean;
 };
 
 export type UseGafpriAttributesPaymentReturn = {
@@ -58,6 +60,7 @@ export function useGafpriAttributesPayment({
     setType('');
     setTotal('');
     setNote('');
+    setDifference(0);
     useGeneralPaymentMethods.actions.infoReset();
   };
 
@@ -71,6 +74,31 @@ export function useGafpriAttributesPayment({
         useGeneralPaymentMethods.usePaymentMethods.states.amount > 0,
       ],
       inputId: 'cash',
+    });
+  };
+
+  const validationButtonNextPaymentCredit = (): boolean => {
+    return generalValidationButtonNext({
+      validations: [
+        useGeneralPaymentMethods.useCreditOpening.states.amount > 0,
+        useGeneralPaymentMethods.usePaymentMethods.states.change > 0,
+        useGeneralPaymentMethods.usePaymentMethods.states.amount > 0,
+      ],
+      inputId: 'credit-next',
+    });
+  };
+
+  const validationButtonNextPaymentCreditAdd = (): boolean => {
+    return generalValidationButtonNext({
+      validations: [
+        useGeneralPaymentMethods.useCreditOpening.states.amount > 0,
+        useGeneralPaymentMethods.usePaymentMethods.states.change > 0,
+        useGeneralPaymentMethods.usePaymentMethods.states.amount > 0,
+        useGeneralPaymentMethods.useCreditOpening.states.authorizedLoginValid,
+        useGeneralPaymentMethods.useCreditOpening.states
+          .authorizedPasswordValid,
+      ],
+      inputId: 'credit-add',
     });
   };
 
@@ -93,6 +121,8 @@ export function useGafpriAttributesPayment({
     setNote,
     validationButtonNextPaymentCash,
     setDifference,
+    validationButtonNextPaymentCredit,
+    validationButtonNextPaymentCreditAdd,
   };
 
   return {

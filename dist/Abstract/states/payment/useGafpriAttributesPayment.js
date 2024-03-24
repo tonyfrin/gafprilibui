@@ -36,12 +36,25 @@ function useGafpriAttributesPayment(_ref) {
     setType('');
     setTotal('');
     setNote('');
+    setDifference(0);
     useGeneralPaymentMethods.actions.infoReset();
   };
   var validationButtonNextPaymentCash = function validationButtonNextPaymentCash() {
     return (0, _Validations.generalValidationButtonNext)({
       validations: [useGeneralPaymentMethods.states.currenciesIdValid, useGeneralPaymentMethods.useCashTransactions.states.change > 0, useGeneralPaymentMethods.useCashTransactions.states.amount > 0, useGeneralPaymentMethods.usePaymentMethods.states.change > 0, useGeneralPaymentMethods.usePaymentMethods.states.amount > 0],
       inputId: 'cash'
+    });
+  };
+  var validationButtonNextPaymentCredit = function validationButtonNextPaymentCredit() {
+    return (0, _Validations.generalValidationButtonNext)({
+      validations: [useGeneralPaymentMethods.useCreditOpening.states.amount > 0, useGeneralPaymentMethods.usePaymentMethods.states.change > 0, useGeneralPaymentMethods.usePaymentMethods.states.amount > 0],
+      inputId: 'credit-next'
+    });
+  };
+  var validationButtonNextPaymentCreditAdd = function validationButtonNextPaymentCreditAdd() {
+    return (0, _Validations.generalValidationButtonNext)({
+      validations: [useGeneralPaymentMethods.useCreditOpening.states.amount > 0, useGeneralPaymentMethods.usePaymentMethods.states.change > 0, useGeneralPaymentMethods.usePaymentMethods.states.amount > 0, useGeneralPaymentMethods.useCreditOpening.states.authorizedLoginValid, useGeneralPaymentMethods.useCreditOpening.states.authorizedPasswordValid],
+      inputId: 'credit-add'
     });
   };
 
@@ -62,7 +75,9 @@ function useGafpriAttributesPayment(_ref) {
     setTotal: setTotal,
     setNote: setNote,
     validationButtonNextPaymentCash: validationButtonNextPaymentCash,
-    setDifference: setDifference
+    setDifference: setDifference,
+    validationButtonNextPaymentCredit: validationButtonNextPaymentCredit,
+    validationButtonNextPaymentCreditAdd: validationButtonNextPaymentCreditAdd
   };
   return {
     states: states,

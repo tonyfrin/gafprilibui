@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import {
+  generalValidationUserName,
+  generalValidationSinglePassword,
+} from '../../../../Validations';
 
 export type CreditOpeningAttributes = {
   postsId?: number;
@@ -17,7 +21,9 @@ export type CreditOpeningAttributes = {
 type State = {
   entityId: number;
   authorizedLogin: string;
+  authorizedLoginValid: boolean;
   authorizedPassword: string;
+  authorizedPasswordValid: boolean;
   amount: number;
 };
 
@@ -27,6 +33,8 @@ type Actions = {
   setAuthorizedLogin: (value: string) => void;
   setAuthorizedPassword: (value: string) => void;
   setAmount: (value: number) => void;
+  validationAuthorizedLogin: (value: string) => boolean;
+  validationAuthorizedPassword: (value: string) => boolean;
 };
 
 export type UseGafpriAttributesCreditOpeningReturn = {
@@ -37,14 +45,34 @@ export type UseGafpriAttributesCreditOpeningReturn = {
 export function useGafpriAttributesCreditOpening(): UseGafpriAttributesCreditOpeningReturn {
   const [entityId, setEntityId] = useState(0);
   const [authorizedLogin, setAuthorizedLogin] = useState('');
+  const [authorizedLoginValid, setAuthorizedLoginValid] = useState(false);
   const [authorizedPassword, setAuthorizedPassword] = useState('');
+  const [authorizedPasswordValid, setAuthorizedPasswordValid] = useState(false);
   const [amount, setAmount] = useState(0);
 
   const infoReset = (): void => {
     setEntityId(0);
     setAuthorizedLogin('');
+    setAuthorizedLoginValid(false);
     setAuthorizedPassword('');
+    setAuthorizedPasswordValid(false);
     setAmount(0);
+  };
+
+  const validationAuthorizedLogin = (value: string): boolean => {
+    return generalValidationUserName({
+      value,
+      setValid: setAuthorizedLoginValid,
+      currentValid: authorizedLoginValid,
+    });
+  };
+
+  const validationAuthorizedPassword = (value: string): boolean => {
+    return generalValidationSinglePassword({
+      value,
+      setValid: setAuthorizedPasswordValid,
+      currentValid: authorizedPasswordValid,
+    });
   };
 
   /**
@@ -55,7 +83,9 @@ export function useGafpriAttributesCreditOpening(): UseGafpriAttributesCreditOpe
   const states = {
     entityId,
     authorizedLogin,
+    authorizedLoginValid,
     authorizedPassword,
+    authorizedPasswordValid,
     amount,
   };
 
@@ -65,6 +95,8 @@ export function useGafpriAttributesCreditOpening(): UseGafpriAttributesCreditOpe
     setAuthorizedLogin,
     setAuthorizedPassword,
     setAmount,
+    validationAuthorizedLogin,
+    validationAuthorizedPassword,
   };
 
   return {

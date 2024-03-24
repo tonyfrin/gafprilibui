@@ -28,15 +28,23 @@ var CreditForm = exports.CreditForm = function CreditForm(_ref) {
     usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(parseFloat(value));
     usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setChange(parseFloat(value));
   };
+  var next = function next() {
+    if (currentPaymentInfo.validationButtonNext()) {
+      currentPaymentInfo.add();
+    }
+  };
   _react["default"].useEffect(function () {
     usePayment.useGeneralPaymentMethods.useCreditOpening.actions.setAmount(currentPaymentInfo.difference);
     usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setAmount(currentPaymentInfo.difference);
     usePayment.useGeneralPaymentMethods.usePaymentMethods.actions.setChange(currentPaymentInfo.difference);
   }, []);
+  _react["default"].useEffect(function () {
+    currentPaymentInfo.validationButtonNext();
+  }, [currentPaymentInfo.amount]);
   var title1Text = 'Modulo de pago';
   var title2Text = 'Agrega un nuevo credito';
   var buttonTitle = 'Procesar';
-  var buttonAction = currentPaymentInfo.add;
+  var buttonAction = next;
   var buttonReturn = function buttonReturn() {
     currentPaymentInfo.infoReset();
     currentPaymentInfo.returnInit();

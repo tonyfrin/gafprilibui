@@ -19,6 +19,8 @@ type Actions = {
     setNote: (value: string) => void;
     validationButtonNextPaymentCash: () => boolean;
     setDifference: (value: number) => void;
+    validationButtonNextPaymentCredit: () => boolean;
+    validationButtonNextPaymentCreditAdd: () => boolean;
 };
 export type UseGafpriAttributesPaymentReturn = {
     states: State;

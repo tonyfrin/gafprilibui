@@ -14,7 +14,9 @@ export type CreditOpeningAttributes = {
 type State = {
     entityId: number;
     authorizedLogin: string;
+    authorizedLoginValid: boolean;
     authorizedPassword: string;
+    authorizedPasswordValid: boolean;
     amount: number;
 };
 type Actions = {
@@ -23,6 +25,8 @@ type Actions = {
     setAuthorizedLogin: (value: string) => void;
     setAuthorizedPassword: (value: string) => void;
     setAmount: (value: number) => void;
+    validationAuthorizedLogin: (value: string) => boolean;
+    validationAuthorizedPassword: (value: string) => boolean;
 };
 export type UseGafpriAttributesCreditOpeningReturn = {
     states: State;

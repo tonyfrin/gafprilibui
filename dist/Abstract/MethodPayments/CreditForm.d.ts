@@ -5,6 +5,7 @@ type CurrentPaymentInfo = {
     difference: number;
     amount: number;
     add: () => void;
+    validationButtonNext: () => boolean;
     infoReset: () => void;
     returnInit: () => void;
     buttonNextId: string;

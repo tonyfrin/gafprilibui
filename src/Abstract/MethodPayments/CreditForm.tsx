@@ -3,7 +3,6 @@ import { Input } from '../Input';
 import { ContainerButton } from '../Containers';
 import { ModelForm } from '../Form';
 import type {
-  UseGafpriBankTypeReturn,
   SiteOptions,
   UseCurrenciesReturn,
   UseErrorReturn,
@@ -18,6 +17,7 @@ type CurrentPaymentInfo = {
   difference: number;
   amount: number;
   add: () => void;
+  validationButtonNext: () => boolean;
   infoReset: () => void;
   returnInit: () => void;
   buttonNextId: string;
@@ -65,6 +65,12 @@ export const CreditForm = ({
     );
   };
 
+  const next = () => {
+    if (currentPaymentInfo.validationButtonNext()) {
+      currentPaymentInfo.add();
+    }
+  };
+
   React.useEffect(() => {
     usePayment.useGeneralPaymentMethods.useCreditOpening.actions.setAmount(
       currentPaymentInfo.difference
@@ -77,11 +83,15 @@ export const CreditForm = ({
     );
   }, []);
 
+  React.useEffect(() => {
+    currentPaymentInfo.validationButtonNext();
+  }, [currentPaymentInfo.amount]);
+
   const title1Text = 'Modulo de pago';
   const title2Text = 'Agrega un nuevo credito';
 
   const buttonTitle = 'Procesar';
-  const buttonAction = currentPaymentInfo.add;
+  const buttonAction = next;
   const buttonReturn = () => {
     currentPaymentInfo.infoReset();
     currentPaymentInfo.returnInit();

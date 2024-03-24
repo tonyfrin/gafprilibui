@@ -29,6 +29,11 @@ var PaymentLoginForm = exports.PaymentLoginForm = function PaymentLoginForm(_ref
     validationAuthorizedLogin(authorizedLogin);
     validationAuthorizedPassword(authorizedPassword);
   }, [authorizedLogin, authorizedPassword]);
+  var next = function next() {
+    if (validationButtonNext()) {
+      add();
+    }
+  };
   return /*#__PURE__*/_react["default"].createElement(_Abstract.Box1, {
     styles: {
       width: 'auto',
@@ -67,7 +72,7 @@ var PaymentLoginForm = exports.PaymentLoginForm = function PaymentLoginForm(_ref
     title: "Autorizar",
     buttonProps: {
       onClick: function onClick() {
-        return add();
+        return next();
       },
       id: "".concat(_constants.BUTTON_NEXT_INPUT).concat(inputId)
     }

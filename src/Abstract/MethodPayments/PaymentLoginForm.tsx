@@ -31,9 +31,9 @@ const defaultActionButtonContainerStyle = css`
 `;
 
 export type PaymentLoginFormProps = {
-  validationButtonNext: () => void;
-  validationAuthorizedLogin: (authorizedLogin: string) => void;
-  validationAuthorizedPassword: (authorizedPassword: string) => void;
+  validationButtonNext: () => boolean;
+  validationAuthorizedLogin: (authorizedLogin: string) => boolean;
+  validationAuthorizedPassword: (authorizedPassword: string) => boolean;
   authorizedLogin: string;
   authorizedPassword: string;
   changeAuthorizedLogin: (authorizedLogin: string) => void;
@@ -58,6 +58,12 @@ export const PaymentLoginForm = ({
     validationAuthorizedLogin(authorizedLogin);
     validationAuthorizedPassword(authorizedPassword);
   }, [authorizedLogin, authorizedPassword]);
+
+  const next = () => {
+    if (validationButtonNext()) {
+      add();
+    }
+  };
 
   return (
     <Box1
@@ -105,7 +111,7 @@ export const PaymentLoginForm = ({
             <Button
               title="Autorizar"
               buttonProps={{
-                onClick: () => add(),
+                onClick: () => next(),
                 id: `${BUTTON_NEXT_INPUT}${inputId}`,
               }}
             />

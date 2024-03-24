@@ -1,7 +1,7 @@
 export type PaymentLoginFormProps = {
-    validationButtonNext: () => void;
-    validationAuthorizedLogin: (authorizedLogin: string) => void;
-    validationAuthorizedPassword: (authorizedPassword: string) => void;
+    validationButtonNext: () => boolean;
+    validationAuthorizedLogin: (authorizedLogin: string) => boolean;
+    validationAuthorizedPassword: (authorizedPassword: string) => boolean;
     authorizedLogin: string;
     authorizedPassword: string;
     changeAuthorizedLogin: (authorizedLogin: string) => void;

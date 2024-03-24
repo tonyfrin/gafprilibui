@@ -184,7 +184,7 @@ export const CreditForm = ({
                   title: `Monto en ${siteCurrency.name} ${siteCurrency.symbol}`,
                   type: 'number',
                   step: '0.01',
-                  defaultValue: `${currentPaymentInfo.amount}`,
+                  value: `${currentPaymentInfo.amount}`,
                 }}
                 styles={{
                   width: '100%',

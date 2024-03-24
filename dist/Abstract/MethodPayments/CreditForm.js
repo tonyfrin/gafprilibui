@@ -112,7 +112,7 @@ var CreditForm = exports.CreditForm = function CreditForm(_ref) {
       title: "Monto en ".concat(siteCurrency.name, " ").concat(siteCurrency.symbol),
       type: 'number',
       step: '0.01',
-      defaultValue: "".concat(currentPaymentInfo.amount)
+      value: "".concat(currentPaymentInfo.amount)
     },
     styles: {
       width: '100%'

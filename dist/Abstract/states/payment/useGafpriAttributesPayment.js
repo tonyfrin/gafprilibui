@@ -24,6 +24,10 @@ function useGafpriAttributesPayment(_ref) {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     note = _useState6[0],
     setNote = _useState6[1];
+  var _useState7 = (0, _react.useState)(0),
+    _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
+    difference = _useState8[0],
+    setDifference = _useState8[1];
   var useGeneralPaymentMethods = (0, _paymentMethods.useGafpriAttributesGeneralPaymentMethods)({
     currencies: currencies,
     useBankType: useBankType
@@ -49,14 +53,16 @@ function useGafpriAttributesPayment(_ref) {
   var states = {
     type: type,
     total: total,
-    note: note
+    note: note,
+    difference: difference
   };
   var actions = {
     infoReset: infoReset,
     setType: setType,
     setTotal: setTotal,
     setNote: setNote,
-    validationButtonNextPaymentCash: validationButtonNextPaymentCash
+    validationButtonNextPaymentCash: validationButtonNextPaymentCash,
+    setDifference: setDifference
   };
   return {
     states: states,

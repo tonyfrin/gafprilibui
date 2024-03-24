@@ -10,13 +10,18 @@ var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
 var _Span = require("../Span");
+var _Components = require("src/Components");
 var CreditForm = exports.CreditForm = function CreditForm(_ref) {
+  var _order$orderCustomer$, _order$orderCustomer$2;
   var useError = _ref.useError,
     siteOptions = _ref.siteOptions,
+    useOrder = _ref.useOrder,
     currentPaymentInfo = _ref.currentPaymentInfo,
     usePayment = _ref.usePayment,
     useCurrencies = _ref.useCurrencies;
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
+  var order = useOrder.data.actions.getById(currentPaymentInfo.orderPostsId);
+  if (!order) return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Components.Loading, null));
   var setChange = function setChange(e) {
     var value = e.target.value;
     usePayment.useGeneralPaymentMethods.useCreditOpening.actions.setAmount(parseFloat(value));
@@ -86,7 +91,7 @@ var CreditForm = exports.CreditForm = function CreditForm(_ref) {
       margin: '0',
       custom: "\n                  font-weight: 700;\n                  font-size: 20px;\n                "
     },
-    value: currentPaymentInfo.entityName
+    value: (_order$orderCustomer$ = order.orderCustomer[0]) !== null && _order$orderCustomer$ !== void 0 && _order$orderCustomer$.lastName ? "".concat(order.orderCustomer[0].name, " ").concat((_order$orderCustomer$2 = order.orderCustomer[0]) === null || _order$orderCustomer$2 === void 0 ? void 0 : _order$orderCustomer$2.lastName) : "".concat(order.orderCustomer[0].name)
   }))), /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
     styles: {
       width: '100%'

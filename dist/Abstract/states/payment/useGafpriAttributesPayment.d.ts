@@ -10,6 +10,7 @@ type State = {
     total: string;
     type: string;
     note: string;
+    difference: number;
 };
 type Actions = {
     infoReset: () => void;
@@ -17,6 +18,7 @@ type Actions = {
     setTotal: (value: string) => void;
     setNote: (value: string) => void;
     validationButtonNextPaymentCash: () => boolean;
+    setDifference: (value: number) => void;
 };
 export type UseGafpriAttributesPaymentReturn = {
     states: State;

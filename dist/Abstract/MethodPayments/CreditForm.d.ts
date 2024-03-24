@@ -1,7 +1,7 @@
-import type { SiteOptions, UseCurrenciesReturn, UseErrorReturn } from '../../states';
+import type { SiteOptions, UseCurrenciesReturn, UseErrorReturn, UseGafpriOrderReturn } from '../../states';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 type CurrentPaymentInfo = {
-    entityName: string;
+    orderPostsId: number;
     difference: number;
     amount: number;
     add: () => void;
@@ -11,10 +11,11 @@ type CurrentPaymentInfo = {
 };
 export type CreditFormProps = {
     useError: UseErrorReturn;
+    useOrder: UseGafpriOrderReturn;
     siteOptions: SiteOptions;
     currentPaymentInfo: CurrentPaymentInfo;
     usePayment: UseGafpriAttributesPaymentReturn;
     useCurrencies: UseCurrenciesReturn;
 };
-export declare const CreditForm: ({ useError, siteOptions, currentPaymentInfo, usePayment, useCurrencies, }: CreditFormProps) => JSX.Element;
+export declare const CreditForm: ({ useError, siteOptions, useOrder, currentPaymentInfo, usePayment, useCurrencies, }: CreditFormProps) => JSX.Element;
 export {};

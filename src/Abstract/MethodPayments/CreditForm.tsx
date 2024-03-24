@@ -7,12 +7,14 @@ import type {
   SiteOptions,
   UseCurrenciesReturn,
   UseErrorReturn,
+  UseGafpriOrderReturn,
 } from '../../states';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 import { SpanValue } from '../Span';
+import { Loading } from 'src/Components';
 
 type CurrentPaymentInfo = {
-  entityName: string;
+  orderPostsId: number;
   difference: number;
   amount: number;
   add: () => void;
@@ -23,6 +25,7 @@ type CurrentPaymentInfo = {
 
 export type CreditFormProps = {
   useError: UseErrorReturn;
+  useOrder: UseGafpriOrderReturn;
   siteOptions: SiteOptions;
   currentPaymentInfo: CurrentPaymentInfo;
   usePayment: UseGafpriAttributesPaymentReturn;
@@ -32,11 +35,20 @@ export type CreditFormProps = {
 export const CreditForm = ({
   useError,
   siteOptions,
+  useOrder,
   currentPaymentInfo,
   usePayment,
   useCurrencies,
 }: CreditFormProps): JSX.Element => {
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
+  const order = useOrder.data.actions.getById(currentPaymentInfo.orderPostsId);
+
+  if (!order)
+    return (
+      <>
+        <Loading />
+      </>
+    );
 
   const setChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -141,7 +153,11 @@ export const CreditForm = ({
                   font-size: 20px;
                 `,
               }}
-              value={currentPaymentInfo.entityName}
+              value={
+                order.orderCustomer[0]?.lastName
+                  ? `${order.orderCustomer[0].name} ${order.orderCustomer[0]?.lastName}`
+                  : `${order.orderCustomer[0].name}`
+              }
             />
           </>
         </ContainerButton>

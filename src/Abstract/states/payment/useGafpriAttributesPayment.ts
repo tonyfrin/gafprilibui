@@ -18,6 +18,7 @@ type State = {
   total: string;
   type: string;
   note: string;
+  difference: number;
 };
 
 type Actions = {
@@ -26,6 +27,7 @@ type Actions = {
   setTotal: (value: string) => void;
   setNote: (value: string) => void;
   validationButtonNextPaymentCash: () => boolean;
+  setDifference: (value: number) => void;
 };
 
 export type UseGafpriAttributesPaymentReturn = {
@@ -46,6 +48,7 @@ export function useGafpriAttributesPayment({
   const [type, setType] = useState('');
   const [total, setTotal] = useState('');
   const [note, setNote] = useState('');
+  const [difference, setDifference] = useState(0);
   const useGeneralPaymentMethods = useGafpriAttributesGeneralPaymentMethods({
     currencies,
     useBankType,
@@ -80,6 +83,7 @@ export function useGafpriAttributesPayment({
     type,
     total,
     note,
+    difference,
   };
 
   const actions = {
@@ -88,6 +92,7 @@ export function useGafpriAttributesPayment({
     setTotal,
     setNote,
     validationButtonNextPaymentCash,
+    setDifference,
   };
 
   return {

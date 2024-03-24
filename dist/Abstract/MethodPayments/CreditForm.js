@@ -10,7 +10,7 @@ var _Input = require("../Input");
 var _Containers = require("../Containers");
 var _Form = require("../Form");
 var _Span = require("../Span");
-var _Components = require("src/Components");
+var _Components = require("../../Components");
 var CreditForm = exports.CreditForm = function CreditForm(_ref) {
   var _order$orderCustomer$, _order$orderCustomer$2;
   var useError = _ref.useError,

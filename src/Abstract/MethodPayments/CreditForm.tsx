@@ -10,7 +10,7 @@ import type {
 } from '../../states';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 import { SpanValue } from '../Span';
-import { Loading } from 'src/Components';
+import { Loading } from '../../Components';
 
 type CurrentPaymentInfo = {
   orderPostsId: number;

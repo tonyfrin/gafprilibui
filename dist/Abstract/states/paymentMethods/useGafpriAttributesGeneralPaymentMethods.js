@@ -288,6 +288,23 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     };
     setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [newPayment]));
   };
+  var addSinglePaymentMethod = function addSinglePaymentMethod(siteCurrenciesId) {
+    var newPaymentMethods = {
+      methodType: 'single',
+      type: type,
+      paymentType: usePaymentMethods.states.paymentType,
+      currenciesId: siteCurrenciesId,
+      bank: '',
+      number: '',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      note: ''
+    };
+    var newPayment = {
+      paymentMethods: newPaymentMethods
+    };
+    setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [newPayment]));
+  };
   var deletePaymentMethod = function deletePaymentMethod(index) {
     var newArray = (0, _toConsumableArray2["default"])(arrayPaymentMethod);
     if (index >= 0 && index < newArray.length) {
@@ -379,7 +396,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     setType: setType,
     partiallyInfoReset: partiallyInfoReset,
     addElectronicPaymentMethod: addElectronicPaymentMethod,
-    addCreditPaymentMethod: addCreditPaymentMethod
+    addCreditPaymentMethod: addCreditPaymentMethod,
+    addSinglePaymentMethod: addSinglePaymentMethod
   };
   return {
     states: states,

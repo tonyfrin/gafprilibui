@@ -44,6 +44,7 @@ type Actions = {
     partiallyInfoReset: () => void;
     addElectronicPaymentMethod: () => void;
     addCreditPaymentMethod: (entityId: number, currenciesId: number) => void;
+    addSinglePaymentMethod: (siteCurrenciesId: number) => void;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     states: State;

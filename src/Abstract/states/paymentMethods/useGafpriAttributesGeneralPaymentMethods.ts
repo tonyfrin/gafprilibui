@@ -75,6 +75,7 @@ type Actions = {
   partiallyInfoReset: () => void;
   addElectronicPaymentMethod: () => void;
   addCreditPaymentMethod: (entityId: number, currenciesId: number) => void;
+  addSinglePaymentMethod: (siteCurrenciesId: number) => void;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
@@ -401,6 +402,26 @@ export function useGafpriAttributesGeneralPaymentMethods({
     setArrayPaymentMethod([...arrayPaymentMethod, newPayment]);
   };
 
+  const addSinglePaymentMethod = (siteCurrenciesId: number): void => {
+    const newPaymentMethods = {
+      methodType: 'single',
+      type,
+      paymentType: usePaymentMethods.states.paymentType,
+      currenciesId: siteCurrenciesId,
+      bank: '',
+      number: '',
+      amount: usePaymentMethods.states.amount,
+      change: usePaymentMethods.states.change,
+      note: '',
+    };
+
+    const newPayment: GeneralPaymentMethodsAttributes = {
+      paymentMethods: newPaymentMethods,
+    };
+
+    setArrayPaymentMethod([...arrayPaymentMethod, newPayment]);
+  };
+
   const deletePaymentMethod = (index: number): void => {
     const newArray = [...arrayPaymentMethod];
 
@@ -513,6 +534,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     partiallyInfoReset,
     addElectronicPaymentMethod,
     addCreditPaymentMethod,
+    addSinglePaymentMethod,
   };
 
   return {

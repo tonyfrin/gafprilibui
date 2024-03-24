@@ -28,12 +28,17 @@ function useGafpriPagesPaymentMethods() {
     _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
     isAuthorization = _useState10[0],
     setIsAuthorization = _useState10[1];
+  var _useState11 = (0, _react.useState)(false),
+    _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
+    isSingle = _useState12[0],
+    setIsSingle = _useState12[1];
   var onFetching = function onFetching() {
     setIsFetching(true);
     setIsCash(false);
     setIsTransfer(false);
     setIsCredit(false);
     setIsAuthorization(false);
+    setIsSingle(false);
   };
   var onCash = function onCash() {
     setIsFetching(false);
@@ -41,6 +46,7 @@ function useGafpriPagesPaymentMethods() {
     setIsTransfer(false);
     setIsCredit(false);
     setIsAuthorization(false);
+    setIsSingle(false);
   };
   var onTransfer = function onTransfer() {
     setIsFetching(false);
@@ -48,6 +54,7 @@ function useGafpriPagesPaymentMethods() {
     setIsTransfer(true);
     setIsCredit(false);
     setIsAuthorization(false);
+    setIsSingle(false);
   };
   var onCredit = function onCredit() {
     setIsFetching(false);
@@ -55,6 +62,7 @@ function useGafpriPagesPaymentMethods() {
     setIsTransfer(false);
     setIsCredit(true);
     setIsAuthorization(false);
+    setIsSingle(false);
   };
   var onAuthorization = function onAuthorization() {
     setIsFetching(false);
@@ -62,6 +70,15 @@ function useGafpriPagesPaymentMethods() {
     setIsTransfer(false);
     setIsCredit(false);
     setIsAuthorization(true);
+    setIsSingle(false);
+  };
+  var onSingle = function onSingle() {
+    setIsFetching(false);
+    setIsCash(false);
+    setIsTransfer(false);
+    setIsCredit(false);
+    setIsAuthorization(false);
+    setIsSingle(true);
   };
 
   /**
@@ -74,14 +91,16 @@ function useGafpriPagesPaymentMethods() {
     isCash: isCash,
     isTransfer: isTransfer,
     isCredit: isCredit,
-    isAuthorization: isAuthorization
+    isAuthorization: isAuthorization,
+    isSingle: isSingle
   };
   var actions = {
     onFetching: onFetching,
     onCash: onCash,
     onTransfer: onTransfer,
     onCredit: onCredit,
-    onAuthorization: onAuthorization
+    onAuthorization: onAuthorization,
+    onSingle: onSingle
   };
   return {
     states: states,

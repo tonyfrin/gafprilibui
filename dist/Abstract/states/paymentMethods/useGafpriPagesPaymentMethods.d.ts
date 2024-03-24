@@ -4,6 +4,7 @@ type State = {
     isTransfer: boolean;
     isCredit: boolean;
     isAuthorization: boolean;
+    isSingle: boolean;
 };
 type Actions = {
     onFetching: () => void;
@@ -11,6 +12,7 @@ type Actions = {
     onTransfer: () => void;
     onCredit: () => void;
     onAuthorization: () => void;
+    onSingle: () => void;
 };
 export type UseGafpriPagesPaymentMethodsReturn = {
     states: State;

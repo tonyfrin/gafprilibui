@@ -6,6 +6,7 @@ type State = {
   isTransfer: boolean;
   isCredit: boolean;
   isAuthorization: boolean;
+  isSingle: boolean;
 };
 
 type Actions = {
@@ -18,6 +19,8 @@ type Actions = {
   onCredit: () => void;
 
   onAuthorization: () => void;
+
+  onSingle: () => void;
 };
 
 export type UseGafpriPagesPaymentMethodsReturn = {
@@ -31,6 +34,7 @@ export function useGafpriPagesPaymentMethods(): UseGafpriPagesPaymentMethodsRetu
   const [isTransfer, setIsTransfer] = useState(false);
   const [isCredit, setIsCredit] = useState(false);
   const [isAuthorization, setIsAuthorization] = useState(false);
+  const [isSingle, setIsSingle] = useState(false);
 
   const onFetching = (): void => {
     setIsFetching(true);
@@ -38,6 +42,7 @@ export function useGafpriPagesPaymentMethods(): UseGafpriPagesPaymentMethodsRetu
     setIsTransfer(false);
     setIsCredit(false);
     setIsAuthorization(false);
+    setIsSingle(false);
   };
 
   const onCash = (): void => {
@@ -46,6 +51,7 @@ export function useGafpriPagesPaymentMethods(): UseGafpriPagesPaymentMethodsRetu
     setIsTransfer(false);
     setIsCredit(false);
     setIsAuthorization(false);
+    setIsSingle(false);
   };
 
   const onTransfer = (): void => {
@@ -54,6 +60,7 @@ export function useGafpriPagesPaymentMethods(): UseGafpriPagesPaymentMethodsRetu
     setIsTransfer(true);
     setIsCredit(false);
     setIsAuthorization(false);
+    setIsSingle(false);
   };
 
   const onCredit = (): void => {
@@ -62,6 +69,7 @@ export function useGafpriPagesPaymentMethods(): UseGafpriPagesPaymentMethodsRetu
     setIsTransfer(false);
     setIsCredit(true);
     setIsAuthorization(false);
+    setIsSingle(false);
   };
 
   const onAuthorization = (): void => {
@@ -70,6 +78,16 @@ export function useGafpriPagesPaymentMethods(): UseGafpriPagesPaymentMethodsRetu
     setIsTransfer(false);
     setIsCredit(false);
     setIsAuthorization(true);
+    setIsSingle(false);
+  };
+
+  const onSingle = (): void => {
+    setIsFetching(false);
+    setIsCash(false);
+    setIsTransfer(false);
+    setIsCredit(false);
+    setIsAuthorization(false);
+    setIsSingle(true);
   };
 
   /**
@@ -83,6 +101,7 @@ export function useGafpriPagesPaymentMethods(): UseGafpriPagesPaymentMethodsRetu
     isTransfer,
     isCredit,
     isAuthorization,
+    isSingle,
   };
 
   const actions = {
@@ -95,6 +114,8 @@ export function useGafpriPagesPaymentMethods(): UseGafpriPagesPaymentMethodsRetu
     onCredit,
 
     onAuthorization,
+
+    onSingle,
   };
 
   return {

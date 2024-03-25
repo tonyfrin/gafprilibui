@@ -236,6 +236,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     if (useBankType) {
       var bankType = useBankType.data.actions.getById(useBankTransactions.states.bankTypePostsId);
       if (!bankType) return;
+      var currentDate = new Date();
+      var formatDate = currentDate.toISOString().split('T')[0];
       var newBankTransactions = {
         bankTypePostsId: useBankTransactions.states.bankTypePostsId,
         type: type,
@@ -243,7 +245,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
         description: useBankTransactions.states.description,
         amount: useBankTransactions.states.amount,
         change: useBankTransactions.states.change,
-        dateTransations: useBankTransactions.states.dateTransations,
+        dateTransations: "".concat(formatDate),
         nameSend: useBankTransactions.states.nameSend
       };
       var newPaymentMethods = {

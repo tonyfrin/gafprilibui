@@ -338,6 +338,8 @@ export function useGafpriAttributesGeneralPaymentMethods({
         useBankTransactions.states.bankTypePostsId
       );
       if (!bankType) return;
+      const currentDate = new Date();
+      const formatDate = currentDate.toISOString().split('T')[0];
       const newBankTransactions = {
         bankTypePostsId: useBankTransactions.states.bankTypePostsId,
         type,
@@ -345,7 +347,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
         description: useBankTransactions.states.description,
         amount: useBankTransactions.states.amount,
         change: useBankTransactions.states.change,
-        dateTransations: useBankTransactions.states.dateTransations,
+        dateTransations: `${formatDate}`,
         nameSend: useBankTransactions.states.nameSend,
       };
 

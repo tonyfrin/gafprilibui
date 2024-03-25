@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "useGafpriApiPayment", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriApiPayment.useGafpriApiPayment;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiPaymentTransferBank", {
   enumerable: true,
   get: function get() {
@@ -62,3 +68,4 @@ var _paymentTransferCashRegister = require("./paymentTransferCashRegister");
 var _paymentTransferBank = require("./paymentTransferBank");
 var _useGafpriSubPagesDepositPayment = require("./useGafpriSubPagesDepositPayment");
 var _useGafpriPagesPayment = require("./useGafpriPagesPayment");
+var _useGafpriApiPayment = require("./useGafpriApiPayment");

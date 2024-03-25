@@ -506,6 +506,7 @@ export {
   useGafpriPagesPayment,
   useGafpriSubPagesDepositPayment,
   useGafpriAttributesCreditOpening,
+  useGafpriApiPayment,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -699,6 +700,8 @@ export type {
   UseGafpriSubPagesDepositPaymentReturn,
   UseGafpriPagesPaymentProps,
   UseGafpriAttributesCreditOpeningReturn,
+  UseGafpriApiPaymentProps,
+  UseGafpriApiPaymentReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';

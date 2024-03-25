@@ -8,3 +8,5 @@ export { useGafpriSubPagesDepositPayment } from './useGafpriSubPagesDepositPayme
 export type { UseGafpriSubPagesDepositPaymentReturn } from './useGafpriSubPagesDepositPayment';
 export { useGafpriPagesPayment } from './useGafpriPagesPayment';
 export type { UseGafpriPagesPaymentReturn, UseGafpriPagesPaymentProps, } from './useGafpriPagesPayment';
+export { useGafpriApiPayment } from './useGafpriApiPayment';
+export type { UseGafpriApiPaymentReturn, UseGafpriApiPaymentProps, } from './useGafpriApiPayment';

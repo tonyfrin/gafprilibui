@@ -1695,6 +1695,12 @@ Object.defineProperty(exports, "PASSWORD_INPUT", {
     return _constants.PASSWORD_INPUT;
   }
 });
+Object.defineProperty(exports, "PAYMENT_ORDER_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.PAYMENT_ORDER_ROUTE;
+  }
+});
 Object.defineProperty(exports, "PAYMENT_TRANSFER_CASH_REGISTER_ROUTE", {
   enumerable: true,
   get: function get() {

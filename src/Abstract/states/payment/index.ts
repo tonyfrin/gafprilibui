@@ -30,3 +30,8 @@ export type {
   UseGafpriPagesPaymentReturn,
   UseGafpriPagesPaymentProps,
 } from './useGafpriPagesPayment';
+export { useGafpriApiPayment } from './useGafpriApiPayment';
+export type {
+  UseGafpriApiPaymentReturn,
+  UseGafpriApiPaymentProps,
+} from './useGafpriApiPayment';

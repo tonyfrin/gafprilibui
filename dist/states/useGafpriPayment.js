@@ -8,7 +8,9 @@ var _useGafpriError = require("./useGafpriError");
 var _Abstract = require("../Abstract");
 function useGafpriPayment(_ref) {
   var currencies = _ref.currencies,
-    useBankType = _ref.useBankType;
+    useBankType = _ref.useBankType,
+    useOrder = _ref.useOrder,
+    token = _ref.token;
   var error = (0, _useGafpriError.useGafpriError)();
   var attributes = (0, _Abstract.useGafpriAttributesPayment)({
     currencies: currencies,
@@ -19,10 +21,18 @@ function useGafpriPayment(_ref) {
     attributes: attributes,
     subPagesDeposit: subPagesDeposit
   });
+  var api = (0, _Abstract.useGafpriApiPayment)({
+    useOrder: useOrder,
+    usePages: pages,
+    useAttributes: attributes,
+    useError: error,
+    token: token
+  });
   return {
     attributes: attributes,
     pages: pages,
     subPagesDeposit: subPagesDeposit,
-    error: error
+    error: error,
+    api: api
   };
 }

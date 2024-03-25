@@ -290,6 +290,7 @@ export {
   useGafpriPagesPaymentTransferBank,
   useGafpriPagesPayment,
   useGafpriSubPagesDepositPayment,
+  useGafpriApiPayment,
 } from './payment';
 export type {
   UseGafpriAttributesPaymentReturn,
@@ -303,6 +304,8 @@ export type {
   UseGafpriPagesPaymentReturn,
   UseGafpriPagesPaymentProps,
   UseGafpriSubPagesDepositPaymentReturn,
+  UseGafpriApiPaymentReturn,
+  UseGafpriApiPaymentProps,
 } from './payment';
 export {
   useGafpriApiBankType,

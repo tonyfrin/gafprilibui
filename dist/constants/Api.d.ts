@@ -27,3 +27,4 @@ export declare const LOGIN_TOKEN_ROUTE = "/auth/jwt";
 export declare const BANK_TYPE_ROUTE = "/bank-type";
 export declare const PAYMENT_TRANSFER_BANK_ROUTE = "/payment-transfer-bank";
 export declare const ACCOUNTS_RECEIVABLE_ROUTE = "/accounts-receivable";
+export declare const PAYMENT_ORDER_ROUTE = "/payment-order";

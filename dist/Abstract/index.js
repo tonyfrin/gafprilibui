@@ -1617,6 +1617,12 @@ Object.defineProperty(exports, "useGafpriApiOrder", {
     return _states.useGafpriApiOrder;
   }
 });
+Object.defineProperty(exports, "useGafpriApiPayment", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriApiPayment;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiPaymentTransferBank", {
   enumerable: true,
   get: function get() {

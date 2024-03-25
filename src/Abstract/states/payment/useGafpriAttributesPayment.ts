@@ -30,6 +30,7 @@ type Actions = {
   setDifference: (value: number) => void;
   validationButtonNextPaymentCredit: () => boolean;
   validationButtonNextPaymentCreditAdd: () => boolean;
+  validationButtonNextPaymentSingle: () => boolean;
 };
 
 export type UseGafpriAttributesPaymentReturn = {
@@ -102,6 +103,16 @@ export function useGafpriAttributesPayment({
     });
   };
 
+  const validationButtonNextPaymentSingle = (): boolean => {
+    return generalValidationButtonNext({
+      validations: [
+        useGeneralPaymentMethods.usePaymentMethods.states.change > 0,
+        useGeneralPaymentMethods.usePaymentMethods.states.amount > 0,
+      ],
+      inputId: 'single-add',
+    });
+  };
+
   /**
    * Export
    *
@@ -123,6 +134,7 @@ export function useGafpriAttributesPayment({
     setDifference,
     validationButtonNextPaymentCredit,
     validationButtonNextPaymentCreditAdd,
+    validationButtonNextPaymentSingle,
   };
 
   return {

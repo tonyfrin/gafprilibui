@@ -1,7 +1,6 @@
 import type { SiteOptions, UseCurrenciesReturn, UseErrorReturn } from '../../states';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 type CurrentPaymentInfo = {
-    orderPostsId: number;
     difference: number;
     amount: number;
     add: () => void;

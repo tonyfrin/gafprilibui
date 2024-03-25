@@ -11,7 +11,6 @@ import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 import { SpanValue } from '../Span';
 
 type CurrentPaymentInfo = {
-  orderPostsId: number;
   difference: number;
   amount: number;
   add: () => void;

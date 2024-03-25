@@ -57,6 +57,12 @@ function useGafpriAttributesPayment(_ref) {
       inputId: 'credit-add'
     });
   };
+  var validationButtonNextPaymentSingle = function validationButtonNextPaymentSingle() {
+    return (0, _Validations.generalValidationButtonNext)({
+      validations: [useGeneralPaymentMethods.usePaymentMethods.states.change > 0, useGeneralPaymentMethods.usePaymentMethods.states.amount > 0],
+      inputId: 'single-add'
+    });
+  };
 
   /**
    * Export
@@ -77,7 +83,8 @@ function useGafpriAttributesPayment(_ref) {
     validationButtonNextPaymentCash: validationButtonNextPaymentCash,
     setDifference: setDifference,
     validationButtonNextPaymentCredit: validationButtonNextPaymentCredit,
-    validationButtonNextPaymentCreditAdd: validationButtonNextPaymentCreditAdd
+    validationButtonNextPaymentCreditAdd: validationButtonNextPaymentCreditAdd,
+    validationButtonNextPaymentSingle: validationButtonNextPaymentSingle
   };
   return {
     states: states,

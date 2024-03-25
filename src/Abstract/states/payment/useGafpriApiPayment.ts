@@ -48,10 +48,12 @@ export const useGafpriApiPayment = ({
       const payload = {
         orderPostsId: useOrder.attributes.states.currentId,
         total: useAttributes.states.total,
-        type: useAttributes.states.type,
         note: useAttributes.states.note,
-        paymentMethod:
+        paymentMethods:
           useAttributes.useGeneralPaymentMethods.states.arrayPaymentMethod,
+        posts: {
+          visibility: 'public',
+        },
       };
       gafpriFetch({
         initMethod: 'POST',

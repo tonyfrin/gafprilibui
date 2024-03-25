@@ -5,6 +5,7 @@ export type BankTransactionsAttributes = {
     type: string;
     paymentType: string;
     description?: string;
+    nameSend?: string;
     status?: string;
     amount: number;
     change: number;
@@ -15,6 +16,7 @@ export type BankTransactionsAttributes = {
 };
 type State = {
     bankTypePostsId: number;
+    nameSend: string;
     type: string;
     paymentType: string;
     description: string;
@@ -27,6 +29,7 @@ type Actions = {
     setBankTypePostsId: (value: number) => void;
     setType: (value: string) => void;
     setPaymentType: (value: string) => void;
+    setNameSend: (value: string) => void;
     setAmount: (value: number) => void;
     setChange: (value: number) => void;
     setDescription: (value: string) => void;

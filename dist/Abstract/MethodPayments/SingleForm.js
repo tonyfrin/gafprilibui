@@ -82,7 +82,7 @@ var SingleForm = exports.SingleForm = function SingleForm(_ref) {
       custom: "\n              margin: 20px 0px;\n              padding-left: 5%;\n            "
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
-    value: "Cliente: ",
+    value: "Metodo de Pago: ",
     containerStyles: {
       margin: '0px 15px 0px 0px',
       custom: "\n                  font-weight: 700;\n                  font-size: 20px;\n                "

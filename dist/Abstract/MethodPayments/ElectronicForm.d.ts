@@ -11,6 +11,7 @@ type CurrentPaymentInfo = {
     }>) => void;
     bankTypePostsId: number;
     changeNote: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    changeNameSend: (e: React.ChangeEvent<HTMLInputElement>) => void;
     add: () => void;
     infoReset: () => void;
     returnInit: () => void;

@@ -12,6 +12,7 @@ import type {
 } from '../../states';
 import { UseGafpriAttributesPaymentReturn } from '../states/payment';
 import { SpanValue } from '../Span';
+import { BankTypeAttributes } from '../states';
 
 type CurrentPaymentInfo = {
   paymentType: string;
@@ -24,6 +25,7 @@ type CurrentPaymentInfo = {
   ) => void;
   bankTypePostsId: number;
   changeNote: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  changeNameSend: (e: React.ChangeEvent<HTMLInputElement>) => void;
   add: () => void;
   infoReset: () => void;
   returnInit: () => void;
@@ -50,6 +52,8 @@ export const ElectronicForm = ({
   const [InputBankType, setInputBankType] = React.useState(<></>);
   const [bankCurrency, setBankCurrency] =
     React.useState<CurrenciesAttributes | null>(null);
+  const [currentBankType, setCurrentBankType] =
+    React.useState<BankTypeAttributes | null>(null);
   const siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
 
   const bankTypeOptions = useBankType.data.actions.getOptionsByMethods(
@@ -104,6 +108,9 @@ export const ElectronicForm = ({
           useBankType.data.actions.getById(currentPaymentInfo.bankTypePostsId)
             ?.currenciesId || 0
         )
+      );
+      setCurrentBankType(
+        useBankType.data.actions.getById(currentPaymentInfo.bankTypePostsId)
       );
     }
   }, [currentPaymentInfo.bankTypePostsId]);
@@ -294,6 +301,30 @@ export const ElectronicForm = ({
               )}
           </>
         </ContainerButton>
+        {currentBankType &&
+          useBankType.data.actions.isWalletGafpri(currentBankType.postsId) && (
+            <>
+              <ContainerButton
+                styles={{
+                  width: '100%',
+                }}
+              >
+                <>
+                  <Input
+                    inputProps={{
+                      onChange: (e) => currentPaymentInfo.changeNameSend(e),
+                      title: 'Nombre de la persona que realizó el pago:',
+                      type: 'text',
+                      placeholder: 'Persona o empresa',
+                    }}
+                    styles={{
+                      width: '100%',
+                    }}
+                  />
+                </>
+              </ContainerButton>
+            </>
+          )}
       </>
     </ModelForm>
   );

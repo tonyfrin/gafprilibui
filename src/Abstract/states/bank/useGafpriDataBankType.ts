@@ -56,6 +56,8 @@ type Actions = {
   getOptionsItems: (sitesId: number) => SelectDefault[];
 
   getOptionsByMethods: (sitesId: number, methods: string) => SelectDefault[];
+
+  isWalletGafpri: (id: number) => boolean;
 };
 
 export type UseGafpriDataBankTypeReturn = {
@@ -231,6 +233,19 @@ export function useGafpriDataBankType({
     );
   };
 
+  const isWalletGafpri = (id: number): boolean => {
+    return (
+      items.data.items?.some(
+        (item) =>
+          `${item.postsId}` === `${id}` &&
+          item.settings.some(
+            (setting) =>
+              setting.name === 'walletGafpri' && setting.value === 'yes'
+          )
+      ) || false
+    );
+  };
+
   /**
    * Effects
    *
@@ -267,6 +282,8 @@ export function useGafpriDataBankType({
     getOptionsItems,
 
     getOptionsByMethods,
+
+    isWalletGafpri,
   };
 
   return {

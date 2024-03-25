@@ -346,6 +346,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
         amount: useBankTransactions.states.amount,
         change: useBankTransactions.states.change,
         dateTransations: useBankTransactions.states.dateTransations,
+        nameSend: useBankTransactions.states.nameSend,
       };
 
       const newPaymentMethods = {

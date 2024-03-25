@@ -128,7 +128,7 @@ export const SingleForm = ({
         >
           <>
             <SpanValue
-              value="Cliente: "
+              value="Metodo de Pago: "
               containerStyles={{
                 margin: '0px 15px 0px 0px',
                 custom: `

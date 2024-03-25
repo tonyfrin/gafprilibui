@@ -243,7 +243,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
         description: useBankTransactions.states.description,
         amount: useBankTransactions.states.amount,
         change: useBankTransactions.states.change,
-        dateTransations: useBankTransactions.states.dateTransations
+        dateTransations: useBankTransactions.states.dateTransations,
+        nameSend: useBankTransactions.states.nameSend
       };
       var newPaymentMethods = {
         methodType: 'bank',

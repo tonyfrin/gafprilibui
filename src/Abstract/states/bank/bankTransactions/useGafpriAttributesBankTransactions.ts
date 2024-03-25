@@ -7,6 +7,7 @@ export type BankTransactionsAttributes = {
   type: string;
   paymentType: string;
   description?: string;
+  nameSend?: string;
   status?: string;
   amount: number;
   change: number;
@@ -18,6 +19,7 @@ export type BankTransactionsAttributes = {
 
 type State = {
   bankTypePostsId: number;
+  nameSend: string;
   type: string;
   paymentType: string;
   description: string;
@@ -31,6 +33,7 @@ type Actions = {
   setBankTypePostsId: (value: number) => void;
   setType: (value: string) => void;
   setPaymentType: (value: string) => void;
+  setNameSend: (value: string) => void;
   setAmount: (value: number) => void;
   setChange: (value: number) => void;
   setDescription: (value: string) => void;
@@ -50,6 +53,7 @@ export function useGafpriAttributesBankTransactions(): UseGafpriAttributesBankTr
   const [change, setChange] = useState(0);
   const [description, setDescription] = useState('');
   const [dateTransations, setDateTransations] = useState('');
+  const [nameSend, setNameSend] = useState('');
 
   const infoReset = (): void => {
     setBankTypePostsId(0);
@@ -59,6 +63,7 @@ export function useGafpriAttributesBankTransactions(): UseGafpriAttributesBankTr
     setChange(0);
     setDescription('');
     setDateTransations('');
+    setNameSend('');
   };
 
   /**
@@ -74,6 +79,7 @@ export function useGafpriAttributesBankTransactions(): UseGafpriAttributesBankTr
     change,
     description,
     dateTransations,
+    nameSend,
   };
 
   const actions = {
@@ -85,6 +91,7 @@ export function useGafpriAttributesBankTransactions(): UseGafpriAttributesBankTr
     setChange,
     setDescription,
     setDateTransations,
+    setNameSend,
   };
 
   return {

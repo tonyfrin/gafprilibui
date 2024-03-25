@@ -174,6 +174,14 @@ function useGafpriDataBankType(_ref) {
       };
     })) || [];
   };
+  var isWalletGafpri = function isWalletGafpri(id) {
+    var _items$data$items5;
+    return ((_items$data$items5 = items.data.items) === null || _items$data$items5 === void 0 ? void 0 : _items$data$items5.some(function (item) {
+      return "".concat(item.postsId) === "".concat(id) && item.settings.some(function (setting) {
+        return setting.name === 'walletGafpri' && setting.value === 'yes';
+      });
+    })) || false;
+  };
 
   /**
    * Effects
@@ -202,7 +210,8 @@ function useGafpriDataBankType(_ref) {
     handleUpdatedItem: handleUpdatedItem,
     handleDeletedItem: handleDeletedItem,
     getOptionsItems: getOptionsItems,
-    getOptionsByMethods: getOptionsByMethods
+    getOptionsByMethods: getOptionsByMethods,
+    isWalletGafpri: isWalletGafpri
   };
   return {
     states: states,

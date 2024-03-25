@@ -36,6 +36,10 @@ function useGafpriAttributesBankTransactions() {
     _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
     dateTransations = _useState14[0],
     setDateTransations = _useState14[1];
+  var _useState15 = (0, _react.useState)(''),
+    _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
+    nameSend = _useState16[0],
+    setNameSend = _useState16[1];
   var infoReset = function infoReset() {
     setBankTypePostsId(0);
     setType('');
@@ -44,6 +48,7 @@ function useGafpriAttributesBankTransactions() {
     setChange(0);
     setDescription('');
     setDateTransations('');
+    setNameSend('');
   };
 
   /**
@@ -58,7 +63,8 @@ function useGafpriAttributesBankTransactions() {
     amount: amount,
     change: change,
     description: description,
-    dateTransations: dateTransations
+    dateTransations: dateTransations,
+    nameSend: nameSend
   };
   var actions = {
     infoReset: infoReset,
@@ -68,7 +74,8 @@ function useGafpriAttributesBankTransactions() {
     setAmount: setAmount,
     setChange: setChange,
     setDescription: setDescription,
-    setDateTransations: setDateTransations
+    setDateTransations: setDateTransations,
+    setNameSend: setNameSend
   };
   return {
     states: states,

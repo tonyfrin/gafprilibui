@@ -37,6 +37,7 @@ type Actions = {
     handleDeletedItem: ({ itemId }: DeletedBankType) => void;
     getOptionsItems: (sitesId: number) => SelectDefault[];
     getOptionsByMethods: (sitesId: number, methods: string) => SelectDefault[];
+    isWalletGafpri: (id: number) => boolean;
 };
 export type UseGafpriDataBankTypeReturn = {
     states: State;

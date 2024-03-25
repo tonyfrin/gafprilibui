@@ -26,6 +26,10 @@ var ElectronicForm = exports.ElectronicForm = function ElectronicForm(_ref) {
     _React$useState4 = (0, _slicedToArray2["default"])(_React$useState3, 2),
     bankCurrency = _React$useState4[0],
     setBankCurrency = _React$useState4[1];
+  var _React$useState5 = _react["default"].useState(null),
+    _React$useState6 = (0, _slicedToArray2["default"])(_React$useState5, 2),
+    currentBankType = _React$useState6[0],
+    setCurrentBankType = _React$useState6[1];
   var siteCurrency = useCurrencies.actions.getById(siteOptions.currencyId);
   var bankTypeOptions = useBankType.data.actions.getOptionsByMethods(siteOptions.id, currentPaymentInfo.paymentType);
   var bankTypePostsIdDefault = {
@@ -54,6 +58,7 @@ var ElectronicForm = exports.ElectronicForm = function ElectronicForm(_ref) {
     if (currentPaymentInfo.bankTypePostsId !== 0) {
       var _useBankType$data$act;
       setBankCurrency(useCurrencies.actions.getById(((_useBankType$data$act = useBankType.data.actions.getById(currentPaymentInfo.bankTypePostsId)) === null || _useBankType$data$act === void 0 ? void 0 : _useBankType$data$act.currenciesId) || 0));
+      setCurrentBankType(useBankType.data.actions.getById(currentPaymentInfo.bankTypePostsId));
     }
   }, [currentPaymentInfo.bankTypePostsId]);
   _react["default"].useEffect(function () {
@@ -199,5 +204,21 @@ var ElectronicForm = exports.ElectronicForm = function ElectronicForm(_ref) {
     styles: {
       width: '100%'
     }
-  })))));
+  }))), currentBankType && useBankType.data.actions.isWalletGafpri(currentBankType.postsId) && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerButton, {
+    styles: {
+      width: '100%'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Input.Input, {
+    inputProps: {
+      onChange: function onChange(e) {
+        return currentPaymentInfo.changeNameSend(e);
+      },
+      title: 'Nombre de la persona que realizó el pago:',
+      type: 'text',
+      placeholder: 'Persona o empresa'
+    },
+    styles: {
+      width: '100%'
+    }
+  }))))));
 };

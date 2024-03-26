@@ -1,6 +1,7 @@
 import { PostsAttributes } from '../../../states';
 import { GeneralAttribute } from '../../../Validations';
 import { EntityAttributes } from '../entity';
+import { CreditOpeningAttributes } from './creditOpening';
 export interface AccountsReceivableAttributes {
     postsId: number;
     entityId: number;
@@ -12,6 +13,7 @@ export interface AccountsReceivableAttributes {
     statistics: GeneralAttribute[];
     posts: PostsAttributes;
     entity: EntityAttributes;
+    creditOpening: CreditOpeningAttributes[];
 }
 type DeletedAccountsReceivable = {
     itemId: number;

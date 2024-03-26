@@ -50,7 +50,7 @@ export function useGafpriPaginationsAccountsReceivable({
   const [orderList, setOrderList] = useState<'asc' | 'desc'>('asc');
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 20;
 
   function sortByName(
     itemStorages: AccountsReceivableAttributes[] | null,

@@ -24,7 +24,7 @@ function useGafpriPaginationsAccountsReceivable(_ref) {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     currentPage = _useState6[0],
     setCurrentPage = _useState6[1];
-  var itemsPerPage = 6;
+  var itemsPerPage = 20;
   function sortByName(itemStorages, order) {
     if (itemStorages) {
       return itemStorages.slice().sort(function (a, b) {

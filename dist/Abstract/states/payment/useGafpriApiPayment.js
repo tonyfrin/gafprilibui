@@ -16,6 +16,14 @@ var useGafpriApiPayment = exports.useGafpriApiPayment = function useGafpriApiPay
     usePages.actions.onDeposit();
     useOrder.pages.actions.onOrderPayment();
   };
+  var fetchingOrderPayment = function fetchingOrderPayment() {
+    usePages.actions.onFetching();
+    useOrder.pages.actions.onFetching();
+  };
+  var successOrderPayment = function successOrderPayment() {
+    usePages.actions.onDeposit();
+    useOrder.pages.actions.onOrderList();
+  };
   var newErrorOrderPayment = function newErrorOrderPayment(newErrorValue) {
     useError.actions.newError({
       newErrorValue: newErrorValue,
@@ -40,8 +48,8 @@ var useGafpriApiPayment = exports.useGafpriApiPayment = function useGafpriApiPay
         initToken: {
           token: token
         },
-        functionFetching: usePages.actions.onFetching,
-        functionSuccess: useOrder.pages.actions.onOrderList,
+        functionFetching: fetchingOrderPayment,
+        functionSuccess: successOrderPayment,
         functionError: newErrorOrderPayment
       });
     }

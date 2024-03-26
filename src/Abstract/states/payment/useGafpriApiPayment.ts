@@ -34,6 +34,16 @@ export const useGafpriApiPayment = ({
     useOrder.pages.actions.onOrderPayment();
   };
 
+  const fetchingOrderPayment = (): void => {
+    usePages.actions.onFetching();
+    useOrder.pages.actions.onFetching();
+  };
+
+  const successOrderPayment = (): void => {
+    usePages.actions.onDeposit();
+    useOrder.pages.actions.onOrderList();
+  };
+
   const newErrorOrderPayment = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
   ): void => {
@@ -60,8 +70,8 @@ export const useGafpriApiPayment = ({
         initRoute: PAYMENT_ORDER_ROUTE,
         initCredentials: payload,
         initToken: { token },
-        functionFetching: usePages.actions.onFetching,
-        functionSuccess: useOrder.pages.actions.onOrderList,
+        functionFetching: fetchingOrderPayment,
+        functionSuccess: successOrderPayment,
         functionError: newErrorOrderPayment,
       });
     }

@@ -6,12 +6,14 @@ import {
 } from '../paymentMethods';
 import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
 import { generalValidationButtonNext } from '../../../Validations';
+import { OrderAttributes } from '../order';
 
 export type PaymentAttributes = {
   total: string;
   note?: string;
   type: string;
   paymentMethod: GeneralPaymentMethodsAttributes[];
+  order?: OrderAttributes;
 };
 
 type State = {

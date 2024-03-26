@@ -21,6 +21,8 @@ var useGafpriApiPayment = exports.useGafpriApiPayment = function useGafpriApiPay
     useOrder.pages.actions.onFetching();
   };
   var successOrderPayment = function successOrderPayment() {
+    useAttributes.actions.infoReset();
+    useOrder.attributes.actions.infoReset();
     usePages.actions.onDeposit();
     useOrder.pages.actions.onOrderList();
   };

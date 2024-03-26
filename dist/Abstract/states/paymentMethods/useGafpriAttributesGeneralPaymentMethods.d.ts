@@ -1,7 +1,7 @@
 import { SingleValue } from 'react-select';
 import { PaymentMethodsAttributes, UseGafpriAttributesPaymentMethodsReturn } from './useGafpriAttributesPaymentMethods';
 import { CashTransactionsAttributes, UseGafpriAttributesCashTransactionsReturn } from '../cashRegister';
-import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
+import { UseCurrenciesReturn, UseErrorReturn, UseGafpriBankTypeReturn } from '../../../states';
 import { SelectDefault } from '../../../helpers';
 import { BankTransactionsAttributes, UseGafpriAttributesBankTransactionsReturn } from '../bank/bankTransactions/useGafpriAttributesBankTransactions';
 import { UseGafpriPagesPaymentMethodsReturn } from './useGafpriPagesPaymentMethods';
@@ -58,6 +58,7 @@ export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
 export type UseGafpriAttributesGeneralPaymentMethodsProps = {
     currencies?: UseCurrenciesReturn;
     useBankType?: UseGafpriBankTypeReturn;
+    useError?: UseErrorReturn;
 };
-export declare function useGafpriAttributesGeneralPaymentMethods({ currencies, useBankType, }: UseGafpriAttributesGeneralPaymentMethodsProps): UseGafpriAttributesGeneralPaymentMethodsReturn;
+export declare function useGafpriAttributesGeneralPaymentMethods({ currencies, useBankType, useError, }: UseGafpriAttributesGeneralPaymentMethodsProps): UseGafpriAttributesGeneralPaymentMethodsReturn;
 export {};

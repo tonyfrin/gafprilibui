@@ -19,7 +19,8 @@ function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return 
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function useGafpriAttributesGeneralPaymentMethods(_ref) {
   var currencies = _ref.currencies,
-    useBankType = _ref.useBankType;
+    useBankType = _ref.useBankType,
+    useError = _ref.useError;
   var _useState = (0, _react.useState)([]),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     arrayPaymentMethod = _useState2[0],
@@ -115,11 +116,26 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       currentValid: currenciesIdValid
     });
   };
+  var validationArrayPaymentMethod = function validationArrayPaymentMethod(value) {
+    return value.length <= 20;
+  };
+  var changeArrayPaymentMethod = function changeArrayPaymentMethod(value) {
+    var valid = validationArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [value]));
+    if (valid) {
+      setArrayPaymentMethod(function (prevCart) {
+        return [].concat((0, _toConsumableArray2["default"])(prevCart), [value]);
+      });
+      return;
+    }
+    if (useError) {
+      useError.actions.changeError(['No se pueden agregar más de 8 metodos de pagos']);
+    }
+  };
   var addCashTransaction = function addCashTransaction() {
-    setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [{
+    changeArrayPaymentMethod({
       paymentMethods: usePaymentMethods.states,
       cashTransactions: useCashTransactions.states
-    }]));
+    });
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
   };
@@ -172,7 +188,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       paymentMethods: depositPaymentMethods,
       cashTransactions: depositCashTransactions
     };
-    setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [debitTransfer, depositTransfer]));
+    changeArrayPaymentMethod(debitTransfer);
+    changeArrayPaymentMethod(depositTransfer);
   };
   var addTransferBankRegister = function addTransferBankRegister(debitBankTypePostsId, depositBankTypePostsId) {
     if (useBankType) {
@@ -229,7 +246,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
         paymentMethods: depositPaymentMethods,
         bankTransactions: depositBankTransactions
       };
-      setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [debitTransfer, depositTransfer]));
+      changeArrayPaymentMethod(debitTransfer);
+      changeArrayPaymentMethod(depositTransfer);
     }
   };
   var addElectronicPaymentMethod = function addElectronicPaymentMethod() {
@@ -263,7 +281,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
         paymentMethods: newPaymentMethods,
         bankTransactions: newBankTransactions
       };
-      setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [newPayment]));
+      changeArrayPaymentMethod(newPayment);
     }
   };
   var addCreditPaymentMethod = function addCreditPaymentMethod(entityId, siteCurrenciesId) {
@@ -289,7 +307,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       paymentMethods: newPaymentMethods,
       creditOpening: newCreditOpening
     };
-    setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [newPayment]));
+    changeArrayPaymentMethod(newPayment);
   };
   var addSinglePaymentMethod = function addSinglePaymentMethod(siteCurrenciesId) {
     var newPaymentMethods = {
@@ -306,7 +324,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     var newPayment = {
       paymentMethods: newPaymentMethods
     };
-    setArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [newPayment]));
+    changeArrayPaymentMethod(newPayment);
   };
   var deletePaymentMethod = function deletePaymentMethod(index) {
     var newArray = (0, _toConsumableArray2["default"])(arrayPaymentMethod);

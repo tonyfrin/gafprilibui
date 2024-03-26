@@ -40,6 +40,8 @@ export const useGafpriApiPayment = ({
   };
 
   const successOrderPayment = (): void => {
+    useAttributes.actions.infoReset();
+    useOrder.attributes.actions.infoReset();
     usePages.actions.onDeposit();
     useOrder.pages.actions.onOrderList();
   };

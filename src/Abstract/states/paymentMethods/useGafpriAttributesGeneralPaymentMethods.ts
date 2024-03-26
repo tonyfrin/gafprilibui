@@ -10,7 +10,11 @@ import {
   useGafpriAttributesCashTransactions,
   UseGafpriAttributesCashTransactionsReturn,
 } from '../cashRegister';
-import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
+import {
+  UseCurrenciesReturn,
+  UseErrorReturn,
+  UseGafpriBankTypeReturn,
+} from '../../../states';
 import { SelectDefault } from '../../../helpers';
 import { generalValidationSelectCurrencies } from '../../../Validations';
 import {
@@ -91,11 +95,13 @@ export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
 export type UseGafpriAttributesGeneralPaymentMethodsProps = {
   currencies?: UseCurrenciesReturn;
   useBankType?: UseGafpriBankTypeReturn;
+  useError?: UseErrorReturn;
 };
 
 export function useGafpriAttributesGeneralPaymentMethods({
   currencies,
   useBankType,
+  useError,
 }: UseGafpriAttributesGeneralPaymentMethodsProps): UseGafpriAttributesGeneralPaymentMethodsReturn {
   const [arrayPaymentMethod, setArrayPaymentMethod] = useState<
     GeneralPaymentMethodsAttributes[]
@@ -172,14 +178,34 @@ export function useGafpriAttributesGeneralPaymentMethods({
     });
   };
 
+  const validationArrayPaymentMethod = (
+    value: GeneralPaymentMethodsAttributes[]
+  ): boolean => {
+    return value.length <= 20;
+  };
+
+  const changeArrayPaymentMethod = (
+    value: GeneralPaymentMethodsAttributes
+  ): void => {
+    const valid = validationArrayPaymentMethod([...arrayPaymentMethod, value]);
+
+    if (valid) {
+      setArrayPaymentMethod((prevCart) => [...prevCart, value]);
+      return;
+    }
+
+    if (useError) {
+      useError.actions.changeError([
+        'No se pueden agregar más de 8 metodos de pagos',
+      ]);
+    }
+  };
+
   const addCashTransaction = (): void => {
-    setArrayPaymentMethod([
-      ...arrayPaymentMethod,
-      {
-        paymentMethods: usePaymentMethods.states,
-        cashTransactions: useCashTransactions.states,
-      },
-    ]);
+    changeArrayPaymentMethod({
+      paymentMethods: usePaymentMethods.states,
+      cashTransactions: useCashTransactions.states,
+    });
     usePaymentMethods.actions.infoReset();
     useCashTransactions.actions.infoReset();
   };
@@ -246,11 +272,8 @@ export function useGafpriAttributesGeneralPaymentMethods({
       cashTransactions: depositCashTransactions,
     };
 
-    setArrayPaymentMethod([
-      ...arrayPaymentMethod,
-      debitTransfer,
-      depositTransfer,
-    ]);
+    changeArrayPaymentMethod(debitTransfer);
+    changeArrayPaymentMethod(depositTransfer);
   };
 
   const addTransferBankRegister = (
@@ -324,11 +347,8 @@ export function useGafpriAttributesGeneralPaymentMethods({
         bankTransactions: depositBankTransactions,
       };
 
-      setArrayPaymentMethod([
-        ...arrayPaymentMethod,
-        debitTransfer,
-        depositTransfer,
-      ]);
+      changeArrayPaymentMethod(debitTransfer);
+      changeArrayPaymentMethod(depositTransfer);
     }
   };
 
@@ -368,7 +388,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
         bankTransactions: newBankTransactions,
       };
 
-      setArrayPaymentMethod([...arrayPaymentMethod, newPayment]);
+      changeArrayPaymentMethod(newPayment);
     }
   };
 
@@ -402,7 +422,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
       creditOpening: newCreditOpening,
     };
 
-    setArrayPaymentMethod([...arrayPaymentMethod, newPayment]);
+    changeArrayPaymentMethod(newPayment);
   };
 
   const addSinglePaymentMethod = (siteCurrenciesId: number): void => {
@@ -422,7 +442,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
       paymentMethods: newPaymentMethods,
     };
 
-    setArrayPaymentMethod([...arrayPaymentMethod, newPayment]);
+    changeArrayPaymentMethod(newPayment);
   };
 
   const deletePaymentMethod = (index: number): void => {

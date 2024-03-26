@@ -47,6 +47,18 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
     isLoginUpdateForm = _useState18[0],
     setIsLoginUpdateForm = _useState18[1];
+  var _useState19 = (0, _react.useState)(true),
+    _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
+    isCreditList = _useState20[0],
+    setIsCredirtList = _useState20[1];
+  var _useState21 = (0, _react.useState)(false),
+    _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
+    isCreditView = _useState22[0],
+    setIsCreditView = _useState22[1];
+  var _useState23 = (0, _react.useState)(false),
+    _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
+    isCreditPayment = _useState24[0],
+    setIsCreditPayment = _useState24[1];
 
   // Funciones de paginas
   var onFetching = function onFetching() {
@@ -59,6 +71,9 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onInit = function onInit() {
@@ -71,6 +86,9 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onInitAdd = function onInitAdd() {
@@ -83,6 +101,9 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onEntitySearch = function onEntitySearch() {
@@ -95,6 +116,9 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onAddEntity = function onAddEntity() {
@@ -107,6 +131,9 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onForm = function onForm() {
@@ -119,6 +146,9 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onLoginForm = function onLoginForm() {
@@ -131,6 +161,9 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(true);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onFormUpdate = function onFormUpdate() {
@@ -143,6 +176,9 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(true);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
   var onLoginUpdateForm = function onLoginUpdateForm() {
@@ -155,6 +191,54 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(true);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onCredirtList = function onCredirtList() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
+    setIsCredirtList(true);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onCreditView = function onCreditView() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(true);
+    setIsCreditPayment(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onCreditPayment = function onCreditPayment() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(true);
     (0, _helpers.scrollToTop)();
   };
   var goForm = function goForm(entity) {
@@ -225,7 +309,10 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     isForm: isForm,
     isFormUpdate: isFormUpdate,
     isLoginUpdateForm: isLoginUpdateForm,
-    isLoginForm: isLoginForm
+    isLoginForm: isLoginForm,
+    isCreditList: isCreditList,
+    isCreditView: isCreditView,
+    isCreditPayment: isCreditPayment
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -246,7 +333,10 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     processEntityByEmail: processEntityByEmail,
     goForm: goForm,
     goFormUpdate: goFormUpdate,
-    onLoginUpdateForm: onLoginUpdateForm
+    onLoginUpdateForm: onLoginUpdateForm,
+    onCredirtList: onCredirtList,
+    onCreditView: onCreditView,
+    onCreditPayment: onCreditPayment
   };
   return {
     states: states,

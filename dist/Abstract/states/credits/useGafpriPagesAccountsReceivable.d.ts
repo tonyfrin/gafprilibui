@@ -13,6 +13,9 @@ export type UseGafpriPagesAccountsReceivableReturn = {
         isFormUpdate: boolean;
         isLoginForm: boolean;
         isLoginUpdateForm: boolean;
+        isCreditList: boolean;
+        isCreditView: boolean;
+        isCreditPayment: boolean;
     };
     actions: {
         onFetching: () => void;
@@ -24,6 +27,9 @@ export type UseGafpriPagesAccountsReceivableReturn = {
         onFormUpdate: () => void;
         onLoginForm: () => void;
         onLoginUpdateForm: () => void;
+        onCredirtList: () => void;
+        onCreditView: () => void;
+        onCreditPayment: () => void;
         returnInit: () => void;
         processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
         processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;

@@ -15,6 +15,9 @@ export type UseGafpriPagesAccountsReceivableReturn = {
     isFormUpdate: boolean;
     isLoginForm: boolean;
     isLoginUpdateForm: boolean;
+    isCreditList: boolean;
+    isCreditView: boolean;
+    isCreditPayment: boolean;
   };
   actions: {
     onFetching: () => void;
@@ -26,6 +29,9 @@ export type UseGafpriPagesAccountsReceivableReturn = {
     onFormUpdate: () => void;
     onLoginForm: () => void;
     onLoginUpdateForm: () => void;
+    onCredirtList: () => void;
+    onCreditView: () => void;
+    onCreditPayment: () => void;
     returnInit: () => void;
     processEntityBydocumentId: (event: KeyboardEvent<HTMLInputElement>) => void;
     processEntityByName: (event: KeyboardEvent<HTMLInputElement>) => void;
@@ -56,6 +62,10 @@ export const useGafpriPagesAccountsReceivable = ({
   const [isLoginForm, setIsLoginForm] = useState(false);
   const [isLoginUpdateForm, setIsLoginUpdateForm] = useState(false);
 
+  const [isCreditList, setIsCredirtList] = useState(true);
+  const [isCreditView, setIsCreditView] = useState(false);
+  const [isCreditPayment, setIsCreditPayment] = useState(false);
+
   // Funciones de paginas
   const onFetching = (): void => {
     setIsFetching(true);
@@ -67,6 +77,9 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     scrollToTop();
   };
 
@@ -80,6 +93,9 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     scrollToTop();
   };
 
@@ -93,6 +109,9 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     scrollToTop();
   };
 
@@ -106,6 +125,9 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     scrollToTop();
   };
 
@@ -119,6 +141,9 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     scrollToTop();
   };
 
@@ -132,6 +157,9 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     scrollToTop();
   };
 
@@ -145,6 +173,9 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(true);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     scrollToTop();
   };
 
@@ -158,6 +189,9 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(true);
     setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
     scrollToTop();
   };
 
@@ -171,6 +205,57 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(true);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
+    scrollToTop();
+  };
+
+  const onCredirtList = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
+    setIsCredirtList(true);
+    setIsCreditView(false);
+    setIsCreditPayment(false);
+    scrollToTop();
+  };
+
+  const onCreditView = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(true);
+    setIsCreditPayment(false);
+    scrollToTop();
+  };
+
+  const onCreditPayment = (): void => {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsCreditPayment(true);
     scrollToTop();
   };
 
@@ -267,6 +352,9 @@ export const useGafpriPagesAccountsReceivable = ({
     isFormUpdate,
     isLoginUpdateForm,
     isLoginForm,
+    isCreditList,
+    isCreditView,
+    isCreditPayment,
   };
 
   // Define las acciones necesarias para los atributos de Site
@@ -288,6 +376,9 @@ export const useGafpriPagesAccountsReceivable = ({
     goForm,
     goFormUpdate,
     onLoginUpdateForm,
+    onCredirtList,
+    onCreditView,
+    onCreditPayment,
   };
 
   return {

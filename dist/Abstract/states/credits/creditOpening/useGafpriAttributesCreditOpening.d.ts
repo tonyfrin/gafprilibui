@@ -1,3 +1,4 @@
+import { PaymentMethodsAttributes } from '../../paymentMethods';
 export type CreditOpeningAttributes = {
     postsId?: number;
     accountsReceivablePostsId?: number;
@@ -10,6 +11,7 @@ export type CreditOpeningAttributes = {
     balance?: number;
     payDayLimit?: string;
     defaulted?: boolean;
+    paymentMethods?: PaymentMethodsAttributes;
 };
 type State = {
     entityId: number;

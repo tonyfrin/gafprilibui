@@ -1,3 +1,4 @@
+import { PaymentAttributes } from '../payment';
 export type PaymentMethodsAttributes = {
     methodType: string;
     type: 'deposit' | 'debit' | '';
@@ -8,6 +9,7 @@ export type PaymentMethodsAttributes = {
     amount: number;
     change: number;
     note?: string;
+    payment?: PaymentAttributes;
 };
 type State = {
     methodType: string;

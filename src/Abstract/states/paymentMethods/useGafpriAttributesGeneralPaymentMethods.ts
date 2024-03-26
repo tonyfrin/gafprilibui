@@ -181,7 +181,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
   const validationArrayPaymentMethod = (
     value: GeneralPaymentMethodsAttributes[]
   ): boolean => {
-    return value.length <= 20;
+    return value.length <= 8;
   };
 
   const changeArrayPaymentMethod = (

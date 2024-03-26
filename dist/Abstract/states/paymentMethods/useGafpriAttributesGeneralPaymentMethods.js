@@ -117,7 +117,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     });
   };
   var validationArrayPaymentMethod = function validationArrayPaymentMethod(value) {
-    return value.length <= 20;
+    return value.length <= 8;
   };
   var changeArrayPaymentMethod = function changeArrayPaymentMethod(value) {
     var valid = validationArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [value]));

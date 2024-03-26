@@ -6,7 +6,7 @@ export type PaymentAttributes = {
     note?: string;
     type: string;
     paymentMethod: GeneralPaymentMethodsAttributes[];
-    order?: OrderAttributes;
+    order?: OrderAttributes[];
 };
 type State = {
     total: string;

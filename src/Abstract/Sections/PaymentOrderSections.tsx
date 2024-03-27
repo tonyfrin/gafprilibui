@@ -53,7 +53,7 @@ export const PaymentOrderSections = ({
   siteOptions,
   images,
 }: PaymentOrderSectionsProps): JSX.Element => {
-  const items = payments.paymentMethod.map((item, index) => {
+  const items = payments.paymentMethods.map((item, index) => {
     const title =
       item.methodType === 'bank'
         ? 'Banco'

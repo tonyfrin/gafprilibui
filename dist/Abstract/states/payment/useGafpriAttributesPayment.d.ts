@@ -12,7 +12,7 @@ export type PaymentAttributesReturn = {
     total: string;
     note?: string;
     type: string;
-    paymentMethod: PaymentMethodsAttributes[];
+    paymentMethods: PaymentMethodsAttributes[];
     order?: OrderAttributes[];
 };
 type State = {

@@ -28,7 +28,7 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
   var payments = _ref.payments,
     siteOptions = _ref.siteOptions,
     images = _ref.images;
-  var items = payments.paymentMethod.map(function (item, index) {
+  var items = payments.paymentMethods.map(function (item, index) {
     var title = item.methodType === 'bank' ? 'Banco' : item.methodType === 'credit' ? 'Crédito' : item.methodType === 'cash' ? 'Efectivo' : '';
     item.methodType === 'single' && item.paymentType === 'discount' ? 'Descuento' : item.methodType === 'single' && item.paymentType === 'surplus' ? 'Sobrante' : '';
     var number = item.number || '';

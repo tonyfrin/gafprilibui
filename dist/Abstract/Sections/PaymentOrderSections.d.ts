@@ -1,7 +1,7 @@
 import { SiteOptions } from '../../states';
-import { PaymentAttributesReturn } from '../states/payment';
+import { PaymentMethodsAttributes } from '../states/paymentMethods';
 export type PaymentOrderSectionsProps = {
-    payments: PaymentAttributesReturn;
+    payments: PaymentMethodsAttributes[];
     siteOptions: SiteOptions;
     images?: {
         zelle: string;

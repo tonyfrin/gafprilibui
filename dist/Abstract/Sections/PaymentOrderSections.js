@@ -28,8 +28,8 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
   var payments = _ref.payments,
     siteOptions = _ref.siteOptions,
     images = _ref.images;
-  var items = payments.paymentMethods.map(function (item, index) {
-    var title = item.methodType === 'bank' ? 'Banco' : item.methodType === 'credit' ? 'Crédito' : item.methodType === 'cash' ? 'Efectivo' : '';
+  var items = payments.map(function (item, index) {
+    var title = item.methodType === 'bank' ? 'Transacción Electrónica' : item.methodType === 'credit' ? 'Crédito' : item.methodType === 'cash' ? 'Efectivo' : '';
     item.methodType === 'single' && item.paymentType === 'discount' ? 'Descuento' : item.methodType === 'single' && item.paymentType === 'surplus' ? 'Sobrante' : '';
     var number = item.number || '';
     return [/*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
@@ -39,7 +39,11 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
     }, title), images && /*#__PURE__*/_react["default"].createElement("span", {
       className: (0, _css.cx)(creditHeaderLineColStyles('50%'))
     }, /*#__PURE__*/_react["default"].createElement(_Button.CircleButton, {
-      image: images.zelle
+      image: images[item.paymentType],
+      imageStyles: {
+        width: '20px',
+        padding: '2px'
+      }
     })), /*#__PURE__*/_react["default"].createElement("span", {
       className: (0, _css.cx)(creditHeaderLineColStyles('50%'))
     }, number), /*#__PURE__*/_react["default"].createElement("span", {

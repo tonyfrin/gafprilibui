@@ -3,11 +3,11 @@ import { css, cx } from '@emotion/css';
 import { SiteOptions } from '../../states';
 import { decimalFormatPriceConverter } from '../../helpers';
 import { SingleBodyTable } from '../Table';
-import { PaymentAttributesReturn } from '../states/payment';
 import { CircleButton } from '../Button';
+import { PaymentMethodsAttributes } from '../states/paymentMethods';
 
 export type PaymentOrderSectionsProps = {
-  payments: PaymentAttributesReturn;
+  payments: PaymentMethodsAttributes[];
   siteOptions: SiteOptions;
   images?: {
     zelle: string;
@@ -53,10 +53,10 @@ export const PaymentOrderSections = ({
   siteOptions,
   images,
 }: PaymentOrderSectionsProps): JSX.Element => {
-  const items = payments.paymentMethods.map((item, index) => {
+  const items = payments.map((item, index) => {
     const title =
       item.methodType === 'bank'
-        ? 'Banco'
+        ? 'Transacción Electrónica'
         : item.methodType === 'credit'
         ? 'Crédito'
         : item.methodType === 'cash'
@@ -77,7 +77,13 @@ export const PaymentOrderSections = ({
           </span>
           {images && (
             <span className={cx(creditHeaderLineColStyles('50%'))}>
-              <CircleButton image={images.zelle} />
+              <CircleButton
+                image={images[item.paymentType as keyof typeof images]}
+                imageStyles={{
+                  width: '20px',
+                  padding: '2px',
+                }}
+              />
             </span>
           )}
           <span className={cx(creditHeaderLineColStyles('50%'))}>{number}</span>

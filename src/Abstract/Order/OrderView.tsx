@@ -1,4 +1,5 @@
 import React from 'react';
+import { css, cx } from '@emotion/css';
 import {
   ModelForm,
   EntityOrderViewFormInfoHeader,
@@ -8,6 +9,7 @@ import { UseGafpriOrderReturn, SiteOptions } from '../../states';
 import { ModuleHeader } from '../Header';
 import { CartOrderViewSections, PaymentOrderSections } from '../Sections';
 import { PaymentAttributesReturn } from '../states/payment';
+import { PaymentMethodsAttributes } from '../states/paymentMethods';
 
 export type OrderViewProps = {
   useOrder: UseGafpriOrderReturn;
@@ -22,6 +24,12 @@ export type OrderViewProps = {
   };
 };
 
+const containerPaymentsStyles = () => css`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
 export const OrderView = ({
   useOrder,
   sitesOptions,
@@ -32,6 +40,14 @@ export const OrderView = ({
   const order = useOrder.data.actions.getById(
     useOrder.attributes.states.currentId
   );
+
+  if (!order) return null;
+
+  const deposit: PaymentMethodsAttributes[] =
+    order.payment?.paymentMethods.filter((item) => item.type === 'deposit') ||
+    [];
+  const debit: PaymentMethodsAttributes[] =
+    order.payment?.paymentMethods.filter((item) => item.type === 'debit') || [];
 
   return (
     <>
@@ -71,11 +87,18 @@ export const OrderView = ({
           </ModelForm>
           <CartOrderViewSections order={order} sitesOptions={sitesOptions} />
           {order.payment && (
-            <PaymentOrderSections
-              payments={order.payment}
-              siteOptions={sitesOptions}
-              images={images}
-            />
+            <div className={cx(containerPaymentsStyles())}>
+              <PaymentOrderSections
+                payments={deposit}
+                siteOptions={sitesOptions}
+                images={images}
+              />
+              <PaymentOrderSections
+                payments={debit}
+                siteOptions={sitesOptions}
+                images={images}
+              />
+            </div>
           )}
         </>
       )}

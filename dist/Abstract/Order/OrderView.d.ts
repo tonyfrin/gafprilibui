@@ -12,4 +12,4 @@ export type OrderViewProps = {
         cash: string;
     };
 };
-export declare const OrderView: ({ useOrder, sitesOptions, logoPdf, returnFunction, images, }: OrderViewProps) => React.JSX.Element;
+export declare const OrderView: ({ useOrder, sitesOptions, logoPdf, returnFunction, images, }: OrderViewProps) => React.JSX.Element | null;

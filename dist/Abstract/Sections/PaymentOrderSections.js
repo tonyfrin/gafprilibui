@@ -12,7 +12,7 @@ var _helpers = require("../../helpers");
 var _Table = require("../Table");
 var _Button = require("../Button");
 var _Title = require("../Title");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
 var orderStylesMainContainer = function orderStylesMainContainer() {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  margin-top: 20px;\n  width: 45%;\n  align-items: flex-start;\n"])));
 };
@@ -24,6 +24,9 @@ var creditHeaderLineContainerStyles = function creditHeaderLineContainerStyles()
 };
 var creditHeaderLineColStyles = function creditHeaderLineColStyles(width, custom) {
   return (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  text-align: center;\n  width: ", ";\n  margin: auto 0px;\n  ", ";\n"])), width, custom || '');
+};
+var spanTotalStyles = function spanTotalStyles() {
+  return (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  margin-right: 10px;\n"])));
 };
 var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderSections(_ref) {
   var payments = _ref.payments,
@@ -60,7 +63,9 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
     className: (0, _css.cx)(creditHeaderLineColStyles('30%'))
   }), /*#__PURE__*/_react["default"].createElement("span", {
     className: (0, _css.cx)(creditHeaderLineColStyles('40%', "\n          font-size: 16px;\n          font-weight: 700;\n          margin: 10px 0px;\n        "))
-  }, /*#__PURE__*/_react["default"].createElement("span", null, "Total:"), (0, _helpers.decimalFormatPriceConverter)(total || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)))]);
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    className: (0, _css.cx)(spanTotalStyles())
+  }, "Total:"), (0, _helpers.decimalFormatPriceConverter)(total || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)))]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesMainContainer())
   }, /*#__PURE__*/_react["default"].createElement("div", {

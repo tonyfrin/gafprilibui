@@ -57,6 +57,10 @@ const creditHeaderLineColStyles = (width: string, custom?: string) => css`
   ${custom || ''};
 `;
 
+const spanTotalStyles = () => css`
+  margin-right: 10px;
+`;
+
 export const PaymentOrderSections = ({
   payments,
   siteOptions,
@@ -127,7 +131,7 @@ export const PaymentOrderSections = ({
           )
         )}
       >
-        <span>Total:</span>
+        <span className={cx(spanTotalStyles())}>Total:</span>
         {decimalFormatPriceConverter(
           total || 0,
           siteOptions.DECIMAL_NUMBERS,

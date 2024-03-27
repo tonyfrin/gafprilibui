@@ -31,10 +31,12 @@ var OrderView = exports.OrderView = function OrderView(_ref) {
     return item.type === 'debit';
   })) || [];
   var totalDeposit = deposit.reduce(function (accumulator, currentItem) {
-    return accumulator + currentItem.change;
+    var changeValue = parseFloat("".concat(currentItem.change));
+    return accumulator + (isNaN(changeValue) ? 0 : changeValue);
   }, 0);
   var totalDebit = debit.reduce(function (accumulator, currentItem) {
-    return accumulator + currentItem.change;
+    var changeValue = parseFloat("".concat(currentItem.change));
+    return accumulator + (isNaN(changeValue) ? 0 : changeValue);
   }, 0);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, order && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, {
     titles: {

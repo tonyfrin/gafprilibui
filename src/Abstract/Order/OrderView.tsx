@@ -51,11 +51,15 @@ export const OrderView = ({
     order.payment?.paymentMethods.filter((item) => item.type === 'debit') || [];
 
   const totalDeposit = deposit.reduce((accumulator, currentItem) => {
-    return accumulator + currentItem.change;
+    const changeValue = parseFloat(`${currentItem.change}`);
+
+    return accumulator + (isNaN(changeValue) ? 0 : changeValue);
   }, 0);
 
   const totalDebit = debit.reduce((accumulator, currentItem) => {
-    return accumulator + currentItem.change;
+    const changeValue = parseFloat(`${currentItem.change}`);
+
+    return accumulator + (isNaN(changeValue) ? 0 : changeValue);
   }, 0);
 
   return (

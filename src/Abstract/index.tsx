@@ -507,6 +507,9 @@ export {
   useGafpriSubPagesDepositPayment,
   useGafpriAttributesCreditOpening,
   useGafpriApiPayment,
+  useGafpriAttributesGeneralPaymentMethods,
+  useGafpriAttributesPaymentMethods,
+  useGafpriPagesPaymentMethods,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -702,6 +705,11 @@ export type {
   UseGafpriAttributesCreditOpeningReturn,
   UseGafpriApiPaymentProps,
   UseGafpriApiPaymentReturn,
+  UseGafpriAttributesPaymentMethodsReturn,
+  PaymentMethodsAttributes,
+  GeneralPaymentMethodsAttributes,
+  UseGafpriAttributesGeneralPaymentMethodsReturn,
+  UseGafpriPagesPaymentMethodsReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -842,6 +850,7 @@ export type {
   CartBudgetViewSectionsStylesContentItemsProps,
   CartBudgetViewSectionsStylesContentOptionsProps,
   PaymentOrderSectionsProps,
+  PaymentMethodsImages,
 } from './Sections';
 export { OrderInit, Sales, OrderView } from './Order';
 export type {

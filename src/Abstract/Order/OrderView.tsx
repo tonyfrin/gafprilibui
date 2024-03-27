@@ -7,21 +7,19 @@ import {
 } from '../Form';
 import { UseGafpriOrderReturn, SiteOptions } from '../../states';
 import { ModuleHeader } from '../Header';
-import { CartOrderViewSections, PaymentOrderSections } from '../Sections';
-import { PaymentAttributesReturn } from '../states/payment';
-import { PaymentMethodsAttributes } from '../states/paymentMethods';
+import {
+  CartOrderViewSections,
+  PaymentOrderSections,
+  PaymentMethodsImages,
+} from '../Sections';
+import { PaymentMethodsAttributes } from '../states';
 
 export type OrderViewProps = {
   useOrder: UseGafpriOrderReturn;
   sitesOptions: SiteOptions;
   logoPdf: string;
   returnFunction: () => void;
-  images?: {
-    zelle: string;
-    pagoMovil: string;
-    transfer: string;
-    cash: string;
-  };
+  images?: PaymentMethodsImages;
 };
 
 const containerPaymentsStyles = () => css`

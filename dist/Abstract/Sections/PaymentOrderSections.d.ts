@@ -1,14 +1,17 @@
 import { SiteOptions } from '../../states';
 import { PaymentMethodsAttributes } from '../states/paymentMethods';
+export type PaymentMethodsImages = {
+    zelle: string;
+    pagoMovil: string;
+    transfer: string;
+    cash: string;
+    discount: string;
+    surplus: string;
+};
 export type PaymentOrderSectionsProps = {
     payments: PaymentMethodsAttributes[];
     siteOptions: SiteOptions;
-    images?: {
-        zelle: string;
-        pagoMovil: string;
-        transfer: string;
-        cash: string;
-    };
+    images?: PaymentMethodsImages;
     paymentType: string;
     total: number;
 };

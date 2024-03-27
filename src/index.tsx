@@ -346,6 +346,9 @@ export {
   SingleForm,
   SingleBodyTable,
   PaymentOrderSections,
+  useGafpriAttributesGeneralPaymentMethods,
+  useGafpriAttributesPaymentMethods,
+  useGafpriPagesPaymentMethods,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -896,6 +899,12 @@ export type {
   SingleFormProps,
   SingleBodyTableProps,
   PaymentOrderSectionsProps,
+  PaymentMethodsImages,
+  UseGafpriAttributesPaymentMethodsReturn,
+  PaymentMethodsAttributes,
+  GeneralPaymentMethodsAttributes,
+  UseGafpriAttributesGeneralPaymentMethodsReturn,
+  UseGafpriPagesPaymentMethodsReturn,
 } from './Abstract';
 export {
   MainFooter,

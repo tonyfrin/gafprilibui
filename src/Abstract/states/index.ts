@@ -358,3 +358,15 @@ export type {
   UseGafpriAttributesCreditOpeningReturn,
   CreditOpeningAttributes,
 } from './credits';
+export {
+  useGafpriAttributesGeneralPaymentMethods,
+  useGafpriAttributesPaymentMethods,
+  useGafpriPagesPaymentMethods,
+} from './paymentMethods';
+export type {
+  UseGafpriAttributesPaymentMethodsReturn,
+  PaymentMethodsAttributes,
+  GeneralPaymentMethodsAttributes,
+  UseGafpriAttributesGeneralPaymentMethodsReturn,
+  UseGafpriPagesPaymentMethodsReturn,
+} from './paymentMethods';

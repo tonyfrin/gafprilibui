@@ -7,15 +7,19 @@ import { CircleButton } from '../Button';
 import { PaymentMethodsAttributes } from '../states/paymentMethods';
 import { Title1 } from '../Title';
 
+export type PaymentMethodsImages = {
+  zelle: string;
+  pagoMovil: string;
+  transfer: string;
+  cash: string;
+  discount: string;
+  surplus: string;
+};
+
 export type PaymentOrderSectionsProps = {
   payments: PaymentMethodsAttributes[];
   siteOptions: SiteOptions;
-  images?: {
-    zelle: string;
-    pagoMovil: string;
-    transfer: string;
-    cash: string;
-  };
+  images?: PaymentMethodsImages;
   paymentType: string;
   total: number;
 };
@@ -67,12 +71,11 @@ export const PaymentOrderSections = ({
         ? 'Crédito'
         : item.methodType === 'cash'
         ? 'Efectivo'
+        : item.methodType === 'single' && item.paymentType === 'discount'
+        ? 'Descuento'
+        : item.methodType === 'single' && item.paymentType === 'surplus'
+        ? 'Sobrante'
         : '';
-    item.methodType === 'single' && item.paymentType === 'discount'
-      ? 'Descuento'
-      : item.methodType === 'single' && item.paymentType === 'surplus'
-      ? 'Sobrante'
-      : '';
     const number = item.number || '';
 
     return [
@@ -81,13 +84,15 @@ export const PaymentOrderSections = ({
           <span className={cx(creditHeaderLineColStyles('25%'))}>{title}</span>
           {images && (
             <span className={cx(creditHeaderLineColStyles('25%'))}>
-              <CircleButton
-                image={images[item.paymentType as keyof typeof images]}
-                imageStyles={{
-                  width: '20px',
-                  padding: '2px',
-                }}
-              />
+              {images[item.paymentType as keyof typeof images] && (
+                <CircleButton
+                  image={images[item.paymentType as keyof typeof images]}
+                  imageStyles={{
+                    width: '20px',
+                    padding: '2px',
+                  }}
+                />
+              )}
             </span>
           )}
           <span className={cx(creditHeaderLineColStyles('25%'))}>{number}</span>

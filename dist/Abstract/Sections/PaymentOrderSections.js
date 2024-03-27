@@ -32,8 +32,7 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
     paymentType = _ref.paymentType,
     total = _ref.total;
   var items = payments.map(function (item, index) {
-    var title = item.methodType === 'bank' ? 'Transacción Electrónica' : item.methodType === 'credit' ? 'Crédito' : item.methodType === 'cash' ? 'Efectivo' : '';
-    item.methodType === 'single' && item.paymentType === 'discount' ? 'Descuento' : item.methodType === 'single' && item.paymentType === 'surplus' ? 'Sobrante' : '';
+    var title = item.methodType === 'bank' ? 'Transacción Electrónica' : item.methodType === 'credit' ? 'Crédito' : item.methodType === 'cash' ? 'Efectivo' : item.methodType === 'single' && item.paymentType === 'discount' ? 'Descuento' : item.methodType === 'single' && item.paymentType === 'surplus' ? 'Sobrante' : '';
     var number = item.number || '';
     return [/*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
       className: (0, _css.cx)(creditHeaderLineContainerStyles())
@@ -41,7 +40,7 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
       className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
     }, title), images && /*#__PURE__*/_react["default"].createElement("span", {
       className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
-    }, /*#__PURE__*/_react["default"].createElement(_Button.CircleButton, {
+    }, images[item.paymentType] && /*#__PURE__*/_react["default"].createElement(_Button.CircleButton, {
       image: images[item.paymentType],
       imageStyles: {
         width: '20px',

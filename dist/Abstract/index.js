@@ -1761,6 +1761,12 @@ Object.defineProperty(exports, "useGafpriAttributesExpensesType", {
     return _states.useGafpriAttributesExpensesType;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesGeneralPaymentMethods", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesGeneralPaymentMethods;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesIncome", {
   enumerable: true,
   get: function get() {
@@ -1783,6 +1789,12 @@ Object.defineProperty(exports, "useGafpriAttributesPayment", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriAttributesPayment;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesPaymentMethods", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesPaymentMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesPaymentTransferBank", {
@@ -1993,6 +2005,12 @@ Object.defineProperty(exports, "useGafpriPagesPayment", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriPagesPayment;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesPaymentMethods", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPagesPaymentMethods;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesPaymentTransferBank", {

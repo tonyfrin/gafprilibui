@@ -3,8 +3,9 @@ import { PaymentMethodsAttributes } from '../states/paymentMethods';
 export type PaymentMethodsImages = {
     zelle: string;
     pagoMovil: string;
+    puntoDeVenta: string;
     transfer: string;
-    cash: string;
+    all: string;
     discount: string;
     surplus: string;
 };

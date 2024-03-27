@@ -40,8 +40,8 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
       className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
     }, title), images && /*#__PURE__*/_react["default"].createElement("span", {
       className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
-    }, images[item.paymentType] && /*#__PURE__*/_react["default"].createElement(_Button.CircleButton, {
-      image: images[item.paymentType],
+    }, /*#__PURE__*/_react["default"].createElement(_Button.CircleButton, {
+      image: images[item.paymentType || 'all'],
       imageStyles: {
         width: '20px',
         padding: '2px'

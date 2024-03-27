@@ -10,8 +10,9 @@ import { Title1 } from '../Title';
 export type PaymentMethodsImages = {
   zelle: string;
   pagoMovil: string;
+  puntoDeVenta: string;
   transfer: string;
-  cash: string;
+  all: string;
   discount: string;
   surplus: string;
 };
@@ -84,15 +85,15 @@ export const PaymentOrderSections = ({
           <span className={cx(creditHeaderLineColStyles('25%'))}>{title}</span>
           {images && (
             <span className={cx(creditHeaderLineColStyles('25%'))}>
-              {images[item.paymentType as keyof typeof images] && (
-                <CircleButton
-                  image={images[item.paymentType as keyof typeof images]}
-                  imageStyles={{
-                    width: '20px',
-                    padding: '2px',
-                  }}
-                />
-              )}
+              <CircleButton
+                image={
+                  images[(item.paymentType as keyof typeof images) || 'all']
+                }
+                imageStyles={{
+                  width: '20px',
+                  padding: '2px',
+                }}
+              />
             </span>
           )}
           <span className={cx(creditHeaderLineColStyles('25%'))}>{number}</span>

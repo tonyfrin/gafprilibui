@@ -13,7 +13,7 @@ var _Table = require("../Table");
 var _Button = require("../Button");
 var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 var orderStylesMainContainer = function orderStylesMainContainer() {
-  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: center;\n  margin-top: 20px;\n"])));
+  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  margin-top: 20px;\n  width: 45%;\n  align-items: flex-start;\n"])));
 };
 var orderStylesContainer = function orderStylesContainer() {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  background-color: #fff;\n  padding: 10px 40px;\n  width: 90%;\n  border-radius: 10px;\n  height: auto;\n  margin: 0;\n"])));
@@ -55,6 +55,9 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesContainer())
   }, /*#__PURE__*/_react["default"].createElement(_Table.SingleBodyTable, {
-    data: items
+    data: items,
+    containerStyles: {
+      minHeight: 'auto'
+    }
   }))));
 };

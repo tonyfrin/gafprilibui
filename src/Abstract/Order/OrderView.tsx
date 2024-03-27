@@ -27,7 +27,10 @@ export type OrderViewProps = {
 const containerPaymentsStyles = () => css`
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  width: 70%;
+  margin: 20px auto 0px auto;
+  align-items: flex-end;
+  flex-direction: column;
 `;
 
 export const OrderView = ({

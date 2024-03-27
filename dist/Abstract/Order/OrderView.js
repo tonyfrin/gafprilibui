@@ -13,7 +13,7 @@ var _Header = require("../Header");
 var _Sections = require("../Sections");
 var _templateObject;
 var containerPaymentsStyles = function containerPaymentsStyles() {
-  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: center;\n  margin-top: 20px;\n"])));
+  return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: center;\n  width: 70%;\n  margin: 20px auto 0px auto;\n  align-items: flex-end;\n  flex-direction: column;\n"])));
 };
 var OrderView = exports.OrderView = function OrderView(_ref) {
   var _order$payment, _order$payment2;

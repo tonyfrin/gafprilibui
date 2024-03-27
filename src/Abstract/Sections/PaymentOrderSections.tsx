@@ -19,8 +19,9 @@ export type PaymentOrderSectionsProps = {
 
 const orderStylesMainContainer = () => css`
   display: flex;
-  justify-content: center;
   margin-top: 20px;
+  width: 45%;
+  align-items: flex-start;
 `;
 
 const orderStylesContainer = () => css`
@@ -104,7 +105,12 @@ export const PaymentOrderSections = ({
     <>
       <div className={cx(orderStylesMainContainer())}>
         <div className={cx(orderStylesContainer())}>
-          <SingleBodyTable data={items} />
+          <SingleBodyTable
+            data={items}
+            containerStyles={{
+              minHeight: 'auto',
+            }}
+          />
         </div>
       </div>
     </>

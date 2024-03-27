@@ -4,6 +4,7 @@ import {
   generalValidationSinglePassword,
 } from '../../../../Validations';
 import { PaymentMethodsAttributes } from '../../paymentMethods';
+import { PostsAttributes } from '../../../../states';
 
 export type CreditOpeningAttributes = {
   postsId?: number;
@@ -18,6 +19,7 @@ export type CreditOpeningAttributes = {
   payDayLimit?: string;
   defaulted?: boolean;
   paymentMethods?: PaymentMethodsAttributes;
+  posts?: PostsAttributes;
 };
 
 type State = {

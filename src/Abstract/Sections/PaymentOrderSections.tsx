@@ -116,17 +116,15 @@ export const PaymentOrderSections = ({
 
   items.push([
     <div className={cx(creditHeaderLineContainerStyles())}>
-      <span className={cx(creditHeaderLineColStyles('30%'))}></span>
-
-      <span className={cx(creditHeaderLineColStyles('30%'))}></span>
       <span
         className={cx(
           creditHeaderLineColStyles(
-            '40%',
+            '100%',
             `
           font-size: 16px;
           font-weight: 700;
           margin: 10px 0px;
+          text-align: right;
         `
           )
         )}

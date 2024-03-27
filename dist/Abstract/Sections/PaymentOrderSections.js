@@ -58,11 +58,7 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
   items.push([/*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(creditHeaderLineContainerStyles())
   }, /*#__PURE__*/_react["default"].createElement("span", {
-    className: (0, _css.cx)(creditHeaderLineColStyles('30%'))
-  }), /*#__PURE__*/_react["default"].createElement("span", {
-    className: (0, _css.cx)(creditHeaderLineColStyles('30%'))
-  }), /*#__PURE__*/_react["default"].createElement("span", {
-    className: (0, _css.cx)(creditHeaderLineColStyles('40%', "\n          font-size: 16px;\n          font-weight: 700;\n          margin: 10px 0px;\n        "))
+    className: (0, _css.cx)(creditHeaderLineColStyles('100%', "\n          font-size: 16px;\n          font-weight: 700;\n          margin: 10px 0px;\n          text-align: right;\n        "))
   }, /*#__PURE__*/_react["default"].createElement("span", {
     className: (0, _css.cx)(spanTotalStyles())
   }, "Total ".concat(paymentType, ":")), (0, _helpers.decimalFormatPriceConverter)(total || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)))]);

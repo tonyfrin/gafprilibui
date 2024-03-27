@@ -52,6 +52,14 @@ export const OrderView = ({
   const debit: PaymentMethodsAttributes[] =
     order.payment?.paymentMethods.filter((item) => item.type === 'debit') || [];
 
+  const totalDeposit = deposit.reduce((accumulator, currentItem) => {
+    return accumulator + currentItem.change;
+  }, 0);
+
+  const totalDebit = debit.reduce((accumulator, currentItem) => {
+    return accumulator + currentItem.change;
+  }, 0);
+
   return (
     <>
       {order && (
@@ -92,15 +100,21 @@ export const OrderView = ({
           {order.payment && (
             <div className={cx(containerPaymentsStyles())}>
               <PaymentOrderSections
+                paymentType="Pagos agregados"
                 payments={deposit}
                 siteOptions={sitesOptions}
                 images={images}
+                total={totalDeposit}
               />
-              <PaymentOrderSections
-                payments={debit}
-                siteOptions={sitesOptions}
-                images={images}
-              />
+              {debit.length > 0 && (
+                <PaymentOrderSections
+                  paymentType="Vueltos"
+                  payments={debit}
+                  siteOptions={sitesOptions}
+                  images={images}
+                  total={totalDebit}
+                />
+              )}
             </div>
           )}
         </>

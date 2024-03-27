@@ -11,6 +11,7 @@ var _css = require("@emotion/css");
 var _helpers = require("../../helpers");
 var _Table = require("../Table");
 var _Button = require("../Button");
+var _Title = require("../Title");
 var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 var orderStylesMainContainer = function orderStylesMainContainer() {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  margin-top: 20px;\n  width: 45%;\n  align-items: flex-start;\n"])));
@@ -27,7 +28,9 @@ var creditHeaderLineColStyles = function creditHeaderLineColStyles(width, custom
 var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderSections(_ref) {
   var payments = _ref.payments,
     siteOptions = _ref.siteOptions,
-    images = _ref.images;
+    images = _ref.images,
+    paymentType = _ref.paymentType,
+    total = _ref.total;
   var items = payments.map(function (item, index) {
     var title = item.methodType === 'bank' ? 'Transacción Electrónica' : item.methodType === 'credit' ? 'Crédito' : item.methodType === 'cash' ? 'Efectivo' : '';
     item.methodType === 'single' && item.paymentType === 'discount' ? 'Descuento' : item.methodType === 'single' && item.paymentType === 'surplus' ? 'Sobrante' : '';
@@ -50,11 +53,22 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
       className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
     }, (0, _helpers.decimalFormatPriceConverter)(item.change || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION))))];
   });
+  items.push([/*#__PURE__*/_react["default"].createElement("div", {
+    className: (0, _css.cx)(creditHeaderLineContainerStyles())
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    className: (0, _css.cx)(creditHeaderLineColStyles('16.66666666%'))
+  }), /*#__PURE__*/_react["default"].createElement("span", {
+    className: (0, _css.cx)(creditHeaderLineColStyles('50%'))
+  }), /*#__PURE__*/_react["default"].createElement("span", {
+    className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
+  }, ' ', "Total:", (0, _helpers.decimalFormatPriceConverter)(total || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)))]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesMainContainer())
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesContainer())
-  }, /*#__PURE__*/_react["default"].createElement(_Table.SingleBodyTable, {
+  }, /*#__PURE__*/_react["default"].createElement(_Title.Title1, {
+    title: paymentType
+  }), /*#__PURE__*/_react["default"].createElement(_Table.SingleBodyTable, {
     data: items,
     containerStyles: {
       minHeight: 'auto'

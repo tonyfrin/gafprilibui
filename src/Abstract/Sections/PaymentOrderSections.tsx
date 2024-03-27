@@ -5,6 +5,7 @@ import { decimalFormatPriceConverter } from '../../helpers';
 import { SingleBodyTable } from '../Table';
 import { CircleButton } from '../Button';
 import { PaymentMethodsAttributes } from '../states/paymentMethods';
+import { Title1 } from '../Title';
 
 export type PaymentOrderSectionsProps = {
   payments: PaymentMethodsAttributes[];
@@ -15,6 +16,8 @@ export type PaymentOrderSectionsProps = {
     transfer: string;
     cash: string;
   };
+  paymentType: string;
+  total: number;
 };
 
 const orderStylesMainContainer = () => css`
@@ -53,6 +56,8 @@ export const PaymentOrderSections = ({
   payments,
   siteOptions,
   images,
+  paymentType,
+  total,
 }: PaymentOrderSectionsProps): JSX.Element => {
   const items = payments.map((item, index) => {
     const title =
@@ -101,10 +106,29 @@ export const PaymentOrderSections = ({
     ];
   });
 
+  items.push([
+    <div className={cx(creditHeaderLineContainerStyles())}>
+      <span className={cx(creditHeaderLineColStyles('16.66666666%'))}></span>
+
+      <span className={cx(creditHeaderLineColStyles('50%'))}></span>
+      <span className={cx(creditHeaderLineColStyles('25%'))}>
+        {' '}
+        Total:
+        {decimalFormatPriceConverter(
+          total || 0,
+          siteOptions.DECIMAL_NUMBERS,
+          siteOptions.CURRENCY_SYMBOL || '',
+          siteOptions.CURRENCY_LOCATION
+        )}
+      </span>
+    </div>,
+  ]);
+
   return (
     <>
       <div className={cx(orderStylesMainContainer())}>
         <div className={cx(orderStylesContainer())}>
+          <Title1 title={paymentType} />
           <SingleBodyTable
             data={items}
             containerStyles={{

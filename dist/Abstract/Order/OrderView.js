@@ -30,6 +30,12 @@ var OrderView = exports.OrderView = function OrderView(_ref) {
   var debit = ((_order$payment2 = order.payment) === null || _order$payment2 === void 0 ? void 0 : _order$payment2.paymentMethods.filter(function (item) {
     return item.type === 'debit';
   })) || [];
+  var totalDeposit = deposit.reduce(function (accumulator, currentItem) {
+    return accumulator + currentItem.change;
+  }, 0);
+  var totalDebit = debit.reduce(function (accumulator, currentItem) {
+    return accumulator + currentItem.change;
+  }, 0);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, order && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, {
     titles: {
       title1: 'Modulo de Ventas',
@@ -62,12 +68,16 @@ var OrderView = exports.OrderView = function OrderView(_ref) {
   }), order.payment && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(containerPaymentsStyles())
   }, /*#__PURE__*/_react["default"].createElement(_Sections.PaymentOrderSections, {
+    paymentType: "Pagos agregados",
     payments: deposit,
     siteOptions: sitesOptions,
-    images: images
-  }), /*#__PURE__*/_react["default"].createElement(_Sections.PaymentOrderSections, {
+    images: images,
+    total: totalDeposit
+  }), debit.length > 0 && /*#__PURE__*/_react["default"].createElement(_Sections.PaymentOrderSections, {
+    paymentType: "Vueltos",
     payments: debit,
     siteOptions: sitesOptions,
-    images: images
+    images: images,
+    total: totalDebit
   }))));
 };

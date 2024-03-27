@@ -9,5 +9,7 @@ export type PaymentOrderSectionsProps = {
         transfer: string;
         cash: string;
     };
+    paymentType: string;
+    total: number;
 };
-export declare const PaymentOrderSections: ({ payments, siteOptions, images, }: PaymentOrderSectionsProps) => JSX.Element;
+export declare const PaymentOrderSections: ({ payments, siteOptions, images, paymentType, total, }: PaymentOrderSectionsProps) => JSX.Element;

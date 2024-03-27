@@ -38,9 +38,9 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
     return [/*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
       className: (0, _css.cx)(creditHeaderLineContainerStyles())
     }, /*#__PURE__*/_react["default"].createElement("span", {
-      className: (0, _css.cx)(creditHeaderLineColStyles('16.66666666%'))
+      className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
     }, title), images && /*#__PURE__*/_react["default"].createElement("span", {
-      className: (0, _css.cx)(creditHeaderLineColStyles('50%'))
+      className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
     }, /*#__PURE__*/_react["default"].createElement(_Button.CircleButton, {
       image: images[item.paymentType],
       imageStyles: {
@@ -48,7 +48,7 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
         padding: '2px'
       }
     })), /*#__PURE__*/_react["default"].createElement("span", {
-      className: (0, _css.cx)(creditHeaderLineColStyles('50%'))
+      className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
     }, number), /*#__PURE__*/_react["default"].createElement("span", {
       className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
     }, (0, _helpers.decimalFormatPriceConverter)(item.change || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION))))];
@@ -56,18 +56,22 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
   items.push([/*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(creditHeaderLineContainerStyles())
   }, /*#__PURE__*/_react["default"].createElement("span", {
-    className: (0, _css.cx)(creditHeaderLineColStyles('16.66666666%'))
+    className: (0, _css.cx)(creditHeaderLineColStyles('30%'))
   }), /*#__PURE__*/_react["default"].createElement("span", {
-    className: (0, _css.cx)(creditHeaderLineColStyles('50%'))
+    className: (0, _css.cx)(creditHeaderLineColStyles('30%'))
   }), /*#__PURE__*/_react["default"].createElement("span", {
-    className: (0, _css.cx)(creditHeaderLineColStyles('25%'))
-  }, ' ', "Total:", (0, _helpers.decimalFormatPriceConverter)(total || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)))]);
+    className: (0, _css.cx)(creditHeaderLineColStyles('40%', "\n          font-size: 16px;\n          font-weight: 700;\n          margin: 10px 0px;\n        "))
+  }, /*#__PURE__*/_react["default"].createElement("span", null, "Total:"), (0, _helpers.decimalFormatPriceConverter)(total || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)))]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesMainContainer())
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesContainer())
   }, /*#__PURE__*/_react["default"].createElement(_Title.Title1, {
-    title: paymentType
+    title: paymentType,
+    styles: {
+      fontSize: '16px',
+      lineHeight: '1.5rem'
+    }
   }), /*#__PURE__*/_react["default"].createElement(_Table.SingleBodyTable, {
     data: items,
     containerStyles: {

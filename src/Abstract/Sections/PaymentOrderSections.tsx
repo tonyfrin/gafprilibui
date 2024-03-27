@@ -78,11 +78,9 @@ export const PaymentOrderSections = ({
     return [
       <>
         <div className={cx(creditHeaderLineContainerStyles())}>
-          <span className={cx(creditHeaderLineColStyles('16.66666666%'))}>
-            {title}
-          </span>
+          <span className={cx(creditHeaderLineColStyles('25%'))}>{title}</span>
           {images && (
-            <span className={cx(creditHeaderLineColStyles('50%'))}>
+            <span className={cx(creditHeaderLineColStyles('25%'))}>
               <CircleButton
                 image={images[item.paymentType as keyof typeof images]}
                 imageStyles={{
@@ -92,7 +90,7 @@ export const PaymentOrderSections = ({
               />
             </span>
           )}
-          <span className={cx(creditHeaderLineColStyles('50%'))}>{number}</span>
+          <span className={cx(creditHeaderLineColStyles('25%'))}>{number}</span>
           <span className={cx(creditHeaderLineColStyles('25%'))}>
             {decimalFormatPriceConverter(
               item.change || 0,
@@ -108,12 +106,22 @@ export const PaymentOrderSections = ({
 
   items.push([
     <div className={cx(creditHeaderLineContainerStyles())}>
-      <span className={cx(creditHeaderLineColStyles('16.66666666%'))}></span>
+      <span className={cx(creditHeaderLineColStyles('30%'))}></span>
 
-      <span className={cx(creditHeaderLineColStyles('50%'))}></span>
-      <span className={cx(creditHeaderLineColStyles('25%'))}>
-        {' '}
-        Total:
+      <span className={cx(creditHeaderLineColStyles('30%'))}></span>
+      <span
+        className={cx(
+          creditHeaderLineColStyles(
+            '40%',
+            `
+          font-size: 16px;
+          font-weight: 700;
+          margin: 10px 0px;
+        `
+          )
+        )}
+      >
+        <span>Total:</span>
         {decimalFormatPriceConverter(
           total || 0,
           siteOptions.DECIMAL_NUMBERS,
@@ -128,7 +136,13 @@ export const PaymentOrderSections = ({
     <>
       <div className={cx(orderStylesMainContainer())}>
         <div className={cx(orderStylesContainer())}>
-          <Title1 title={paymentType} />
+          <Title1
+            title={paymentType}
+            styles={{
+              fontSize: '16px',
+              lineHeight: '1.5rem',
+            }}
+          />
           <SingleBodyTable
             data={items}
             containerStyles={{

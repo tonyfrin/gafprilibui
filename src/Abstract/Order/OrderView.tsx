@@ -14,6 +14,12 @@ export type OrderViewProps = {
   sitesOptions: SiteOptions;
   logoPdf: string;
   returnFunction: () => void;
+  images?: {
+    zelle: string;
+    pagoMovil: string;
+    transfer: string;
+    cash: string;
+  };
 };
 
 export const OrderView = ({
@@ -21,6 +27,7 @@ export const OrderView = ({
   sitesOptions,
   logoPdf,
   returnFunction,
+  images,
 }: OrderViewProps) => {
   const order = useOrder.data.actions.getById(
     useOrder.attributes.states.currentId
@@ -67,6 +74,7 @@ export const OrderView = ({
             <PaymentOrderSections
               payments={order.payment}
               siteOptions={sitesOptions}
+              images={images}
             />
           )}
         </>

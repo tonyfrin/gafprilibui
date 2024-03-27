@@ -5,5 +5,11 @@ export type OrderViewProps = {
     sitesOptions: SiteOptions;
     logoPdf: string;
     returnFunction: () => void;
+    images?: {
+        zelle: string;
+        pagoMovil: string;
+        transfer: string;
+        cash: string;
+    };
 };
-export declare const OrderView: ({ useOrder, sitesOptions, logoPdf, returnFunction, }: OrderViewProps) => React.JSX.Element;
+export declare const OrderView: ({ useOrder, sitesOptions, logoPdf, returnFunction, images, }: OrderViewProps) => React.JSX.Element;

@@ -11,7 +11,6 @@ var _css = require("@emotion/css");
 var _helpers = require("../../helpers");
 var _Table = require("../Table");
 var _Button = require("../Button");
-var _logoZelle = _interopRequireDefault(require("../../../assets/img/logo-zelle.png"));
 var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 var orderStylesMainContainer = function orderStylesMainContainer() {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: center;\n  margin-top: 20px;\n"])));
@@ -27,7 +26,8 @@ var creditHeaderLineColStyles = function creditHeaderLineColStyles(width, custom
 };
 var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderSections(_ref) {
   var payments = _ref.payments,
-    siteOptions = _ref.siteOptions;
+    siteOptions = _ref.siteOptions,
+    images = _ref.images;
   var items = payments.paymentMethod.map(function (item, index) {
     var title = item.methodType === 'bank' ? 'Banco' : item.methodType === 'credit' ? 'Crédito' : item.methodType === 'cash' ? 'Efectivo' : '';
     item.methodType === 'single' && item.paymentType === 'discount' ? 'Descuento' : item.methodType === 'single' && item.paymentType === 'surplus' ? 'Sobrante' : '';
@@ -36,10 +36,10 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
       className: (0, _css.cx)(creditHeaderLineContainerStyles())
     }, /*#__PURE__*/_react["default"].createElement("span", {
       className: (0, _css.cx)(creditHeaderLineColStyles('16.66666666%'))
-    }, title), /*#__PURE__*/_react["default"].createElement("span", {
+    }, title), images && /*#__PURE__*/_react["default"].createElement("span", {
       className: (0, _css.cx)(creditHeaderLineColStyles('50%'))
     }, /*#__PURE__*/_react["default"].createElement(_Button.CircleButton, {
-      image: _logoZelle["default"]
+      image: images.zelle
     })), /*#__PURE__*/_react["default"].createElement("span", {
       className: (0, _css.cx)(creditHeaderLineColStyles('50%'))
     }, number), /*#__PURE__*/_react["default"].createElement("span", {

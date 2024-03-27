@@ -13,7 +13,8 @@ var OrderView = exports.OrderView = function OrderView(_ref) {
   var useOrder = _ref.useOrder,
     sitesOptions = _ref.sitesOptions,
     logoPdf = _ref.logoPdf,
-    returnFunction = _ref.returnFunction;
+    returnFunction = _ref.returnFunction,
+    images = _ref.images;
   var order = useOrder.data.actions.getById(useOrder.attributes.states.currentId);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, order && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, {
     titles: {
@@ -46,6 +47,7 @@ var OrderView = exports.OrderView = function OrderView(_ref) {
     sitesOptions: sitesOptions
   }), order.payment && /*#__PURE__*/_react["default"].createElement(_Sections.PaymentOrderSections, {
     payments: order.payment,
-    siteOptions: sitesOptions
+    siteOptions: sitesOptions,
+    images: images
   })));
 };

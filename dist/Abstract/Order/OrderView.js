@@ -44,5 +44,8 @@ var OrderView = exports.OrderView = function OrderView(_ref) {
   })))), /*#__PURE__*/_react["default"].createElement(_Sections.CartOrderViewSections, {
     order: order,
     sitesOptions: sitesOptions
+  }), order.payment && /*#__PURE__*/_react["default"].createElement(_Sections.PaymentOrderSections, {
+    payments: order.payment,
+    siteOptions: sitesOptions
   })));
 };

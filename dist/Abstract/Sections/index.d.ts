@@ -6,3 +6,5 @@ export { CartBudgetViewSections } from './CartBudgetViewSections';
 export type { CartBudgetViewSectionsProps, CartBudgetViewSectionsStylesContainerProps, CartBudgetViewSectionsStylesContentItemsProps, CartBudgetViewSectionsStylesContentOptionsProps, } from './CartBudgetViewSections';
 export { CartOrderViewSections } from './CartOrderViewSections';
 export type { CartOrderViewSectionsProps, CartOrderViewSectionsStylesContainerProps, CartOrderViewSectionsStylesContentItemsProps, CartOrderViewSectionsStylesContentOptionsProps, } from './CartOrderViewSections';
+export { PaymentOrderSections } from './PaymentOrderSections';
+export type { PaymentOrderSectionsProps } from './PaymentOrderSections';

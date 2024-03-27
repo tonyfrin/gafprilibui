@@ -62,7 +62,7 @@ var CircleButton = exports.CircleButton = function CircleButton(_ref) {
     src: image,
     className: (0, _css.cx)(circleButtonStylesImage(imageStyles), imageClassName),
     alt: title
-  }, restImageProps)), /*#__PURE__*/_react["default"].createElement("span", (0, _extends2["default"])({
+  }, restImageProps)), title && /*#__PURE__*/_react["default"].createElement("span", (0, _extends2["default"])({
     className: (0, _css.cx)(circleButtonStylesTitle(titleStyles), titleClassName)
   }, restTitleProps), title))));
 };

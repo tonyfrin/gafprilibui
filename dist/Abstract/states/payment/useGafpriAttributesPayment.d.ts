@@ -1,4 +1,4 @@
-import { GeneralPaymentMethodsAttributes, UseGafpriAttributesGeneralPaymentMethodsReturn } from '../paymentMethods';
+import { GeneralPaymentMethodsAttributes, PaymentMethodsAttributes, UseGafpriAttributesGeneralPaymentMethodsReturn } from '../paymentMethods';
 import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
 import { OrderAttributes } from '../order';
 export type PaymentAttributes = {
@@ -6,6 +6,13 @@ export type PaymentAttributes = {
     note?: string;
     type: string;
     paymentMethod: GeneralPaymentMethodsAttributes[];
+    order?: OrderAttributes[];
+};
+export type PaymentAttributesReturn = {
+    total: string;
+    note?: string;
+    type: string;
+    paymentMethod: PaymentMethodsAttributes[];
     order?: OrderAttributes[];
 };
 type State = {

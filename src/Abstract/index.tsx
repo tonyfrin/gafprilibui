@@ -766,6 +766,7 @@ export {
   SingleHiddenTablet,
   ConciliateTable,
   BankTransationsTable,
+  SingleBodyTable,
 } from './Table';
 export type {
   CartListProps,
@@ -782,6 +783,7 @@ export type {
   SingleHiddenTabletProps,
   ConciliateTableProps,
   BankTransationsTableProps,
+  SingleBodyTableProps,
 } from './Table';
 export {
   SearchProducts,
@@ -824,6 +826,7 @@ export {
   CartSections,
   CartBudgetSections,
   CartBudgetViewSections,
+  PaymentOrderSections,
 } from './Sections';
 export type {
   CartSectionsStylesContainerProps,
@@ -838,6 +841,7 @@ export type {
   CartBudgetViewSectionsStylesContainerProps,
   CartBudgetViewSectionsStylesContentItemsProps,
   CartBudgetViewSectionsStylesContentOptionsProps,
+  PaymentOrderSectionsProps,
 } from './Sections';
 export { OrderInit, Sales, OrderView } from './Order';
 export type {

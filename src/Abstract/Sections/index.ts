@@ -26,3 +26,5 @@ export type {
   CartOrderViewSectionsStylesContentItemsProps,
   CartOrderViewSectionsStylesContentOptionsProps,
 } from './CartOrderViewSections';
+export { PaymentOrderSections } from './PaymentOrderSections';
+export type { PaymentOrderSectionsProps } from './PaymentOrderSections';

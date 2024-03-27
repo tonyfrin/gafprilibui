@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {
   GeneralPaymentMethodsAttributes,
+  PaymentMethodsAttributes,
   useGafpriAttributesGeneralPaymentMethods,
   UseGafpriAttributesGeneralPaymentMethodsReturn,
 } from '../paymentMethods';
@@ -13,6 +14,14 @@ export type PaymentAttributes = {
   note?: string;
   type: string;
   paymentMethod: GeneralPaymentMethodsAttributes[];
+  order?: OrderAttributes[];
+};
+
+export type PaymentAttributesReturn = {
+  total: string;
+  note?: string;
+  type: string;
+  paymentMethod: PaymentMethodsAttributes[];
   order?: OrderAttributes[];
 };
 

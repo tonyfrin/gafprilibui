@@ -57,8 +57,12 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsCreditView = _useState22[1];
   var _useState23 = (0, _react.useState)(false),
     _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
-    isCreditPayment = _useState24[0],
-    setIsCreditPayment = _useState24[1];
+    isOrderView = _useState24[0],
+    setIsOrderView = _useState24[1];
+  var _useState25 = (0, _react.useState)(false),
+    _useState26 = (0, _slicedToArray2["default"])(_useState25, 2),
+    isCreditPayment = _useState26[0],
+    setIsCreditPayment = _useState26[1];
 
   // Funciones de paginas
   var onFetching = function onFetching() {
@@ -73,6 +77,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -88,6 +93,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -103,6 +109,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -118,6 +125,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -133,6 +141,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -148,6 +157,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -163,6 +173,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -178,6 +189,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -193,6 +205,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(true);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -208,6 +221,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(true);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -223,6 +237,23 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(true);
+    setIsOrderView(false);
+    setIsCreditPayment(false);
+    (0, _helpers.scrollToTop)();
+  };
+  var onOrderView = function onOrderView() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsInitAdd(false);
+    setIsEntitySearch(false);
+    setIsAddEntity(false);
+    setIsForm(false);
+    setIsLoginForm(false);
+    setIsFormUpdate(false);
+    setIsLoginUpdateForm(false);
+    setIsCredirtList(false);
+    setIsCreditView(false);
+    setIsOrderView(true);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
@@ -238,6 +269,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginUpdateForm(false);
     setIsCredirtList(false);
     setIsCreditView(false);
+    setIsOrderView(false);
     setIsCreditPayment(true);
     (0, _helpers.scrollToTop)();
   };
@@ -312,6 +344,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     isLoginForm: isLoginForm,
     isCreditList: isCreditList,
     isCreditView: isCreditView,
+    isOrderView: isOrderView,
     isCreditPayment: isCreditPayment
   };
 
@@ -336,7 +369,8 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     onLoginUpdateForm: onLoginUpdateForm,
     onCredirtList: onCredirtList,
     onCreditView: onCreditView,
-    onCreditPayment: onCreditPayment
+    onCreditPayment: onCreditPayment,
+    onOrderView: onOrderView
   };
   return {
     states: states,

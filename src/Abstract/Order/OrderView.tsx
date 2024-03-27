@@ -6,7 +6,8 @@ import {
 } from '../Form';
 import { UseGafpriOrderReturn, SiteOptions } from '../../states';
 import { ModuleHeader } from '../Header';
-import { CartOrderViewSections } from '../Sections';
+import { CartOrderViewSections, PaymentOrderSections } from '../Sections';
+import { PaymentAttributesReturn } from '../states/payment';
 
 export type OrderViewProps = {
   useOrder: UseGafpriOrderReturn;
@@ -62,6 +63,12 @@ export const OrderView = ({
             </>
           </ModelForm>
           <CartOrderViewSections order={order} sitesOptions={sitesOptions} />
+          {order.payment && (
+            <PaymentOrderSections
+              payments={order.payment}
+              siteOptions={sitesOptions}
+            />
+          )}
         </>
       )}
     </>

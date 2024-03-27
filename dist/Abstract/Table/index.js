@@ -69,6 +69,12 @@ Object.defineProperty(exports, "SimpleTable", {
     return _SimpleTable.SimpleTable;
   }
 });
+Object.defineProperty(exports, "SingleBodyTable", {
+  enumerable: true,
+  get: function get() {
+    return _SingleBodyTable.SingleBodyTable;
+  }
+});
 Object.defineProperty(exports, "SingleHiddenTablet", {
   enumerable: true,
   get: function get() {
@@ -94,3 +100,4 @@ var _SingleHiddenTablet = require("./SingleHiddenTablet");
 var _ConciliateTable = require("./ConciliateTable");
 var _BankTransationsTable = require("./BankTransationsTable");
 var _CartOrderViewTable = require("./CartOrderViewTable");
+var _SingleBodyTable = require("./SingleBodyTable");

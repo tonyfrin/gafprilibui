@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PaymentAttributes } from '../payment';
+import { PostsAttributes } from '../../../states';
 
 export type PaymentMethodsAttributes = {
   methodType: string;
@@ -12,6 +13,7 @@ export type PaymentMethodsAttributes = {
   change: number;
   note?: string;
   payment?: PaymentAttributes;
+  posts?: PostsAttributes;
 };
 
 type State = {

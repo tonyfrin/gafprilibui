@@ -28,3 +28,5 @@ export { BankTransationsTable } from './BankTransationsTable';
 export type { BankTransationsTableProps } from './BankTransationsTable';
 export { CartOrderViewTable } from './CartOrderViewTable';
 export type { CartOrderViewTableProps } from './CartOrderViewTable';
+export { SingleBodyTable } from './SingleBodyTable';
+export type { SingleBodyTableProps } from './SingleBodyTable';

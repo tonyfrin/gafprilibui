@@ -34,7 +34,7 @@ export type CircleButtonProps = {
     image: string;
     imageStyles?: CircleButtonStylesImageProps;
     imageProps?: HTMLAttributes<HTMLImageElement>;
-    title: string;
+    title?: string;
     titleStyles?: CircleButtonStylesTitleProps;
     titleProps?: HTMLAttributes<HTMLSpanElement>;
 };

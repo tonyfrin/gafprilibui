@@ -344,6 +344,8 @@ export {
   CreditForm,
   PaymentLoginForm,
   SingleForm,
+  SingleBodyTable,
+  PaymentOrderSections,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -892,6 +894,8 @@ export type {
   CreditFormProps,
   PaymentLoginFormProps,
   SingleFormProps,
+  SingleBodyTableProps,
+  PaymentOrderSectionsProps,
 } from './Abstract';
 export {
   MainFooter,

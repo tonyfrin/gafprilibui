@@ -15,6 +15,7 @@ export type UseGafpriPagesAccountsReceivableReturn = {
         isLoginUpdateForm: boolean;
         isCreditList: boolean;
         isCreditView: boolean;
+        isOrderView: boolean;
         isCreditPayment: boolean;
     };
     actions: {
@@ -38,6 +39,7 @@ export type UseGafpriPagesAccountsReceivableReturn = {
         processEntityByEmail: (event: KeyboardEvent<HTMLInputElement>) => void;
         goForm: (entity: EntityAttributes) => void;
         goFormUpdate: (id: number) => void;
+        onOrderView: () => void;
     };
 };
 export type UseGafpriPagesAccountsReceivableProps = {

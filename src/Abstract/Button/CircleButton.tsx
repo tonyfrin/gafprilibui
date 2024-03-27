@@ -75,7 +75,7 @@ export type CircleButtonProps = {
   image: string;
   imageStyles?: CircleButtonStylesImageProps;
   imageProps?: HTMLAttributes<HTMLImageElement>;
-  title: string;
+  title?: string;
   titleStyles?: CircleButtonStylesTitleProps;
   titleProps?: HTMLAttributes<HTMLSpanElement>;
 };
@@ -131,12 +131,17 @@ export const CircleButton = ({
             alt={title}
             {...restImageProps}
           />
-          <span
-            className={cx(circleButtonStylesTitle(titleStyles), titleClassName)}
-            {...restTitleProps}
-          >
-            {title}
-          </span>
+          {title && (
+            <span
+              className={cx(
+                circleButtonStylesTitle(titleStyles),
+                titleClassName
+              )}
+              {...restTitleProps}
+            >
+              {title}
+            </span>
+          )}
         </button>
       </div>
     </>

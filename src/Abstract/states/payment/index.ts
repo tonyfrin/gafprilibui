@@ -2,6 +2,7 @@ export { useGafpriAttributesPayment } from './useGafpriAttributesPayment';
 export type {
   UseGafpriAttributesPaymentReturn,
   PaymentAttributes,
+  PaymentAttributesReturn,
 } from './useGafpriAttributesPayment';
 export {
   useGafpriAttributesPaymentTransferCashRegister,

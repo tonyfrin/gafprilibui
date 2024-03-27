@@ -1137,6 +1137,12 @@ Object.defineProperty(exports, "PaymentLoginForm", {
     return _MethodPayments.PaymentLoginForm;
   }
 });
+Object.defineProperty(exports, "PaymentOrderSections", {
+  enumerable: true,
+  get: function get() {
+    return _Sections.PaymentOrderSections;
+  }
+});
 Object.defineProperty(exports, "PhotoCategory", {
   enumerable: true,
   get: function get() {
@@ -1441,6 +1447,12 @@ Object.defineProperty(exports, "SimpleTable", {
   enumerable: true,
   get: function get() {
     return _Table.SimpleTable;
+  }
+});
+Object.defineProperty(exports, "SingleBodyTable", {
+  enumerable: true,
+  get: function get() {
+    return _Table.SingleBodyTable;
   }
 });
 Object.defineProperty(exports, "SingleCheckBox", {

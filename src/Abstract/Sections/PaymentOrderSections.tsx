@@ -131,7 +131,7 @@ export const PaymentOrderSections = ({
           )
         )}
       >
-        <span className={cx(spanTotalStyles())}>Total:</span>
+        <span className={cx(spanTotalStyles())}>{`Total ${paymentType}:`}</span>
         {decimalFormatPriceConverter(
           total || 0,
           siteOptions.DECIMAL_NUMBERS,

@@ -70,7 +70,7 @@ var OrderView = exports.OrderView = function OrderView(_ref) {
   }), order.payment && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(containerPaymentsStyles())
   }, /*#__PURE__*/_react["default"].createElement(_Sections.PaymentOrderSections, {
-    paymentType: "Pagos agregados",
+    paymentType: "Pagos",
     payments: deposit,
     siteOptions: sitesOptions,
     images: images,

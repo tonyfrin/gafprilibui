@@ -65,7 +65,7 @@ var PaymentOrderSections = exports.PaymentOrderSections = function PaymentOrderS
     className: (0, _css.cx)(creditHeaderLineColStyles('40%', "\n          font-size: 16px;\n          font-weight: 700;\n          margin: 10px 0px;\n        "))
   }, /*#__PURE__*/_react["default"].createElement("span", {
     className: (0, _css.cx)(spanTotalStyles())
-  }, "Total:"), (0, _helpers.decimalFormatPriceConverter)(total || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)))]);
+  }, "Total ".concat(paymentType, ":")), (0, _helpers.decimalFormatPriceConverter)(total || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)))]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesMainContainer())
   }, /*#__PURE__*/_react["default"].createElement("div", {

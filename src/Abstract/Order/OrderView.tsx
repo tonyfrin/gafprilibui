@@ -102,7 +102,7 @@ export const OrderView = ({
           {order.payment && (
             <div className={cx(containerPaymentsStyles())}>
               <PaymentOrderSections
-                paymentType="Pagos agregados"
+                paymentType="Pagos"
                 payments={deposit}
                 siteOptions={sitesOptions}
                 images={images}

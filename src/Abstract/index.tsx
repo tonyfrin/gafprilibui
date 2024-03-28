@@ -244,6 +244,7 @@ export {
   EntityAccountsReceivableSearchForm,
   EntityOrderViewFormInfoHeader,
   PaymentInfoForm,
+  ButtonsPaymentMethodsForm,
 } from './Form';
 export type {
   ModelFormProps,
@@ -272,6 +273,7 @@ export type {
   EntityAccountsReceivableSearchFormProps,
   EntityOrderViewFormInfoHeaderProps,
   PaymentInfoFormProps,
+  ButtonsPaymentMethodsFormProps,
 } from './Form';
 export {
   Menu1,
@@ -301,7 +303,13 @@ export type {
   HeaderMenuStylesContentLiProps,
   HorizontalMenuProps,
 } from './Menu';
-export { Header, ModuleHeader, CashRegisterHeader, BankHeader } from './Header';
+export {
+  Header,
+  ModuleHeader,
+  CashRegisterHeader,
+  BankHeader,
+  PaymentHeader,
+} from './Header';
 export type {
   HeaderProps,
   HeaderPropsExtended,
@@ -309,6 +317,7 @@ export type {
   ModuleHeaderStylesContainerProps,
   CashRegisterHeaderProps,
   BankHeaderProps,
+  PaymentHeaderProps,
 } from './Header';
 export { InitCurrencies, CurrencyForm } from './Currencies';
 export type {
@@ -729,6 +738,7 @@ export {
   LineProductBudgetCart,
   LineBudgetPrint,
   LineProductBudgetViewCart,
+  CreditHeaderLine,
 } from './Li';
 export type {
   LineProductCartProps,
@@ -763,6 +773,7 @@ export type {
   LineProductBudgetCartProps,
   LineBudgetPrintProps,
   LineProductBudgetViewCartProps,
+  CreditHeaderLineProps,
 } from './Li';
 export {
   CartTable,
@@ -778,6 +789,9 @@ export {
   ConciliateTable,
   BankTransationsTable,
   SingleBodyTable,
+  CreditPendingTable,
+  MethodsPaymentTable,
+  OrderPendingTable,
 } from './Table';
 export type {
   CartListProps,
@@ -795,6 +809,10 @@ export type {
   ConciliateTableProps,
   BankTransationsTableProps,
   SingleBodyTableProps,
+  CreditPendingTableProps,
+  MethodsPaymentTableProps,
+  MethodsPaymentItems,
+  OrderPendingTableProps,
 } from './Table';
 export {
   SearchProducts,
@@ -989,10 +1007,18 @@ export type {
 export {
   FinalPaymentTransferCashRegister,
   FinalPaymentTransferBank,
+  OrderStep,
+  OrderPaymentForm,
+  CreditStep,
+  CreditPaymentForm,
 } from './Payment';
 export type {
   FinalPaymentTransferCashRegisterProps,
   FinalPaymentTransferBankProps,
+  OrderStepProps,
+  OrderPaymentFormProps,
+  CreditStepProps,
+  CreditPaymentFormProps,
 } from './Payment';
 export { BankTypeForm, InitBankType } from './BankType';
 export type {
@@ -1020,3 +1046,5 @@ export type {
   AccountsReceivableUpdateFormProps,
   AccountsReceivableLoginUpdateFormProps,
 } from './AccountsReceivable';
+export { CircleStep } from './Circle';
+export type { CircleStepProps } from './Circle';

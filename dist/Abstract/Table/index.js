@@ -63,6 +63,24 @@ Object.defineProperty(exports, "ConciliateTable", {
     return _ConciliateTable.ConciliateTable;
   }
 });
+Object.defineProperty(exports, "CreditPendingTable", {
+  enumerable: true,
+  get: function get() {
+    return _CreditPendingTable.CreditPendingTable;
+  }
+});
+Object.defineProperty(exports, "MethodsPaymentTable", {
+  enumerable: true,
+  get: function get() {
+    return _MethodsPaymentTable.MethodsPaymentTable;
+  }
+});
+Object.defineProperty(exports, "OrderPendingTable", {
+  enumerable: true,
+  get: function get() {
+    return _OrderPendingTable.OrderPendingTable;
+  }
+});
 Object.defineProperty(exports, "SimpleTable", {
   enumerable: true,
   get: function get() {
@@ -101,3 +119,6 @@ var _ConciliateTable = require("./ConciliateTable");
 var _BankTransationsTable = require("./BankTransationsTable");
 var _CartOrderViewTable = require("./CartOrderViewTable");
 var _SingleBodyTable = require("./SingleBodyTable");
+var _CreditPendingTable = require("./CreditPendingTable");
+var _MethodsPaymentTable = require("./MethodsPaymentTable");
+var _OrderPendingTable = require("./OrderPendingTable");

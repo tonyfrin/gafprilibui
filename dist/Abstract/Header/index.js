@@ -27,7 +27,14 @@ Object.defineProperty(exports, "ModuleHeader", {
     return _ModuleHeader.ModuleHeader;
   }
 });
+Object.defineProperty(exports, "PaymentHeader", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentHeader.PaymentHeader;
+  }
+});
 var _Header = require("./Header");
 var _ModuleHeader = require("./ModuleHeader");
 var _CashRegisterHeader = require("./CashRegisterHeader");
 var _BankHeader = require("./BankHeader");
+var _PaymentHeader = require("./PaymentHeader");

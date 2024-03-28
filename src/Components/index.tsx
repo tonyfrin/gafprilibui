@@ -61,8 +61,12 @@ export type {
   EntityAccountsReceivableStylesContainerProps,
   EntityAccountsReceivableProps,
 } from './Entity';
-export { Order } from './Order';
-export type { OrderProps, OrderStylesContainerProps } from './Order';
+export { Order, OrderPayment } from './Order';
+export type {
+  OrderProps,
+  OrderStylesContainerProps,
+  OrderPaymentProps,
+} from './Order';
 export { Budget } from './Budget';
 export type { BudgetProps, BudgetStylesContainerProps } from './Budget';
 export { ShippingMethods, ShippingAreas } from './Shipping';
@@ -93,12 +97,19 @@ export type {
   IncomeCashRegisterProps,
   IncomeCashRegisterStylesContainerProps,
 } from './Income';
-export { PaymentTransferCashRegister, PaymentTransferBank } from './Payment';
+export {
+  PaymentTransferCashRegister,
+  PaymentTransferBank,
+  PaymentDeposit,
+  Payment,
+} from './Payment';
 export type {
   PaymentTransferCashRegisterProps,
   PaymentTransferBankProps,
+  PaymentDepositProps,
+  PaymentProps,
 } from './Payment';
 export { BankType, Bank } from './Bank';
 export type { BankTypeProps, BankProps } from './Bank';
-export { AccountsReceivable } from './Credits';
-export type { AccountsReceivableProps } from './Credits';
+export { AccountsReceivable, CreditPayment } from './Credits';
+export type { AccountsReceivableProps, CreditPaymentProps } from './Credits';

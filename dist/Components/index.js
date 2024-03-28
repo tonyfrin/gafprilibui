@@ -39,6 +39,12 @@ Object.defineProperty(exports, "CashRegisterType", {
     return _CashRegisterType.CashRegisterType;
   }
 });
+Object.defineProperty(exports, "CreditPayment", {
+  enumerable: true,
+  get: function get() {
+    return _Credits.CreditPayment;
+  }
+});
 Object.defineProperty(exports, "Entity", {
   enumerable: true,
   get: function get() {
@@ -175,6 +181,24 @@ Object.defineProperty(exports, "Order", {
   enumerable: true,
   get: function get() {
     return _Order.Order;
+  }
+});
+Object.defineProperty(exports, "OrderPayment", {
+  enumerable: true,
+  get: function get() {
+    return _Order.OrderPayment;
+  }
+});
+Object.defineProperty(exports, "Payment", {
+  enumerable: true,
+  get: function get() {
+    return _Payment.Payment;
+  }
+});
+Object.defineProperty(exports, "PaymentDeposit", {
+  enumerable: true,
+  get: function get() {
+    return _Payment.PaymentDeposit;
   }
 });
 Object.defineProperty(exports, "PaymentTransferBank", {

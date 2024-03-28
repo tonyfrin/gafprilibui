@@ -350,6 +350,17 @@ export {
   useGafpriAttributesPaymentMethods,
   useGafpriPagesPaymentMethods,
   useGafpriAttributesCreditPayment,
+  ButtonsPaymentMethodsForm,
+  CircleStep,
+  PaymentHeader,
+  CreditHeaderLine,
+  CreditPendingTable,
+  MethodsPaymentTable,
+  OrderPendingTable,
+  OrderStep,
+  OrderPaymentForm,
+  CreditStep,
+  CreditPaymentForm,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -908,6 +919,17 @@ export type {
   UseGafpriPagesPaymentMethodsReturn,
   UseGafpriAttributesCreditPaymentReturn,
   CreditPaymentAttributes,
+  ButtonsPaymentMethodsFormProps,
+  CircleStepProps,
+  PaymentHeaderProps,
+  CreditHeaderLineProps,
+  CreditPendingTableProps,
+  MethodsPaymentTableProps,
+  OrderPendingTableProps,
+  OrderStepProps,
+  OrderPaymentFormProps,
+  CreditStepProps,
+  CreditPaymentFormProps,
 } from './Abstract';
 export {
   MainFooter,
@@ -947,6 +969,10 @@ export {
   CashRegister,
   Bank,
   EntityAccountsReceivable,
+  OrderPayment,
+  CreditPayment,
+  PaymentDeposit,
+  Payment,
 } from './Components';
 export type {
   MainCurrenciesProps,
@@ -1004,6 +1030,10 @@ export type {
   BankProps,
   EntityAccountsReceivableStylesContainerProps,
   EntityAccountsReceivableProps,
+  OrderPaymentProps,
+  CreditPaymentProps,
+  PaymentDepositProps,
+  PaymentProps,
 } from './Components';
 export {
   addClass,

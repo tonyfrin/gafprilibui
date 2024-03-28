@@ -54,3 +54,5 @@ export { OrderViewFormInfoHeader } from './OrderViewFormInfoHeader';
 export type { OrderViewFormInfoHeaderProps } from './OrderViewFormInfoHeader';
 export { PaymentInfoForm } from './PaymentInfoForm';
 export type { PaymentInfoFormProps } from './PaymentInfoForm';
+export { ButtonsPaymentMethodsForm } from './ButtonsPaymentMethodsForm';
+export type { ButtonsPaymentMethodsFormProps } from './ButtonsPaymentMethodsForm';

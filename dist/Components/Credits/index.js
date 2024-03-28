@@ -9,4 +9,11 @@ Object.defineProperty(exports, "AccountsReceivable", {
     return _AccountsReceivable.AccountsReceivable;
   }
 });
+Object.defineProperty(exports, "CreditPayment", {
+  enumerable: true,
+  get: function get() {
+    return _CreditPayment.CreditPayment;
+  }
+});
 var _AccountsReceivable = require("./AccountsReceivable");
+var _CreditPayment = require("./CreditPayment");

@@ -21,7 +21,7 @@ export const PaymentInfoForm = ({
     <>
       <ContainerHeaderInfo>
         <LineInfoTwo title="tipo: " info={type} />
-        <LineInfoTwo title="Numero: " info={postsId} />
+        <LineInfoTwo title="Numero(s): " info={postsId} />
         <LineInfoTwo title="Pago Total: " info={total} />
         <LineInfoTwo title="Pagos agregados: " info={totalMethodsPayment} />
         <LineInfoTwo title="Diferencia: " info={difference} />

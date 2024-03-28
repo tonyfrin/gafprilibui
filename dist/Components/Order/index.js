@@ -9,4 +9,11 @@ Object.defineProperty(exports, "Order", {
     return _Order.Order;
   }
 });
+Object.defineProperty(exports, "OrderPayment", {
+  enumerable: true,
+  get: function get() {
+    return _OrderPayment.OrderPayment;
+  }
+});
 var _Order = require("./Order");
+var _OrderPayment = require("./OrderPayment");

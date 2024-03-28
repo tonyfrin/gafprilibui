@@ -291,6 +291,12 @@ Object.defineProperty(exports, "ButtonOptionsContainer", {
     return _Abstract.ButtonOptionsContainer;
   }
 });
+Object.defineProperty(exports, "ButtonsPaymentMethodsForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.ButtonsPaymentMethodsForm;
+  }
+});
 Object.defineProperty(exports, "CASH_REGISTER_TYPE_INPUT", {
   enumerable: true,
   get: function get() {
@@ -555,6 +561,12 @@ Object.defineProperty(exports, "CircleButton", {
     return _Abstract.CircleButton;
   }
 });
+Object.defineProperty(exports, "CircleStep", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CircleStep;
+  }
+});
 Object.defineProperty(exports, "Cities", {
   enumerable: true,
   get: function get() {
@@ -619,6 +631,36 @@ Object.defineProperty(exports, "CreditForm", {
   enumerable: true,
   get: function get() {
     return _Abstract.CreditForm;
+  }
+});
+Object.defineProperty(exports, "CreditHeaderLine", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CreditHeaderLine;
+  }
+});
+Object.defineProperty(exports, "CreditPayment", {
+  enumerable: true,
+  get: function get() {
+    return _Components.CreditPayment;
+  }
+});
+Object.defineProperty(exports, "CreditPaymentForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CreditPaymentForm;
+  }
+});
+Object.defineProperty(exports, "CreditPendingTable", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CreditPendingTable;
+  }
+});
+Object.defineProperty(exports, "CreditStep", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CreditStep;
   }
 });
 Object.defineProperty(exports, "CurrencyForm", {
@@ -1551,6 +1593,12 @@ Object.defineProperty(exports, "MenuButton", {
     return _Abstract.MenuButton;
   }
 });
+Object.defineProperty(exports, "MethodsPaymentTable", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.MethodsPaymentTable;
+  }
+});
 Object.defineProperty(exports, "Modal", {
   enumerable: true,
   get: function get() {
@@ -1657,6 +1705,30 @@ Object.defineProperty(exports, "OrderInit", {
   enumerable: true,
   get: function get() {
     return _Abstract.OrderInit;
+  }
+});
+Object.defineProperty(exports, "OrderPayment", {
+  enumerable: true,
+  get: function get() {
+    return _Components.OrderPayment;
+  }
+});
+Object.defineProperty(exports, "OrderPaymentForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderPaymentForm;
+  }
+});
+Object.defineProperty(exports, "OrderPendingTable", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderPendingTable;
+  }
+});
+Object.defineProperty(exports, "OrderStep", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderStep;
   }
 });
 Object.defineProperty(exports, "OrderView", {
@@ -1849,6 +1921,24 @@ Object.defineProperty(exports, "ParagraphNote", {
   enumerable: true,
   get: function get() {
     return _Abstract.ParagraphNote;
+  }
+});
+Object.defineProperty(exports, "Payment", {
+  enumerable: true,
+  get: function get() {
+    return _Components.Payment;
+  }
+});
+Object.defineProperty(exports, "PaymentDeposit", {
+  enumerable: true,
+  get: function get() {
+    return _Components.PaymentDeposit;
+  }
+});
+Object.defineProperty(exports, "PaymentHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.PaymentHeader;
   }
 });
 Object.defineProperty(exports, "PaymentInfoForm", {

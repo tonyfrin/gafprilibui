@@ -15,6 +15,12 @@ Object.defineProperty(exports, "BudgetViewFormInfoHeader", {
     return _BudgetViewFormInfoHeader.BudgetViewFormInfoHeader;
   }
 });
+Object.defineProperty(exports, "ButtonsPaymentMethodsForm", {
+  enumerable: true,
+  get: function get() {
+    return _ButtonsPaymentMethodsForm.ButtonsPaymentMethodsForm;
+  }
+});
 Object.defineProperty(exports, "EntityAccountsReceivableSearchForm", {
   enumerable: true,
   get: function get() {
@@ -157,3 +163,4 @@ var _EntityAccountsReceivableSearchForm = require("./EntityAccountsReceivableSea
 var _EntityOrderViewFormInfoHeader = require("./EntityOrderViewFormInfoHeader");
 var _OrderViewFormInfoHeader = require("./OrderViewFormInfoHeader");
 var _PaymentInfoForm = require("./PaymentInfoForm");
+var _ButtonsPaymentMethodsForm = require("./ButtonsPaymentMethodsForm");

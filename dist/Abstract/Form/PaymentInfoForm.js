@@ -18,7 +18,7 @@ var PaymentInfoForm = exports.PaymentInfoForm = function PaymentInfoForm(_ref) {
     title: "tipo: ",
     info: type
   }), /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
-    title: "Numero: ",
+    title: "Numero(s): ",
     info: postsId
   }), /*#__PURE__*/_react["default"].createElement(_Li.LineInfoTwo, {
     title: "Pago Total: ",

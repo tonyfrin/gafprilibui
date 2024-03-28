@@ -5,12 +5,13 @@ import { UseCurrenciesReturn, UseErrorReturn, UseGafpriBankTypeReturn } from '..
 import { SelectDefault } from '../../../helpers';
 import { BankTransactionsAttributes, UseGafpriAttributesBankTransactionsReturn } from '../bank/bankTransactions/useGafpriAttributesBankTransactions';
 import { UseGafpriPagesPaymentMethodsReturn } from './useGafpriPagesPaymentMethods';
-import { UseGafpriAttributesCreditOpeningReturn, CreditOpeningAttributes } from '../credits';
+import { UseGafpriAttributesCreditOpeningReturn, CreditOpeningAttributes, CreditPaymentAttributes } from '../credits';
 export type GeneralPaymentMethodsAttributes = {
     paymentMethods: PaymentMethodsAttributes;
     cashTransactions?: CashTransactionsAttributes;
     bankTransactions?: BankTransactionsAttributes;
     creditOpening?: CreditOpeningAttributes;
+    creditPayment?: CreditPaymentAttributes;
 };
 type State = {
     arrayPaymentMethod: GeneralPaymentMethodsAttributes[];
@@ -45,6 +46,7 @@ type Actions = {
     addElectronicPaymentMethod: () => void;
     addCreditPaymentMethod: (entityId: number, currenciesId: number) => void;
     addSinglePaymentMethod: (siteCurrenciesId: number) => void;
+    addCreditPaymentPaymentMethod: (creditOpeningPostsId: number, siteCurrenciesId: number, newAmount: number) => void;
 };
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
     states: State;

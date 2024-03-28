@@ -349,6 +349,7 @@ export {
   useGafpriAttributesGeneralPaymentMethods,
   useGafpriAttributesPaymentMethods,
   useGafpriPagesPaymentMethods,
+  useGafpriAttributesCreditPayment,
 } from './Abstract';
 export type {
   GloboTitleStyle,
@@ -905,6 +906,8 @@ export type {
   GeneralPaymentMethodsAttributes,
   UseGafpriAttributesGeneralPaymentMethodsReturn,
   UseGafpriPagesPaymentMethodsReturn,
+  UseGafpriAttributesCreditPaymentReturn,
+  CreditPaymentAttributes,
 } from './Abstract';
 export {
   MainFooter,
@@ -1297,6 +1300,7 @@ export {
   ACCOUNTS_RECEIVABLE_ROUTE,
   ACCOUNTS_RECEIVABLE_STORAGE,
   PAYMENT_ORDER_ROUTE,
+  PAYMENT_CREDIT_ROUTE,
 } from './constants';
 export { getItem, saveItem } from './Context';
 export {

@@ -117,7 +117,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     });
   };
   var validationArrayPaymentMethod = function validationArrayPaymentMethod(value) {
-    return value.length <= 8;
+    return value.length <= 100;
   };
   var changeArrayPaymentMethod = function changeArrayPaymentMethod(value) {
     var valid = validationArrayPaymentMethod([].concat((0, _toConsumableArray2["default"])(arrayPaymentMethod), [value]));
@@ -128,7 +128,7 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
       return;
     }
     if (useError) {
-      useError.actions.changeError(['No se pueden agregar más de 8 metodos de pagos']);
+      useError.actions.changeError(['No se pueden agregar más de 100 metodos de pagos']);
     }
   };
   var addCashTransaction = function addCashTransaction() {
@@ -309,6 +309,29 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     };
     changeArrayPaymentMethod(newPayment);
   };
+  var addCreditPaymentPaymentMethod = function addCreditPaymentPaymentMethod(creditOpeningPostsId, siteCurrenciesId, newAmount) {
+    var newCreditPayment = {
+      creditOpeningPostsId: creditOpeningPostsId,
+      amount: newAmount
+    };
+    var newType = 'debit';
+    var newPaymentMethods = {
+      methodType: 'creditPayment',
+      type: newType,
+      paymentType: 'creditPayment',
+      currenciesId: siteCurrenciesId,
+      bank: '',
+      number: '',
+      amount: newAmount,
+      change: newAmount,
+      note: ''
+    };
+    var newPayment = {
+      paymentMethods: newPaymentMethods,
+      creditPayment: newCreditPayment
+    };
+    changeArrayPaymentMethod(newPayment);
+  };
   var addSinglePaymentMethod = function addSinglePaymentMethod(siteCurrenciesId) {
     var newPaymentMethods = {
       methodType: 'single',
@@ -418,7 +441,8 @@ function useGafpriAttributesGeneralPaymentMethods(_ref) {
     partiallyInfoReset: partiallyInfoReset,
     addElectronicPaymentMethod: addElectronicPaymentMethod,
     addCreditPaymentMethod: addCreditPaymentMethod,
-    addSinglePaymentMethod: addSinglePaymentMethod
+    addSinglePaymentMethod: addSinglePaymentMethod,
+    addCreditPaymentPaymentMethod: addCreditPaymentPaymentMethod
   };
   return {
     states: states,

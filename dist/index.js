@@ -1695,6 +1695,12 @@ Object.defineProperty(exports, "PASSWORD_INPUT", {
     return _constants.PASSWORD_INPUT;
   }
 });
+Object.defineProperty(exports, "PAYMENT_CREDIT_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.PAYMENT_CREDIT_ROUTE;
+  }
+});
 Object.defineProperty(exports, "PAYMENT_ORDER_ROUTE", {
   enumerable: true,
   get: function get() {
@@ -3859,6 +3865,12 @@ Object.defineProperty(exports, "useGafpriAttributesCreditOpening", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriAttributesCreditOpening;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesCreditPayment", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesCreditPayment;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesEntity", {

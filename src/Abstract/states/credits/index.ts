@@ -26,3 +26,8 @@ export type {
   UseGafpriAttributesCreditOpeningReturn,
   CreditOpeningAttributes,
 } from './creditOpening';
+export { useGafpriAttributesCreditPayment } from './creditPayment';
+export type {
+  UseGafpriAttributesCreditPaymentReturn,
+  CreditPaymentAttributes,
+} from './creditPayment';

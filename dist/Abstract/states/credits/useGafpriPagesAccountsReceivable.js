@@ -50,7 +50,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
   var _useState19 = (0, _react.useState)(true),
     _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
     isCreditList = _useState20[0],
-    setIsCredirtList = _useState20[1];
+    setIsCreditList = _useState20[1];
   var _useState21 = (0, _react.useState)(false),
     _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
     isCreditView = _useState22[0],
@@ -75,7 +75,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -91,7 +91,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -107,7 +107,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -123,7 +123,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -139,7 +139,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -155,7 +155,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -171,7 +171,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(true);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -187,7 +187,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(true);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -203,13 +203,13 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(true);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
     (0, _helpers.scrollToTop)();
   };
-  var onCredirtList = function onCredirtList() {
+  var onCreditList = function onCreditList() {
     setIsFetching(false);
     setIsInit(false);
     setIsInitAdd(false);
@@ -219,7 +219,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(true);
+    setIsCreditList(true);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -235,7 +235,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(true);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -251,7 +251,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(true);
     setIsCreditPayment(false);
@@ -267,7 +267,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(true);
@@ -367,7 +367,7 @@ var useGafpriPagesAccountsReceivable = exports.useGafpriPagesAccountsReceivable 
     goForm: goForm,
     goFormUpdate: goFormUpdate,
     onLoginUpdateForm: onLoginUpdateForm,
-    onCredirtList: onCredirtList,
+    onCreditList: onCreditList,
     onCreditView: onCreditView,
     onCreditPayment: onCreditPayment,
     onOrderView: onOrderView

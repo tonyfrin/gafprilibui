@@ -171,6 +171,12 @@ Object.defineProperty(exports, "useGafpriAttributesCreditOpening", {
     return _credits.useGafpriAttributesCreditOpening;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesCreditPayment", {
+  enumerable: true,
+  get: function get() {
+    return _credits.useGafpriAttributesCreditPayment;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesEntity", {
   enumerable: true,
   get: function get() {

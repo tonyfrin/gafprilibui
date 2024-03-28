@@ -1743,6 +1743,12 @@ Object.defineProperty(exports, "useGafpriAttributesCreditOpening", {
     return _states.useGafpriAttributesCreditOpening;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesCreditPayment", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesCreditPayment;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesEntity", {
   enumerable: true,
   get: function get() {

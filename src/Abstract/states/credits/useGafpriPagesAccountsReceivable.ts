@@ -30,7 +30,7 @@ export type UseGafpriPagesAccountsReceivableReturn = {
     onFormUpdate: () => void;
     onLoginForm: () => void;
     onLoginUpdateForm: () => void;
-    onCredirtList: () => void;
+    onCreditList: () => void;
     onCreditView: () => void;
     onCreditPayment: () => void;
     returnInit: () => void;
@@ -64,7 +64,7 @@ export const useGafpriPagesAccountsReceivable = ({
   const [isLoginForm, setIsLoginForm] = useState(false);
   const [isLoginUpdateForm, setIsLoginUpdateForm] = useState(false);
 
-  const [isCreditList, setIsCredirtList] = useState(true);
+  const [isCreditList, setIsCreditList] = useState(true);
   const [isCreditView, setIsCreditView] = useState(false);
   const [isOrderView, setIsOrderView] = useState(false);
   const [isCreditPayment, setIsCreditPayment] = useState(false);
@@ -80,7 +80,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -97,7 +97,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -114,7 +114,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -131,7 +131,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -148,7 +148,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -165,7 +165,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -182,7 +182,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(true);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -199,7 +199,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(true);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -216,14 +216,14 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(true);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
     scrollToTop();
   };
 
-  const onCredirtList = (): void => {
+  const onCreditList = (): void => {
     setIsFetching(false);
     setIsInit(false);
     setIsInitAdd(false);
@@ -233,7 +233,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(true);
+    setIsCreditList(true);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -250,7 +250,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(true);
     setIsOrderView(false);
     setIsCreditPayment(false);
@@ -267,7 +267,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(true);
     setIsCreditPayment(false);
@@ -284,7 +284,7 @@ export const useGafpriPagesAccountsReceivable = ({
     setIsLoginForm(false);
     setIsFormUpdate(false);
     setIsLoginUpdateForm(false);
-    setIsCredirtList(false);
+    setIsCreditList(false);
     setIsCreditView(false);
     setIsOrderView(false);
     setIsCreditPayment(true);
@@ -409,7 +409,7 @@ export const useGafpriPagesAccountsReceivable = ({
     goForm,
     goFormUpdate,
     onLoginUpdateForm,
-    onCredirtList,
+    onCreditList,
     onCreditView,
     onCreditPayment,
     onOrderView,

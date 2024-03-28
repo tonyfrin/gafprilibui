@@ -30,6 +30,7 @@ import {
   useGafpriAttributesCreditOpening,
   UseGafpriAttributesCreditOpeningReturn,
   CreditOpeningAttributes,
+  CreditPaymentAttributes,
 } from '../credits';
 
 export type GeneralPaymentMethodsAttributes = {
@@ -37,6 +38,7 @@ export type GeneralPaymentMethodsAttributes = {
   cashTransactions?: CashTransactionsAttributes;
   bankTransactions?: BankTransactionsAttributes;
   creditOpening?: CreditOpeningAttributes;
+  creditPayment?: CreditPaymentAttributes;
 };
 
 type State = {
@@ -80,6 +82,11 @@ type Actions = {
   addElectronicPaymentMethod: () => void;
   addCreditPaymentMethod: (entityId: number, currenciesId: number) => void;
   addSinglePaymentMethod: (siteCurrenciesId: number) => void;
+  addCreditPaymentPaymentMethod: (
+    creditOpeningPostsId: number,
+    siteCurrenciesId: number,
+    newAmount: number
+  ) => void;
 };
 
 export type UseGafpriAttributesGeneralPaymentMethodsReturn = {
@@ -181,7 +188,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
   const validationArrayPaymentMethod = (
     value: GeneralPaymentMethodsAttributes[]
   ): boolean => {
-    return value.length <= 8;
+    return value.length <= 100;
   };
 
   const changeArrayPaymentMethod = (
@@ -196,7 +203,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
 
     if (useError) {
       useError.actions.changeError([
-        'No se pueden agregar más de 8 metodos de pagos',
+        'No se pueden agregar más de 100 metodos de pagos',
       ]);
     }
   };
@@ -425,6 +432,38 @@ export function useGafpriAttributesGeneralPaymentMethods({
     changeArrayPaymentMethod(newPayment);
   };
 
+  const addCreditPaymentPaymentMethod = (
+    creditOpeningPostsId: number,
+    siteCurrenciesId: number,
+    newAmount: number
+  ): void => {
+    const newCreditPayment = {
+      creditOpeningPostsId,
+      amount: newAmount,
+    };
+
+    const newType: 'deposit' | 'debit' = 'debit';
+
+    const newPaymentMethods = {
+      methodType: 'creditPayment',
+      type: newType,
+      paymentType: 'creditPayment',
+      currenciesId: siteCurrenciesId,
+      bank: '',
+      number: '',
+      amount: newAmount,
+      change: newAmount,
+      note: '',
+    };
+
+    const newPayment: GeneralPaymentMethodsAttributes = {
+      paymentMethods: newPaymentMethods,
+      creditPayment: newCreditPayment,
+    };
+
+    changeArrayPaymentMethod(newPayment);
+  };
+
   const addSinglePaymentMethod = (siteCurrenciesId: number): void => {
     const newPaymentMethods = {
       methodType: 'single',
@@ -558,6 +597,7 @@ export function useGafpriAttributesGeneralPaymentMethods({
     addElectronicPaymentMethod,
     addCreditPaymentMethod,
     addSinglePaymentMethod,
+    addCreditPaymentPaymentMethod,
   };
 
   return {

@@ -10,6 +10,7 @@ function useGafpriPayment(_ref) {
   var currencies = _ref.currencies,
     useBankType = _ref.useBankType,
     useOrder = _ref.useOrder,
+    useCredit = _ref.useCredit,
     token = _ref.token;
   var error = (0, _useGafpriError.useGafpriError)();
   var attributes = (0, _Abstract.useGafpriAttributesPayment)({
@@ -26,6 +27,7 @@ function useGafpriPayment(_ref) {
     usePages: pages,
     useAttributes: attributes,
     useError: error,
+    useCredit: useCredit,
     token: token
   });
   return {

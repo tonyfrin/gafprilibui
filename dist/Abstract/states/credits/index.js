@@ -21,6 +21,12 @@ Object.defineProperty(exports, "useGafpriAttributesCreditOpening", {
     return _creditOpening.useGafpriAttributesCreditOpening;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesCreditPayment", {
+  enumerable: true,
+  get: function get() {
+    return _creditPayment.useGafpriAttributesCreditPayment;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -45,3 +51,4 @@ var _useGafpriPaginationsAccountsReceivable = require("./useGafpriPaginationsAcc
 var _useGafpriPagesAccountsReceivable = require("./useGafpriPagesAccountsReceivable");
 var _useGafpriAttributesAccountsReceivable = require("./useGafpriAttributesAccountsReceivable");
 var _creditOpening = require("./creditOpening");
+var _creditPayment = require("./creditPayment");

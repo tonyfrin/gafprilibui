@@ -495,6 +495,12 @@ Object.defineProperty(exports, "PASSWORD_INPUT", {
     return _Inputs.PASSWORD_INPUT;
   }
 });
+Object.defineProperty(exports, "PAYMENT_CREDIT_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.PAYMENT_CREDIT_ROUTE;
+  }
+});
 Object.defineProperty(exports, "PAYMENT_ORDER_ROUTE", {
   enumerable: true,
   get: function get() {

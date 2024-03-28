@@ -13,6 +13,7 @@ import {
   useGafpriApiPayment,
 } from '../Abstract';
 import { UseGafpriOrderReturn } from './useGafpriOrder';
+import { UseGafpriAccountsReceivableReturn } from './useGafpriAccountsReceivable';
 
 export interface UseGafpriPaymentReturn {
   attributes: UseGafpriAttributesPaymentReturn;
@@ -26,6 +27,7 @@ export type UseGafpriPaymentProps = {
   currencies: UseCurrenciesReturn;
   useBankType: UseGafpriBankTypeReturn;
   useOrder: UseGafpriOrderReturn;
+  useCredit: UseGafpriAccountsReceivableReturn;
   token: string | null;
 };
 
@@ -33,6 +35,7 @@ export function useGafpriPayment({
   currencies,
   useBankType,
   useOrder,
+  useCredit,
   token,
 }: UseGafpriPaymentProps): UseGafpriPaymentReturn {
   const error = useGafpriError();
@@ -51,6 +54,7 @@ export function useGafpriPayment({
     usePages: pages,
     useAttributes: attributes,
     useError: error,
+    useCredit,
     token,
   });
 

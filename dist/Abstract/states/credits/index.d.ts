@@ -10,3 +10,5 @@ export { useGafpriAttributesAccountsReceivable } from './useGafpriAttributesAcco
 export type { UseGafpriAttributesAccountsReceivableReturn } from './useGafpriAttributesAccountsReceivable';
 export { useGafpriAttributesCreditOpening } from './creditOpening';
 export type { UseGafpriAttributesCreditOpeningReturn, CreditOpeningAttributes, } from './creditOpening';
+export { useGafpriAttributesCreditPayment } from './creditPayment';
+export type { UseGafpriAttributesCreditPaymentReturn, CreditPaymentAttributes, } from './creditPayment';

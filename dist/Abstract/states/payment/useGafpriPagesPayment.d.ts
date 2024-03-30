@@ -4,12 +4,14 @@ type State = {
     isFetching: boolean;
     isInit: boolean;
     isDeposit: boolean;
+    isOrderReturn: boolean;
 };
 type Actions = {
     onFetching: () => void;
     onInit: () => void;
     returnInit: () => void;
     onDeposit: () => void;
+    onOrderReturn: () => void;
 };
 export type UseGafpriPagesPaymentReturn = {
     states: State;

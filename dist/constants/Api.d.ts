@@ -29,3 +29,4 @@ export declare const PAYMENT_TRANSFER_BANK_ROUTE = "/payment-transfer-bank";
 export declare const ACCOUNTS_RECEIVABLE_ROUTE = "/accounts-receivable";
 export declare const PAYMENT_ORDER_ROUTE = "/payment-order";
 export declare const PAYMENT_CREDIT_ROUTE = "/payment-credit";
+export declare const ORDER_RETURN_ROUTE = "/order-return";

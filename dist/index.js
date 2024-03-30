@@ -459,6 +459,18 @@ Object.defineProperty(exports, "CartBudgetViewTable", {
     return _Abstract.CartBudgetViewTable;
   }
 });
+Object.defineProperty(exports, "CartOrderReturnSections", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CartOrderReturnSections;
+  }
+});
+Object.defineProperty(exports, "CartOrderReturnTable", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.CartOrderReturnTable;
+  }
+});
 Object.defineProperty(exports, "CartSections", {
   enumerable: true,
   get: function get() {
@@ -835,6 +847,12 @@ Object.defineProperty(exports, "EntityFormInfoHeader", {
   enumerable: true,
   get: function get() {
     return _Abstract.EntityFormInfoHeader;
+  }
+});
+Object.defineProperty(exports, "EntityFormOrderReturnInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.EntityFormOrderReturnInfoHeader;
   }
 });
 Object.defineProperty(exports, "EntityIncome", {
@@ -1467,6 +1485,12 @@ Object.defineProperty(exports, "LineProductCart", {
     return _Abstract.LineProductCart;
   }
 });
+Object.defineProperty(exports, "LineProductReturnCart", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.LineProductReturnCart;
+  }
+});
 Object.defineProperty(exports, "LineTable", {
   enumerable: true,
   get: function get() {
@@ -1677,6 +1701,18 @@ Object.defineProperty(exports, "OPTIONS_SHIPPING_SERVICES_DEFAULT", {
     return _constants.OPTIONS_SHIPPING_SERVICES_DEFAULT;
   }
 });
+Object.defineProperty(exports, "ORDER_RETURN_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.ORDER_RETURN_ROUTE;
+  }
+});
+Object.defineProperty(exports, "ORDER_RETURN_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.ORDER_RETURN_STORAGE;
+  }
+});
 Object.defineProperty(exports, "ORDER_ROUTE", {
   enumerable: true,
   get: function get() {
@@ -1723,6 +1759,30 @@ Object.defineProperty(exports, "OrderPendingTable", {
   enumerable: true,
   get: function get() {
     return _Abstract.OrderPendingTable;
+  }
+});
+Object.defineProperty(exports, "OrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _Components.OrderReturn;
+  }
+});
+Object.defineProperty(exports, "OrderReturnFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderReturnFormInfoHeader;
+  }
+});
+Object.defineProperty(exports, "OrderReturnInitForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderReturnInitForm;
+  }
+});
+Object.defineProperty(exports, "OrderReturnPaymentForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.OrderReturnPaymentForm;
   }
 });
 Object.defineProperty(exports, "OrderStep", {
@@ -2215,6 +2275,12 @@ Object.defineProperty(exports, "Sales", {
   enumerable: true,
   get: function get() {
     return _Abstract.Sales;
+  }
+});
+Object.defineProperty(exports, "SalesReturn", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.SalesReturn;
   }
 });
 Object.defineProperty(exports, "ScrollableContainer", {
@@ -4005,6 +4071,18 @@ Object.defineProperty(exports, "useGafpriAttributesOrderItems", {
     return _Abstract.useGafpriAttributesOrderItems;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesOrderReturn;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesOrderReturnItems", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesOrderReturnItems;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesPayment", {
   enumerable: true,
   get: function get() {
@@ -4155,6 +4233,12 @@ Object.defineProperty(exports, "useGafpriDataOrder", {
     return _Abstract.useGafpriDataOrder;
   }
 });
+Object.defineProperty(exports, "useGafpriDataOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataOrderReturn;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataProducts", {
   enumerable: true,
   get: function get() {
@@ -4239,6 +4323,12 @@ Object.defineProperty(exports, "useGafpriOrder", {
     return _states.useGafpriOrder;
   }
 });
+Object.defineProperty(exports, "useGafpriOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriOrderReturn;
+  }
+});
 Object.defineProperty(exports, "useGafpriPagesAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -4291,6 +4381,12 @@ Object.defineProperty(exports, "useGafpriPagesOrder", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPagesOrder;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesOrderReturn;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesPayment", {
@@ -4417,6 +4513,12 @@ Object.defineProperty(exports, "useGafpriPaginationsOrder", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPaginationsOrder;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsOrderReturn;
   }
 });
 Object.defineProperty(exports, "useGafpriPaginationsProducts", {

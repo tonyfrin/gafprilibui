@@ -219,6 +219,18 @@ Object.defineProperty(exports, "useGafpriAttributesOrderItems", {
     return _productsItems.useGafpriAttributesOrderItems;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _orderReturn.useGafpriAttributesOrderReturn;
+  }
+});
+Object.defineProperty(exports, "useGafpriAttributesOrderReturnItems", {
+  enumerable: true,
+  get: function get() {
+    return _productsItems.useGafpriAttributesOrderReturnItems;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesPayment", {
   enumerable: true,
   get: function get() {
@@ -339,6 +351,12 @@ Object.defineProperty(exports, "useGafpriDataOrder", {
     return _order.useGafpriDataOrder;
   }
 });
+Object.defineProperty(exports, "useGafpriDataOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _orderReturn.useGafpriDataOrderReturn;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataProducts", {
   enumerable: true,
   get: function get() {
@@ -433,6 +451,12 @@ Object.defineProperty(exports, "useGafpriPagesOrder", {
   enumerable: true,
   get: function get() {
     return _order.useGafpriPagesOrder;
+  }
+});
+Object.defineProperty(exports, "useGafpriPagesOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _orderReturn.useGafpriPagesOrderReturn;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesPayment", {
@@ -561,6 +585,12 @@ Object.defineProperty(exports, "useGafpriPaginationsOrder", {
     return _order.useGafpriPaginationsOrder;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsOrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _orderReturn.useGafpriPaginationsOrderReturn;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsProducts", {
   enumerable: true,
   get: function get() {
@@ -646,3 +676,4 @@ var _bank = require("./bank");
 var _cashRegister = require("./cashRegister");
 var _credits = require("./credits");
 var _paymentMethods = require("./paymentMethods");
+var _orderReturn = require("./orderReturn");

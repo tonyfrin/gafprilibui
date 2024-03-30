@@ -50,5 +50,5 @@ var OrderFormInfoHeader = exports.OrderFormInfoHeader = function OrderFormInfoHe
     styles: {
       fontSize: '12px'
     }
-  }), parseFloat(useOrder.useProductItems.states.total) > 0 && console.log(useOrder.attributes.states)))));
+  })))));
 };

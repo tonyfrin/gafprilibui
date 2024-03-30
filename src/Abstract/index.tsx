@@ -245,6 +245,9 @@ export {
   EntityOrderViewFormInfoHeader,
   PaymentInfoForm,
   ButtonsPaymentMethodsForm,
+  OrderReturnInitForm,
+  EntityFormOrderReturnInfoHeader,
+  OrderReturnFormInfoHeader,
 } from './Form';
 export type {
   ModelFormProps,
@@ -274,6 +277,9 @@ export type {
   EntityOrderViewFormInfoHeaderProps,
   PaymentInfoFormProps,
   ButtonsPaymentMethodsFormProps,
+  OrderReturnInitFormProps,
+  EntityFormOrderReturnInfoHeaderProps,
+  OrderReturnFormInfoHeaderProps,
 } from './Form';
 export {
   Menu1,
@@ -520,6 +526,11 @@ export {
   useGafpriAttributesPaymentMethods,
   useGafpriPagesPaymentMethods,
   useGafpriAttributesCreditPayment,
+  useGafpriAttributesOrderReturnItems,
+  useGafpriAttributesOrderReturn,
+  useGafpriPagesOrderReturn,
+  useGafpriDataOrderReturn,
+  useGafpriPaginationsOrderReturn,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -722,6 +733,18 @@ export type {
   UseGafpriPagesPaymentMethodsReturn,
   UseGafpriAttributesCreditPaymentReturn,
   CreditPaymentAttributes,
+  UseGafpriAttributesOrderReturnItemsReturn,
+  UseGafpriAttributesOrderReturnItemsProps,
+  OrderReturnItemsAttributes,
+  UseGafpriAttributesOrderReturnReturn,
+  UseGafpriAttributesOrderReturnProps,
+  UseGafpriPagesOrderReturnReturn,
+  UseGafpriPagesOrderReturnProps,
+  UseGafpriDataOrderReturnReturn,
+  UseGafpriDataOrderReturnProps,
+  OrderReturnAttributes,
+  UseGafpriPaginationsOrderReturnReturn,
+  UseGafpriPaginationsOrderReturnProps,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -739,6 +762,7 @@ export {
   LineBudgetPrint,
   LineProductBudgetViewCart,
   CreditHeaderLine,
+  LineProductReturnCart,
 } from './Li';
 export type {
   LineProductCartProps,
@@ -774,6 +798,7 @@ export type {
   LineBudgetPrintProps,
   LineProductBudgetViewCartProps,
   CreditHeaderLineProps,
+  LineProductReturnCartProps,
 } from './Li';
 export {
   CartTable,
@@ -792,6 +817,7 @@ export {
   CreditPendingTable,
   MethodsPaymentTable,
   OrderPendingTable,
+  CartOrderReturnTable,
 } from './Table';
 export type {
   CartListProps,
@@ -813,6 +839,7 @@ export type {
   MethodsPaymentTableProps,
   MethodsPaymentItems,
   OrderPendingTableProps,
+  CartOrderReturnTableProps,
 } from './Table';
 export {
   SearchProducts,
@@ -856,6 +883,7 @@ export {
   CartBudgetSections,
   CartBudgetViewSections,
   PaymentOrderSections,
+  CartOrderReturnSections,
 } from './Sections';
 export type {
   CartSectionsStylesContainerProps,
@@ -872,6 +900,10 @@ export type {
   CartBudgetViewSectionsStylesContentOptionsProps,
   PaymentOrderSectionsProps,
   PaymentMethodsImages,
+  CartOrderReturnSectionsProps,
+  CartOrderReturnSectionsStylesContainerProps,
+  CartOrderReturnSectionsStylesContentItemsProps,
+  CartOrderReturnSectionsStylesContentOptionsProps,
 } from './Sections';
 export { OrderInit, Sales, OrderView } from './Order';
 export type {
@@ -1011,6 +1043,7 @@ export {
   OrderPaymentForm,
   CreditStep,
   CreditPaymentForm,
+  OrderReturnPaymentForm,
 } from './Payment';
 export type {
   FinalPaymentTransferCashRegisterProps,
@@ -1019,6 +1052,7 @@ export type {
   OrderPaymentFormProps,
   CreditStepProps,
   CreditPaymentFormProps,
+  OrderReturnPaymentFormProps,
 } from './Payment';
 export { BankTypeForm, InitBankType } from './BankType';
 export type {
@@ -1048,3 +1082,9 @@ export type {
 } from './AccountsReceivable';
 export { CircleStep } from './Circle';
 export type { CircleStepProps } from './Circle';
+export { OrderReturnInit, SalesReturn } from './OrderReturn';
+export type {
+  OrderReturnInitStylesContainerProps,
+  OrderReturnInitProps,
+  SalesReturnProps,
+} from './OrderReturn';

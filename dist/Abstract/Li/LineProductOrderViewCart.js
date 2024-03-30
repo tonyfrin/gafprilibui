@@ -24,7 +24,7 @@ var LineProductOrderViewCart = exports.LineProductOrderViewCart = function LineP
     })), /*#__PURE__*/_react["default"].createElement(_LineCol.LineCol4, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
       value: product.name
     })), /*#__PURE__*/_react["default"].createElement(_LineCol2.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
-      value: (0, _helpers.decimalFormatPriceConverter)(product.qty || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
+      value: parseFloat("".concat(product.qty)).toFixed(2) || '0'
     })), /*#__PURE__*/_react["default"].createElement(_LineCol2.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {
       value: (0, _helpers.decimalFormatPriceConverter)(product.price || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol2.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {

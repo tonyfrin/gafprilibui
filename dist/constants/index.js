@@ -453,6 +453,18 @@ Object.defineProperty(exports, "OPTIONS_SHIPPING_SERVICES_DEFAULT", {
     return _shippingDefault.OPTIONS_SHIPPING_SERVICES_DEFAULT;
   }
 });
+Object.defineProperty(exports, "ORDER_RETURN_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.ORDER_RETURN_ROUTE;
+  }
+});
+Object.defineProperty(exports, "ORDER_RETURN_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.ORDER_RETURN_STORAGE;
+  }
+});
 Object.defineProperty(exports, "ORDER_ROUTE", {
   enumerable: true,
   get: function get() {

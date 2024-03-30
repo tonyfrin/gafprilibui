@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getApiUrl = exports.USERS_ROUTE = exports.UPLOAD_PHOTO_ROUTE = exports.TYPE_DOCUMENT_ID_ROUTE = exports.TAX_RATES_ROUTE = exports.TAX_CLASSES_ROUTE = exports.STORAGE_ROUTE = exports.SITES_ROUTE = exports.SHIPPING_METHODS_ROUTE = exports.SHIPPING_AREAS_ROUTE = exports.ROLES_ROUTE = exports.PROJECTS_ROUTE = exports.PRODUCTS_ROUTE = exports.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE = exports.PAYMENT_TRANSFER_BANK_ROUTE = exports.PAYMENT_ORDER_ROUTE = exports.PAYMENT_CREDIT_ROUTE = exports.ORDER_ROUTE = exports.LOGIN_TOKEN_ROUTE = exports.LOGIN_ROUTE = exports.INCOME_ROUTE = exports.EXPENSES_TYPE_ROUTE = exports.EXPENSES_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.CASH_REGISTER_TYPE_ROUTE = exports.BUDGET_ROUTE = exports.BANK_TYPE_ROUTE = exports.API_URL = exports.ACCOUNTS_RECEIVABLE_ROUTE = void 0;
+exports.getApiUrl = exports.USERS_ROUTE = exports.UPLOAD_PHOTO_ROUTE = exports.TYPE_DOCUMENT_ID_ROUTE = exports.TAX_RATES_ROUTE = exports.TAX_CLASSES_ROUTE = exports.STORAGE_ROUTE = exports.SITES_ROUTE = exports.SHIPPING_METHODS_ROUTE = exports.SHIPPING_AREAS_ROUTE = exports.ROLES_ROUTE = exports.PROJECTS_ROUTE = exports.PRODUCTS_ROUTE = exports.PAYMENT_TRANSFER_CASH_REGISTER_ROUTE = exports.PAYMENT_TRANSFER_BANK_ROUTE = exports.PAYMENT_ORDER_ROUTE = exports.PAYMENT_CREDIT_ROUTE = exports.ORDER_ROUTE = exports.ORDER_RETURN_ROUTE = exports.LOGIN_TOKEN_ROUTE = exports.LOGIN_ROUTE = exports.INCOME_ROUTE = exports.EXPENSES_TYPE_ROUTE = exports.EXPENSES_ROUTE = exports.ENTITY_ROUTE = exports.CURRENCIES_ROUTE = exports.CATEGORY_ROUTE = exports.CASH_REGISTER_TYPE_ROUTE = exports.BUDGET_ROUTE = exports.BANK_TYPE_ROUTE = exports.API_URL = exports.ACCOUNTS_RECEIVABLE_ROUTE = void 0;
 var getApiUrl = exports.getApiUrl = function getApiUrl() {
   return process.env.API_URL;
 };
@@ -37,3 +37,4 @@ var PAYMENT_TRANSFER_BANK_ROUTE = exports.PAYMENT_TRANSFER_BANK_ROUTE = '/paymen
 var ACCOUNTS_RECEIVABLE_ROUTE = exports.ACCOUNTS_RECEIVABLE_ROUTE = '/accounts-receivable';
 var PAYMENT_ORDER_ROUTE = exports.PAYMENT_ORDER_ROUTE = '/payment-order';
 var PAYMENT_CREDIT_ROUTE = exports.PAYMENT_CREDIT_ROUTE = '/payment-credit';
+var ORDER_RETURN_ROUTE = exports.ORDER_RETURN_ROUTE = '/order-return';

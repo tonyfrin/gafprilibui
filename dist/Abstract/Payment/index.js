@@ -33,6 +33,12 @@ Object.defineProperty(exports, "OrderPaymentForm", {
     return _OrderPaymentForm.OrderPaymentForm;
   }
 });
+Object.defineProperty(exports, "OrderReturnPaymentForm", {
+  enumerable: true,
+  get: function get() {
+    return _OrderReturnPaymentForm.OrderReturnPaymentForm;
+  }
+});
 Object.defineProperty(exports, "OrderStep", {
   enumerable: true,
   get: function get() {
@@ -45,3 +51,4 @@ var _OrderStep = require("./OrderStep");
 var _OrderPaymentForm = require("./OrderPaymentForm");
 var _CreditStep = require("./CreditStep");
 var _CreditPaymentForm = require("./CreditPaymentForm");
+var _OrderReturnPaymentForm = require("./OrderReturnPaymentForm");

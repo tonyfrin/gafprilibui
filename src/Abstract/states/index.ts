@@ -49,6 +49,7 @@ export type {
 export {
   useGafpriAttributesOrderItems,
   useGafpriAttributesBudgetItems,
+  useGafpriAttributesOrderReturnItems,
 } from './productsItems';
 export type {
   UseGafpriAttributesOrderItemsReturn,
@@ -57,6 +58,9 @@ export type {
   UseGafpriAttributesBudgetItemsReturn,
   UseGafpriAttributesBudgetItemsProps,
   BudgetItemsAttributes,
+  UseGafpriAttributesOrderReturnItemsReturn,
+  UseGafpriAttributesOrderReturnItemsProps,
+  OrderReturnItemsAttributes,
 } from './productsItems';
 export {
   useGafpriAttributesTaxClasses,
@@ -373,3 +377,20 @@ export type {
   UseGafpriAttributesGeneralPaymentMethodsReturn,
   UseGafpriPagesPaymentMethodsReturn,
 } from './paymentMethods';
+export {
+  useGafpriAttributesOrderReturn,
+  useGafpriPagesOrderReturn,
+  useGafpriDataOrderReturn,
+  useGafpriPaginationsOrderReturn,
+} from './orderReturn';
+export type {
+  UseGafpriAttributesOrderReturnReturn,
+  UseGafpriAttributesOrderReturnProps,
+  UseGafpriPagesOrderReturnReturn,
+  UseGafpriPagesOrderReturnProps,
+  UseGafpriDataOrderReturnReturn,
+  UseGafpriDataOrderReturnProps,
+  OrderReturnAttributes,
+  UseGafpriPaginationsOrderReturnReturn,
+  UseGafpriPaginationsOrderReturnProps,
+} from './orderReturn';

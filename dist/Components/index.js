@@ -189,6 +189,12 @@ Object.defineProperty(exports, "OrderPayment", {
     return _Order.OrderPayment;
   }
 });
+Object.defineProperty(exports, "OrderReturn", {
+  enumerable: true,
+  get: function get() {
+    return _OrderReturn.OrderReturn;
+  }
+});
 Object.defineProperty(exports, "Payment", {
   enumerable: true,
   get: function get() {
@@ -280,3 +286,4 @@ var _Income = require("./Income");
 var _Payment = require("./Payment");
 var _Bank = require("./Bank");
 var _Credits = require("./Credits");
+var _OrderReturn = require("./OrderReturn");

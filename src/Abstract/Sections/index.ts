@@ -31,3 +31,10 @@ export type {
   PaymentOrderSectionsProps,
   PaymentMethodsImages,
 } from './PaymentOrderSections';
+export { CartOrderReturnSections } from './CartOrderReturnSections';
+export type {
+  CartOrderReturnSectionsProps,
+  CartOrderReturnSectionsStylesContainerProps,
+  CartOrderReturnSectionsStylesContentItemsProps,
+  CartOrderReturnSectionsStylesContentOptionsProps,
+} from './CartOrderReturnSections';

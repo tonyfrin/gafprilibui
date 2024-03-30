@@ -46,3 +46,5 @@ export { BankType, Bank } from './Bank';
 export type { BankTypeProps, BankProps } from './Bank';
 export { AccountsReceivable, CreditPayment } from './Credits';
 export type { AccountsReceivableProps, CreditPaymentProps } from './Credits';
+export { OrderReturn } from './OrderReturn';
+export type { OrderReturnProps, OrderReturnStylesContainerProps, } from './OrderReturn';

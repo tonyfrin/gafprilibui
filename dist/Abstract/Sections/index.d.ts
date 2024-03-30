@@ -8,3 +8,5 @@ export { CartOrderViewSections } from './CartOrderViewSections';
 export type { CartOrderViewSectionsProps, CartOrderViewSectionsStylesContainerProps, CartOrderViewSectionsStylesContentItemsProps, CartOrderViewSectionsStylesContentOptionsProps, } from './CartOrderViewSections';
 export { PaymentOrderSections } from './PaymentOrderSections';
 export type { PaymentOrderSectionsProps, PaymentMethodsImages, } from './PaymentOrderSections';
+export { CartOrderReturnSections } from './CartOrderReturnSections';
+export type { CartOrderReturnSectionsProps, CartOrderReturnSectionsStylesContainerProps, CartOrderReturnSectionsStylesContentItemsProps, CartOrderReturnSectionsStylesContentOptionsProps, } from './CartOrderReturnSections';

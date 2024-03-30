@@ -31,14 +31,7 @@ export const LineProductOrderViewCart = ({
       </LineCol4>
 
       <LineCol2>
-        <SpanValue
-          value={decimalFormatPriceConverter(
-            product.qty || 0,
-            siteOptions.DECIMAL_NUMBERS,
-            siteOptions.CURRENCY_SYMBOL,
-            siteOptions.CURRENCY_LOCATION
-          )}
-        />
+        <SpanValue value={parseFloat(`${product.qty}`).toFixed(2) || '0'} />
       </LineCol2>
       <LineCol2>
         <SpanValue

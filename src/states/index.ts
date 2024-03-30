@@ -126,3 +126,8 @@ export type {
   UseGafpriPaymentReturn,
   UseGafpriPaymentProps,
 } from './useGafpriPayment';
+export { useGafpriOrderReturn } from './useGafpriOrderReturn';
+export type {
+  UseGafpriOrderReturnReturn,
+  UseGafpriOrderReturnProps,
+} from './useGafpriOrderReturn';

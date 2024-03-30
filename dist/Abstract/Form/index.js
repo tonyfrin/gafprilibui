@@ -57,6 +57,12 @@ Object.defineProperty(exports, "EntityFormInfoHeader", {
     return _EntityFormInfoHeader.EntityFormInfoHeader;
   }
 });
+Object.defineProperty(exports, "EntityFormOrderReturnInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _EntityFormOrderReturnInfoHeader.EntityFormOrderReturnInfoHeader;
+  }
+});
 Object.defineProperty(exports, "EntityIncomeSearchForm", {
   enumerable: true,
   get: function get() {
@@ -85,6 +91,18 @@ Object.defineProperty(exports, "OrderFormInfoHeader", {
   enumerable: true,
   get: function get() {
     return _OrderFormInfoHeader.OrderFormInfoHeader;
+  }
+});
+Object.defineProperty(exports, "OrderReturnFormInfoHeader", {
+  enumerable: true,
+  get: function get() {
+    return _OrderReturnFormInfoHeader.OrderReturnFormInfoHeader;
+  }
+});
+Object.defineProperty(exports, "OrderReturnInitForm", {
+  enumerable: true,
+  get: function get() {
+    return _OrderReturnInitForm.OrderReturnInitForm;
   }
 });
 Object.defineProperty(exports, "OrderViewFormInfoHeader", {
@@ -164,3 +182,6 @@ var _EntityOrderViewFormInfoHeader = require("./EntityOrderViewFormInfoHeader");
 var _OrderViewFormInfoHeader = require("./OrderViewFormInfoHeader");
 var _PaymentInfoForm = require("./PaymentInfoForm");
 var _ButtonsPaymentMethodsForm = require("./ButtonsPaymentMethodsForm");
+var _OrderReturnInitForm = require("./OrderReturnInitForm");
+var _EntityFormOrderReturnInfoHeader = require("./EntityFormOrderReturnInfoHeader");
+var _OrderReturnFormInfoHeader = require("./OrderReturnFormInfoHeader");

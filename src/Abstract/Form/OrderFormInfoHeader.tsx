@@ -76,8 +76,6 @@ export const OrderFormInfoHeader = ({
                 }}
               />
             )}
-            {parseFloat(useOrder.useProductItems.states.total) > 0 &&
-              console.log(useOrder.attributes.states)}
           </>
         </ContainerButton>
       </ContainerHeaderInfo>

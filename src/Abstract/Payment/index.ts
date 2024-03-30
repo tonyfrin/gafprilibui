@@ -10,3 +10,5 @@ export { CreditStep } from './CreditStep';
 export type { CreditStepProps } from './CreditStep';
 export { CreditPaymentForm } from './CreditPaymentForm';
 export type { CreditPaymentFormProps } from './CreditPaymentForm';
+export { OrderReturnPaymentForm } from './OrderReturnPaymentForm';
+export type { OrderReturnPaymentFormProps } from './OrderReturnPaymentForm';

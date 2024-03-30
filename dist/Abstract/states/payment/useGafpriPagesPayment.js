@@ -22,20 +22,33 @@ function useGafpriPagesPayment(_ref) {
     _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
     isDeposit = _useState6[0],
     setIsDeposit = _useState6[1];
+  var _useState7 = (0, _react.useState)(false),
+    _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
+    isOrderReturn = _useState8[0],
+    setIsOrderReturn = _useState8[1];
   var onFetching = function onFetching() {
     setIsFetching(true);
     setIsInit(false);
     setIsDeposit(false);
+    setIsOrderReturn(false);
   };
   var onInit = function onInit() {
     setIsFetching(false);
     setIsInit(true);
     setIsDeposit(false);
+    setIsOrderReturn(false);
   };
   var onDeposit = function onDeposit() {
     setIsFetching(false);
     setIsInit(false);
     setIsDeposit(true);
+    setIsOrderReturn(false);
+  };
+  var onOrderReturn = function onOrderReturn() {
+    setIsFetching(false);
+    setIsInit(false);
+    setIsDeposit(false);
+    setIsOrderReturn(true);
   };
   var returnInit = function returnInit() {
     attributes.actions.infoReset();
@@ -51,12 +64,14 @@ function useGafpriPagesPayment(_ref) {
   var states = {
     isFetching: isFetching,
     isInit: isInit,
-    isDeposit: isDeposit
+    isDeposit: isDeposit,
+    isOrderReturn: isOrderReturn
   };
   var actions = {
     onFetching: onFetching,
     onInit: onInit,
     onDeposit: onDeposit,
+    onOrderReturn: onOrderReturn,
     returnInit: returnInit
   };
   return {

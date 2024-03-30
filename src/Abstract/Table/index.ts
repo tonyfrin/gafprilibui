@@ -39,3 +39,5 @@ export type {
 } from './MethodsPaymentTable';
 export { OrderPendingTable } from './OrderPendingTable';
 export type { OrderPendingTableProps } from './OrderPendingTable';
+export { CartOrderReturnTable } from './CartOrderReturnTable';
+export type { CartOrderReturnTableProps } from './CartOrderReturnTable';

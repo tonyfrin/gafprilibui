@@ -33,6 +33,12 @@ Object.defineProperty(exports, "CartBudgetViewTable", {
     return _CartBudgetViewTable.CartBudgetViewTable;
   }
 });
+Object.defineProperty(exports, "CartOrderReturnTable", {
+  enumerable: true,
+  get: function get() {
+    return _CartOrderReturnTable.CartOrderReturnTable;
+  }
+});
 Object.defineProperty(exports, "CartOrderViewTable", {
   enumerable: true,
   get: function get() {
@@ -122,3 +128,4 @@ var _SingleBodyTable = require("./SingleBodyTable");
 var _CreditPendingTable = require("./CreditPendingTable");
 var _MethodsPaymentTable = require("./MethodsPaymentTable");
 var _OrderPendingTable = require("./OrderPendingTable");
+var _CartOrderReturnTable = require("./CartOrderReturnTable");

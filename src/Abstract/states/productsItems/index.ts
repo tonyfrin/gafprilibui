@@ -10,3 +10,9 @@ export type {
   UseGafpriAttributesBudgetItemsProps,
   BudgetItemsAttributes,
 } from './useGafpriAttributesBudgetItems';
+export { useGafpriAttributesOrderReturnItems } from './useGafpriAttributesOrderReturnItems';
+export type {
+  UseGafpriAttributesOrderReturnItemsReturn,
+  UseGafpriAttributesOrderReturnItemsProps,
+  OrderReturnItemsAttributes,
+} from './useGafpriAttributesOrderReturnItems';

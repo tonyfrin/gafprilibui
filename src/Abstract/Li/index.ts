@@ -62,3 +62,5 @@ export { LineProductOrderViewCart } from './LineProductOrderViewCart';
 export type { LineProductOrderViewCartProps } from './LineProductOrderViewCart';
 export { CreditHeaderLine } from './CreditHeaderLine';
 export type { CreditHeaderLineProps } from './CreditHeaderLine';
+export { LineProductReturnCart } from './LineProductReturnCart';
+export type { LineProductReturnCartProps } from './LineProductReturnCart';

@@ -161,10 +161,13 @@ export const OrderReturnPaymentForm = ({
               ? 'Credito'
               : '',
           amount: item.paymentMethods.change,
-          remove: () =>
-            use.attributes.useGeneralPaymentMethods.actions.deletePaymentMethod(
-              index
-            ),
+          remove:
+            item.paymentMethods.methodType === 'creditPayment'
+              ? () => console.log()
+              : () =>
+                  use.attributes.useGeneralPaymentMethods.actions.deletePaymentMethod(
+                    index
+                  ),
         });
       }
       return null;
@@ -196,7 +199,7 @@ export const OrderReturnPaymentForm = ({
         siteOptions.currencyId
       );
     }
-  }, [use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod]);
+  }, []);
 
   return (
     <>

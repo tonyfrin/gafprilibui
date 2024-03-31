@@ -119,7 +119,9 @@ var OrderReturnPaymentForm = exports.OrderReturnPaymentForm = function OrderRetu
       methodsDeposit.push({
         title: item.paymentMethods.methodType === 'cash' ? 'Efectivo' : item.paymentMethods.methodType === 'bank' ? 'Transacción Electrónica' : item.paymentMethods.methodType === 'single' ? 'Sobrante' : item.paymentMethods.methodType === 'creditPayment' ? 'Credito' : '',
         amount: item.paymentMethods.change,
-        remove: function remove() {
+        remove: item.paymentMethods.methodType === 'creditPayment' ? function () {
+          return console.log();
+        } : function () {
           return use.attributes.useGeneralPaymentMethods.actions.deletePaymentMethod(index);
         }
       });
@@ -141,7 +143,7 @@ var OrderReturnPaymentForm = exports.OrderReturnPaymentForm = function OrderRetu
     })) {
       use.attributes.actions.checkCreditOpeningOrderReturn(useOrderReturn.attributes.states.orderPostsId, parseFloat("".concat(total)), siteOptions.currencyId);
     }
-  }, [use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod]);
+  }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Header.PaymentHeader, {
     error: use.error.states.error,
     moduleName: "Modulo de salidas",

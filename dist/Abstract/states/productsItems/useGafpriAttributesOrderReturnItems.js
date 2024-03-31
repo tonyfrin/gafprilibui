@@ -146,9 +146,24 @@ function useGafpriAttributesOrderReturnItems(_ref) {
       useError.actions.changeError(['No se pueden agregar más de 20 productos al carrito']);
     }
   };
+  var sumQtyItemsReturn = function sumQtyItemsReturn(orderItem) {
+    var totalQty = 0;
+    if (orderItem.orderReturnItems === undefined) return totalQty;
+    orderItem.orderReturnItems.forEach(function (returnItem) {
+      totalQty += parseFloat("".concat(returnItem.qty));
+    });
+    return totalQty;
+  };
   var uploadOrderItems = function uploadOrderItems(orderItems) {
     orderItems.forEach(function (orderItem) {
-      addOrderItemToCart(orderItem);
+      var qtyItemsReturn = sumQtyItemsReturn(orderItem);
+      var currentQty = parseFloat("".concat(orderItem.qty)) - qtyItemsReturn;
+      if (currentQty > 0) {
+        var dataOrderItem = _objectSpread(_objectSpread({}, orderItem), {}, {
+          qty: currentQty
+        });
+        addOrderItemToCart(dataOrderItem);
+      }
       return null;
     });
   };

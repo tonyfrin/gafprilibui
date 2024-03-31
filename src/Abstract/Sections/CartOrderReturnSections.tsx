@@ -53,14 +53,6 @@ const cartOrderReturnSectionsStylesContentItems = (
   ${styles.custom || ''}
 `;
 
-const cartOrderReturnSectionsStylesContentOptions = (
-  styles: CartOrderReturnSectionsStylesContentOptionsProps
-) => css`
-  display: ${styles.display || 'flex'};
-  flex-direction: ${styles.flexDirection || 'space-around'};
-  ${styles.custom || ''}
-`;
-
 export type CartOrderReturnSectionsProps = {
   containerStyles?: CartOrderReturnSectionsStylesContainerProps;
   containerProps?: React.HTMLAttributes<HTMLDivElement>;

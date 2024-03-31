@@ -3,6 +3,7 @@ import { UseErrorReturn, SiteOptions } from '../../../states';
 import { ProductsAttributes } from '../products/useGafpriDataProducts';
 import { BudgetItemsAttributes } from './useGafpriAttributesBudgetItems';
 import { scrollToTop } from '../../../helpers';
+import { OrderReturnItemsAttributes } from './useGafpriAttributesOrderReturnItems';
 
 export type OrderItemsAttributes = {
   id?: number;
@@ -20,6 +21,7 @@ export type OrderItemsAttributes = {
   total?: number;
   type: string;
   taxClass?: string;
+  orderReturnItems?: OrderReturnItemsAttributes[];
 };
 
 type State = {

@@ -185,9 +185,27 @@ export function useGafpriAttributesOrderReturnItems({
     }
   };
 
+  const sumQtyItemsReturn = (orderItem: OrderItemsAttributes): number => {
+    let totalQty = 0;
+    if (orderItem.orderReturnItems === undefined) return totalQty;
+    orderItem.orderReturnItems.forEach((returnItem) => {
+      totalQty += parseFloat(`${returnItem.qty}`);
+    });
+
+    return totalQty;
+  };
+
   const uploadOrderItems = (orderItems: OrderItemsAttributes[]): void => {
     orderItems.forEach((orderItem) => {
-      addOrderItemToCart(orderItem);
+      const qtyItemsReturn = sumQtyItemsReturn(orderItem);
+      const currentQty = parseFloat(`${orderItem.qty}`) - qtyItemsReturn;
+      if (currentQty > 0) {
+        const dataOrderItem = {
+          ...orderItem,
+          qty: currentQty,
+        };
+        addOrderItemToCart(dataOrderItem);
+      }
       return null;
     });
   };

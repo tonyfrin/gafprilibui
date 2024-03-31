@@ -1,6 +1,7 @@
 import { UseErrorReturn, SiteOptions } from '../../../states';
 import { ProductsAttributes } from '../products/useGafpriDataProducts';
 import { BudgetItemsAttributes } from './useGafpriAttributesBudgetItems';
+import { OrderReturnItemsAttributes } from './useGafpriAttributesOrderReturnItems';
 export type OrderItemsAttributes = {
     id?: number;
     orderPostsId?: number;
@@ -17,6 +18,7 @@ export type OrderItemsAttributes = {
     total?: number;
     type: string;
     taxClass?: string;
+    orderReturnItems?: OrderReturnItemsAttributes[];
 };
 type State = {
     subTotal: string;

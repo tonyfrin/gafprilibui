@@ -17,15 +17,12 @@ var _Table = require("../Table");
 var _excluded = ["className"],
   _excluded2 = ["className"],
   _excluded3 = ["className"];
-var _templateObject, _templateObject2, _templateObject3;
+var _templateObject, _templateObject2;
 var cartOrderReturnSectionsStylesContainer = function cartOrderReturnSectionsStylesContainer(styles) {
   return (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  width: ", ";\n  padding: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  margin: ", ";\n  ", "\n"])), styles.width || '70%', styles.padding || '12px', styles.borderRadius || '10px', styles.backgroundColor || '#fff', styles.margin || 'auto', styles.custom || '');
 };
 var cartOrderReturnSectionsStylesContentItems = function cartOrderReturnSectionsStylesContentItems(styles) {
   return (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  display: ", ";\n  flex-direction: ", ";\n  text-align: ", ";\n  ", "\n"])), styles.display || 'flex', styles.flexDirection || 'column', styles.textAlign || 'center', styles.custom || '');
-};
-var cartOrderReturnSectionsStylesContentOptions = function cartOrderReturnSectionsStylesContentOptions(styles) {
-  return (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  display: ", ";\n  flex-direction: ", ";\n  ", "\n"])), styles.display || 'flex', styles.flexDirection || 'space-around', styles.custom || '');
 };
 var CartOrderReturnSections = exports.CartOrderReturnSections = function CartOrderReturnSections(_ref) {
   var _ref$containerStyles = _ref.containerStyles,

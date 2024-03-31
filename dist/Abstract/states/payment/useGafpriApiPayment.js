@@ -109,7 +109,7 @@ var useGafpriApiPayment = exports.useGafpriApiPayment = function useGafpriApiPay
         orderReturn: {
           orderPostsId: useOrderReturn.attributes.states.orderPostsId,
           note: useOrderReturn.attributes.states.note,
-          orderItems: useOrderReturn.useProductItems.states.shoppingCart
+          orderReturnItems: useOrderReturn.useProductItems.states.shoppingCart
         }
       };
       (0, _helpers.gafpriFetch)({

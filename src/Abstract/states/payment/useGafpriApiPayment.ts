@@ -158,7 +158,7 @@ export const useGafpriApiPayment = ({
         orderReturn: {
           orderPostsId: useOrderReturn.attributes.states.orderPostsId,
           note: useOrderReturn.attributes.states.note,
-          orderItems: useOrderReturn.useProductItems.states.shoppingCart,
+          orderReturnItems: useOrderReturn.useProductItems.states.shoppingCart,
         },
       };
       gafpriFetch({

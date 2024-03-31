@@ -139,7 +139,7 @@ export const OrderReturnPaymentForm = ({
               ? 'Efectivo'
               : item.paymentMethods.methodType === 'bank'
               ? 'Transacción Electrónica'
-              : item.paymentMethods.methodType === 'credit'
+              : item.paymentMethods.methodType === 'creditPayment'
               ? 'Credito'
               : item.paymentMethods.methodType === 'single'
               ? 'Descuento'

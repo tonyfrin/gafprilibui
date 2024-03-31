@@ -82,7 +82,7 @@ function useGafpriAttributesPayment(_ref) {
                 } else {
                   amount = parseFloat("".concat(creditOpening.balance));
                 }
-                useGeneralPaymentMethods.actions.addCreditPaymentPaymentMethod(creditOpening.postsId, amount, currenciesId);
+                useGeneralPaymentMethods.actions.addCreditPaymentPaymentMethod(creditOpening.postsId, currenciesId, amount);
               }
             }
             return null;

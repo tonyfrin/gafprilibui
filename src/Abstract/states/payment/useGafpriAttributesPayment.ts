@@ -164,8 +164,8 @@ export function useGafpriAttributesPayment({
                 }
                 useGeneralPaymentMethods.actions.addCreditPaymentPaymentMethod(
                   creditOpening.postsId,
-                  amount,
-                  currenciesId
+                  currenciesId,
+                  amount
                 );
               }
             }

@@ -11,7 +11,8 @@ var _paymentMethods = require("../paymentMethods");
 var _Validations = require("../../../Validations");
 function useGafpriAttributesPayment(_ref) {
   var currencies = _ref.currencies,
-    useBankType = _ref.useBankType;
+    useBankType = _ref.useBankType,
+    useOrder = _ref.useOrder;
   var _useState = (0, _react.useState)(''),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     type = _useState2[0],
@@ -63,6 +64,33 @@ function useGafpriAttributesPayment(_ref) {
       inputId: 'single-add'
     });
   };
+  var checkCreditOpeningOrderReturn = function checkCreditOpeningOrderReturn(orderPostId, totalOrderReturn, currenciesId) {
+    if (useOrder) {
+      var currentOrder = useOrder.data.actions.getById(orderPostId);
+      if (currentOrder) {
+        if (!useGeneralPaymentMethods.states.arrayPaymentMethod.some(function (item) {
+          return item.paymentMethods.methodType === 'creditPayment';
+        })) {
+          var _currentOrder$payment;
+          (_currentOrder$payment = currentOrder.payment) === null || _currentOrder$payment === void 0 || _currentOrder$payment.paymentMethods.forEach(function (paymentMethod) {
+            if (paymentMethod.creditOpening) {
+              var creditOpening = paymentMethod.creditOpening[0];
+              if (creditOpening && creditOpening.balance && creditOpening.postsId) {
+                var amount = 0;
+                if (parseFloat("".concat(creditOpening.balance)) > totalOrderReturn) {
+                  amount = totalOrderReturn;
+                } else {
+                  amount = parseFloat("".concat(creditOpening.balance));
+                }
+                useGeneralPaymentMethods.actions.addCreditPaymentPaymentMethod(creditOpening.postsId, amount, currenciesId);
+              }
+            }
+            return null;
+          });
+        }
+      }
+    }
+  };
 
   /**
    * Export
@@ -84,7 +112,8 @@ function useGafpriAttributesPayment(_ref) {
     setDifference: setDifference,
     validationButtonNextPaymentCredit: validationButtonNextPaymentCredit,
     validationButtonNextPaymentCreditAdd: validationButtonNextPaymentCreditAdd,
-    validationButtonNextPaymentSingle: validationButtonNextPaymentSingle
+    validationButtonNextPaymentSingle: validationButtonNextPaymentSingle,
+    checkCreditOpeningOrderReturn: checkCreditOpeningOrderReturn
   };
   return {
     states: states,

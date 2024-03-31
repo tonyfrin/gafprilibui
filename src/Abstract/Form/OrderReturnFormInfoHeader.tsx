@@ -67,7 +67,7 @@ export const OrderReturnFormInfoHeader = ({
           <>
             {parseFloat(useOrderReturn.useProductItems.states.total) > 0 && (
               <Button
-                title="Emitir pedido"
+                title="Emitir devolución"
                 buttonProps={{
                   onClick: () => useOrderReturn.pages.actions.onOrderPayment(),
                 }}

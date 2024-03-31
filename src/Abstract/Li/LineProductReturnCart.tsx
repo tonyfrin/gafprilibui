@@ -22,6 +22,28 @@ export const LineProductReturnCart = ({
   useOrderReturn,
   siteOptions,
 }: LineProductReturnCartProps): React.ReactElement => {
+  const handleInputQtyChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    max: number,
+    index: number
+  ) => {
+    const newValue = parseFloat(e.target.value);
+
+    if (Number.isNaN(newValue)) {
+      return;
+    }
+
+    if (newValue > max) {
+      useOrderReturn.useProductItems.actions.updateQtyItemCart(index, `${max}`);
+      return;
+    }
+
+    useOrderReturn.useProductItems.actions.updateQtyItemCart(
+      index,
+      `${newValue}`
+    );
+  };
+
   const items = useOrderReturn.useProductItems.states.shoppingCart.map(
     (product, index) => {
       return (
@@ -52,12 +74,9 @@ export const LineProductReturnCart = ({
           <LineCol1>
             <InputCart
               contentProps={{
-                defaultValue: parseFloat(`${product.qty}`).toFixed(2),
+                value: parseFloat(`${product.qty}`).toFixed(2),
                 onChange: (event) =>
-                  useOrderReturn.useProductItems.actions.updateQtyItemCart(
-                    index,
-                    event.target.value
-                  ),
+                  handleInputQtyChange(event, product.qty, index),
               }}
             />
           </LineCol1>

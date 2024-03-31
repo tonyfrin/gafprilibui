@@ -184,6 +184,14 @@ export const OrderReturnPaymentForm = ({
   const difference = parseFloat(`${total}`) - totalMethodsPayment;
   use.attributes.actions.setDifference(difference);
 
+  React.useEffect(() => {
+    use.attributes.actions.checkCreditOpeningOrderReturn(
+      useOrderReturn.attributes.states.orderPostsId,
+      parseFloat(`${total}`),
+      siteOptions.currencyId
+    );
+  }, [use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod]);
+
   return (
     <>
       <PaymentHeader

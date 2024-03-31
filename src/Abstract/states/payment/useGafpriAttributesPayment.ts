@@ -5,7 +5,11 @@ import {
   useGafpriAttributesGeneralPaymentMethods,
   UseGafpriAttributesGeneralPaymentMethodsReturn,
 } from '../paymentMethods';
-import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
+import {
+  UseCurrenciesReturn,
+  UseGafpriBankTypeReturn,
+  UseGafpriOrderReturn,
+} from '../../../states';
 import { generalValidationButtonNext } from '../../../Validations';
 import { OrderAttributes } from '../order';
 
@@ -42,6 +46,11 @@ type Actions = {
   validationButtonNextPaymentCredit: () => boolean;
   validationButtonNextPaymentCreditAdd: () => boolean;
   validationButtonNextPaymentSingle: () => boolean;
+  checkCreditOpeningOrderReturn: (
+    orderPostId: number,
+    total: number,
+    currenciesId: number
+  ) => void;
 };
 
 export type UseGafpriAttributesPaymentReturn = {
@@ -53,11 +62,13 @@ export type UseGafpriAttributesPaymentReturn = {
 export type UseGafpriAttributesPaymentProps = {
   currencies?: UseCurrenciesReturn;
   useBankType?: UseGafpriBankTypeReturn;
+  useOrder?: UseGafpriOrderReturn;
 };
 
 export function useGafpriAttributesPayment({
   currencies,
   useBankType,
+  useOrder,
 }: UseGafpriAttributesPaymentProps): UseGafpriAttributesPaymentReturn {
   const [type, setType] = useState('');
   const [total, setTotal] = useState('');
@@ -124,6 +135,47 @@ export function useGafpriAttributesPayment({
     });
   };
 
+  const checkCreditOpeningOrderReturn = (
+    orderPostId: number,
+    totalOrderReturn: number,
+    currenciesId: number
+  ): void => {
+    if (useOrder) {
+      const currentOrder = useOrder.data.actions.getById(orderPostId);
+      if (currentOrder) {
+        if (
+          !useGeneralPaymentMethods.states.arrayPaymentMethod.some(
+            (item) => item.paymentMethods.methodType === 'creditPayment'
+          )
+        ) {
+          currentOrder.payment?.paymentMethods.forEach((paymentMethod) => {
+            if (paymentMethod.creditOpening) {
+              const creditOpening = paymentMethod.creditOpening[0];
+              if (
+                creditOpening &&
+                creditOpening.balance &&
+                creditOpening.postsId
+              ) {
+                let amount = 0;
+                if (parseFloat(`${creditOpening.balance}`) > totalOrderReturn) {
+                  amount = totalOrderReturn;
+                } else {
+                  amount = parseFloat(`${creditOpening.balance}`);
+                }
+                useGeneralPaymentMethods.actions.addCreditPaymentPaymentMethod(
+                  creditOpening.postsId,
+                  amount,
+                  currenciesId
+                );
+              }
+            }
+            return null;
+          });
+        }
+      }
+    }
+  };
+
   /**
    * Export
    *
@@ -146,6 +198,7 @@ export function useGafpriAttributesPayment({
     validationButtonNextPaymentCredit,
     validationButtonNextPaymentCreditAdd,
     validationButtonNextPaymentSingle,
+    checkCreditOpeningOrderReturn,
   };
 
   return {

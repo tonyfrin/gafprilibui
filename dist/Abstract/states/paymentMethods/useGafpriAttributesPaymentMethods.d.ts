@@ -1,5 +1,6 @@
 import { PaymentAttributes } from '../payment';
 import { PostsAttributes } from '../../../states';
+import { CreditOpeningAttributes } from '../credits';
 export type PaymentMethodsAttributes = {
     methodType: string;
     type: 'deposit' | 'debit' | '';
@@ -11,6 +12,7 @@ export type PaymentMethodsAttributes = {
     change: number;
     note?: string;
     payment?: PaymentAttributes;
+    creditOpening?: CreditOpeningAttributes[];
     posts?: PostsAttributes;
 };
 type State = {

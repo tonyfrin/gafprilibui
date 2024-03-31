@@ -41,7 +41,7 @@ var OrderReturnFormInfoHeader = exports.OrderReturnFormInfoHeader = function Ord
       custom: 'margin-top: 30px;'
     }
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, parseFloat(useOrderReturn.useProductItems.states.total) > 0 && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    title: "Emitir pedido",
+    title: "Emitir devoluci\xF3n",
     buttonProps: {
       onClick: function onClick() {
         return useOrderReturn.pages.actions.onOrderPayment();

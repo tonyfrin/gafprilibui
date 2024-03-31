@@ -17,6 +17,17 @@ var _LineTable = require("./LineTable");
 var LineProductReturnCart = exports.LineProductReturnCart = function LineProductReturnCart(_ref) {
   var useOrderReturn = _ref.useOrderReturn,
     siteOptions = _ref.siteOptions;
+  var handleInputQtyChange = function handleInputQtyChange(e, max, index) {
+    var newValue = parseFloat(e.target.value);
+    if (Number.isNaN(newValue)) {
+      return;
+    }
+    if (newValue > max) {
+      useOrderReturn.useProductItems.actions.updateQtyItemCart(index, "".concat(max));
+      return;
+    }
+    useOrderReturn.useProductItems.actions.updateQtyItemCart(index, "".concat(newValue));
+  };
   var items = useOrderReturn.useProductItems.states.shoppingCart.map(function (product, index) {
     return /*#__PURE__*/_react["default"].createElement(_LineTable.LineTable, {
       containerProps: {
@@ -30,9 +41,9 @@ var LineProductReturnCart = exports.LineProductReturnCart = function LineProduct
       value: (0, _helpers.decimalFormatPriceConverter)(product.cost || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol.LineCol1, null, /*#__PURE__*/_react["default"].createElement(_Input.InputCart, {
       contentProps: {
-        defaultValue: parseFloat("".concat(product.qty)).toFixed(2),
+        value: parseFloat("".concat(product.qty)).toFixed(2),
         onChange: function onChange(event) {
-          return useOrderReturn.useProductItems.actions.updateQtyItemCart(index, event.target.value);
+          return handleInputQtyChange(event, product.qty, index);
         }
       }
     })), /*#__PURE__*/_react["default"].createElement(_LineCol3.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {

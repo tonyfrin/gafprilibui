@@ -1,5 +1,5 @@
 import { GeneralPaymentMethodsAttributes, PaymentMethodsAttributes, UseGafpriAttributesGeneralPaymentMethodsReturn } from '../paymentMethods';
-import { UseCurrenciesReturn, UseGafpriBankTypeReturn } from '../../../states';
+import { UseCurrenciesReturn, UseGafpriBankTypeReturn, UseGafpriOrderReturn } from '../../../states';
 import { OrderAttributes } from '../order';
 export type PaymentAttributes = {
     total: string;
@@ -31,6 +31,7 @@ type Actions = {
     validationButtonNextPaymentCredit: () => boolean;
     validationButtonNextPaymentCreditAdd: () => boolean;
     validationButtonNextPaymentSingle: () => boolean;
+    checkCreditOpeningOrderReturn: (orderPostId: number, total: number, currenciesId: number) => void;
 };
 export type UseGafpriAttributesPaymentReturn = {
     states: State;
@@ -40,6 +41,7 @@ export type UseGafpriAttributesPaymentReturn = {
 export type UseGafpriAttributesPaymentProps = {
     currencies?: UseCurrenciesReturn;
     useBankType?: UseGafpriBankTypeReturn;
+    useOrder?: UseGafpriOrderReturn;
 };
-export declare function useGafpriAttributesPayment({ currencies, useBankType, }: UseGafpriAttributesPaymentProps): UseGafpriAttributesPaymentReturn;
+export declare function useGafpriAttributesPayment({ currencies, useBankType, useOrder, }: UseGafpriAttributesPaymentProps): UseGafpriAttributesPaymentReturn;
 export {};

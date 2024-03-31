@@ -48,7 +48,8 @@ var OrderReturn = exports.OrderReturn = function OrderReturn(_ref) {
     isVisible: use.pages.states.isSales
   }, /*#__PURE__*/_react["default"].createElement(_Abstract.SalesReturn, {
     use: use,
-    sitesOptions: sitesOptions
+    sitesOptions: sitesOptions,
+    usePayment: usePayment
   })), use.pages.states.isOrderPayment && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Abstract.OrderReturnPaymentForm, {
     use: usePayment,
     useOrderReturn: use,

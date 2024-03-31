@@ -4,5 +4,6 @@ import { UseGafpriOrderReturnReturn } from '../../states';
 export type OrderReturnFormInfoHeaderProps = {
     useOrderReturn: UseGafpriOrderReturnReturn;
     siteOptions: SiteOptions;
+    goPayment: () => void;
 };
-export declare const OrderReturnFormInfoHeader: ({ useOrderReturn, siteOptions, }: OrderReturnFormInfoHeaderProps) => React.JSX.Element;
+export declare const OrderReturnFormInfoHeader: ({ useOrderReturn, siteOptions, goPayment, }: OrderReturnFormInfoHeaderProps) => React.JSX.Element;

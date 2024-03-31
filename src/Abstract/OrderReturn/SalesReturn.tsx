@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from 'react';
+import React from 'react';
 import {
   ModelForm,
   EntityFormOrderReturnInfoHeader,
@@ -7,7 +7,7 @@ import {
 import {
   UseGafpriOrderReturnReturn,
   SiteOptions,
-  UseGafpriProductsReturn,
+  UseGafpriPaymentReturn,
 } from '../../states';
 import { ModuleHeader } from '../Header';
 import { CartOrderReturnSections } from '../Sections';
@@ -15,9 +15,23 @@ import { CartOrderReturnSections } from '../Sections';
 export type SalesReturnProps = {
   use: UseGafpriOrderReturnReturn;
   sitesOptions: SiteOptions;
+  usePayment: UseGafpriPaymentReturn;
 };
 
-export const SalesReturn = ({ use, sitesOptions }: SalesReturnProps) => {
+export const SalesReturn = ({
+  use,
+  sitesOptions,
+  usePayment,
+}: SalesReturnProps) => {
+  const goPayment = () => {
+    usePayment.attributes.actions.checkCreditOpeningOrderReturn(
+      use.attributes.states.orderPostsId,
+      parseFloat(`${use.useProductItems.states.total}`),
+      sitesOptions.currencyId
+    );
+    use.pages.actions.onOrderPayment();
+  };
+
   return (
     <>
       <ModelForm
@@ -44,6 +58,7 @@ export const SalesReturn = ({ use, sitesOptions }: SalesReturnProps) => {
             <OrderReturnFormInfoHeader
               useOrderReturn={use}
               siteOptions={sitesOptions}
+              goPayment={goPayment}
             />
           </ModuleHeader>
         </>

@@ -163,7 +163,7 @@ export const OrderReturnPaymentForm = ({
           amount: item.paymentMethods.change,
           remove:
             item.paymentMethods.methodType === 'creditPayment'
-              ? () => console.log()
+              ? null
               : () =>
                   use.attributes.useGeneralPaymentMethods.actions.deletePaymentMethod(
                     index
@@ -187,19 +187,10 @@ export const OrderReturnPaymentForm = ({
   const difference = parseFloat(`${total}`) - totalMethodsPayment;
   use.attributes.actions.setDifference(difference);
 
-  React.useEffect(() => {
-    if (
-      !use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod.some(
-        (item) => item.paymentMethods.methodType === 'creditPayment'
-      )
-    ) {
-      use.attributes.actions.checkCreditOpeningOrderReturn(
-        useOrderReturn.attributes.states.orderPostsId,
-        parseFloat(`${total}`),
-        siteOptions.currencyId
-      );
-    }
-  }, []);
+  const returnInit = (): void => {
+    use.attributes.actions.infoReset();
+    useOrderReturn.pages.actions.returnInit();
+  };
 
   return (
     <>
@@ -208,7 +199,7 @@ export const OrderReturnPaymentForm = ({
         moduleName="Modulo de salidas"
         stepName="Página de pago de devolución pedidos"
         step="2"
-        returnFunction={useOrderReturn.pages.actions.returnInit}
+        returnFunction={returnInit}
         returnTitle="Volver"
       />
       <div className={cx(orderStylesMainContainer())}>

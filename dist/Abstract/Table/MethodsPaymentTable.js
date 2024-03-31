@@ -40,7 +40,7 @@ var MethodsPaymentTable = exports.MethodsPaymentTable = function MethodsPaymentT
       className: (0, _css.cx)(methodsPaymentTableTdStyle('25%', "text-align: end;"))
     }, (0, _helpers.decimalFormatPriceConverter)(item.amount || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL || '', siteOptions.CURRENCY_LOCATION)), /*#__PURE__*/_react["default"].createElement("td", {
       className: (0, _css.cx)(methodsPaymentTableTdStyle('25%', "text-align: center;"))
-    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    }, item.remove && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       title: "X",
       styles: {
         fontSize: '8px',

@@ -119,9 +119,7 @@ var OrderReturnPaymentForm = exports.OrderReturnPaymentForm = function OrderRetu
       methodsDeposit.push({
         title: item.paymentMethods.methodType === 'cash' ? 'Efectivo' : item.paymentMethods.methodType === 'bank' ? 'Transacción Electrónica' : item.paymentMethods.methodType === 'single' ? 'Sobrante' : item.paymentMethods.methodType === 'creditPayment' ? 'Credito' : '',
         amount: item.paymentMethods.change,
-        remove: item.paymentMethods.methodType === 'creditPayment' ? function () {
-          return console.log();
-        } : function () {
+        remove: item.paymentMethods.methodType === 'creditPayment' ? null : function () {
           return use.attributes.useGeneralPaymentMethods.actions.deletePaymentMethod(index);
         }
       });
@@ -137,19 +135,16 @@ var OrderReturnPaymentForm = exports.OrderReturnPaymentForm = function OrderRetu
   var totalMethodsPayment = totalDeposit - totalDebit;
   var difference = parseFloat("".concat(total)) - totalMethodsPayment;
   use.attributes.actions.setDifference(difference);
-  _react["default"].useEffect(function () {
-    if (!use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod.some(function (item) {
-      return item.paymentMethods.methodType === 'creditPayment';
-    })) {
-      use.attributes.actions.checkCreditOpeningOrderReturn(useOrderReturn.attributes.states.orderPostsId, parseFloat("".concat(total)), siteOptions.currencyId);
-    }
-  }, []);
+  var returnInit = function returnInit() {
+    use.attributes.actions.infoReset();
+    useOrderReturn.pages.actions.returnInit();
+  };
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Header.PaymentHeader, {
     error: use.error.states.error,
     moduleName: "Modulo de salidas",
     stepName: "P\xE1gina de pago de devoluci\xF3n pedidos",
     step: "2",
-    returnFunction: useOrderReturn.pages.actions.returnInit,
+    returnFunction: returnInit,
     returnTitle: "Volver"
   }), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesMainContainer())

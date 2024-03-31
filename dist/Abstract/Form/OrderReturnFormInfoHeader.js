@@ -12,7 +12,8 @@ var _Li = require("../Li");
 var _helpers = require("../../helpers");
 var OrderReturnFormInfoHeader = exports.OrderReturnFormInfoHeader = function OrderReturnFormInfoHeader(_ref) {
   var useOrderReturn = _ref.useOrderReturn,
-    siteOptions = _ref.siteOptions;
+    siteOptions = _ref.siteOptions,
+    goPayment = _ref.goPayment;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Containers.ContainerHeaderInfo, {
     containerStyles: {
       borderRight: 'none'
@@ -44,7 +45,7 @@ var OrderReturnFormInfoHeader = exports.OrderReturnFormInfoHeader = function Ord
     title: "Emitir devoluci\xF3n",
     buttonProps: {
       onClick: function onClick() {
-        return useOrderReturn.pages.actions.onOrderPayment();
+        return goPayment();
       }
     },
     styles: {

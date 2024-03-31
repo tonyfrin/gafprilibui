@@ -9,7 +9,7 @@ import { SingleTable } from './SingleTable';
 export type MethodsPaymentItems = {
   title: string;
   amount: number;
-  remove: () => void;
+  remove: (() => void) | null;
 };
 
 type MethodsPaymentTableContainerStylesProps = {
@@ -80,17 +80,19 @@ export const MethodsPaymentTable = ({
       <td
         className={cx(methodsPaymentTableTdStyle('25%', `text-align: center;`))}
       >
-        <Button
-          title="X"
-          styles={{
-            fontSize: '8px',
-            backgroundColor: '#c12429',
-            padding: '3px 6px',
-          }}
-          buttonProps={{
-            onClick: item.remove,
-          }}
-        />
+        {item.remove && (
+          <Button
+            title="X"
+            styles={{
+              fontSize: '8px',
+              backgroundColor: '#c12429',
+              padding: '3px 6px',
+            }}
+            buttonProps={{
+              onClick: item.remove,
+            }}
+          />
+        )}
       </td>,
     ];
   });

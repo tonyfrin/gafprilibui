@@ -9,11 +9,13 @@ import { decimalFormatPriceConverter } from '../../helpers';
 export type OrderReturnFormInfoHeaderProps = {
   useOrderReturn: UseGafpriOrderReturnReturn;
   siteOptions: SiteOptions;
+  goPayment: () => void;
 };
 
 export const OrderReturnFormInfoHeader = ({
   useOrderReturn,
   siteOptions,
+  goPayment,
 }: OrderReturnFormInfoHeaderProps) => {
   return (
     <>
@@ -69,7 +71,7 @@ export const OrderReturnFormInfoHeader = ({
               <Button
                 title="Emitir devolución"
                 buttonProps={{
-                  onClick: () => useOrderReturn.pages.actions.onOrderPayment(),
+                  onClick: () => goPayment(),
                 }}
                 styles={{
                   fontSize: '12px',

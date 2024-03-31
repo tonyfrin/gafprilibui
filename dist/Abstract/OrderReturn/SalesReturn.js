@@ -11,7 +11,12 @@ var _Header = require("../Header");
 var _Sections = require("../Sections");
 var SalesReturn = exports.SalesReturn = function SalesReturn(_ref) {
   var use = _ref.use,
-    sitesOptions = _ref.sitesOptions;
+    sitesOptions = _ref.sitesOptions,
+    usePayment = _ref.usePayment;
+  var goPayment = function goPayment() {
+    usePayment.attributes.actions.checkCreditOpeningOrderReturn(use.attributes.states.orderPostsId, parseFloat("".concat(use.useProductItems.states.total)), sitesOptions.currencyId);
+    use.pages.actions.onOrderPayment();
+  };
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form.ModelForm, {
     titles: {
       title1: 'Modulo de devolución de pedido',
@@ -35,7 +40,8 @@ var SalesReturn = exports.SalesReturn = function SalesReturn(_ref) {
     useOrderReturn: use
   }), /*#__PURE__*/_react["default"].createElement(_Form.OrderReturnFormInfoHeader, {
     useOrderReturn: use,
-    siteOptions: sitesOptions
+    siteOptions: sitesOptions,
+    goPayment: goPayment
   })))), /*#__PURE__*/_react["default"].createElement(_Sections.CartOrderReturnSections, {
     useOrderReturn: use,
     sitesOptions: sitesOptions

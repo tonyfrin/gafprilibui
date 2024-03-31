@@ -3,7 +3,7 @@ import { SiteOptions } from '../../states';
 export type MethodsPaymentItems = {
     title: string;
     amount: number;
-    remove: () => void;
+    remove: (() => void) | null;
 };
 type MethodsPaymentTableContainerStylesProps = {
     width?: string;

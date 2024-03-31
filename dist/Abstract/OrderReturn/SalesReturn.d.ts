@@ -1,7 +1,8 @@
 import React from 'react';
-import { UseGafpriOrderReturnReturn, SiteOptions } from '../../states';
+import { UseGafpriOrderReturnReturn, SiteOptions, UseGafpriPaymentReturn } from '../../states';
 export type SalesReturnProps = {
     use: UseGafpriOrderReturnReturn;
     sitesOptions: SiteOptions;
+    usePayment: UseGafpriPaymentReturn;
 };
-export declare const SalesReturn: ({ use, sitesOptions }: SalesReturnProps) => React.JSX.Element;
+export declare const SalesReturn: ({ use, sitesOptions, usePayment, }: SalesReturnProps) => React.JSX.Element;

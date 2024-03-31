@@ -89,7 +89,11 @@ export const OrderReturn = ({
         )}
         {use.pages.states.isSales && (
           <FadeIn keyName="sales" isVisible={use.pages.states.isSales}>
-            <SalesReturn use={use} sitesOptions={sitesOptions} />
+            <SalesReturn
+              use={use}
+              sitesOptions={sitesOptions}
+              usePayment={usePayment}
+            />
           </FadeIn>
         )}
         {use.pages.states.isOrderPayment && (

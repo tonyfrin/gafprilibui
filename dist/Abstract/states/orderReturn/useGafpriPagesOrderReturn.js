@@ -63,7 +63,7 @@ var useGafpriPagesOrderReturn = exports.useGafpriPagesOrderReturn = function use
   var goSales = function goSales() {
     var orderPostsId = useAttributes.states.orderPostsId;
     var currentOrder = useOrder.data.actions.getById(orderPostsId);
-    if (currentOrder) {
+    if (currentOrder && (currentOrder.posts.status === 'prepare' || currentOrder.posts.status === 'dispatching' || currentOrder.posts.status === 'completed')) {
       var currentEntity = useEntity.data.actions.getById(currentOrder.customerId);
       useAttributes.actions.setEntity(currentEntity);
       useProductItems.actions.uploadOrderItems(currentOrder.orderItems);

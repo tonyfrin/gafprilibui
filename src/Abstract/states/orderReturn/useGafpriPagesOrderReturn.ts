@@ -81,7 +81,12 @@ export const useGafpriPagesOrderReturn = ({
   const goSales = (): void => {
     const { orderPostsId } = useAttributes.states;
     const currentOrder = useOrder.data.actions.getById(orderPostsId);
-    if (currentOrder) {
+    if (
+      currentOrder &&
+      (currentOrder.posts.status === 'prepare' ||
+        currentOrder.posts.status === 'dispatching' ||
+        currentOrder.posts.status === 'completed')
+    ) {
       const currentEntity = useEntity.data.actions.getById(
         currentOrder.customerId
       );

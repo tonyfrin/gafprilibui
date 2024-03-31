@@ -185,11 +185,17 @@ export const OrderReturnPaymentForm = ({
   use.attributes.actions.setDifference(difference);
 
   React.useEffect(() => {
-    use.attributes.actions.checkCreditOpeningOrderReturn(
-      useOrderReturn.attributes.states.orderPostsId,
-      parseFloat(`${total}`),
-      siteOptions.currencyId
-    );
+    if (
+      !use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod.some(
+        (item) => item.paymentMethods.methodType === 'creditPayment'
+      )
+    ) {
+      use.attributes.actions.checkCreditOpeningOrderReturn(
+        useOrderReturn.attributes.states.orderPostsId,
+        parseFloat(`${total}`),
+        siteOptions.currencyId
+      );
+    }
   }, [use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod]);
 
   return (

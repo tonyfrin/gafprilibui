@@ -136,7 +136,11 @@ var OrderReturnPaymentForm = exports.OrderReturnPaymentForm = function OrderRetu
   var difference = parseFloat("".concat(total)) - totalMethodsPayment;
   use.attributes.actions.setDifference(difference);
   _react["default"].useEffect(function () {
-    use.attributes.actions.checkCreditOpeningOrderReturn(useOrderReturn.attributes.states.orderPostsId, parseFloat("".concat(total)), siteOptions.currencyId);
+    if (!use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod.some(function (item) {
+      return item.paymentMethods.methodType === 'creditPayment';
+    })) {
+      use.attributes.actions.checkCreditOpeningOrderReturn(useOrderReturn.attributes.states.orderPostsId, parseFloat("".concat(total)), siteOptions.currencyId);
+    }
   }, [use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Header.PaymentHeader, {
     error: use.error.states.error,

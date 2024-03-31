@@ -68,26 +68,22 @@ function useGafpriAttributesPayment(_ref) {
     if (useOrder) {
       var currentOrder = useOrder.data.actions.getById(orderPostId);
       if (currentOrder) {
-        if (!useGeneralPaymentMethods.states.arrayPaymentMethod.some(function (item) {
-          return item.paymentMethods.methodType === 'creditPayment';
-        })) {
-          var _currentOrder$payment;
-          (_currentOrder$payment = currentOrder.payment) === null || _currentOrder$payment === void 0 || _currentOrder$payment.paymentMethods.forEach(function (paymentMethod) {
-            if (paymentMethod.creditOpening) {
-              var creditOpening = paymentMethod.creditOpening[0];
-              if (creditOpening && creditOpening.balance && creditOpening.postsId) {
-                var amount = 0;
-                if (parseFloat("".concat(creditOpening.balance)) > totalOrderReturn) {
-                  amount = totalOrderReturn;
-                } else {
-                  amount = parseFloat("".concat(creditOpening.balance));
-                }
-                useGeneralPaymentMethods.actions.addCreditPaymentPaymentMethod(creditOpening.postsId, currenciesId, amount);
+        var _currentOrder$payment;
+        (_currentOrder$payment = currentOrder.payment) === null || _currentOrder$payment === void 0 || _currentOrder$payment.paymentMethods.forEach(function (paymentMethod) {
+          if (paymentMethod.creditOpening) {
+            var creditOpening = paymentMethod.creditOpening[0];
+            if (creditOpening && creditOpening.balance && creditOpening.postsId) {
+              var amount = 0;
+              if (parseFloat("".concat(creditOpening.balance)) > totalOrderReturn) {
+                amount = totalOrderReturn;
+              } else {
+                amount = parseFloat("".concat(creditOpening.balance));
               }
+              useGeneralPaymentMethods.actions.addCreditPaymentPaymentMethod(creditOpening.postsId, currenciesId, amount);
             }
-            return null;
-          });
-        }
+          }
+          return null;
+        });
       }
     }
   };

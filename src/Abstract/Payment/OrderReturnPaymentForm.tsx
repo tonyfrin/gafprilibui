@@ -139,8 +139,6 @@ export const OrderReturnPaymentForm = ({
               ? 'Efectivo'
               : item.paymentMethods.methodType === 'bank'
               ? 'Transacción Electrónica'
-              : item.paymentMethods.methodType === 'creditPayment'
-              ? 'Credito'
               : item.paymentMethods.methodType === 'single'
               ? 'Descuento'
               : '',
@@ -159,6 +157,8 @@ export const OrderReturnPaymentForm = ({
               ? 'Transacción Electrónica'
               : item.paymentMethods.methodType === 'single'
               ? 'Sobrante'
+              : item.paymentMethods.methodType === 'creditPayment'
+              ? 'Credito'
               : '',
           amount: item.paymentMethods.change,
           remove: () =>

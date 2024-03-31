@@ -109,7 +109,7 @@ var OrderReturnPaymentForm = exports.OrderReturnPaymentForm = function OrderRetu
   use.attributes.useGeneralPaymentMethods.states.arrayPaymentMethod.map(function (item, index) {
     if (item.paymentMethods.type === 'deposit') {
       methodsDebit.push({
-        title: item.paymentMethods.methodType === 'cash' ? 'Efectivo' : item.paymentMethods.methodType === 'bank' ? 'Transacción Electrónica' : item.paymentMethods.methodType === 'creditPayment' ? 'Credito' : item.paymentMethods.methodType === 'single' ? 'Descuento' : '',
+        title: item.paymentMethods.methodType === 'cash' ? 'Efectivo' : item.paymentMethods.methodType === 'bank' ? 'Transacción Electrónica' : item.paymentMethods.methodType === 'single' ? 'Descuento' : '',
         amount: item.paymentMethods.change,
         remove: function remove() {
           return use.attributes.useGeneralPaymentMethods.actions.deletePaymentMethod(index);
@@ -117,7 +117,7 @@ var OrderReturnPaymentForm = exports.OrderReturnPaymentForm = function OrderRetu
       });
     } else if (item.paymentMethods.type === 'debit') {
       methodsDeposit.push({
-        title: item.paymentMethods.methodType === 'cash' ? 'Efectivo' : item.paymentMethods.methodType === 'bank' ? 'Transacción Electrónica' : item.paymentMethods.methodType === 'single' ? 'Sobrante' : '',
+        title: item.paymentMethods.methodType === 'cash' ? 'Efectivo' : item.paymentMethods.methodType === 'bank' ? 'Transacción Electrónica' : item.paymentMethods.methodType === 'single' ? 'Sobrante' : item.paymentMethods.methodType === 'creditPayment' ? 'Credito' : '',
         amount: item.paymentMethods.change,
         remove: function remove() {
           return use.attributes.useGeneralPaymentMethods.actions.deletePaymentMethod(index);

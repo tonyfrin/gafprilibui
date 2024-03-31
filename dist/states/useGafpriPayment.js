@@ -15,7 +15,8 @@ function useGafpriPayment(_ref) {
   var error = (0, _useGafpriError.useGafpriError)();
   var attributes = (0, _Abstract.useGafpriAttributesPayment)({
     currencies: currencies,
-    useBankType: useBankType
+    useBankType: useBankType,
+    useOrder: useOrder
   });
   var subPagesDeposit = (0, _Abstract.useGafpriSubPagesDepositPayment)();
   var pages = (0, _Abstract.useGafpriPagesPayment)({

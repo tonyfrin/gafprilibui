@@ -43,6 +43,7 @@ export function useGafpriPayment({
   const attributes = useGafpriAttributesPayment({
     currencies,
     useBankType,
+    useOrder,
   });
   const subPagesDeposit = useGafpriSubPagesDepositPayment();
   const pages = useGafpriPagesPayment({

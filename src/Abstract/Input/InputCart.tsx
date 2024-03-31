@@ -52,7 +52,7 @@ export const InputCart = ({
         className={cx(inputCartStylesContent(contentStyles), contentClassName)}
         type={contentType || 'number'}
         min={contentMin || '0'}
-        step={contentStep || '0.1'}
+        step={contentStep || '1'}
         {...restContentProps}
       />
     </>

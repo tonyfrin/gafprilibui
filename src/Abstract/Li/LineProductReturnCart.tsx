@@ -1,9 +1,5 @@
 import React from 'react';
-import type {
-  SiteOptions,
-  UseGafpriOrderReturnReturn,
-  UseGafpriProductsReturn,
-} from '../../states';
+import type { SiteOptions, UseGafpriOrderReturnReturn } from '../../states';
 import { Button } from '../Button';
 import { InputCart } from '../Input';
 import { decimalFormatPriceConverter } from '../../helpers';
@@ -28,16 +24,19 @@ export const LineProductReturnCart = ({
     index: number
   ) => {
     const newValue = parseFloat(e.target.value);
+    console.log('newValue', newValue);
 
     if (Number.isNaN(newValue)) {
       return;
     }
 
     if (newValue > max) {
+      console.log('newValue > max', max);
       useOrderReturn.useProductItems.actions.updateQtyItemCart(index, `${max}`);
       return;
     }
 
+    console.log('llegue al final');
     useOrderReturn.useProductItems.actions.updateQtyItemCart(
       index,
       `${newValue}`
@@ -74,7 +73,7 @@ export const LineProductReturnCart = ({
           <LineCol1>
             <InputCart
               contentProps={{
-                defaultValue: parseFloat(`${product.qty}`).toFixed(2),
+                value: parseFloat(`${product.qty}`).toFixed(2),
                 onChange: (event) =>
                   handleInputQtyChange(
                     event,

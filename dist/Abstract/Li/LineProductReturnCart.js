@@ -19,13 +19,16 @@ var LineProductReturnCart = exports.LineProductReturnCart = function LineProduct
     siteOptions = _ref.siteOptions;
   var handleInputQtyChange = function handleInputQtyChange(e, max, index) {
     var newValue = parseFloat(e.target.value);
+    console.log('newValue', newValue);
     if (Number.isNaN(newValue)) {
       return;
     }
     if (newValue > max) {
+      console.log('newValue > max', max);
       useOrderReturn.useProductItems.actions.updateQtyItemCart(index, "".concat(max));
       return;
     }
+    console.log('llegue al final');
     useOrderReturn.useProductItems.actions.updateQtyItemCart(index, "".concat(newValue));
   };
   var items = useOrderReturn.useProductItems.states.shoppingCart.map(function (product, index) {
@@ -41,7 +44,7 @@ var LineProductReturnCart = exports.LineProductReturnCart = function LineProduct
       value: (0, _helpers.decimalFormatPriceConverter)(product.cost || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol.LineCol1, null, /*#__PURE__*/_react["default"].createElement(_Input.InputCart, {
       contentProps: {
-        defaultValue: parseFloat("".concat(product.qty)).toFixed(2),
+        value: parseFloat("".concat(product.qty)).toFixed(2),
         onChange: function onChange(event) {
           return handleInputQtyChange(event, parseFloat("".concat(product.qty)), index);
         }

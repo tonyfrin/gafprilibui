@@ -1833,6 +1833,12 @@ Object.defineProperty(exports, "PAYMENT_CREDIT_ROUTE", {
     return _constants.PAYMENT_CREDIT_ROUTE;
   }
 });
+Object.defineProperty(exports, "PAYMENT_ORDER_RETURN_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.PAYMENT_ORDER_RETURN_ROUTE;
+  }
+});
 Object.defineProperty(exports, "PAYMENT_ORDER_ROUTE", {
   enumerable: true,
   get: function get() {

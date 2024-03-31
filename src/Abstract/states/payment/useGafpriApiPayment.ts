@@ -7,15 +7,21 @@ import type {
   UseErrorReturn,
   UseGafpriAccountsReceivableReturn,
   UseGafpriOrderReturn,
+  UseGafpriOrderReturnReturn,
 } from '../../../states';
 import type { UseGafpriPagesPaymentReturn } from './useGafpriPagesPayment';
 import type { UseGafpriAttributesPaymentReturn } from './useGafpriAttributesPayment';
-import { PAYMENT_ORDER_ROUTE, PAYMENT_CREDIT_ROUTE } from '../../../constants';
+import {
+  PAYMENT_ORDER_ROUTE,
+  PAYMENT_CREDIT_ROUTE,
+  PAYMENT_ORDER_RETURN_ROUTE,
+} from '../../../constants';
 
 export type UseGafpriApiPaymentReturn = {
   actions: {
     addOrderPayment: () => void;
     addCreditPayment: () => void;
+    addOrderReturnPayment: () => void;
   };
 };
 
@@ -23,6 +29,7 @@ export type UseGafpriApiPaymentProps = {
   useOrder: UseGafpriOrderReturn;
   usePages: UseGafpriPagesPaymentReturn;
   useCredit: UseGafpriAccountsReceivableReturn;
+  useOrderReturn: UseGafpriOrderReturnReturn;
   useAttributes: UseGafpriAttributesPaymentReturn;
   useError: UseErrorReturn;
   token: string | null;
@@ -33,6 +40,7 @@ export const useGafpriApiPayment = ({
   useOrder,
   useCredit,
   useAttributes,
+  useOrderReturn,
   useError,
   token,
 }: UseGafpriApiPaymentProps): UseGafpriApiPaymentReturn => {
@@ -46,9 +54,19 @@ export const useGafpriApiPayment = ({
     useCredit.pages.actions.onCreditPayment();
   };
 
+  const returnOrderReturnPayment = (): void => {
+    usePages.actions.onOrderReturn();
+    useOrderReturn.pages.actions.onOrderPayment();
+  };
+
   const fetchingOrderPayment = (): void => {
     usePages.actions.onFetching();
     useOrder.pages.actions.onFetching();
+  };
+
+  const fetchingOrderReturnPayment = (): void => {
+    usePages.actions.onFetching();
+    useOrderReturn.pages.actions.onFetching();
   };
 
   const fetchingCreditPayment = (): void => {
@@ -61,6 +79,12 @@ export const useGafpriApiPayment = ({
     useOrder.attributes.actions.infoReset();
     usePages.actions.onDeposit();
     useOrder.pages.actions.onOrderList();
+  };
+
+  const successOrderReturnPayment = (): void => {
+    useAttributes.actions.infoReset();
+    useOrderReturn.pages.actions.returnInit();
+    usePages.actions.onOrderReturn();
   };
 
   const successCreditPayment = (): void => {
@@ -76,6 +100,15 @@ export const useGafpriApiPayment = ({
     useError.actions.newError({
       newErrorValue,
       functionAction: returnOrderPayment,
+    });
+  };
+
+  const newErrorOrderReturnPayment = (
+    newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
+  ): void => {
+    useError.actions.newError({
+      newErrorValue,
+      functionAction: returnOrderReturnPayment,
     });
   };
 
@@ -112,6 +145,30 @@ export const useGafpriApiPayment = ({
     }
   };
 
+  const addOrderReturnPayment = (): void => {
+    if (useOrderReturn.attributes.states.orderPostsId > 0 && token) {
+      const payload = {
+        orderPostsId: useOrderReturn.attributes.states.orderPostsId,
+        total: useAttributes.states.total,
+        note: useAttributes.states.note,
+        paymentMethods:
+          useAttributes.useGeneralPaymentMethods.states.arrayPaymentMethod,
+        posts: {
+          visibility: 'public',
+        },
+      };
+      gafpriFetch({
+        initMethod: 'POST',
+        initRoute: PAYMENT_ORDER_RETURN_ROUTE,
+        initCredentials: payload,
+        initToken: { token },
+        functionFetching: fetchingOrderReturnPayment,
+        functionSuccess: successOrderReturnPayment,
+        functionError: newErrorOrderReturnPayment,
+      });
+    }
+  };
+
   const addCreditPayment = (): void => {
     if (parseFloat(useAttributes.states.total) > 0 && token) {
       const payload = {
@@ -139,6 +196,7 @@ export const useGafpriApiPayment = ({
   const actions = {
     addOrderPayment,
     addCreditPayment,
+    addOrderReturnPayment,
   };
 
   return {

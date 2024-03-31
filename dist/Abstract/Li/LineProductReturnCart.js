@@ -43,7 +43,7 @@ var LineProductReturnCart = exports.LineProductReturnCart = function LineProduct
       contentProps: {
         defaultValue: parseFloat("".concat(product.qty)).toFixed(2),
         onChange: function onChange(event) {
-          return handleInputQtyChange(event, product.qty, index);
+          return handleInputQtyChange(event, parseFloat("".concat(product.qty)), index);
         }
       }
     })), /*#__PURE__*/_react["default"].createElement(_LineCol3.LineCol2, null, /*#__PURE__*/_react["default"].createElement(_Span.SpanValue, {

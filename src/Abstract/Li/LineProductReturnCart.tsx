@@ -76,7 +76,11 @@ export const LineProductReturnCart = ({
               contentProps={{
                 defaultValue: parseFloat(`${product.qty}`).toFixed(2),
                 onChange: (event) =>
-                  handleInputQtyChange(event, product.qty, index),
+                  handleInputQtyChange(
+                    event,
+                    parseFloat(`${product.qty}`),
+                    index
+                  ),
               }}
             />
           </LineCol1>

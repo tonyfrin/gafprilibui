@@ -133,6 +133,7 @@ function useGafpriAttributesOrderReturnItems(_ref) {
       name: orderItem.name,
       cost: (_parseFloat = parseFloat("".concat(orderItem.cost))) !== null && _parseFloat !== void 0 ? _parseFloat : 0,
       qty: orderItem.qty,
+      qtyOrderItem: orderItem.qty,
       price: parseFloat("".concat(orderItem.price)),
       taxClass: orderItem.taxClass || ''
     };

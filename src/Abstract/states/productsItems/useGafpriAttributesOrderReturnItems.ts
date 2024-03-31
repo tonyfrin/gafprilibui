@@ -12,6 +12,7 @@ export type OrderReturnItemsAttributes = {
   cost: number;
   totalCost?: number;
   qty: number;
+  qtyOrderItem: number;
   price: number;
   subTotal?: number;
   subTotalTax?: number;
@@ -170,6 +171,7 @@ export function useGafpriAttributesOrderReturnItems({
       name: orderItem.name,
       cost: parseFloat(`${orderItem.cost}`) ?? 0,
       qty: orderItem.qty,
+      qtyOrderItem: orderItem.qty,
       price: parseFloat(`${orderItem.price}`),
       taxClass: orderItem.taxClass || '',
     };

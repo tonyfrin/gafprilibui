@@ -10,6 +10,7 @@ export type OrderReturnItemsAttributes = {
     cost: number;
     totalCost?: number;
     qty: number;
+    qtyOrderItem: number;
     price: number;
     subTotal?: number;
     subTotalTax?: number;

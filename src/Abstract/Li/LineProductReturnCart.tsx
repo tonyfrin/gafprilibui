@@ -24,19 +24,16 @@ export const LineProductReturnCart = ({
     index: number
   ) => {
     const newValue = parseFloat(e.target.value);
-    console.log('newValue', newValue);
 
     if (Number.isNaN(newValue)) {
       return;
     }
 
     if (newValue > max) {
-      console.log('newValue > max', max);
       useOrderReturn.useProductItems.actions.updateQtyItemCart(index, `${max}`);
       return;
     }
 
-    console.log('llegue al final');
     useOrderReturn.useProductItems.actions.updateQtyItemCart(
       index,
       `${newValue}`
@@ -77,7 +74,7 @@ export const LineProductReturnCart = ({
                 onChange: (event) =>
                   handleInputQtyChange(
                     event,
-                    parseFloat(`${product.qty}`),
+                    parseFloat(`${product.qtyOrderItem}`),
                     index
                   ),
               }}

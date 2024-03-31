@@ -163,7 +163,7 @@ var OrderReturnPaymentForm = exports.OrderReturnPaymentForm = function OrderRetu
     depositTotal: totalDeposit,
     debitTotal: totalDebit,
     setNote: use.attributes.actions.setNote,
-    add: use.api.actions.addOrderPayment
+    add: use.api.actions.addOrderReturnPayment
   })))), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _css.cx)(orderStylesMainContainer())
   }, /*#__PURE__*/_react["default"].createElement("div", {

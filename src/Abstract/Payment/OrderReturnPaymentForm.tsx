@@ -234,7 +234,7 @@ export const OrderReturnPaymentForm = ({
               depositTotal={totalDeposit}
               debitTotal={totalDebit}
               setNote={use.attributes.actions.setNote}
-              add={use.api.actions.addOrderPayment}
+              add={use.api.actions.addOrderReturnPayment}
             />
           </ModuleHeader>
         </div>

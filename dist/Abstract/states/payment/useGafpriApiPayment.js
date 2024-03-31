@@ -100,12 +100,16 @@ var useGafpriApiPayment = exports.useGafpriApiPayment = function useGafpriApiPay
   var addOrderReturnPayment = function addOrderReturnPayment() {
     if (useOrderReturn.attributes.states.orderPostsId > 0 && token) {
       var payload = {
-        orderPostsId: useOrderReturn.attributes.states.orderPostsId,
         total: useAttributes.states.total,
         note: useAttributes.states.note,
         paymentMethods: useAttributes.useGeneralPaymentMethods.states.arrayPaymentMethod,
         posts: {
           visibility: 'public'
+        },
+        orderReturn: {
+          orderPostsId: useOrderReturn.attributes.states.orderPostsId,
+          note: useOrderReturn.attributes.states.note,
+          orderItems: useOrderReturn.useProductItems.states.shoppingCart
         }
       };
       (0, _helpers.gafpriFetch)({

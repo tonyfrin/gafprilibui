@@ -148,13 +148,17 @@ export const useGafpriApiPayment = ({
   const addOrderReturnPayment = (): void => {
     if (useOrderReturn.attributes.states.orderPostsId > 0 && token) {
       const payload = {
-        orderPostsId: useOrderReturn.attributes.states.orderPostsId,
         total: useAttributes.states.total,
         note: useAttributes.states.note,
         paymentMethods:
           useAttributes.useGeneralPaymentMethods.states.arrayPaymentMethod,
         posts: {
           visibility: 'public',
+        },
+        orderReturn: {
+          orderPostsId: useOrderReturn.attributes.states.orderPostsId,
+          note: useOrderReturn.attributes.states.note,
+          orderItems: useOrderReturn.useProductItems.states.shoppingCart,
         },
       };
       gafpriFetch({

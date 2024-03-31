@@ -41,7 +41,7 @@ var LineProductReturnCart = exports.LineProductReturnCart = function LineProduct
       value: (0, _helpers.decimalFormatPriceConverter)(product.cost || 0, siteOptions.DECIMAL_NUMBERS, siteOptions.CURRENCY_SYMBOL, siteOptions.CURRENCY_LOCATION)
     })), /*#__PURE__*/_react["default"].createElement(_LineCol.LineCol1, null, /*#__PURE__*/_react["default"].createElement(_Input.InputCart, {
       contentProps: {
-        value: parseFloat("".concat(product.qty)).toFixed(2),
+        defaultValue: parseFloat("".concat(product.qty)).toFixed(2),
         onChange: function onChange(event) {
           return handleInputQtyChange(event, product.qty, index);
         }

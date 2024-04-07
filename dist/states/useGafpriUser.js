@@ -607,6 +607,27 @@ var useGafpriUsers = exports.useGafpriUsers = function useGafpriUsers(_ref) {
       return "".concat(item.id) === "".concat(id);
     })) || null;
   }
+  function findByEmail(emailToFind) {
+    if (!users.data.items) return null;
+    var found = users.data.items.find(function (item) {
+      return item.email === emailToFind;
+    });
+    return found || null;
+  }
+  function findByPhone(phoneToFind) {
+    if (!users.data.items) return null;
+    var found = users.data.items.find(function (item) {
+      return item.phone === phoneToFind;
+    });
+    return found || null;
+  }
+  function findByUserName(userNameToFind) {
+    if (!users.data.items) return null;
+    var found = users.data.items.find(function (item) {
+      return item.login === userNameToFind;
+    });
+    return found || null;
+  }
   function getOptionsUsers() {
     var _users$data$items3;
     return ((_users$data$items3 = users.data.items) === null || _users$data$items3 === void 0 ? void 0 : _users$data$items3.map(function (item) {
@@ -819,7 +840,10 @@ var useGafpriUsers = exports.useGafpriUsers = function useGafpriUsers(_ref) {
     filterRoleByName: filterRoleByName,
     sortRoleByName: sortRoleByName,
     getRolePaginated: getRolePaginated,
-    getOptionsUsers: getOptionsUsers
+    getOptionsUsers: getOptionsUsers,
+    findByEmail: findByEmail,
+    findByPhone: findByPhone,
+    findByUserName: findByUserName
   };
   return {
     states: states,

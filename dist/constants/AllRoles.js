@@ -5,79 +5,79 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.AllRoles = void 0;
 var AllRoles = exports.AllRoles = [{
-  name: 'Usuarios',
+  name: 'Tipos de egresos',
   permissions: [{
     name: 'Obtener',
-    value: 'usersGet'
+    value: 'expenses-typeGet'
   }, {
     name: 'Crear',
-    value: 'usersCreate'
+    value: 'expenses-typeCreate'
   }, {
     name: 'Actualizar',
-    value: 'usersUpdate'
+    value: 'expenses-typeUpdate'
   }, {
     name: 'Borrar',
-    value: 'usersDelete'
+    value: 'expenses-typeDelete'
   }]
 }, {
-  name: 'Clientes',
+  name: 'Proyectos',
   permissions: [{
     name: 'Obtener',
-    value: 'customerGet'
+    value: 'projectsGet'
   }, {
     name: 'Crear',
-    value: 'customerCreate'
+    value: 'projectsCreate'
   }, {
     name: 'Actualizar',
-    value: 'customerUpdate'
+    value: 'projectsUpdate'
   }, {
     name: 'Borrar',
-    value: 'customerDelete'
+    value: 'projectsDelete'
   }]
 }, {
-  name: 'Direcciones',
+  name: 'Tipos de bancos',
   permissions: [{
     name: 'Obtener',
-    value: 'addressGet'
+    value: 'bank-typeGet'
   }, {
     name: 'Crear',
-    value: 'addressCreate'
+    value: 'bank-typeCreate'
   }, {
     name: 'Actualizar',
-    value: 'addressUpdate'
+    value: 'bank-typeUpdate'
   }, {
     name: 'Borrar',
-    value: 'addressDelete'
+    value: 'bank-typeDelete'
   }]
 }, {
-  name: 'Tipos de documentos Ids',
+  name: 'Presupuestos',
   permissions: [{
     name: 'Obtener',
-    value: 'typeDocumentIdGet'
+    value: 'budgetsGet'
   }, {
     name: 'Crear',
-    value: 'typeDocumentIdCreate'
+    value: 'budgetsCreate'
   }, {
     name: 'Actualizar',
-    value: 'typeDocumentIdUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'typeDocumentIdDelete'
+    value: 'budgetsUpdate'
   }]
 }, {
-  name: 'Documentos Ids',
+  name: 'Tipos de Cajas de Efectivo',
   permissions: [{
     name: 'Obtener',
-    value: 'documentIdGet'
+    value: 'cash-register-typeGet'
   }, {
     name: 'Crear',
-    value: 'documentIdCreate'
+    value: 'cash-register-typeCreate'
   }, {
     name: 'Actualizar',
-    value: 'documentIdUpdate'
+    value: 'cash-register-typeUpdate'
   }, {
     name: 'Borrar',
-    value: 'documentIdDelete'
+    value: 'cash-register-typeDelete'
+  }, {
+    name: 'Conciliar',
+    value: 'cash-register-typeConciliate'
   }]
 }, {
   name: 'Monedas',
@@ -110,64 +110,37 @@ var AllRoles = exports.AllRoles = [{
     value: 'sitesDelete'
   }]
 }, {
-  name: 'Roles',
+  name: 'Cuentas por cobrar',
   permissions: [{
     name: 'Obtener',
-    value: 'rolesGet'
+    value: 'accounts-receivableGet'
   }, {
     name: 'Crear',
-    value: 'rolesCreate'
+    value: 'accounts-receivableCreate'
   }, {
     name: 'Actualizar',
-    value: 'rolesUpdate'
+    value: 'accounts-receivableUpdate'
   }, {
     name: 'Borrar',
-    value: 'rolesDelete'
+    value: 'accounts-receivableDelete'
   }]
 }, {
-  name: 'Empleados',
+  name: 'Egresos',
   permissions: [{
     name: 'Obtener',
-    value: 'employessGet'
+    value: 'expensesGet'
   }, {
     name: 'Crear',
-    value: 'employessCreate'
-  }, {
-    name: 'Actualizar',
-    value: 'employessUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'employessDelete'
+    value: 'expensesCreate'
   }]
 }, {
-  name: 'Pagos',
+  name: 'Ingresos',
   permissions: [{
     name: 'Obtener',
-    value: 'paymentGet'
+    value: 'incomeGet'
   }, {
     name: 'Crear',
-    value: 'paymentCreate'
-  }, {
-    name: 'Actualizar',
-    value: 'paymentUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'paymentDelete'
-  }]
-}, {
-  name: 'Proveedores',
-  permissions: [{
-    name: 'Obtener',
-    value: 'suppliersGet'
-  }, {
-    name: 'Crear',
-    value: 'suppliersCreate'
-  }, {
-    name: 'Actualizar',
-    value: 'suppliersUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'suppliersDelete'
+    value: 'incomeCreate'
   }]
 }, {
   name: 'Pedidos',
@@ -181,11 +154,41 @@ var AllRoles = exports.AllRoles = [{
     name: 'Actualizar',
     value: 'ordersUpdate'
   }, {
-    name: 'Borrar',
+    name: 'Cancelar',
     value: 'ordersDelete'
   }]
 }, {
-  name: 'Categorías',
+  name: 'Pagos de créditos',
+  permissions: [{
+    name: 'Crear',
+    value: 'payment-creditCreate'
+  }]
+}, {
+  name: 'Pagos de pedidos',
+  permissions: [{
+    name: 'Crear',
+    value: 'payment-orderCreate'
+  }]
+}, {
+  name: 'Pagos de devolución de pedidos',
+  permissions: [{
+    name: 'Crear',
+    value: 'payment-order-returnCreate'
+  }]
+}, {
+  name: 'Transferencias entre bancos',
+  permissions: [{
+    name: 'Crear',
+    value: 'payment-transfer-bankCreate'
+  }]
+}, {
+  name: 'Transferencias entre cajas',
+  permissions: [{
+    name: 'Crear',
+    value: 'payment-transfer-cash-registerCreate'
+  }]
+}, {
+  name: 'Categoría de Productos',
   permissions: [{
     name: 'Obtener',
     value: 'categoryGet'
@@ -198,21 +201,6 @@ var AllRoles = exports.AllRoles = [{
   }, {
     name: 'Borrar',
     value: 'categoryDelete'
-  }]
-}, {
-  name: 'Proyectos',
-  permissions: [{
-    name: 'Obtener',
-    value: 'projectsGet'
-  }, {
-    name: 'Crear',
-    value: 'projectsCreate'
-  }, {
-    name: 'Actualizar',
-    value: 'projectsUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'projectsDelete'
   }]
 }, {
   name: 'Productos',
@@ -230,210 +218,156 @@ var AllRoles = exports.AllRoles = [{
     value: 'productsDelete'
   }]
 }, {
+  name: 'Areas de envio',
+  permissions: [{
+    name: 'Obtener',
+    value: 'shipping-areasGet'
+  }, {
+    name: 'Crear',
+    value: 'shipping-areasCreate'
+  }, {
+    name: 'Actualizar',
+    value: 'shipping-areasUpdate'
+  }, {
+    name: 'Borrar',
+    value: 'shipping-areasDelete'
+  }]
+}, {
+  name: 'Metodos de envio',
+  permissions: [{
+    name: 'Obtener',
+    value: 'shipping-methodsGet'
+  }, {
+    name: 'Crear',
+    value: 'shipping-methodsCreate'
+  }, {
+    name: 'Actualizar',
+    value: 'shipping-methodsUpdate'
+  }, {
+    name: 'Borrar',
+    value: 'shipping-methodsDelete'
+  }]
+}, {
   name: 'Depositos',
   permissions: [{
     name: 'Obtener',
-    value: 'storagesGet'
+    value: 'storageGet'
   }, {
     name: 'Crear',
-    value: 'storagesCreate'
+    value: 'storageCreate'
   }, {
     name: 'Actualizar',
-    value: 'storagesUpdate'
+    value: 'storageUpdate'
   }, {
     name: 'Borrar',
-    value: 'storagesDelete'
+    value: 'storageDelete'
   }]
 }, {
-  name: 'Presupuestos',
+  name: 'Depositos Stock',
   permissions: [{
     name: 'Obtener',
-    value: 'budgetsGet'
+    value: 'storage-stockGet'
+  }]
+}, {
+  name: 'Clases de impuestos',
+  permissions: [{
+    name: 'Obtener',
+    value: 'tax-classesGet'
   }, {
     name: 'Crear',
-    value: 'budgetsCreate'
+    value: 'tax-classesCreate'
   }, {
     name: 'Actualizar',
-    value: 'budgetsUpdate'
+    value: 'tax-classesUpdate'
   }, {
     name: 'Borrar',
-    value: 'budgetsDelete'
+    value: 'tax-classesDelete'
   }]
 }, {
-  name: 'Tipos de Cajas de Efectivo',
+  name: 'Tarifas de impuestos',
   permissions: [{
     name: 'Obtener',
-    value: 'crtGet'
+    value: 'tax-ratesGet'
   }, {
     name: 'Crear',
-    value: 'crtCreate'
+    value: 'tax-ratesCreate'
   }, {
     name: 'Actualizar',
-    value: 'crtUpdate'
+    value: 'tax-ratesUpdate'
   }, {
     name: 'Borrar',
-    value: 'crtDelete'
+    value: 'tax-ratesDelete'
   }]
 }, {
-  name: 'Metodos de pago',
+  name: 'Entidas',
   permissions: [{
     name: 'Obtener',
-    value: 'pmGet'
-  }]
-}, {
-  name: 'Cajas de Efectivo',
-  permissions: [{
-    name: 'Obtener',
-    value: 'crGet'
+    value: 'entityGet'
   }, {
     name: 'Crear',
-    value: 'crCreate'
+    value: 'entityCreate'
   }, {
     name: 'Actualizar',
-    value: 'crUpdate'
+    value: 'entityUpdate'
   }, {
     name: 'Borrar',
-    value: 'crDelete'
+    value: 'entityDelete'
   }]
 }, {
-  name: 'Transacciones de Cajas de Efectivo',
+  name: 'Roles',
   permissions: [{
     name: 'Obtener',
-    value: 'crtransactionsGet'
-  }]
-}, {
-  name: 'Tipos de bancos',
-  permissions: [{
-    name: 'Obtener',
-    value: 'bank-typeCreate'
+    value: 'rolesGet'
   }, {
     name: 'Crear',
-    value: 'bank-typeGet'
+    value: 'rolesCreate'
   }, {
     name: 'Actualizar',
-    value: 'bank-typeUpdate'
+    value: 'rolesUpdate'
   }, {
     name: 'Borrar',
-    value: 'bank-typeDelete'
+    value: 'rolesDelete'
   }]
 }, {
-  name: 'Cuentas de billeteras',
+  name: 'Tipos de documentos',
   permissions: [{
     name: 'Obtener',
-    value: 'wallet-accountCreate'
+    value: 'type-document-idGet'
   }, {
     name: 'Crear',
+    value: 'type-document-idCreate'
+  }, {
+    name: 'Actualizar',
+    value: 'type-document-idUpdate'
+  }, {
+    name: 'Borrar',
+    value: 'type-document-idDelete'
+  }]
+}, {
+  name: 'Usuarios',
+  permissions: [{
+    name: 'Obtener',
+    value: 'usersGet'
+  }, {
+    name: 'Crear',
+    value: 'usersCreate'
+  }, {
+    name: 'Actualizar',
+    value: 'usersUpdate'
+  }]
+}, {
+  name: 'Cuentas de billetara',
+  permissions: [{
+    name: 'Obtener',
     value: 'wallet-accountGet'
+  }, {
+    name: 'Crear',
+    value: 'wallet-accountCreate'
   }, {
     name: 'Actualizar',
     value: 'wallet-accountUpdate'
   }, {
     name: 'Borrar',
     value: 'wallet-accountDelete'
-  }]
-}, {
-  name: 'Beneficiarios de billeteras',
-  permissions: [{
-    name: 'Obtener',
-    value: 'wallet-beneficiariesCreate'
-  }, {
-    name: 'Crear',
-    value: 'wallet-beneficiariesGet'
-  }, {
-    name: 'Actualizar',
-    value: 'wallet-beneficiariesUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'wallet-beneficiariesDelete'
-  }]
-}, {
-  name: 'Transferencias de billeteras en trasito',
-  permissions: [{
-    name: 'Obtener',
-    value: 'wt-in-transitCreate'
-  }, {
-    name: 'Crear',
-    value: 'wt-in-transitGet'
-  }, {
-    name: 'Actualizar',
-    value: 'wallet-wt-in-transitUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'wt-in-transitDelete'
-  }]
-}, {
-  name: 'Cuentas por cobrar',
-  permissions: [{
-    name: 'Obtener',
-    value: 'accounts-receivableCreate'
-  }, {
-    name: 'Crear',
-    value: 'accounts-receivableGet'
-  }, {
-    name: 'Actualizar',
-    value: 'accounts-receivableUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'accounts-receivableDelete'
-  }]
-}, {
-  name: 'Referidos',
-  permissions: [{
-    name: 'Obtener',
-    value: 'referredCreate'
-  }, {
-    name: 'Crear',
-    value: 'referredGet'
-  }, {
-    name: 'Actualizar',
-    value: 'referredUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'referredDelete'
-  }]
-}, {
-  name: 'Pagos de créditos',
-  permissions: [{
-    name: 'Obtener',
-    value: 'credit-order-paymentsCreate'
-  }, {
-    name: 'Crear',
-    value: 'credit-order-paymentsGet'
-  }, {
-    name: 'Actualizar',
-    value: 'credit-order-paymentsUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'credit-order-paymentsDelete'
-  }]
-}, {
-  name: 'Pagos de Transacciones bancarias',
-  permissions: [{
-    name: 'Obtener',
-    value: 'banking-transactions-paymentsGet'
-  }, {
-    name: 'Crear',
-    value: 'banking-transactions-paymentsCreate'
-  }, {
-    name: 'Actualizar',
-    value: 'banking-transactions-paymentsUpdate'
-  }, {
-    name: 'Borrar',
-    value: 'banking-transactions-paymentsDelete'
-  }]
-}, {
-  name: 'Devolución de pedidos',
-  permissions: [{
-    name: 'Obtener',
-    value: 'order-return-paymentsCreate'
-  }, {
-    name: 'Crear',
-    value: 'order-return-paymentsUpdate'
-  }, {
-    name: 'Actualizar',
-    value: 'order-return-paymentsDelete'
-  }, {
-    name: 'Borrar',
-    value: 'order-return-paymentsGet'
   }]
 }];

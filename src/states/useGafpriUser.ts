@@ -195,6 +195,9 @@ export type UseUserReturn = {
       itemsPerPage: number
     ) => RoleArray[] | null;
     getOptionsUsers: () => SelectDefault[];
+    findByEmail: (emailToFind: string) => UserAttributes | null;
+    findByPhone: (phoneToFind: string) => UserAttributes | null;
+    findByUserName: (userNameToFind: string) => UserAttributes | null;
   };
 };
 
@@ -741,6 +744,26 @@ export const useGafpriUsers = ({
     return users.data.items?.find((item) => `${item.id}` === `${id}`) || null;
   }
 
+  function findByEmail(emailToFind: string): UserAttributes | null {
+    if (!users.data.items) return null;
+    const found = users.data.items.find((item) => item.email === emailToFind);
+    return found || null;
+  }
+
+  function findByPhone(phoneToFind: string): UserAttributes | null {
+    if (!users.data.items) return null;
+    const found = users.data.items.find((item) => item.phone === phoneToFind);
+    return found || null;
+  }
+
+  function findByUserName(userNameToFind: string): UserAttributes | null {
+    if (!users.data.items) return null;
+    const found = users.data.items.find(
+      (item) => item.login === userNameToFind
+    );
+    return found || null;
+  }
+
   function getOptionsUsers(): SelectDefault[] {
     return (
       users.data.items?.map((item) => {
@@ -1017,6 +1040,9 @@ export const useGafpriUsers = ({
     sortRoleByName,
     getRolePaginated,
     getOptionsUsers,
+    findByEmail,
+    findByPhone,
+    findByUserName,
   };
 
   return {

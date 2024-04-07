@@ -48,3 +48,5 @@ export { AccountsReceivable, CreditPayment } from './Credits';
 export type { AccountsReceivableProps, CreditPaymentProps } from './Credits';
 export { OrderReturn } from './OrderReturn';
 export type { OrderReturnProps, OrderReturnStylesContainerProps, } from './OrderReturn';
+export { WalletAccount } from './Wallet';
+export type { WalletAccountProps } from './Wallet';

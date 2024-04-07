@@ -765,6 +765,12 @@ Object.defineProperty(exports, "InitUser", {
     return _Users.InitUser;
   }
 });
+Object.defineProperty(exports, "InitWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _WalletAccount.InitWalletAccount;
+  }
+});
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
@@ -1695,6 +1701,18 @@ Object.defineProperty(exports, "UserView", {
     return _Users.UserView;
   }
 });
+Object.defineProperty(exports, "UserWalletAccountSearchForm", {
+  enumerable: true,
+  get: function get() {
+    return _Form.UserWalletAccountSearchForm;
+  }
+});
+Object.defineProperty(exports, "WalletAccountForm", {
+  enumerable: true,
+  get: function get() {
+    return _WalletAccount.WalletAccountForm;
+  }
+});
 Object.defineProperty(exports, "useGafpriApiAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -1807,6 +1825,12 @@ Object.defineProperty(exports, "useGafpriApiTaxRates", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriApiTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriApiWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriApiWalletAccount;
   }
 });
 Object.defineProperty(exports, "useGafpriAttributesAccountsReceivable", {
@@ -1989,6 +2013,12 @@ Object.defineProperty(exports, "useGafpriAttributesTaxRates", {
     return _states.useGafpriAttributesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriAttributesWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -2089,6 +2119,12 @@ Object.defineProperty(exports, "useGafpriDataTaxRates", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriDataTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriDataWalletAccount;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesAccountsReceivable", {
@@ -2223,6 +2259,12 @@ Object.defineProperty(exports, "useGafpriPagesTaxRates", {
     return _states.useGafpriPagesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPagesWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -2325,6 +2367,12 @@ Object.defineProperty(exports, "useGafpriPaginationsTaxRates", {
     return _states.useGafpriPaginationsTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriPaginationsWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriSubPagesBankType", {
   enumerable: true,
   get: function get() {
@@ -2402,3 +2450,4 @@ var _Bank = require("./Bank");
 var _AccountsReceivable = require("./AccountsReceivable");
 var _Circle = require("./Circle");
 var _OrderReturn = require("./OrderReturn");
+var _WalletAccount = require("./WalletAccount");

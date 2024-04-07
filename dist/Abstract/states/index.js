@@ -117,6 +117,12 @@ Object.defineProperty(exports, "useGafpriApiTaxRates", {
     return _taxes.useGafpriApiTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriApiWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _wallet.useGafpriApiWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -297,6 +303,12 @@ Object.defineProperty(exports, "useGafpriAttributesTaxRates", {
     return _taxes.useGafpriAttributesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _wallet.useGafpriAttributesWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriDataAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -397,6 +409,12 @@ Object.defineProperty(exports, "useGafpriDataTaxRates", {
   enumerable: true,
   get: function get() {
     return _taxes.useGafpriDataTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _wallet.useGafpriDataWalletAccount;
   }
 });
 Object.defineProperty(exports, "useGafpriPagesAccountsReceivable", {
@@ -531,6 +549,12 @@ Object.defineProperty(exports, "useGafpriPagesTaxRates", {
     return _taxes.useGafpriPagesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _wallet.useGafpriPagesWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -633,6 +657,12 @@ Object.defineProperty(exports, "useGafpriPaginationsTaxRates", {
     return _taxes.useGafpriPaginationsTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriPaginationsWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _wallet.useGafpriPaginationsWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriSubPagesBankType", {
   enumerable: true,
   get: function get() {
@@ -677,3 +707,4 @@ var _cashRegister = require("./cashRegister");
 var _credits = require("./credits");
 var _paymentMethods = require("./paymentMethods");
 var _orderReturn = require("./orderReturn");
+var _wallet = require("./wallet");

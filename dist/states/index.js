@@ -171,6 +171,12 @@ Object.defineProperty(exports, "useGafpriUsers", {
     return _useGafpriUser.useGafpriUsers;
   }
 });
+Object.defineProperty(exports, "useGafpriWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _useGafpriWalletAccount.useGafpriWalletAccount;
+  }
+});
 var _useGafpriCurrencies = require("./useGafpriCurrencies");
 var _useGafpriTypeDocumentId = require("./useGafpriTypeDocumentId");
 var _useGafpriCategory = require("./useGafpriCategory");
@@ -199,3 +205,4 @@ var _useGafpriPaymentTransferBank = require("./useGafpriPaymentTransferBank");
 var _useGafpriAccountsReceivable = require("./useGafpriAccountsReceivable");
 var _useGafpriPayment = require("./useGafpriPayment");
 var _useGafpriOrderReturn = require("./useGafpriOrderReturn");
+var _useGafpriWalletAccount = require("./useGafpriWalletAccount");

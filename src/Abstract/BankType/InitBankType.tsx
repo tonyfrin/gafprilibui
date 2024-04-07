@@ -55,7 +55,7 @@ export const InitBankType = ({
       onClick: use.pages.actions.goAdd,
       Icon: FaPlus,
       titleButton: 'Agregar',
-      description: 'Agrega unnuevo banco.',
+      description: 'Agrega un nuevo banco.',
     },
   },
   errorProps = {

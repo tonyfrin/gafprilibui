@@ -44,7 +44,7 @@ var InitBankType = exports.InitBankType = function InitBankType(_ref) {
         onClick: use.pages.actions.goAdd,
         Icon: _fa.FaPlus,
         titleButton: 'Agregar',
-        description: 'Agrega unnuevo banco.'
+        description: 'Agrega un nuevo banco.'
       }
     } : _ref$headerProps,
     _ref$errorProps = _ref.errorProps,

@@ -248,6 +248,7 @@ export {
   OrderReturnInitForm,
   EntityFormOrderReturnInfoHeader,
   OrderReturnFormInfoHeader,
+  UserWalletAccountSearchForm,
 } from './Form';
 export type {
   ModelFormProps,
@@ -280,6 +281,8 @@ export type {
   OrderReturnInitFormProps,
   EntityFormOrderReturnInfoHeaderProps,
   OrderReturnFormInfoHeaderProps,
+  UserWalletAccountSearchFormProps,
+  UserWalletAccountSearchFormStaylesContainerProps,
 } from './Form';
 export {
   Menu1,
@@ -531,6 +534,11 @@ export {
   useGafpriPagesOrderReturn,
   useGafpriDataOrderReturn,
   useGafpriPaginationsOrderReturn,
+  useGafpriApiWalletAccount,
+  useGafpriDataWalletAccount,
+  useGafpriPagesWalletAccount,
+  useGafpriAttributesWalletAccount,
+  useGafpriPaginationsWalletAccount,
 } from './states';
 export type {
   UseGafpriApiEntityReturn,
@@ -745,6 +753,16 @@ export type {
   OrderReturnAttributes,
   UseGafpriPaginationsOrderReturnReturn,
   UseGafpriPaginationsOrderReturnProps,
+  UseGafpriApiWalletAccountReturn,
+  UseGafpriApiWalletAccountProps,
+  UseGafpriDataWalletAccountReturn,
+  UseGafpriDataWalletAccountProps,
+  WalletAccountAttributes,
+  UseGafpriPaginationsWalletAccountReturn,
+  UseGafpriPaginationsWalletAccountProps,
+  UseGafpriPagesWalletAccountReturn,
+  UseGafpriPagesWalletAccountProps,
+  UseGafpriAttributesWalletAccountReturn,
 } from './states';
 export { SpanValue } from './Span';
 export type { SpanValueStylesContentProps, SpanValueProps } from './Span';
@@ -1088,3 +1106,9 @@ export type {
   OrderReturnInitProps,
   SalesReturnProps,
 } from './OrderReturn';
+export { WalletAccountForm, InitWalletAccount } from './WalletAccount';
+export type {
+  WalletAccountFormProps,
+  InitWalletAccountProps,
+  InitWalletAccountPropsExtended,
+} from './WalletAccount';

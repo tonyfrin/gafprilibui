@@ -62,3 +62,8 @@ export { EntityFormOrderReturnInfoHeader } from './EntityFormOrderReturnInfoHead
 export type { EntityFormOrderReturnInfoHeaderProps } from './EntityFormOrderReturnInfoHeader';
 export { OrderReturnFormInfoHeader } from './OrderReturnFormInfoHeader';
 export type { OrderReturnFormInfoHeaderProps } from './OrderReturnFormInfoHeader';
+export { UserWalletAccountSearchForm } from './UserWalletAccountSearchForm';
+export type {
+  UserWalletAccountSearchFormProps,
+  UserWalletAccountSearchFormStaylesContainerProps,
+} from './UserWalletAccountSearchForm';

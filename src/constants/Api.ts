@@ -32,3 +32,4 @@ export const PAYMENT_ORDER_ROUTE = '/payment-order';
 export const PAYMENT_CREDIT_ROUTE = '/payment-credit';
 export const ORDER_RETURN_ROUTE = '/order-return';
 export const PAYMENT_ORDER_RETURN_ROUTE = '/payment-order-return';
+export const WALLET_ACCOUNT_ROUTE = '/wallet-account';

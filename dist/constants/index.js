@@ -963,6 +963,18 @@ Object.defineProperty(exports, "VISIBILITY_INPUT", {
     return _Inputs.VISIBILITY_INPUT;
   }
 });
+Object.defineProperty(exports, "WALLET_ACCOUNT_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _Api.WALLET_ACCOUNT_ROUTE;
+  }
+});
+Object.defineProperty(exports, "WALLET_ACCOUNT_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _LocalStorage.WALLET_ACCOUNT_STORAGE;
+  }
+});
 Object.defineProperty(exports, "WEB_SITE_INPUT", {
   enumerable: true,
   get: function get() {

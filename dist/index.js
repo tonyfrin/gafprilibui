@@ -1185,6 +1185,12 @@ Object.defineProperty(exports, "InitUser", {
     return _Abstract.InitUser;
   }
 });
+Object.defineProperty(exports, "InitWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.InitWalletAccount;
+  }
+});
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
@@ -2793,6 +2799,12 @@ Object.defineProperty(exports, "UserView", {
     return _Abstract.UserView;
   }
 });
+Object.defineProperty(exports, "UserWalletAccountSearchForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.UserWalletAccountSearchForm;
+  }
+});
 Object.defineProperty(exports, "VISIBILITY", {
   enumerable: true,
   get: function get() {
@@ -2811,6 +2823,18 @@ Object.defineProperty(exports, "VISIBILITY_INPUT", {
     return _constants.VISIBILITY_INPUT;
   }
 });
+Object.defineProperty(exports, "WALLET_ACCOUNT_ROUTE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.WALLET_ACCOUNT_ROUTE;
+  }
+});
+Object.defineProperty(exports, "WALLET_ACCOUNT_STORAGE", {
+  enumerable: true,
+  get: function get() {
+    return _constants.WALLET_ACCOUNT_STORAGE;
+  }
+});
 Object.defineProperty(exports, "WEB_SITE_INPUT", {
   enumerable: true,
   get: function get() {
@@ -2827,6 +2851,18 @@ Object.defineProperty(exports, "WIDTH_INPUT", {
   enumerable: true,
   get: function get() {
     return _constants.WIDTH_INPUT;
+  }
+});
+Object.defineProperty(exports, "WalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _Components.WalletAccount;
+  }
+});
+Object.defineProperty(exports, "WalletAccountForm", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.WalletAccountForm;
   }
 });
 Object.defineProperty(exports, "ZIP_CODE_INPUT", {
@@ -3975,6 +4011,12 @@ Object.defineProperty(exports, "useGafpriApiTaxRates", {
     return _Abstract.useGafpriApiTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriApiWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriApiWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriAttributesAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -4155,6 +4197,12 @@ Object.defineProperty(exports, "useGafpriAttributesTaxRates", {
     return _Abstract.useGafpriAttributesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriAttributesWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriAttributesWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriBankType", {
   enumerable: true,
   get: function get() {
@@ -4285,6 +4333,12 @@ Object.defineProperty(exports, "useGafpriDataTaxRates", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriDataTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriDataWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriDataWalletAccount;
   }
 });
 Object.defineProperty(exports, "useGafpriEntity", {
@@ -4467,6 +4521,12 @@ Object.defineProperty(exports, "useGafpriPagesTaxRates", {
     return _Abstract.useGafpriPagesTaxRates;
   }
 });
+Object.defineProperty(exports, "useGafpriPagesWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPagesWalletAccount;
+  }
+});
 Object.defineProperty(exports, "useGafpriPaginationsAccountsReceivable", {
   enumerable: true,
   get: function get() {
@@ -4567,6 +4627,12 @@ Object.defineProperty(exports, "useGafpriPaginationsTaxRates", {
   enumerable: true,
   get: function get() {
     return _Abstract.useGafpriPaginationsTaxRates;
+  }
+});
+Object.defineProperty(exports, "useGafpriPaginationsWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _Abstract.useGafpriPaginationsWalletAccount;
   }
 });
 Object.defineProperty(exports, "useGafpriPayment", {
@@ -4675,6 +4741,12 @@ Object.defineProperty(exports, "useGafpriUsers", {
   enumerable: true,
   get: function get() {
     return _states.useGafpriUsers;
+  }
+});
+Object.defineProperty(exports, "useGafpriWalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _states.useGafpriWalletAccount;
   }
 });
 Object.defineProperty(exports, "validationHidden", {

@@ -130,6 +130,9 @@ export type UseUserReturn = {
         sortRoleByName: (items: RoleArray[] | null, order: 'asc' | 'desc') => RoleArray[] | null;
         getRolePaginated: (items: RoleArray[] | null, page: number, itemsPerPage: number) => RoleArray[] | null;
         getOptionsUsers: () => SelectDefault[];
+        findByEmail: (emailToFind: string) => UserAttributes | null;
+        findByPhone: (phoneToFind: string) => UserAttributes | null;
+        findByUserName: (userNameToFind: string) => UserAttributes | null;
     };
 };
 export type UseUserProps = {

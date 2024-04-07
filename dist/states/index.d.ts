@@ -56,3 +56,5 @@ export { useGafpriPayment } from './useGafpriPayment';
 export type { UseGafpriPaymentReturn, UseGafpriPaymentProps, } from './useGafpriPayment';
 export { useGafpriOrderReturn } from './useGafpriOrderReturn';
 export type { UseGafpriOrderReturnReturn, UseGafpriOrderReturnProps, } from './useGafpriOrderReturn';
+export { useGafpriWalletAccount } from './useGafpriWalletAccount';
+export type { UseGafpriWalletAccountReturn, UseGafpriWalletAccountProps, } from './useGafpriWalletAccount';

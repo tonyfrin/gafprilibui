@@ -131,3 +131,8 @@ export type {
   UseGafpriOrderReturnReturn,
   UseGafpriOrderReturnProps,
 } from './useGafpriOrderReturn';
+export { useGafpriWalletAccount } from './useGafpriWalletAccount';
+export type {
+  UseGafpriWalletAccountReturn,
+  UseGafpriWalletAccountProps,
+} from './useGafpriWalletAccount';

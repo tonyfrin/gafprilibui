@@ -261,6 +261,12 @@ Object.defineProperty(exports, "TaxRates", {
     return _Taxes.TaxRates;
   }
 });
+Object.defineProperty(exports, "WalletAccount", {
+  enumerable: true,
+  get: function get() {
+    return _Wallet.WalletAccount;
+  }
+});
 var _Footer = require("./Footer");
 var _Header = require("./Header");
 var _Loading = require("./Loading");
@@ -287,3 +293,4 @@ var _Payment = require("./Payment");
 var _Bank = require("./Bank");
 var _Credits = require("./Credits");
 var _OrderReturn = require("./OrderReturn");
+var _Wallet = require("./Wallet");

@@ -118,3 +118,5 @@ export type {
   OrderReturnProps,
   OrderReturnStylesContainerProps,
 } from './OrderReturn';
+export { WalletAccount } from './Wallet';
+export type { WalletAccountProps } from './Wallet';

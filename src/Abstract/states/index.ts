@@ -394,3 +394,22 @@ export type {
   UseGafpriPaginationsOrderReturnReturn,
   UseGafpriPaginationsOrderReturnProps,
 } from './orderReturn';
+export {
+  useGafpriApiWalletAccount,
+  useGafpriDataWalletAccount,
+  useGafpriPagesWalletAccount,
+  useGafpriAttributesWalletAccount,
+  useGafpriPaginationsWalletAccount,
+} from './wallet';
+export type {
+  UseGafpriApiWalletAccountReturn,
+  UseGafpriApiWalletAccountProps,
+  UseGafpriDataWalletAccountReturn,
+  UseGafpriDataWalletAccountProps,
+  WalletAccountAttributes,
+  UseGafpriPaginationsWalletAccountReturn,
+  UseGafpriPaginationsWalletAccountProps,
+  UseGafpriPagesWalletAccountReturn,
+  UseGafpriPagesWalletAccountProps,
+  UseGafpriAttributesWalletAccountReturn,
+} from './wallet';

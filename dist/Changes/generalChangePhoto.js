@@ -9,6 +9,7 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _axios = _interopRequireDefault(require("axios"));
 var _helpers = require("../helpers");
+var _constants = require("../constants");
 var generalChangePhoto = exports.generalChangePhoto = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(_ref) {
     var e, changeError, setSubmitting, setPhoto, validation, newFile, mimeType, formData, config, response, valid;
@@ -44,7 +45,7 @@ var generalChangePhoto = exports.generalChangePhoto = /*#__PURE__*/function () {
           };
           _context.prev = 14;
           _context.next = 17;
-          return _axios["default"].post('/api/upload', formData, config);
+          return _axios["default"].post(_constants.UPLOAD_PHOTO_ROUTE, formData, config);
         case 17:
           response = _context.sent;
           if (response.status === 200) {

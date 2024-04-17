@@ -34,6 +34,7 @@ export const generalChangePhoto = async ({
   const formData = new FormData();
   formData.append('file', newFile);
   formData.append('fileName', newFile.name);
+  formData.append('mimeType', mimeType);  
 
   setSubmitting(true);
 
@@ -44,7 +45,7 @@ export const generalChangePhoto = async ({
   };
 
   try {
-    const response = await axios.post(UPLOAD_PHOTO_ROUTE, formData, config);
+    const response = await axios.post('/api/upload', formData, config);
 
     if (response.status === 200) {
       const valid = validation ? validation(response.data.imageUrl) : true;
@@ -58,4 +59,4 @@ export const generalChangePhoto = async ({
     changeError([`${newErrorValue.message}`]);
     setSubmitting(false);
   }
-};
+}; 

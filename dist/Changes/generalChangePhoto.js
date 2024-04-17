@@ -9,7 +9,6 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _axios = _interopRequireDefault(require("axios"));
 var _helpers = require("../helpers");
-var _constants = require("../constants");
 var generalChangePhoto = exports.generalChangePhoto = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(_ref) {
     var e, changeError, setSubmitting, setPhoto, validation, newFile, mimeType, formData, config, response, valid;
@@ -36,16 +35,17 @@ var generalChangePhoto = exports.generalChangePhoto = /*#__PURE__*/function () {
           formData = new FormData();
           formData.append('file', newFile);
           formData.append('fileName', newFile.name);
+          formData.append('mimeType', mimeType);
           setSubmitting(true);
           config = {
             headers: {
               'content-type': 'multipart/form-data'
             }
           };
-          _context.prev = 13;
-          _context.next = 16;
-          return _axios["default"].post(_constants.UPLOAD_PHOTO_ROUTE, formData, config);
-        case 16:
+          _context.prev = 14;
+          _context.next = 17;
+          return _axios["default"].post('/api/upload', formData, config);
+        case 17:
           response = _context.sent;
           if (response.status === 200) {
             valid = validation ? validation(response.data.imageUrl) : true;
@@ -55,18 +55,18 @@ var generalChangePhoto = exports.generalChangePhoto = /*#__PURE__*/function () {
           }
           setSubmitting(false);
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          _context.next = 25;
+          _context.next = 26;
           break;
-        case 21:
-          _context.prev = 21;
-          _context.t0 = _context["catch"](13);
+        case 22:
+          _context.prev = 22;
+          _context.t0 = _context["catch"](14);
           changeError(["".concat(_context.t0.message)]);
           setSubmitting(false);
-        case 25:
+        case 26:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[13, 21]]);
+    }, _callee, null, [[14, 22]]);
   }));
   return function generalChangePhoto(_x) {
     return _ref2.apply(this, arguments);

@@ -370,4 +370,10 @@ var AllRoles = exports.AllRoles = [{
     name: 'Borrar',
     value: 'wallet-accountDelete'
   }]
+}, {
+  name: 'Metodos de Pago',
+  permissions: [{
+    name: 'Obtener',
+    value: 'payment-methodsGet'
+  }]
 }];

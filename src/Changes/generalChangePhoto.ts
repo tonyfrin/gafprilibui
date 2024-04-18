@@ -34,7 +34,7 @@ export const generalChangePhoto = async ({
   const formData = new FormData();
   formData.append('file', newFile);
   formData.append('fileName', newFile.name);
-  formData.append('mimeType', mimeType);  
+  formData.append('mimeType', mimeType);
 
   setSubmitting(true);
 
@@ -59,4 +59,4 @@ export const generalChangePhoto = async ({
     changeError([`${newErrorValue.message}`]);
     setSubmitting(false);
   }
-}; 
+};

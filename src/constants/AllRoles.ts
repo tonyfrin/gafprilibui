@@ -229,10 +229,6 @@ export const AllRoles = [
   },
   {
     name: 'Metodos de Pago',
-    permissions: [
-      { name: 'Obtener', value: 'payment-methodsGet' },
-    ],
+    permissions: [{ name: 'Obtener', value: 'payment-methodsGet' }],
   },
 ];
-
-

@@ -232,6 +232,8 @@ export const AllRoles = [
     permissions: [
       { name: 'Obtener', value: 'payment-methodsGet' },
       { name: 'Actualizar', value: 'payment-methodsUpdate' },
+      { name: 'Crear', value: 'payment-methodsCreate' },
+      { name: 'Borrar', value: 'payment-methodsDelete' },
     ],
   },
 ];

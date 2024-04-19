@@ -378,5 +378,11 @@ var AllRoles = exports.AllRoles = [{
   }, {
     name: 'Actualizar',
     value: 'payment-methodsUpdate'
+  }, {
+    name: 'Crear',
+    value: 'payment-methodsCreate'
+  }, {
+    name: 'Borrar',
+    value: 'payment-methodsDelete'
   }]
 }];

@@ -375,5 +375,8 @@ var AllRoles = exports.AllRoles = [{
   permissions: [{
     name: 'Obtener',
     value: 'payment-methodsGet'
+  }, {
+    name: 'Actualizar',
+    value: 'payment-methodsUpdate'
   }]
 }];

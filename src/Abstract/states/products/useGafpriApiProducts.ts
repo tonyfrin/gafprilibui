@@ -4,7 +4,7 @@ import {
   CustomErrorResponseProps,
 } from '../../../helpers';
 import { PRODUCTS_ROUTE } from '../../../constants';
-import { UseErrorReturn } from '../../../states';
+import { SiteOptions, UseErrorReturn } from '../../../states';
 import { UseGafpriPagesProductsReturn } from './useGafpriPagesProducts';
 import { UseGafpriAttributesProductsReturn } from './useGafpriAttributesProducts';
 import { ProductsAttributes } from './useGafpriDataProducts';
@@ -45,6 +45,7 @@ type Data = {
   length?: number;
   catalogOrder?: number;
   reviews?: boolean;
+  sitesProducts?: object;
 };
 
 type Actions = {
@@ -62,6 +63,7 @@ export type UseGafpriApiProductsProps = {
   useError: UseErrorReturn;
   pages: UseGafpriPagesProductsReturn;
   attributes: UseGafpriAttributesProductsReturn;
+  siteOptions: SiteOptions;
 };
 
 export function useGafpriApiProducts({
@@ -69,6 +71,7 @@ export function useGafpriApiProducts({
   useError,
   pages,
   attributes,
+  siteOptions
 }: UseGafpriApiProductsProps): UseGafpriApiProductsReturn {
   const newErrorAdd = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
@@ -103,8 +106,6 @@ export function useGafpriApiProducts({
           galleryImage: attributes.states.galleryImage,
           note: attributes.states.note,
           salesPrice: parseFloat(attributes.states.salesPrice),
-          offerPrice: parseFloat(attributes.states.offerPrice),
-          cost: parseFloat(attributes.states.cost),
           type: attributes.states.type,
           taxStatus: attributes.states.taxStatus,
           taxClass: attributes.states.taxClasses,
@@ -123,6 +124,13 @@ export function useGafpriApiProducts({
             visibility: attributes.states.visibility,
             permanentLink: attributes.states.permanentLink,
           },
+          sitesProducts: {
+            sitesId: siteOptions.id,
+            manageStock: true,
+            thereIsStock: false,
+            isAvailable: true,
+            cost: parseFloat(attributes.states.cost),
+          }
         },
         initToken: { token },
         functionFetching: pages.actions.onFetching,

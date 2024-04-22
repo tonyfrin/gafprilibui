@@ -16,6 +16,7 @@ import {
   UseGafpriPaginationsProductsReturn,
   useGafpriPaginationsProducts,
 } from '../Abstract';
+import { SiteOptions } from './sitesOptions';
 
 export interface UseGafpriProductsReturn {
   attributes: UseGafpriAttributesProductsReturn;
@@ -31,12 +32,14 @@ export type UseGafpriProductsProps = {
   token: string | null;
   useTaxClasses: UseGafpriTaxClassesReturn;
   useCategory: UseCategoryReturn;
+  siteOptions: SiteOptions;
 };
 
 export function useGafpriProducts({
   token,
   useTaxClasses,
   useCategory,
+  siteOptions
 }: UseGafpriProductsProps): UseGafpriProductsReturn {
   /**
    * States
@@ -60,6 +63,7 @@ export function useGafpriProducts({
     useError: error,
     pages,
     attributes,
+    siteOptions
   });
 
   return {

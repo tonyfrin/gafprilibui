@@ -9,7 +9,8 @@ var _Abstract = require("../Abstract");
 function useGafpriProducts(_ref) {
   var token = _ref.token,
     useTaxClasses = _ref.useTaxClasses,
-    useCategory = _ref.useCategory;
+    useCategory = _ref.useCategory,
+    siteOptions = _ref.siteOptions;
   /**
    * States
    *
@@ -38,7 +39,8 @@ function useGafpriProducts(_ref) {
     token: token,
     useError: error,
     pages: pages,
-    attributes: attributes
+    attributes: attributes,
+    siteOptions: siteOptions
   });
   return {
     attributes: attributes,

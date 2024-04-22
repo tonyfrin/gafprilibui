@@ -10,7 +10,8 @@ function useGafpriApiProducts(_ref) {
   var token = _ref.token,
     useError = _ref.useError,
     pages = _ref.pages,
-    attributes = _ref.attributes;
+    attributes = _ref.attributes,
+    siteOptions = _ref.siteOptions;
   var newErrorAdd = function newErrorAdd(newErrorValue) {
     useError.actions.newError({
       newErrorValue: newErrorValue,
@@ -33,8 +34,6 @@ function useGafpriApiProducts(_ref) {
           galleryImage: attributes.states.galleryImage,
           note: attributes.states.note,
           salesPrice: parseFloat(attributes.states.salesPrice),
-          offerPrice: parseFloat(attributes.states.offerPrice),
-          cost: parseFloat(attributes.states.cost),
           type: attributes.states.type,
           taxStatus: attributes.states.taxStatus,
           taxClass: attributes.states.taxClasses,
@@ -52,6 +51,13 @@ function useGafpriApiProducts(_ref) {
             status: attributes.states.status,
             visibility: attributes.states.visibility,
             permanentLink: attributes.states.permanentLink
+          },
+          sitesProducts: {
+            sitesId: siteOptions.id,
+            manageStock: true,
+            thereIsStock: false,
+            isAvailable: true,
+            cost: parseFloat(attributes.states.cost)
           }
         },
         initToken: {

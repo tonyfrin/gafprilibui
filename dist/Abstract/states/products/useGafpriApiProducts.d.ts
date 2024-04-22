@@ -1,4 +1,4 @@
-import { UseErrorReturn } from '../../../states';
+import { SiteOptions, UseErrorReturn } from '../../../states';
 import { UseGafpriPagesProductsReturn } from './useGafpriPagesProducts';
 import { UseGafpriAttributesProductsReturn } from './useGafpriAttributesProducts';
 type Actions = {
@@ -14,6 +14,7 @@ export type UseGafpriApiProductsProps = {
     useError: UseErrorReturn;
     pages: UseGafpriPagesProductsReturn;
     attributes: UseGafpriAttributesProductsReturn;
+    siteOptions: SiteOptions;
 };
-export declare function useGafpriApiProducts({ token, useError, pages, attributes, }: UseGafpriApiProductsProps): UseGafpriApiProductsReturn;
+export declare function useGafpriApiProducts({ token, useError, pages, attributes, siteOptions }: UseGafpriApiProductsProps): UseGafpriApiProductsReturn;
 export {};

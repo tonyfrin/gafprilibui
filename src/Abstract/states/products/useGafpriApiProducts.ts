@@ -125,7 +125,7 @@ export function useGafpriApiProducts({
             permanentLink: attributes.states.permanentLink,
           },
           sitesProducts: {
-            sitesId: siteOptions.id,
+            sitesId: parseInt(`${siteOptions.id}`, 10),
             manageStock: true,
             thereIsStock: false,
             isAvailable: true,

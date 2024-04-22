@@ -53,7 +53,7 @@ function useGafpriApiProducts(_ref) {
             permanentLink: attributes.states.permanentLink
           },
           sitesProducts: {
-            sitesId: siteOptions.id,
+            sitesId: parseInt("".concat(siteOptions.id), 10),
             manageStock: true,
             thereIsStock: false,
             isAvailable: true,

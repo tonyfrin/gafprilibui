@@ -3339,6 +3339,12 @@ Object.defineProperty(exports, "generalChangeVisibility", {
     return _Changes.generalChangeVisibility;
   }
 });
+Object.defineProperty(exports, "generalChangeWebSite", {
+  enumerable: true,
+  get: function get() {
+    return _Changes.generalChangeWebSite;
+  }
+});
 Object.defineProperty(exports, "generalChangeWeight", {
   enumerable: true,
   get: function get() {

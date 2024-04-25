@@ -1646,6 +1646,7 @@ export {
   generalChangeBankType,
   generalChangeCreditTimeToPay,
   generalChangeCreditLimit,
+  generalChangeWebSite,
 } from './Changes';
 export type {
   GeneralChangeNoteProps,
@@ -1717,4 +1718,5 @@ export type {
   GeneralChangeBankTypeProps,
   GeneralChangeCreditTimeToPayProps,
   GeneralChangeCreditLimitProps,
+  GeneralChangeWebSiteProps,
 } from './Changes';

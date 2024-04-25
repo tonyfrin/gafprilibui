@@ -11,9 +11,7 @@ const defaultMainContainerStyle = css`
 `;
 
 const defaultTextStyle = css`
-  font-family: Circular, ProximaNova, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.875rem;
   color: rgb(38, 35, 33);

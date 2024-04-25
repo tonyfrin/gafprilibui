@@ -71,7 +71,7 @@ type IconContentStyleProps = {
 };
 
 const iconContentStyle = (styles: IconContentStyleProps) => css`
-  font-family: ${styles.fontFamily || 'inherit'};
+  font-family: ${styles.fontFamily || '"Poppins", sans-serif'};
   font-weight: ${styles.fontWeight || '100'};
   color: ${styles.color || 'rgb(50, 79, 165)'};
   text-transform: ${styles.textTransform || 'uppercase'};
@@ -195,9 +195,7 @@ type IconContentTitleStyleProps = {
 
 const iconContentTitleStyle = (styles: IconContentTitleStyleProps) => css`
   font-family: ${styles.fontFamily ||
-  `Circular, ProximaNova, -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
-  'Helvetica Neue', sans-serif`};
+  `"Poppins", sans-serif`};
   font-weight: ${styles.fontWeight || '800'};
   font-size: ${styles.fontSize || '1em'};
   color: ${styles.color || 'rgb(38, 35, 33)'};

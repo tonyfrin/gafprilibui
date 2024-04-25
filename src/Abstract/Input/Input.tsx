@@ -123,7 +123,7 @@ const SelectStyles = (styles: SelectStyle) => css`
   font-size: ${styles.fontSize || '15px'};
   font-weight: ${styles.fontWeight || '300'};
   color: ${styles.color || '#8D8D8D'};
-  font-family: ${styles.fontFamily || 'var(--font-main)'};
+  font-family: ${styles.fontFamily || '"Poppins", sans-serif'};
 
   ::placeholder {
     font-weight: 300;

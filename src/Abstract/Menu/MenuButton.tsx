@@ -44,7 +44,7 @@ const defaultItemContainerStyle = css`
 `;
 
 const defaultIconGeneralContainerStyle = css`
-  font-family: inherit;
+  font-family: "Poppins", sans-serif;
   font-weight: 100;
   color: rgb(50, 79, 165);
   text-transform: uppercase;
@@ -103,9 +103,7 @@ const defaultTitleContainer = css`
 `;
 
 const defaultTitleStyle = css`
-  font-family: Circular, ProximaNova, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-size: 1rem;
   color: rgb(38, 35, 33);

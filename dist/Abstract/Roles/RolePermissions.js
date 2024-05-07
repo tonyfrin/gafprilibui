@@ -10,7 +10,7 @@ var _react = _interopRequireDefault(require("react"));
 var _css = require("@emotion/css");
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
 var defaultMainContainerStyle = (0, _css.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2["default"])(["\n  margin-bottom: 1rem;\n"])));
-var defaultTitleContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  font-family: \"Poppins\", sans-serif;\n  font-weight: 700;\n  font-size: 1rem;\n  color: rgb(38, 35, 33);\n  display: table-cell;\n  width: auto;\n  padding-bottom: 20px;\n  vertical-align: middle;\n  line-height: 1.25rem;\n"])));
+var defaultTitleContainerStyle = (0, _css.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteral2["default"])(["\n  transition: all 1s ease 0s;\n  font-family: 'Poppins', sans-serif;\n  font-weight: 700;\n  font-size: 1rem;\n  color: rgb(38, 35, 33);\n  display: table-cell;\n  width: auto;\n  padding-bottom: 20px;\n  vertical-align: middle;\n  line-height: 1.25rem;\n"])));
 var defaultCheckBoxContainerStyle = (0, _css.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteral2["default"])(["\n  display: inline-flex;\n  align-items: center;\n  margin-right: 1rem;\n"])));
 var defaultNameStyle = (0, _css.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteral2["default"])(["\n  margin-left: 0.25rem;\n"])));
 var defaultInfoContainerStyle = (0, _css.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteral2["default"])(["\n  display: flex;\n  justify-content: space-around;\n  margin-bottom: 45px;\n"])));

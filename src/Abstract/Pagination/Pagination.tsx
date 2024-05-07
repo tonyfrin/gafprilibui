@@ -11,7 +11,7 @@ const defaultMainContainerStyle = css`
 `;
 
 const defaultTextStyle = css`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 0.875rem;
   color: rgb(38, 35, 33);

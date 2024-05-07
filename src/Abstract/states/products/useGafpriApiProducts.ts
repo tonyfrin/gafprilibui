@@ -71,7 +71,7 @@ export function useGafpriApiProducts({
   useError,
   pages,
   attributes,
-  siteOptions
+  siteOptions,
 }: UseGafpriApiProductsProps): UseGafpriApiProductsReturn {
   const newErrorAdd = (
     newErrorValue: unknown | ErrorResponseProps | CustomErrorResponseProps
@@ -130,7 +130,7 @@ export function useGafpriApiProducts({
             thereIsStock: false,
             isAvailable: true,
             cost: parseFloat(attributes.states.cost),
-          }
+          },
         },
         initToken: { token },
         functionFetching: pages.actions.onFetching,

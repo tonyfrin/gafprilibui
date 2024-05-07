@@ -25,7 +25,7 @@ const defaultItemContainerStyle = css`
 `;
 
 const defaultButtonStyle = css`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: inherit;
   font-weight: inherit;
   font-style: normal;

@@ -35,7 +35,7 @@ const defaultInfoContainerStyle = css`
 `;
 
 const defaultTitleContainerStyle = css`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   color: rgb(38, 35, 33);
@@ -60,7 +60,7 @@ const defaultBreakContainerStyle = css`
 `;
 
 const defaultBreakStyle = css`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 0.875rem;
   color: rgb(38, 35, 33);
@@ -98,7 +98,7 @@ const defaultHiddenInputContainerStyle = css`
 
 const defaultInputMiddleContainerStyle = css`
   background: transparent;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 0.875rem;
   color: rgb(38, 35, 33);
@@ -134,7 +134,7 @@ const defaultInputContainerStyle = css`
 `;
 
 const defaultInputStyle = css`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 1rem;
   color: rgb(114, 108, 102);

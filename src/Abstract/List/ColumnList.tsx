@@ -34,7 +34,7 @@ const defaultItemsContainerStyle = (columns: number) => css`
 
 const defaultItemStyle = css`
   transition: all 1s ease 0s;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 1rem;
   color: rgb(38, 35, 33);
@@ -52,7 +52,7 @@ const defaultItemStyle = css`
 
 const defaultHeaderStyle = css`
   transition: all 1s ease 0s;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 0.875rem;
   color: rgb(38, 35, 33);

@@ -94,7 +94,7 @@ const defaultTextContainerStyle = css`
 `;
 
 const defaultTitleStyle = css`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color: rgb(38, 35, 33);
@@ -109,7 +109,7 @@ const defaultTitleStyle = css`
 `;
 
 const defaultDescriptionStyle = css`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 0.875rem;
   color: rgb(38, 35, 33);
@@ -136,7 +136,7 @@ const defaultButtonContainerStyle = css`
 `;
 
 const defaultButtonStyle = css`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 700;
   font-style: normal;

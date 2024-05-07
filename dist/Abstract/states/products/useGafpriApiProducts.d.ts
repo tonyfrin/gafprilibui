@@ -16,5 +16,5 @@ export type UseGafpriApiProductsProps = {
     attributes: UseGafpriAttributesProductsReturn;
     siteOptions: SiteOptions;
 };
-export declare function useGafpriApiProducts({ token, useError, pages, attributes, siteOptions }: UseGafpriApiProductsProps): UseGafpriApiProductsReturn;
+export declare function useGafpriApiProducts({ token, useError, pages, attributes, siteOptions, }: UseGafpriApiProductsProps): UseGafpriApiProductsReturn;
 export {};

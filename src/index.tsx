@@ -1493,6 +1493,7 @@ export {
   generalValidationBankType,
   generalValidationCreditLimit,
   generalValidationCreditTimeToPay,
+  generalValidationParentId,
 } from './Validations';
 export type {
   ValidationInput,

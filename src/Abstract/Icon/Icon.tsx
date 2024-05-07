@@ -194,8 +194,7 @@ type IconContentTitleStyleProps = {
 };
 
 const iconContentTitleStyle = (styles: IconContentTitleStyleProps) => css`
-  font-family: ${styles.fontFamily ||
-  `"Poppins", sans-serif`};
+  font-family: ${styles.fontFamily || `"Poppins", sans-serif`};
   font-weight: ${styles.fontWeight || '800'};
   font-size: ${styles.fontSize || '1em'};
   color: ${styles.color || 'rgb(38, 35, 33)'};

@@ -7,7 +7,7 @@ const defaultMainContainerStyle = css`
 
 const defaultTitleContainerStyle = css`
   transition: all 1s ease 0s;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color: rgb(38, 35, 33);

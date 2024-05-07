@@ -18,4 +18,4 @@ export type UseGafpriProductsProps = {
     useCategory: UseCategoryReturn;
     siteOptions: SiteOptions;
 };
-export declare function useGafpriProducts({ token, useTaxClasses, useCategory, siteOptions }: UseGafpriProductsProps): UseGafpriProductsReturn;
+export declare function useGafpriProducts({ token, useTaxClasses, useCategory, siteOptions, }: UseGafpriProductsProps): UseGafpriProductsReturn;

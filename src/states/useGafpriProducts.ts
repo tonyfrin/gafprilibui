@@ -39,7 +39,7 @@ export function useGafpriProducts({
   token,
   useTaxClasses,
   useCategory,
-  siteOptions
+  siteOptions,
 }: UseGafpriProductsProps): UseGafpriProductsReturn {
   /**
    * States
@@ -63,7 +63,7 @@ export function useGafpriProducts({
     useError: error,
     pages,
     attributes,
-    siteOptions
+    siteOptions,
   });
 
   return {

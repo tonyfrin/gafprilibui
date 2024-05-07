@@ -3,8 +3,7 @@ import { css, cx } from '@emotion/css';
 import { toTitleCase } from '../../helpers';
 
 const Title1Styles = (styles: Title1Styles) => css`
-  font-family: ${styles.fontFamily ||
-  '"Poppins", sans-serif'};
+  font-family: ${styles.fontFamily || '"Poppins", sans-serif'};
   text-align: ${styles.textAlign || 'left'};
   font-size: ${styles.fontSize || '28px'};
   font-weight: ${styles.fontWeight || '700'};
@@ -55,8 +54,7 @@ export const Title1 = ({ styles = {}, title }: Title1Props) => {
 };
 
 const Title2Styles = (styles: Title2Styles) => css`
-  font-family: ${styles.fontFamily ||
-  '"Poppins", sans-serif'};
+  font-family: ${styles.fontFamily || '"Poppins", sans-serif'};
   font-size: ${styles.fontSize || '18px'};
   ${styles.textTransform ? `text-transform: ${styles.textTransform};` : ''}
   font-weight: ${styles.fontWeight || '400'};
